@@ -14,8 +14,10 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
+    console.log('🚀 Home component mounted');
     const fetchIcons = async () => {
       try {
+        console.log('📥 Starting to fetch icons...');
         setLoading(true);
         // Use sample data instead of Sanity
         const sampleIcons: Icon[] = [
@@ -98,11 +100,13 @@ export default function Home() {
             updatedAt: '2024-01-01',
           },
         ];
+        console.log('✅ Sample icons loaded:', sampleIcons.length);
         setIcons(sampleIcons);
         setFilteredIcons(sampleIcons);
       } catch (error) {
-        console.error('Error loading icons:', error);
+        console.error('❌ Error loading icons:', error);
       } finally {
+        console.log('🏁 Loading complete');
         setLoading(false);
       }
     };
@@ -111,6 +115,7 @@ export default function Home() {
   }, []);
 
   const handleSearch = async (query: string) => {
+    console.log('🔍 Searching for:', query);
     if (!query.trim()) {
       setFilteredIcons(icons);
       return;
@@ -124,18 +129,23 @@ export default function Home() {
       icon.category.toLowerCase().includes(query.toLowerCase()) ||
       icon.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
     );
+    console.log('📊 Filtered results:', filtered.length);
     setFilteredIcons(filtered);
   };
 
   const handleIconClick = (icon: Icon) => {
+    console.log('🖱️ Icon clicked:', icon.name);
     setSelectedIcon(icon);
     setModalOpen(true);
   };
 
   const handleCloseModal = () => {
+    console.log('❌ Modal closed');
     setModalOpen(false);
     setSelectedIcon(null);
   };
+
+  console.log('🎨 Rendering Home component');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
