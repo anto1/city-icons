@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import SearchBar from '@/components/SearchBar';
 import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
-import { Icon, SanityIcon } from '@/types';
-import { getIcons, searchIcons } from '@/lib/sanity';
+import { Icon } from '@/types';
 
 export default function Home() {
   const [icons, setIcons] = useState<Icon[]>([]);
@@ -18,25 +17,7 @@ export default function Home() {
     const fetchIcons = async () => {
       try {
         setLoading(true);
-        const sanityIcons = await getIcons();
-        const transformedIcons: Icon[] = sanityIcons.map((icon: SanityIcon) => ({
-          _id: icon._id,
-          name: icon.name,
-          city: icon.city,
-          country: icon.country,
-          category: icon.category,
-          tags: icon.tags,
-          svgFilename: icon.svgFilename,
-          svgContent: icon.svgContent,
-          description: icon.description,
-          createdAt: icon._createdAt,
-          updatedAt: icon._updatedAt,
-        }));
-        setIcons(transformedIcons);
-        setFilteredIcons(transformedIcons);
-      } catch (error) {
-        console.error('Error fetching icons:', error);
-        // For demo purposes, let's create some sample icons
+        // Use sample data instead of Sanity
         const sampleIcons: Icon[] = [
           {
             _id: '1',
@@ -77,9 +58,50 @@ export default function Home() {
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
+          {
+            _id: '4',
+            name: 'Tokyo Tower',
+            city: 'Tokyo',
+            country: 'Japan',
+            category: 'Landmarks',
+            tags: ['tower', 'modern', 'technology'],
+            svgFilename: 'tokyo.svg',
+            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
+            description: 'Famous Tokyo Tower landmark',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '5',
+            name: 'Berlin Wall',
+            city: 'Berlin',
+            country: 'Germany',
+            category: 'Landmarks',
+            tags: ['historic', 'wall', 'culture'],
+            svgFilename: 'berlin.svg',
+            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
+            description: 'Historic Berlin Wall monument',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '6',
+            name: 'Rome Colosseum',
+            city: 'Rome',
+            country: 'Italy',
+            category: 'Landmarks',
+            tags: ['ancient', 'amphitheater', 'historic'],
+            svgFilename: 'rome.svg',
+            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
+            description: 'Ancient Roman Colosseum',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
         ];
         setIcons(sampleIcons);
         setFilteredIcons(sampleIcons);
+      } catch (error) {
+        console.error('Error loading icons:', error);
       } finally {
         setLoading(false);
       }
@@ -94,34 +116,15 @@ export default function Home() {
       return;
     }
 
-    try {
-      const searchResults = await searchIcons(query);
-      const transformedResults: Icon[] = searchResults.map((icon: SanityIcon) => ({
-        _id: icon._id,
-        name: icon.name,
-        city: icon.city,
-        country: icon.country,
-        category: icon.category,
-        tags: icon.tags,
-        svgFilename: icon.svgFilename,
-        svgContent: icon.svgContent,
-        description: icon.description,
-        createdAt: icon._createdAt,
-        updatedAt: icon._updatedAt,
-      }));
-      setFilteredIcons(transformedResults);
-    } catch (error) {
-      console.error('Error searching icons:', error);
-      // Fallback to client-side filtering
-      const filtered = icons.filter(icon =>
-        icon.name.toLowerCase().includes(query.toLowerCase()) ||
-        icon.city.toLowerCase().includes(query.toLowerCase()) ||
-        icon.country.toLowerCase().includes(query.toLowerCase()) ||
-        icon.category.toLowerCase().includes(query.toLowerCase()) ||
-        icon.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
-      );
-      setFilteredIcons(filtered);
-    }
+    // Client-side filtering
+    const filtered = icons.filter(icon =>
+      icon.name.toLowerCase().includes(query.toLowerCase()) ||
+      icon.city.toLowerCase().includes(query.toLowerCase()) ||
+      icon.country.toLowerCase().includes(query.toLowerCase()) ||
+      icon.category.toLowerCase().includes(query.toLowerCase()) ||
+      icon.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+    );
+    setFilteredIcons(filtered);
   };
 
   const handleIconClick = (icon: Icon) => {
