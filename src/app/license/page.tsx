@@ -1,7 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { trackEvent } from 'fathom-client';
+import { useEffect } from 'react';
 
 export default function LicensePage() {
+  useEffect(() => {
+    // Track license page visit
+    trackEvent('LICENSE_PAGE_VISIT');
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">

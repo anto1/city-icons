@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { SearchBarProps } from '@/types';
+import { trackEvent } from 'fathom-client';
 
 export default function SearchBar({ onSearch }: SearchBarProps) {
   const [query, setQuery] = useState('');
@@ -11,6 +12,10 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       onSearch(query);
+      // Track search if query is not empty
+      if (query.trim()) {
+        trackEvent('SEARCH_PERFORMED');
+      }
     }, 300);
 
     return () => clearTimeout(timeoutId);

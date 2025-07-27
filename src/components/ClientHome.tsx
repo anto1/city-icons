@@ -6,6 +6,7 @@ import SearchBar from '@/components/SearchBar';
 import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
 import { Icon } from '@/types';
+import { trackEvent } from 'fathom-client';
 
 interface ClientHomeProps {
   initialIcons: Icon[];
@@ -92,16 +93,18 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
             © Studio Partdirector, 2025 • {icons.length} icons
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-            >
-              Missing your city?
-            </a>
+                      <a 
+            href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+            onClick={() => trackEvent('MISSING_CITY_CLICKED')}
+          >
+            Missing your city?
+          </a>
             <span className="text-sm text-muted-foreground">•</span>
             <Link 
               href="/license"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+              onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
             >
               Usage & Licensing
             </Link>

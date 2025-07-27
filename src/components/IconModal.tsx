@@ -28,8 +28,8 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     
-    // Track download event
-    trackEvent('ICON_DOWNLOAD');
+    // Track download event with city data
+    trackEvent(`ICON_DOWNLOAD_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
     
     toast.success('SVG downloaded successfully!');
   };
@@ -40,8 +40,8 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     try {
       await navigator.clipboard.writeText(icon.svgContent);
       
-      // Track copy event
-      trackEvent('ICON_COPY');
+      // Track copy event with city data
+      trackEvent(`ICON_COPY_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
       
       toast.success('SVG copied to clipboard!');
     } catch (err) {

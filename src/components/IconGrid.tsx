@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { IconGridProps } from '@/types';
+import { trackEvent } from 'fathom-client';
 
 export default function IconGrid({ icons, loading, onIconClick }: IconGridProps) {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
@@ -104,7 +105,11 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
             transform: `scale(${getScale(index)})`,
             zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1
           }} 
-          onClick={() => onIconClick(icon)}
+          onClick={() => {
+            // Track icon click with city data
+            trackEvent(`ICON_CLICK_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
+            onIconClick(icon);
+          }}
         >
           <div className="flex flex-col items-center justify-center flex-1">
             <div
