@@ -1,13 +1,43 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { IconGridProps } from '@/types';
 
 export default function IconGrid({ icons, loading, onIconClick }: IconGridProps) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   
   console.log('🎯 IconGrid received icons:', icons.map(icon => icon.city));
   
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (gridRef.current) {
+        const rect = gridRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        });
+      }
+    };
+
+    const handleMouseLeave = () => {
+      setMousePosition(null);
+    };
+
+    const grid = gridRef.current;
+    if (grid) {
+      grid.addEventListener('mousemove', handleMouseMove);
+      grid.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      if (grid) {
+        grid.removeEventListener('mousemove', handleMouseMove);
+        grid.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
+
   if (loading) {
     return (
       <div className="flex justify-center items-center py-12">
@@ -25,41 +55,55 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
   }
 
   const getScale = (index: number) => {
-    if (hoveredIndex === null) return 1;
+    if (!mousePosition || !gridRef.current) return 1;
     
-    // Main hovered card
-    if (index === hoveredIndex) return 1.05;
-    
-    // Neighbor cards (adjacent horizontally and vertically)
+    const rect = gridRef.current.getBoundingClientRect();
     const cols = window.innerWidth >= 1280 ? 6 : window.innerWidth >= 1024 ? 5 : window.innerWidth >= 768 ? 4 : window.innerWidth >= 640 ? 3 : 2;
+    const rows = Math.ceil(icons.length / cols);
+    
+    // Calculate card dimensions
+    const cardWidth = rect.width / cols;
+    const cardHeight = rect.height / rows;
+    
+    // Calculate card center position
     const row = Math.floor(index / cols);
     const col = index % cols;
-    const hoveredRow = Math.floor(hoveredIndex / cols);
-    const hoveredCol = hoveredIndex % cols;
+    const cardCenterX = col * cardWidth + cardWidth / 2;
+    const cardCenterY = row * cardHeight + cardHeight / 2;
     
-    // Check if this card is adjacent to the hovered card
-    const isAdjacent = (
-      (Math.abs(row - hoveredRow) === 1 && col === hoveredCol) || // Vertical adjacent
-      (Math.abs(col - hoveredCol) === 1 && row === hoveredRow) || // Horizontal adjacent
-      (Math.abs(row - hoveredRow) === 1 && Math.abs(col - hoveredCol) === 1) // Diagonal adjacent
+    // Calculate distance from mouse to card center
+    const distance = Math.sqrt(
+      Math.pow(mousePosition.x - cardCenterX, 2) + 
+      Math.pow(mousePosition.y - cardCenterY, 2)
     );
     
-    return isAdjacent ? 1.02 : 1;
+    // Maximum distance for effect (adjust for desired range)
+    const maxDistance = Math.min(cardWidth, cardHeight) * 1.5;
+    
+    // Calculate scale based on proximity (closer = larger scale)
+    if (distance <= maxDistance) {
+      const proximity = 1 - (distance / maxDistance);
+      const baseScale = 1 + (proximity * 0.08); // Max 8% scale increase
+      return Math.max(1, baseScale);
+    }
+    
+    return 1;
   };
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
+    <div 
+      ref={gridRef}
+      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative"
+    >
       {icons.map((icon, index) => (
         <div 
           key={icon._id} 
-          className="group cursor-pointer transition-all duration-300 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center z-10" 
+          className="group cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center" 
           style={{ 
             aspectRatio: '1 / 1',
             transform: `scale(${getScale(index)})`,
-            zIndex: hoveredIndex === index ? 20 : 10
+            zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 100) : 10
           }} 
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
           onClick={() => onIconClick(icon)}
         >
           <div className="flex flex-col items-center justify-center flex-1">
