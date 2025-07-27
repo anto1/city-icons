@@ -742,5 +742,41 @@
     "description": "Karachi is the largest city and financial capital of Pakistan, known for its modern monuments, bustling port, and rich cultural diversity. The city combines traditional Pakistani culture with contemporary development, featuring the iconic Mazar-e-Quaid, Clifton Beach, and vibrant street life.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "68",
+    "name": "Manila Cathedral",
+    "city": "Manila",
+    "country": "Philippines",
+    "category": "Landmarks",
+    "tags": ["cathedral", "church", "historic"],
+    "svgFilename": "ph-manila.svg",
+    "description": "Manila is the capital of the Philippines, known for its historic Manila Cathedral, Spanish colonial architecture, and rich cultural heritage. The city combines traditional Filipino culture with modern development, featuring the historic Intramuros district, Rizal Park, and vibrant street life.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "69",
+    "name": "Havana Capitol",
+    "city": "Havana",
+    "country": "Cuba",
+    "category": "Landmarks",
+    "tags": ["capitol", "neoclassical", "historic"],
+    "svgFilename": "cu-havana.svg",
+    "description": "Havana is the capital and largest city of Cuba, known for its iconic Capitol building, Spanish colonial architecture, and rich cultural heritage. The city combines traditional Cuban culture with historic charm, featuring the historic Old Havana, Malecón waterfront, and vibrant music scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "70",
+    "name": "Tashkent Mosque",
+    "city": "Tashkent",
+    "country": "Uzbekistan",
+    "category": "Landmarks",
+    "tags": ["mosque", "islamic", "historic"],
+    "svgFilename": "uz-tashkent.svg",
+    "description": "Tashkent is the capital and largest city of Uzbekistan, known for its beautiful mosques, Islamic architecture, and rich cultural heritage. The city combines traditional Central Asian culture with modern development, featuring the historic Chorsu Bazaar, Tashkent Tower, and vibrant cultural scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
