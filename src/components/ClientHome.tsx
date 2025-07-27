@@ -7,7 +7,6 @@ import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { Github } from 'lucide-react';
 
 interface ClientHomeProps {
   initialIcons: Icon[];
@@ -57,7 +56,8 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
                   .map((icon) => (
                   <div
                     key={icon._id}
-                    className="w-14 h-14 text-foreground"
+                    className="w-14 h-14 text-foreground cursor-help"
+                    title={`${icon.city}, ${icon.country}`}
                     dangerouslySetInnerHTML={{
                       __html: icon.svgContent
                         .replace(/width="[^"]*"/, 'width="56"')
@@ -115,10 +115,9 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
                       href="https://github.com/anto2s/city-icons"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
                       onClick={() => trackEvent('GITHUB_LINK_CLICKED')}
                     >
-                      <Github className="w-4 h-4 mr-1" />
                       GitHub
                     </a>
                   </div>
