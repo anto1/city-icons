@@ -1,9 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, Search, ArrowLeft } from 'lucide-react';
+import { Search, ArrowLeft } from 'lucide-react';
+import iconData from '@/data/icons.json';
 
 export default function NotFound() {
+  // Get a random icon
+  const randomIcon = iconData[Math.floor(Math.random() * iconData.length)];
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
@@ -18,6 +22,17 @@ export default function NotFound() {
               Back to Icons
             </Link>
             
+            {/* Random Icon */}
+            <div className="flex justify-center mb-12">
+              <div className="w-16 h-16 text-muted-foreground">
+                <img 
+                  src={`/icons/${randomIcon.svgFilename}`}
+                  alt={`${randomIcon.city} icon`}
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+            
             <h1 className="text-4xl font-bold text-foreground mb-4">
               404
             </h1>
@@ -29,16 +44,8 @@ export default function NotFound() {
             </p>
           </div>
 
-          {/* Actions */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link 
-              href="/"
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Link>
-            
+          {/* Single Action Button */}
+          <div className="flex justify-center mb-8">
             <Link 
               href="/"
               className="inline-flex items-center justify-center px-6 py-3 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors"
@@ -47,15 +54,6 @@ export default function NotFound() {
               Browse Icons
             </Link>
           </div>
-
-          {/* Back button */}
-          <button 
-            onClick={() => window.history.back()}
-            className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-1" />
-            Go Back
-          </button>
         </div>
 
         {/* Footer */}
