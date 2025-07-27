@@ -38,30 +38,6 @@ export default function Home() {
         // Define icon data
         const iconData = [
           {
-            _id: '1',
-            name: 'New York Skyline',
-            city: 'New York',
-            country: 'USA',
-            category: 'Landmarks',
-            tags: ['skyscraper', 'city', 'urban'],
-            svgFilename: 'new-york.svg',
-            description: 'Iconic New York City skyline',
-            createdAt: '2024-01-01',
-            updatedAt: '2024-01-01',
-          },
-          {
-            _id: '2',
-            name: 'London Bridge',
-            city: 'London',
-            country: 'UK',
-            category: 'Landmarks',
-            tags: ['bridge', 'river', 'historic'],
-            svgFilename: 'london.svg',
-            description: 'Famous London Bridge over the Thames',
-            createdAt: '2024-01-01',
-            updatedAt: '2024-01-01',
-          },
-          {
             _id: '3',
             name: 'Paris Eiffel Tower',
             city: 'Paris',
