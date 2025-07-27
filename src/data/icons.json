@@ -454,5 +454,53 @@
     "description": "The Warsaw Mermaid is the official symbol of Warsaw, Poland. According to legend, a mermaid swam from the Baltic Sea to Warsaw and decided to stay, protecting the city. The statue shows her with a sword and shield, ready to defend the city.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "44",
+    "name": "Pittsburgh Steel City",
+    "city": "Pittsburgh",
+    "country": "USA",
+    "category": "Buildings",
+    "tags": ["steel", "industrial", "modern"],
+    "svgFilename": "pittsburg.svg",
+    "description": "Pittsburgh is a major city in Pennsylvania, known for its steel industry heritage, the iconic Three Rivers confluence, and modern transformation. The city combines industrial history with contemporary innovation, featuring the University of Pittsburgh, Carnegie Mellon University, and world-class museums.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "45",
+    "name": "Toronto CN Tower",
+    "city": "Toronto",
+    "country": "Canada",
+    "category": "Landmarks",
+    "tags": ["tower", "modern", "iconic"],
+    "svgFilename": "toronto.svg",
+    "description": "Toronto is the capital of Ontario and Canada's largest city, known for its iconic CN Tower - the tallest freestanding structure in the Western Hemisphere. The city combines modern urban development with natural beauty along Lake Ontario, featuring a diverse multicultural population and vibrant arts scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "46",
+    "name": "Trieste Harbor",
+    "city": "Trieste",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": ["harbor", "historic", "mediterranean"],
+    "svgFilename": "triest.svg",
+    "description": "Trieste is a historic port city in northeastern Italy, known for its beautiful harbor, rich cultural heritage, and unique position at the crossroads of Latin, Slavic, and Germanic cultures. The city features stunning architecture, the iconic Piazza Unità d'Italia, and a vibrant literary tradition.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "47",
+    "name": "Uralsk Historic Center",
+    "city": "Uralsk",
+    "country": "Kazakhstan",
+    "category": "Culture",
+    "tags": ["historic", "riverside", "traditional"],
+    "svgFilename": "uralsk.svg",
+    "description": "Uralsk is a historic city in western Kazakhstan, located on the Ural River. Known for its traditional Kazakh culture, horse breeding heritage, and beautiful riverfront, the city preserves its rich nomadic traditions while embracing modern development. The horse symbolizes the region's deep connection to Central Asian nomadic culture.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
