@@ -646,5 +646,53 @@
     "description": "Santiago is the capital and largest city of Chile, known for its traditional Chilean culture including the iconic chupalla hat, Andean heritage, and vibrant urban life. The city combines colonial Spanish architecture with modern development, nestled between the Andes Mountains and the Pacific coast.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "60",
+    "name": "Marrakesh Medina",
+    "city": "Marrakesh",
+    "country": "Morocco",
+    "category": "Culture",
+    "tags": ["medina", "souks", "historic"],
+    "svgFilename": "ma-marrakesh.svg",
+    "description": "Marrakesh is a historic city in Morocco, known for its vibrant medina (old town), bustling souks, and the iconic Jemaa el-Fnaa square. The city combines traditional Moroccan architecture with rich cultural heritage, featuring beautiful riads, traditional markets, and the stunning Koutoubia Mosque.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "61",
+    "name": "Reykjavik Hallgrímskirkja",
+    "city": "Reykjavik",
+    "country": "Iceland",
+    "category": "Landmarks",
+    "tags": ["church", "modern", "iconic"],
+    "svgFilename": "is-reykjavik.svg",
+    "description": "Reykjavik is the capital and largest city of Iceland, known for its iconic Hallgrímskirkja church, geothermal hot springs, and stunning natural landscapes. The city combines modern Nordic architecture with traditional Icelandic culture, featuring the famous Blue Lagoon and vibrant arts scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "62",
+    "name": "Rome Colosseum",
+    "city": "Rome",
+    "country": "Italy",
+    "category": "Landmarks",
+    "tags": ["colosseum", "ancient", "historic"],
+    "svgFilename": "it-rome.svg",
+    "description": "Rome is the capital of Italy and the Eternal City, known for its iconic Colosseum, ancient Roman ruins, and rich cultural heritage. The city combines classical architecture with modern Italian culture, featuring the Vatican City, Trevi Fountain, and the historic Roman Forum.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "63",
+    "name": "Athens Acropolis",
+    "city": "Athens",
+    "country": "Greece",
+    "category": "Landmarks",
+    "tags": ["acropolis", "ancient", "parthenon"],
+    "svgFilename": "gr-athens.svg",
+    "description": "Athens is the capital and largest city of Greece, known for its iconic Acropolis with the Parthenon, ancient Greek heritage, and classical architecture. The city combines ancient history with modern Greek culture, featuring the historic Plaka neighborhood and vibrant Mediterranean lifestyle.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
