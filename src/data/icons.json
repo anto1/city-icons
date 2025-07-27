@@ -514,5 +514,53 @@
     "description": "Uralsk is a historic city in western Kazakhstan, located on the Ural River. Known for its traditional Kazakh culture, horse breeding heritage, and beautiful riverfront, the city preserves its rich nomadic traditions while embracing modern development. The horse symbolizes the region's deep connection to Central Asian nomadic culture.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "48",
+    "name": "Rio de Janeiro Christ the Redeemer",
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "category": "Landmarks",
+    "tags": ["christ", "statue", "iconic"],
+    "svgFilename": "br-rio-de-janeiro.svg",
+    "description": "Rio de Janeiro is a vibrant coastal city in Brazil, known for its iconic Christ the Redeemer statue atop Corcovado Mountain, beautiful beaches like Copacabana and Ipanema, and the famous Sugarloaf Mountain. The city combines stunning natural beauty with rich Brazilian culture and Carnival celebrations.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "49",
+    "name": "Shanghai Oriental Pearl Tower",
+    "city": "Shanghai",
+    "country": "China",
+    "category": "Landmarks",
+    "tags": ["tower", "modern", "iconic"],
+    "svgFilename": "cn-shanghai.svg",
+    "description": "Shanghai is China's largest city and a global financial center, known for its iconic Oriental Pearl Tower, the futuristic skyline of Pudong, and the historic Bund waterfront. The city seamlessly blends traditional Chinese culture with cutting-edge modern development and international influences.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "50",
+    "name": "Delhi Lotus Temple",
+    "city": "Delhi",
+    "country": "India",
+    "category": "Landmarks",
+    "tags": ["temple", "lotus", "modern"],
+    "svgFilename": "in-delhi.svg",
+    "description": "Delhi is the capital of India, known for its iconic Lotus Temple - a Bahá'í House of Worship shaped like a lotus flower, historic monuments like the Red Fort and Qutub Minar, and rich cultural heritage. The city combines ancient history with modern Indian development and serves as the political and cultural heart of India.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "51",
+    "name": "Agra Taj Mahal",
+    "city": "Agra",
+    "country": "India",
+    "category": "Landmarks",
+    "tags": ["taj mahal", "mausoleum", "historic"],
+    "svgFilename": "in-agra.svg",
+    "description": "Agra is a historic city in Uttar Pradesh, India, home to the magnificent Taj Mahal - one of the Seven Wonders of the World. This stunning white marble mausoleum, built by Emperor Shah Jahan in memory of his wife, represents the pinnacle of Mughal architecture and is a symbol of eternal love.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
