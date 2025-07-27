@@ -49,6 +49,18 @@ export default function Home() {
             updatedAt: '2024-01-01',
           },
           {
+            _id: '33',
+            name: 'Belgrade Fortress',
+            city: 'Belgrade',
+            country: 'Serbia',
+            category: 'Landmarks',
+            tags: ['fortress', 'historic', 'riverside'],
+            svgFilename: 'belgrade.svg',
+            description: 'Belgrade is the capital and largest city of Serbia, located at the confluence of the Danube and Sava rivers. Known for its historic Belgrade Fortress, the city combines rich cultural heritage with modern Balkan charm and vibrant nightlife.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
             _id: '24',
             name: 'Batumi Seaside',
             city: 'Batumi',
@@ -85,6 +97,18 @@ export default function Home() {
             updatedAt: '2024-01-01',
           },
           {
+            _id: '34',
+            name: 'Buenos Aires Tango',
+            city: 'Buenos Aires',
+            country: 'Argentina',
+            category: 'Culture',
+            tags: ['tango', 'historic', 'latin'],
+            svgFilename: 'buenos-aires.svg',
+            description: 'Buenos Aires is the capital and largest city of Argentina, known for its passionate tango culture, historic neighborhoods like La Boca and San Telmo, and European-style architecture. The city is the cultural heart of Argentina and a major Latin American metropolis.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
             _id: '12',
             name: 'Chicago Skyline',
             city: 'Chicago',
@@ -117,6 +141,18 @@ export default function Home() {
             tags: ['harbor', 'modern', 'scandinavian'],
             svgFilename: 'copenhagen.svg',
             description: 'Copenhagen is the capital and largest city of Denmark, known for its beautiful harbor, the iconic Little Mermaid statue, and the colorful Nyhavn district. The city combines historic charm with modern Scandinavian design and sustainable urban planning.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '35',
+            name: 'Denpasar Temple',
+            city: 'Denpasar',
+            country: 'Indonesia',
+            category: 'Culture',
+            tags: ['temple', 'balinese', 'traditional'],
+            svgFilename: 'denpasar.svg',
+            description: 'Denpasar is the capital of Bali, Indonesia, known for its rich Balinese culture, traditional temples, and vibrant arts scene. The city serves as the cultural and administrative center of the island, featuring beautiful Hindu temples and traditional Balinese architecture.',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
@@ -181,6 +217,18 @@ export default function Home() {
             updatedAt: '2024-01-01',
           },
           {
+            _id: '36',
+            name: 'Manchester Industry',
+            city: 'Manchester',
+            country: 'UK',
+            category: 'Buildings',
+            tags: ['industrial', 'modern', 'urban'],
+            svgFilename: 'manchester.svg',
+            description: 'Manchester is a major city in northwest England, known for its industrial heritage, vibrant music scene, and modern urban development. The city combines its rich industrial past with contemporary culture, featuring the iconic Beetham Tower and historic cotton mills.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
             _id: '31',
             name: 'Erevan Republic Square',
             city: 'Erevan',
@@ -189,6 +237,18 @@ export default function Home() {
             tags: ['square', 'historic', 'government'],
             svgFilename: 'erevan.svg',
             description: 'Erevan is the capital and largest city of Armenia, known for its beautiful Republic Square, the Cascade complex, and the historic Matenadaran library. The city combines ancient Armenian heritage with modern urban development and serves as the cultural heart of Armenia.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '32',
+            name: 'Alma-Aty Mountains',
+            city: 'Alma-Aty',
+            country: 'Kazakhstan',
+            category: 'Landmarks',
+            tags: ['mountains', 'nature', 'scenic'],
+            svgFilename: 'alma-aty.svg',
+            description: 'Alma-Aty is the largest city in Kazakhstan, nestled at the foothills of the Trans-Ili Alatau mountains. Known for its stunning mountain views, the city combines modern urban development with natural beauty, featuring the iconic Kok-Tobe hill and the beautiful Medeu skating rink.',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
@@ -490,10 +550,10 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            City Icons Collection
+            {icons.length} City Icons Collection
           </h1>
           <p className="text-lg text-muted-foreground">
-            Discover beautiful line art icons representing cities around the world
+            Discover beautiful line art icons representing cities around the world • Icons by Studio Partdirector
           </p>
         </div>
         <SearchBar onSearch={handleSearch} />
