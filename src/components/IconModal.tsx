@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Download, Copy, X } from 'lucide-react';
+import { Download, Copy } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
@@ -101,9 +101,6 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
           <Button onClick={copySVG} variant="outline" className="flex-1">
             <Copy className="w-4 h-4 mr-2" />
             Copy SVG
-          </Button>
-          <Button onClick={onClose} variant="ghost" size="icon">
-            <X className="w-4 h-4" />
           </Button>
         </DialogFooter>
       </DialogContent>

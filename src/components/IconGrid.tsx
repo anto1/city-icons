@@ -57,7 +57,7 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
             </div>
             <div className="text-center w-full">
               <p className="text-xs font-medium text-foreground truncate w-full mb-1">{icon.name}</p>
-              <p className="text-xs text-muted-foreground truncate w-full">{icon.city}</p>
+              <p className="text-xs text-muted-foreground truncate w-full">{icon.city}, {icon.country}</p>
             </div>
           </CardContent>
         </Card>
