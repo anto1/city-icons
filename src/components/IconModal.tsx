@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Download, Copy } from 'lucide-react';
 import { toast } from 'sonner';
+import { trackEvent } from 'fathom-client';
 
 export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
   const downloadSVG = () => {
@@ -27,6 +28,9 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     
+    // Track download event
+    trackEvent('ICON_DOWNLOAD');
+    
     toast.success('SVG downloaded successfully!');
   };
 
@@ -35,6 +39,10 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     
     try {
       await navigator.clipboard.writeText(icon.svgContent);
+      
+      // Track copy event
+      trackEvent('ICON_COPY');
+      
       toast.success('SVG copied to clipboard!');
     } catch (err) {
       console.error('Failed to copy SVG:', err);
