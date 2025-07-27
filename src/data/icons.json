@@ -718,5 +718,29 @@
     "description": "Kyoto is the former imperial capital of Japan, known for its beautiful sakura (cherry blossoms), traditional temples, and rich cultural heritage. The city combines ancient Japanese traditions with modern life, featuring the iconic Fushimi Inari Shrine, Kinkaku-ji (Golden Pavilion), and the historic Gion district.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "66",
+    "name": "Edinburgh Castle",
+    "city": "Edinburgh",
+    "country": "United Kingdom",
+    "category": "Landmarks",
+    "tags": ["castle", "historic", "medieval"],
+    "svgFilename": "gb-edinburgh.svg",
+    "description": "Edinburgh is the capital of Scotland, known for its iconic Edinburgh Castle perched on Castle Rock, historic Old Town, and rich Scottish heritage. The city combines medieval architecture with modern culture, featuring the Royal Mile, Holyrood Palace, and the annual Edinburgh Festival.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "67",
+    "name": "Karachi Monument",
+    "city": "Karachi",
+    "country": "Pakistan",
+    "category": "Landmarks",
+    "tags": ["monument", "modern", "iconic"],
+    "svgFilename": "pk-karachi.svg",
+    "description": "Karachi is the largest city and financial capital of Pakistan, known for its modern monuments, bustling port, and rich cultural diversity. The city combines traditional Pakistani culture with contemporary development, featuring the iconic Mazar-e-Quaid, Clifton Beach, and vibrant street life.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
