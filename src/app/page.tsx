@@ -38,18 +38,6 @@ export default function Home() {
         // Define icon data
         const iconData = [
           {
-            _id: '24',
-            name: 'Batumi Seaside',
-            city: 'Batumi',
-            country: 'Georgia',
-            category: 'Culture',
-            tags: ['seaside', 'modern', 'architecture'],
-            svgFilename: 'batumi.svg',
-            description: 'Batumi is a coastal city in Georgia, known for its beautiful Black Sea beaches, modern architecture, and the iconic Alphabet Tower. The city combines traditional Georgian culture with contemporary development.',
-            createdAt: '2024-01-01',
-            updatedAt: '2024-01-01',
-          },
-          {
             _id: '15',
             name: 'Barcelona Sagrada Familia',
             city: 'Barcelona',
@@ -58,6 +46,18 @@ export default function Home() {
             tags: ['church', 'gothic', 'modernist'],
             svgFilename: 'barcelona.svg',
             description: 'Barcelona is the capital of Catalonia, known for its unique architecture including the iconic Sagrada Familia by Antoni Gaudí. The city combines Mediterranean charm with innovative design, making it a cultural and architectural treasure.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '24',
+            name: 'Batumi Seaside',
+            city: 'Batumi',
+            country: 'Georgia',
+            category: 'Culture',
+            tags: ['seaside', 'modern', 'architecture'],
+            svgFilename: 'batumi.svg',
+            description: 'Batumi is a coastal city in Georgia, known for its beautiful Black Sea beaches, modern architecture, and the iconic Alphabet Tower. The city combines traditional Georgian culture with contemporary development.',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
@@ -338,10 +338,19 @@ export default function Home() {
           })
         );
 
-        // Sort icons alphabetically by city name
-        const sortedIcons = iconsWithSvg.sort((a, b) => a.city.localeCompare(b.city));
+        console.log('📋 Original iconData order:', iconData.map(icon => icon.city));
+        console.log('🔄 Icons with SVG loaded:', iconsWithSvg.length);
 
+        // Sort icons alphabetically by city name with explicit localeCompare
+        const sortedIcons = [...iconsWithSvg].sort((a, b) => {
+          const result = a.city.localeCompare(b.city, 'en', { sensitivity: 'base' });
+          console.log(`🔤 Comparing "${a.city}" vs "${b.city}" = ${result}`);
+          return result;
+        });
+        
+        console.log('✅ Sorted icons order:', sortedIcons.map(icon => icon.city));
         console.log('✅ Sample icons loaded:', sortedIcons.length);
+        
         setIcons(sortedIcons);
         setFilteredIcons(sortedIcons);
       } catch (error) {
@@ -358,6 +367,7 @@ export default function Home() {
   const handleSearch = async (query: string) => {
     console.log('🔍 Searching for:', query);
     if (!query.trim()) {
+      console.log('🔄 No query, showing all icons in order');
       setFilteredIcons(icons);
       return;
     }
@@ -371,10 +381,13 @@ export default function Home() {
       icon.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
     );
     
+    console.log('🔍 Filtered results before sorting:', filtered.map(icon => icon.city));
+    
     // Sort filtered results alphabetically by city name
     const sortedFiltered = filtered.sort((a, b) => a.city.localeCompare(b.city));
     
-    console.log('📊 Filtered results:', sortedFiltered.length);
+    console.log('✅ Filtered results after sorting:', sortedFiltered.map(icon => icon.city));
+    console.log('📊 Filtered results count:', sortedFiltered.length);
     setFilteredIcons(sortedFiltered);
   };
 
@@ -391,6 +404,8 @@ export default function Home() {
   };
 
   console.log('🎨 Rendering Home component');
+  console.log('📊 Current filteredIcons count:', filteredIcons.length);
+  console.log('📋 Current filteredIcons order:', filteredIcons.map(icon => icon.city));
 
   return (
     <div className="min-h-screen bg-background">

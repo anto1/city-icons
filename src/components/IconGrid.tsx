@@ -3,6 +3,8 @@
 import { IconGridProps } from '@/types';
 
 export default function IconGrid({ icons, loading, onIconClick }: IconGridProps) {
+  console.log('🎯 IconGrid received icons:', icons.map(icon => icon.city));
+  
   if (loading) {
     return (
       <div className="flex justify-center items-center py-12">
