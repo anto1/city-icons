@@ -48,23 +48,24 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Random Icons Header */}
-      <div className="flex justify-center items-center gap-8 py-16">
-        {icons
-          .slice(0, 3)
-          .map((icon) => (
-          <div
-            key={icon._id}
-            className="w-14 h-14 text-foreground"
-            dangerouslySetInnerHTML={{
-              __html: icon.svgContent
-                .replace(/width="[^"]*"/, 'width="56"')
-                .replace(/height="[^"]*"/, 'height="56"')
-                .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
-            }}
-          />
-        ))}
-      </div>
+                    {/* Random Icons Header */}
+              <div className="flex justify-center items-center gap-8 py-16">
+                {icons
+                  .sort(() => Math.random() - 0.5)
+                  .slice(0, 3)
+                  .map((icon) => (
+                  <div
+                    key={icon._id}
+                    className="w-14 h-14 text-foreground"
+                    dangerouslySetInnerHTML={{
+                      __html: icon.svgContent
+                        .replace(/width="[^"]*"/, 'width="56"')
+                        .replace(/height="[^"]*"/, 'height="56"')
+                        .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
+                    }}
+                  />
+                ))}
+              </div>
 
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
