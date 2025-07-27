@@ -10,7 +10,6 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Download, Copy } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -56,30 +55,6 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
         </DialogHeader>
         
         <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <span className="font-medium text-muted-foreground">Country:</span>
-              <p className="text-foreground">{icon?.country}</p>
-            </div>
-            <div>
-              <span className="font-medium text-muted-foreground">Category:</span>
-              <p className="text-foreground">{icon?.category}</p>
-            </div>
-          </div>
-          
-          {icon?.tags && icon.tags.length > 0 && (
-            <div>
-              <span className="text-sm font-medium text-muted-foreground">Tags:</span>
-              <div className="flex flex-wrap gap-1 mt-2">
-                {icon.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          )}
-          
           <div className="flex justify-center p-4 bg-muted rounded-lg">
             <div
               className="w-24 h-24 text-primary flex items-center justify-center"
