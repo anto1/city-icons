@@ -288,7 +288,7 @@
     "updatedAt": "2024-01-01"
   },
   {
-    "_id": "48",
+    "_id": "52",
     "name": "Milan Cathedral",
     "city": "Milan",
     "country": "Italy",
@@ -560,6 +560,30 @@
     "tags": ["taj mahal", "mausoleum", "historic"],
     "svgFilename": "in-agra.svg",
     "description": "Agra is a historic city in Uttar Pradesh, India, home to the magnificent Taj Mahal - one of the Seven Wonders of the World. This stunning white marble mausoleum, built by Emperor Shah Jahan in memory of his wife, represents the pinnacle of Mughal architecture and is a symbol of eternal love.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "53",
+    "name": "Amsterdam Canal Houses",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "category": "Culture",
+    "tags": ["houses", "canals", "historic"],
+    "svgFilename": "nl-amsterdam.svg",
+    "description": "Amsterdam is the capital and largest city of the Netherlands, known for its iconic canal houses, historic architecture, and beautiful waterways. The city's distinctive narrow houses with gabled facades along the canals represent the Golden Age of Dutch architecture and urban planning.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "54",
+    "name": "Lyon Lion",
+    "city": "Lyon",
+    "country": "France",
+    "category": "Culture",
+    "tags": ["lion", "emblem", "historic"],
+    "svgFilename": "fr-lyon.svg",
+    "description": "Lyon is France's third-largest city and a UNESCO World Heritage site, known for its historic architecture, the iconic lion from the city's emblem, and rich cultural heritage. The city combines Roman history with Renaissance architecture and is famous for its gastronomy and silk industry.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   }
