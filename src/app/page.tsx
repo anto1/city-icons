@@ -409,6 +409,21 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Sticky Header */}
+      <div className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+        <div className="container mx-auto px-4 py-4">
+          <div className="text-center mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-2">
+              City Icons Collection
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Discover beautiful line art icons representing cities around the world
+            </p>
+          </div>
+          <SearchBar onSearch={handleSearch} />
+        </div>
+      </div>
+
       {/* Random Icons Header */}
       <div className="flex justify-center items-center gap-8 py-16">
         {icons
@@ -427,18 +442,9 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            City Icons Collection
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Discover beautiful line art icons representing cities around the world
-          </p>
-        </div>
-        <SearchBar onSearch={handleSearch} />
-        
-        <div className="mt-12">
+      {/* Main Content */}
+      <div className="container mx-auto px-4 pb-8">
+        <div className="mt-8">
           <IconGrid 
             icons={filteredIcons} 
             loading={loading} 
