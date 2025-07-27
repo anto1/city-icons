@@ -169,6 +169,66 @@ export default function Home() {
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
+          {
+            _id: '14',
+            name: 'Tel Aviv Modern City',
+            city: 'Tel Aviv',
+            country: 'Israel',
+            category: 'Buildings',
+            tags: ['modern', 'architecture', 'urban'],
+            svgFilename: 'tel-aviv.svg',
+            description: 'Tel Aviv is known for its stunning modern architecture, particularly the White City with its Bauhaus buildings. The city combines Mediterranean charm with cutting-edge design, making it a hub for innovation and culture.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '15',
+            name: 'Barcelona Sagrada Familia',
+            city: 'Barcelona',
+            country: 'Spain',
+            category: 'Landmarks',
+            tags: ['cathedral', 'gothic', 'modernist'],
+            svgFilename: 'barcelona.svg',
+            description: 'Barcelona is famous for its unique architecture, especially the Sagrada Familia designed by Antoni Gaudí. The city combines Gothic heritage with modernist innovation, creating a distinctive architectural landscape.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '16',
+            name: 'Pittsburgh Skyline',
+            city: 'Pittsburgh',
+            country: 'USA',
+            category: 'Buildings',
+            tags: ['skyscrapers', 'industrial', 'modern'],
+            svgFilename: 'pittsburg.svg',
+            description: 'Pittsburgh\'s skyline is characterized by its distinctive bridges and steel industry heritage. The city\'s three rivers and rolling hills create a unique urban landscape that has evolved from industrial powerhouse to modern innovation hub.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '17',
+            name: 'Trieste Harbor',
+            city: 'Trieste',
+            country: 'Italy',
+            category: 'Culture',
+            tags: ['harbor', 'maritime', 'historic'],
+            svgFilename: 'triest.svg',
+            description: 'Trieste is a historic port city on the Adriatic Sea, known for its rich maritime heritage and multicultural history. The city\'s elegant architecture reflects its past as a major trading hub between Central Europe and the Mediterranean.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '18',
+            name: 'Leipzig Historic Center',
+            city: 'Leipzig',
+            country: 'Germany',
+            category: 'Culture',
+            tags: ['historic', 'music', 'architecture'],
+            svgFilename: 'liepzig.svg',
+            description: 'Leipzig is a city with a rich cultural heritage, known for its music tradition and historic architecture. The city has been a center of trade, education, and culture for centuries, with beautiful Renaissance and Baroque buildings.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
         ];
 
         // Fetch SVG content for each icon
@@ -235,7 +295,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Random Icons Header */}
-      <div className="flex justify-center items-center gap-8 py-8">
+      <div className="flex justify-center items-center gap-8 py-16">
         {icons
           .sort(() => Math.random() - 0.5)
           .slice(0, 3)
