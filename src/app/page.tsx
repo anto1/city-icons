@@ -6,6 +6,21 @@ import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
 import { Icon } from '@/types';
 
+// Function to fetch SVG content from file
+const fetchSvgContent = async (filename: string): Promise<string> => {
+  try {
+    const response = await fetch(`/icons/${filename}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch SVG: ${response.statusText}`);
+    }
+    return await response.text();
+  } catch (error) {
+    console.error('Error fetching SVG:', error);
+    // Fallback to a simple placeholder
+    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>';
+  }
+};
+
 export default function Home() {
   const [icons, setIcons] = useState<Icon[]>([]);
   const [filteredIcons, setFilteredIcons] = useState<Icon[]>([]);
@@ -19,8 +34,9 @@ export default function Home() {
       try {
         console.log('📥 Starting to fetch icons...');
         setLoading(true);
-        // Use sample data instead of Sanity
-        const sampleIcons: Icon[] = [
+        
+        // Define icon data
+        const iconData = [
           {
             _id: '1',
             name: 'New York Skyline',
@@ -29,7 +45,6 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['skyscraper', 'city', 'urban'],
             svgFilename: 'new-york.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'Iconic New York City skyline',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -42,7 +57,6 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['bridge', 'river', 'historic'],
             svgFilename: 'london.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'Famous London Bridge over the Thames',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -55,7 +69,6 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['tower', 'romance', 'architecture'],
             svgFilename: 'paris.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'The iconic Eiffel Tower',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -68,7 +81,6 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['gate', 'historic', 'neoclassical'],
             svgFilename: 'berlin.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'Historic Brandenburg Gate landmark',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -81,7 +93,6 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['tower', 'observation', 'modern'],
             svgFilename: 'kuopio.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'Tall observation tower in Kuopio',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -94,7 +105,6 @@ export default function Home() {
             category: 'Buildings',
             tags: ['modern', 'architecture', 'abstract'],
             svgFilename: 'valencia.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'Modern architectural buildings in Valencia',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -107,7 +117,6 @@ export default function Home() {
             category: 'Culture',
             tags: ['mermaid', 'mythology', 'symbol'],
             svgFilename: 'warsaw.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'Warsaw mermaid with sword and shield',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -120,7 +129,6 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['cathedral', 'gothic', 'historic'],
             svgFilename: 'vienna.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'St. Stephen\'s Cathedral in Vienna',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
@@ -133,15 +141,26 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['castle', 'fortress', 'medieval'],
             svgFilename: 'limassol.svg',
-            svgContent: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>',
             description: 'Medieval castle fortress in Limassol',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
         ];
-        console.log('✅ Sample icons loaded:', sampleIcons.length);
-        setIcons(sampleIcons);
-        setFilteredIcons(sampleIcons);
+
+        // Fetch SVG content for each icon
+        const iconsWithSvg = await Promise.all(
+          iconData.map(async (icon) => {
+            const svgContent = await fetchSvgContent(icon.svgFilename);
+            return {
+              ...icon,
+              svgContent
+            };
+          })
+        );
+
+        console.log('✅ Sample icons loaded:', iconsWithSvg.length);
+        setIcons(iconsWithSvg);
+        setFilteredIcons(iconsWithSvg);
       } catch (error) {
         console.error('❌ Error loading icons:', error);
       } finally {
