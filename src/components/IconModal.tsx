@@ -58,10 +58,6 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
-              <span className="font-medium text-muted-foreground">City:</span>
-              <p className="text-foreground">{icon?.city}</p>
-            </div>
-            <div>
               <span className="font-medium text-muted-foreground">Country:</span>
               <p className="text-foreground">{icon?.country}</p>
             </div>
