@@ -47,16 +47,7 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <div
-              className="w-6 h-6 text-primary flex items-center justify-center"
-              dangerouslySetInnerHTML={{ 
-                __html: icon?.svgContent
-                  ?.replace(/width="[^"]*"/, 'width="24"')
-                  .replace(/height="[^"]*"/, 'height="24"')
-                  .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"') || '' 
-              }}
-            />
+          <DialogTitle>
             {icon?.name}
           </DialogTitle>
           <DialogDescription>
