@@ -38,11 +38,7 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
       {icons.map((icon) => (
-        <Card
-          key={icon._id}
-          className="group aspect-square hover:shadow-lg transition-all duration-200 cursor-pointer border-2 hover:border-primary/50"
-          onClick={() => onIconClick(icon)}
-        >
+        <Card key={icon._id} className="group cursor-pointer transition-colors duration-200 hover:bg-[#f7f7f7]" onClick={() => onIconClick(icon)}>
           <CardContent className="p-4 flex flex-col items-center justify-center h-full">
             <div className="w-full h-full flex items-center justify-center mb-2">
               <div
