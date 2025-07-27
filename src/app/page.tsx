@@ -182,9 +182,12 @@ export default function Home() {
           })
         );
 
-        console.log('✅ Sample icons loaded:', iconsWithSvg.length);
-        setIcons(iconsWithSvg);
-        setFilteredIcons(iconsWithSvg);
+        // Sort icons alphabetically by city name
+        const sortedIcons = iconsWithSvg.sort((a, b) => a.city.localeCompare(b.city));
+
+        console.log('✅ Sample icons loaded:', sortedIcons.length);
+        setIcons(sortedIcons);
+        setFilteredIcons(sortedIcons);
       } catch (error) {
         console.error('❌ Error loading icons:', error);
       } finally {
