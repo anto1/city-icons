@@ -46,8 +46,10 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
           <CardContent className="p-4 flex flex-col items-center justify-center h-full">
             <div className="w-full h-full flex items-center justify-center mb-2">
               <div
-                className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-200 [&>svg]:fill-current [&>svg]:stroke-current [&>svg]:stroke-2"
-                dangerouslySetInnerHTML={{ __html: icon.svgContent }}
+                className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center"
+                dangerouslySetInnerHTML={{ 
+                  __html: icon.svgContent.replace(/width="[^"]*"/, 'width="48"').replace(/height="[^"]*"/, 'height="48"')
+                }}
               />
             </div>
             <div className="text-center w-full">

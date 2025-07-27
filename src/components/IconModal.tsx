@@ -49,8 +49,10 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <div
-              className="w-6 h-6 text-primary"
-              dangerouslySetInnerHTML={{ __html: icon?.svgContent || '' }}
+              className="w-6 h-6 text-primary flex items-center justify-center"
+              dangerouslySetInnerHTML={{ 
+                __html: icon?.svgContent?.replace(/width="[^"]*"/, 'width="24"').replace(/height="[^"]*"/, 'height="24"') || '' 
+              }}
             />
             {icon?.name}
           </DialogTitle>
@@ -90,8 +92,10 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
           
           <div className="flex justify-center p-4 bg-muted rounded-lg">
             <div
-              className="w-24 h-24 text-primary"
-              dangerouslySetInnerHTML={{ __html: icon?.svgContent || '' }}
+              className="w-24 h-24 text-primary flex items-center justify-center"
+              dangerouslySetInnerHTML={{ 
+                __html: icon?.svgContent?.replace(/width="[^"]*"/, 'width="96"').replace(/height="[^"]*"/, 'height="96"') || '' 
+              }}
             />
           </div>
         </div>
