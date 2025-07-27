@@ -112,7 +112,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
                     </Link>
                     <span className="text-sm text-muted-foreground">•</span>
                     <a
-                      href="https://github.com/anto2s/city-icons"
+                      href="https://github.com/anto1/city-icons"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"

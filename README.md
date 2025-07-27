@@ -59,7 +59,7 @@ Commercial licensing ensures you get:
 
 ```bash
 # Clone the repository
-git clone https://github.com/anto2s/city-icons.git
+git clone https://github.com/anto1/city-icons.git
 
 # Install dependencies
 npm install
