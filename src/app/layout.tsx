@@ -24,9 +24,10 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon.ico' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon-180px.svg' },
+      { url: '/apple-icon.png' },
     ],
   },
   openGraph: {
