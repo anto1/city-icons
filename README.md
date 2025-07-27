@@ -4,11 +4,11 @@ A beautiful collection of line art SVG icons representing cities around the worl
 
 ## 🌍 Live Demo
 
-Visit the live site: [City Icons Collection](https://city-icons-hj35f86hp-anto2s-projects.vercel.app)
+Visit the live site: [City Icons Collection](https://cities.partdirector.ch)
 
 ## 🎨 Features
 
-- **47 City Icons** - Beautiful line art representations
+- **43 City Icons** - Beautiful line art representations
 - **Search Functionality** - Find cities quickly
 - **Download SVGs** - Get icons for your projects
 - **Copy SVG Code** - Easy integration

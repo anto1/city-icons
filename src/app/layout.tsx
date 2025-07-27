@@ -6,7 +6,7 @@ import { FathomAnalytics } from './fathom';
 
 export const metadata: Metadata = {
   title: 'City Icons Collection',
-  description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 47 cities with search, download, and copy functionality.',
+  description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43 cities with search, download, and copy functionality.',
   keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector'],
   authors: [{ name: 'Studio Partdirector' }],
   creator: 'Studio Partdirector',
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://city-icons-8ralcdesq-anto2s-projects.vercel.app'),
+  metadataBase: new URL('https://cities.partdirector.ch'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'City Icons Collection',
-    description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 47 cities with search, download, and copy functionality.',
-    url: 'https://city-icons-8ralcdesq-anto2s-projects.vercel.app',
+    description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43 cities with search, download, and copy functionality.',
+    url: 'https://cities.partdirector.ch',
     siteName: 'City Icons Collection',
     images: [
       {
