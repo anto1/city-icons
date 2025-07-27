@@ -694,5 +694,29 @@
     "description": "Athens is the capital and largest city of Greece, known for its iconic Acropolis with the Parthenon, ancient Greek heritage, and classical architecture. The city combines ancient history with modern Greek culture, featuring the historic Plaka neighborhood and vibrant Mediterranean lifestyle.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "64",
+    "name": "Cape Town Table Mountain",
+    "city": "Cape Town",
+    "country": "South Africa",
+    "category": "Landmarks",
+    "tags": ["mountain", "table mountain", "natural"],
+    "svgFilename": "za-cape-town.svg",
+    "description": "Cape Town is the legislative capital of South Africa, known for its iconic Table Mountain, stunning coastline, and rich cultural diversity. The city combines natural beauty with modern development, featuring the historic Robben Island, vibrant V&A Waterfront, and the beautiful Cape of Good Hope.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "65",
+    "name": "Kyoto Temple",
+    "city": "Kyoto",
+    "country": "Japan",
+    "category": "Landmarks",
+    "tags": ["temple", "traditional", "historic"],
+    "svgFilename": "jp-kyoto.svg",
+    "description": "Kyoto is the former imperial capital of Japan, known for its traditional temples, beautiful gardens, and rich cultural heritage. The city combines ancient Japanese traditions with modern life, featuring the iconic Fushimi Inari Shrine, Kinkaku-ji (Golden Pavilion), and the historic Gion district.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 

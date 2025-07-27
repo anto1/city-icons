@@ -132,7 +132,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
       <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground mb-2">
-            ©{' '}
+            {icons.length} icons ©{' '}
             <a
               href="https://partdirector.ch"
               target="_blank"
@@ -142,7 +142,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
             >
               Studio Partdirector
             </a>
-            , 2025 • {icons.length} icons
+            , 2025
           </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a
