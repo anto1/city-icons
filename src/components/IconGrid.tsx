@@ -102,7 +102,7 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
           style={{ 
             aspectRatio: '1 / 1',
             transform: `scale(${getScale(index)})`,
-            zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 100) : 10
+            zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1
           }} 
           onClick={() => onIconClick(icon)}
         >

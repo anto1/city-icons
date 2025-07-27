@@ -44,7 +44,7 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md p-8">
+      <DialogContent className="sm:max-w-md p-8 z-[9999]">
         <DialogHeader className="space-y-4">
           <DialogTitle className="text-xl">
             {icon?.name}
@@ -61,8 +61,8 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
               dangerouslySetInnerHTML={{ 
                 __html: icon?.svgContent
                   ?.replace(/width="[^"]*"/, 'width="96"')
-                  .replace(/height="[^"]*"/, 'height="96"')
-                  .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"') || '' 
+                  ?.replace(/height="[^"]*"/, 'height="96"')
+                  ?.replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"') || '' 
               }}
             />
           </div>
