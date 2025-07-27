@@ -288,6 +288,18 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "48",
+    "name": "Milan Cathedral",
+    "city": "Milan",
+    "country": "Italy",
+    "category": "Landmarks",
+    "tags": ["cathedral", "gothic", "historic"],
+    "svgFilename": "milan.svg",
+    "description": "Milan is the capital of Lombardy and Italy's second-largest city, known for its fashion industry, the magnificent Duomo di Milano, and the historic La Scala opera house. The city combines rich cultural heritage with modern Italian design and innovation.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "41",
     "name": "Nuremberg Castle",
     "city": "Nuremberg",
