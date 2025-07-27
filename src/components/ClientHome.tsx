@@ -50,7 +50,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     <div className="min-h-screen bg-background">
                     {/* Random Icons Header */}
               <div className="flex justify-center items-center gap-8 py-16">
-                {icons
+                {[...icons]
                   .sort(() => Math.random() - 0.5)
                   .slice(0, 3)
                   .map((icon) => (
