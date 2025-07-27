@@ -236,7 +236,7 @@ export default function Home() {
             category: 'Landmarks',
             tags: ['tower', 'modern', 'iconic'],
             svgFilename: 'toronto.svg',
-            description: 'Toronto is the capital of Ontario and Canada\'s largest city, known for its iconic CN Tower, diverse multicultural population, and vibrant arts scene. The city combines modern urban development with natural beauty along Lake Ontario.',
+            description: 'Toronto is the capital of Ontario and Canada\'s largest city, known for its iconic CN Tower - the tallest freestanding structure in the Western Hemisphere. The city combines modern urban development with natural beauty along Lake Ontario, featuring a diverse multicultural population and vibrant arts scene.',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
@@ -344,7 +344,7 @@ export default function Home() {
             category: 'Culture',
             tags: ['historic', 'riverside', 'traditional'],
             svgFilename: 'uralsk.svg',
-            description: 'Uralsk is a historic city in western Kazakhstan, located on the Ural River. Known for its traditional Kazakh architecture, historic mosques, and the beautiful riverfront, the city preserves its rich cultural heritage while embracing modern development.',
+            description: 'Uralsk is a historic city in western Kazakhstan, located on the Ural River. Known for its traditional Kazakh culture, horse breeding heritage, and beautiful riverfront, the city preserves its rich nomadic traditions while embracing modern development. The horse symbolizes the region\'s deep connection to Central Asian nomadic culture.',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
@@ -511,7 +511,7 @@ export default function Home() {
       <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground">
-            © Studio Partdirector, 2025 • {filteredIcons.length} icons
+            © Studio Partdirector, 2025 • {icons.length} icons
           </p>
         </div>
       </footer>
