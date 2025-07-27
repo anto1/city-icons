@@ -586,5 +586,41 @@
     "description": "Lyon is France's third-largest city and a UNESCO World Heritage site, known for its historic architecture, the iconic lion from the city's emblem, and rich cultural heritage. The city combines Roman history with Renaissance architecture and is famous for its gastronomy and silk industry.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "55",
+    "name": "Doha Dhow Boat",
+    "city": "Doha",
+    "country": "Qatar",
+    "category": "Culture",
+    "tags": ["boat", "dhow", "traditional"],
+    "svgFilename": "qa-doha.svg",
+    "description": "Doha is the capital and largest city of Qatar, known for its traditional dhow boats, modern skyline, and rich cultural heritage. The city combines traditional pearl diving and fishing traditions with contemporary development, featuring the iconic Museum of Islamic Art and vibrant souqs.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "56",
+    "name": "Amman Roman Columns",
+    "city": "Amman",
+    "country": "Jordan",
+    "category": "Landmarks",
+    "tags": ["columns", "roman", "historic"],
+    "svgFilename": "jo-amman.svg",
+    "description": "Amman is the capital and largest city of Jordan, known for its ancient Roman ruins including the impressive columns of the Temple of Hercules on the Citadel. The city combines rich historical heritage with modern development, featuring the ancient Roman Theater and the historic Amman Citadel.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "57",
+    "name": "Tehran Azadi Tower",
+    "city": "Tehran",
+    "country": "Iran",
+    "category": "Landmarks",
+    "tags": ["tower", "modern", "iconic"],
+    "svgFilename": "ir-tehran.svg",
+    "description": "Tehran is the capital and largest city of Iran, known for its iconic Azadi Tower - a symbol of the city and Iranian architecture. The city combines ancient Persian heritage with modern urban development, featuring the historic Golestan Palace and the vibrant Grand Bazaar.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
