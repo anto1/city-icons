@@ -6,7 +6,48 @@ A beautiful collection of line art SVG icons representing cities around the worl
 
 Visit the live site: [City Icons Collection](https://cities.partdirector.ch)
 
+## 📁 Icon Naming Convention
 
+All icons follow a consistent naming pattern: `countryprefix-cityname.svg`
+
+**Examples:**
+- `de-berlin.svg` - Berlin, Germany
+- `fr-paris.svg` - Paris, France
+- `us-new-york.svg` - New York, USA
+- `es-barcelona.svg` - Barcelona, Spain
+- `gb-london.svg` - London, UK
+
+**Country Prefixes:**
+- `de` - Germany
+- `fr` - France
+- `us` - United States
+- `es` - Spain
+- `gb` - United Kingdom
+- `it` - Italy
+- `ca` - Canada
+- `au` - Australia
+- `kr` - South Korea
+- `se` - Sweden
+- `dk` - Denmark
+- `pl` - Poland
+- `at` - Austria
+- `cy` - Cyprus
+- `fi` - Finland
+- `ge` - Georgia
+- `pt` - Portugal
+- `il` - Israel
+- `md` - Moldova
+- `kz` - Kazakhstan
+- `am` - Armenia
+- `rs` - Serbia
+- `be` - Belgium
+- `eg` - Egypt
+- `ar` - Argentina
+- `id` - Indonesia
+- `bd` - Bangladesh
+- `lv` - Latvia
+- `cz` - Czech Republic
+- `nl` - Netherlands
 
 ## 📋 Usage & Licensing
 
