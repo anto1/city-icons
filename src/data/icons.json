@@ -622,5 +622,29 @@
     "description": "Tehran is the capital and largest city of Iran, known for its iconic Azadi Tower - a symbol of the city and Iranian architecture. The city combines ancient Persian heritage with modern urban development, featuring the historic Golestan Palace and the vibrant Grand Bazaar.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "58",
+    "name": "Beirut Mosque",
+    "city": "Beirut",
+    "country": "Lebanon",
+    "category": "Landmarks",
+    "tags": ["mosque", "religious", "historic"],
+    "svgFilename": "lb-beirut.svg",
+    "description": "Beirut is the capital and largest city of Lebanon, known for its historic mosques, Mediterranean coastline, and rich cultural heritage. The city combines ancient Phoenician history with modern Arab culture, featuring beautiful religious architecture and vibrant street life.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "59",
+    "name": "Santiago Chilean Hat",
+    "city": "Santiago",
+    "country": "Chile",
+    "category": "Culture",
+    "tags": ["hat", "traditional", "chilean"],
+    "svgFilename": "cl-santiago.svg",
+    "description": "Santiago is the capital and largest city of Chile, known for its traditional Chilean culture including the iconic chupalla hat, Andean heritage, and vibrant urban life. The city combines colonial Spanish architecture with modern development, nestled between the Andes Mountains and the Pacific coast.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
