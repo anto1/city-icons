@@ -48,7 +48,10 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
               <div
                 className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center"
                 dangerouslySetInnerHTML={{ 
-                  __html: icon.svgContent.replace(/width="[^"]*"/, 'width="48"').replace(/height="[^"]*"/, 'height="48"')
+                  __html: icon.svgContent
+                    .replace(/width="[^"]*"/, 'width="48"')
+                    .replace(/height="[^"]*"/, 'height="48"')
+                    .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
                 }}
               />
             </div>

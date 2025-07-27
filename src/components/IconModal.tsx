@@ -51,7 +51,10 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
             <div
               className="w-6 h-6 text-primary flex items-center justify-center"
               dangerouslySetInnerHTML={{ 
-                __html: icon?.svgContent?.replace(/width="[^"]*"/, 'width="24"').replace(/height="[^"]*"/, 'height="24"') || '' 
+                __html: icon?.svgContent
+                  ?.replace(/width="[^"]*"/, 'width="24"')
+                  .replace(/height="[^"]*"/, 'height="24"')
+                  .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"') || '' 
               }}
             />
             {icon?.name}
@@ -94,7 +97,10 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
             <div
               className="w-24 h-24 text-primary flex items-center justify-center"
               dangerouslySetInnerHTML={{ 
-                __html: icon?.svgContent?.replace(/width="[^"]*"/, 'width="96"').replace(/height="[^"]*"/, 'height="96"') || '' 
+                __html: icon?.svgContent
+                  ?.replace(/width="[^"]*"/, 'width="96"')
+                  .replace(/height="[^"]*"/, 'height="96"')
+                  .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"') || '' 
               }}
             />
           </div>
