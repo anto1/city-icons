@@ -87,7 +87,6 @@ src/
 ├── types/             # TypeScript types
 │   └── index.ts       # Type definitions
 └── lib/               # Utilities
-    └── sanity.ts      # Sanity CMS integration
 ```
 
 ### Environment Variables

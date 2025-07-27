@@ -29,16 +29,4 @@ export interface IconGridProps {
   loading?: boolean;
 }
 
-export interface SanityIcon {
-  _id: string;
-  name: string;
-  city: string;
-  country: string;
-  category: string;
-  tags: string[];
-  svgFilename: string;
-  svgContent: string;
-  description?: string;
-  _createdAt: string;
-  _updatedAt: string;
-} 
+ 
