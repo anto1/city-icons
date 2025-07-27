@@ -78,7 +78,7 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
     );
     
     // Maximum distance for effect (adjust for desired range)
-    const maxDistance = Math.min(cardWidth, cardHeight) * 1.5;
+    const maxDistance = Math.min(cardWidth, cardHeight) * 0.8;
     
     // Calculate scale based on proximity (closer = larger scale)
     if (distance <= maxDistance) {
