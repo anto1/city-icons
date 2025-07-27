@@ -17,38 +17,6 @@ All icons follow a consistent naming pattern: `countryprefix-cityname.svg`
 - `es-barcelona.svg` - Barcelona, Spain
 - `gb-london.svg` - London, UK
 
-**Country Prefixes:**
-- `de` - Germany
-- `fr` - France
-- `us` - United States
-- `es` - Spain
-- `gb` - United Kingdom
-- `it` - Italy
-- `ca` - Canada
-- `au` - Australia
-- `kr` - South Korea
-- `se` - Sweden
-- `dk` - Denmark
-- `pl` - Poland
-- `at` - Austria
-- `cy` - Cyprus
-- `fi` - Finland
-- `ge` - Georgia
-- `pt` - Portugal
-- `il` - Israel
-- `md` - Moldova
-- `kz` - Kazakhstan
-- `am` - Armenia
-- `rs` - Serbia
-- `be` - Belgium
-- `eg` - Egypt
-- `ar` - Argentina
-- `id` - Indonesia
-- `bd` - Bangladesh
-- `lv` - Latvia
-- `cz` - Czech Republic
-- `nl` - Netherlands
-
 ## 📋 Usage & Licensing
 
 ### Free Personal Use
