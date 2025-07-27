@@ -74,7 +74,16 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
             {icons.length} City Icons
           </h1>
           <p className="text-lg text-muted-foreground">
-            Beautiful line art icons representing cities around the world by Studio Partdirector
+            Beautiful line art icons representing cities around the world by{' '}
+            <a
+              href="https://partdirector.ch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary transition-colors underline"
+              onClick={() => trackEvent('STUDIO_PARTDIRECTOR_CLICKED')}
+            >
+              Studio Partdirector
+            </a>
           </p>
         </div>
         <SearchBar onSearch={handleSearch} />
@@ -92,7 +101,17 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
       <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground mb-2">
-            © Studio Partdirector, 2025 • {icons.length} icons
+            ©{' '}
+            <a
+              href="https://partdirector.ch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary transition-colors underline"
+              onClick={() => trackEvent('STUDIO_PARTDIRECTOR_FOOTER_CLICKED')}
+            >
+              Studio Partdirector
+            </a>
+            , 2025 • {icons.length} icons
           </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a
