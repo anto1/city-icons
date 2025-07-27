@@ -120,3 +120,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom hover effect for SVG icons */
+.group:hover .w-14 {
+  color: var(--hover-color) !important;
+}

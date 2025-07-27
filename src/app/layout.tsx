@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from 'sonner';
+import { GeistSans } from 'geist/font/sans';
 
 export const metadata: Metadata = {
-  title: "City Icons Collection - SVG Line Art Icons",
-  description: "Discover beautiful line art icons representing cities around the world. Search, preview, and download SVG icons for your projects.",
+  title: 'City Icons Collection',
+  description: 'Discover beautiful line art icons representing cities around the world.',
 };
 
 export default function RootLayout({
@@ -13,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased text-base">
+    <html lang="en" className={GeistSans.className}>
+      <body className="antialiased text-base tracking-tight">
         {children}
         <Toaster />
       </body>

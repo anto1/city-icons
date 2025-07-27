@@ -266,7 +266,7 @@ export default function Home() {
       return;
     }
 
-    // Client-side filtering
+    // Client-side filtering with alphabetical order maintained
     const filtered = icons.filter(icon =>
       icon.name.toLowerCase().includes(query.toLowerCase()) ||
       icon.city.toLowerCase().includes(query.toLowerCase()) ||
