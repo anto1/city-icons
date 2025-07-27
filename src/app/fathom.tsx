@@ -10,10 +10,14 @@ function TrackPageView() {
 
   useEffect(() => {
     const fathomId = process.env.NEXT_PUBLIC_FATHOM_ID;
+    console.log('Fathom ID:', fathomId); // Debug log
     if (fathomId) {
       load(fathomId, {
         auto: false
       });
+      console.log('Fathom loaded with ID:', fathomId); // Debug log
+    } else {
+      console.error('Fathom ID not found in environment variables');
     }
   }, []);
 

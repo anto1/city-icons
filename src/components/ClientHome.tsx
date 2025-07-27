@@ -7,6 +7,7 @@ import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
+import { Github } from 'lucide-react';
 
 interface ClientHomeProps {
   initialIcons: Icon[];
@@ -93,23 +94,34 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
           <p className="text-sm text-foreground mb-2">
             © Studio Partdirector, 2025 • {icons.length} icons
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                      <a 
-            href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-            onClick={() => trackEvent('MISSING_CITY_CLICKED')}
-          >
-            Missing your city?
-          </a>
-            <span className="text-sm text-muted-foreground">•</span>
-            <Link 
-              href="/license"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-              onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
-            >
-              Usage & Licensing
-            </Link>
-          </div>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a
+                      href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+                      onClick={() => trackEvent('MISSING_CITY_CLICKED')}
+                    >
+                      Missing your city?
+                    </a>
+                    <span className="text-sm text-muted-foreground">•</span>
+                    <Link
+                      href="/license"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+                      onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
+                    >
+                      Usage & Licensing
+                    </Link>
+                    <span className="text-sm text-muted-foreground">•</span>
+                    <a
+                      href="https://github.com/anto2s/city-icons"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center"
+                      onClick={() => trackEvent('GITHUB_LINK_CLICKED')}
+                    >
+                      <Github className="w-4 h-4 mr-1" />
+                      GitHub
+                    </a>
+                  </div>
         </div>
       </footer>
 
