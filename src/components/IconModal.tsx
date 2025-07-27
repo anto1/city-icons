@@ -43,10 +43,16 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
       // Track copy event with city data
       trackEvent(`ICON_COPY_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
       
-      toast.success('SVG copied to clipboard!');
+      toast.success('SVG copied to clipboard!', {
+        description: `${icon.city} icon is ready to paste`,
+        duration: 3000,
+      });
     } catch (err) {
       console.error('Failed to copy SVG:', err);
-      toast.error('Failed to copy SVG');
+      toast.error('Failed to copy SVG', {
+        description: 'Please try again or use the download option',
+        duration: 4000,
+      });
     }
   };
 

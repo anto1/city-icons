@@ -21,6 +21,7 @@ export interface IconModalProps {
 export interface SearchBarProps {
   onSearch: (query: string) => void;
   placeholder?: string;
+  allIcons?: Icon[];
 }
 
 export interface IconGridProps {

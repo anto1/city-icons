@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import SearchBar from '@/components/SearchBar';
 import IconGrid from '@/components/IconGrid';
@@ -17,6 +17,28 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
   const [filteredIcons, setFilteredIcons] = useState<Icon[]>(initialIcons);
   const [selectedIcon, setSelectedIcon] = useState<Icon | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Escape to close modal
+      if (e.key === 'Escape' && modalOpen) {
+        handleCloseModal();
+      }
+      
+      // Ctrl/Cmd + K to focus search
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.querySelector('input[type="text"]') as HTMLInputElement;
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [modalOpen]);
 
   const handleSearch = (query: string) => {
     if (!query.trim()) {
@@ -86,7 +108,16 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
             </a>
           </p>
         </div>
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar onSearch={handleSearch} allIcons={icons} />
+        
+        {/* Search Results Count */}
+        {filteredIcons.length !== icons.length && (
+          <div className="text-center mt-4">
+            <p className="text-sm text-muted-foreground">
+              Found {filteredIcons.length} of {icons.length} icons
+            </p>
+          </div>
+        )}
         
         <div className="mt-12">
           <IconGrid 

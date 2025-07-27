@@ -6,8 +6,8 @@ import { FathomAnalytics } from './fathom';
 
 export const metadata: Metadata = {
   title: 'City Icons Collection',
-  description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43 cities with search, download, and copy functionality.',
-  keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector'],
+  description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43+ cities with search, download, and copy functionality. Free SVG icons for designers and developers.',
+  keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector', 'free icons', 'urban design'],
   authors: [{ name: 'Studio Partdirector' }],
   creator: 'Studio Partdirector',
   publisher: 'Studio Partdirector',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: 'City Icons Collection',
-    description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43 cities with search, download, and copy functionality.',
+    description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43+ cities with search, download, and copy functionality.',
     url: 'https://cities.partdirector.ch',
     siteName: 'City Icons Collection',
     images: [

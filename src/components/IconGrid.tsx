@@ -4,6 +4,22 @@ import { useState, useRef, useEffect } from 'react';
 import { IconGridProps } from '@/types';
 import { trackEvent } from 'fathom-client';
 
+// Skeleton component for loading state
+function IconSkeleton() {
+  return (
+    <div className="group cursor-pointer transition-all duration-500 ease-out p-4 rounded-[48px] flex flex-col items-center justify-center animate-pulse" 
+         style={{ aspectRatio: '1 / 1' }}>
+      <div className="flex flex-col items-center justify-center flex-1">
+        <div className="w-14 h-14 bg-muted rounded-lg mb-4"></div>
+        <div className="text-center w-full">
+          <div className="h-5 bg-muted rounded mb-1"></div>
+          <div className="h-4 bg-muted rounded w-3/4 mx-auto"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function IconGrid({ icons, loading, onIconClick }: IconGridProps) {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -41,16 +57,22 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center py-12">
-        <div className="text-lg text-muted-foreground">Loading icons...</div>
+      <div 
+        ref={gridRef}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative"
+      >
+        {Array.from({ length: 12 }).map((_, index) => (
+          <IconSkeleton key={index} />
+        ))}
       </div>
     );
   }
 
   if (icons.length === 0) {
     return (
-      <div className="flex justify-center items-center py-12">
-        <div className="text-lg text-muted-foreground">No icons found</div>
+      <div className="flex flex-col justify-center items-center py-12">
+        <div className="text-lg text-muted-foreground mb-2">No icons found</div>
+        <div className="text-sm text-muted-foreground">Try adjusting your search terms</div>
       </div>
     );
   }
