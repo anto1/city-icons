@@ -39,9 +39,9 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
       {icons.map((icon) => (
         <div key={icon._id} className="group cursor-pointer transition-colors duration-200 hover:bg-[#f7f7f7] p-4 flex flex-col items-center justify-center aspect-square rounded-[48px]" onClick={() => onIconClick(icon)}>
-          <div className="w-full h-full flex items-center justify-center mb-2">
+          <div className="flex flex-col items-center justify-center h-full">
             <div
-              className="w-14 h-14 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center"
+              className="w-14 h-14 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center mb-4"
               dangerouslySetInnerHTML={{
                 __html: icon.svgContent
                   .replace(/width="[^"]*"/, 'width="56"')
@@ -49,10 +49,10 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
                   .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
               }}
             />
-          </div>
-          <div className="text-center w-full">
-            <p className="text-base font-medium text-foreground truncate w-full mb-1">{icon.city}</p>
-            <p className="text-base text-muted-foreground truncate w-full">{icon.country}</p>
+            <div className="text-center w-full">
+              <p className="text-base font-medium text-foreground truncate w-full mb-1">{icon.city}</p>
+              <p className="text-sm text-muted-foreground truncate w-full">{icon.country}</p>
+            </div>
           </div>
         </div>
       ))}
