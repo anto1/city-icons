@@ -44,18 +44,18 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>
+      <DialogContent className="sm:max-w-md p-8">
+        <DialogHeader className="space-y-4">
+          <DialogTitle className="text-xl">
             {icon?.name}
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-base leading-relaxed">
             {icon?.description || `Icon representing ${icon?.city}, ${icon?.country}`}
           </DialogDescription>
         </DialogHeader>
         
-        <div className="space-y-4">
-          <div className="flex justify-center p-4 bg-muted rounded-lg">
+        <div className="space-y-6 py-4">
+          <div className="flex justify-center p-8 bg-muted rounded-lg">
             <div
               className="w-24 h-24 text-primary flex items-center justify-center"
               dangerouslySetInnerHTML={{ 
@@ -68,12 +68,12 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
           </div>
         </div>
         
-        <DialogFooter className="flex gap-2">
-          <Button onClick={downloadSVG} className="flex-1">
+        <DialogFooter className="flex gap-4 pt-4">
+          <Button onClick={downloadSVG} className="flex-1 py-3">
             <Download className="w-4 h-4 mr-2" />
             Download SVG
           </Button>
-          <Button onClick={copySVG} variant="outline" className="flex-1">
+          <Button onClick={copySVG} variant="outline" className="flex-1 py-3">
             <Copy className="w-4 h-4 mr-2" />
             Copy SVG
           </Button>

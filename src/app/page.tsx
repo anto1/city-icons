@@ -337,7 +337,7 @@ export default function Home() {
       <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground">
-            © Studio Partdirector, 2025
+            © Studio Partdirector, 2025 • {filteredIcons.length} icons
           </p>
         </div>
       </footer>
