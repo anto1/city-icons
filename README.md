@@ -6,23 +6,7 @@ A beautiful collection of line art SVG icons representing cities around the worl
 
 Visit the live site: [City Icons Collection](https://cities.partdirector.ch)
 
-## 🎨 Features
 
-- **43 City Icons** - Beautiful line art representations
-- **Search Functionality** - Find cities quickly
-- **Download SVGs** - Get icons for your projects
-- **Copy SVG Code** - Easy integration
-- **Responsive Design** - Works on all devices
-- **Privacy-First Analytics** - Fathom Analytics integration
-
-## 🚀 Tech Stack
-
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Utility-first styling
-- **shadcn/ui** - Modern UI components
-- **Fathom Analytics** - Privacy-focused analytics
-- **Vercel** - Deployment platform
 
 ## 📋 Usage & Licensing
 
@@ -89,13 +73,7 @@ src/
 └── lib/               # Utilities
 ```
 
-### Environment Variables
 
-Create a `.env.local` file:
-
-```env
-NEXT_PUBLIC_FATHOM_ID=your_fathom_id
-```
 
 ## 📊 Analytics
 
@@ -106,12 +84,7 @@ This project uses [Fathom Analytics](https://usefathom.com/) for privacy-focused
 - **Minimal performance impact**
 - **City-specific event tracking**
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
 
 ## 📄 License
 
