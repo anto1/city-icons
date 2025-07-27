@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import SearchBar from '@/components/SearchBar';
 import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
@@ -90,12 +91,21 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
           <p className="text-sm text-foreground mb-2">
             © Studio Partdirector, 2025 • {icons.length} icons
           </p>
-          <a 
-            href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-          >
-            Missing your city?
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a 
+              href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+            >
+              Missing your city?
+            </a>
+            <span className="text-sm text-muted-foreground">•</span>
+            <Link 
+              href="/license"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+            >
+              Usage & Licensing
+            </Link>
+          </div>
         </div>
       </footer>
 
