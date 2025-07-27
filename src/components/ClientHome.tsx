@@ -87,9 +87,15 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
       {/* Footer */}
       <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-foreground">
+          <p className="text-sm text-foreground mb-2">
             © Studio Partdirector, 2025 • {icons.length} icons
           </p>
+          <a 
+            href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
+          >
+            Missing your city?
+          </a>
         </div>
       </footer>
 
