@@ -29,13 +29,12 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    console.log('🚀 Home component mounted');
     const fetchIcons = async () => {
       try {
         console.log('📥 Starting to fetch icons...');
         setLoading(true);
         
-        // Define icon data
+        // Define icon data - already in alphabetical order
         const iconData = [
           {
             _id: '15',
@@ -327,6 +326,9 @@ export default function Home() {
           },
         ];
 
+        console.log('📋 Original iconData order:', iconData.map(icon => icon.city));
+        console.log('🔄 Starting to fetch SVG content...');
+
         // Fetch SVG content for each icon
         const iconsWithSvg = await Promise.all(
           iconData.map(async (icon) => {
@@ -338,17 +340,15 @@ export default function Home() {
           })
         );
 
-        console.log('📋 Original iconData order:', iconData.map(icon => icon.city));
         console.log('🔄 Icons with SVG loaded:', iconsWithSvg.length);
 
-        // Sort icons alphabetically by city name with explicit localeCompare
+        // Ensure perfect alphabetical order - the data is already sorted, but double-check
         const sortedIcons = [...iconsWithSvg].sort((a, b) => {
           const result = a.city.localeCompare(b.city, 'en', { sensitivity: 'base' });
-          console.log(`🔤 Comparing "${a.city}" vs "${b.city}" = ${result}`);
           return result;
         });
         
-        console.log('✅ Sorted icons order:', sortedIcons.map(icon => icon.city));
+        console.log('✅ Final sorted icons order:', sortedIcons.map(icon => icon.city));
         console.log('✅ Sample icons loaded:', sortedIcons.length);
         
         setIcons(sortedIcons);
@@ -412,7 +412,6 @@ export default function Home() {
       {/* Random Icons Header */}
       <div className="flex justify-center items-center gap-8 py-16">
         {icons
-          .sort(() => Math.random() - 0.5)
           .slice(0, 3)
           .map((icon) => (
           <div
