@@ -22,7 +22,7 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
       {icons.map((icon) => (
-        <div key={icon._id} className="group cursor-pointer transition-all duration-200 hover:border-2 hover:border-gray-300 p-4 rounded-[48px] flex flex-col items-center justify-center" style={{ aspectRatio: '1 / 1' }} onClick={() => onIconClick(icon)}>
+        <div key={icon._id} className="group cursor-pointer transition-all duration-200 hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center" style={{ aspectRatio: '1 / 1' }} onClick={() => onIconClick(icon)}>
           <div className="flex flex-col items-center justify-center flex-1">
             <div
               className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4"

@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="antialiased text-base tracking-tight">
+      <body className="antialiased text-base">
         {children}
         <Toaster />
       </body>
