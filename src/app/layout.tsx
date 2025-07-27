@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://city-icons-j2unwlzqm-anto2s-projects.vercel.app'),
+  metadataBase: new URL('https://city-icons-8ralcdesq-anto2s-projects.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'City Icons Collection',
     description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 47 cities with search, download, and copy functionality.',
-    url: 'https://city-icons-j2unwlzqm-anto2s-projects.vercel.app',
+    url: 'https://city-icons-8ralcdesq-anto2s-projects.vercel.app',
     siteName: 'City Icons Collection',
     images: [
       {
