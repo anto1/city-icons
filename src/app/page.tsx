@@ -109,6 +109,18 @@ export default function Home() {
             updatedAt: '2024-01-01',
           },
           {
+            _id: '27',
+            name: 'Copenhagen Harbor',
+            city: 'Copenhagen',
+            country: 'Denmark',
+            category: 'Culture',
+            tags: ['harbor', 'modern', 'scandinavian'],
+            svgFilename: 'copenhagen.svg',
+            description: 'Copenhagen is the capital and largest city of Denmark, known for its beautiful harbor, the iconic Little Mermaid statue, and the colorful Nyhavn district. The city combines historic charm with modern Scandinavian design and sustainable urban planning.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
             _id: '5',
             name: 'Kuopio Tower',
             city: 'Kuopio',
@@ -169,6 +181,18 @@ export default function Home() {
             updatedAt: '2024-01-01',
           },
           {
+            _id: '31',
+            name: 'Erevan Republic Square',
+            city: 'Erevan',
+            country: 'Armenia',
+            category: 'Landmarks',
+            tags: ['square', 'historic', 'government'],
+            svgFilename: 'erevan.svg',
+            description: 'Erevan is the capital and largest city of Armenia, known for its beautiful Republic Square, the Cascade complex, and the historic Matenadaran library. The city combines ancient Armenian heritage with modern urban development and serves as the cultural heart of Armenia.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
             _id: '13',
             name: 'Miami Beach',
             city: 'Miami',
@@ -181,6 +205,18 @@ export default function Home() {
             updatedAt: '2024-01-01',
           },
           {
+            _id: '28',
+            name: 'Milan Cathedral',
+            city: 'Milan',
+            country: 'Italy',
+            category: 'Landmarks',
+            tags: ['cathedral', 'gothic', 'historic'],
+            svgFilename: 'milan.svg',
+            description: 'Milan is the capital of Lombardy and Italy\'s second-largest city, known for its fashion industry, the magnificent Duomo di Milano, and the historic La Scala opera house. The city combines rich cultural heritage with modern Italian design and innovation.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
             _id: '21',
             name: 'New York Skyline',
             city: 'New York',
@@ -189,6 +225,18 @@ export default function Home() {
             tags: ['skyscrapers', 'modern', 'urban'],
             svgFilename: 'new-york.svg',
             description: 'New York City is the most populous city in the United States, known for its iconic skyline featuring the Empire State Building, Statue of Liberty, and Times Square. The city is a global center for finance, culture, and innovation.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '29',
+            name: 'Toronto CN Tower',
+            city: 'Toronto',
+            country: 'Canada',
+            category: 'Landmarks',
+            tags: ['tower', 'modern', 'iconic'],
+            svgFilename: 'toronto.svg',
+            description: 'Toronto is the capital of Ontario and Canada\'s largest city, known for its iconic CN Tower, diverse multicultural population, and vibrant arts scene. The city combines modern urban development with natural beauty along Lake Ontario.',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
@@ -285,6 +333,18 @@ export default function Home() {
             tags: ['historic', 'architecture', 'traditional'],
             svgFilename: 'tbilisi.svg',
             description: 'Tbilisi Old Town is the historic heart of Georgia\'s capital, featuring narrow cobblestone streets, traditional Georgian architecture, and the iconic Narikala Fortress. This UNESCO World Heritage site showcases the city\'s rich cultural heritage and ancient history.',
+            createdAt: '2024-01-01',
+            updatedAt: '2024-01-01',
+          },
+          {
+            _id: '30',
+            name: 'Uralsk Historic Center',
+            city: 'Uralsk',
+            country: 'Kazakhstan',
+            category: 'Culture',
+            tags: ['historic', 'riverside', 'traditional'],
+            svgFilename: 'uralsk.svg',
+            description: 'Uralsk is a historic city in western Kazakhstan, located on the Ural River. Known for its traditional Kazakh architecture, historic mosques, and the beautiful riverfront, the city preserves its rich cultural heritage while embracing modern development.',
             createdAt: '2024-01-01',
             updatedAt: '2024-01-01',
           },
@@ -409,21 +469,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Sticky Header */}
-      <div className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
-        <div className="container mx-auto px-4 py-4">
-          <div className="text-center mb-4">
-            <h1 className="text-4xl font-bold text-foreground mb-2">
-              City Icons Collection
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Discover beautiful line art icons representing cities around the world
-            </p>
-          </div>
-          <SearchBar onSearch={handleSearch} />
-        </div>
-      </div>
-
       {/* Random Icons Header */}
       <div className="flex justify-center items-center gap-8 py-16">
         {icons
@@ -442,9 +487,18 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 pb-8">
-        <div className="mt-8">
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
+            City Icons Collection
+          </h1>
+          <p className="text-lg text-muted-foreground">
+            Discover beautiful line art icons representing cities around the world
+          </p>
+        </div>
+        <SearchBar onSearch={handleSearch} />
+        
+        <div className="mt-12">
           <IconGrid 
             icons={filteredIcons} 
             loading={loading} 
