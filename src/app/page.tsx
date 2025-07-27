@@ -239,11 +239,11 @@ export default function Home() {
         {icons.slice(0, 3).map((icon) => (
           <div
             key={icon._id}
-            className="w-8 h-8 text-muted-foreground"
+            className="w-16 h-16 text-foreground"
             dangerouslySetInnerHTML={{
               __html: icon.svgContent
-                .replace(/width="[^"]*"/, 'width="32"')
-                .replace(/height="[^"]*"/, 'height="32"')
+                .replace(/width="[^"]*"/, 'width="64"')
+                .replace(/height="[^"]*"/, 'height="64"')
                 .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
             }}
           />
@@ -261,17 +261,19 @@ export default function Home() {
         </div>
         <SearchBar onSearch={handleSearch} />
         
-        <IconGrid 
-          icons={filteredIcons} 
-          loading={loading} 
-          onIconClick={handleIconClick} 
-        />
+        <div className="mt-12">
+          <IconGrid 
+            icons={filteredIcons} 
+            loading={loading} 
+            onIconClick={handleIconClick} 
+          />
+        </div>
       </div>
 
       {/* Footer */}
       <footer className="bg-muted/30 py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground">
             © Studio Partdirector, 2025
           </p>
         </div>

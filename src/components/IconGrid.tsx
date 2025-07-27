@@ -38,25 +38,23 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
       {icons.map((icon) => (
-        <Card key={icon._id} className="group cursor-pointer transition-colors duration-200 hover:bg-[#f7f7f7]" onClick={() => onIconClick(icon)}>
-          <CardContent className="p-4 flex flex-col items-center justify-center h-full">
-            <div className="w-full h-full flex items-center justify-center mb-2">
-              <div
-                className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center"
-                dangerouslySetInnerHTML={{ 
-                  __html: icon.svgContent
-                    .replace(/width="[^"]*"/, 'width="48"')
-                    .replace(/height="[^"]*"/, 'height="48"')
-                    .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
-                }}
-              />
-            </div>
-            <div className="text-center w-full">
-              <p className="text-xs font-medium text-foreground truncate w-full mb-1">{icon.city}</p>
-              <p className="text-xs text-muted-foreground truncate w-full">{icon.country}</p>
-            </div>
-          </CardContent>
-        </Card>
+        <div key={icon._id} className="group cursor-pointer transition-colors duration-200 hover:bg-[#f7f7f7] p-4 flex flex-col items-center justify-center h-full" onClick={() => onIconClick(icon)}>
+          <div className="w-full h-full flex items-center justify-center mb-2">
+            <div
+              className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center"
+              dangerouslySetInnerHTML={{
+                __html: icon.svgContent
+                  .replace(/width="[^"]*"/, 'width="48"')
+                  .replace(/height="[^"]*"/, 'height="48"')
+                  .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
+              }}
+            />
+          </div>
+          <div className="text-center w-full">
+            <p className="text-xs font-medium text-foreground truncate w-full mb-1">{icon.city}</p>
+            <p className="text-xs text-muted-foreground truncate w-full">{icon.country}</p>
+          </div>
+        </div>
       ))}
     </div>
   );

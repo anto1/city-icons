@@ -5,7 +5,7 @@ import { SearchBarProps } from '@/types';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 
-export default function SearchBar({ onSearch, placeholder = "Search city icons..." }: SearchBarProps) {
+export default function SearchBar({ onSearch }: SearchBarProps) {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -17,17 +17,15 @@ export default function SearchBar({ onSearch, placeholder = "Search city icons..
   }, [query, onSearch]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input
-          type="text"
-          placeholder={placeholder}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="pl-10 h-12 text-lg shadow-lg border-2 focus:border-primary"
-        />
-      </div>
+    <div className="relative max-w-2xl mx-auto">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+      <Input
+        type="text"
+        placeholder="Search icons by name, city, country, or category..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="pl-10 text-lg h-14"
+      />
     </div>
   );
 } 
