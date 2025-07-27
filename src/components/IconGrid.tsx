@@ -41,18 +41,18 @@ export default function IconGrid({ icons, onIconClick, loading = false }: IconGr
         <div key={icon._id} className="group cursor-pointer transition-colors duration-200 hover:bg-[#f7f7f7] p-4 flex flex-col items-center justify-center h-full" onClick={() => onIconClick(icon)}>
           <div className="w-full h-full flex items-center justify-center mb-2">
             <div
-              className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center"
+              className="w-14 h-14 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex items-center justify-center"
               dangerouslySetInnerHTML={{
                 __html: icon.svgContent
-                  .replace(/width="[^"]*"/, 'width="48"')
-                  .replace(/height="[^"]*"/, 'height="48"')
+                  .replace(/width="[^"]*"/, 'width="56"')
+                  .replace(/height="[^"]*"/, 'height="56"')
                   .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
               }}
             />
           </div>
           <div className="text-center w-full">
-            <p className="text-xs font-medium text-foreground truncate w-full mb-1">{icon.city}</p>
-            <p className="text-xs text-muted-foreground truncate w-full">{icon.country}</p>
+            <p className="text-base font-medium text-foreground truncate w-full mb-1">{icon.city}</p>
+            <p className="text-base text-muted-foreground truncate w-full">{icon.country}</p>
           </div>
         </div>
       ))}

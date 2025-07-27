@@ -235,15 +235,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Random Icons Header */}
-      <div className="flex justify-center items-center gap-8 py-8 bg-muted/30">
-        {icons.slice(0, 3).map((icon) => (
+      <div className="flex justify-center items-center gap-8 py-8">
+        {icons
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
+          .map((icon) => (
           <div
             key={icon._id}
-            className="w-16 h-16 text-foreground"
+            className="w-14 h-14 text-foreground"
             dangerouslySetInnerHTML={{
               __html: icon.svgContent
-                .replace(/width="[^"]*"/, 'width="64"')
-                .replace(/height="[^"]*"/, 'height="64"')
+                .replace(/width="[^"]*"/, 'width="56"')
+                .replace(/height="[^"]*"/, 'height="56"')
                 .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
             }}
           />
@@ -271,7 +274,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-muted/30 py-6 mt-16">
+      <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground">
             © Studio Partdirector, 2025
