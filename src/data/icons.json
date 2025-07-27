@@ -697,25 +697,25 @@
   },
   {
     "_id": "64",
-    "name": "Cape Town Table Mountain",
+    "name": "Cape Town Protea Flower",
     "city": "Cape Town",
     "country": "South Africa",
-    "category": "Landmarks",
-    "tags": ["mountain", "table mountain", "natural"],
+    "category": "Culture",
+    "tags": ["protea", "flower", "natural"],
     "svgFilename": "za-cape-town.svg",
-    "description": "Cape Town is the legislative capital of South Africa, known for its iconic Table Mountain, stunning coastline, and rich cultural diversity. The city combines natural beauty with modern development, featuring the historic Robben Island, vibrant V&A Waterfront, and the beautiful Cape of Good Hope.",
+    "description": "Cape Town is the legislative capital of South Africa, known for its iconic protea flower (the national flower), stunning coastline, and rich cultural diversity. The city combines natural beauty with modern development, featuring the historic Robben Island, vibrant V&A Waterfront, and the beautiful Cape of Good Hope.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
   {
     "_id": "65",
-    "name": "Kyoto Temple",
+    "name": "Kyoto Sakura Blossom",
     "city": "Kyoto",
     "country": "Japan",
-    "category": "Landmarks",
-    "tags": ["temple", "traditional", "historic"],
+    "category": "Culture",
+    "tags": ["sakura", "cherry blossom", "spring"],
     "svgFilename": "jp-kyoto.svg",
-    "description": "Kyoto is the former imperial capital of Japan, known for its traditional temples, beautiful gardens, and rich cultural heritage. The city combines ancient Japanese traditions with modern life, featuring the iconic Fushimi Inari Shrine, Kinkaku-ji (Golden Pavilion), and the historic Gion district.",
+    "description": "Kyoto is the former imperial capital of Japan, known for its beautiful sakura (cherry blossoms), traditional temples, and rich cultural heritage. The city combines ancient Japanese traditions with modern life, featuring the iconic Fushimi Inari Shrine, Kinkaku-ji (Golden Pavilion), and the historic Gion district.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   }
