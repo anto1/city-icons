@@ -233,48 +233,54 @@ export default function Home() {
   console.log('🎨 Rendering Home component');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
-      {/* Hero Section */}
-      <div className="bg-card border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              City Icons Collection
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Discover beautiful line art icons representing cities around the world. 
-              Search, preview, and download SVG icons for your projects.
-            </p>
-            <SearchBar onSearch={handleSearch} />
-          </div>
-        </div>
+    <div className="min-h-screen bg-background">
+      {/* Random Icons Header */}
+      <div className="flex justify-center items-center gap-8 py-8 bg-muted/30">
+        {icons.slice(0, 3).map((icon) => (
+          <div
+            key={icon._id}
+            className="w-8 h-8 text-muted-foreground"
+            dangerouslySetInnerHTML={{
+              __html: icon.svgContent
+                .replace(/width="[^"]*"/, 'width="32"')
+                .replace(/height="[^"]*"/, 'height="32"')
+                .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
+            }}
+          />
+        ))}
       </div>
 
-      {/* Icons Grid Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold text-foreground mb-2">
-            {loading ? 'Loading icons...' : `${filteredIcons.length} icons found`}
-          </h2>
-          {!loading && filteredIcons.length > 0 && (
-            <p className="text-muted-foreground">
-              Click on any icon to view details and download options
-            </p>
-          )}
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
+            City Icons Collection
+          </h1>
+          <p className="text-lg text-muted-foreground">
+            Discover beautiful line art icons representing cities around the world
+          </p>
         </div>
+        <SearchBar onSearch={handleSearch} />
         
         <IconGrid 
           icons={filteredIcons} 
-          onIconClick={handleIconClick}
-          loading={loading}
+          loading={loading} 
+          onIconClick={handleIconClick} 
         />
       </div>
 
-      {/* Modal */}
-      <IconModal
-        icon={selectedIcon}
-        isOpen={modalOpen}
-        onClose={handleCloseModal}
+      {/* Footer */}
+      <footer className="bg-muted/30 py-6 mt-16">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            © Studio Partdirector, 2025
+          </p>
+        </div>
+      </footer>
+
+      <IconModal 
+        icon={selectedIcon} 
+        isOpen={modalOpen} 
+        onClose={handleCloseModal} 
       />
     </div>
   );
