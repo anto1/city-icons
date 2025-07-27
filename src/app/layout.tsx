@@ -20,16 +20,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-icon.png' },
-    ],
-  },
+
   openGraph: {
     title: 'City Icons Collection',
     description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43 cities with search, download, and copy functionality.',
