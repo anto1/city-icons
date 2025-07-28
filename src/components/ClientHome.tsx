@@ -135,7 +135,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
           <h1 className="text-4xl font-bold text-foreground mb-4">
             {icons.length} City Icons
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-4">
             Line art icons representing cities around the world by{' '}
             <a
               href="https://partdirector.ch"
@@ -147,6 +147,15 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
               Studio Partdirector
             </a>
           </p>
+          <div className="flex justify-center gap-4">
+            <Link
+              href="/roulette"
+              className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors"
+              onClick={() => trackEvent('ROULETTE_LINK_CLICKED')}
+            >
+              🎰 Try City Roulette
+            </Link>
+          </div>
         </div>
         
         <SearchBar onSearch={handleSearch} allIcons={icons} />
