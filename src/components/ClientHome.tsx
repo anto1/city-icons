@@ -24,6 +24,11 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     setFilteredIcons(icons);
   }, [icons]);
 
+  // Debug filteredIcons
+  useEffect(() => {
+    console.log('🎯 filteredIcons changed:', filteredIcons.map(i => i.city));
+  }, [filteredIcons]);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -49,27 +54,38 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
   const handleSearch = useCallback((query: string) => {
     const trimmedQuery = query.trim();
     
+    console.log('🔍 handleSearch called with:', query, 'trimmed:', trimmedQuery);
+    
     // Prevent unnecessary re-renders if the query hasn't changed
     if (trimmedQuery === lastSearchQuery) {
+      console.log('⏭️ Skipping search - same query');
       return;
     }
     
     setLastSearchQuery(trimmedQuery);
     
     if (!trimmedQuery) {
+      console.log('📋 Setting all icons (empty query)');
       setFilteredIcons(icons);
       return;
     }
 
     const searchTerm = trimmedQuery.toLowerCase();
+    console.log('🔍 Searching for term:', searchTerm);
     
     const filtered = icons.filter(icon => {
       // Only search in city and country names for more accurate results
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       const countryMatch = icon.country.toLowerCase().includes(searchTerm);
       
+      if (icon.city === 'Amsterdam') {
+        console.log('🎯 Amsterdam check:', { cityMatch, countryMatch, searchTerm });
+      }
+      
       return cityMatch || countryMatch;
     });
+
+    console.log('📋 Filtered results:', filtered.map(i => i.city));
 
     // Remove duplicates based on _id
     const uniqueFiltered = filtered.filter((icon, index, self) => 
@@ -77,6 +93,8 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     );
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
+    console.log('📋 Final sorted results:', sortedFiltered.map(i => i.city));
+    console.log('📋 Setting filteredIcons to:', sortedFiltered.length, 'icons');
     setFilteredIcons(sortedFiltered);
   }, [icons]);
 

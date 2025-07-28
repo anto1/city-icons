@@ -13,15 +13,12 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      onSearch(query);
-      // Track search if query is not empty
-      if (query.trim()) {
-        trackEvent('SEARCH_PERFORMED');
-      }
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
+    console.log('🔍 SearchBar calling onSearch with:', query);
+    onSearch(query);
+    // Track search if query is not empty
+    if (query.trim()) {
+      trackEvent('SEARCH_PERFORMED');
+    }
   }, [query, onSearch]);
 
   useEffect(() => {
