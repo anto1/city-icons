@@ -166,7 +166,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
               <div className="flex flex-col items-center justify-center h-full">
                 {displayIcons[index] ? (
                   <>
-                    <div className="w-8 h-8 md:w-16 md:h-16 text-foreground mb-1 md:mb-4">
+                    <div className="w-14 h-14 md:w-16 md:h-16 text-foreground mb-1 md:mb-4 flex items-center justify-center">
                       <div
                         dangerouslySetInnerHTML={{
                           __html: displayIcons[index].svgContent
@@ -189,8 +189,8 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                     </p>
                   </>
                 ) : (
-                  <div className="text-center">
-                    <div className="w-8 h-8 md:w-16 md:h-16 text-foreground mb-1 md:mb-4 flex items-center justify-center">
+                  <div className="text-center flex flex-col items-center justify-center h-full">
+                    <div className="w-14 h-14 md:w-16 md:h-16 text-foreground mb-1 md:mb-4 flex items-center justify-center">
                       <img 
                         src="/cherry.svg" 
                         alt="Cherry" 
