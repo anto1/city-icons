@@ -146,15 +146,6 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
       <div className="container mx-auto px-4 py-4 md:py-8">
         {/* Header */}
         <div className="text-center mb-4 md:mb-8">
-          <div className="mb-2 md:mb-4">
-            <Link
-              href="/"
-              className="text-sm md:text-base text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('ROULETTE_BACK_TO_CITIES_CLICKED')}
-            >
-              ← Back to cities
-            </Link>
-          </div>
           <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-4 mt-4 md:mt-8">
             Where Should You Go This Year?
           </h1>
@@ -168,7 +159,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           {[0, 1, 2].map((index) => (
             <div
               key={index}
-              className={`relative p-2 md:p-6 rounded-[48px] border-2 transition-all duration-300 w-full aspect-[3/2.1] md:aspect-[3/4] ${
+              className={`relative p-2 md:p-6 rounded-[48px] border-2 transition-all duration-300 w-full aspect-[3/1.5] md:aspect-[3/4] ${
                 isSpinning 
                   ? 'border-orange-400 bg-orange-50 animate-pulse' 
                   : 'border-border bg-card'
@@ -240,6 +231,17 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             </p>
           </div>
         )}
+      </div>
+
+      {/* Back to Cities Link */}
+      <div className="text-center py-4">
+        <Link
+          href="/"
+          className="text-sm md:text-base text-muted-foreground hover:text-orange-600 transition-colors underline"
+          onClick={() => trackEvent('ROULETTE_BACK_TO_CITIES_CLICKED')}
+        >
+          ← Back to cities
+        </Link>
       </div>
 
       {/* Footer */}
