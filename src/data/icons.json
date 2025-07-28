@@ -1,13 +1,13 @@
 [
   {
     "_id": "32",
-    "name": "Alma-Aty Mountains",
-    "city": "Alma-Aty",
+    "name": "Almaty Mountains",
+    "city": "Almaty",
     "country": "Kazakhstan",
     "category": "Landmarks",
     "tags": ["mountains", "nature", "scenic"],
     "svgFilename": "kz-alma-aty.svg",
-    "description": "Alma-Aty is the largest city in Kazakhstan, nestled at the foothills of the Trans-Ili Alatau mountains. Known for its stunning mountain views, the city combines modern urban development with natural beauty, featuring the iconic Kok-Tobe hill and the beautiful Medeu skating rink.",
+    "description": "Almaty is the largest city in Kazakhstan, nestled at the foothills of the Trans-Ili Alatau mountains. Known for its stunning mountain views, the city combines modern urban development with natural beauty, featuring the iconic Kok-Tobe hill and the beautiful Medeu skating rink.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
