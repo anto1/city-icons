@@ -16,6 +16,11 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
   const [displayIcons, setDisplayIcons] = useState<Icon[]>([]);
   const [resultMessage, setResultMessage] = useState<string>('');
 
+  // Track page view on mount
+  useEffect(() => {
+    trackEvent('ROULETTE_PAGE_VIEWED');
+  }, []);
+
   const getResultMessage = (cities: Icon[]) => {
     const cityNames = cities.map(icon => icon.city);
     const uniqueCities = [...new Set(cityNames)];
@@ -40,11 +45,30 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
   const spinRoulette = () => {
     setIsSpinning(true);
     setResultMessage('');
-    trackEvent('ROULETTE_SPIN');
+    trackEvent('ROULETTE_SPIN_STARTED');
 
-    // Generate 3 random icons
-    const shuffled = [...icons].sort(() => Math.random() - 0.5);
-    const randomIcons = shuffled.slice(0, 3);
+    // Generate 3 random icons with increased probability for duplicates
+    const random = Math.random();
+    let randomIcons: Icon[];
+    
+    if (random < 0.05) {
+      // 5% chance for triple (all same city)
+      const shuffled = [...icons].sort(() => Math.random() - 0.5);
+      const selectedCity = shuffled[0];
+      randomIcons = [selectedCity, selectedCity, selectedCity];
+    } else if (random < 0.25) {
+      // 20% chance for double (2 same cities)
+      const shuffled = [...icons].sort(() => Math.random() - 0.5);
+      const selectedCity = shuffled[0];
+      const otherCities = shuffled.filter(icon => icon.city !== selectedCity.city);
+      const secondCity = otherCities[0];
+      randomIcons = [selectedCity, selectedCity, secondCity];
+    } else {
+      // 75% chance for all different cities
+      const shuffled = [...icons].sort(() => Math.random() - 0.5);
+      randomIcons = shuffled.slice(0, 3);
+    }
+    
     setSelectedIcons(randomIcons);
 
     // Start the spinning animation with variable speed
@@ -73,7 +97,21 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             clearInterval(finalInterval);
             setDisplayIcons(randomIcons);
             setIsSpinning(false);
-            setResultMessage(getResultMessage(randomIcons));
+            const message = getResultMessage(randomIcons);
+            setResultMessage(message);
+            
+            // Track result type
+            const cityNames = randomIcons.map(icon => icon.city);
+            const uniqueCities = [...new Set(cityNames)];
+            
+            if (uniqueCities.length === 1) {
+              trackEvent('ROULETTE_RESULT_SAME_CITY');
+            } else if (uniqueCities.length === 2) {
+              const duplicates = cityNames.filter((city, index) => cityNames.indexOf(city) !== index);
+              trackEvent('ROULETTE_RESULT_DUPLICATE_CITY');
+            } else {
+              trackEvent('ROULETTE_RESULT_THREE_DIFFERENT');
+            }
           }
         }, baseInterval * slowDownFactor);
       }
@@ -90,8 +128,8 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           <div className="mb-4">
             <Link
               href="/"
-              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('BACK_TO_CITIES_CLICKED')}
+              className="text-base text-muted-foreground hover:text-orange-600 transition-colors underline"
+              onClick={() => trackEvent('ROULETTE_BACK_TO_CITIES_CLICKED')}
             >
               ← Back to cities
             </Link>
@@ -109,7 +147,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           {[0, 1, 2].map((index) => (
             <div
               key={index}
-              className={`relative p-6 rounded-2xl border-2 transition-all duration-300 w-full aspect-[2/3] ${
+              className={`relative p-6 rounded-2xl border-2 transition-all duration-300 w-full aspect-[3/4] ${
                 isSpinning 
                   ? 'border-orange-400 bg-orange-50 animate-pulse' 
                   : 'border-border bg-card'
@@ -170,7 +208,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           <Button 
             onClick={spinRoulette}
             disabled={isSpinning}
-            className="px-8 py-3 text-lg font-semibold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
+            className="px-8 py-3 text-2xl font-bold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
           >
             {isSpinning ? 'Spinning...' : 'Where Should I Go?'}
           </Button>
