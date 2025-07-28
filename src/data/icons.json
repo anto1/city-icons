@@ -735,7 +735,7 @@
     "_id": "66",
     "name": "Edinburgh Castle",
     "city": "Edinburgh",
-    "country": "UK",
+    "country": "Scotland",
     "category": "Landmarks",
     "tags": ["castle", "historic", "medieval"],
     "svgFilename": "gb-edinburgh.svg",
