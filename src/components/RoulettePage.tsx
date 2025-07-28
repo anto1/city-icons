@@ -134,13 +134,13 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
     <div className="min-h-screen bg-background">
       {/* Cherry Icon Header */}
       <div className="flex justify-center items-center gap-8 py-16">
-        <div className="w-14 h-14 text-foreground">
+        <Link href="/" className="w-14 h-14 text-foreground hover:opacity-80 transition-opacity">
           <img 
             src="/cherry.svg" 
             alt="Cherry" 
             className="w-full h-full"
           />
-        </div>
+        </Link>
       </div>
 
       <div className="container mx-auto px-4 py-8">
