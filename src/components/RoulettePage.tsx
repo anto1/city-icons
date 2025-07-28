@@ -269,7 +269,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             >
               Missing your city?
             </a>
-            <span className="text-sm text-muted-foreground">•</span>
+            <span className="hidden sm:inline text-sm text-muted-foreground">•</span>
             <Link
               href="/license"
               className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
@@ -277,7 +277,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             >
               Usage & Licensing
             </Link>
-            <span className="text-sm text-muted-foreground">•</span>
+            <span className="hidden sm:inline text-sm text-muted-foreground">•</span>
             <a
               href="https://github.com/anto1/city-icons"
               target="_blank"
