@@ -109,10 +109,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
           </p>
         </div>
         
-        {/* Desktop Search Bar */}
-        <div className="hidden md:block mb-8">
-          <SearchBar onSearch={handleSearch} allIcons={icons} />
-        </div>
+        <SearchBar onSearch={handleSearch} allIcons={icons} />
         
         {/* Search Results Count */}
         {filteredIcons.length !== icons.length && (
@@ -133,7 +130,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
       </div>
 
       {/* Footer */}
-      <footer className="py-6 mt-16 md:mt-16 pb-32 md:pb-6">
+      <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground mb-2">
             {icons.length} icons ©{' '}
@@ -177,11 +174,6 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
           </div>
         </div>
       </footer>
-
-      {/* Fixed Search Bar for Mobile */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border p-4 md:hidden z-50">
-        <SearchBar onSearch={handleSearch} allIcons={icons} />
-      </div>
 
       <IconModal 
         icon={selectedIcon} 
