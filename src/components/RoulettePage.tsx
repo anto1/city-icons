@@ -132,32 +132,32 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4 md:py-8">
         {/* Header */}
-        <div className="text-center mb-6 md:mb-8">
-          <div className="mb-4">
+        <div className="text-center mb-4 md:mb-8">
+          <div className="mb-2 md:mb-4">
             <Link
               href="/"
-              className="text-base text-muted-foreground hover:text-orange-600 transition-colors underline"
+              className="text-sm md:text-base text-muted-foreground hover:text-orange-600 transition-colors underline"
               onClick={() => trackEvent('ROULETTE_BACK_TO_CITIES_CLICKED')}
             >
               ← Back to cities
             </Link>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3 md:mb-4 mt-6 md:mt-8">
+          <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-4 mt-4 md:mt-8">
             Where Should You Go This Year?
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
+          <p className="text-sm md:text-lg text-muted-foreground mb-4 md:mb-8">
             Click the button to spin the globe and get your travel picks for the year.
           </p>
         </div>
 
         {/* Roulette Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto mb-4 md:mb-8">
           {[0, 1, 2].map((index) => (
             <div
               key={index}
-              className={`relative p-4 md:p-6 rounded-2xl border-2 transition-all duration-300 w-full aspect-[4/5] md:aspect-[3/4] ${
+              className={`relative p-3 md:p-6 rounded-2xl border-2 transition-all duration-300 w-full aspect-[3/4] md:aspect-[3/4] ${
                 isSpinning 
                   ? 'border-orange-400 bg-orange-50 animate-pulse' 
                   : 'border-border bg-card'
@@ -166,7 +166,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
               <div className="flex flex-col items-center justify-center h-full">
                 {displayIcons[index] ? (
                   <>
-                    <div className="w-12 h-12 md:w-16 md:h-16 text-foreground mb-3 md:mb-4">
+                    <div className="w-10 h-10 md:w-16 md:h-16 text-foreground mb-2 md:mb-4">
                       <div
                         dangerouslySetInnerHTML={{
                           __html: displayIcons[index].svgContent
@@ -177,20 +177,20 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                         }}
                       />
                     </div>
-                    <h3 className={`text-lg md:text-xl font-bold mb-1 md:mb-2 ${
+                    <h3 className={`text-sm md:text-xl font-bold mb-1 md:mb-2 ${
                       !isSpinning && duplicateCities.includes(displayIcons[index].city)
                         ? 'text-orange-600'
                         : 'text-foreground'
                     }`}>
                       {displayIcons[index].city}
                     </h3>
-                    <p className="text-sm md:text-base text-muted-foreground">
+                    <p className="text-xs md:text-base text-muted-foreground">
                       {displayIcons[index].country}
                     </p>
                   </>
                 ) : (
                   <div className="text-center">
-                    <div className="w-12 h-12 md:w-16 md:h-16 text-foreground mb-3 md:mb-4">
+                    <div className="w-10 h-10 md:w-16 md:h-16 text-foreground mb-2 md:mb-4">
                       {/* Cherry icon placeholder */}
                       <svg viewBox="0 0 120 120" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M87.5674 64.8959L90.2041 65.2709L90.1924 65.2826L92.7939 65.5287L93.0869 65.5521L93.3447 65.6927L95.7002 66.9467L95.7236 66.9584L95.7354 66.9701L98.0674 68.2826L98.4072 68.4818L98.6182 68.8334L99.9775 71.142L99.9893 71.1654L101.267 73.4154L101.278 73.4388L102.544 75.7943L102.673 76.0287L102.708 76.2982L103.083 78.9349L103.095 79.0873L103.083 79.2513L102.896 81.7592L103.212 84.267L103.259 84.6068L103.142 84.9349L102.274 87.4662L101.396 89.9506L101.372 90.0209L101.325 90.1029L100.188 92.4701L100.095 92.6342L98.6533 94.849L98.6064 94.9193L98.5479 94.9896L96.8486 97.017L96.8369 97.0404L96.8135 97.0638L95.0322 99.0443L94.8096 99.3021L94.4932 99.431L92.0322 100.439L91.8799 100.497L91.7275 100.533L89.2197 100.978L88.9619 101.025L88.7041 100.978L86.4072 100.603L84.1924 101.201L81.8486 102.068L81.79 102.079L81.7432 102.103L79.2588 102.806L78.9189 102.9L78.5791 102.841L75.9541 102.361L75.6846 102.302L75.4619 102.173L73.2002 100.826L70.9033 99.5482L70.7979 99.4896L70.6924 99.4076L68.665 97.7435L68.5947 97.6967L68.5361 97.6263L66.708 95.7631L66.6377 95.6927L66.5791 95.6107L65.0088 93.5131L64.9971 93.5013L63.4385 91.3802L63.3682 91.2748L63.3096 91.1576L62.126 88.7787L62.0557 88.6263L62.0205 88.4623L61.3877 85.8959L61.376 85.7904L61.3643 85.6967L61.083 83.0717L61.0596 82.9076L61.083 82.7318L61.4111 80.1302V80.0834L61.4229 80.0365L61.8916 77.4701L61.9268 77.2943L61.9854 77.142L63.0283 74.7396L63.0752 74.6107L63.1455 74.5052L64.5986 72.3138L64.6572 72.2201L64.7275 72.1381L66.4971 70.1576L66.708 69.9115L67.0127 69.7826L69.4502 68.7162L69.5439 68.681L69.6377 68.6576L72.1338 67.931L72.2627 67.8959L72.3916 67.8842L75.0049 67.6029L75.1572 67.5795L75.2979 67.5912L77.9346 67.8256H77.9229L80.2549 67.9896H80.2666L80.4189 68.0013L80.3838 68.4584L81.9775 67.7318L83.7119 66.0443L83.9814 65.7865L84.3447 65.681L86.9463 64.931L87.251 64.849L87.5674 64.8959ZM85.5283 68.4584L83.876 70.0873L83.6885 70.2748L83.4424 70.3802L81.4971 71.2592L80.2197 71.8334L79.751 70.9545L77.7002 70.8138H77.6768L75.1924 70.5912L72.79 70.8607L70.5283 71.517L68.501 72.3959L67.0127 74.0834L65.7236 76.0287L64.8096 78.1732L64.376 80.5873L64.083 82.9193L64.3291 85.2748L64.8916 87.5951L65.9229 89.6693L67.4111 91.7201L68.9111 93.724L70.6689 95.517L72.5205 97.017L74.665 98.2123H74.6768L74.7002 98.224L76.751 99.4545L78.7666 99.8177L80.876 99.2201L83.29 98.3412L83.3604 98.3177L83.4189 98.2943L85.9619 97.6263L86.2783 97.5326L86.5947 97.5912L88.9268 97.9779L91.0596 97.6029L93.0283 96.7826L94.5869 95.0599L96.1689 93.1381L97.54 91.0404L98.6299 88.7904L99.4385 86.4701L100.188 84.2787L99.9072 81.9701L99.8955 81.8177L99.9072 81.6771L100.083 79.1342L99.7783 76.9662L98.6533 74.8802V74.892L97.3877 72.6654L96.2275 70.6849L94.2939 69.5834V69.5951L92.208 68.4818L89.8408 68.2592L89.8057 68.2474H89.7705L87.4385 67.8959L85.5283 68.4584ZM80.3486 68.8685L80.4189 69.4779L80.4424 69.806L80.7588 69.6537L80.7705 69.642L80.3604 68.7279L80.3486 68.8685Z" fill="currentColor"/>
@@ -201,10 +201,10 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                         <path d="M57.1276 22.268L58.3414 24.4L58.4071 24.4956L58.4361 24.5963L59.3992 27.0513L59.4397 27.1542L59.4666 27.2664L60.0034 29.6424L61.0934 31.7991L61.1049 31.8012L62.3886 34.0057L63.9519 35.988L65.6031 37.6886L67.61 39.0141L69.8622 40.3017L72.0906 41.5253L74.4206 42.4578L76.7382 43.3285L79.1165 43.6145L81.5035 43.5326L84.0526 43.2186L86.5408 42.6549L86.6783 42.6208L86.8114 42.6097L89.3631 42.475L91.8538 42.0905L94.4508 41.5828L94.5127 41.5704L94.5725 41.5696L97.2023 41.2705L97.3858 41.245L97.5723 41.2676L100.108 41.6066L99.9637 42.6406L100.011 43.0904L100.14 44.5803L100.044 44.5863L99.8741 44.6025L99.7106 44.5841L97.3272 44.2614L94.9133 44.5528L94.9039 44.5391L92.4285 45.0337L92.3782 45.0482L89.7752 45.4595L89.6881 45.4791L89.6169 45.4778L87.0558 45.5989L84.6482 46.1775L84.5612 46.1972L84.4762 46.2053L81.8558 46.518L81.796 46.5188L81.7342 46.5312L79.083 46.6237L78.9751 46.6275L78.8598 46.6061L76.2122 46.294L76.0372 46.2735L75.8593 46.2048L73.3752 45.2675L73.3407 45.2611L70.8997 44.2841L70.8118 44.244L70.7355 44.206L68.4192 42.9423L68.4098 42.9286L68.3983 42.9265L66.1158 41.6094L66.0718 41.5894L66.0394 41.5714L63.8192 40.111L63.6822 40.0141L63.561 39.8963L61.7114 37.9801L61.6508 37.9212L61.6017 37.8644L59.9655 35.7614L59.907 35.691L59.8622 35.6112L58.5107 33.3225L58.494 33.2837L58.4659 33.2427L57.2603 30.8739L57.1822 30.7164L57.1451 30.5307L56.5533 28.0016L55.6784 25.7775L54.4647 23.6455L54.4011 23.5384L54.3555 23.3988L54.2288 23.0535L57.0602 22.0529L57.1276 22.268Z" fill="currentColor"/>
                       </svg>
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-1 md:mb-2">
+                    <h3 className="text-sm md:text-xl font-bold text-foreground mb-1 md:mb-2">
                       Cherry
                     </h3>
-                    <p className="text-sm md:text-base text-muted-foreground">
+                    <p className="text-xs md:text-base text-muted-foreground">
                       Fruit
                     </p>
                   </div>
@@ -215,11 +215,11 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
         </div>
 
         {/* Spin Button - Now below cards */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-4 md:mb-8">
           <Button 
             onClick={spinRoulette}
             disabled={isSpinning}
-            className="px-8 md:px-12 py-3 md:py-4 text-lg md:text-2xl font-bold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
+            className="px-6 md:px-12 py-2 md:py-4 text-base md:text-2xl font-bold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
           >
             {isSpinning ? 'Spinning...' : 'Where Should I Go?'}
           </Button>
@@ -227,8 +227,8 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
         {/* Result Message */}
         {resultMessage && (
-          <div className="text-center mt-8">
-            <p className="text-xl font-medium text-foreground bg-orange-50 border border-orange-200 rounded-lg px-6 py-4 max-w-2xl mx-auto">
+          <div className="text-center mt-4 md:mt-8">
+            <p className="text-lg md:text-xl font-medium text-foreground bg-orange-50 border border-orange-200 rounded-lg px-4 md:px-6 py-3 md:py-4 max-w-2xl mx-auto">
               {resultMessage}
             </p>
           </div>

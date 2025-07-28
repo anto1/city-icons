@@ -145,7 +145,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
               onClick={() => trackEvent('STUDIO_PARTDIRECTOR_CLICKED')}
             >
               Studio Partdirector
-            </a>
+            </a>.
           </p>
           <p className="text-lg text-muted-foreground mt-2">
             Feeling lucky?{' '}
