@@ -147,6 +147,17 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
               Studio Partdirector
             </a>
           </p>
+          <p className="text-lg text-muted-foreground mt-2">
+            Feeling lucky?{' '}
+            <Link
+              href="/roulette"
+              className="text-foreground hover:text-orange-600 transition-colors underline font-medium"
+              onClick={() => trackEvent('ROULETTE_LINK_CLICKED')}
+            >
+              Spin the roulette
+            </Link>
+            {' '}and see where you should go this year.
+          </p>
         </div>
         
         <SearchBar onSearch={handleSearch} allIcons={icons} />
