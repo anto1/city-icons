@@ -56,30 +56,30 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   };
 
   return (
-    <div className="relative max-w-2xl mx-auto">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-muted-foreground" />
+    <div className="relative max-w-2xl mx-auto md:static md:max-w-4xl">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-muted-foreground md:w-8 md:h-8" />
       <Input
         ref={inputRef}
         type="text"
-        placeholder="Search cities or countries..."
+        placeholder="Search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
-        className="pl-12 text-4xl font-bold h-16"
+        className="pl-12 text-lg font-medium h-14 md:!text-2xl md:font-bold md:h-20 md:pl-16"
       />
       
       {/* Search Suggestions */}
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 bg-background border border-border rounded-lg shadow-lg mt-1 z-50 max-h-60 overflow-y-auto">
+        <div className="absolute top-full left-0 right-0 bg-background border border-border rounded-lg shadow-lg mt-1 z-50 max-h-60 overflow-y-auto md:max-h-80">
           {suggestions.map((suggestion, index) => (
             <button
               key={index}
-              className="w-full px-4 py-3 text-left hover:bg-muted transition-colors flex flex-col"
+              className="w-full px-4 py-3 text-left hover:bg-muted transition-colors flex flex-col md:py-4"
               onClick={() => handleSuggestionClick(suggestion)}
             >
-              <div className="font-medium text-foreground">{suggestion.city}</div>
-              <div className="text-sm text-muted-foreground">{suggestion.country}</div>
+              <div className="font-medium text-foreground md:text-lg">{suggestion.city}</div>
+              <div className="text-sm text-muted-foreground md:text-base">{suggestion.country}</div>
             </button>
           ))}
         </div>

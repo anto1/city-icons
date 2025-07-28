@@ -70,25 +70,25 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
 
   return (
     <div className="min-h-screen bg-background">
-                    {/* Random Icons Header */}
-              <div className="flex justify-center items-center gap-8 py-16">
-                {[...icons]
-                  .sort(() => Math.random() - 0.5)
-                  .slice(0, 3)
-                  .map((icon) => (
-                  <div
-                    key={icon._id}
-                    className="w-14 h-14 text-foreground cursor-help"
-                    title={`${icon.city}, ${icon.country}`}
-                    dangerouslySetInnerHTML={{
-                      __html: icon.svgContent
-                        .replace(/width="[^"]*"/, 'width="56"')
-                        .replace(/height="[^"]*"/, 'height="56"')
-                        .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
-                    }}
-                  />
-                ))}
-              </div>
+      {/* Random Icons Header */}
+      <div className="flex justify-center items-center gap-8 py-16">
+        {[...icons]
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
+          .map((icon) => (
+          <div
+            key={icon._id}
+            className="w-14 h-14 text-foreground cursor-help"
+            title={`${icon.city}, ${icon.country}`}
+            dangerouslySetInnerHTML={{
+              __html: icon.svgContent
+                .replace(/width="[^"]*"/, 'width="56"')
+                .replace(/height="[^"]*"/, 'height="56"')
+                .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
+            }}
+          />
+        ))}
+      </div>
 
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
@@ -96,19 +96,23 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
             {icons.length} City Icons
           </h1>
           <p className="text-lg text-muted-foreground">
-            Beautiful line art icons representing cities around the world by{' '}
+            Line art icons representing cities around the world by{' '}
             <a
               href="https://partdirector.ch"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors underline"
+              className="text-foreground hover:text-orange-600 transition-colors underline"
               onClick={() => trackEvent('STUDIO_PARTDIRECTOR_CLICKED')}
             >
               Studio Partdirector
             </a>
           </p>
         </div>
-        <SearchBar onSearch={handleSearch} allIcons={icons} />
+        
+        {/* Desktop Search Bar */}
+        <div className="hidden md:block mb-8">
+          <SearchBar onSearch={handleSearch} allIcons={icons} />
+        </div>
         
         {/* Search Results Count */}
         {filteredIcons.length !== icons.length && (
@@ -129,7 +133,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
       </div>
 
       {/* Footer */}
-      <footer className="py-6 mt-16">
+      <footer className="py-6 mt-16 md:mt-16 pb-32 md:pb-6">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground mb-2">
             {icons.length} icons ©{' '}
@@ -137,42 +141,47 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
               href="https://partdirector.ch"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors underline"
+              className="text-foreground hover:text-orange-600 transition-colors underline"
               onClick={() => trackEvent('STUDIO_PARTDIRECTOR_FOOTER_CLICKED')}
             >
               Studio Partdirector
             </a>
             , 2025
           </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a
-                      href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-                      onClick={() => trackEvent('MISSING_CITY_CLICKED')}
-                    >
-                      Missing your city?
-                    </a>
-                    <span className="text-sm text-muted-foreground">•</span>
-                    <Link
-                      href="/license"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-                      onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
-                    >
-                      Usage & Licensing
-                    </Link>
-                    <span className="text-sm text-muted-foreground">•</span>
-                    <a
-                      href="https://github.com/anto1/city-icons"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
-                      onClick={() => trackEvent('GITHUB_LINK_CLICKED')}
-                    >
-                      GitHub
-                    </a>
-                  </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+              onClick={() => trackEvent('MISSING_CITY_CLICKED')}
+            >
+              Missing your city?
+            </a>
+            <span className="text-sm text-muted-foreground">•</span>
+            <Link
+              href="/license"
+              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+              onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
+            >
+              Usage & Licensing
+            </Link>
+            <span className="text-sm text-muted-foreground">•</span>
+            <a
+              href="https://github.com/anto1/city-icons"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+              onClick={() => trackEvent('GITHUB_LINK_CLICKED')}
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </footer>
+
+      {/* Fixed Search Bar for Mobile */}
+      <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border p-4 md:hidden z-50">
+        <SearchBar onSearch={handleSearch} allIcons={icons} />
+      </div>
 
       <IconModal 
         icon={selectedIcon} 

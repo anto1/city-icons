@@ -252,6 +252,18 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "53",
+    "name": "Matosinhos Anemone",
+    "city": "Matosinhos",
+    "country": "Portugal",
+    "category": "Culture",
+    "tags": ["anemone", "seaside", "symbol"],
+    "svgFilename": "pt-matosinhos.svg",
+    "description": "Matosinhos is a coastal city in northern Portugal, known for its beautiful beaches, fresh seafood, and the iconic anemone symbol representing the city's connection to the sea. The city combines traditional Portuguese fishing culture with modern urban development.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "36",
     "name": "Manchester Bee",
     "city": "Manchester",
