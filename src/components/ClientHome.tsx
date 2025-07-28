@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import SearchBar from '@/components/SearchBar';
 import IconGrid from '@/components/IconGrid';
@@ -17,6 +17,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
   const [filteredIcons, setFilteredIcons] = useState<Icon[]>(initialIcons);
   const [selectedIcon, setSelectedIcon] = useState<Icon | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [lastSearchQuery, setLastSearchQuery] = useState<string>('');
 
   // Keyboard navigation
   useEffect(() => {
@@ -40,21 +41,40 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [modalOpen]);
 
-  const handleSearch = (query: string) => {
-    if (!query.trim()) {
+  const handleSearch = useCallback((query: string) => {
+    const trimmedQuery = query.trim();
+    
+    // Prevent unnecessary re-renders if the query hasn't changed
+    if (trimmedQuery === lastSearchQuery) {
+      return;
+    }
+    
+    setLastSearchQuery(trimmedQuery);
+    
+    if (!trimmedQuery) {
       setFilteredIcons(icons);
       return;
     }
 
-    const searchTerm = query.toLowerCase().trim();
+    const searchTerm = trimmedQuery.toLowerCase();
+    
     const filtered = icons.filter(icon => {
-      const cityMatch = icon.city.toLowerCase().includes(searchTerm);
-      const countryMatch = icon.country.toLowerCase().includes(searchTerm);
-      const nameMatch = icon.name.toLowerCase().includes(searchTerm);
-      const categoryMatch = icon.category.toLowerCase().includes(searchTerm);
-      const tagMatch = icon.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+      // Prioritize exact matches in city and country names
+      const cityExactMatch = icon.city.toLowerCase() === searchTerm;
+      const countryExactMatch = icon.country.toLowerCase() === searchTerm;
       
-      return cityMatch || countryMatch || nameMatch || categoryMatch || tagMatch;
+      // Then check for partial matches in city and country
+      const cityPartialMatch = icon.city.toLowerCase().includes(searchTerm);
+      const countryPartialMatch = icon.country.toLowerCase().includes(searchTerm);
+      
+      // Only check other fields if no city/country match found
+      const otherMatches = !cityPartialMatch && !countryPartialMatch ? (
+        icon.name.toLowerCase().includes(searchTerm) ||
+        icon.category.toLowerCase().includes(searchTerm) ||
+        icon.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+      ) : false;
+      
+      return cityExactMatch || countryExactMatch || cityPartialMatch || countryPartialMatch || otherMatches;
     });
 
     // Remove duplicates based on _id
@@ -64,7 +84,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
     setFilteredIcons(sortedFiltered);
-  };
+  }, [icons, lastSearchQuery]);
 
   const handleIconClick = (icon: Icon) => {
     setSelectedIcon(icon);
