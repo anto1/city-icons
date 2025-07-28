@@ -46,15 +46,23 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
       return;
     }
 
-    const filtered = icons.filter(icon =>
-      icon.name.toLowerCase().includes(query.toLowerCase()) ||
-      icon.city.toLowerCase().includes(query.toLowerCase()) ||
-      icon.country.toLowerCase().includes(query.toLowerCase()) ||
-      icon.category.toLowerCase().includes(query.toLowerCase()) ||
-      icon.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+    const searchTerm = query.toLowerCase().trim();
+    const filtered = icons.filter(icon => {
+      const cityMatch = icon.city.toLowerCase().includes(searchTerm);
+      const countryMatch = icon.country.toLowerCase().includes(searchTerm);
+      const nameMatch = icon.name.toLowerCase().includes(searchTerm);
+      const categoryMatch = icon.category.toLowerCase().includes(searchTerm);
+      const tagMatch = icon.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+      
+      return cityMatch || countryMatch || nameMatch || categoryMatch || tagMatch;
+    });
+
+    // Remove duplicates based on _id
+    const uniqueFiltered = filtered.filter((icon, index, self) => 
+      index === self.findIndex(i => i._id === icon._id)
     );
 
-    const sortedFiltered = filtered.sort((a, b) => a.city.localeCompare(b.city));
+    const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
     setFilteredIcons(sortedFiltered);
   };
 

@@ -26,12 +26,20 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
 
   useEffect(() => {
     if (query.trim() && allIcons) {
+      const searchTerm = query.toLowerCase().trim();
       const filtered = allIcons.filter(icon =>
-        icon.city.toLowerCase().includes(query.toLowerCase()) ||
-        icon.country.toLowerCase().includes(query.toLowerCase())
+        icon.city.toLowerCase().includes(searchTerm) ||
+        icon.country.toLowerCase().includes(searchTerm)
       ).slice(0, 5);
       
-      setSuggestions(filtered.map(icon => ({ city: icon.city, country: icon.country })));
+      // Remove duplicates based on city and country combination
+      const uniqueSuggestions = filtered.filter((icon, index, self) => 
+        index === self.findIndex(i => 
+          i.city === icon.city && i.country === icon.country
+        )
+      );
+      
+      setSuggestions(uniqueSuggestions.map(icon => ({ city: icon.city, country: icon.country })));
       setShowSuggestions(true);
     } else {
       setShowSuggestions(false);

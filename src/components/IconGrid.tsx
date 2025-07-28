@@ -24,8 +24,6 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   
-  console.log('🎯 IconGrid received icons:', icons.map(icon => icon.city));
-  
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (gridRef.current) {
