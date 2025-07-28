@@ -133,8 +133,8 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Cherry Icon Header */}
-      <div className="flex justify-center items-center py-8 md:py-16">
-        <div className="w-14 h-14 md:w-16 md:h-16 text-foreground">
+      <div className="flex justify-center items-center gap-8 py-16">
+        <div className="w-14 h-14 text-foreground">
           <img 
             src="/cherry.svg" 
             alt="Cherry" 
@@ -143,32 +143,33 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-4 md:py-8">
+      <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-4 md:mb-8">
-          <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-4 mt-4 md:mt-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Where Should You Go This Year?
           </h1>
-          <p className="text-sm md:text-lg text-muted-foreground mb-4 md:mb-8">
+          <p className="text-lg text-muted-foreground mb-8">
             Click the button to spin the globe and get your travel picks for the year.
           </p>
         </div>
 
         {/* Roulette Cards */}
-        <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-4xl mx-auto mb-4 md:mb-8">
+        <div className="grid grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
           {[0, 1, 2].map((index) => (
             <div
               key={index}
-              className={`relative p-2 md:p-6 rounded-[48px] border-2 transition-all duration-300 w-full aspect-[3/1.5] md:aspect-[3/4] ${
+              className={`relative p-4 rounded-[48px] border-2 transition-all duration-300 w-full ${
                 isSpinning 
                   ? 'border-orange-400 bg-orange-50 animate-pulse' 
                   : 'border-border bg-card'
               }`}
+              style={{ aspectRatio: '1 / 1' }}
             >
               <div className="flex flex-col items-center justify-center h-full">
                 {displayIcons[index] ? (
                   <>
-                    <div className="w-14 h-14 md:w-16 md:h-16 text-foreground mb-1 md:mb-4 flex items-center justify-center">
+                    <div className="w-14 h-14 text-foreground mb-4 flex items-center justify-center">
                       <div
                         dangerouslySetInnerHTML={{
                           __html: displayIcons[index].svgContent
@@ -179,30 +180,30 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                         }}
                       />
                     </div>
-                    <h3 className={`text-base md:text-xl font-bold mb-0.5 md:mb-2 ${
+                    <h3 className={`text-base font-medium mb-1 ${
                       !isSpinning && duplicateCities.includes(displayIcons[index].city)
                         ? 'text-orange-600'
                         : 'text-foreground'
                     }`}>
                       {displayIcons[index].city}
                     </h3>
-                    <p className="text-xs md:text-base text-muted-foreground">
+                    <p className="text-sm text-muted-foreground">
                       {displayIcons[index].country}
                     </p>
                   </>
                 ) : (
                   <div className="text-center flex flex-col items-center justify-center h-full">
-                    <div className="w-14 h-14 md:w-16 md:h-16 text-foreground mb-1 md:mb-4 flex items-center justify-center">
+                    <div className="w-14 h-14 text-foreground mb-4 flex items-center justify-center">
                       <img 
                         src="/cherry.svg" 
                         alt="Cherry" 
                         className="w-full h-full"
                       />
                     </div>
-                    <h3 className="text-base md:text-xl font-bold text-foreground mb-0.5 md:mb-2">
+                    <h3 className="text-base font-medium text-foreground mb-1">
                       Cherry
                     </h3>
-                    <p className="text-xs md:text-base text-muted-foreground">
+                    <p className="text-sm text-muted-foreground">
                       Fruit
                     </p>
                   </div>
@@ -213,7 +214,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
         </div>
 
         {/* Spin Button - Now below cards */}
-        <div className="text-center mb-4 md:mb-8">
+        <div className="text-center mb-8">
           <Button 
             onClick={spinRoulette}
             disabled={isSpinning}
@@ -225,7 +226,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
         {/* Result Message */}
         {resultMessage && (
-          <div className="text-center mt-4 md:mt-8">
+          <div className="text-center mt-8">
             <p className="text-base md:text-xl font-medium text-foreground bg-orange-50 border border-orange-200 rounded-lg px-4 md:px-6 py-3 md:py-4 max-w-2xl mx-auto">
               {resultMessage}
             </p>
