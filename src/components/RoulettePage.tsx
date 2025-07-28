@@ -215,7 +215,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           <Button 
             onClick={spinRoulette}
             disabled={isSpinning}
-            className="px-6 md:px-12 py-2 md:py-4 text-base md:text-2xl font-bold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
+            className="px-6 md:px-12 py-4 md:py-6 text-base md:text-2xl font-bold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
           >
             {isSpinning ? 'Spinning...' : 'Where Should I Go?'}
           </Button>
