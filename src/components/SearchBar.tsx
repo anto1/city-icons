@@ -56,8 +56,8 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   };
 
   return (
-    <div className="relative max-w-2xl mx-auto md:static md:max-w-4xl">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-muted-foreground md:w-8 md:h-8" />
+    <div className="relative max-w-lg mx-auto md:static md:max-w-2xl">
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground md:w-6 md:h-6 z-10" />
       <Input
         ref={inputRef}
         type="text"
@@ -66,7 +66,7 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
         onChange={(e) => setQuery(e.target.value)}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
-        className="pl-12 text-lg font-medium h-14 md:!text-2xl md:font-bold md:h-20 md:pl-16"
+        className="pl-10 text-lg font-medium h-12 md:!text-2xl md:font-bold md:h-16 md:pl-12"
       />
       
       {/* Search Suggestions */}
