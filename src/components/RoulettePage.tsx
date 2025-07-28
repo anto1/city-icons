@@ -51,11 +51,14 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
     const random = Math.random();
     let randomIcons: Icon[];
     
+    console.log('Random value:', random); // Debug
+    
     if (random < 0.05) {
       // 5% chance for triple (all same city)
       const shuffled = [...icons].sort(() => Math.random() - 0.5);
       const selectedCity = shuffled[0];
       randomIcons = [selectedCity, selectedCity, selectedCity];
+      console.log('TRIPLE - All same city:', selectedCity.city); // Debug
     } else if (random < 0.25) {
       // 20% chance for double (2 same cities)
       const shuffled = [...icons].sort(() => Math.random() - 0.5);
@@ -63,10 +66,12 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
       const otherCities = shuffled.filter(icon => icon.city !== selectedCity.city);
       const secondCity = otherCities[0];
       randomIcons = [selectedCity, selectedCity, secondCity];
+      console.log('DOUBLE - Two same cities:', selectedCity.city, 'and', secondCity.city); // Debug
     } else {
       // 75% chance for all different cities
       const shuffled = [...icons].sort(() => Math.random() - 0.5);
       randomIcons = shuffled.slice(0, 3);
+      console.log('THREE DIFFERENT - Cities:', randomIcons.map(icon => icon.city)); // Debug
     }
     
     setSelectedIcons(randomIcons);
@@ -118,7 +123,12 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
     }, baseInterval);
   };
 
-  const duplicateCities = getDuplicateCities(selectedIcons);
+  const duplicateCities = getDuplicateCities(displayIcons);
+
+  // Debug: Log the current state
+  console.log('Selected icons:', selectedIcons.map(icon => icon.city));
+  console.log('Display icons:', displayIcons.map(icon => icon.city));
+  console.log('Duplicate cities:', duplicateCities);
 
   return (
     <div className="min-h-screen bg-background">
@@ -134,7 +144,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
               ← Back to cities
             </Link>
           </div>
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4 mt-8">
             Where Should You Go This Year?
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
@@ -208,7 +218,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           <Button 
             onClick={spinRoulette}
             disabled={isSpinning}
-            className="px-8 py-3 text-2xl font-bold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
+            className="px-12 py-4 text-2xl font-bold bg-orange-600 hover:bg-orange-700 disabled:opacity-50"
           >
             {isSpinning ? 'Spinning...' : 'Where Should I Go?'}
           </Button>
