@@ -173,6 +173,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                             .replace(/width="[^"]*"/, 'width="64"')
                             .replace(/height="[^"]*"/, 'height="64"')
                             .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
+                            .replace(/fill="[^"]*"/g, `fill="${!isSpinning && duplicateCities.includes(displayIcons[index].city) ? '#e2725b' : 'currentColor'}"`)
                         }}
                       />
                     </div>
