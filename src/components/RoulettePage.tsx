@@ -26,7 +26,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
     // Start the spinning animation
     let spinCount = 0;
-    const maxSpins = 20; // Number of spins before settling
+    const maxSpins = 40; // Increased from 20 to 40 spins
     const spinInterval = setInterval(() => {
       const tempIcons = [...icons].sort(() => Math.random() - 0.5).slice(0, 3);
       setDisplayIcons(tempIcons);
@@ -37,7 +37,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
         setDisplayIcons(randomIcons);
         setIsSpinning(false);
       }
-    }, 100); // Spin every 100ms
+    }, 150); // Increased from 100ms to 150ms for longer duration
   };
 
   return (
