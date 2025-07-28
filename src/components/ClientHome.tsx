@@ -19,6 +19,11 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [lastSearchQuery, setLastSearchQuery] = useState<string>('');
 
+  // Initialize search state
+  useEffect(() => {
+    setFilteredIcons(icons);
+  }, [icons]);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -59,22 +64,11 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     const searchTerm = trimmedQuery.toLowerCase();
     
     const filtered = icons.filter(icon => {
-      // Prioritize exact matches in city and country names
-      const cityExactMatch = icon.city.toLowerCase() === searchTerm;
-      const countryExactMatch = icon.country.toLowerCase() === searchTerm;
+      // Only search in city and country names for more accurate results
+      const cityMatch = icon.city.toLowerCase().includes(searchTerm);
+      const countryMatch = icon.country.toLowerCase().includes(searchTerm);
       
-      // Then check for partial matches in city and country
-      const cityPartialMatch = icon.city.toLowerCase().includes(searchTerm);
-      const countryPartialMatch = icon.country.toLowerCase().includes(searchTerm);
-      
-      // Only check other fields if no city/country match found
-      const otherMatches = !cityPartialMatch && !countryPartialMatch ? (
-        icon.name.toLowerCase().includes(searchTerm) ||
-        icon.category.toLowerCase().includes(searchTerm) ||
-        icon.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-      ) : false;
-      
-      return cityExactMatch || countryExactMatch || cityPartialMatch || countryPartialMatch || otherMatches;
+      return cityMatch || countryMatch;
     });
 
     // Remove duplicates based on _id
@@ -84,7 +78,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
     setFilteredIcons(sortedFiltered);
-  }, [icons, lastSearchQuery]);
+  }, [icons]);
 
   const handleIconClick = (icon: Icon) => {
     setSelectedIcon(icon);
