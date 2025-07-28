@@ -235,7 +235,7 @@
     "category": "Landmarks",
     "tags": ["clock", "historic", "iconic"],
     "svgFilename": "gb-london.svg",
-    "description": "London is the capital of England and the United Kingdom, known for its rich history, iconic landmarks like Big Ben and the Tower Bridge, and world-class museums. The city is a global center for finance and culture.",
+    "description": "London is the capital of England and the UK, known for its rich history, iconic landmarks like Big Ben and the Tower Bridge, and world-class museums. The city is a global center for finance and culture.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
@@ -735,7 +735,7 @@
     "_id": "66",
     "name": "Edinburgh Castle",
     "city": "Edinburgh",
-    "country": "United Kingdom",
+    "country": "UK",
     "category": "Landmarks",
     "tags": ["castle", "historic", "medieval"],
     "svgFilename": "gb-edinburgh.svg",
