@@ -159,7 +159,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           {[0, 1, 2].map((index) => (
             <div
               key={index}
-              className={`relative p-4 rounded-[48px] border-2 transition-all duration-300 w-full ${
+              className={`relative p-4 rounded-lg border-2 transition-all duration-300 w-full ${
                 isSpinning 
                   ? 'border-orange-400 bg-orange-50 animate-pulse' 
                   : 'border-border bg-card'
