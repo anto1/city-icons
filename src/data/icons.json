@@ -790,5 +790,41 @@
     "description": "Tashkent is the capital and largest city of Uzbekistan, known for its beautiful mosques, Islamic architecture, and rich cultural heritage. The city combines traditional Central Asian culture with modern development, featuring the historic Chorsu Bazaar, Tashkent Tower, and vibrant cultural scene.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "71",
+    "name": "Lagos Bridge",
+    "city": "Lagos",
+    "country": "Nigeria",
+    "category": "Landmarks",
+    "tags": ["bridge", "modern", "infrastructure"],
+    "svgFilename": "ng-lagos.svg",
+    "description": "Lagos is the largest city and economic hub of Nigeria, known for its modern infrastructure including iconic bridges, bustling port, and vibrant culture. The city combines traditional Nigerian culture with contemporary development, featuring the Third Mainland Bridge, Victoria Island, and dynamic street life.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "72",
+    "name": "Oslo Opera House",
+    "city": "Oslo",
+    "country": "Norway",
+    "category": "Landmarks",
+    "tags": ["opera house", "modern", "architecture"],
+    "svgFilename": "no-oslo.svg",
+    "description": "Oslo is the capital and largest city of Norway, known for its iconic Oslo Opera House, stunning fjord views, and rich cultural heritage. The city combines traditional Norwegian culture with modern Scandinavian design, featuring the Nobel Peace Center, Vigeland Sculpture Park, and beautiful waterfront.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "73",
+    "name": "Istanbul Bosphorus Bridge",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "category": "Landmarks",
+    "tags": ["bridge", "bosphorus", "iconic"],
+    "svgFilename": "tr-istanbul.svg",
+    "description": "Istanbul is the largest city in Turkey, spanning Europe and Asia across the Bosphorus Strait. Known for its iconic Bosphorus Bridge, historic Hagia Sophia, and rich cultural heritage. The city combines ancient Byzantine and Ottoman history with modern Turkish culture, featuring the Blue Mosque, Grand Bazaar, and vibrant street life.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
