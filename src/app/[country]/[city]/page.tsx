@@ -35,17 +35,18 @@ async function getIconsData(): Promise<Icon[]> {
 }
 
 interface PageProps {
-  params: {
+  params: Promise<{
     country: string;
     city: string;
-  };
+  }>;
 }
 
 export default async function IconPage({ params }: PageProps) {
+  const { country, city } = await params;
   const icons = await getIconsData();
   
   // Check if the icon exists
-  const icon = findIconBySlugs(params.country, params.city, icons);
+  const icon = findIconBySlugs(country, city, icons);
   
   if (!icon) {
     notFound();
@@ -56,8 +57,9 @@ export default async function IconPage({ params }: PageProps) {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps) {
+  const { country, city } = await params;
   const icons = await getIconsData();
-  const icon = findIconBySlugs(params.country, params.city, icons);
+  const icon = findIconBySlugs(country, city, icons);
   
   if (!icon) {
     return {
