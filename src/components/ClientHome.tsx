@@ -33,8 +33,6 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
   const router = useRouter();
   const pathname = usePathname();
 
-  console.log('🔍 ClientHome render - pathname:', pathname, 'countryFilter:', countryFilter);
-
   // Handle direct URL access on initial load
   useEffect(() => {
     if (!isInitialized && pathname !== '/') {
@@ -107,41 +105,30 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
   const handleSearch = useCallback((query: string) => {
     const trimmedQuery = query.trim();
     
-    console.log('🔍 Search called with query:', trimmedQuery);
-    console.log('🔍 Current lastSearchQuery:', lastSearchQuery);
-    console.log('🔍 countryFilter:', countryFilter);
-    
     // Prevent unnecessary re-renders if the query hasn't changed
     if (trimmedQuery === lastSearchQuery) {
-      console.log('🔍 Query unchanged, skipping');
       return;
     }
     
     setLastSearchQuery(trimmedQuery);
     
     if (!trimmedQuery) {
-      console.log('🔍 Empty query, showing all icons or country-filtered');
       // If no search query, show all icons or country-filtered icons
       if (countryFilter) {
         const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
-        console.log('🔍 Country filtered icons:', countryFilteredIcons.map(i => i.city));
         setFilteredIcons(countryFilteredIcons);
       } else {
-        console.log('🔍 Showing all icons:', icons.map(i => i.city));
         setFilteredIcons(icons);
       }
       return;
     }
 
     const searchTerm = trimmedQuery.toLowerCase();
-    console.log('🔍 Searching for term:', searchTerm);
     
     // Get the base icons to search in (all icons or country-filtered)
     const baseIcons = countryFilter 
       ? icons.filter(icon => icon.country === countryFilter)
       : icons;
-    
-    console.log('🔍 Base icons to search in:', baseIcons.map(i => i.city));
     
     const filtered = baseIcons.filter(icon => {
       // Search in city and country names
@@ -156,11 +143,8 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
                                icon.country.toLowerCase().includes(' ' + searchTerm + ' ');
       
       const match = cityMatch || exactCountryMatch;
-      console.log(`🔍 ${icon.city}: cityMatch=${cityMatch}, countryMatch=${countryMatch}, exactCountryMatch=${exactCountryMatch}, match=${match}`);
       return match;
     });
-
-    console.log('🔍 Filtered results:', filtered.map(i => i.city));
 
     // Remove duplicates based on _id (this should not be necessary but just in case)
     const uniqueFiltered = filtered.filter((icon, index, self) => 
@@ -168,7 +152,6 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
     );
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
-    console.log('🔍 Final sorted results:', sortedFiltered.map(i => i.city));
     setFilteredIcons(sortedFiltered);
   }, [icons, lastSearchQuery, countryFilter]);
 
