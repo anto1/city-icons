@@ -123,43 +123,4 @@ export async function generateMetadata({ params }: PageProps) {
       },
     },
   };
-}
-
-// Generate structured data for SEO
-export async function generateStructuredData({ params }: PageProps) {
-  const { country, city } = await params;
-  const icons = await getIconsData();
-  const icon = findIconBySlugs(country, city, icons);
-  
-  if (!icon) {
-    return null;
-  }
-
-  const baseUrl = 'https://cities.partdirector.ch';
-  const pageUrl = `${baseUrl}/${country}/${city}`;
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    name: icon.name,
-    description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
-    url: pageUrl,
-    author: {
-      '@type': 'Organization',
-      name: 'Studio Partdirector',
-      url: 'https://partdirector.ch',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Studio Partdirector',
-      url: 'https://partdirector.ch',
-    },
-    datePublished: icon.createdAt,
-    dateModified: icon.updatedAt,
-    image: `${baseUrl}/icons/${icon.svgFilename}`,
-    keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art`,
-    inLanguage: 'en-US',
-    isAccessibleForFree: true,
-    license: `${baseUrl}/license`,
-  };
 } 
