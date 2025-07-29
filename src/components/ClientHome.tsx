@@ -63,10 +63,24 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
           router.push(url, { scroll: false });
         }
       } else if (!modalOpen && pathname !== '/') {
-        router.push('/', { scroll: false });
+        // Check if current pathname is a country page
+        const pathParts = pathname.split('/').filter(Boolean);
+        if (pathParts.length === 1) {
+          // This might be a country page, check if it's valid
+          const countrySlug = pathParts[0];
+          const countryIcons = icons.filter(icon => slugify(icon.country) === countrySlug);
+          if (countryIcons.length === 0) {
+            // Not a valid country page, redirect to home
+            router.push('/', { scroll: false });
+          }
+          // If it's a valid country page, don't redirect
+        } else {
+          // Not a country page, redirect to home
+          router.push('/', { scroll: false });
+        }
       }
     }
-  }, [modalOpen, selectedIcon, pathname, router, isInitialized]);
+  }, [modalOpen, selectedIcon, pathname, router, isInitialized, icons]);
 
   // Debug filteredIcons
   useEffect(() => {
@@ -266,23 +280,26 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
         <div className="container mx-auto px-4 text-center">
           {/* Countries List */}
           <div className="mb-6">
-            <p className="text-sm text-muted-foreground">
-              {[...new Set(icons.map(icon => icon.country))]
-                .sort()
-                .map((country, index, array) => (
-                  <span key={country}>
-                    <Link
-                      href={`/${slugify(country)}`}
-                      className="text-muted-foreground hover:text-orange-600 transition-colors underline"
-                    >
+            <div className="relative inline-block text-left">
+              <select 
+                className="text-sm text-muted-foreground bg-transparent border border-muted-foreground/20 rounded px-3 py-1 focus:outline-none focus:border-orange-600 transition-colors cursor-pointer"
+                onChange={(e) => {
+                  if (e.target.value) {
+                    router.push(`/${e.target.value}`);
+                  }
+                }}
+                value=""
+              >
+                <option value="">Country: choose</option>
+                {[...new Set(icons.map(icon => icon.country))]
+                  .sort()
+                  .map((country) => (
+                    <option key={country} value={slugify(country)}>
                       {country}
-                    </Link>
-                    {index < array.length - 1 && (
-                      <span className="text-muted-foreground mx-2">•</span>
-                    )}
-                  </span>
-                ))}
-            </p>
+                    </option>
+                  ))}
+              </select>
+            </div>
           </div>
           
           <p className="text-sm text-foreground mb-2">
