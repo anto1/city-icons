@@ -119,11 +119,12 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
       {icons.map((icon, index) => (
         <div 
           key={icon._id} 
-          className="group cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center" 
+          className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center" 
           style={{ 
             aspectRatio: '1 / 1',
             transform: `scale(${getScale(index)})`,
-            zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1
+            zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1,
+            cursor: 'pointer'
           }} 
           onClick={() => {
             // Track icon click with city data
