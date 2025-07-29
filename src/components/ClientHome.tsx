@@ -68,9 +68,12 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
             // Not a valid country page, redirect to home
             router.push('/', { scroll: false });
           }
-          // If it's a valid country page, don't redirect
+          // If it's a valid country page, don't redirect - stay on country page
+        } else if (pathParts.length === 3 && pathParts[1] === 'city') {
+          // This is an individual icon page, redirect to home when modal closes
+          router.push('/', { scroll: false });
         } else {
-          // Not a country page, redirect to home
+          // Not a country page or icon page, redirect to home
           router.push('/', { scroll: false });
         }
       }
@@ -102,37 +105,52 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
   const handleSearch = useCallback((query: string) => {
     const trimmedQuery = query.trim();
     
+    console.log('🔍 Search called with query:', trimmedQuery);
+    console.log('🔍 Current lastSearchQuery:', lastSearchQuery);
+    console.log('🔍 countryFilter:', countryFilter);
+    
     // Prevent unnecessary re-renders if the query hasn't changed
     if (trimmedQuery === lastSearchQuery) {
+      console.log('🔍 Query unchanged, skipping');
       return;
     }
     
     setLastSearchQuery(trimmedQuery);
     
     if (!trimmedQuery) {
+      console.log('🔍 Empty query, showing all icons or country-filtered');
       // If no search query, show all icons or country-filtered icons
       if (countryFilter) {
         const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
+        console.log('🔍 Country filtered icons:', countryFilteredIcons.map(i => i.city));
         setFilteredIcons(countryFilteredIcons);
       } else {
+        console.log('🔍 Showing all icons:', icons.map(i => i.city));
         setFilteredIcons(icons);
       }
       return;
     }
 
     const searchTerm = trimmedQuery.toLowerCase();
+    console.log('🔍 Searching for term:', searchTerm);
     
     // Get the base icons to search in (all icons or country-filtered)
     const baseIcons = countryFilter 
       ? icons.filter(icon => icon.country === countryFilter)
       : icons;
     
+    console.log('🔍 Base icons to search in:', baseIcons.map(i => i.city));
+    
     const filtered = baseIcons.filter(icon => {
       // Search in city and country names
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       const countryMatch = icon.country.toLowerCase().includes(searchTerm);
-      return cityMatch || countryMatch;
+      const match = cityMatch || countryMatch;
+      console.log(`🔍 ${icon.city}: cityMatch=${cityMatch}, countryMatch=${countryMatch}, match=${match}`);
+      return match;
     });
+
+    console.log('🔍 Filtered results:', filtered.map(i => i.city));
 
     // Remove duplicates based on _id (this should not be necessary but just in case)
     const uniqueFiltered = filtered.filter((icon, index, self) => 
@@ -140,6 +158,7 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
     );
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
+    console.log('🔍 Final sorted results:', sortedFiltered.map(i => i.city));
     setFilteredIcons(sortedFiltered);
   }, [icons, lastSearchQuery, countryFilter]);
 
