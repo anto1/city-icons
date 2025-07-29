@@ -1,5 +1,7 @@
+import { Icon } from '@/types';
+
 interface SearchResultsCountProps {
-  filteredIcons: any[];
+  filteredIcons: Icon[];
   totalIcons: number;
 }
 
