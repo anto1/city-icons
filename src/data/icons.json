@@ -850,5 +850,29 @@
     "description": "Phoenix is the capital and largest city of Arizona, known for its desert landscape, modern architecture, and southwestern culture. The city combines natural beauty with urban development, featuring the iconic Phoenix Mountain Preserve, vibrant downtown, and rich Native American heritage.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "76",
+    "name": "Ferrara Cathedral",
+    "city": "Ferrara",
+    "country": "Italy",
+    "category": "Landmarks",
+    "tags": ["cathedral", "gothic", "historic"],
+    "svgFilename": "it-ferrara.svg",
+    "description": "Ferrara is a historic city in northern Italy, known for its magnificent cathedral, medieval architecture, and Renaissance heritage. The city combines Gothic and Renaissance styles, featuring the iconic Ferrara Cathedral, the Estense Castle, and the UNESCO World Heritage historic center.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "77",
+    "name": "Minsk Cathedral",
+    "city": "Minsk",
+    "country": "Belarus",
+    "category": "Landmarks",
+    "tags": ["cathedral", "orthodox", "historic"],
+    "svgFilename": "by-minsk.svg",
+    "description": "Minsk is the capital and largest city of Belarus, known for its beautiful Orthodox cathedrals, Soviet-era architecture, and rich cultural heritage. The city combines traditional Belarusian culture with modern development, featuring the Holy Spirit Cathedral, Independence Square, and vibrant cultural scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
