@@ -44,17 +44,30 @@ export default async function CountryPage({ params }: PageProps) {
   const { country } = await params;
   const allIcons = await getIconsData();
   
-  // Filter icons for this country
-  const countryIcons = allIcons.filter(icon => 
-    slugify(icon.country) === country
-  );
+  // Debug: Log the requested country and available countries
+  console.log('🔍 Requested country slug:', country);
+  const availableCountries = [...new Set(allIcons.map(icon => icon.country))];
+  console.log('🔍 Available countries:', availableCountries);
+  console.log('🔍 Available country slugs:', availableCountries.map(c => slugify(c)));
+  
+  // Filter icons for this country - make it case-insensitive
+  const countryIcons = allIcons.filter(icon => {
+    const iconCountrySlug = slugify(icon.country);
+    const match = iconCountrySlug === country;
+    console.log(`🔍 Comparing: "${iconCountrySlug}" === "${country}" = ${match}`);
+    return match;
+  });
+  
+  console.log('🔍 Found country icons:', countryIcons.length);
   
   if (countryIcons.length === 0) {
+    console.log('❌ No icons found for country:', country);
     notFound();
   }
 
   // Get the country name from the first icon (they should all have the same country)
   const countryName = countryIcons[0].country;
+  console.log('✅ Country name:', countryName);
 
   return <ClientHome initialIcons={allIcons} countryFilter={countryName} />;
 }
