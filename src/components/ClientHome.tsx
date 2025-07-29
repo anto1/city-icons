@@ -91,39 +91,27 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
   const handleSearch = useCallback((query: string) => {
     const trimmedQuery = query.trim();
     
-    console.log('🔍 handleSearch called with:', query, 'trimmed:', trimmedQuery);
-    
     // Prevent unnecessary re-renders if the query hasn't changed
     if (trimmedQuery === lastSearchQuery) {
-      console.log('⏭️ Skipping search - same query');
       return;
     }
     
     setLastSearchQuery(trimmedQuery);
     
     if (!trimmedQuery) {
-      console.log('📋 Setting all icons (empty query)');
       setFilteredIcons(icons);
       return;
     }
 
     const searchTerm = trimmedQuery.toLowerCase();
-    console.log('🔍 Searching for term:', searchTerm);
     
     const filtered = icons.filter(icon => {
       // Search in city and country names
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       const countryMatch = icon.country.toLowerCase().includes(searchTerm);
       
-      // Debug logging for specific cities
-      if (icon.city === 'Amsterdam' || icon.city === 'Almaty') {
-        console.log(`🎯 ${icon.city} check:`, { cityMatch, countryMatch, searchTerm, city: icon.city.toLowerCase() });
-      }
-      
       return cityMatch || countryMatch;
     });
-
-    console.log('📋 Raw filtered results:', filtered.map(i => i.city));
 
     // Remove duplicates based on _id (this should not be necessary but just in case)
     const uniqueFiltered = filtered.filter((icon, index, self) => 
@@ -131,10 +119,6 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     );
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
-    console.log('📋 Final sorted results:', sortedFiltered.map(i => i.city));
-    console.log('📋 Setting filteredIcons to:', sortedFiltered.length, 'icons');
-    console.log('📋 Total icons available:', icons.length);
-    
     setFilteredIcons(sortedFiltered);
   }, [icons, lastSearchQuery]);
 
@@ -225,10 +209,6 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
           <div className="text-center mt-4">
             <p className="text-sm text-muted-foreground">
               Found {filteredIcons.length} of {icons.length} icons
-            </p>
-            {/* Debug info - remove in production */}
-            <p className="text-xs text-muted-foreground mt-1">
-              Debug: {filteredIcons.length} filtered, {icons.length} total
             </p>
           </div>
         )}

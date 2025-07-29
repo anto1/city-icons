@@ -13,7 +13,6 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    console.log('🔍 SearchBar calling onSearch with:', query);
     onSearch(query);
     // Track search if query is not empty
     if (query.trim()) {
@@ -24,21 +23,12 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   useEffect(() => {
     if (query.trim() && allIcons) {
       const searchTerm = query.toLowerCase().trim();
-      console.log('🔍 SearchBar filtering suggestions for:', searchTerm);
       
       const filtered = allIcons.filter(icon => {
         const cityMatch = icon.city.toLowerCase().includes(searchTerm);
         const countryMatch = icon.country.toLowerCase().includes(searchTerm);
-        
-        // Debug specific cities
-        if (icon.city === 'Amsterdam' || icon.city === 'Almaty') {
-          console.log(`🎯 SearchBar ${icon.city}:`, { cityMatch, countryMatch, searchTerm });
-        }
-        
         return cityMatch || countryMatch;
       }).slice(0, 5);
-      
-      console.log('🔍 SearchBar filtered suggestions:', filtered.map(i => i.city));
       
       // Remove duplicates based on city and country combination
       const uniqueSuggestions = filtered.filter((icon, index, self) => 
