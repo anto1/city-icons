@@ -277,6 +277,9 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
             <p className="text-sm text-muted-foreground">
               Found {filteredIcons.length} of {icons.length} icons
             </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Debug: {filteredIcons.map(i => i.city).join(', ')}
+            </p>
           </div>
         )}
         
