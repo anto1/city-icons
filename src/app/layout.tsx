@@ -67,6 +67,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="font-instrument-sans">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'City Icons Collection',
+              description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector.',
+              url: 'https://cities.partdirector.ch',
+              author: {
+                '@type': 'Organization',
+                name: 'Studio Partdirector',
+                url: 'https://partdirector.ch',
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'Studio Partdirector',
+                url: 'https://partdirector.ch',
+              },
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: 'https://cities.partdirector.ch?search={search_term_string}',
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
+      </head>
       <body className="antialiased text-base">
         <FathomAnalytics />
         {children}

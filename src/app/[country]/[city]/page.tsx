@@ -68,13 +68,98 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const baseUrl = 'https://cities.partdirector.ch';
+  const pageUrl = `${baseUrl}/${country}/${city}`;
+  const description = icon.description || `Download the ${icon.name} icon representing ${icon.city}, ${icon.country}. High-quality SVG line art icon for your projects.`;
+
   return {
     title: `${icon.name} - ${icon.city}, ${icon.country} | City Icons`,
-    description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
+    description,
+    keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, download icon`,
+    authors: [{ name: 'Studio Partdirector' }],
+    creator: 'Studio Partdirector',
+    publisher: 'Studio Partdirector',
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
       title: `${icon.name} - ${icon.city}, ${icon.country}`,
-      description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
+      description,
+      url: pageUrl,
+      siteName: 'City Icons',
+      locale: 'en_US',
       type: 'website',
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `${icon.city} city icon`,
+        },
+      ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${icon.name} - ${icon.city}, ${icon.country}`,
+      description,
+      images: [`${baseUrl}/og-image.png`],
+      creator: '@partdirector',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
+}
+
+// Generate structured data for SEO
+export async function generateStructuredData({ params }: PageProps) {
+  const { country, city } = await params;
+  const icons = await getIconsData();
+  const icon = findIconBySlugs(country, city, icons);
+  
+  if (!icon) {
+    return null;
+  }
+
+  const baseUrl = 'https://cities.partdirector.ch';
+  const pageUrl = `${baseUrl}/${country}/${city}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: icon.name,
+    description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
+    url: pageUrl,
+    author: {
+      '@type': 'Organization',
+      name: 'Studio Partdirector',
+      url: 'https://partdirector.ch',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Studio Partdirector',
+      url: 'https://partdirector.ch',
+    },
+    datePublished: icon.createdAt,
+    dateModified: icon.updatedAt,
+    image: `${baseUrl}/icons/${icon.svgFilename}`,
+    keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art`,
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    license: `${baseUrl}/license`,
   };
 } 

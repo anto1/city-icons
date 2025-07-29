@@ -135,6 +135,9 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
           <div className="flex flex-col items-center justify-center flex-1">
             <div
               className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4"
+              role="img"
+              aria-label={`${icon.city} icon representing ${icon.name}`}
+              title={`${icon.city}, ${icon.country} - ${icon.name}`}
               dangerouslySetInnerHTML={{
                 __html: icon.svgContent
                   .replace(/width="[^"]*"/, 'width="56"')
@@ -144,7 +147,7 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
               }}
             />
             <div className="text-center w-full">
-              <p className="text-base font-medium text-foreground truncate w-full mb-1">{icon.city}</p>
+              <h3 className="text-base font-medium text-foreground truncate w-full mb-1">{icon.city}</h3>
               <p className="text-sm text-muted-foreground truncate w-full">{icon.country}</p>
             </div>
           </div>

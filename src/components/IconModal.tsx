@@ -84,9 +84,9 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md p-8 z-[9999]">
         <DialogHeader className="space-y-4">
-          <DialogTitle className="text-xl">
+          <h2 className="text-xl font-semibold">
             {icon?.name}
-          </DialogTitle>
+          </h2>
           <DialogDescription className="text-base leading-relaxed">
             {icon?.description || `Icon representing ${icon?.city}, ${icon?.country}`}
           </DialogDescription>
@@ -96,6 +96,8 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
           <div className="flex justify-center p-8 bg-muted rounded-lg">
             <div
               className="w-24 h-24 text-primary flex items-center justify-center"
+              role="img"
+              aria-label={`${icon?.city} icon representing ${icon?.name}`}
               dangerouslySetInnerHTML={{ 
                 __html: icon?.svgContent
                   ?.replace(/width="[^"]*"/, 'width="96"')
