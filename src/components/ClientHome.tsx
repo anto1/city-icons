@@ -33,6 +33,8 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
   const router = useRouter();
   const pathname = usePathname();
 
+  console.log('🔍 ClientHome render - pathname:', pathname, 'countryFilter:', countryFilter);
+
   // Handle direct URL access on initial load
   useEffect(() => {
     if (!isInitialized && pathname !== '/') {
