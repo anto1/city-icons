@@ -19,7 +19,16 @@ export function useModalNavigation({ icons }: UseModalNavigationProps) {
   useEffect(() => {
     if (!isInitialized && pathname !== '/') {
       const pathParts = pathname.split('/').filter(Boolean);
-      if (pathParts.length === 2) {
+      if (pathParts.length === 3 && pathParts[1] === 'city') {
+        // New format: /country/city/cityname
+        const [countrySlug, , citySlug] = pathParts;
+        const icon = findIconBySlugs(countrySlug, citySlug, icons);
+        if (icon) {
+          setSelectedIcon(icon);
+          setModalOpen(true);
+        }
+      } else if (pathParts.length === 2) {
+        // Old format: /country/cityname (for backward compatibility)
         const [countrySlug, citySlug] = pathParts;
         const icon = findIconBySlugs(countrySlug, citySlug, icons);
         if (icon) {
