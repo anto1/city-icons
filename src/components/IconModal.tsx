@@ -13,7 +13,8 @@ import { Button } from '@/components/ui/button';
 import { Download, Copy, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl } from '@/lib/utils';
+import { getIconUrl, slugify } from '@/lib/utils';
+import Link from 'next/link';
 
 export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
   const downloadSVG = () => {
@@ -84,6 +85,12 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md p-8 z-[9999]">
         <DialogHeader className="space-y-4">
+          <Link
+            href={`/${slugify(icon?.country || '')}`}
+            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+          >
+            {icon?.country}
+          </Link>
           <h2 className="text-xl font-semibold">
             {icon?.name}
           </h2>
