@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // Generate URLs for all icons
   const iconUrls = iconData.map(icon => ({
-    url: `${baseUrl}/${slugify(icon.country)}/city/${slugify(icon.city)}`,
+    url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

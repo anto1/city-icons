@@ -19,16 +19,8 @@ export function useModalNavigation({ icons }: UseModalNavigationProps) {
   useEffect(() => {
     if (!isInitialized && pathname !== '/') {
       const pathParts = pathname.split('/').filter(Boolean);
-      if (pathParts.length === 3 && pathParts[1] === 'city') {
-        // New format: /country/city/cityname
-        const [countrySlug, , citySlug] = pathParts;
-        const icon = findIconBySlugs(countrySlug, citySlug, icons);
-        if (icon) {
-          setSelectedIcon(icon);
-          setModalOpen(true);
-        }
-      } else if (pathParts.length === 2) {
-        // Old format: /country/cityname (for backward compatibility)
+      if (pathParts.length === 2) {
+        // Format: /country/cityname
         const [countrySlug, citySlug] = pathParts;
         const icon = findIconBySlugs(countrySlug, citySlug, icons);
         if (icon) {
@@ -60,7 +52,7 @@ export function useModalNavigation({ icons }: UseModalNavigationProps) {
             router.push('/', { scroll: false });
           }
           // If it's a valid country page, don't redirect - stay on country page
-        } else if (pathParts.length === 3 && pathParts[1] === 'city') {
+        } else if (pathParts.length === 2) {
           // This is an individual icon page, redirect to home when modal closes
           router.push('/', { scroll: false });
         } else {

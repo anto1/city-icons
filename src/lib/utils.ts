@@ -28,5 +28,5 @@ export function findIconBySlugs(countrySlug: string, citySlug: string, icons: Ic
 
 // Generate URL for an icon
 export function getIconUrl(icon: Icon): string {
-  return `/${slugify(icon.country)}/city/${slugify(icon.city)}`;
+  return `/${slugify(icon.country)}/${slugify(icon.city)}`;
 }
