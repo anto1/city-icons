@@ -132,6 +132,18 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "50",
+    "name": "Cusco Inca Wall",
+    "city": "Cusco",
+    "country": "Peru",
+    "category": "Landmarks",
+    "tags": ["inca", "wall", "historic"],
+    "svgFilename": "pe-cusco.svg",
+    "description": "Cusco is a historic city in southeastern Peru, once the capital of the Inca Empire. Known for its impressive Inca stone walls and architecture, the city features the famous Twelve-Angled Stone and other remarkable examples of Inca masonry. Cusco combines ancient Andean heritage with Spanish colonial architecture.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "27",
     "name": "Copenhagen Harbor",
     "city": "Copenhagen",
@@ -440,6 +452,18 @@
     "tags": ["modern", "architecture", "abstract"],
     "svgFilename": "es-valencia.svg",
     "description": "The City of Arts and Sciences in Valencia is a stunning complex of futuristic buildings designed by Santiago Calatrava. This architectural marvel includes an opera house, science museum, planetarium, and aquarium, showcasing innovative modern design.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "49",
+    "name": "Venice Lion with Book",
+    "city": "Venice",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": ["lion", "book", "historic"],
+    "svgFilename": "it-venice.svg",
+    "description": "Venice is a historic city in northeastern Italy, known for its iconic lion symbol holding a book - representing the winged lion of St. Mark, the city's patron saint. The city is famous for its beautiful canals, historic architecture, and rich cultural heritage spanning over 1,000 years.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
