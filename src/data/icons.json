@@ -886,5 +886,17 @@
     "description": "Kyiv is the capital and largest city of Ukraine, known for its iconic Independence Monument, rich Slavic heritage, and beautiful Orthodox churches. The city combines ancient history with modern European culture, featuring the golden-domed St. Sophia Cathedral, Maidan Nezalezhnosti, and vibrant cultural scene.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "79",
+    "name": "Gijón Elogio del Horizonte",
+    "city": "Gijón",
+    "country": "Spain",
+    "category": "Landmarks",
+    "tags": ["sculpture", "modern", "coastal"],
+    "svgFilename": "es-gijon.svg",
+    "description": "Gijón is a coastal city in northern Spain, known for its iconic 'Elogio del Horizonte' sculpture by Eduardo Chillida, beautiful beaches, and maritime heritage. The city combines traditional Asturian culture with modern development, featuring the San Lorenzo Beach, Cimavilla historic quarter, and vibrant port area.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
