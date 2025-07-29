@@ -12,6 +12,30 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "51",
+    "name": "Baghdad Spiral Minaret",
+    "city": "Baghdad",
+    "country": "Iraq",
+    "category": "Landmarks",
+    "tags": ["minaret", "spiral", "historic"],
+    "svgFilename": "iq-baghdad.svg",
+    "description": "Baghdad is the capital and largest city of Iraq, known for its historic spiral minaret of Samarra - a UNESCO World Heritage site. The city has a rich cultural heritage as the center of the Islamic Golden Age and features beautiful Islamic architecture and historic landmarks.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "52",
+    "name": "Baku Flame Towers",
+    "city": "Baku",
+    "country": "Azerbaijan",
+    "category": "Buildings",
+    "tags": ["flame", "towers", "modern"],
+    "svgFilename": "az-baku.svg",
+    "description": "Baku is the capital and largest city of Azerbaijan, known for its iconic Flame Towers - three skyscrapers that resemble flames. The city combines historic architecture with modern development, featuring the UNESCO-listed Old City and the futuristic Flame Towers that light up the skyline.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "15",
     "name": "Barcelona Sagrada Familia",
     "city": "Barcelona",
@@ -216,6 +240,18 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "55",
+    "name": "Lisbon Belem Tower",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": ["tower", "belem", "historic"],
+    "svgFilename": "pt-lisbon.svg",
+    "description": "Lisbon is the capital and largest city of Portugal, known for its iconic Belem Tower - a 16th-century fortress and UNESCO World Heritage site. The city combines historic charm with modern development, featuring beautiful tiled buildings, historic trams, and the stunning Tagus River waterfront.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "16",
     "name": "Leipzig Modern City",
     "city": "Leipzig",
@@ -392,6 +428,18 @@
     "tags": ["modern", "technology", "urban"],
     "svgFilename": "kr-seoul.svg",
     "description": "Seoul is the capital and largest city of South Korea, known for its cutting-edge technology, modern architecture, and rich cultural heritage. The city seamlessly blends ancient palaces with futuristic skyscrapers.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "54",
+    "name": "Sorrento Lemon",
+    "city": "Sorrento",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": ["lemon", "citrus", "traditional"],
+    "svgFilename": "it-sorrento.svg",
+    "description": "Sorrento is a beautiful coastal town in southern Italy, known for its famous lemons and limoncello production. The city is famous for its stunning views of the Bay of Naples, traditional lemon groves, and the iconic Amalfi Coast scenery. Sorrento's lemons are a symbol of the region's agricultural heritage and Mediterranean charm.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
