@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { Icon } from '@/types';
 import { getIconUrl } from '@/lib/utils';
 
@@ -36,12 +37,28 @@ export default function StructuredData({ icon }: StructuredDataProps) {
     license: `${baseUrl}/license`,
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData),
-      }}
-    />
-  );
+  useEffect(() => {
+    // Remove any existing structured data script
+    const existingScript = document.querySelector('script[data-structured-data]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Create and inject the structured data script in the head
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-structured-data', 'true');
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    // Cleanup function to remove the script when component unmounts
+    return () => {
+      const scriptToRemove = document.querySelector('script[data-structured-data]');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, [icon._id]); // Re-run when icon changes
+
+  return null; // This component doesn't render anything
 } 
