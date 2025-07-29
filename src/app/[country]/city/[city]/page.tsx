@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   const baseUrl = 'https://cities.partdirector.ch';
-  const pageUrl = `${baseUrl}/${country}/${city}`;
+  const pageUrl = `${baseUrl}/${country}/city/${city}`;
   const description = icon.description || `Download the ${icon.name} icon representing ${icon.city}, ${icon.country}. High-quality SVG line art icon for your projects.`;
 
   return {
