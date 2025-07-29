@@ -147,8 +147,16 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
       // Search in city and country names
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       const countryMatch = icon.country.toLowerCase().includes(searchTerm);
-      const match = cityMatch || countryMatch;
-      console.log(`🔍 ${icon.city}: cityMatch=${cityMatch}, countryMatch=${countryMatch}, match=${match}`);
+      
+      // For country matching, ensure it's not a partial word match
+      // This prevents "amsterdam" matching "netherlands"
+      const exactCountryMatch = icon.country.toLowerCase() === searchTerm || 
+                               icon.country.toLowerCase().startsWith(searchTerm + ' ') ||
+                               icon.country.toLowerCase().endsWith(' ' + searchTerm) ||
+                               icon.country.toLowerCase().includes(' ' + searchTerm + ' ');
+      
+      const match = cityMatch || exactCountryMatch;
+      console.log(`🔍 ${icon.city}: cityMatch=${cityMatch}, countryMatch=${countryMatch}, exactCountryMatch=${exactCountryMatch}, match=${match}`);
       return match;
     });
 
