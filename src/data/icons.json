@@ -874,5 +874,17 @@
     "description": "Minsk is the capital and largest city of Belarus, known for its beautiful Orthodox cathedrals, Soviet-era architecture, and rich cultural heritage. The city combines traditional Belarusian culture with modern development, featuring the Holy Spirit Cathedral, Independence Square, and vibrant cultural scene.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "78",
+    "name": "Kyiv Independence Monument",
+    "city": "Kyiv",
+    "country": "Ukraine",
+    "category": "Landmarks",
+    "tags": ["independence", "monument", "historic"],
+    "svgFilename": "ua-kyiv.svg",
+    "description": "Kyiv is the capital and largest city of Ukraine, known for its iconic Independence Monument, rich Slavic heritage, and beautiful Orthodox churches. The city combines ancient history with modern European culture, featuring the golden-domed St. Sophia Cathedral, Maidan Nezalezhnosti, and vibrant cultural scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
