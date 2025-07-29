@@ -1,18 +1,37 @@
 import { MetadataRoute } from 'next'
+import iconData from '@/data/icons.json'
+import { slugify } from '@/lib/utils'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://cities.partdirector.ch'
+  
+  // Generate URLs for all icons
+  const iconUrls = iconData.map(icon => ({
+    url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     {
-      url: 'https://cities.partdirector.ch',
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://cities.partdirector.ch/license',
+      url: `${baseUrl}/license`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/roulette`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    ...iconUrls,
   ]
 } 

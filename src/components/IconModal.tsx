@@ -10,9 +10,10 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Download, Copy } from 'lucide-react';
+import { Download, Copy, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
+import { getIconUrl } from '@/lib/utils';
 
 export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
   const downloadSVG = () => {
@@ -56,6 +57,29 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     }
   };
 
+  const shareLink = async () => {
+    if (!icon) return;
+    
+    try {
+      const shareUrl = `${window.location.origin}${getIconUrl(icon)}`;
+      await navigator.clipboard.writeText(shareUrl);
+      
+      // Track share event with city data
+      trackEvent(`ICON_SHARE_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
+      
+      toast.success('Link copied to clipboard!', {
+        description: `Direct link to ${icon.city} icon`,
+        duration: 3000,
+      });
+    } catch (err) {
+      console.error('Failed to copy link:', err);
+      toast.error('Failed to copy link', {
+        description: 'Please try again',
+        duration: 4000,
+      });
+    }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md p-8 z-[9999]">
@@ -82,14 +106,18 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
           </div>
         </div>
         
-        <DialogFooter className="flex gap-4 pt-4">
+        <DialogFooter className="flex gap-2 pt-4">
           <Button onClick={downloadSVG} className="flex-1 py-3">
             <Download className="w-4 h-4 mr-2" />
-            Download SVG
+            Download
           </Button>
           <Button onClick={copySVG} variant="outline" className="flex-1 py-3">
             <Copy className="w-4 h-4 mr-2" />
             Copy SVG
+          </Button>
+          <Button onClick={shareLink} variant="outline" className="flex-1 py-3">
+            <Share2 className="w-4 h-4 mr-2" />
+            Share Link
           </Button>
         </DialogFooter>
       </DialogContent>

@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import SearchBar from '@/components/SearchBar';
 import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
+import { slugify, findIconBySlugs, getIconUrl } from '@/lib/utils';
 
 interface ClientHomeProps {
   initialIcons: Icon[];
@@ -18,11 +20,45 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
   const [selectedIcon, setSelectedIcon] = useState<Icon | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [lastSearchQuery, setLastSearchQuery] = useState<string>('');
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Initialize search state
   useEffect(() => {
     setFilteredIcons(icons);
   }, [icons]);
+
+  // Handle direct URL access on initial load
+  useEffect(() => {
+    if (!isInitialized && pathname !== '/') {
+      const pathParts = pathname.split('/').filter(Boolean);
+      if (pathParts.length === 2) {
+        const [countrySlug, citySlug] = pathParts;
+        const icon = findIconBySlugs(countrySlug, citySlug, icons);
+        if (icon) {
+          setSelectedIcon(icon);
+          setModalOpen(true);
+        }
+      }
+      setIsInitialized(true);
+    }
+  }, [pathname, icons, isInitialized]);
+
+  // Sync URL with modal state
+  useEffect(() => {
+    if (isInitialized) {
+      if (modalOpen && selectedIcon) {
+        const url = getIconUrl(selectedIcon);
+        if (pathname !== url) {
+          router.push(url, { scroll: false });
+        }
+      } else if (!modalOpen && pathname !== '/') {
+        router.push('/', { scroll: false });
+      }
+    }
+  }, [modalOpen, selectedIcon, pathname, router, isInitialized]);
 
   // Debug filteredIcons
   useEffect(() => {
