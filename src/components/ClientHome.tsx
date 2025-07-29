@@ -9,7 +9,7 @@ import IconModal from '@/components/IconModal';
 import StructuredData from '@/components/StructuredData';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { findIconBySlugs, getIconUrl } from '@/lib/utils';
+import { findIconBySlugs, getIconUrl, slugify } from '@/lib/utils';
 
 interface ClientHomeProps {
   initialIcons: Icon[];
@@ -264,6 +264,27 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
       {/* Footer */}
       <footer className="py-6 mt-16">
         <div className="container mx-auto px-4 text-center">
+          {/* Countries List */}
+          <div className="mb-6">
+            <p className="text-sm text-muted-foreground">
+              {[...new Set(icons.map(icon => icon.country))]
+                .sort()
+                .map((country, index, array) => (
+                  <span key={country}>
+                    <Link
+                      href={`/${slugify(country)}`}
+                      className="text-muted-foreground hover:text-orange-600 transition-colors underline"
+                    >
+                      {country}
+                    </Link>
+                    {index < array.length - 1 && (
+                      <span className="text-muted-foreground mx-2">•</span>
+                    )}
+                  </span>
+                ))}
+            </p>
+          </div>
+          
           <p className="text-sm text-foreground mb-2">
             {icons.length} icons ©{' '}
             <a
