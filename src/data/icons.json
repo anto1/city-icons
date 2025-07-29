@@ -528,6 +528,18 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "56",
+    "name": "Ottawa Parliament Hill",
+    "city": "Ottawa",
+    "country": "Canada",
+    "category": "Landmarks",
+    "tags": ["parliament", "hill", "government"],
+    "svgFilename": "ca-ottawa.svg",
+    "description": "Ottawa is the capital city of Canada, known for its iconic Parliament Hill - the seat of the Canadian government. The city combines historic architecture with modern government institutions, featuring the beautiful Gothic Revival Parliament Buildings, the Rideau Canal (a UNESCO World Heritage site), and the National Gallery of Canada.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "43",
     "name": "Vancouver Mountains",
     "city": "Vancouver",
@@ -548,6 +560,18 @@
     "tags": ["mermaid", "mythology", "symbol"],
     "svgFilename": "pl-warsaw.svg",
     "description": "The Warsaw Mermaid is the official symbol of Warsaw, Poland. According to legend, a mermaid swam from the Baltic Sea to Warsaw and decided to stay, protecting the city. The statue shows her with a sword and shield, ready to defend the city.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "57",
+    "name": "Wellington Beehive Parliament",
+    "city": "Wellington",
+    "country": "New Zealand",
+    "category": "Landmarks",
+    "tags": ["parliament", "beehive", "government"],
+    "svgFilename": "nz-wellington.svg",
+    "description": "Wellington is the capital city of New Zealand, known for its iconic Beehive Parliament Building - a distinctive circular structure that houses the executive wing of the New Zealand Parliament. The city combines government institutions with stunning harbor views, vibrant arts scene, and the famous Wellington wind.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
