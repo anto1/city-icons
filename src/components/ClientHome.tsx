@@ -13,9 +13,10 @@ import { findIconBySlugs, getIconUrl } from '@/lib/utils';
 
 interface ClientHomeProps {
   initialIcons: Icon[];
+  countryFilter?: string;
 }
 
-export default function ClientHome({ initialIcons }: ClientHomeProps) {
+export default function ClientHome({ initialIcons, countryFilter }: ClientHomeProps) {
   const [icons] = useState<Icon[]>(initialIcons);
   const [filteredIcons, setFilteredIcons] = useState<Icon[]>(initialIcons);
   const [selectedIcon, setSelectedIcon] = useState<Icon | null>(null);
@@ -26,10 +27,16 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Initialize search state
+  // Initialize search state with country filter
   useEffect(() => {
-    setFilteredIcons(icons);
-  }, [icons]);
+    if (countryFilter) {
+      // Filter icons by country
+      const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
+      setFilteredIcons(countryFilteredIcons);
+    } else {
+      setFilteredIcons(icons);
+    }
+  }, [icons, countryFilter]);
 
   // Handle direct URL access on initial load
   useEffect(() => {
@@ -99,13 +106,24 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     setLastSearchQuery(trimmedQuery);
     
     if (!trimmedQuery) {
-      setFilteredIcons(icons);
+      // If no search query, show all icons or country-filtered icons
+      if (countryFilter) {
+        const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
+        setFilteredIcons(countryFilteredIcons);
+      } else {
+        setFilteredIcons(icons);
+      }
       return;
     }
 
     const searchTerm = trimmedQuery.toLowerCase();
     
-    const filtered = icons.filter(icon => {
+    // Get the base icons to search in (all icons or country-filtered)
+    const baseIcons = countryFilter 
+      ? icons.filter(icon => icon.country === countryFilter)
+      : icons;
+    
+    const filtered = baseIcons.filter(icon => {
       // Search in city and country names
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       const countryMatch = icon.country.toLowerCase().includes(searchTerm);
@@ -120,7 +138,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
     setFilteredIcons(sortedFiltered);
-  }, [icons, lastSearchQuery]);
+  }, [icons, lastSearchQuery, countryFilter]);
 
   const handleIconClick = (icon: Icon) => {
     setSelectedIcon(icon);
@@ -169,6 +187,27 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
             </p>
             <p className="text-base text-muted-foreground">
               Download this high-quality SVG line art icon for your projects.
+            </p>
+          </div>
+        ) : countryFilter ? (
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-foreground mb-4 tracking-tight">
+              {countryFilter} City Icons
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Line art icons representing cities in {countryFilter} by{' '}
+              <a
+                href="https://partdirector.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-orange-600 transition-colors underline"
+                onClick={() => trackEvent('STUDIO_PARTDIRECTOR_CLICKED')}
+              >
+                Studio Partdirector
+              </a>.
+            </p>
+            <p className="text-lg text-muted-foreground mt-2">
+              Browse {filteredIcons.length} city icons from {countryFilter}.
             </p>
           </div>
         ) : (
