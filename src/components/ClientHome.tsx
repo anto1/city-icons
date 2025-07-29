@@ -111,20 +111,21 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     console.log('🔍 Searching for term:', searchTerm);
     
     const filtered = icons.filter(icon => {
-      // Only search in city and country names for more accurate results
+      // Search in city and country names
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       const countryMatch = icon.country.toLowerCase().includes(searchTerm);
       
-      if (icon.city === 'Amsterdam') {
-        console.log('🎯 Amsterdam check:', { cityMatch, countryMatch, searchTerm });
+      // Debug logging for specific cities
+      if (icon.city === 'Amsterdam' || icon.city === 'Almaty') {
+        console.log(`🎯 ${icon.city} check:`, { cityMatch, countryMatch, searchTerm, city: icon.city.toLowerCase() });
       }
       
       return cityMatch || countryMatch;
     });
 
-    console.log('📋 Filtered results:', filtered.map(i => i.city));
+    console.log('📋 Raw filtered results:', filtered.map(i => i.city));
 
-    // Remove duplicates based on _id
+    // Remove duplicates based on _id (this should not be necessary but just in case)
     const uniqueFiltered = filtered.filter((icon, index, self) => 
       index === self.findIndex(i => i._id === icon._id)
     );
@@ -132,6 +133,8 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
     console.log('📋 Final sorted results:', sortedFiltered.map(i => i.city));
     console.log('📋 Setting filteredIcons to:', sortedFiltered.length, 'icons');
+    console.log('📋 Total icons available:', icons.length);
+    
     setFilteredIcons(sortedFiltered);
   }, [icons, lastSearchQuery]);
 
@@ -222,6 +225,10 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
           <div className="text-center mt-4">
             <p className="text-sm text-muted-foreground">
               Found {filteredIcons.length} of {icons.length} icons
+            </p>
+            {/* Debug info - remove in production */}
+            <p className="text-xs text-muted-foreground mt-1">
+              Debug: {filteredIcons.length} filtered, {icons.length} total
             </p>
           </div>
         )}
