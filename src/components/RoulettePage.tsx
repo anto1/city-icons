@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Icon } from '@/types';
-import { Button } from '@/components/ui/button';
-import { trackEvent } from 'fathom-client';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Icon } from '@/types';
+import { trackEvent } from 'fathom-client';
 
 interface RoulettePageProps {
   icons: Icon[];
@@ -29,7 +30,6 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
       return `No doubt — you have to go to ${uniqueCities[0]}.`;
     } else if (uniqueCities.length === 2) {
       const duplicates = cityNames.filter((city, index) => cityNames.indexOf(city) !== index);
-      const uniqueCity = uniqueCities.find(city => city !== duplicates[0]);
       return `Looks like the universe is hinting at ${duplicates[0]}. Time to book that trip.`;
     } else {
       return "Three solid picks. You've got options.";
@@ -38,8 +38,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
   const getDuplicateCities = (cities: Icon[]) => {
     const cityNames = cities.map(icon => icon.city);
-    const duplicates = cityNames.filter((city, index) => cityNames.indexOf(city) !== index);
-    return duplicates;
+    return cityNames.filter((city, index) => cityNames.indexOf(city) !== index);
   };
 
   const spinRoulette = () => {
@@ -135,10 +134,11 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
       {/* Cherry Icon Header */}
       <div className="flex justify-center items-center gap-8 py-16">
         <Link href="/" className="w-14 h-14 text-foreground hover:opacity-80 transition-opacity">
-          <img 
+          <Image 
             src="/cherry.svg" 
             alt="Cherry" 
-            className="w-full h-full"
+            width={56}
+            height={56}
           />
         </Link>
       </div>
@@ -194,10 +194,11 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                 ) : (
                   <div className="text-center flex flex-col items-center justify-center h-full">
                     <div className="w-14 h-14 text-foreground mb-4 flex items-center justify-center">
-                      <img 
+                      <Image 
                         src="/cherry.svg" 
                         alt="Cherry" 
-                        className="w-full h-full"
+                        width={56}
+                        height={56}
                       />
                     </div>
                     <h3 className="text-base font-medium text-foreground mb-1">

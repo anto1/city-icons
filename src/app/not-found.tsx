@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Search, ArrowLeft } from 'lucide-react';
 import iconData from '@/data/icons.json';
 
@@ -25,9 +26,11 @@ export default function NotFound() {
             {/* Random Icon */}
             <div className="flex justify-center mb-12">
               <div className="w-16 h-16 text-muted-foreground">
-                <img 
+                <Image 
                   src={`/icons/${randomIcon.svgFilename}`}
                   alt={`${randomIcon.city} icon`}
+                  width={64}
+                  height={64}
                   className="w-full h-full"
                 />
               </div>

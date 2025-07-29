@@ -8,7 +8,7 @@ import IconGrid from '@/components/IconGrid';
 import IconModal from '@/components/IconModal';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { slugify, findIconBySlugs, getIconUrl } from '@/lib/utils';
+import { findIconBySlugs, getIconUrl } from '@/lib/utils';
 
 interface ClientHomeProps {
   initialIcons: Icon[];
@@ -132,7 +132,7 @@ export default function ClientHome({ initialIcons }: ClientHomeProps) {
     console.log('📋 Final sorted results:', sortedFiltered.map(i => i.city));
     console.log('📋 Setting filteredIcons to:', sortedFiltered.length, 'icons');
     setFilteredIcons(sortedFiltered);
-  }, [icons]);
+  }, [icons, lastSearchQuery]);
 
   const handleIconClick = (icon: Icon) => {
     setSelectedIcon(icon);
