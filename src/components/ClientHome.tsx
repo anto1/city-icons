@@ -18,7 +18,13 @@ interface ClientHomeProps {
 
 export default function ClientHome({ initialIcons, countryFilter }: ClientHomeProps) {
   const [icons] = useState<Icon[]>(initialIcons);
-  const [filteredIcons, setFilteredIcons] = useState<Icon[]>(initialIcons);
+  const [filteredIcons, setFilteredIcons] = useState<Icon[]>(() => {
+    // Initialize with country-filtered icons if countryFilter is provided
+    if (countryFilter) {
+      return initialIcons.filter(icon => icon.country === countryFilter);
+    }
+    return initialIcons;
+  });
   const [selectedIcon, setSelectedIcon] = useState<Icon | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [lastSearchQuery, setLastSearchQuery] = useState<string>('');
@@ -26,17 +32,6 @@ export default function ClientHome({ initialIcons, countryFilter }: ClientHomePr
 
   const router = useRouter();
   const pathname = usePathname();
-
-  // Initialize search state with country filter
-  useEffect(() => {
-    if (countryFilter) {
-      // Filter icons by country
-      const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
-      setFilteredIcons(countryFilteredIcons);
-    } else {
-      setFilteredIcons(icons);
-    }
-  }, [icons, countryFilter]);
 
   // Handle direct URL access on initial load
   useEffect(() => {
