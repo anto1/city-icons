@@ -217,13 +217,13 @@
   },
   {
     "_id": "31",
-    "name": "Erevan Republic Square",
-    "city": "Erevan",
+    "name": "Yerevan Republic Square",
+    "city": "Yerevan",
     "country": "Armenia",
     "category": "Landmarks",
     "tags": ["square", "historic", "government"],
-    "svgFilename": "am-erevan.svg",
-    "description": "Erevan is the capital and largest city of Armenia, known for its beautiful Republic Square, the Cascade complex, and the historic Matenadaran library. The city combines ancient Armenian heritage with modern urban development and serves as the cultural heart of Armenia.",
+    "svgFilename": "am-yerevan.svg",
+    "description": "Yerevan is the capital and largest city of Armenia, known for its beautiful Republic Square, the Cascade complex, and the historic Matenadaran library. The city combines ancient Armenian heritage with modern urban development and serves as the cultural heart of Armenia.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
