@@ -13,6 +13,7 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    console.log('🔍 SearchBar: calling onSearch with query:', query);
     onSearch(query);
     // Track search if query is not empty
     if (query.trim()) {
