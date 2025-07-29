@@ -10,12 +10,180 @@ Visit the live site: [City Icons Collection](https://cities.partdirector.ch)
 
 All icons follow a consistent naming pattern: `countryprefix-cityname.svg`
 
+**Format:** `{country-code}-{city-name}.svg`
+
+**Country Codes:**
+- `us` - United States
+- `de` - Germany  
+- `fr` - France
+- `gb` - United Kingdom
+- `es` - Spain
+- `it` - Italy
+- `ca` - Canada
+- `au` - Australia
+- `jp` - Japan
+- `kr` - South Korea
+- `cn` - China
+- `in` - India
+- `br` - Brazil
+- `ar` - Argentina
+- `cl` - Chile
+- `mx` - Mexico
+- `ru` - Russia
+- `cn` - China
+- `in` - India
+- `jp` - Japan
+- `kr` - South Korea
+- `th` - Thailand
+- `vn` - Vietnam
+- `my` - Malaysia
+- `sg` - Singapore
+- `id` - Indonesia
+- `ph` - Philippines
+- `pk` - Pakistan
+- `bd` - Bangladesh
+- `lk` - Sri Lanka
+- `np` - Nepal
+- `bt` - Bhutan
+- `mm` - Myanmar
+- `la` - Laos
+- `kh` - Cambodia
+- `mn` - Mongolia
+- `kz` - Kazakhstan
+- `uz` - Uzbekistan
+- `kg` - Kyrgyzstan
+- `tj` - Tajikistan
+- `tm` - Turkmenistan
+- `af` - Afghanistan
+- `ir` - Iran
+- `iq` - Iraq
+- `sy` - Syria
+- `lb` - Lebanon
+- `jo` - Jordan
+- `il` - Israel
+- `ps` - Palestine
+- `sa` - Saudi Arabia
+- `ye` - Yemen
+- `om` - Oman
+- `ae` - United Arab Emirates
+- `kw` - Kuwait
+- `qa` - Qatar
+- `bh` - Bahrain
+- `tr` - Turkey
+- `cy` - Cyprus
+- `gr` - Greece
+- `bg` - Bulgaria
+- `ro` - Romania
+- `rs` - Serbia
+- `hr` - Croatia
+- `si` - Slovenia
+- `ba` - Bosnia and Herzegovina
+- `me` - Montenegro
+- `mk` - North Macedonia
+- `al` - Albania
+- `xk` - Kosovo
+- `md` - Moldova
+- `ua` - Ukraine
+- `by` - Belarus
+- `lt` - Lithuania
+- `lv` - Latvia
+- `ee` - Estonia
+- `fi` - Finland
+- `se` - Sweden
+- `no` - Norway
+- `dk` - Denmark
+- `is` - Iceland
+- `pl` - Poland
+- `cz` - Czech Republic
+- `sk` - Slovakia
+- `hu` - Hungary
+- `at` - Austria
+- `ch` - Switzerland
+- `li` - Liechtenstein
+- `be` - Belgium
+- `nl` - Netherlands
+- `lu` - Luxembourg
+- `pt` - Portugal
+- `mt` - Malta
+- `ad` - Andorra
+- `mc` - Monaco
+- `sm` - San Marino
+- `va` - Vatican City
+- `ma` - Morocco
+- `dz` - Algeria
+- `tn` - Tunisia
+- `ly` - Libya
+- `eg` - Egypt
+- `sd` - Sudan
+- `ss` - South Sudan
+- `et` - Ethiopia
+- `er` - Eritrea
+- `dj` - Djibouti
+- `so` - Somalia
+- `ke` - Kenya
+- `ug` - Uganda
+- `rw` - Rwanda
+- `bi` - Burundi
+- `tz` - Tanzania
+- `mz` - Mozambique
+- `zm` - Zambia
+- `zw` - Zimbabwe
+- `bw` - Botswana
+- `na` - Namibia
+- `za` - South Africa
+- `sz` - Eswatini
+- `ls` - Lesotho
+- `mg` - Madagascar
+- `mu` - Mauritius
+- `sc` - Seychelles
+- `km` - Comoros
+- `yt` - Mayotte
+- `re` - Réunion
+- `st` - São Tomé and Príncipe
+- `cv` - Cape Verde
+- `gw` - Guinea-Bissau
+- `gn` - Guinea
+- `sl` - Sierra Leone
+- `lr` - Liberia
+- `ci` - Ivory Coast
+- `gh` - Ghana
+- `tg` - Togo
+- `bj` - Benin
+- `ng` - Nigeria
+- `cm` - Cameroon
+- `td` - Chad
+- `cf` - Central African Republic
+- `cg` - Republic of the Congo
+- `cd` - Democratic Republic of the Congo
+- `ga` - Gabon
+- `gq` - Equatorial Guinea
+- `ao` - Angola
+
 **Examples:**
+- `us-new-york.svg` - New York, USA
+- `us-chicago.svg` - Chicago, USA  
+- `us-miami.svg` - Miami, USA
+- `us-pittsburgh.svg` - Pittsburgh, USA
+- `us-columbus.svg` - Columbus, USA (NEW)
+- `us-phoenix.svg` - Phoenix, USA (NEW)
 - `de-berlin.svg` - Berlin, Germany
 - `fr-paris.svg` - Paris, France
-- `us-new-york.svg` - New York, USA
-- `es-barcelona.svg` - Barcelona, Spain
 - `gb-london.svg` - London, UK
+- `es-barcelona.svg` - Barcelona, Spain
+- `it-rome.svg` - Rome, Italy
+- `ca-toronto.svg` - Toronto, Canada
+- `au-sydney.svg` - Sydney, Australia
+- `jp-kyoto.svg` - Kyoto, Japan
+- `kr-seoul.svg` - Seoul, South Korea
+- `cn-shanghai.svg` - Shanghai, China
+- `in-delhi.svg` - Delhi, India
+- `br-rio-de-janeiro.svg` - Rio de Janeiro, Brazil
+
+**Recent Additions:**
+- Columbus, Ohio, USA (`us-columbus.svg`)
+- Phoenix, Arizona, USA (`us-phoenix.svg`)
+
+**Note:** All city names are lowercase and use hyphens instead of spaces. Country codes follow ISO 3166-1 alpha-2 standard.
 
 ## 📋 Usage & Licensing
 

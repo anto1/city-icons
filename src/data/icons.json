@@ -826,5 +826,29 @@
     "description": "Istanbul is the largest city in Turkey, spanning Europe and Asia across the Bosphorus Strait. Known for its iconic Bosphorus Bridge, historic Hagia Sophia, and rich cultural heritage. The city combines ancient Byzantine and Ottoman history with modern Turkish culture, featuring the Blue Mosque, Grand Bazaar, and vibrant street life.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "74",
+    "name": "Columbus Discovery",
+    "city": "Columbus",
+    "country": "USA",
+    "category": "Culture",
+    "tags": ["discovery", "exploration", "historic"],
+    "svgFilename": "us-columbus.svg",
+    "description": "Columbus is the capital and largest city of Ohio, named after explorer Christopher Columbus. Known for its rich history, diverse culture, and modern development. The city combines historic charm with contemporary innovation, featuring the Ohio Statehouse, German Village, and vibrant arts scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "75",
+    "name": "Phoenix Rising",
+    "city": "Phoenix",
+    "country": "USA",
+    "category": "Culture",
+    "tags": ["desert", "modern", "southwestern"],
+    "svgFilename": "us-phoenix.svg",
+    "description": "Phoenix is the capital and largest city of Arizona, known for its desert landscape, modern architecture, and southwestern culture. The city combines natural beauty with urban development, featuring the iconic Phoenix Mountain Preserve, vibrant downtown, and rich Native American heritage.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ] 
