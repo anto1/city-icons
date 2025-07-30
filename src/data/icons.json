@@ -264,6 +264,42 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "81",
+    "name": "Graz Kunstmuseum",
+    "city": "Graz",
+    "country": "Austria",
+    "category": "Culture",
+    "tags": ["museum", "art", "modern"],
+    "svgFilename": "at-graz.svg",
+    "description": "Graz is the second-largest city in Austria, known for its Kunstmuseum (Art Museum) and rich cultural heritage. The city combines historic architecture with modern design, featuring the iconic Kunsthaus Graz and the historic Old Town, a UNESCO World Heritage site.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "82",
+    "name": "Ljubljana Dragon",
+    "city": "Ljubljana",
+    "country": "Slovenia",
+    "category": "Culture",
+    "tags": ["dragon", "symbol", "historic"],
+    "svgFilename": "si-ljubljana.svg",
+    "description": "Ljubljana is the capital and largest city of Slovenia, known for its iconic dragon symbol which appears on the city's coat of arms and the famous Dragon Bridge. The city combines medieval charm with modern European culture, featuring the historic Ljubljana Castle and vibrant cultural scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "83",
+    "name": "Antananarivo Palace",
+    "city": "Antananarivo",
+    "country": "Madagascar",
+    "category": "Landmarks",
+    "tags": ["palace", "royal", "historic"],
+    "svgFilename": "mg-antananarivo.svg",
+    "description": "Antananarivo is the capital and largest city of Madagascar, known for its historic royal palace complex and rich cultural heritage. The city combines traditional Malagasy culture with colonial architecture, featuring the iconic Rova palace complex and the vibrant Analakely market district.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "5",
     "name": "Kuopio Tower",
     "city": "Kuopio",
