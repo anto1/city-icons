@@ -71,19 +71,12 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
       return cityMatch || exactCountryMatch;
     });
 
-    console.log('Search term:', searchTerm);
-    console.log('Filtered results:', filtered.length);
-    console.log('Filtered cities:', filtered.map(icon => icon.city));
-
     // Remove duplicates based on _id (this should not be necessary but just in case)
     const uniqueFiltered = filtered.filter((icon, index, self) => 
       index === self.findIndex(i => i._id === icon._id)
     );
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
-    
-    console.log('Setting filtered icons:', sortedFiltered.length);
-    console.log('Setting filtered cities:', sortedFiltered.map(icon => icon.city));
     
     // Ensure we're setting the state with the correct array
     setFilteredIcons(sortedFiltered);
