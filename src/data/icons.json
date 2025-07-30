@@ -13,13 +13,13 @@
   },
   {
     "_id": "51",
-    "name": "Baghdad Spiral Minaret",
-    "city": "Baghdad",
+    "name": "Samarra Spiral Minaret",
+    "city": "Samarra",
     "country": "Iraq",
     "category": "Landmarks",
     "tags": ["minaret", "spiral", "historic"],
-    "svgFilename": "iq-baghdad.svg",
-    "description": "Baghdad is the capital and largest city of Iraq, known for its historic spiral minaret of Samarra - a UNESCO World Heritage site. The city has a rich cultural heritage as the center of the Islamic Golden Age and features beautiful Islamic architecture and historic landmarks.",
+    "svgFilename": "iq-samarra.svg",
+    "description": "Samarra is a historic city in Iraq, known for its iconic spiral minaret - a UNESCO World Heritage site. The city has a rich cultural heritage as an important center of Islamic architecture and features the famous Great Mosque of Samarra with its distinctive spiral minaret.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
