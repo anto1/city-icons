@@ -17,14 +17,17 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
   const [lastSearchQuery, setLastSearchQuery] = useState<string>('');
 
   // Update filtered icons when icons or countryFilter changes
+  // Only update if there's no active search query
   useEffect(() => {
-    if (countryFilter) {
-      const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
-      setFilteredIcons(countryFilteredIcons);
-    } else {
-      setFilteredIcons(icons);
+    if (!lastSearchQuery.trim()) {
+      if (countryFilter) {
+        const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
+        setFilteredIcons(countryFilteredIcons);
+      } else {
+        setFilteredIcons(icons);
+      }
     }
-  }, [icons, countryFilter]);
+  }, [icons, countryFilter, lastSearchQuery]);
 
   const handleSearch = useCallback((query: string) => {
     const trimmedQuery = query.trim();
@@ -68,12 +71,19 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
       return cityMatch || exactCountryMatch;
     });
 
+    console.log('Search term:', searchTerm);
+    console.log('Filtered results:', filtered.length);
+    console.log('Filtered cities:', filtered.map(icon => icon.city));
+
     // Remove duplicates based on _id (this should not be necessary but just in case)
     const uniqueFiltered = filtered.filter((icon, index, self) => 
       index === self.findIndex(i => i._id === icon._id)
     );
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
+    
+    console.log('Setting filtered icons:', sortedFiltered.length);
+    console.log('Setting filtered cities:', sortedFiltered.map(icon => icon.city));
     
     // Ensure we're setting the state with the correct array
     setFilteredIcons(sortedFiltered);
