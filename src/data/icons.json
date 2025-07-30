@@ -300,6 +300,30 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "84",
+    "name": "Jerusalem Dome",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "category": "Landmarks",
+    "tags": ["dome", "religious", "historic"],
+    "svgFilename": "il-jerusalem.svg",
+    "description": "Jerusalem is the capital of Israel and a city of immense religious and historical significance, known for its iconic Dome of the Rock and the Old City. The city combines ancient religious sites with modern development, featuring the Western Wall, Church of the Holy Sepulchre, and the vibrant Mahane Yehuda market.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "85",
+    "name": "Casablanca Hassan II Minaret",
+    "city": "Casablanca",
+    "country": "Morocco",
+    "category": "Landmarks",
+    "tags": ["minaret", "mosque", "modern"],
+    "svgFilename": "ma-casablanca.svg",
+    "description": "Casablanca is the largest city in Morocco, known for its iconic Hassan II Mosque with its distinctive minaret. The city combines traditional Moroccan culture with modern development, featuring the historic medina, the modern Corniche waterfront, and the impressive Hassan II Mosque complex.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "5",
     "name": "Kuopio Tower",
     "city": "Kuopio",
