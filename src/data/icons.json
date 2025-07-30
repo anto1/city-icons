@@ -252,6 +252,18 @@
     "updatedAt": "2024-01-01"
   },
   {
+    "_id": "80",
+    "name": "Tijuana Arch",
+    "city": "Tijuana",
+    "country": "Mexico",
+    "category": "Landmarks",
+    "tags": ["arch", "border", "landmark"],
+    "svgFilename": "mx-tijuana.svg",
+    "description": "Tijuana is a major city in Baja California, Mexico, known for its iconic Tijuana Arch - a symbol of the city and its border location. The city combines Mexican culture with international influences, featuring vibrant markets, cultural festivals, and the famous Avenida Revolución.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
     "_id": "5",
     "name": "Kuopio Tower",
     "city": "Kuopio",
