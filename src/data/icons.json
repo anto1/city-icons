@@ -1390,5 +1390,29 @@
     "description": "Cape Town is the legislative capital of South Africa, known for its iconic Table Mountain and stunning natural beauty. The city combines African culture with modern development, featuring the Cape of Good Hope, Robben Island, and vibrant multicultural scene.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "106",
+    "name": "Skopje Alexander the Great Statue",
+    "city": "Skopje",
+    "country": "North Macedonia",
+    "category": "Landmarks",
+    "tags": ["statue", "alexander", "monument"],
+    "svgFilename": "mk-skopje.svg",
+    "description": "Skopje is the capital and largest city of North Macedonia, known for its iconic Alexander the Great statue and rich cultural heritage. The city combines Ottoman and Byzantine architecture with modern development, featuring the Old Bazaar, Skopje Fortress, and vibrant cultural scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "107",
+    "name": "Mostar Old Bridge",
+    "city": "Mostar",
+    "country": "Bosnia and Herzegovina",
+    "category": "Landmarks",
+    "tags": ["bridge", "ottoman", "historic"],
+    "svgFilename": "ba-mostar.svg",
+    "description": "Mostar is a historic city in Bosnia and Herzegovina, known for its iconic Old Bridge (Stari Most) - a UNESCO World Heritage site. The city combines Ottoman and Mediterranean architecture with rich cultural heritage, featuring the historic Old Town, traditional crafts, and the beautiful Neretva River.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
