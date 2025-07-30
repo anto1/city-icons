@@ -5,7 +5,11 @@
     "city": "Almaty",
     "country": "Kazakhstan",
     "category": "Landmarks",
-    "tags": ["mountains", "nature", "scenic"],
+    "tags": [
+      "mountains",
+      "nature",
+      "scenic"
+    ],
     "svgFilename": "kz-alma-aty.svg",
     "description": "Almaty is the largest city in Kazakhstan, nestled at the foothills of the Trans-Ili Alatau mountains. Known for its stunning mountain views, the city combines modern urban development with natural beauty, featuring the iconic Kok-Tobe hill and the beautiful Medeu skating rink.",
     "createdAt": "2024-01-01",
@@ -17,7 +21,11 @@
     "city": "Samarra",
     "country": "Iraq",
     "category": "Landmarks",
-    "tags": ["minaret", "spiral", "historic"],
+    "tags": [
+      "minaret",
+      "spiral",
+      "historic"
+    ],
     "svgFilename": "iq-samarra.svg",
     "description": "Samarra is a historic city in Iraq, known for its iconic spiral minaret - a UNESCO World Heritage site. The city has a rich cultural heritage as an important center of Islamic architecture and features the famous Great Mosque of Samarra with its distinctive spiral minaret.",
     "createdAt": "2024-01-01",
@@ -29,7 +37,11 @@
     "city": "Baku",
     "country": "Azerbaijan",
     "category": "Buildings",
-    "tags": ["flame", "towers", "modern"],
+    "tags": [
+      "flame",
+      "towers",
+      "modern"
+    ],
     "svgFilename": "az-baku.svg",
     "description": "Baku is the capital and largest city of Azerbaijan, known for its iconic Flame Towers - three skyscrapers that resemble flames. The city combines historic architecture with modern development, featuring the UNESCO-listed Old City and the futuristic Flame Towers that light up the skyline.",
     "createdAt": "2024-01-01",
@@ -41,7 +53,11 @@
     "city": "Barcelona",
     "country": "Spain",
     "category": "Landmarks",
-    "tags": ["church", "gothic", "modernist"],
+    "tags": [
+      "church",
+      "gothic",
+      "modernist"
+    ],
     "svgFilename": "es-barcelona.svg",
     "description": "Barcelona is the capital of Catalonia, known for its unique architecture including the iconic Sagrada Familia by Antoni Gaudí. The city combines Mediterranean charm with innovative design, making it a cultural and architectural treasure.",
     "createdAt": "2024-01-01",
@@ -53,7 +69,11 @@
     "city": "Batumi",
     "country": "Georgia",
     "category": "Culture",
-    "tags": ["seaside", "modern", "architecture"],
+    "tags": [
+      "seaside",
+      "modern",
+      "architecture"
+    ],
     "svgFilename": "ge-batumi.svg",
     "description": "Batumi is a coastal city in Georgia, known for its beautiful Black Sea beaches, modern architecture, and the iconic Alphabet Tower. The city combines traditional Georgian culture with contemporary development.",
     "createdAt": "2024-01-01",
@@ -65,7 +85,11 @@
     "city": "Berlin",
     "country": "Germany",
     "category": "Landmarks",
-    "tags": ["gate", "historic", "neoclassical"],
+    "tags": [
+      "gate",
+      "historic",
+      "neoclassical"
+    ],
     "svgFilename": "de-berlin.svg",
     "description": "The Brandenburg Gate is an 18th-century neoclassical monument in Berlin, built on the site of a former city gate that marked the start of the road from Berlin to the town of Brandenburg an der Havel. It has become a symbol of German unity and peace.",
     "createdAt": "2024-01-01",
@@ -77,7 +101,11 @@
     "city": "Belgrade",
     "country": "Serbia",
     "category": "Landmarks",
-    "tags": ["fortress", "historic", "riverside"],
+    "tags": [
+      "fortress",
+      "historic",
+      "riverside"
+    ],
     "svgFilename": "rs-belgrade.svg",
     "description": "Belgrade is the capital and largest city of Serbia, located at the confluence of the Danube and Sava rivers. Known for its historic Belgrade Fortress, the city combines rich cultural heritage with modern Balkan charm and vibrant nightlife.",
     "createdAt": "2024-01-01",
@@ -89,7 +117,11 @@
     "city": "Bremen",
     "country": "Germany",
     "category": "Culture",
-    "tags": ["historic", "medieval", "architecture"],
+    "tags": [
+      "historic",
+      "medieval",
+      "architecture"
+    ],
     "svgFilename": "de-bremen.svg",
     "description": "Bremen is a major city in northern Germany, known for its historic market square, the Bremen Town Musicians statue, and medieval architecture. The city has a rich maritime history and cultural heritage.",
     "createdAt": "2024-01-01",
@@ -101,7 +133,11 @@
     "city": "Brussels",
     "country": "Belgium",
     "category": "Landmarks",
-    "tags": ["atomium", "modern", "iconic"],
+    "tags": [
+      "atomium",
+      "modern",
+      "iconic"
+    ],
     "svgFilename": "be-brussels.svg",
     "description": "Brussels is the capital of Belgium and the European Union, known for its iconic Atomium structure, historic Grand Place, and world-famous chocolate and waffles. The city combines medieval architecture with modern European institutions.",
     "createdAt": "2024-01-01",
@@ -113,7 +149,11 @@
     "city": "Brasilia",
     "country": "Brazil",
     "category": "Landmarks",
-    "tags": ["cathedral", "modern", "architecture"],
+    "tags": [
+      "cathedral",
+      "modern",
+      "architecture"
+    ],
     "svgFilename": "br-brasilia.svg",
     "description": "Brasilia is the capital city of Brazil, known for its iconic Cathedral of Brasilia - a stunning modernist church designed by Oscar Niemeyer. The city is a UNESCO World Heritage site, featuring innovative modernist architecture, the distinctive hyperboloid cathedral structure, and the unique urban planning of the 1960s.",
     "createdAt": "2024-01-01",
@@ -125,7 +165,11 @@
     "city": "Buenos Aires",
     "country": "Argentina",
     "category": "Culture",
-    "tags": ["tango", "historic", "latin"],
+    "tags": [
+      "tango",
+      "historic",
+      "latin"
+    ],
     "svgFilename": "ar-buenos-aires.svg",
     "description": "Buenos Aires is the capital and largest city of Argentina, known for its passionate tango culture, historic neighborhoods like La Boca and San Telmo, and European-style architecture. The city is the cultural heart of Argentina and a major Latin American metropolis.",
     "createdAt": "2024-01-01",
@@ -137,7 +181,11 @@
     "city": "Chicago",
     "country": "USA",
     "category": "Buildings",
-    "tags": ["skyscrapers", "modern", "urban"],
+    "tags": [
+      "skyscrapers",
+      "modern",
+      "urban"
+    ],
     "svgFilename": "us-chicago.svg",
     "description": "The Chicago skyline is world-famous for its innovative architecture and towering skyscrapers. Home to the Willis Tower, John Hancock Center, and other architectural marvels, Chicago's skyline represents the birthplace of modern skyscraper design.",
     "createdAt": "2024-01-01",
@@ -149,7 +197,11 @@
     "city": "Cairo",
     "country": "Egypt",
     "category": "Landmarks",
-    "tags": ["pyramids", "ancient", "historic"],
+    "tags": [
+      "pyramids",
+      "ancient",
+      "historic"
+    ],
     "svgFilename": "eg-cairo.svg",
     "description": "Cairo is the capital and largest city of Egypt, known for its ancient pyramids, the Great Sphinx, and rich Islamic heritage. The city combines ancient wonders with modern urban development, featuring the iconic Giza pyramids and historic Islamic architecture.",
     "createdAt": "2024-01-01",
@@ -161,7 +213,11 @@
     "city": "Chisinau",
     "country": "Moldova",
     "category": "Buildings",
-    "tags": ["government", "modern", "architecture"],
+    "tags": [
+      "government",
+      "modern",
+      "architecture"
+    ],
     "svgFilename": "md-chisinau.svg",
     "description": "Chisinau is the capital and largest city of Moldova, known for its Soviet-era architecture, the Presidential Palace, and the beautiful Central Park. The city reflects the country's complex history and cultural diversity.",
     "createdAt": "2024-01-01",
@@ -173,7 +229,11 @@
     "city": "Cusco",
     "country": "Peru",
     "category": "Landmarks",
-    "tags": ["inca", "wall", "historic"],
+    "tags": [
+      "inca",
+      "wall",
+      "historic"
+    ],
     "svgFilename": "pe-cusco.svg",
     "description": "Cusco is a historic city in southeastern Peru, once the capital of the Inca Empire. Known for its impressive Inca stone walls and architecture, the city features the famous Twelve-Angled Stone and other remarkable examples of Inca masonry. Cusco combines ancient Andean heritage with Spanish colonial architecture.",
     "createdAt": "2024-01-01",
@@ -185,7 +245,11 @@
     "city": "Copenhagen",
     "country": "Denmark",
     "category": "Culture",
-    "tags": ["harbor", "modern", "scandinavian"],
+    "tags": [
+      "harbor",
+      "modern",
+      "scandinavian"
+    ],
     "svgFilename": "dk-copenhagen.svg",
     "description": "Copenhagen is the capital and largest city of Denmark, known for its beautiful harbor, the iconic Little Mermaid statue, and the colorful Nyhavn district. The city combines historic charm with modern Scandinavian design and sustainable urban planning.",
     "createdAt": "2024-01-01",
@@ -197,7 +261,11 @@
     "city": "Denpasar",
     "country": "Indonesia",
     "category": "Culture",
-    "tags": ["temple", "balinese", "traditional"],
+    "tags": [
+      "temple",
+      "balinese",
+      "traditional"
+    ],
     "svgFilename": "id-denpasar.svg",
     "description": "Denpasar is the capital of Bali, Indonesia, known for its rich Balinese culture, traditional temples, and vibrant arts scene. The city serves as the cultural and administrative center of the island, featuring beautiful Hindu temples and traditional Balinese architecture.",
     "createdAt": "2024-01-01",
@@ -209,7 +277,11 @@
     "city": "Dhaka",
     "country": "Bangladesh",
     "category": "Buildings",
-    "tags": ["modern", "urban", "architecture"],
+    "tags": [
+      "modern",
+      "urban",
+      "architecture"
+    ],
     "svgFilename": "bd-dhaka.svg",
     "description": "Dhaka is the capital and largest city of Bangladesh, known for its modern urban development, historic mosques, and vibrant street life. The city combines traditional Bengali culture with contemporary architecture and serves as the economic and cultural heart of Bangladesh.",
     "createdAt": "2024-01-01",
@@ -221,7 +293,11 @@
     "city": "Yerevan",
     "country": "Armenia",
     "category": "Landmarks",
-    "tags": ["square", "historic", "government"],
+    "tags": [
+      "square",
+      "historic",
+      "government"
+    ],
     "svgFilename": "am-yerevan.svg",
     "description": "Yerevan is the capital and largest city of Armenia, known for its beautiful Republic Square, the Cascade complex, and the historic Matenadaran library. The city combines ancient Armenian heritage with modern urban development and serves as the cultural heart of Armenia.",
     "createdAt": "2024-01-01",
@@ -233,7 +309,11 @@
     "city": "Frankfurt",
     "country": "Germany",
     "category": "Buildings",
-    "tags": ["tower", "finance", "modern"],
+    "tags": [
+      "tower",
+      "finance",
+      "modern"
+    ],
     "svgFilename": "de-frankfurt.svg",
     "description": "Frankfurt am Main is Germany's financial capital, known for its impressive skyline featuring the Main Tower and other modern skyscrapers. The city combines historic architecture with contemporary finance, featuring the historic Römer square and world-class museums.",
     "createdAt": "2024-01-01",
@@ -245,7 +325,11 @@
     "city": "Kathmandu",
     "country": "Nepal",
     "category": "Landmarks",
-    "tags": ["stupa", "buddhist", "historic"],
+    "tags": [
+      "stupa",
+      "buddhist",
+      "historic"
+    ],
     "svgFilename": "np-kathmandu.svg",
     "description": "Kathmandu is the capital and largest city of Nepal, known for its iconic Buddhist stupas, ancient temples, and rich cultural heritage. The city combines traditional Nepalese culture with historic architecture, featuring the famous Swayambhunath Stupa, Boudhanath, and the historic Durbar Square.",
     "createdAt": "2024-01-01",
@@ -257,7 +341,11 @@
     "city": "Tijuana",
     "country": "Mexico",
     "category": "Landmarks",
-    "tags": ["arch", "border", "landmark"],
+    "tags": [
+      "arch",
+      "border",
+      "landmark"
+    ],
     "svgFilename": "mx-tijuana.svg",
     "description": "Tijuana is a major city in Baja California, Mexico, known for its iconic Tijuana Arch - a symbol of the city and its border location. The city combines Mexican culture with international influences, featuring vibrant markets, cultural festivals, and the famous Avenida Revolución.",
     "createdAt": "2024-01-01",
@@ -269,7 +357,11 @@
     "city": "Graz",
     "country": "Austria",
     "category": "Culture",
-    "tags": ["museum", "art", "modern"],
+    "tags": [
+      "museum",
+      "art",
+      "modern"
+    ],
     "svgFilename": "at-graz.svg",
     "description": "Graz is the second-largest city in Austria, known for its Kunstmuseum (Art Museum) and rich cultural heritage. The city combines historic architecture with modern design, featuring the iconic Kunsthaus Graz and the historic Old Town, a UNESCO World Heritage site.",
     "createdAt": "2024-01-01",
@@ -281,7 +373,11 @@
     "city": "Ljubljana",
     "country": "Slovenia",
     "category": "Culture",
-    "tags": ["dragon", "symbol", "historic"],
+    "tags": [
+      "dragon",
+      "symbol",
+      "historic"
+    ],
     "svgFilename": "si-ljubljana.svg",
     "description": "Ljubljana is the capital and largest city of Slovenia, known for its iconic dragon symbol which appears on the city's coat of arms and the famous Dragon Bridge. The city combines medieval charm with modern European culture, featuring the historic Ljubljana Castle and vibrant cultural scene.",
     "createdAt": "2024-01-01",
@@ -293,7 +389,11 @@
     "city": "Antananarivo",
     "country": "Madagascar",
     "category": "Landmarks",
-    "tags": ["palace", "royal", "historic"],
+    "tags": [
+      "palace",
+      "royal",
+      "historic"
+    ],
     "svgFilename": "mg-antananarivo.svg",
     "description": "Antananarivo is the capital and largest city of Madagascar, known for its historic royal palace complex and rich cultural heritage. The city combines traditional Malagasy culture with colonial architecture, featuring the iconic Rova palace complex and the vibrant Analakely market district.",
     "createdAt": "2024-01-01",
@@ -305,7 +405,11 @@
     "city": "Jerusalem",
     "country": "Israel",
     "category": "Landmarks",
-    "tags": ["dome", "religious", "historic"],
+    "tags": [
+      "dome",
+      "religious",
+      "historic"
+    ],
     "svgFilename": "il-jerusalem.svg",
     "description": "Jerusalem is the capital of Israel and a city of immense religious and historical significance, known for its iconic Dome of the Rock and the Old City. The city combines ancient religious sites with modern development, featuring the Western Wall, Church of the Holy Sepulchre, and the vibrant Mahane Yehuda market.",
     "createdAt": "2024-01-01",
@@ -317,7 +421,11 @@
     "city": "Casablanca",
     "country": "Morocco",
     "category": "Landmarks",
-    "tags": ["minaret", "mosque", "modern"],
+    "tags": [
+      "minaret",
+      "mosque",
+      "modern"
+    ],
     "svgFilename": "ma-casablanca.svg",
     "description": "Casablanca is the largest city in Morocco, known for its iconic Hassan II Mosque with its distinctive minaret. The city combines traditional Moroccan culture with modern development, featuring the historic medina, the modern Corniche waterfront, and the impressive Hassan II Mosque complex.",
     "createdAt": "2024-01-01",
@@ -329,7 +437,11 @@
     "city": "Kuopio",
     "country": "Finland",
     "category": "Landmarks",
-    "tags": ["tower", "observation", "modern"],
+    "tags": [
+      "tower",
+      "observation",
+      "modern"
+    ],
     "svgFilename": "fi-kuopio.svg",
     "description": "The Kuopio Tower is a 75-meter high observation tower located on Puijo Hill in Kuopio, Finland. Built in 1963, it offers panoramic views of the city and surrounding lakes. The tower features a revolving restaurant and is a popular tourist attraction.",
     "createdAt": "2024-01-01",
@@ -341,7 +453,11 @@
     "city": "Lisbon",
     "country": "Portugal",
     "category": "Landmarks",
-    "tags": ["tower", "belem", "historic"],
+    "tags": [
+      "tower",
+      "belem",
+      "historic"
+    ],
     "svgFilename": "pt-lisbon.svg",
     "description": "Lisbon is the capital and largest city of Portugal, known for its iconic Belem Tower - a 16th-century fortress and UNESCO World Heritage site. The city combines historic charm with modern development, featuring beautiful tiled buildings, historic trams, and the stunning Tagus River waterfront.",
     "createdAt": "2024-01-01",
@@ -353,7 +469,11 @@
     "city": "Leipzig",
     "country": "Germany",
     "category": "Buildings",
-    "tags": ["modern", "architecture", "urban"],
+    "tags": [
+      "modern",
+      "architecture",
+      "urban"
+    ],
     "svgFilename": "de-leipzig.svg",
     "description": "Leipzig is a major city in Saxony, Germany, known for its rich cultural heritage and modern development. The city combines historic architecture with contemporary design, featuring the Leipzig Opera House and numerous museums.",
     "createdAt": "2024-01-01",
@@ -365,7 +485,11 @@
     "city": "Limassol",
     "country": "Cyprus",
     "category": "Landmarks",
-    "tags": ["castle", "fortress", "medieval"],
+    "tags": [
+      "castle",
+      "fortress",
+      "medieval"
+    ],
     "svgFilename": "cy-limassol.svg",
     "description": "Limassol Castle is a medieval castle located near the old harbor in the heart of the historical center of Limassol. Built in the 12th century, it has served as a fortress, prison, and now houses the Medieval Museum of Cyprus.",
     "createdAt": "2024-01-01",
@@ -377,7 +501,11 @@
     "city": "London",
     "country": "UK",
     "category": "Landmarks",
-    "tags": ["clock", "historic", "iconic"],
+    "tags": [
+      "clock",
+      "historic",
+      "iconic"
+    ],
     "svgFilename": "gb-london.svg",
     "description": "London is the capital of England and the UK, known for its rich history, iconic landmarks like Big Ben and the Tower Bridge, and world-class museums. The city is a global center for finance and culture.",
     "createdAt": "2024-01-01",
@@ -389,7 +517,11 @@
     "city": "Madrid",
     "country": "Spain",
     "category": "Culture",
-    "tags": ["bear", "tree", "symbol"],
+    "tags": [
+      "bear",
+      "tree",
+      "symbol"
+    ],
     "svgFilename": "es-madrid.svg",
     "description": "Madrid, the capital of Spain, is known for its iconic symbol - the bear and the strawberry tree (madroño) - which appears on the city's coat of arms. The city combines historic grandeur with modern Spanish culture, featuring the Royal Palace, world-class museums like the Prado, and vibrant street life.",
     "createdAt": "2024-01-01",
@@ -401,7 +533,11 @@
     "city": "Matosinhos",
     "country": "Portugal",
     "category": "Culture",
-    "tags": ["anemone", "seaside", "symbol"],
+    "tags": [
+      "anemone",
+      "seaside",
+      "symbol"
+    ],
     "svgFilename": "pt-matosinhos.svg",
     "description": "Matosinhos is a coastal city in northern Portugal, known for its beautiful beaches, fresh seafood, and the iconic anemone symbol representing the city's connection to the sea. The city combines traditional Portuguese fishing culture with modern urban development.",
     "createdAt": "2024-01-01",
@@ -413,7 +549,11 @@
     "city": "Manchester",
     "country": "UK",
     "category": "Culture",
-    "tags": ["bee", "symbol", "industrial"],
+    "tags": [
+      "bee",
+      "symbol",
+      "industrial"
+    ],
     "svgFilename": "gb-manchester.svg",
     "description": "Manchester is a major city in northwest England, known for its iconic bee symbol representing the city's industrious nature and worker bee heritage. The city combines its rich industrial past with contemporary culture, featuring vibrant music scene, modern urban development, and historic cotton mills.",
     "createdAt": "2024-01-01",
@@ -425,7 +565,11 @@
     "city": "Miami",
     "country": "USA",
     "category": "Culture",
-    "tags": ["beach", "modern", "tropical"],
+    "tags": [
+      "beach",
+      "modern",
+      "tropical"
+    ],
     "svgFilename": "us-miami.svg",
     "description": "Miami is a vibrant coastal city known for its beautiful beaches, Art Deco architecture in South Beach, and diverse cultural scene. The city combines tropical climate with modern urban development and international influences.",
     "createdAt": "2024-01-01",
@@ -437,21 +581,13 @@
     "city": "New York",
     "country": "USA",
     "category": "Landmarks",
-    "tags": ["statue", "liberty", "iconic"],
+    "tags": [
+      "statue",
+      "liberty",
+      "iconic"
+    ],
     "svgFilename": "us-new-york.svg",
     "description": "New York City is the most populous city in the United States, known for its iconic Statue of Liberty - a symbol of freedom and democracy. The city is a global center for finance, culture, and innovation, featuring the Empire State Building, Times Square, and world-class museums.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "52",
-    "name": "Milan Cathedral",
-    "city": "Milan",
-    "country": "Italy",
-    "category": "Landmarks",
-    "tags": ["cathedral", "gothic", "historic"],
-    "svgFilename": "it-milan.svg",
-    "description": "Milan is the capital of Lombardy and Italy's second-largest city, known for its fashion industry, the magnificent Duomo di Milano, and the historic La Scala opera house. The city combines rich cultural heritage with modern Italian design and innovation.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
@@ -461,7 +597,11 @@
     "city": "Nuremberg",
     "country": "Germany",
     "category": "Landmarks",
-    "tags": ["castle", "medieval", "historic"],
+    "tags": [
+      "castle",
+      "medieval",
+      "historic"
+    ],
     "svgFilename": "de-nuremberg.svg",
     "description": "Nuremberg is a historic city in Bavaria, Germany, known for its magnificent medieval castle, the Imperial Castle of Nuremberg, and rich cultural heritage. The city combines medieval architecture with modern German culture, featuring the famous Christkindlesmarkt and historic old town.",
     "createdAt": "2024-01-01",
@@ -473,7 +613,11 @@
     "city": "Paris",
     "country": "France",
     "category": "Landmarks",
-    "tags": ["tower", "romance", "architecture"],
+    "tags": [
+      "tower",
+      "romance",
+      "architecture"
+    ],
     "svgFilename": "fr-paris.svg",
     "description": "The iconic Eiffel Tower, a wrought-iron lattice tower located on the Champ de Mars in Paris. Built in 1889, it stands 324 meters tall and has become a global cultural icon of France and one of the most recognizable structures in the world.",
     "createdAt": "2024-01-01",
@@ -485,7 +629,11 @@
     "city": "Porto",
     "country": "Portugal",
     "category": "Culture",
-    "tags": ["historic", "riverside", "medieval"],
+    "tags": [
+      "historic",
+      "riverside",
+      "medieval"
+    ],
     "svgFilename": "pt-porto.svg",
     "description": "Porto's Historic Center is a UNESCO World Heritage site featuring medieval architecture, colorful houses, and the iconic Dom Luís I Bridge. The city is famous for its port wine cellars and the beautiful Ribeira district along the Douro River.",
     "createdAt": "2024-01-01",
@@ -497,7 +645,11 @@
     "city": "Prague",
     "country": "Czech Republic",
     "category": "Landmarks",
-    "tags": ["castle", "historic", "medieval"],
+    "tags": [
+      "castle",
+      "historic",
+      "medieval"
+    ],
     "svgFilename": "cz-prague.svg",
     "description": "Prague, the capital of the Czech Republic, is known for its stunning medieval architecture, the iconic Prague Castle, and the historic Charles Bridge. The city's Old Town Square is a masterpiece of Gothic and Baroque architecture.",
     "createdAt": "2024-01-01",
@@ -509,7 +661,11 @@
     "city": "Riga",
     "country": "Latvia",
     "category": "Culture",
-    "tags": ["historic", "architecture", "medieval"],
+    "tags": [
+      "historic",
+      "architecture",
+      "medieval"
+    ],
     "svgFilename": "lv-riga.svg",
     "description": "Riga is the capital and largest city of Latvia, known for its well-preserved medieval Old Town and Art Nouveau architecture. The city's historic center is a UNESCO World Heritage site.",
     "createdAt": "2024-01-01",
@@ -521,7 +677,11 @@
     "city": "Seoul",
     "country": "South Korea",
     "category": "Buildings",
-    "tags": ["modern", "technology", "urban"],
+    "tags": [
+      "modern",
+      "technology",
+      "urban"
+    ],
     "svgFilename": "kr-seoul.svg",
     "description": "Seoul is the capital and largest city of South Korea, known for its cutting-edge technology, modern architecture, and rich cultural heritage. The city seamlessly blends ancient palaces with futuristic skyscrapers.",
     "createdAt": "2024-01-01",
@@ -533,7 +693,11 @@
     "city": "Sorrento",
     "country": "Italy",
     "category": "Culture",
-    "tags": ["lemon", "citrus", "traditional"],
+    "tags": [
+      "lemon",
+      "citrus",
+      "traditional"
+    ],
     "svgFilename": "it-sorrento.svg",
     "description": "Sorrento is a beautiful coastal town in southern Italy, known for its famous lemons and limoncello production. The city is famous for its stunning views of the Bay of Naples, traditional lemon groves, and the iconic Amalfi Coast scenery. Sorrento's lemons are a symbol of the region's agricultural heritage and Mediterranean charm.",
     "createdAt": "2024-01-01",
@@ -545,7 +709,11 @@
     "city": "Stockholm",
     "country": "Sweden",
     "category": "Landmarks",
-    "tags": ["palace", "royal", "historic"],
+    "tags": [
+      "palace",
+      "royal",
+      "historic"
+    ],
     "svgFilename": "se-stockholm.svg",
     "description": "Stockholm, the capital of Sweden, is built on 14 islands connected by bridges. The city is known for its beautiful architecture, the Royal Palace, and the historic Gamla Stan (Old Town) with its medieval streets.",
     "createdAt": "2024-01-01",
@@ -557,7 +725,11 @@
     "city": "Sydney",
     "country": "Australia",
     "category": "Landmarks",
-    "tags": ["opera", "harbor", "iconic"],
+    "tags": [
+      "opera",
+      "harbor",
+      "iconic"
+    ],
     "svgFilename": "au-sydney.svg",
     "description": "Sydney is Australia's largest city, known for its iconic Opera House, beautiful harbor, and the Sydney Harbour Bridge. The city combines stunning natural beauty with modern urban development, featuring world-class beaches and vibrant cultural scene.",
     "createdAt": "2024-01-01",
@@ -569,7 +741,11 @@
     "city": "Tel Aviv",
     "country": "Israel",
     "category": "Buildings",
-    "tags": ["modern", "architecture", "urban"],
+    "tags": [
+      "modern",
+      "architecture",
+      "urban"
+    ],
     "svgFilename": "il-tel-aviv.svg",
     "description": "Tel Aviv is known for its stunning modern architecture, particularly the White City with its Bauhaus buildings. The city combines Mediterranean charm with cutting-edge design, making it a hub for innovation and culture.",
     "createdAt": "2024-01-01",
@@ -581,7 +757,11 @@
     "city": "Tbilisi",
     "country": "Georgia",
     "category": "Culture",
-    "tags": ["historic", "architecture", "traditional"],
+    "tags": [
+      "historic",
+      "architecture",
+      "traditional"
+    ],
     "svgFilename": "ge-tbilisi.svg",
     "description": "Tbilisi Old Town is the historic heart of Georgia's capital, featuring narrow cobblestone streets, traditional Georgian architecture, and the iconic Narikala Fortress. This UNESCO World Heritage site showcases the city's rich cultural heritage and ancient history.",
     "createdAt": "2024-01-01",
@@ -593,7 +773,11 @@
     "city": "Valencia",
     "country": "Spain",
     "category": "Landmarks",
-    "tags": ["oceanografico", "aquarium", "modern"],
+    "tags": [
+      "oceanografico",
+      "aquarium",
+      "modern"
+    ],
     "svgFilename": "es-valencia.svg",
     "description": "Valencia is a beautiful coastal city in Spain, known for its iconic Oceanografico - the largest aquarium in Europe, part of the stunning City of Arts and Sciences complex. The city combines historic charm with modern architecture, featuring the futuristic buildings designed by Santiago Calatrava and the beautiful Mediterranean coastline.",
     "createdAt": "2024-01-01",
@@ -605,7 +789,11 @@
     "city": "Venice",
     "country": "Italy",
     "category": "Culture",
-    "tags": ["lion", "book", "historic"],
+    "tags": [
+      "lion",
+      "book",
+      "historic"
+    ],
     "svgFilename": "it-venice.svg",
     "description": "Venice is a historic city in northeastern Italy, known for its iconic lion symbol holding a book - representing the winged lion of St. Mark, the city's patron saint. The city is famous for its beautiful canals, historic architecture, and rich cultural heritage spanning over 1,000 years.",
     "createdAt": "2024-01-01",
@@ -617,7 +805,11 @@
     "city": "Vienna",
     "country": "Austria",
     "category": "Landmarks",
-    "tags": ["cathedral", "gothic", "historic"],
+    "tags": [
+      "cathedral",
+      "gothic",
+      "historic"
+    ],
     "svgFilename": "at-vienna.svg",
     "description": "St. Stephen's Cathedral is the mother church of the Roman Catholic Archdiocese of Vienna and the seat of the Archbishop of Vienna. This magnificent Gothic cathedral, with its distinctive tiled roof, has stood at the heart of Vienna for over 700 years.",
     "createdAt": "2024-01-01",
@@ -629,7 +821,11 @@
     "city": "Ottawa",
     "country": "Canada",
     "category": "Landmarks",
-    "tags": ["parliament", "hill", "government"],
+    "tags": [
+      "parliament",
+      "hill",
+      "government"
+    ],
     "svgFilename": "ca-ottawa.svg",
     "description": "Ottawa is the capital city of Canada, known for its iconic Parliament Hill - the seat of the Canadian government. The city combines historic architecture with modern government institutions, featuring the beautiful Gothic Revival Parliament Buildings, the Rideau Canal (a UNESCO World Heritage site), and the National Gallery of Canada.",
     "createdAt": "2024-01-01",
@@ -641,7 +837,11 @@
     "city": "Vancouver",
     "country": "Canada",
     "category": "Landmarks",
-    "tags": ["mountains", "nature", "scenic"],
+    "tags": [
+      "mountains",
+      "nature",
+      "scenic"
+    ],
     "svgFilename": "ca-vancouver.svg",
     "description": "Vancouver is a coastal city in British Columbia, Canada, known for its stunning mountain views, beautiful harbor, and outdoor lifestyle. The city combines natural beauty with modern urban development, featuring Stanley Park, the North Shore mountains, and a vibrant multicultural community.",
     "createdAt": "2024-01-01",
@@ -653,7 +853,11 @@
     "city": "Warsaw",
     "country": "Poland",
     "category": "Culture",
-    "tags": ["mermaid", "mythology", "symbol"],
+    "tags": [
+      "mermaid",
+      "mythology",
+      "symbol"
+    ],
     "svgFilename": "pl-warsaw.svg",
     "description": "The Warsaw Mermaid is the official symbol of Warsaw, Poland. According to legend, a mermaid swam from the Baltic Sea to Warsaw and decided to stay, protecting the city. The statue shows her with a sword and shield, ready to defend the city.",
     "createdAt": "2024-01-01",
@@ -665,7 +869,11 @@
     "city": "Wellington",
     "country": "New Zealand",
     "category": "Landmarks",
-    "tags": ["parliament", "beehive", "government"],
+    "tags": [
+      "parliament",
+      "beehive",
+      "government"
+    ],
     "svgFilename": "nz-wellington.svg",
     "description": "Wellington is the capital city of New Zealand, known for its iconic Beehive Parliament Building - a distinctive circular structure that houses the executive wing of the New Zealand Parliament. The city combines government institutions with stunning harbor views, vibrant arts scene, and the famous Wellington wind.",
     "createdAt": "2024-01-01",
@@ -677,7 +885,11 @@
     "city": "Pittsburgh",
     "country": "USA",
     "category": "Buildings",
-    "tags": ["steel", "industrial", "modern"],
+    "tags": [
+      "steel",
+      "industrial",
+      "modern"
+    ],
     "svgFilename": "us-pittsburgh.svg",
     "description": "Pittsburgh is a major city in Pennsylvania, known for its steel industry heritage, the iconic Three Rivers confluence, and modern transformation. The city combines industrial history with contemporary innovation, featuring the University of Pittsburgh, Carnegie Mellon University, and world-class museums.",
     "createdAt": "2024-01-01",
@@ -689,7 +901,11 @@
     "city": "Toronto",
     "country": "Canada",
     "category": "Landmarks",
-    "tags": ["tower", "modern", "iconic"],
+    "tags": [
+      "tower",
+      "modern",
+      "iconic"
+    ],
     "svgFilename": "ca-toronto.svg",
     "description": "Toronto is the capital of Ontario and Canada's largest city, known for its iconic CN Tower - the tallest freestanding structure in the Western Hemisphere. The city combines modern urban development with natural beauty along Lake Ontario, featuring a diverse multicultural population and vibrant arts scene.",
     "createdAt": "2024-01-01",
@@ -701,7 +917,11 @@
     "city": "Trieste",
     "country": "Italy",
     "category": "Culture",
-    "tags": ["harbor", "historic", "mediterranean"],
+    "tags": [
+      "harbor",
+      "historic",
+      "mediterranean"
+    ],
     "svgFilename": "it-trieste.svg",
     "description": "Trieste is a historic port city in northeastern Italy, known for its beautiful harbor, rich cultural heritage, and unique position at the crossroads of Latin, Slavic, and Germanic cultures. The city features stunning architecture, the iconic Piazza Unità d'Italia, and a vibrant literary tradition.",
     "createdAt": "2024-01-01",
@@ -713,7 +933,11 @@
     "city": "Uralsk",
     "country": "Kazakhstan",
     "category": "Culture",
-    "tags": ["historic", "riverside", "traditional"],
+    "tags": [
+      "historic",
+      "riverside",
+      "traditional"
+    ],
     "svgFilename": "kz-uralsk.svg",
     "description": "Uralsk is a historic city in western Kazakhstan, located on the Ural River. Known for its traditional Kazakh culture, horse breeding heritage, and beautiful riverfront, the city preserves its rich nomadic traditions while embracing modern development. The horse symbolizes the region's deep connection to Central Asian nomadic culture.",
     "createdAt": "2024-01-01",
@@ -725,117 +949,13 @@
     "city": "Rio de Janeiro",
     "country": "Brazil",
     "category": "Landmarks",
-    "tags": ["christ", "statue", "iconic"],
+    "tags": [
+      "christ",
+      "statue",
+      "iconic"
+    ],
     "svgFilename": "br-rio-de-janeiro.svg",
     "description": "Rio de Janeiro is a vibrant coastal city in Brazil, known for its iconic Christ the Redeemer statue atop Corcovado Mountain, beautiful beaches like Copacabana and Ipanema, and the famous Sugarloaf Mountain. The city combines stunning natural beauty with rich Brazilian culture and Carnival celebrations.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "49",
-    "name": "Shanghai Oriental Pearl Tower",
-    "city": "Shanghai",
-    "country": "China",
-    "category": "Landmarks",
-    "tags": ["tower", "modern", "iconic"],
-    "svgFilename": "cn-shanghai.svg",
-    "description": "Shanghai is China's largest city and a global financial center, known for its iconic Oriental Pearl Tower, the futuristic skyline of Pudong, and the historic Bund waterfront. The city seamlessly blends traditional Chinese culture with cutting-edge modern development and international influences.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "50",
-    "name": "Delhi Lotus Temple",
-    "city": "Delhi",
-    "country": "India",
-    "category": "Landmarks",
-    "tags": ["temple", "lotus", "modern"],
-    "svgFilename": "in-delhi.svg",
-    "description": "Delhi is the capital of India, known for its iconic Lotus Temple - a Bahá'í House of Worship shaped like a lotus flower, historic monuments like the Red Fort and Qutub Minar, and rich cultural heritage. The city combines ancient history with modern Indian development and serves as the political and cultural heart of India.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "51",
-    "name": "Agra Taj Mahal",
-    "city": "Agra",
-    "country": "India",
-    "category": "Landmarks",
-    "tags": ["taj mahal", "mausoleum", "historic"],
-    "svgFilename": "in-agra.svg",
-    "description": "Agra is a historic city in Uttar Pradesh, India, home to the magnificent Taj Mahal - one of the Seven Wonders of the World. This stunning white marble mausoleum, built by Emperor Shah Jahan in memory of his wife, represents the pinnacle of Mughal architecture and is a symbol of eternal love.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "53",
-    "name": "Amsterdam Canal Houses",
-    "city": "Amsterdam",
-    "country": "Netherlands",
-    "category": "Culture",
-    "tags": ["houses", "canals", "historic"],
-    "svgFilename": "nl-amsterdam.svg",
-    "description": "Amsterdam is the capital and largest city of the Netherlands, known for its iconic canal houses, historic architecture, and beautiful waterways. The city's distinctive narrow houses with gabled facades along the canals represent the Golden Age of Dutch architecture and urban planning.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "54",
-    "name": "Lyon Lion",
-    "city": "Lyon",
-    "country": "France",
-    "category": "Culture",
-    "tags": ["lion", "emblem", "historic"],
-    "svgFilename": "fr-lyon.svg",
-    "description": "Lyon is France's third-largest city and a UNESCO World Heritage site, known for its historic architecture, the iconic lion from the city's emblem, and rich cultural heritage. The city combines Roman history with Renaissance architecture and is famous for its gastronomy and silk industry.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "55",
-    "name": "Doha Dhow Boat",
-    "city": "Doha",
-    "country": "Qatar",
-    "category": "Culture",
-    "tags": ["boat", "dhow", "traditional"],
-    "svgFilename": "qa-doha.svg",
-    "description": "Doha is the capital and largest city of Qatar, known for its traditional dhow boats, modern skyline, and rich cultural heritage. The city combines traditional pearl diving and fishing traditions with contemporary development, featuring the iconic Museum of Islamic Art and vibrant souqs.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "56",
-    "name": "Amman Roman Columns",
-    "city": "Amman",
-    "country": "Jordan",
-    "category": "Landmarks",
-    "tags": ["columns", "roman", "historic"],
-    "svgFilename": "jo-amman.svg",
-    "description": "Amman is the capital and largest city of Jordan, known for its ancient Roman ruins including the impressive columns of the Temple of Hercules on the Citadel. The city combines rich historical heritage with modern development, featuring the ancient Roman Theater and the historic Amman Citadel.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "57",
-    "name": "Tehran Azadi Tower",
-    "city": "Tehran",
-    "country": "Iran",
-    "category": "Landmarks",
-    "tags": ["tower", "modern", "iconic"],
-    "svgFilename": "ir-tehran.svg",
-    "description": "Tehran is the capital and largest city of Iran, known for its iconic Azadi Tower - a symbol of the city and Iranian architecture. The city combines ancient Persian heritage with modern urban development, featuring the historic Golestan Palace and the vibrant Grand Bazaar.",
-    "createdAt": "2024-01-01",
-    "updatedAt": "2024-01-01"
-  },
-  {
-    "_id": "58",
-    "name": "Beirut Mosque",
-    "city": "Beirut",
-    "country": "Lebanon",
-    "category": "Landmarks",
-    "tags": ["mosque", "religious", "historic"],
-    "svgFilename": "lb-beirut.svg",
-    "description": "Beirut is the capital and largest city of Lebanon, known for its historic mosques, Mediterranean coastline, and rich cultural heritage. The city combines ancient Phoenician history with modern Arab culture, featuring beautiful religious architecture and vibrant street life.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   },
@@ -845,7 +965,11 @@
     "city": "Hanoi",
     "country": "Vietnam",
     "category": "Landmarks",
-    "tags": ["turtle", "tower", "historic"],
+    "tags": [
+      "turtle",
+      "tower",
+      "historic"
+    ],
     "svgFilename": "vn-hanoi.svg",
     "description": "Hanoi is the capital city of Vietnam, known for its iconic Turtle Tower on Hoan Kiem Lake - a historic landmark symbolizing the city's rich cultural heritage. The city combines traditional Vietnamese culture with French colonial architecture, featuring the Old Quarter, Temple of Literature, and vibrant street food scene.",
     "createdAt": "2024-01-01",
@@ -857,7 +981,11 @@
     "city": "Havana",
     "country": "Cuba",
     "category": "Landmarks",
-    "tags": ["capitol", "neoclassical", "historic"],
+    "tags": [
+      "capitol",
+      "neoclassical",
+      "historic"
+    ],
     "svgFilename": "cu-havana.svg",
     "description": "Havana is the capital and largest city of Cuba, known for its iconic Capitol building, Spanish colonial architecture, and rich cultural heritage. The city combines traditional Cuban culture with historic charm, featuring the historic Old Havana, Malecón waterfront, and vibrant music scene.",
     "createdAt": "2024-01-01",
@@ -869,7 +997,11 @@
     "city": "Tashkent",
     "country": "Uzbekistan",
     "category": "Landmarks",
-    "tags": ["mosque", "islamic", "historic"],
+    "tags": [
+      "mosque",
+      "islamic",
+      "historic"
+    ],
     "svgFilename": "uz-tashkent.svg",
     "description": "Tashkent is the capital and largest city of Uzbekistan, known for its beautiful mosques, Islamic architecture, and rich cultural heritage. The city combines traditional Central Asian culture with modern development, featuring the historic Chorsu Bazaar, Tashkent Tower, and vibrant cultural scene.",
     "createdAt": "2024-01-01",
@@ -881,7 +1013,11 @@
     "city": "Lagos",
     "country": "Nigeria",
     "category": "Landmarks",
-    "tags": ["bridge", "modern", "infrastructure"],
+    "tags": [
+      "bridge",
+      "modern",
+      "infrastructure"
+    ],
     "svgFilename": "ng-lagos.svg",
     "description": "Lagos is the largest city and economic hub of Nigeria, known for its modern infrastructure including iconic bridges, bustling port, and vibrant culture. The city combines traditional Nigerian culture with contemporary development, featuring the Third Mainland Bridge, Victoria Island, and dynamic street life.",
     "createdAt": "2024-01-01",
@@ -893,7 +1029,11 @@
     "city": "Oslo",
     "country": "Norway",
     "category": "Landmarks",
-    "tags": ["opera house", "modern", "architecture"],
+    "tags": [
+      "opera house",
+      "modern",
+      "architecture"
+    ],
     "svgFilename": "no-oslo.svg",
     "description": "Oslo is the capital and largest city of Norway, known for its iconic Oslo Opera House, stunning fjord views, and rich cultural heritage. The city combines traditional Norwegian culture with modern Scandinavian design, featuring the Nobel Peace Center, Vigeland Sculpture Park, and beautiful waterfront.",
     "createdAt": "2024-01-01",
@@ -905,7 +1045,11 @@
     "city": "Istanbul",
     "country": "Turkey",
     "category": "Landmarks",
-    "tags": ["bridge", "bosphorus", "iconic"],
+    "tags": [
+      "bridge",
+      "bosphorus",
+      "iconic"
+    ],
     "svgFilename": "tr-istanbul.svg",
     "description": "Istanbul is the largest city in Turkey, spanning Europe and Asia across the Bosphorus Strait. Known for its iconic Bosphorus Bridge, historic Hagia Sophia, and rich cultural heritage. The city combines ancient Byzantine and Ottoman history with modern Turkish culture, featuring the Blue Mosque, Grand Bazaar, and vibrant street life.",
     "createdAt": "2024-01-01",
@@ -917,7 +1061,11 @@
     "city": "Columbus",
     "country": "USA",
     "category": "Culture",
-    "tags": ["discovery", "exploration", "historic"],
+    "tags": [
+      "discovery",
+      "exploration",
+      "historic"
+    ],
     "svgFilename": "us-columbus.svg",
     "description": "Columbus is the capital and largest city of Ohio, named after explorer Christopher Columbus. Known for its rich history, diverse culture, and modern development. The city combines historic charm with contemporary innovation, featuring the Ohio Statehouse, German Village, and vibrant arts scene.",
     "createdAt": "2024-01-01",
@@ -929,7 +1077,11 @@
     "city": "Phoenix",
     "country": "USA",
     "category": "Culture",
-    "tags": ["desert", "modern", "southwestern"],
+    "tags": [
+      "desert",
+      "modern",
+      "southwestern"
+    ],
     "svgFilename": "us-phoenix.svg",
     "description": "Phoenix is the capital and largest city of Arizona, known for its desert landscape, modern architecture, and southwestern culture. The city combines natural beauty with urban development, featuring the iconic Phoenix Mountain Preserve, vibrant downtown, and rich Native American heritage.",
     "createdAt": "2024-01-01",
@@ -941,7 +1093,11 @@
     "city": "Ferrara",
     "country": "Italy",
     "category": "Landmarks",
-    "tags": ["cathedral", "gothic", "historic"],
+    "tags": [
+      "cathedral",
+      "gothic",
+      "historic"
+    ],
     "svgFilename": "it-ferrara.svg",
     "description": "Ferrara is a historic city in northern Italy, known for its magnificent cathedral, medieval architecture, and Renaissance heritage. The city combines Gothic and Renaissance styles, featuring the iconic Ferrara Cathedral, the Estense Castle, and the UNESCO World Heritage historic center.",
     "createdAt": "2024-01-01",
@@ -953,7 +1109,11 @@
     "city": "Minsk",
     "country": "Belarus",
     "category": "Landmarks",
-    "tags": ["cathedral", "orthodox", "historic"],
+    "tags": [
+      "cathedral",
+      "orthodox",
+      "historic"
+    ],
     "svgFilename": "by-minsk.svg",
     "description": "Minsk is the capital and largest city of Belarus, known for its beautiful Orthodox cathedrals, Soviet-era architecture, and rich cultural heritage. The city combines traditional Belarusian culture with modern development, featuring the Holy Spirit Cathedral, Independence Square, and vibrant cultural scene.",
     "createdAt": "2024-01-01",
@@ -965,7 +1125,11 @@
     "city": "Kyiv",
     "country": "Ukraine",
     "category": "Landmarks",
-    "tags": ["independence", "monument", "historic"],
+    "tags": [
+      "independence",
+      "monument",
+      "historic"
+    ],
     "svgFilename": "ua-kyiv.svg",
     "description": "Kyiv is the capital and largest city of Ukraine, known for its iconic Independence Monument, rich Slavic heritage, and beautiful Orthodox churches. The city combines ancient history with modern European culture, featuring the golden-domed St. Sophia Cathedral, Maidan Nezalezhnosti, and vibrant cultural scene.",
     "createdAt": "2024-01-01",
@@ -977,10 +1141,14 @@
     "city": "Gijón",
     "country": "Spain",
     "category": "Landmarks",
-    "tags": ["sculpture", "modern", "coastal"],
+    "tags": [
+      "sculpture",
+      "modern",
+      "coastal"
+    ],
     "svgFilename": "es-gijon.svg",
     "description": "Gijón is a coastal city in northern Spain, known for its iconic 'Elogio del Horizonte' sculpture by Eduardo Chillida, beautiful beaches, and maritime heritage. The city combines traditional Asturian culture with modern development, featuring the San Lorenzo Beach, Cimavilla historic quarter, and vibrant port area.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
   }
-] 
+]
