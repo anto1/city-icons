@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Icon } from '@/types';
 
 interface UseIconSearchProps {
@@ -15,6 +15,16 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
     return icons;
   });
   const [lastSearchQuery, setLastSearchQuery] = useState<string>('');
+
+  // Update filtered icons when icons or countryFilter changes
+  useEffect(() => {
+    if (countryFilter) {
+      const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
+      setFilteredIcons(countryFilteredIcons);
+    } else {
+      setFilteredIcons(icons);
+    }
+  }, [icons, countryFilter]);
 
   const handleSearch = useCallback((query: string) => {
     const trimmedQuery = query.trim();
@@ -64,6 +74,8 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
     );
 
     const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
+    
+    // Ensure we're setting the state with the correct array
     setFilteredIcons(sortedFiltered);
   }, [icons, lastSearchQuery, countryFilter]);
 
