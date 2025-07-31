@@ -27,7 +27,7 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
         setFilteredIcons(icons);
       }
     }
-  }, [icons, countryFilter]);
+  }, [icons, countryFilter, lastSearchQuery]);
 
   const handleSearch = useCallback((query: string) => {
     const trimmedQuery = query.trim();
