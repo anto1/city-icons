@@ -1510,5 +1510,29 @@
     "description": "Benghazi is the second-largest city in Libya, known for its iconic Benghazi Lighthouse (Fanar Benghazi) - a historic coastal landmark. The city combines Mediterranean charm with rich cultural heritage, featuring the beautiful Mediterranean coastline, historic architecture, the famous Benghazi University, and vibrant local markets.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "116",
+    "name": "Fez Moroccan Hat",
+    "city": "Fez",
+    "country": "Morocco",
+    "category": "Culture",
+    "tags": ["fez", "hat", "moroccan", "traditional", "cultural"],
+    "svgFilename": "ma-fez.svg",
+    "description": "Fez is one of Morocco's oldest and most important cities, known for its traditional Moroccan fez hat and rich cultural heritage. The city combines medieval architecture with vibrant culture, featuring the famous Fes el-Bali medina (a UNESCO World Heritage site), the beautiful Al-Qarawiyyin University (the world's oldest university), and the iconic tanneries.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "117",
+    "name": "Bruges Swan",
+    "city": "Bruges",
+    "country": "Belgium",
+    "category": "Culture",
+    "tags": ["swan", "canals", "medieval", "historic"],
+    "svgFilename": "be-bruges.svg",
+    "description": "Bruges is a picturesque medieval city in Belgium, known for its beautiful canals and iconic swans. The city combines stunning Gothic architecture with romantic waterways, featuring the famous Markt square, the beautiful Belfry tower, the historic Church of Our Lady, and the charming swans that grace the city's canals.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
