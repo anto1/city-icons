@@ -1534,5 +1534,29 @@
     "description": "Bruges is a picturesque medieval city in Belgium, known for its beautiful canals and iconic swans. The city combines stunning Gothic architecture with romantic waterways, featuring the famous Markt square, the beautiful Belfry tower, the historic Church of Our Lady, and the charming swans that grace the city's canals.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "118",
+    "name": "Austin Bat",
+    "city": "Austin",
+    "country": "United States",
+    "category": "Culture",
+    "tags": ["bat", "music", "texas", "live music", "cultural"],
+    "svgFilename": "us-austin.svg",
+    "description": "Austin is the capital of Texas and known as the 'Live Music Capital of the World', famous for its iconic bat colony under the Congress Avenue Bridge. The city combines vibrant music culture with outdoor activities, featuring the famous South by Southwest festival, beautiful Lady Bird Lake, the historic Texas State Capitol, and the world's largest urban bat colony.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "119",
+    "name": "Santiago de Compostela Seashell",
+    "city": "Santiago de Compostela",
+    "country": "Spain",
+    "category": "Landmarks",
+    "tags": ["seashell", "pilgrimage", "camino", "cathedral", "religious"],
+    "svgFilename": "es-santiago-de-compostela.svg",
+    "description": "Santiago de Compostela is the capital of Galicia, Spain, and the final destination of the famous Camino de Santiago pilgrimage route, symbolized by the seashell. The city combines medieval architecture with spiritual significance, featuring the stunning Cathedral of Santiago de Compostela, the historic Old Town (a UNESCO World Heritage site), and the iconic seashell markers that guide pilgrims.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
