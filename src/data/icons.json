@@ -1426,5 +1426,17 @@
     "description": "Murmansk is the largest city north of the Arctic Circle in Russia, known for its stunning Northern Lights and Arctic location. The city combines Soviet-era architecture with modern development, featuring the world's largest icebreaker fleet, the Alyosha Monument, and unique polar climate experiences.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "109",
+    "name": "Akureyri Red Heart Traffic Lights",
+    "city": "Akureyri",
+    "country": "Iceland",
+    "category": "Culture",
+    "tags": ["traffic lights", "heart", "red", "unique"],
+    "svgFilename": "is-akureyri.svg",
+    "description": "Akureyri is the largest city in northern Iceland, known for its unique red heart traffic lights - a charming symbol of the city's warmth and hospitality. The city combines stunning fjord views with modern Icelandic culture, featuring the iconic Akureyrarkirkja church, beautiful botanical gardens, and vibrant cultural scene.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
