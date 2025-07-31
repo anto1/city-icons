@@ -61,14 +61,18 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
       // Search in city and country names
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       
-      // For country matching, ensure it's not a partial word match
-      // This prevents "amsterdam" matching "netherlands"
-      const exactCountryMatch = icon.country.toLowerCase() === searchTerm || 
-                               icon.country.toLowerCase().startsWith(searchTerm + ' ') ||
-                               icon.country.toLowerCase().endsWith(' ' + searchTerm) ||
-                               icon.country.toLowerCase().includes(' ' + searchTerm + ' ');
+      // For country matching, allow partial matches but be more intelligent
+      // This allows "germ" to match "Germany" but prevents "amsterdam" matching "netherlands"
+      const countryMatch = icon.country.toLowerCase().includes(searchTerm);
       
-      return cityMatch || exactCountryMatch;
+      // Additional check to prevent false positives
+      // Only allow country match if the search term is at least 3 characters
+      // or if it's a common country prefix
+      const validCountryMatch = searchTerm.length >= 3 || 
+                               ['usa', 'uk', 'uae'].includes(searchTerm) ||
+                               icon.country.toLowerCase().startsWith(searchTerm);
+      
+      return cityMatch || (countryMatch && validCountryMatch);
     });
 
     // Remove duplicates based on _id (this should not be necessary but just in case)
