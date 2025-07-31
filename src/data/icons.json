@@ -1438,5 +1438,17 @@
     "description": "Akureyri is the largest city in northern Iceland, known for its unique red heart traffic lights - a charming symbol of the city's warmth and hospitality. The city combines stunning fjord views with modern Icelandic culture, featuring the iconic Akureyrarkirkja church, beautiful botanical gardens, and vibrant cultural scene.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "110",
+    "name": "Cebu Lapu-Lapu Monument",
+    "city": "Cebu",
+    "country": "Philippines",
+    "category": "Landmarks",
+    "tags": ["monument", "lapu-lapu", "mactan shrine", "historic"],
+    "svgFilename": "ph-cebu.svg",
+    "description": "Cebu is the oldest city in the Philippines and the first capital, known for its iconic Lapu-Lapu Monument at the Mactan Shrine - commemorating the first Filipino hero who defeated Portuguese explorer Ferdinand Magellan. The city combines rich colonial history with modern Filipino culture, featuring the historic Basilica Minore del Santo Niño, Magellan's Cross, and vibrant cultural heritage.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
