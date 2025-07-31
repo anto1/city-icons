@@ -1414,5 +1414,17 @@
     "description": "Mostar is a historic city in Bosnia and Herzegovina, known for its iconic Old Bridge (Stari Most) - a UNESCO World Heritage site. The city combines Ottoman and Mediterranean architecture with rich cultural heritage, featuring the historic Old Town, traditional crafts, and the beautiful Neretva River.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "108",
+    "name": "Murmansk Northern Lights",
+    "city": "Murmansk",
+    "country": "Russia",
+    "category": "Culture",
+    "tags": ["northern lights", "aurora", "arctic"],
+    "svgFilename": "ru-murmansk.svg",
+    "description": "Murmansk is the largest city north of the Arctic Circle in Russia, known for its stunning Northern Lights and Arctic location. The city combines Soviet-era architecture with modern development, featuring the world's largest icebreaker fleet, the Alyosha Monument, and unique polar climate experiences.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
