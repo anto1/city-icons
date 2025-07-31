@@ -1450,5 +1450,17 @@
     "description": "Cebu is the oldest city in the Philippines and the first capital, known for its iconic Lapu-Lapu Monument at the Mactan Shrine - commemorating the first Filipino hero who defeated Portuguese explorer Ferdinand Magellan. The city combines rich colonial history with modern Filipino culture, featuring the historic Basilica Minore del Santo Niño, Magellan's Cross, and vibrant cultural heritage.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "111",
+    "name": "Forte dei Marmi Mountains and Cycling",
+    "city": "Forte dei Marmi",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": ["mountains", "cycling", "road bicycle", "tuscany"],
+    "svgFilename": "it-forte-dei-marmi.svg",
+    "description": "Forte dei Marmi is an elegant seaside resort town in Tuscany, Italy, known for its stunning mountain views and cycling culture. The city combines luxury beach tourism with outdoor sports, featuring the beautiful Apuan Alps backdrop, scenic cycling routes along the Versilia coast, and the famous Viale Roma promenade with its exclusive boutiques and restaurants.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
