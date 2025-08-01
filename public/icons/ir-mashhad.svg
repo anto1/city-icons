@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Saffron Flower -->
+  <g fill="#FF6B35">
+    <!-- Main flower petals -->
+    <ellipse cx="50" cy="45" rx="15" ry="8" fill="#FF8C42"/>
+    <ellipse cx="50" cy="45" rx="12" ry="6" fill="#FF6B35"/>
+    
+    <!-- Stamen -->
+    <circle cx="50" cy="45" r="3" fill="#FFD700"/>
+    
+    <!-- Saffron threads -->
+    <line x1="50" y1="42" x2="50" y2="25" stroke="#FFD700" stroke-width="2"/>
+    <line x1="48" y1="40" x2="45" y2="28" stroke="#FFD700" stroke-width="2"/>
+    <line x1="52" y1="40" x2="55" y2="28" stroke="#FFD700" stroke-width="2"/>
+    
+    <!-- Stem -->
+    <line x1="50" y1="53" x2="50" y2="80" stroke="#228B22" stroke-width="3"/>
+    
+    <!-- Leaves -->
+    <ellipse cx="45" cy="65" rx="8" ry="3" fill="#32CD32" transform="rotate(-20 45 65)"/>
+    <ellipse cx="55" cy="70" rx="8" ry="3" fill="#32CD32" transform="rotate(20 55 70)"/>
+  </g>
+</svg>

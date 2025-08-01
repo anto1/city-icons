@@ -1558,5 +1558,29 @@
     "description": "Santiago de Compostela is the capital of Galicia, Spain, and the final destination of the famous Camino de Santiago pilgrimage route, symbolized by the seashell. The city combines medieval architecture with spiritual significance, featuring the stunning Cathedral of Santiago de Compostela, the historic Old Town (a UNESCO World Heritage site), and the iconic seashell markers that guide pilgrims.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "120",
+    "name": "Mashhad Saffron Flower",
+    "city": "Mashhad",
+    "country": "Iran",
+    "category": "Culture",
+    "tags": ["saffron", "flower", "persian", "religious", "cultural"],
+    "svgFilename": "ir-mashhad.svg",
+    "description": "Mashhad is the second-largest city in Iran and the holiest city in the country, known for its beautiful saffron flowers and the magnificent Imam Reza Shrine. The city combines deep religious significance with rich Persian culture, featuring the stunning golden-domed shrine, beautiful gardens, traditional Persian architecture, and the famous saffron fields that surround the region.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "121",
+    "name": "Palermo Trinacria",
+    "city": "Palermo",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": ["trinacria", "sicilian", "mythology", "ancient", "surreal"],
+    "svgFilename": "it-palermo.svg",
+    "description": "Palermo is the capital of Sicily, Italy, known for its iconic Trinacria symbol - a three-legged symbol from Sicilian mythology representing the island's triangular shape. The city combines ancient history with vibrant Mediterranean culture, featuring the stunning Norman-Arab architecture, the beautiful Palermo Cathedral, the historic markets of Ballarò and Vucciria, and the rich cultural heritage that reflects its diverse past.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
