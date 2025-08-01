@@ -1582,5 +1582,41 @@
     "description": "Palermo is the capital of Sicily, Italy, known for its iconic Trinacria symbol - a three-legged symbol from Sicilian mythology representing the island's triangular shape. The city combines ancient history with vibrant Mediterranean culture, featuring the stunning Norman-Arab architecture, the beautiful Palermo Cathedral, the historic markets of Ballarò and Vucciria, and the rich cultural heritage that reflects its diverse past.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "122",
+    "name": "Noumea Nautilus Shell",
+    "city": "Noumea",
+    "country": "New Caledonia",
+    "category": "Nature",
+    "tags": ["nautilus", "shell", "pacific", "marine", "oceanic"],
+    "svgFilename": "nc-noumea.svg",
+    "description": "Noumea is the capital and largest city of New Caledonia, known for its beautiful nautilus shell and stunning Pacific Ocean setting. The city combines French colonial charm with Melanesian culture, featuring the beautiful Anse Vata Beach, the iconic Tjibaou Cultural Centre, the historic Place des Cocotiers, and the world's largest lagoon with its diverse marine life.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "123",
+    "name": "Perth Quokka",
+    "city": "Perth",
+    "country": "Australia",
+    "category": "Nature",
+    "tags": ["quokka", "marsupial", "australian", "wildlife", "smiling"],
+    "svgFilename": "au-perth.svg",
+    "description": "Perth is the capital and largest city of Western Australia, known for its adorable quokka - the world's happiest animal found on Rottnest Island. The city combines modern urban development with natural beauty, featuring the beautiful Swan River, the iconic Kings Park and Botanic Garden, the historic Fremantle port, and the famous quokkas that have become a symbol of the region's unique wildlife.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "124",
+    "name": "Muscat Khanjar Dagger",
+    "city": "Muscat",
+    "country": "Oman",
+    "category": "Culture",
+    "tags": ["khanjar", "dagger", "omani", "traditional", "cultural"],
+    "svgFilename": "om-muscat.svg",
+    "description": "Muscat is the capital and largest city of Oman, known for its traditional Khanjar dagger - a curved ceremonial dagger that is a symbol of Omani heritage and culture. The city combines ancient Arabian architecture with modern development, featuring the stunning Sultan Qaboos Grand Mosque, the historic Mutrah Souq, the beautiful Al Jalali and Al Mirani forts, and the traditional Khanjar that represents the country's rich cultural traditions.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
