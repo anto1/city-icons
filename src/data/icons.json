@@ -1750,5 +1750,65 @@
     "description": "Vatican City is the world's smallest independent state and the spiritual center of the Catholic Church, known for its iconic crossed keys - the symbol of the Papal States and the authority of the Pope. The city combines religious significance with artistic treasures, featuring the magnificent St. Peter's Basilica, the stunning Sistine Chapel, the beautiful Vatican Museums, and the crossed keys that represent the spiritual authority and heritage of the Holy See.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "136",
+    "name": "Andorra Casa de la Vall",
+    "city": "Andorra la Vella",
+    "country": "Andorra",
+    "category": "Landmarks",
+    "tags": ["casa-de-la-vall", "parliament", "andorran", "historic", "government"],
+    "svgFilename": "ad-andorra.svg",
+    "description": "Andorra la Vella is the capital of Andorra, known for its iconic Casa de la Vall - the historic parliament building that has served as the seat of government since 1702. The city combines medieval architecture with modern commerce, featuring the beautiful Casa de la Vall with its distinctive stone facade, the bustling shopping district, the impressive Sant Esteve Church, and the historic parliament building that symbolizes Andorra's unique political heritage and independence.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "137",
+    "name": "Vaduz Parliament Building",
+    "city": "Vaduz",
+    "country": "Liechtenstein",
+    "category": "Buildings",
+    "tags": ["parliament", "building", "vaduz", "liechtenstein", "government", "modern"],
+    "svgFilename": "li-vaduz.svg",
+    "description": "Vaduz is the capital of Liechtenstein, known for its iconic parliament building - a modern government complex that houses the country's legislative assembly. The city combines Alpine charm with contemporary governance, featuring the impressive parliament building, the historic Vaduz Castle perched on the hillside, the beautiful Cathedral of St. Florin, and the modern government complex that represents Liechtenstein's democratic institutions and political stability.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "138",
+    "name": "Pristina Library Dome",
+    "city": "Pristina",
+    "country": "Kosovo",
+    "category": "Buildings",
+    "tags": ["library", "dome", "pristina", "kosovo", "modern", "cultural"],
+    "svgFilename": "xk-pristina.svg",
+    "description": "Pristina is the capital and largest city of Kosovo, known for its iconic library dome - the distinctive National Library building with its unique architectural design featuring multiple domes. The city combines Ottoman heritage with modern development, featuring the striking National Library with its distinctive domes, the historic Newborn monument, the beautiful Mother Teresa Cathedral, and the library that symbolizes Kosovo's cultural identity and educational aspirations.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "139",
+    "name": "Sofia Alexander Nevsky Cathedral",
+    "city": "Sofia",
+    "country": "Bulgaria",
+    "category": "Landmarks",
+    "tags": ["alexander-nevsky", "cathedral", "sofia", "bulgarian", "orthodox", "religious"],
+    "svgFilename": "bg-sofia.svg",
+    "description": "Sofia is the capital and largest city of Bulgaria, known for its iconic Alexander Nevsky Cathedral - a magnificent Orthodox cathedral with golden domes that dominates the city's skyline. The city combines ancient history with Eastern Orthodox culture, featuring the stunning Alexander Nevsky Cathedral, the historic St. George Rotunda, the beautiful Vitosha Boulevard, and the grand cathedral that serves as a symbol of Bulgarian Orthodox faith and national identity.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "140",
+    "name": "Tirana Skanderbeg Statue",
+    "city": "Tirana",
+    "country": "Albania",
+    "category": "Culture",
+    "tags": ["skanderbeg", "statue", "tirana", "albanian", "hero", "national"],
+    "svgFilename": "al-tirana.svg",
+    "description": "Tirana is the capital and largest city of Albania, known for its iconic Skanderbeg Statue - a monumental statue of the national hero Gjergj Kastrioti Skanderbeg in the central square. The city combines Ottoman heritage with modern Albanian identity, featuring the impressive Skanderbeg Statue in the main square, the historic Et'hem Bey Mosque, the colorful buildings of the Blloku district, and the statue that symbolizes Albania's national pride and historical resistance.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
