@@ -1654,5 +1654,53 @@
     "description": "Sarajevo is the capital and largest city of Bosnia and Herzegovina, known for its iconic Sebilj Fountain - a wooden fountain in the heart of Baščaršija that symbolizes the city's Ottoman heritage. The city combines Eastern and Western influences, featuring the historic Old Town, the beautiful Latin Bridge, the famous Gazi Husrev-beg Mosque, and the Sebilj Fountain that continues to be a gathering place and symbol of Sarajevo's multicultural history.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "128",
+    "name": "Helsinki Cathedral",
+    "city": "Helsinki",
+    "country": "Finland",
+    "category": "Landmarks",
+    "tags": ["cathedral", "neoclassical", "finnish", "religious", "historic"],
+    "svgFilename": "fi-helsinki.svg",
+    "description": "Helsinki is the capital and largest city of Finland, known for its iconic white cathedral - a neoclassical Lutheran church that dominates the city's skyline. The city combines Scandinavian design with Finnish culture, featuring the beautiful Senate Square, the historic Suomenlinna sea fortress, the modern Helsinki Central Library, and the stunning white cathedral that symbolizes the city's architectural heritage.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "129",
+    "name": "Bratislava UFO Bridge",
+    "city": "Bratislava",
+    "country": "Slovakia",
+    "category": "Buildings",
+    "tags": ["ufo", "bridge", "modern", "slovak", "futuristic"],
+    "svgFilename": "sk-bratislava.svg",
+    "description": "Bratislava is the capital and largest city of Slovakia, known for its iconic UFO Bridge - a futuristic bridge with a restaurant shaped like a flying saucer. The city combines medieval charm with modern architecture, featuring the historic Bratislava Castle, the beautiful Old Town, the modern Eurovea development, and the distinctive UFO Bridge that has become a symbol of the city's contemporary identity.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "130",
+    "name": "Monaco Princess Grace",
+    "city": "Monaco",
+    "country": "Monaco",
+    "category": "Culture",
+    "tags": ["princess", "grace", "monaco", "royal", "elegant"],
+    "svgFilename": "mc-monaco.svg",
+    "description": "Monaco is a sovereign city-state on the French Riviera, known for its connection to Princess Grace Kelly - the American actress who became Princess of Monaco. The city combines luxury with Mediterranean charm, featuring the famous Monte Carlo Casino, the beautiful Prince's Palace, the stunning Port Hercules, and the legacy of Princess Grace that continues to influence the principality's cultural identity.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "131",
+    "name": "San Marino Three Towers",
+    "city": "San Marino",
+    "country": "San Marino",
+    "category": "Landmarks",
+    "tags": ["towers", "medieval", "sammarinese", "historic", "fortress"],
+    "svgFilename": "sm-san-marino.svg",
+    "description": "San Marino is the capital of the Republic of San Marino, known for its iconic three towers - medieval fortresses that stand on the peaks of Mount Titano. The city combines ancient history with independence, featuring the historic Guaita, Cesta, and Montale towers, the beautiful Piazza della Libertà, the stunning Basilica di San Marino, and the three towers that symbolize the world's oldest republic.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
