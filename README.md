@@ -33,71 +33,8 @@ All icons follow a consistent naming pattern: `countryprefix-cityname.svg`
 
 **Format:** `{country-code}-{city-name}.svg`
 
-**Countries in the Collection (Alphabetically Sorted):**
-- Argentina
-- Armenia
-- Australia
-- Austria
-- Azerbaijan
-- Bangladesh
-- Belarus
-- Belgium
-- Bosnia and Herzegovina
-- Brazil
-- Canada
-- Chile
-- China
-- Cuba
-- Cyprus
-- Czech Republic
-- Denmark
-- Egypt
-- Finland
-- France
-- Georgia
-- Germany
-- Greece
-- Iceland
-- India
-- Indonesia
-- Iran
-- Iraq
-- Israel
-- Italy
-- Japan
-- Jordan
-- Kazakhstan
-- Latvia
-- Lebanon
-- Madagascar
-- Mexico
-- Moldova
-- Morocco
-- Nepal
-- Netherlands
-- New Zealand
-- Nigeria
-- North Macedonia
-- Norway
-- Pakistan
-- Peru
-- Philippines
-- Poland
-- Portugal
-- Qatar
-- Russia
-- Serbia
-- Slovenia
-- South Africa
-- South Korea
-- Spain
-- Sweden
-- Turkey
-- UK
-- USA
-- Ukraine
-- Uzbekistan
-- Vietnam
+**Countries in the Collection (64 countries):**
+Argentina, Armenia, Australia, Austria, Azerbaijan, Bangladesh, Belarus, Belgium, Bosnia and Herzegovina, Brazil, Canada, Chile, China, Cuba, Cyprus, Czech Republic, Denmark, Egypt, Finland, France, Georgia, Germany, Greece, Iceland, India, Indonesia, Iran, Iraq, Israel, Italy, Japan, Jordan, Kazakhstan, Latvia, Lebanon, Madagascar, Mexico, Moldova, Morocco, Nepal, Netherlands, New Zealand, Nigeria, North Macedonia, Norway, Pakistan, Peru, Philippines, Poland, Portugal, Qatar, Russia, Serbia, Slovenia, South Africa, South Korea, Spain, Sweden, Turkey, UK, USA, Ukraine, Uzbekistan, Vietnam
 
 **Examples:**
 - `us-new-york.svg` - New York, USA
