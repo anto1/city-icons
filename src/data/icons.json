@@ -1702,5 +1702,53 @@
     "description": "San Marino is the capital of the Republic of San Marino, known for its iconic three towers - medieval fortresses that stand on the peaks of Mount Titano. The city combines ancient history with independence, featuring the historic Guaita, Cesta, and Montale towers, the beautiful Piazza della Libertà, the stunning Basilica di San Marino, and the three towers that symbolize the world's oldest republic.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "132",
+    "name": "Nicosia Dove with Olive Branch",
+    "city": "Nicosia",
+    "country": "Cyprus",
+    "category": "Culture",
+    "tags": ["dove", "olive", "branch", "peace", "cypriot", "symbolic"],
+    "svgFilename": "cy-nicosia.svg",
+    "description": "Nicosia is the capital and largest city of Cyprus, known for its symbolic dove with olive branch - representing peace and hope in a city that has been divided for decades. The city combines ancient history with modern challenges, featuring the historic Venetian walls, the beautiful Selimiye Mosque, the bustling Ledra Street, and the dove with olive branch that symbolizes the hope for unity and peace in Cyprus.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "133",
+    "name": "Ankara Anıtkabir Mausoleum",
+    "city": "Ankara",
+    "country": "Turkey",
+    "category": "Landmarks",
+    "tags": ["anitkabir", "mausoleum", "ataturk", "turkish", "memorial", "historic"],
+    "svgFilename": "tr-ankara.svg",
+    "description": "Ankara is the capital of Turkey, known for its iconic Anıtkabir - the magnificent mausoleum of Mustafa Kemal Atatürk, the founder of modern Turkey. The city combines ancient Anatolian heritage with modern Turkish identity, featuring the impressive Anıtkabir complex, the historic Ankara Castle, the beautiful Kızılay Square, and the grand mausoleum that serves as a symbol of Turkish nationalism and Atatürk's legacy.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "134",
+    "name": "Zagreb St. Mark's Church",
+    "city": "Zagreb",
+    "country": "Croatia",
+    "category": "Landmarks",
+    "tags": ["st-marks", "church", "zagreb", "croatian", "medieval", "religious"],
+    "svgFilename": "hr-zagreb.svg",
+    "description": "Zagreb is the capital and largest city of Croatia, known for its iconic St. Mark's Church - a medieval church with a distinctive colorful tiled roof featuring the coats of arms of Croatia, Dalmatia, and Slavonia. The city combines medieval charm with Central European culture, featuring the historic Upper Town, the beautiful Ban Jelačić Square, the impressive Zagreb Cathedral, and the stunning St. Mark's Church that symbolizes the city's rich architectural heritage.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "135",
+    "name": "Vatican Crossed Keys",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "category": "Culture",
+    "tags": ["crossed", "keys", "vatican", "papal", "religious", "symbolic"],
+    "svgFilename": "va-vatican.svg",
+    "description": "Vatican City is the world's smallest independent state and the spiritual center of the Catholic Church, known for its iconic crossed keys - the symbol of the Papal States and the authority of the Pope. The city combines religious significance with artistic treasures, featuring the magnificent St. Peter's Basilica, the stunning Sistine Chapel, the beautiful Vatican Museums, and the crossed keys that represent the spiritual authority and heritage of the Holy See.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
