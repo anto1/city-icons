@@ -1,12 +1,33 @@
-# City Icons Collection
+# City Icons
 
-A beautiful collection of **96 line art SVG icons** representing cities from **64 countries** around the world by Studio Partdirector.
+A growing collection of minimalist black-and-white city icons — drawn in a consistent line-art style and based on iconic landmarks, symbols, or shapes unique to each city.
 
-## 🌍 Live Demo
+Originally started as a quick design task for a community meetup site, the project quickly turned into something bigger. One icon led to another… and now it's 100 (and counting).
 
-Visit the live site: [City Icons Collection](https://cities.partdirector.ch)
+Each icon is:
+- Hand-drawn in a square, stroke-based style
+- Saved in clean, scalable SVG format
+- Free for personal and non-commercial use
+- Searchable and browsable at: [cities.partdirector.ch](https://cities.partdirector.ch)
 
-## 📁 Icon Naming Convention
+### Examples
+Agra → Taj Mahal  
+Copenhagen → The Little Mermaid  
+Istanbul → Bosphorus Bridge  
+Santiago → Chilean Hat  
+Forte dei Marmi → Road Bicycle
+
+---
+
+## ✨ Browse the Collection  
+Website: [cities.partdirector.ch](https://cities.partdirector.ch)
+
+## 📁 Structure
+- `/icons` – All SVG files, named by city
+- `/preview` – Thumbnails used on the site
+- `/data.json` – City metadata used for filtering
+
+## 📋 Icon Naming Convention
 
 All icons follow a consistent naming pattern: `countryprefix-cityname.svg`
 
@@ -100,34 +121,15 @@ All icons follow a consistent naming pattern: `countryprefix-cityname.svg`
 
 **Note:** All city names are lowercase and use hyphens instead of spaces. Country codes follow ISO 3166-1 alpha-2 standard.
 
-## 📋 Usage & Licensing
+## 🚧 License
+Icons are free for **personal and educational use**.  
+Commercial use is currently restricted while the project grows.  
+A more permissive license may be introduced soon.  
+(If you have a use case in mind — feel free to open an issue or message me.)
 
-### Free Personal Use
-
-You're welcome to use these city icons for personal projects, presentations, and non-commercial purposes with attribution.
-
-**Required Attribution:**
-"City icons by Studio Partdirector" ([cities.partdirector.ch](https://cities.partdirector.ch))
-
-### Commercial Use
-
-Planning to use these icons in a commercial project, client work, or product? We'd love to hear about it!
-
-Commercial licensing ensures you get:
-- Full usage rights without attribution requirements
-- Priority support for custom requests
-- Peace of mind for your business
-
-**Contact for Commercial Licensing:**
-[cities@partdirector.ch](mailto:cities@partdirector.ch)
-
-### What We Consider Commercial
-
-- Client work and agency projects
-- Products and services you sell
-- Commercial websites and applications
-- Marketing materials for businesses
-- Any use that generates revenue
+## 💬 Contribute or Suggest a City
+Have a favorite city that's missing?  
+Open an issue or drop a suggestion here: [github.com/anto1/city-icons/issues](https://github.com/anto1/city-icons/issues)
 
 ## 🛠️ Development
 
@@ -165,8 +167,6 @@ src/
 └── lib/               # Utilities
 ```
 
-
-
 ## 📊 Analytics
 
 This project uses [Fathom Analytics](https://usefathom.com/) for privacy-focused analytics:
@@ -176,12 +176,6 @@ This project uses [Fathom Analytics](https://usefathom.com/) for privacy-focused
 - **Minimal performance impact**
 - **City-specific event tracking**
 
-
-
-## 📄 License
-
-This project is licensed under a custom license. See the [Usage & Licensing](/license) page for details.
-
 ## 🌟 Support
 
 - **Missing your city?** [Request it here](mailto:icons@partdirector.ch)
@@ -189,5 +183,7 @@ This project is licensed under a custom license. See the [Usage & Licensing](/li
 - **Found a bug?** [Open an issue](https://github.com/anto2s/city-icons/issues)
 
 ---
+
+Thanks for checking it out.
 
 Made with ❤️ by [Studio Partdirector](https://partdirector.ch)
