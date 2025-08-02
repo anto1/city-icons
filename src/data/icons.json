@@ -1618,5 +1618,41 @@
     "description": "Muscat is the capital and largest city of Oman, known for its traditional Khanjar dagger - a curved ceremonial dagger that is a symbol of Omani heritage and culture. The city combines ancient Arabian architecture with modern development, featuring the stunning Sultan Qaboos Grand Mosque, the historic Mutrah Souq, the beautiful Al Jalali and Al Mirani forts, and the traditional Khanjar that represents the country's rich cultural traditions.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "125",
+    "name": "Bern Clock Tower",
+    "city": "Bern",
+    "country": "Switzerland",
+    "category": "Landmarks",
+    "tags": ["clock", "tower", "swiss", "medieval", "historic"],
+    "svgFilename": "ch-bern.svg",
+    "description": "Bern is the capital of Switzerland, known for its iconic Clock Tower (Zytglogge) - a medieval clock tower that has been the city's symbol for centuries. The city combines medieval architecture with modern Swiss efficiency, featuring the beautiful Old Town (a UNESCO World Heritage site), the famous Bear Park, the stunning Federal Palace, and the historic clock tower that continues to mark time in the heart of the city.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "126",
+    "name": "Dublin Harp",
+    "city": "Dublin",
+    "country": "Ireland",
+    "category": "Culture",
+    "tags": ["harp", "celtic", "irish", "music", "traditional"],
+    "svgFilename": "ie-dublin.svg",
+    "description": "Dublin is the capital and largest city of Ireland, known for its iconic harp - the national symbol of Ireland and a representation of the country's rich musical heritage. The city combines historic charm with vibrant culture, featuring the famous Trinity College and its Book of Kells, the historic Temple Bar district, the beautiful Phoenix Park, and the traditional Irish harp that symbolizes the nation's cultural identity.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "127",
+    "name": "Sarajevo Sebilj Fountain",
+    "city": "Sarajevo",
+    "country": "Bosnia and Herzegovina",
+    "category": "Landmarks",
+    "tags": ["sebilj", "fountain", "ottoman", "historic", "cultural"],
+    "svgFilename": "ba-saraevo.svg",
+    "description": "Sarajevo is the capital and largest city of Bosnia and Herzegovina, known for its iconic Sebilj Fountain - a wooden fountain in the heart of Baščaršija that symbolizes the city's Ottoman heritage. The city combines Eastern and Western influences, featuring the historic Old Town, the beautiful Latin Bridge, the famous Gazi Husrev-beg Mosque, and the Sebilj Fountain that continues to be a gathering place and symbol of Sarajevo's multicultural history.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
   }
 ]
