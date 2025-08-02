@@ -38,23 +38,10 @@ Argentina, Armenia, Australia, Austria, Azerbaijan, Bangladesh, Belarus, Belgium
 
 **Examples:**
 - `us-new-york.svg` - New York, USA
-- `us-chicago.svg` - Chicago, USA  
-- `us-miami.svg` - Miami, USA
-- `us-pittsburgh.svg` - Pittsburgh, USA
-- `us-columbus.svg` - Columbus, USA
-- `us-phoenix.svg` - Phoenix, USA
 - `de-berlin.svg` - Berlin, Germany
 - `fr-paris.svg` - Paris, France
 - `gb-london.svg` - London, UK
-- `es-barcelona.svg` - Barcelona, Spain
-- `it-rome.svg` - Rome, Italy
-- `ca-toronto.svg` - Toronto, Canada
-- `au-sydney.svg` - Sydney, Australia
 - `jp-kyoto.svg` - Kyoto, Japan
-- `kr-seoul.svg` - Seoul, South Korea
-- `cn-shanghai.svg` - Shanghai, China
-- `in-delhi.svg` - Delhi, India
-- `br-rio-de-janeiro.svg` - Rio de Janeiro, Brazil
 
 **Note:** All city names are lowercase and use hyphens instead of spaces. Country codes follow ISO 3166-1 alpha-2 standard.
 
