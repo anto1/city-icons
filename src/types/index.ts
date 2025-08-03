@@ -8,8 +8,8 @@ export interface Icon {
   svgFilename: string;
   svgContent: string;
   description?: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface IconModalProps {
