@@ -2070,5 +2070,90 @@
     "svgFilename": "lt-vilnius.svg",
     "description": "Vilnius is the capital and largest city of Lithuania, known for its iconic tower - the Gediminas Tower that stands as a symbol of the city's medieval heritage and Lithuanian independence. The city combines Gothic and Baroque architecture with Baltic culture, featuring the impressive Gediminas Tower on Castle Hill, the beautiful Vilnius Cathedral, the historic Old Town UNESCO site, and the tower that represents Vilnius's medieval origins and Lithuanian national identity.",
     "region": "Europe"
+  }, 
+  {
+    "_id": "147",
+    "name": "Riyadh Kingdom Tower",
+    "city": "Riyadh",
+    "country": "Saudi Arabia",
+    "category": "Landmarks",
+    "tags": [
+      "kingdom-tower",
+      "riyadh",
+      "saudi",
+      "skyscraper",
+      "modern"
+    ],
+    "svgFilename": "sa-riyadh.svg",
+    "description": "Riyadh is the capital and largest city of Saudi Arabia, known for its iconic Kingdom Tower - one of the tallest skyscrapers in the country that symbolizes the city's modern development and economic power. The city combines traditional Arabian culture with contemporary urban planning, featuring the impressive Kingdom Tower, the beautiful King Fahd Grand Mosque, the historic Masmak Fortress, and the tower that represents Riyadh's transformation into a modern metropolis and the heart of Saudi Arabia's economic and political life.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "148",
+    "name": "Abu Dhabi Falcon",
+    "city": "Abu Dhabi",
+    "country": "United Arab Emirates",
+    "category": "Culture",
+    "tags": [
+      "falcon",
+      "abu-dhabi",
+      "emirati",
+      "traditional",
+      "cultural"
+    ],
+    "svgFilename": "ae-abu-dhabi.svg",
+    "description": "Abu Dhabi is the capital of the United Arab Emirates, known for its iconic falcon - a symbol of traditional Emirati culture and the national bird that represents the country's heritage and hunting traditions. The city combines modern luxury with Arabian culture, featuring the impressive Sheikh Zayed Grand Mosque, the beautiful Corniche waterfront, the historic Qasr Al Hosn fortress, and the falcon that symbolizes Abu Dhabi's deep connection to traditional Emirati culture and the desert heritage of the UAE.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "149",
+    "name": "Manama Bahrain Trading Center",
+    "city": "Manama",
+    "country": "Bahrain",
+    "category": "Landmarks",
+    "tags": [
+      "bahrain-trading-center",
+      "manama",
+      "bahraini",
+      "financial",
+      "modern"
+    ],
+    "svgFilename": "bh-manama.svg",
+    "description": "Manama is the capital and largest city of Bahrain, known for its iconic Bahrain Trading Center - a distinctive twin-tower complex that symbolizes the city's role as a major financial hub in the Persian Gulf. The city combines traditional Bahraini culture with modern financial services, featuring the impressive Bahrain Trading Center towers, the beautiful Al Fateh Grand Mosque, the historic Bahrain Fort, and the trading center that represents Manama's position as a key financial and commercial center in the Middle East.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "150",
+    "name": "Kuwait Towers",
+    "city": "Kuwait City",
+    "country": "Kuwait",
+    "category": "Landmarks",
+    "tags": [
+      "kuwait-towers",
+      "kuwait-city",
+      "kuwaiti",
+      "water-towers",
+      "iconic"
+    ],
+    "svgFilename": "kw-kuwait.svg",
+    "description": "Kuwait City is the capital of Kuwait, known for its iconic Kuwait Towers - distinctive water towers with distinctive blue-green spheres that have become the symbol of the city and the country. The city combines modern architecture with Arabian Gulf culture, featuring the impressive Kuwait Towers, the beautiful Grand Mosque, the historic Kuwait National Museum, and the towers that represent Kuwait City's modern development and the country's prosperity and engineering achievements.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "151",
+    "name": "Islamabad Faisal Mosque",
+    "city": "Islamabad",
+    "country": "Pakistan",
+    "category": "Landmarks",
+    "tags": [
+      "faisal-mosque",
+      "islamabad",
+      "pakistani",
+      "religious",
+      "architectural"
+    ],
+    "svgFilename": "pk-islamabad.svg",
+    "description": "Islamabad is the capital city of Pakistan, known for its iconic Faisal Mosque - one of the largest mosques in the world with its distinctive tent-like design that symbolizes modern Islamic architecture. The city combines planned urban development with Pakistani culture, featuring the impressive Faisal Mosque, the beautiful Margalla Hills, the historic Pakistan Monument, and the mosque that represents Islamabad's role as the modern capital of Pakistan and a center of Islamic culture and architecture.",
+    "region": "Asia"
   }
 ]
