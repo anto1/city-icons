@@ -58,12 +58,15 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
       : icons;
     
     const filtered = baseIcons.filter(icon => {
-      // Search in city and country names
+      // Search in city, country, and region names
       const cityMatch = icon.city.toLowerCase().includes(searchTerm);
       
       // For country matching, allow partial matches but be more intelligent
       // This allows "germ" to match "Germany" but prevents "amsterdam" matching "netherlands"
       const countryMatch = icon.country.toLowerCase().includes(searchTerm);
+      
+      // For region matching, allow partial matches
+      const regionMatch = icon.region.toLowerCase().includes(searchTerm);
       
       // Additional check to prevent false positives
       // Only allow country match if the search term is at least 3 characters
@@ -72,7 +75,7 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
                                ['usa', 'uk', 'uae'].includes(searchTerm) ||
                                icon.country.toLowerCase().startsWith(searchTerm);
       
-      return cityMatch || (countryMatch && validCountryMatch);
+      return cityMatch || (countryMatch && validCountryMatch) || regionMatch;
     });
 
     // Remove duplicates based on _id (this should not be necessary but just in case)
