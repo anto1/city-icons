@@ -8,8 +8,7 @@ export interface Icon {
   svgFilename: string;
   svgContent: string;
   description?: string;
-  createdAt?: string;
-  updatedAt?: string;
+  region: string;
 }
 
 export interface IconModalProps {

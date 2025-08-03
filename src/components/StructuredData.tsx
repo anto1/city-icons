@@ -28,8 +28,6 @@ export default function StructuredData({ icon }: StructuredDataProps) {
       name: 'Studio Partdirector',
       url: 'https://partdirector.ch',
     },
-    datePublished: icon.createdAt || '2024-01-01',
-    dateModified: icon.updatedAt || '2024-01-01',
     image: `${baseUrl}/icons/${icon.svgFilename}`,
     keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art`,
     inLanguage: 'en-US',
