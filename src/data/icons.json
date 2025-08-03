@@ -1422,7 +1422,7 @@
     ],
     "svgFilename": "ru-murmansk.svg",
     "description": "Murmansk is the largest city north of the Arctic Circle in Russia, known for its stunning Northern Lights and Arctic location. The city combines Soviet-era architecture with modern development, featuring the world's largest icebreaker fleet, the Alyosha Monument, and unique polar climate experiences.",
-    "region": "Other"
+    "region": "Europe"
   },
   {
     "_id": "109",
@@ -1492,7 +1492,7 @@
     "_id": "113",
     "name": "Leeds Owl",
     "city": "Leeds",
-    "country": "United Kingdom",
+    "country": "UK",
     "category": "Culture",
     "tags": [
       "owl",
@@ -1502,7 +1502,7 @@
     ],
     "svgFilename": "uk-leeds.svg",
     "description": "Leeds is a major city in West Yorkshire, England, known for its prestigious universities and vibrant cultural scene. The city combines historic industrial heritage with modern development, featuring the University of Leeds with its iconic owl symbol, the beautiful Kirkstall Abbey, the vibrant Leeds Art Gallery, and the famous Leeds Grand Theatre.",
-    "region": "Other"
+    "region": "Europe"
   },
   {
     "_id": "114",
@@ -1585,7 +1585,7 @@
     ],
     "svgFilename": "us-austin.svg",
     "description": "Austin is the capital of Texas and known as the 'Live Music Capital of the World', famous for its iconic bat colony under the Congress Avenue Bridge. The city combines vibrant music culture with outdoor activities, featuring the famous South by Southwest festival, beautiful Lady Bird Lake, the historic Texas State Capitol, and the world's largest urban bat colony.",
-    "region": "Other"
+    "region": "Americas"
   },
   {
     "_id": "119",
