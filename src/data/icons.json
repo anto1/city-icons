@@ -1810,5 +1810,111 @@
     "description": "Tirana is the capital and largest city of Albania, known for its iconic Skanderbeg Statue - a monumental statue of the national hero Gjergj Kastrioti Skanderbeg in the central square. The city combines Ottoman heritage with modern Albanian identity, featuring the impressive Skanderbeg Statue in the main square, the historic Et'hem Bey Mosque, the colorful buildings of the Blloku district, and the statue that symbolizes Albania's national pride and historical resistance.",
     "createdAt": "2024-01-01",
     "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "141",
+    "name": "Valletta Eye",
+    "city": "Valletta",
+    "country": "Malta",
+    "category": "Culture",
+    "tags": [
+      "eye",
+      "valletta",
+      "maltese",
+      "symbolic",
+      "cultural"
+    ],
+    "svgFilename": "mt-valetta.svg",
+    "description": "Valletta is the capital of Malta, known for its iconic eye symbol - representing the city's watchful guardianship and strategic importance as a Mediterranean fortress. The city combines Baroque architecture with maritime heritage, featuring the impressive St. John's Co-Cathedral, the historic Grand Harbour, the beautiful Upper Barrakka Gardens, and the eye symbol that represents Valletta's role as the vigilant guardian of Malta's cultural and strategic heritage.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "142",
+    "name": "Luxembourg Lion",
+    "city": "Luxembourg",
+    "country": "Luxembourg",
+    "category": "Culture",
+    "tags": [
+      "lion",
+      "coat-of-arms",
+      "luxembourg",
+      "heraldic",
+      "national"
+    ],
+    "svgFilename": "lu-luxembourg.svg",
+    "description": "Luxembourg is the capital of the Grand Duchy of Luxembourg, known for its iconic lion from the coat of arms - representing the country's strength and noble heritage. The city combines medieval fortifications with modern European institutions, featuring the impressive Luxembourg Castle, the beautiful Grund district, the historic Bock Casemates, and the lion symbol that represents Luxembourg's proud national identity and heraldic tradition.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "143",
+    "name": "Bucharest Arch",
+    "city": "Bucharest",
+    "country": "Romania",
+    "category": "Landmarks",
+    "tags": [
+      "arch",
+      "bucharest",
+      "romanian",
+      "monument",
+      "historic"
+    ],
+    "svgFilename": "ro-bucharest.svg",
+    "description": "Bucharest is the capital and largest city of Romania, known for its iconic arch - the Triumphal Arch that commemorates Romania's independence and victory in World War I. The city combines Belle Époque architecture with communist-era monuments, featuring the impressive Triumphal Arch, the beautiful Palace of the Parliament, the historic Old Town, and the arch that symbolizes Bucharest's resilience and national pride.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "144",
+    "name": "Tallinn Fat Tower",
+    "city": "Tallinn",
+    "country": "Estonia",
+    "category": "Landmarks",
+    "tags": [
+      "fat-tower",
+      "tallinn",
+      "estonian",
+      "medieval",
+      "defensive"
+    ],
+    "svgFilename": "ee-tallinn.svg",
+    "description": "Tallinn is the capital of Estonia, known for its iconic Fat Tower - one of the distinctive defensive towers of the medieval city walls that protected the historic Old Town. The city combines medieval Hanseatic heritage with modern digital innovation, featuring the impressive Fat Tower of the city walls, the beautiful Alexander Nevsky Cathedral, the historic Town Hall Square, and the tower that represents Tallinn's medieval defensive architecture and Hanseatic trading heritage.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "145",
+    "name": "Podgorica Clock Tower",
+    "city": "Podgorica",
+    "country": "Montenegro",
+    "category": "Landmarks",
+    "tags": [
+      "clock-tower",
+      "podgorica",
+      "montenegrin",
+      "historic",
+      "timepiece"
+    ],
+    "svgFilename": "me-podgorica.svg",
+    "description": "Podgorica is the capital and largest city of Montenegro, known for its iconic clock tower - a historic timepiece that has marked the passage of time in the city center for generations. The city combines Ottoman heritage with modern Montenegrin identity, featuring the historic clock tower, the beautiful Millennium Bridge, the impressive Cathedral of the Resurrection of Christ, and the clock tower that symbolizes Podgorica's continuity and the steady rhythm of city life.",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "_id": "146",
+    "name": "Vilnius Tower",
+    "city": "Vilnius",
+    "country": "Lithuania",
+    "category": "Landmarks",
+    "tags": [
+      "tower",
+      "vilnius",
+      "lithuanian",
+      "medieval",
+      "defensive"
+    ],
+    "svgFilename": "lt-vilnius.svg",
+    "description": "Vilnius is the capital and largest city of Lithuania, known for its iconic tower - the Gediminas Tower that stands as a symbol of the city's medieval heritage and Lithuanian independence. The city combines Gothic and Baroque architecture with Baltic culture, featuring the impressive Gediminas Tower on Castle Hill, the beautiful Vilnius Cathedral, the historic Old Town UNESCO site, and the tower that represents Vilnius's medieval origins and Lithuanian national identity."
   }
 ]
