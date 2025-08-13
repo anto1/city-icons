@@ -2155,5 +2155,90 @@
     "svgFilename": "pk-islamabad.svg",
     "description": "Islamabad is the capital city of Pakistan, known for its iconic Faisal Mosque - one of the largest mosques in the world with its distinctive tent-like design that symbolizes modern Islamic architecture. The city combines planned urban development with Pakistani culture, featuring the impressive Faisal Mosque, the beautiful Margalla Hills, the historic Pakistan Monument, and the mosque that represents Islamabad's role as the modern capital of Pakistan and a center of Islamic culture and architecture.",
     "region": "Asia"
+  },
+  {
+    "_id": "152",
+    "name": "Tegucigalpa Cathedral Basilica",
+    "city": "Tegucigalpa",
+    "country": "Honduras",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "basilica",
+      "religious",
+      "architectural",
+      "honduran"
+    ],
+    "svgFilename": "hn-tegucigalpa.svg",
+    "description": "Tegucigalpa is the capital city of Honduras, known for its beautiful Cathedral Basilica - a magnificent colonial-era cathedral that serves as the spiritual heart of the city. The cathedral represents the rich religious heritage and colonial architecture of Honduras, standing as an iconic landmark in the historic center of Tegucigalpa.",
+    "region": "Central America"
+  },
+  {
+    "_id": "153",
+    "name": "Washington White House",
+    "city": "Washington",
+    "country": "United States",
+    "category": "Landmarks",
+    "tags": [
+      "white-house",
+      "government",
+      "presidential",
+      "political",
+      "american"
+    ],
+    "svgFilename": "us-washinton.svg",
+    "description": "Washington D.C. is the capital of the United States, home to the iconic White House - the official residence and workplace of the President of the United States. This neoclassical building serves as both a symbol of American democracy and the center of executive power, representing the political heart of the nation.",
+    "region": "North America"
+  },
+  {
+    "_id": "154",
+    "name": "Viana do Castelo Statue",
+    "city": "Viana do Castelo",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "viana",
+      "portuguese",
+      "monument",
+      "cultural"
+    ],
+    "svgFilename": "pt-viana-do-castelo.svg",
+    "description": "Viana do Castelo is a charming coastal city in northern Portugal, known for its iconic statue of Viana - a monument that represents the city's rich maritime heritage and cultural identity. The city combines beautiful architecture with stunning coastal views, and the statue serves as a symbol of local pride and tradition.",
+    "region": "Europe"
+  },
+  {
+    "_id": "155",
+    "name": "Vigo Galician Octopus",
+    "city": "Vigo",
+    "country": "Spain",
+    "category": "Landmarks",
+    "tags": [
+      "octopus",
+      "galician",
+      "seafood",
+      "culinary",
+      "spanish"
+    ],
+    "svgFilename": "es-vigo.svg",
+    "description": "Vigo is a vibrant coastal city in Galicia, Spain, famous for its Galician octopus - a beloved local delicacy that represents the city's deep connection to the sea and its rich culinary traditions. The city is known for its bustling fishing industry, beautiful bay views, and the iconic octopus that symbolizes Vigo's maritime culture.",
+    "region": "Europe"
+  },
+  {
+    "_id": "156",
+    "name": "Chaves Tower",
+    "city": "Chaves",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": [
+      "tower",
+      "medieval",
+      "portuguese",
+      "historic",
+      "architectural"
+    ],
+    "svgFilename": "pt-chaves.svg",
+    "description": "Chaves is a historic city in northern Portugal, renowned for its ancient tower - a medieval structure that stands as a testament to the city's long and rich history. The tower represents Chaves' strategic importance throughout the centuries and serves as an iconic landmark that embodies the city's heritage and architectural beauty.",
+    "region": "Europe"
   }
 ]
