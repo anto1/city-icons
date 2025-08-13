@@ -2274,5 +2274,22 @@
     "svgFilename": "pt-vila-real.svg",
     "description": "Vila Real is a charming city in northern Portugal, known for its statue of Carvalho Araújo - a monument honoring this important local figure who contributed significantly to the city's development and cultural heritage. The statue represents Vila Real's respect for its historical personalities and serves as a symbol of local pride and cultural identity.",
     "region": "Europe"
+  },
+  {
+    "_id": "159",
+    "name": "Guimarães Afonso Henriques Statue",
+    "city": "Guimarães",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "afonso-henriques",
+      "first-king",
+      "portuguese",
+      "historical"
+    ],
+    "svgFilename": "pt-guimaraes.svg",
+    "description": "Guimarães is a historic city in northern Portugal, known as the birthplace of the nation and home to the statue of Afonso Henriques - Portugal's first king. This monument honors the founder of the Portuguese kingdom and represents the city's crucial role in Portuguese history as the cradle of the nation, where Portugal's independence and royal lineage began.",
+    "region": "Europe"
   }
 ]
