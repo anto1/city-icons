@@ -2240,5 +2240,39 @@
     "svgFilename": "pt-chaves.svg",
     "description": "Chaves is a historic city in northern Portugal, renowned for its ancient tower - a medieval structure that stands as a testament to the city's long and rich history. The tower represents Chaves' strategic importance throughout the centuries and serves as an iconic landmark that embodies the city's heritage and architectural beauty.",
     "region": "Europe"
+  },
+  {
+    "_id": "157",
+    "name": "Coruña Roman Lighthouse",
+    "city": "Coruña",
+    "country": "Spain",
+    "category": "Landmarks",
+    "tags": [
+      "lighthouse",
+      "roman",
+      "ancient",
+      "coastal",
+      "spanish"
+    ],
+    "svgFilename": "es-coruna.svg",
+    "description": "Coruña is a historic coastal city in Galicia, Spain, famous for its ancient Roman lighthouse - the Tower of Hercules, which is the oldest functioning lighthouse in the world and a UNESCO World Heritage site. This remarkable structure has been guiding ships for nearly 2,000 years and represents the city's deep maritime heritage and connection to ancient Roman civilization.",
+    "region": "Europe"
+  },
+  {
+    "_id": "158",
+    "name": "Vila Real Carvalho Araújo Statue",
+    "city": "Vila Real",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "carvalho-araujo",
+      "monument",
+      "portuguese",
+      "cultural"
+    ],
+    "svgFilename": "pt-vila-real.svg",
+    "description": "Vila Real is a charming city in northern Portugal, known for its statue of Carvalho Araújo - a monument honoring this important local figure who contributed significantly to the city's development and cultural heritage. The statue represents Vila Real's respect for its historical personalities and serves as a symbol of local pride and cultural identity.",
+    "region": "Europe"
   }
 ]
