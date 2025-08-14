@@ -2291,5 +2291,57 @@
     "svgFilename": "pt-guimaraes.svg",
     "description": "Guimarães is a historic city in northern Portugal, known as the birthplace of the nation and home to the statue of Afonso Henriques - Portugal's first king. This monument honors the founder of the Portuguese kingdom and represents the city's crucial role in Portuguese history as the cradle of the nation, where Portugal's independence and royal lineage began.",
     "region": "Europe"
+  },
+  {
+    "_id": "160",
+    "name": "Leiria Castle",
+    "city": "Leiria",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": [
+      "castle",
+      "medieval",
+      "fortress",
+      "historic",
+      "portuguese"
+    ],
+    "svgFilename": "pt-leiria.svg",
+    "description": "Leiria is a historic city in central Portugal, famous for its impressive medieval castle that dominates the city's skyline. The Leiria Castle, built in the 12th century, represents the city's strategic importance in Portuguese history and serves as a symbol of medieval architecture and royal heritage.",
+    "region": "Europe"
+  },
+  {
+    "_id": "161",
+    "name": "Braga Cathedral and Stairs",
+    "city": "Braga",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "se",
+      "stairs",
+      "religious",
+      "portuguese",
+      "historic"
+    ],
+    "svgFilename": "pt-braga.svg",
+    "description": "Braga is one of Portugal's oldest cities, known for its magnificent cathedral (Sé de Braga) and the famous Bom Jesus do Monte stairs. The city represents the religious heart of Portugal, with its stunning baroque architecture and sacred staircases that attract pilgrims and visitors from around the world.",
+    "region": "Europe"
+  },
+  {
+    "_id": "162",
+    "name": "Amadora Igreja Matriz",
+    "city": "Amadora",
+    "country": "Portugal",
+    "category": "Landmarks",
+    "tags": [
+      "church",
+      "igreja-matriz",
+      "religious",
+      "portuguese",
+      "parish"
+    ],
+    "svgFilename": "pt-amadora.svg",
+    "description": "Amadora is a vibrant city in the Lisbon metropolitan area, known for its Igreja Matriz da Amadora - the main parish church that serves as the spiritual and cultural center of the community. This church represents the city's religious heritage and its role as an important suburban center in the greater Lisbon region.",
+    "region": "Europe"
   }
 ]
