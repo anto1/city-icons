@@ -2362,5 +2362,76 @@
     "svgFilename": "mx-guadalajara.svg",
     "description": "Guadalajara is the cultural heart of Mexico, known worldwide as the birthplace of mariachi music. The icon depicts a mariachi musician with hat and guitar, representing the city's rich musical heritage and its role as the cradle of this iconic Mexican art form that has become a symbol of Mexican culture globally.",
     "region": "North America"
+  },
+  {
+    "_id": "164",
+    "name": "Montevideo Sun of May",
+    "city": "Montevideo",
+    "country": "Uruguay",
+    "category": "Culture",
+    "tags": [
+      "sun-of-may",
+      "national-symbol",
+      "uruguayan",
+      "independence",
+      "patriotic"
+    ],
+    "svgFilename": "ur-montevideo.svg",
+    "description": "Montevideo is the capital and largest city of Uruguay, known for its iconic Sun of May symbol that appears on both the Uruguayan and Argentine flags. This golden sun represents independence and freedom, commemorating the May Revolution and serving as a powerful symbol of South American liberation and national identity.",
+    "region": "South America"
+  },
+  {
+    "_id": "165",
+    "name": "Panama City Canal Locks",
+    "city": "Panama City",
+    "country": "Panama",
+    "category": "Landmarks",
+    "tags": [
+      "panama-canal",
+      "locks",
+      "engineering",
+      "waterway",
+      "maritime",
+      "infrastructure"
+    ],
+    "svgFilename": "pa-panama.svg",
+    "description": "Panama City is home to one of the world's greatest engineering marvels - the Panama Canal. The canal locks represent an incredible feat of human engineering that connects the Atlantic and Pacific oceans, revolutionizing global maritime trade and establishing Panama as a crucial hub for international commerce and shipping.",
+    "region": "North America"
+  },
+  {
+    "_id": "166",
+    "name": "Lima Francisco Pizarro Statue",
+    "city": "Lima",
+    "country": "Peru",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "francisco-pizarro",
+      "conquistador",
+      "historical",
+      "equestrian",
+      "colonial"
+    ],
+    "svgFilename": "pe-lima.svg",
+    "description": "Lima, the capital of Peru, features the equestrian statue of Francisco Pizarro, the Spanish conquistador who founded the city in 1535. This monument represents Lima's colonial heritage and its role as the former capital of the Spanish Viceroyalty of Peru, marking the beginning of Spanish influence in South America.",
+    "region": "South America"
+  },
+  {
+    "_id": "167",
+    "name": "Moscow Spasskaya Tower",
+    "city": "Moscow",
+    "country": "Russia",
+    "category": "Landmarks",
+    "tags": [
+      "spasskaya-tower",
+      "kremlin",
+      "clock-tower",
+      "red-square",
+      "russian",
+      "historical"
+    ],
+    "svgFilename": "ru-moscow.svg",
+    "description": "Moscow, the capital of Russia, is symbolized by the iconic Spasskaya Tower of the Kremlin. This historic clock tower serves as the main entrance to the Moscow Kremlin and is one of the most recognizable symbols of Russia, representing the political and cultural heart of the nation with its distinctive architecture and famous chimes.",
+    "region": "Europe"
   }
 ]
