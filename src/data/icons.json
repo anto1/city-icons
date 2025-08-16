@@ -2343,5 +2343,24 @@
     "svgFilename": "pt-amadora.svg",
     "description": "Amadora is a vibrant city in the Lisbon metropolitan area, known for its Igreja Matriz da Amadora - the main parish church that serves as the spiritual and cultural center of the community. This church represents the city's religious heritage and its role as an important suburban center in the greater Lisbon region.",
     "region": "Europe"
+  },
+  {
+    "_id": "163",
+    "name": "Guadalajara Mariachi",
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "category": "Culture",
+    "tags": [
+      "mariachi",
+      "musician",
+      "hat",
+      "guitar",
+      "mexican",
+      "traditional",
+      "music"
+    ],
+    "svgFilename": "mx-guadalajara.svg",
+    "description": "Guadalajara is the cultural heart of Mexico, known worldwide as the birthplace of mariachi music. The icon depicts a mariachi musician with hat and guitar, representing the city's rich musical heritage and its role as the cradle of this iconic Mexican art form that has become a symbol of Mexican culture globally.",
+    "region": "North America"
   }
 ]
