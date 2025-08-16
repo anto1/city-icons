@@ -2433,5 +2433,42 @@
     "svgFilename": "ru-moscow.svg",
     "description": "Moscow, the capital of Russia, is symbolized by the iconic Spasskaya Tower of the Kremlin. This historic clock tower serves as the main entrance to the Moscow Kremlin and is one of the most recognizable symbols of Russia, representing the political and cultural heart of the nation with its distinctive architecture and famous chimes.",
     "region": "Europe"
+  },
+  {
+    "_id": "168",
+    "name": "Yakutsk Ostrog",
+    "city": "Yakutsk",
+    "country": "Russia",
+    "category": "Landmarks",
+    "tags": [
+      "ostrog",
+      "wooden-fort",
+      "1632",
+      "siberian",
+      "russian",
+      "historical",
+      "fortress"
+    ],
+    "svgFilename": "ru-yakutsk.svg",
+    "description": "Yakutsk is the capital of the Sakha Republic in Siberia, founded around a wooden fort (ostrog) built in 1632. This historic ostrog represents the Russian expansion into Siberia and serves as a symbol of the city's origins as a frontier settlement, marking the beginning of Russian presence in the vast Siberian wilderness.",
+    "region": "Asia"
+  },
+  {
+    "_id": "169",
+    "name": "Tula Samovar",
+    "city": "Tula",
+    "country": "Russia",
+    "category": "Culture",
+    "tags": [
+      "samovar",
+      "tea-making",
+      "traditional",
+      "russian",
+      "craftsmanship",
+      "cultural-heritage"
+    ],
+    "svgFilename": "ru-tula.svg",
+    "description": "Tula is a historic Russian city famous worldwide for its traditional samovars - ornate tea-making vessels that have become an iconic symbol of Russian culture. The samovar represents Tula's rich heritage in metalworking and craftsmanship, and the city's role as the heart of Russian tea culture and hospitality traditions.",
+    "region": "Europe"
   }
 ]
