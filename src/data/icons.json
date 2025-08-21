@@ -2470,5 +2470,131 @@
     "svgFilename": "ru-tula.svg",
     "description": "Tula is a historic Russian city famous worldwide for its traditional samovars - ornate tea-making vessels that have become an iconic symbol of Russian culture. The samovar represents Tula's rich heritage in metalworking and craftsmanship, and the city's role as the heart of Russian tea culture and hospitality traditions.",
     "region": "Europe"
+  },
+  {
+    "_id": "170",
+    "name": "Siegen Mining Hammers",
+    "city": "Siegen",
+    "country": "Germany",
+    "category": "Industry",
+    "tags": [
+      "mining",
+      "hammers",
+      "industrial",
+      "german",
+      "metalworking",
+      "heritage"
+    ],
+    "svgFilename": "de-siegen.svg",
+    "description": "Siegen is a historic German city renowned for its mining heritage, represented by traditional mining hammers. These crossed hammers symbolize the city's deep connection to iron mining and metalworking industries that have shaped its identity for centuries, reflecting the industrial craftsmanship and mining traditions of the region.",
+    "region": "Europe"
+  },
+  {
+    "_id": "171",
+    "name": "Málaga Wine Barrel",
+    "city": "Málaga",
+    "country": "Spain",
+    "category": "Culture",
+    "tags": [
+      "wine",
+      "barrel",
+      "viticulture",
+      "spanish",
+      "andalusian",
+      "tradition"
+    ],
+    "svgFilename": "es-malaga.svg",
+    "description": "Málaga is famous for its sweet fortified wine, one of Spain's most celebrated wine varieties. The wine barrel represents the city's rich viticultural heritage and centuries-old winemaking traditions in Andalusia, symbolizing the Mediterranean culture of wine production that has made Málaga wines internationally renowned.",
+    "region": "Europe"
+  },
+  {
+    "_id": "172",
+    "name": "Lalibela Cross Church",
+    "city": "Lalibela",
+    "country": "Ethiopia",
+    "category": "Religion",
+    "tags": [
+      "church",
+      "cross",
+      "orthodox",
+      "ethiopian",
+      "pilgrimage",
+      "heritage"
+    ],
+    "svgFilename": "et-lalibela.svg",
+    "description": "Lalibela is home to the famous rock-hewn churches, including the iconic Church of Saint George carved in the shape of a cross. These UNESCO World Heritage churches represent one of Ethiopia's most sacred pilgrimage sites and showcase the remarkable architectural achievements of medieval Ethiopian Orthodox Christianity.",
+    "region": "Africa"
+  },
+  {
+    "_id": "173",
+    "name": "Luang Prabang Lotus",
+    "city": "Luang Prabang",
+    "country": "Laos",
+    "category": "Religion",
+    "tags": [
+      "lotus",
+      "flower",
+      "buddhist",
+      "spiritual",
+      "laotian",
+      "sacred"
+    ],
+    "svgFilename": "la-luang-prabang.svg",
+    "description": "Luang Prabang, a UNESCO World Heritage city, is represented by the lotus flower, a sacred symbol in Buddhism. The lotus represents spiritual purity and enlightenment, reflecting the city's deep Buddhist heritage, numerous temples, and its role as a center of Lao Buddhist culture and learning.",
+    "region": "Asia"
+  },
+  {
+    "_id": "174",
+    "name": "Erfurt Krämerbrücke",
+    "city": "Erfurt",
+    "country": "Germany",
+    "category": "Architecture",
+    "tags": [
+      "bridge",
+      "medieval",
+      "kraemer",
+      "german",
+      "architecture",
+      "historic"
+    ],
+    "svgFilename": "de-erfurt.svg",
+    "description": "Erfurt's famous Krämerbrücke (Merchants' Bridge) is a unique medieval bridge lined with inhabited buildings, one of the few remaining bridges of its kind in Europe. This architectural marvel represents Erfurt's historic role as a major trading center and showcases the city's remarkable medieval urban planning and craftsmanship.",
+    "region": "Europe"
+  },
+  {
+    "_id": "175",
+    "name": "Bishkek Manas Statue",
+    "city": "Bishkek",
+    "country": "Kyrgyzstan",
+    "category": "Culture",
+    "tags": [
+      "manas",
+      "statue",
+      "epic",
+      "kyrgyz",
+      "hero",
+      "heritage"
+    ],
+    "svgFilename": "kg-bishkek.svg",
+    "description": "Bishkek is represented by the statue of Manas, the legendary hero of the Kyrgyz people from the famous Epic of Manas. This statue symbolizes Kyrgyz national identity, cultural heritage, and the oral tradition that has preserved the stories of this mythical warrior-king for over a thousand years.",
+    "region": "Asia"
+  },
+  {
+    "_id": "176",
+    "name": "Irvine Hot Air Balloon",
+    "city": "Irvine",
+    "country": "United States",
+    "category": "Recreation",
+    "tags": [
+      "balloon",
+      "hot-air",
+      "recreation",
+      "american",
+      "california",
+      "adventure"
+    ],
+    "svgFilename": "us-irvine.svg",
+    "description": "Irvine, California is known for its beautiful hot air balloon festivals and recreational ballooning activities. The hot air balloon represents the city's connection to outdoor recreation, adventure tourism, and the clear skies of Orange County that make it an ideal location for ballooning and other aerial activities.",
+    "region": "North America"
   }
 ]
