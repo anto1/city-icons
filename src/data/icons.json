@@ -2596,5 +2596,41 @@
     "svgFilename": "us-irvine.svg",
     "description": "Irvine, California is known for its beautiful hot air balloon festivals and recreational ballooning activities. The hot air balloon represents the city's connection to outdoor recreation, adventure tourism, and the clear skies of Orange County that make it an ideal location for ballooning and other aerial activities.",
     "region": "North America"
+  },
+  {
+    "_id": "177",
+    "name": "Cincinnati Union Terminal",
+    "city": "Cincinnati",
+    "country": "United States",
+    "category": "Architecture",
+    "tags": [
+      "terminal",
+      "union",
+      "railway",
+      "art-deco",
+      "american",
+      "transportation"
+    ],
+    "svgFilename": "us-cincinnati.svg",
+    "description": "Cincinnati Union Terminal is an iconic Art Deco passenger railroad station and museum complex. This architectural masterpiece represents Cincinnati's golden age of rail travel and stands as one of the finest examples of Art Deco design in the United States, symbolizing the city's role as a major transportation hub in the Midwest.",
+    "region": "North America"
+  },
+  {
+    "_id": "178",
+    "name": "Montpellier Aqueduct",
+    "city": "Montpellier",
+    "country": "France",
+    "category": "Architecture",
+    "tags": [
+      "aqueduct",
+      "roman",
+      "water",
+      "french",
+      "engineering",
+      "historic"
+    ],
+    "svgFilename": "fr-montpellier.svg",
+    "description": "Montpellier is represented by its historic aqueduct, a remarkable feat of ancient engineering that supplied water to the city. The aqueduct symbolizes the ingenuity of Roman and medieval hydraulic engineering and reflects Montpellier's long history as an important center of learning and urban development in southern France.",
+    "region": "Europe"
   }
 ]
