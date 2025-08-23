@@ -2632,5 +2632,98 @@
     "svgFilename": "fr-montpellier.svg",
     "description": "Montpellier is represented by its historic aqueduct, a remarkable feat of ancient engineering that supplied water to the city. The aqueduct symbolizes the ingenuity of Roman and medieval hydraulic engineering and reflects Montpellier's long history as an important center of learning and urban development in southern France.",
     "region": "Europe"
+  },
+  {
+    "_id": "179",
+    "name": "Peoria Steamboat",
+    "city": "Peoria",
+    "country": "United States",
+    "category": "Transportation",
+    "tags": [
+      "steamboat",
+      "river",
+      "transportation",
+      "american",
+      "historic",
+      "illinois"
+    ],
+    "svgFilename": "us-peoria.svg",
+    "description": "Peoria, situated along the Illinois River, is represented by a classic steamboat symbolizing its historic role as a major river port and transportation hub in the American Midwest. The steamboat reflects the city's industrial heritage and its connection to the great river systems that shaped American commerce.",
+    "region": "North America"
+  },
+  {
+    "_id": "180",
+    "name": "Mount Fuji and Rising Sun",
+    "city": "Tokyo",
+    "country": "Japan",
+    "category": "Landmarks",
+    "tags": [
+      "mount-fuji",
+      "rising-sun",
+      "mountain",
+      "japanese",
+      "iconic",
+      "sacred",
+      "nature"
+    ],
+    "svgFilename": "jp-tokyo.svg",
+    "description": "Tokyo is represented by the iconic Mount Fuji with a rising sun, symbolizing Japan's spiritual heart and natural beauty. This combination reflects the harmony between tradition and modernity that defines Tokyo, with Mount Fuji serving as a sacred symbol visible from the capital on clear days.",
+    "region": "Asia"
+  },
+  {
+    "_id": "181",
+    "name": "Bielefeld Castle",
+    "city": "Bielefeld",
+    "country": "Germany",
+    "category": "Architecture",
+    "tags": [
+      "castle",
+      "medieval",
+      "fortress",
+      "german",
+      "historic",
+      "architecture"
+    ],
+    "svgFilename": "de-bielefeld.svg",
+    "description": "Bielefeld is represented by Sparrenburg Castle, a medieval fortress that overlooks the city from Sparrenberg hill. This 13th-century castle symbolizes Bielefeld's medieval heritage and strategic importance in the region of North Rhine-Westphalia, serving as both a historical landmark and cultural center.",
+    "region": "Europe"
+  },
+  {
+    "_id": "182",
+    "name": "Wrocław Dwarf",
+    "city": "Wrocław",
+    "country": "Poland",
+    "category": "Culture",
+    "tags": [
+      "dwarf",
+      "folklore",
+      "bronze",
+      "polish",
+      "cultural",
+      "statue",
+      "tradition"
+    ],
+    "svgFilename": "pl-wroclav.svg",
+    "description": "Wrocław is famous for its hundreds of small bronze dwarf statues scattered throughout the city. These charming figures represent the city's playful spirit and rich cultural heritage, originally symbolizing the Orange Alternative resistance movement and now serving as beloved symbols of Wrocław's unique character.",
+    "region": "Europe"
+  },
+  {
+    "_id": "183",
+    "name": "Poznań Goats",
+    "city": "Poznań",
+    "country": "Poland",
+    "category": "Culture",
+    "tags": [
+      "goats",
+      "folklore",
+      "legend",
+      "polish",
+      "cultural",
+      "tradition",
+      "clock-tower"
+    ],
+    "svgFilename": "pl-poznan.svg",
+    "description": "Poznań is symbolized by two fighting goats from the famous legend of the town hall clock tower. According to folklore, these mechanical goats appear daily at noon, representing the city's rich traditions and the story of two goats who escaped from a royal feast and began fighting, becoming an enduring symbol of Poznań.",
+    "region": "Europe"
   }
 ]
