@@ -2725,5 +2725,114 @@
     "svgFilename": "pl-poznan.svg",
     "description": "Poznań is symbolized by two fighting goats from the famous legend of the town hall clock tower. According to folklore, these mechanical goats appear daily at noon, representing the city's rich traditions and the story of two goats who escaped from a royal feast and began fighting, becoming an enduring symbol of Poznań.",
     "region": "Europe"
+  },
+  {
+    "_id": "184",
+    "name": "Kostanay",
+    "city": "Kostanay",
+    "country": "Kazakhstan",
+    "category": "Culture",
+    "tags": [
+      "regional-center",
+      "horses",
+      "equestrian",
+      "agriculture",
+      "breeding",
+      "pegasus",
+      "cultural"
+    ],
+    "svgFilename": "kz-kostanay.svg",
+    "description": "Kostanay is a significant regional center in northern Kazakhstan, renowned for its rich equestrian culture and horse breeding traditions. The region has long been celebrated for its exceptional horses and agricultural heritage. The modern Pegasus statue on the river bank perfectly symbolizes this deep connection to horse culture, representing the mythical winged horse as a tribute to the area's celebrated equestrian legacy.",
+    "region": "Asia"
+  },
+  {
+    "_id": "185",
+    "name": "Sacramento Trees",
+    "city": "Sacramento",
+    "country": "United States",
+    "category": "Nature",
+    "tags": [
+      "trees",
+      "nature",
+      "urban-forest",
+      "green-city",
+      "canopy"
+    ],
+    "svgFilename": "us-sacramento.svg",
+    "description": "Sacramento is proudly known as the City of Trees, featuring one of the most extensive urban forest canopies in the United States. The city's abundant tree-lined streets and parks create a lush, green environment that defines its character and provides natural beauty throughout the metropolitan area.",
+    "region": "North America"
+  },
+  {
+    "_id": "186",
+    "name": "Flinders Street Station",
+    "city": "Melbourne",
+    "country": "Australia",
+    "category": "Buildings",
+    "tags": [
+      "railway",
+      "station",
+      "architecture",
+      "historic",
+      "landmark",
+      "federation"
+    ],
+    "svgFilename": "au-melbourne.svg",
+    "description": "Melbourne's iconic Flinders Street Station is a magnificent example of Federation architecture and one of the world's busiest passenger stations. Built in the early 1900s, this historic railway hub with its distinctive dome and clock tower serves as a beloved meeting point and symbol of Melbourne's rich cultural heritage.",
+    "region": "Oceania"
+  },
+  {
+    "_id": "187",
+    "name": "St John Church",
+    "city": "Budva",
+    "country": "Montenegro",
+    "category": "Landmarks",
+    "tags": [
+      "church",
+      "orthodox",
+      "historic",
+      "religious",
+      "architecture",
+      "coastal"
+    ],
+    "svgFilename": "mn-budva.svg",
+    "description": "Budva's St John Church stands as a testament to the city's rich religious and architectural heritage. This historic Orthodox church, with its traditional Balkan ecclesiastical design, represents the spiritual heart of this ancient coastal city on the Adriatic Sea.",
+    "region": "Europe"
+  },
+  {
+    "_id": "188",
+    "name": "Philadelphia LOVE Sign",
+    "city": "Philadelphia",
+    "country": "United States",
+    "category": "Culture",
+    "tags": [
+      "love",
+      "sign",
+      "sculpture",
+      "art",
+      "iconic",
+      "tourism",
+      "symbol"
+    ],
+    "svgFilename": "us-philadelphia.svg",
+    "description": "Philadelphia's famous LOVE sculpture has become an enduring symbol of the City of Brotherly Love. This iconic public art installation, featuring the word LOVE in bold red letters with a tilted 'O', represents the city's spirit of affection and unity, making it one of the most recognizable landmarks in Philadelphia.",
+    "region": "North America"
+  },
+  {
+    "_id": "189",
+    "name": "Bayterek Tower",
+    "city": "Astana",
+    "country": "Kazakhstan",
+    "category": "Buildings",
+    "tags": [
+      "tower",
+      "modern",
+      "observation",
+      "architecture",
+      "landmark",
+      "capital"
+    ],
+    "svgFilename": "kz-astana.svg",
+    "description": "Astana's Bayterek Tower is a striking symbol of Kazakhstan's modern capital city. This futuristic observation tower, designed to represent a mythical tree of life holding a golden egg, offers panoramic views of the city and embodies the nation's aspirations and cultural heritage in its contemporary architectural form.",
+    "region": "Asia"
   }
 ]
