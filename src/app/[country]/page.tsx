@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import iconData from '@/data/icons.json';
 import { slugify } from '@/lib/utils';
+import { Metadata } from 'next';
 
 // Server-side function to load SVG content
 async function loadSvgContent(filename: string): Promise<string> {
@@ -94,6 +95,67 @@ export async function generateMetadata({ params }: PageProps) {
   const pageUrl = `${baseUrl}/${country}`;
   const description = `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} city icons from ${countryName} with download and copy functionality.`;
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${countryName} City Icons`,
+    description,
+    url: pageUrl,
+    mainEntity: {
+      '@type': 'Collection',
+      name: `City Icons from ${countryName}`,
+      description: `A collection of ${countryIcons.length} beautiful line art icons representing cities in ${countryName}`,
+      numberOfItems: countryIcons.length,
+      item: countryIcons.map(icon => ({
+        '@type': 'CreativeWork',
+        name: icon.name,
+        description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
+        url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
+        image: `${baseUrl}/icons/${icon.svgFilename}`,
+        creator: {
+          '@type': 'Organization',
+          name: 'Studio Partdirector',
+          url: 'https://partdirector.ch',
+        },
+        about: {
+          '@type': 'Place',
+          name: icon.city,
+          containedInPlace: {
+            '@type': 'Country',
+            name: icon.country,
+          },
+        },
+      })),
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: baseUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: countryName,
+          item: pageUrl,
+        },
+      ],
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'Studio Partdirector',
+      url: 'https://partdirector.ch',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Studio Partdirector',
+      url: 'https://partdirector.ch',
+    },
+  };
+
   return {
     title: `${countryName} City Icons | City Icons Collection`,
     description,
@@ -143,6 +205,9 @@ export async function generateMetadata({ params }: PageProps) {
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
+    },
+    other: {
+      'application/ld+json': JSON.stringify(structuredData),
     },
   };
 } 

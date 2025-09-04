@@ -30,6 +30,14 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
       name: icon.name,
       description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
       url: `${baseUrl}${pageUrl}`,
+      image: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/icons/${icon.svgFilename}`,
+        contentUrl: `${baseUrl}/icons/${icon.svgFilename}`,
+        encodingFormat: 'image/svg+xml',
+        name: `${icon.name} icon`,
+        description: `SVG icon of ${icon.name} representing ${icon.city}, ${icon.country}`,
+      },
       author: {
         '@type': 'Organization',
         name: 'Studio Partdirector',
@@ -40,11 +48,46 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
         name: 'Studio Partdirector',
         url: 'https://partdirector.ch',
       },
-      image: `${baseUrl}/icons/${icon.svgFilename}`,
-      keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art`,
+      about: {
+        '@type': 'Place',
+        name: icon.city,
+        containedInPlace: {
+          '@type': 'Country',
+          name: icon.country,
+        },
+        description: icon.description,
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: baseUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: icon.country,
+            item: `${baseUrl}/${slugify(icon.country)}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: icon.city,
+            item: `${baseUrl}${pageUrl}`,
+          },
+        ],
+      },
+      keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, ${icon.tags?.join(', ') || ''}`,
       inLanguage: 'en-US',
       isAccessibleForFree: true,
       license: `${baseUrl}/license`,
+      category: icon.category,
+      genre: 'Line Art',
+      datePublished: new Date().toISOString(),
+      downloadUrl: `${baseUrl}/icons/${icon.svgFilename}`,
     };
 
     // Remove any existing structured data script
@@ -254,7 +297,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
         {/* Related icons section */}
         {relatedIcons.length > 0 && (
           <div className="mt-20">
-            <h2 className="text-2xl font-bold text-center mb-8">More from {icon.country}</h2>
+            <h2 className="text-2xl font-bold text-center mb-8">{relatedIcons.length} more from {icon.country}</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative">
                 {relatedIcons.map((relatedIcon) => (
                 <Link

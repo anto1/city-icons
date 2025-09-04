@@ -72,10 +72,35 @@ export async function generateMetadata({ params }: PageProps) {
   const pageUrl = `${baseUrl}/${country}/${city}`;
   const description = icon.description || `Download the ${icon.name} icon representing ${icon.city}, ${icon.country}. High-quality SVG line art icon for your projects.`;
 
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: icon.country,
+        item: `${baseUrl}/${country}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: icon.city,
+        item: pageUrl,
+      },
+    ],
+  };
+
   return {
     title: `${icon.name} - ${icon.city}, ${icon.country} | City Icons`,
     description,
-    keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, download icon`,
+    keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, download icon, ${icon.tags?.join(', ') || ''}`,
     authors: [{ name: 'Studio Partdirector' }],
     creator: 'Studio Partdirector',
     publisher: 'Studio Partdirector',
@@ -121,6 +146,9 @@ export async function generateMetadata({ params }: PageProps) {
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
+    },
+    other: {
+      'application/ld+json': JSON.stringify(breadcrumbStructuredData),
     },
   };
 } 
