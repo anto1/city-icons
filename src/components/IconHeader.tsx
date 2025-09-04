@@ -3,29 +3,12 @@ import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
 
 interface IconHeaderProps {
-  selectedIcon: Icon | null;
-  modalOpen: boolean;
   countryFilter?: string;
   filteredIcons: Icon[];
   totalIcons: number;
 }
 
-export function IconHeader({ selectedIcon, modalOpen, countryFilter, filteredIcons, totalIcons }: IconHeaderProps) {
-  if (selectedIcon && modalOpen) {
-    return (
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-foreground mb-4 tracking-tight">
-          {selectedIcon.name} - {selectedIcon.city}, {selectedIcon.country}
-        </h1>
-        <p className="text-lg text-muted-foreground mb-4">
-          {selectedIcon.description || `Icon representing ${selectedIcon.city}, ${selectedIcon.country}`}
-        </p>
-        <p className="text-base text-muted-foreground">
-          Download this high-quality SVG line art icon for your projects.
-        </p>
-      </div>
-    );
-  }
+export function IconHeader({ countryFilter, filteredIcons, totalIcons }: IconHeaderProps) {
 
   if (countryFilter) {
     return (

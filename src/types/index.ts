@@ -25,7 +25,7 @@ export interface SearchBarProps {
 
 export interface IconGridProps {
   icons: Icon[];
-  onIconClick: (icon: Icon) => void;
+  onIconClick?: (icon: Icon) => void;
   loading?: boolean;
 }
 

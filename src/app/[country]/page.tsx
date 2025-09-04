@@ -69,7 +69,7 @@ export default async function CountryPage({ params }: PageProps) {
   const countryName = countryIcons[0].country;
   console.log('✅ Country name:', countryName);
 
-  return <ClientHome initialIcons={allIcons} countryFilter={countryName} />;
+  return <ClientHome initialIcons={allIcons} countryFilter={countryName} hideSearch={true} />;
 }
 
 // Generate metadata for SEO

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import ClientHome from '@/components/ClientHome';
+import CityPage from '@/components/CityPage';
 import { Icon } from '@/types';
 import fs from 'fs';
 import path from 'path';
@@ -52,7 +52,7 @@ export default async function IconPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ClientHome initialIcons={icons} />;
+  return <CityPage icon={icon} allIcons={icons} />;
 }
 
 // Generate metadata for SEO

@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { IconGridProps } from '@/types';
 import { trackEvent } from 'fathom-client';
+import { getIconUrl } from '@/lib/utils';
 
 // Skeleton component for loading state
 function IconSkeleton() {
@@ -20,7 +22,7 @@ function IconSkeleton() {
   );
 }
 
-export default function IconGrid({ icons, loading, onIconClick }: IconGridProps) {
+export default function IconGrid({ icons, loading }: IconGridProps) {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   
@@ -117,8 +119,9 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
       className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative"
     >
       {icons.map((icon, index) => (
-        <div 
-          key={icon._id} 
+        <Link
+          key={icon._id}
+          href={getIconUrl(icon)}
           className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center" 
           style={{ 
             aspectRatio: '1 / 1',
@@ -129,7 +132,6 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
           onClick={() => {
             // Track icon click with city data
             trackEvent(`ICON_CLICK_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
-            onIconClick(icon);
           }}
         >
           <div className="flex flex-col items-center justify-center flex-1">
@@ -151,7 +153,7 @@ export default function IconGrid({ icons, loading, onIconClick }: IconGridProps)
               <p className="text-sm text-muted-foreground truncate w-full">{icon.country}</p>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
