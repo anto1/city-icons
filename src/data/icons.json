@@ -2834,5 +2834,85 @@
     "svgFilename": "kz-astana.svg",
     "description": "Astana's Bayterek Tower is a striking symbol of Kazakhstan's modern capital city. This futuristic observation tower, designed to represent a mythical tree of life holding a golden egg, offers panoramic views of the city and embodies the nation's aspirations and cultural heritage in its contemporary architectural form.",
     "region": "Asia"
+  },
+  {
+    "_id": "190",
+    "name": "Statue of Guan Yu",
+    "city": "Jingzhou",
+    "country": "China",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "monument",
+      "historic",
+      "guan yu"
+    ],
+    "svgFilename": "cn-jingzhou.svg",
+    "description": "Jingzhou is a historic city in China's Hubei province, famous for its massive Statue of Guan Yu. This 58-meter tall bronze statue honors the legendary military general from the Three Kingdoms period, making it one of the tallest statues of Guan Yu in the world and a symbol of loyalty and righteousness.",
+    "region": "Asia"
+  },
+  {
+    "_id": "191",
+    "name": "Jameh Mosque",
+    "city": "Isfahan",
+    "country": "Iran",
+    "category": "Religious",
+    "tags": [
+      "mosque",
+      "islamic",
+      "architecture",
+      "unesco"
+    ],
+    "svgFilename": "ir-ishafan.svg",
+    "description": "Isfahan is a historic city in central Iran, renowned for its stunning Islamic architecture and the magnificent Jameh Mosque. This UNESCO World Heritage site represents the evolution of mosque architecture over twelve centuries, featuring beautiful tile work, intricate geometric patterns, and impressive iwans that showcase Persian Islamic art.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "192",
+    "name": "Giant Buddha",
+    "city": "Leshan",
+    "country": "China",
+    "category": "Religious",
+    "tags": [
+      "buddha",
+      "statue",
+      "unesco",
+      "giant"
+    ],
+    "svgFilename": "cn-leshan.svg",
+    "description": "Leshan is a city in Sichuan province, China, famous for the Leshan Giant Buddha - the world's largest stone Buddha statue. This UNESCO World Heritage site stands 71 meters tall and was carved out of a cliff face during the Tang Dynasty, representing an incredible feat of ancient engineering and Buddhist devotion.",
+    "region": "Asia"
+  },
+  {
+    "_id": "193",
+    "name": "Christ the King Monument",
+    "city": "Świebodzin",
+    "country": "Poland",
+    "category": "Religious",
+    "tags": [
+      "christ",
+      "monument",
+      "statue",
+      "christian"
+    ],
+    "svgFilename": "pl-swiebodzin.svg",
+    "description": "Świebodzin is a small town in western Poland, home to the Christ the King statue - one of the tallest statues of Jesus Christ in the world. Standing 33 meters tall (representing the years of Jesus's life), this impressive monument has become a major pilgrimage site and symbol of faith for Polish Catholics.",
+    "region": "Europe"
+  },
+  {
+    "_id": "194",
+    "name": "Merlion",
+    "city": "Sentosa",
+    "country": "Singapore",
+    "category": "Landmarks",
+    "tags": [
+      "merlion",
+      "lion",
+      "fish",
+      "singapore"
+    ],
+    "svgFilename": "sg-sentosa.svg",
+    "description": "Sentosa is a resort island in Singapore, featuring a large Merlion statue that has become an iconic symbol of the nation. This mythical creature with a lion's head and fish's body represents Singapore's origins as a fishing village and its name 'Singapura' meaning 'lion city', standing as a beloved tourist attraction and cultural symbol.",
+    "region": "Asia"
   }
 ]
