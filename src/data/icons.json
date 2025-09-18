@@ -2914,5 +2914,43 @@
     "svgFilename": "sg-sentosa.svg",
     "description": "Sentosa is a resort island in Singapore, featuring a large Merlion statue that has become an iconic symbol of the nation. This mythical creature with a lion's head and fish's body represents Singapore's origins as a fishing village and its name 'Singapura' meaning 'lion city', standing as a beloved tourist attraction and cultural symbol.",
     "region": "Asia"
+  },
+  {
+    "_id": "195",
+    "name": "Shirakawa-go Gassho-zukuri",
+    "city": "Shirakawa-go",
+    "country": "Japan",
+    "category": "Architecture",
+    "tags": [
+      "gassho-zukuri",
+      "traditional",
+      "farmhouse",
+      "unesco",
+      "historic",
+      "rural",
+      "japanese"
+    ],
+    "svgFilename": "jp-shirakawa-go.svg",
+    "description": "Shirakawa-go is a UNESCO World Heritage site in Japan, renowned for its traditional gassho-zukuri farmhouses with steep thatched roofs. These architectural marvels were designed to withstand heavy snowfall in the mountainous region, representing centuries of Japanese rural building techniques and the harmonious relationship between humans and nature in the Japanese Alps.",
+    "region": "Asia"
+  },
+  {
+    "_id": "196",
+    "name": "Hallstatt Church Spire",
+    "city": "Hallstatt",
+    "country": "Austria",
+    "category": "Landmarks",
+    "tags": [
+      "church",
+      "spire",
+      "lakeside",
+      "mountains",
+      "alpine",
+      "scenic",
+      "historic"
+    ],
+    "svgFilename": "at-hallstatt.svg",
+    "description": "Hallstatt is a picturesque lakeside town in Austria's Salzkammergut region, famous for its iconic church spire rising against a backdrop of dramatic Alpine mountains. This UNESCO World Heritage site represents the perfect harmony between natural beauty and human settlement, with its charming architecture reflected in the pristine waters of Lake Hallstatt.",
+    "region": "Europe"
   }
 ]
