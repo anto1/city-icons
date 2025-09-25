@@ -2952,5 +2952,81 @@
     "svgFilename": "at-hallstatt.svg",
     "description": "Hallstatt is a picturesque lakeside town in Austria's Salzkammergut region, famous for its iconic church spire rising against a backdrop of dramatic Alpine mountains. This UNESCO World Heritage site represents the perfect harmony between natural beauty and human settlement, with its charming architecture reflected in the pristine waters of Lake Hallstatt.",
     "region": "Europe"
+  },
+  {
+    "_id": "197",
+    "name": "Seattle Tower",
+    "city": "Seattle",
+    "country": "USA",
+    "category": "Buildings",
+    "tags": [
+      "tower",
+      "modern",
+      "skyline"
+    ],
+    "svgFilename": "us-seattle.svg",
+    "description": "Seattle is a vibrant city in the Pacific Northwest, known for its iconic tower landmarks that define its distinctive skyline. The city combines natural beauty with urban innovation, featuring a thriving tech scene, coffee culture, and stunning views of Puget Sound and the Olympic Mountains.",
+    "region": "North America"
+  },
+  {
+    "_id": "198",
+    "name": "Izmir Clock Tower",
+    "city": "Izmir",
+    "country": "Turkey",
+    "category": "Landmarks",
+    "tags": [
+      "clock-tower",
+      "historic",
+      "ottoman"
+    ],
+    "svgFilename": "tk-izmir.svg",
+    "description": "Izmir is Turkey's third-largest city and a major port on the Aegean Sea, famous for its historic clock tower in Konak Square. This Ottoman-era landmark serves as the symbol of the city, representing Izmir's rich history as a cultural crossroads between Europe and Asia.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "199",
+    "name": "Dubai Burj Khalifa",
+    "city": "Dubai",
+    "country": "UAE",
+    "category": "Buildings",
+    "tags": [
+      "burj-khalifa",
+      "skyscraper",
+      "modern",
+      "tallest"
+    ],
+    "svgFilename": "ue-dubai.svg",
+    "description": "Dubai is a global city and business hub in the United Arab Emirates, famous for the Burj Khalifa - the world's tallest building. This architectural marvel represents Dubai's rapid transformation into a modern metropolis, combining luxury, innovation, and ambitious urban development.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "200",
+    "name": "Hartford Oak Tree",
+    "city": "Hartford",
+    "country": "USA",
+    "category": "Nature",
+    "tags": [
+      "oak-tree",
+      "historic",
+      "nature"
+    ],
+    "svgFilename": "us-hartford.svg",
+    "description": "Hartford is the capital city of Connecticut, known for its historic oak trees that symbolize the state's rich heritage. The city combines New England charm with modern urban development, featuring historic districts and the iconic oak tree that represents Connecticut's nickname as the 'Charter Oak State'.",
+    "region": "North America"
+  },
+  {
+    "_id": "201",
+    "name": "Schuchinsk Pike Fish",
+    "city": "Schuchinsk",
+    "country": "Kazakhstan",
+    "category": "Nature",
+    "tags": [
+      "pike-fish",
+      "lake",
+      "nature"
+    ],
+    "svgFilename": "kz-schuchinsk.svg",
+    "description": "Schuchinsk is a resort town in Kazakhstan's Akmola Region, famous for its pristine lakes and pike fishing. Located near Burabay National Nature Park, the city is known for its beautiful natural setting and the abundant pike fish that inhabit the crystal-clear lakes of the region.",
+    "region": "Asia"
   }
 ]
