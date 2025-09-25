@@ -1574,7 +1574,7 @@
     "_id": "118",
     "name": "Austin Bat",
     "city": "Austin",
-    "country": "United States",
+    "country": "USA",
     "category": "Culture",
     "tags": [
       "bat",
@@ -2092,7 +2092,7 @@
     "_id": "148",
     "name": "Abu Dhabi Falcon",
     "city": "Abu Dhabi",
-    "country": "United Arab Emirates",
+    "country": "UAE",
     "category": "Culture",
     "tags": [
       "falcon",
@@ -2177,7 +2177,7 @@
     "_id": "153",
     "name": "Washington White House",
     "city": "Washington",
-    "country": "United States",
+    "country": "USA",
     "category": "Landmarks",
     "tags": [
       "white-house",
@@ -2583,7 +2583,7 @@
     "_id": "176",
     "name": "Irvine Hot Air Balloon",
     "city": "Irvine",
-    "country": "United States",
+    "country": "USA",
     "category": "Recreation",
     "tags": [
       "balloon",
@@ -2601,7 +2601,7 @@
     "_id": "177",
     "name": "Cincinnati Union Terminal",
     "city": "Cincinnati",
-    "country": "United States",
+    "country": "USA",
     "category": "Architecture",
     "tags": [
       "terminal",
@@ -2637,7 +2637,7 @@
     "_id": "179",
     "name": "Peoria Steamboat",
     "city": "Peoria",
-    "country": "United States",
+    "country": "USA",
     "category": "Transportation",
     "tags": [
       "steamboat",
@@ -2749,7 +2749,7 @@
     "_id": "185",
     "name": "Sacramento Trees",
     "city": "Sacramento",
-    "country": "United States",
+    "country": "USA",
     "category": "Nature",
     "tags": [
       "trees",
@@ -2802,7 +2802,7 @@
     "_id": "188",
     "name": "Philadelphia LOVE Sign",
     "city": "Philadelphia",
-    "country": "United States",
+    "country": "USA",
     "category": "Culture",
     "tags": [
       "love",
