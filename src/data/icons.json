@@ -3028,5 +3028,37 @@
     "svgFilename": "kz-schuchinsk.svg",
     "description": "Schuchinsk is a resort town in Kazakhstan's Akmola Region, famous for its pristine lakes and pike fishing. Located near Burabay National Nature Park, the city is known for its beautiful natural setting and the abundant pike fish that inhabit the crystal-clear lakes of the region.",
     "region": "Asia"
+  },
+  {
+    "_id": "202",
+    "name": "Paphos Aphrodite",
+    "city": "Paphos",
+    "country": "Cyprus",
+    "category": "Culture",
+    "tags": [
+      "aphrodite",
+      "goddess",
+      "mythology",
+      "ancient"
+    ],
+    "svgFilename": "cy-paphos.svg",
+    "description": "Paphos is a coastal city in Cyprus and a UNESCO World Heritage site, famous as the legendary birthplace of Aphrodite, the Greek goddess of love and beauty. The city combines ancient mythology with archaeological treasures, featuring Roman mosaics, ancient ruins, and the sacred site where Aphrodite emerged from the sea foam.",
+    "region": "Europe"
+  },
+  {
+    "_id": "203",
+    "name": "Pattaya Sanctuary",
+    "city": "Pattaya",
+    "country": "Thailand",
+    "category": "Landmarks",
+    "tags": [
+      "sanctuary",
+      "temple",
+      "spiritual",
+      "thai"
+    ],
+    "svgFilename": "th-pattaya.svg",
+    "description": "Pattaya is a vibrant coastal resort city in Thailand, known for its famous Sanctuary of Truth - an intricate wooden temple and architectural marvel. This sacred site represents Thai craftsmanship and spiritual heritage, combining traditional Buddhist and Hindu motifs in a stunning oceanfront setting.",
+    "region": "Asia"
   }
 ]
