@@ -3108,5 +3108,69 @@
     "svgFilename": "us-san-diego.svg",
     "description": "San Diego is a coastal city in Southern California, home to Mission San Diego de Alcalá - the first Franciscan mission in California, founded in 1769. The mission bell represents the city's Spanish colonial heritage and its role as the birthplace of California. The iconic bell tower and bells remain a cherished symbol of San Diego's historical roots.",
     "region": "North America"
+  },
+  {
+    "_id": "207",
+    "name": "Port Vila Traditional Mask",
+    "city": "Port Vila",
+    "country": "Vanuatu",
+    "category": "Culture",
+    "tags": [
+      "mask",
+      "traditional",
+      "tribal",
+      "cultural"
+    ],
+    "svgFilename": "vu-port-vila.svg",
+    "description": "Port Vila is the capital and largest city of Vanuatu, an archipelago nation in the South Pacific. The traditional mask represents the rich cultural heritage of Vanuatu's indigenous Melanesian people. These ceremonial masks are central to Vanuatu's kastom (custom) culture, used in traditional rituals and storytelling, reflecting the deep spiritual connection of the ni-Vanuatu people to their ancestors.",
+    "region": "Oceania"
+  },
+  {
+    "_id": "208",
+    "name": "Tarawa Frigatebird",
+    "city": "Tarawa",
+    "country": "Kiribati",
+    "category": "Nature",
+    "tags": [
+      "frigatebird",
+      "bird",
+      "wildlife",
+      "pacific"
+    ],
+    "svgFilename": "ki-tarawa.svg",
+    "description": "Tarawa is the capital atoll of Kiribati, a Pacific island nation straddling the equator. The frigatebird is a national symbol of Kiribati, featured on the country's flag and coat of arms. These magnificent seabirds with their distinctive red throat pouches are found throughout the Pacific atolls, representing freedom, maritime heritage, and the deep connection between the I-Kiribati people and the ocean.",
+    "region": "Oceania"
+  },
+  {
+    "_id": "209",
+    "name": "Apia Fale",
+    "city": "Apia",
+    "country": "Samoa",
+    "category": "Culture",
+    "tags": [
+      "fale",
+      "traditional",
+      "house",
+      "samoan"
+    ],
+    "svgFilename": "as-apia.svg",
+    "description": "Apia is the capital city of Samoa, located on the island of Upolu. The traditional fale is an open-sided house that epitomizes Samoan architecture and culture. With its distinctive oval shape, thatched roof, and open design supported by wooden posts, the fale represents the communal spirit of fa'a Samoa (the Samoan way), providing a gathering space that connects families to their heritage and the natural environment.",
+    "region": "Oceania"
+  },
+  {
+    "_id": "210",
+    "name": "Suva Bure",
+    "city": "Suva",
+    "country": "Fiji",
+    "category": "Culture",
+    "tags": [
+      "bure",
+      "traditional",
+      "thatched",
+      "fijian"
+    ],
+    "svgFilename": "fj-suva.svg",
+    "description": "Suva is the capital and largest city of Fiji, located on the island of Viti Levu. The traditional bure is a thatched-roof hut that represents indigenous Fijian architecture and cultural identity. These distinctive structures with their steeply pitched roofs made from dried pandanus leaves are iconic to the Pacific islands, embodying the sustainable building practices and communal living traditions of the iTaukei (indigenous Fijian) people.",
+    "region": "Oceania"
   }
 ]
