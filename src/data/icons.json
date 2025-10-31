@@ -3058,7 +3058,55 @@
       "thai"
     ],
     "svgFilename": "th-pattaya.svg",
-    "description": "Pattaya is a vibrant coastal resort city in Thailand, known for its famous Sanctuary of Truth - an intricate wooden temple and architectural marvel. This sacred site represents Thai craftsmanship and spiritual heritage, combining traditional Buddhist and Hindu motifs in a stunning oceanfront setting.",
+    "description": "Pattaya is a vibrant coastal resort city in Thailand, known for its famous Sanctuary of Truth - an intricate wooden temple and architectural marvel. This sacred site represents Thai craftsmanship and spiritual heritage, combining traditional Buddhist and Hindu motifs in a stunning oceanfront setting.",                                                                             
     "region": "Asia"
+  },
+  {
+    "_id": "204",
+    "name": "Freiburg Münster",
+    "city": "Freiburg",
+    "country": "Germany",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "gothic",
+      "tower",
+      "historic"
+    ],
+    "svgFilename": "de-freiburg.svg",
+    "description": "Freiburg im Breisgau is a picturesque city in southwestern Germany, known for its stunning Gothic cathedral, Freiburg Münster. The cathedral's iconic tower, with its intricate stonework and towering spire, has been the symbol of the city since the medieval period. The cathedral is considered one of the finest examples of Gothic architecture in Germany.",
+    "region": "Europe"
+  },
+  {
+    "_id": "205",
+    "name": "Denver Bear",
+    "city": "Denver",
+    "country": "USA",
+    "category": "Nature",
+    "tags": [
+      "bear",
+      "wildlife",
+      "colorado",
+      "nature"
+    ],
+    "svgFilename": "us-denver.svg",
+    "description": "Denver is the capital and largest city of Colorado, known as the Mile High City due to its elevation. The bear represents Colorado's rich wildlife heritage and connection to the Rocky Mountains. Black bears are iconic to the region, symbolizing the state's wild nature and the majestic mountain wilderness that surrounds Denver.",
+    "region": "North America"
+  },
+  {
+    "_id": "206",
+    "name": "San Diego Mission Bell",
+    "city": "San Diego",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "mission",
+      "bell",
+      "historic",
+      "spanish-colonial"
+    ],
+    "svgFilename": "us-san-diego.svg",
+    "description": "San Diego is a coastal city in Southern California, home to Mission San Diego de Alcalá - the first Franciscan mission in California, founded in 1769. The mission bell represents the city's Spanish colonial heritage and its role as the birthplace of California. The iconic bell tower and bells remain a cherished symbol of San Diego's historical roots.",
+    "region": "North America"
   }
 ]
