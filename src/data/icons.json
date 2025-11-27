@@ -3172,5 +3172,90 @@
     "svgFilename": "fj-suva.svg",
     "description": "Suva is the capital and largest city of Fiji, located on the island of Viti Levu. The traditional bure is a thatched-roof hut that represents indigenous Fijian architecture and cultural identity. These distinctive structures with their steeply pitched roofs made from dried pandanus leaves are iconic to the Pacific islands, embodying the sustainable building practices and communal living traditions of the iTaukei (indigenous Fijian) people.",
     "region": "Oceania"
+  },
+  {
+    "_id": "211",
+    "name": "Giessen Liebig Flask",
+    "city": "Giessen",
+    "country": "Germany",
+    "category": "Culture",
+    "tags": [
+      "chemistry",
+      "flask",
+      "laboratory",
+      "justus-von-liebig",
+      "symbol"
+    ],
+    "svgFilename": "de-gissen.svg",
+    "description": "Giessen is marked by a chemical flask symbol that pays tribute to Justus von Liebig, the pioneering chemist whose research transformed modern laboratory science. The icon emphasizes the city's scientific heritage and the iconic glassware that once made it a center of innovation in 19th-century chemistry.",
+    "region": "Europe"
+  },
+  {
+    "_id": "212",
+    "name": "Herceg Novi Orange Blossom",
+    "city": "Herceg Novi",
+    "country": "Montenegro",
+    "category": "Culture",
+    "tags": [
+      "orange",
+      "blossom",
+      "floral",
+      "symbol",
+      "adriatic"
+    ],
+    "svgFilename": "mg-herzog-novi.svg",
+    "description": "Herceg Novi's orange blossom motif highlights the Adriatic city's mild climate, fragrant citrus orchards, and layered botanical identity. The bloom stands for renewal and hospitality along the Montenegrin coast, capturing the town's blend of Ottoman, Venetian, and Austro-Hungarian flavors.",
+    "region": "Europe"
+  },
+  {
+    "_id": "213",
+    "name": "Haifa Baha'i Gardens Terrace",
+    "city": "Haifa",
+    "country": "Israel",
+    "category": "Landmarks",
+    "tags": [
+      "bahai",
+      "gardens",
+      "terrace",
+      "landmark",
+      "religious"
+    ],
+    "svgFilename": "il-haifa.svg",
+    "description": "Haifa is represented by the terraces of the Baha'i Gardens, whose tiered levels cascade down Mount Carmel and welcome pilgrims from around the world. The icon celebrates the peaceful tiers, planted with palms and cypresses, symbolizing Haifa's role as a spiritual crossroads and a city that nurtures both nature and devotion.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "214",
+    "name": "Hamburg Coat of Arms",
+    "city": "Hamburg",
+    "country": "Germany",
+    "category": "Culture",
+    "tags": [
+      "coat-of-arms",
+      "heraldry",
+      "castle",
+      "port",
+      "history"
+    ],
+    "svgFilename": "de-hamburg.svg",
+    "description": "Hamburg's coat of arms features a fortified gate and towers that honor the Hanseatic city's long maritime history and independent spirit. The icon speaks to Hamburg's skyline of spires and its legacy as a port city that defended its freedom behind brick walls and shining crosses.",
+    "region": "Europe"
+  },
+  {
+    "_id": "215",
+    "name": "Budapest Liberty Statue",
+    "city": "Budapest",
+    "country": "Hungary",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "liberty",
+      "monument",
+      "hill",
+      "history"
+    ],
+    "svgFilename": "hu-budapest.svg",
+    "description": "Budapest is symbolized by the Liberty Statue that crowns Gellért Hill, a monument that commemorates the city's resilience and collective independence. The icon captures the raised palm leaf and elevated stance that watch over the Danube, linking Budapest's turbulent past with its enduring optimism.",
+    "region": "Europe"
   }
 ]
