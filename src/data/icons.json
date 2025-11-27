@@ -3257,5 +3257,39 @@
     "svgFilename": "hu-budapest.svg",
     "description": "Budapest is symbolized by the Liberty Statue that crowns Gellért Hill, a monument that commemorates the city's resilience and collective independence. The icon captures the raised palm leaf and elevated stance that watch over the Danube, linking Budapest's turbulent past with its enduring optimism.",
     "region": "Europe"
+  },
+  {
+    "_id": "216",
+    "name": "Szeged Votive Church",
+    "city": "Szeged",
+    "country": "Hungary",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "church",
+      "votive",
+      "tower",
+      "gothic"
+    ],
+    "svgFilename": "hu-szeged.svg",
+    "description": "Szeged is represented by its Votive Church – a soaring cathedral built after the 1879 flood that anchors the city's skyline with twin towers and elaborate neo-Gothic detailing. The icon celebrates Szeged's spiritual renewal and the church's role as a civic and religious beacon.",
+    "region": "Europe"
+  },
+  {
+    "_id": "217",
+    "name": "Debrecen Hajdúság Horse",
+    "city": "Debrecen",
+    "country": "Hungary",
+    "category": "Culture",
+    "tags": [
+      "horse",
+      "statue",
+      "hajdusag",
+      "tradition",
+      "equestrian"
+    ],
+    "svgFilename": "hu-debrecen.svg",
+    "description": "Debrecen is signified by the Hajdúság Horse, an equestrian motif that nods to the Hajdú cavalry and the city's agrarian identity. The icon conjures strength and movement, linking local folk traditions with Hungary's broader pastoral heritage.",
+    "region": "Europe"
   }
 ]
