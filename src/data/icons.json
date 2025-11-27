@@ -3342,5 +3342,73 @@
     "svgFilename": "es-granada.svg",
     "description": "Granada is represented by the Alhambra, a magnificent palace and fortress complex that stands as one of the finest examples of Islamic architecture in Europe. This UNESCO World Heritage site, with its intricate stucco work, beautiful courtyards, and the famous Court of the Lions, represents the pinnacle of Nasrid art and the last great flowering of Moorish culture in Spain.",
     "region": "Europe"
+  },
+  {
+    "_id": "221",
+    "name": "St. Louis Gateway Arch",
+    "city": "St. Louis",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "arch",
+      "gateway",
+      "monument",
+      "modern",
+      "iconic"
+    ],
+    "svgFilename": "us-st-louis.svg",
+    "description": "St. Louis is symbolized by the Gateway Arch, a 630-foot stainless steel monument that stands as the tallest arch in the world and an iconic symbol of America's westward expansion. Designed by Eero Saarinen, this architectural marvel represents St. Louis's role as the 'Gateway to the West' and serves as a monument to the pioneers who shaped the nation.",
+    "region": "North America"
+  },
+  {
+    "_id": "222",
+    "name": "New Orleans Fleur de Lis",
+    "city": "New Orleans",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "fleur-de-lis",
+      "symbol",
+      "french",
+      "heritage",
+      "cultural"
+    ],
+    "svgFilename": "us-new-orleans.svg",
+    "description": "New Orleans is represented by the fleur de lis, a symbol deeply woven into the city's French heritage and cultural identity. This stylized lily flower appears throughout the city's architecture, flags, and traditions, reflecting New Orleans's French colonial roots and its unique blend of European, African, and American cultures that make it one of America's most distinctive cities.",
+    "region": "North America"
+  },
+  {
+    "_id": "223",
+    "name": "Albuquerque Hot Air Balloon",
+    "city": "Albuquerque",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "hot-air-balloon",
+      "balloon-fiesta",
+      "festival",
+      "aviation",
+      "new-mexico"
+    ],
+    "svgFilename": "mx-albuquerque.svg",
+    "description": "Albuquerque is symbolized by the hot air balloon, representing the city's world-famous International Balloon Fiesta - the largest balloon festival in the world. Each October, hundreds of colorful balloons fill the sky above the Rio Grande Valley, making Albuquerque the hot air balloon capital of the world and celebrating the city's unique high-desert landscape and vibrant cultural scene.",
+    "region": "North America"
+  },
+  {
+    "_id": "224",
+    "name": "Boston Citgo Sign",
+    "city": "Boston",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "sign",
+      "neon",
+      "iconic",
+      "landmark",
+      "fenway"
+    ],
+    "svgFilename": "us-boston.svg",
+    "description": "Boston is represented by the iconic Citgo sign, a massive neon landmark that has illuminated the Kenmore Square skyline since 1965. This 60-foot-tall sign, visible from Fenway Park and throughout the Back Bay, has become an enduring symbol of Boston's identity, appearing in countless films and serving as a beloved beacon for Red Sox fans and city residents alike.",
+    "region": "North America"
   }
 ]
