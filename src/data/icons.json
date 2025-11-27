@@ -3291,5 +3291,56 @@
     "svgFilename": "hu-debrecen.svg",
     "description": "Debrecen is signified by the Hajdúság Horse, an equestrian motif that nods to the Hajdú cavalry and the city's agrarian identity. The icon conjures strength and movement, linking local folk traditions with Hungary's broader pastoral heritage.",
     "region": "Europe"
+  },
+  {
+    "_id": "218",
+    "name": "Córdoba City Arch",
+    "city": "Córdoba",
+    "country": "Argentina",
+    "category": "Landmarks",
+    "tags": [
+      "arch",
+      "triumphal",
+      "towers",
+      "medieval",
+      "romanesque"
+    ],
+    "svgFilename": "ar-cordoba.svg",
+    "description": "Córdoba is represented by its distinctive city arch, a triumphal monument that features two Spanish medieval-style towers with strong reminiscences of Romanesque art. The design draws the shield of the City of Córdoba twice and joins them with a bow, creating an eclectic and characteristic arch. Each tower stands 18.6 meters high with a 6-meter diameter, connected by a bridge that forms this unique architectural symbol of the city.",
+    "region": "South America"
+  },
+  {
+    "_id": "219",
+    "name": "Córdoba Horseshoe Arch",
+    "city": "Córdoba",
+    "country": "Spain",
+    "category": "Architecture",
+    "tags": [
+      "horseshoe-arch",
+      "moorish",
+      "islamic",
+      "architecture",
+      "historic"
+    ],
+    "svgFilename": "es-cordoba.svg",
+    "description": "Córdoba is symbolized by the horseshoe arch, an iconic architectural element that defines the city's Moorish heritage. These distinctive arches, wider at the top than at the base, are characteristic of Islamic architecture and can be seen throughout the historic Mezquita-Catedral and the city's ancient streets, representing Córdoba's rich cultural legacy as a center of Al-Andalus.",
+    "region": "Europe"
+  },
+  {
+    "_id": "220",
+    "name": "Granada Alhambra",
+    "city": "Granada",
+    "country": "Spain",
+    "category": "Landmarks",
+    "tags": [
+      "alhambra",
+      "palace",
+      "moorish",
+      "unesco",
+      "fortress"
+    ],
+    "svgFilename": "es-granada.svg",
+    "description": "Granada is represented by the Alhambra, a magnificent palace and fortress complex that stands as one of the finest examples of Islamic architecture in Europe. This UNESCO World Heritage site, with its intricate stucco work, beautiful courtyards, and the famous Court of the Lions, represents the pinnacle of Nasrid art and the last great flowering of Moorish culture in Spain.",
+    "region": "Europe"
   }
 ]
