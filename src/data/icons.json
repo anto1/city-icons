@@ -3410,5 +3410,22 @@
     "svgFilename": "us-boston.svg",
     "description": "Boston is represented by the iconic Citgo sign, a massive neon landmark that has illuminated the Kenmore Square skyline since 1965. This 60-foot-tall sign, visible from Fenway Park and throughout the Back Bay, has become an enduring symbol of Boston's identity, appearing in countless films and serving as a beloved beacon for Red Sox fans and city residents alike.",
     "region": "North America"
+  },
+  {
+    "_id": "225",
+    "name": "Atlanta Peach",
+    "city": "Atlanta",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "peach",
+      "fruit",
+      "georgia",
+      "symbol",
+      "southern"
+    ],
+    "svgFilename": "us-atlanta.svg",
+    "description": "Atlanta is symbolized by the peach, representing Georgia's identity as the Peach State and the city's role as its capital. The peach has long been associated with Georgia's agricultural heritage and warm southern climate, making it an enduring symbol of Atlanta's regional identity and the state's rich agricultural traditions.",
+    "region": "North America"
   }
 ]
