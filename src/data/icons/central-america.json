@@ -81,5 +81,22 @@
     "svgFilename": "gt-antigua.svg",
     "description": "Antigua Guatemala is a UNESCO World Heritage site and former capital of Guatemala, famous for its stunning colonial architecture including the iconic Santa Catalina Arch. This distinctive yellow arch, built in the 17th century, once allowed cloistered nuns to pass between convent buildings without entering the street. Today, it stands as one of the most photographed landmarks in Central America, perfectly framing views of the Agua Volcano beyond.",
     "region": "Central America"
+  },
+  {
+    "_id": "235",
+    "name": "Juan Santamaría Statue",
+    "city": "Alajuela",
+    "country": "Costa Rica",
+    "category": "Culture",
+    "tags": [
+      "statue",
+      "hero",
+      "historical",
+      "national",
+      "monument"
+    ],
+    "svgFilename": "cr-alajuela.svg",
+    "description": "Alajuela is Costa Rica's second-largest city, home to the statue of Juan Santamaría - the national hero of Costa Rica. This monument honors the young drummer boy who sacrificed his life in 1856 during the Battle of Rivas against William Walker's filibusters. Santamaría has become a symbol of Costa Rican courage and national identity, and the city celebrates him annually on April 11th, a national holiday.",
+    "region": "Central America"
   }
 ]

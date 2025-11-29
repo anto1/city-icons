@@ -139,5 +139,39 @@
     "svgFilename": "et-lalibela.svg",
     "description": "Lalibela is home to the famous rock-hewn churches, including the iconic Church of Saint George carved in the shape of a cross. These UNESCO World Heritage churches represent one of Ethiopia's most sacred pilgrimage sites and showcase the remarkable architectural achievements of medieval Ethiopian Orthodox Christianity.",
     "region": "Africa"
+  },
+  {
+    "_id": "233",
+    "name": "African Renaissance Monument",
+    "city": "Dakar",
+    "country": "Senegal",
+    "category": "Landmarks",
+    "tags": [
+      "monument",
+      "statue",
+      "modern",
+      "african",
+      "independence"
+    ],
+    "svgFilename": "sn-dakar.svg",
+    "description": "Dakar is the capital and largest city of Senegal, home to the iconic African Renaissance Monument - a 49-meter bronze statue that stands as the tallest statue in Africa. Built in 2010, this striking monument depicts a family emerging from a mountain and symbolizes Africa's liberation from centuries of colonialism and slavery, representing hope, progress, and the rebirth of the African continent.",
+    "region": "Africa"
+  },
+  {
+    "_id": "234",
+    "name": "KICC Tower",
+    "city": "Nairobi",
+    "country": "Kenya",
+    "category": "Buildings",
+    "tags": [
+      "tower",
+      "skyscraper",
+      "modern",
+      "conference",
+      "iconic"
+    ],
+    "svgFilename": "ke-nairobi.svg",
+    "description": "Nairobi is the capital and largest city of Kenya, featuring the iconic Kenyatta International Convention Centre (KICC) tower. This distinctive 28-story cylindrical tower with its unique architectural design has defined Nairobi's skyline since 1973, serving as a symbol of Kenya's post-independence development and its role as East Africa's premier business and conference hub.",
+    "region": "Africa"
   }
 ]
