@@ -1,0 +1,16 @@
+# City Icons - robots.txt
+# https://cities.partdirector.ch
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cities.partdirector.ch/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1
+
+# Block test pages
+Disallow: /test/
+Disallow: /design-research/
+

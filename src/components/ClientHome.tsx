@@ -6,6 +6,7 @@ import { IconHeader } from '@/components/IconHeader';
 import { IconFooter } from '@/components/IconFooter';
 import { RandomIconHeader } from '@/components/RandomIconHeader';
 import { RegionFilter } from '@/components/RegionFilter';
+import { ErrorBoundary, IconGridError } from '@/components/ErrorBoundary';
 import { useIconSearch } from '@/hooks/useIconSearch';
 import { Icon } from '@/types';
 import Link from 'next/link';
@@ -67,10 +68,12 @@ export default function ClientHome({ initialIcons, countryFilter, hideSearch }: 
         )}
         
         <div className="mt-12">
-          <IconGrid 
-            icons={filteredIcons} 
-            loading={false} 
-          />
+          <ErrorBoundary fallback={<IconGridError />}>
+            <IconGrid 
+              icons={filteredIcons} 
+              loading={false} 
+            />
+          </ErrorBoundary>
         </div>
       </div>
 

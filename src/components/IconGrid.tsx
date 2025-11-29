@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { IconGridProps } from '@/types';
 import { trackEvent } from 'fathom-client';
 import { getIconUrl, formatSvg } from '@/lib/utils';
+import { ANIMATION, GRID, HOVER, BREAKPOINTS } from '@/lib/constants';
 
 // Skeleton component for loading state
 function IconSkeleton() {
@@ -61,7 +62,7 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
         ref={gridRef}
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative"
       >
-        {Array.from({ length: 12 }).map((_, index) => (
+        {Array.from({ length: GRID.SKELETON_COUNT }).map((_, index) => (
           <IconSkeleton key={index} />
         ))}
       </div>
@@ -81,7 +82,11 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
     if (!mousePosition || !gridRef.current) return 1;
     
     const rect = gridRef.current.getBoundingClientRect();
-    const cols = window.innerWidth >= 1280 ? 6 : window.innerWidth >= 1024 ? 5 : window.innerWidth >= 768 ? 4 : window.innerWidth >= 640 ? 3 : 2;
+    const cols = window.innerWidth >= BREAKPOINTS.XL ? GRID.COLUMNS.XL 
+      : window.innerWidth >= BREAKPOINTS.LG ? GRID.COLUMNS.LG 
+      : window.innerWidth >= BREAKPOINTS.MD ? GRID.COLUMNS.MD 
+      : window.innerWidth >= BREAKPOINTS.SM ? GRID.COLUMNS.SM 
+      : GRID.COLUMNS.DEFAULT;
     const rows = Math.ceil(icons.length / cols);
     
     // Calculate card dimensions
@@ -101,12 +106,12 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
     );
     
     // Maximum distance for effect (adjust for desired range)
-    const maxDistance = Math.min(cardWidth, cardHeight) * 0.8;
+    const maxDistance = Math.min(cardWidth, cardHeight) * HOVER.PROXIMITY_FACTOR;
     
     // Calculate scale based on proximity (closer = larger scale)
     if (distance <= maxDistance) {
       const proximity = 1 - (distance / maxDistance);
-      const baseScale = 1 + (proximity * 0.08); // Max 8% scale increase
+      const baseScale = 1 + (proximity * HOVER.MAX_SCALE_INCREASE);
       return Math.max(1, baseScale);
     }
     
@@ -128,7 +133,7 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
             transform: `scale(${getScale(index)})`,
             zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1,
             cursor: 'pointer',
-            animationDelay: `${Math.min(index * 20, 600)}ms`
+            animationDelay: `${Math.min(index * ANIMATION.STAGGER_DELAY_INCREMENT, ANIMATION.STAGGER_DELAY_MAX)}ms`
           }} 
           onClick={() => {
             // Track icon click with city data

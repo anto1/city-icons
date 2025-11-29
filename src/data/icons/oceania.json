@@ -144,5 +144,39 @@
     "svgFilename": "fj-suva.svg",
     "description": "Suva is the capital and largest city of Fiji, located on the island of Viti Levu. The traditional bure is a thatched-roof hut that represents indigenous Fijian architecture and cultural identity. These distinctive structures with their steeply pitched roofs made from dried pandanus leaves are iconic to the Pacific islands, embodying the sustainable building practices and communal living traditions of the iTaukei (indigenous Fijian) people.",
     "region": "Oceania"
+  },
+  {
+    "_id": "226",
+    "name": "Parliament House",
+    "city": "Canberra",
+    "country": "Australia",
+    "category": "Landmarks",
+    "tags": [
+      "parliament",
+      "government",
+      "architecture",
+      "capital",
+      "democracy"
+    ],
+    "svgFilename": "au-canberra.svg",
+    "description": "Canberra is the capital city of Australia, purpose-built to house the nation's government. Parliament House, opened in 1988, is an architectural masterpiece built into Capital Hill, crowned by its iconic 81-meter flagpole. The building symbolizes Australian democracy and features stunning mosaic forecourt, native gardens, and over 3,000 artworks representing the nation's cultural heritage.",
+    "region": "Oceania"
+  },
+  {
+    "_id": "227",
+    "name": "Cascade Brewery",
+    "city": "Hobart",
+    "country": "Australia",
+    "category": "Landmarks",
+    "tags": [
+      "brewery",
+      "heritage",
+      "historic",
+      "tasmania",
+      "colonial"
+    ],
+    "svgFilename": "au-hubert.svg",
+    "description": "Hobart is the capital of Tasmania, Australia's island state known for its pristine wilderness and rich colonial history. The Cascade Brewery, founded in 1824, is Australia's oldest continuously operating brewery, nestled at the foot of Mount Wellington. Its distinctive Gothic-style sandstone buildings and heritage gardens make it an iconic symbol of Tasmania's European settlement and brewing tradition.",
+    "region": "Oceania"
   }
 ]

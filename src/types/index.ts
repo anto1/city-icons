@@ -1,4 +1,5 @@
-export interface Icon {
+// Raw icon data from JSON files (without svgContent)
+export interface IconData {
   _id: string;
   name: string;
   city: string;
@@ -6,9 +7,13 @@ export interface Icon {
   category: string;
   tags: string[];
   svgFilename: string;
-  svgContent: string;
   description?: string;
   region: string;
+}
+
+// Full icon with SVG content (after server-side loading)
+export interface Icon extends IconData {
+  svgContent: string;
 }
 
 export interface IconModalProps {

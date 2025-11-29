@@ -36,15 +36,22 @@ export function RegionFilter({ regions, selectedRegion, onRegionSelect, icons }:
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-2 mt-6">
+    <nav 
+      aria-label="Filter icons by region"
+      className="flex flex-wrap justify-center gap-2 mt-6"
+      role="group"
+    >
       {/* All button */}
       <button
         onClick={() => {
           onRegionSelect(null);
           trackEvent('FILTER_ALL');
         }}
+        aria-pressed={selectedRegion === null}
+        aria-label={`Show all icons (${icons.length} icons)`}
         className={`
           px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2
           ${selectedRegion === null
             ? 'bg-foreground text-background'
             : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -52,7 +59,7 @@ export function RegionFilter({ regions, selectedRegion, onRegionSelect, icons }:
         `}
       >
         All
-        <span className="ml-1.5 opacity-60">{icons.length}</span>
+        <span className="ml-1.5 opacity-60" aria-hidden="true">{icons.length}</span>
       </button>
 
       {/* Region buttons */}
@@ -69,8 +76,11 @@ export function RegionFilter({ regions, selectedRegion, onRegionSelect, icons }:
               onRegionSelect(isSelected ? null : region);
               trackEvent(`FILTER_${region.replace(/\s+/g, '_').toUpperCase()}`);
             }}
+            aria-pressed={isSelected}
+            aria-label={`Filter by ${label} (${count} icons)${isSelected ? ', currently selected' : ''}`}
             className={`
               px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2
               ${isSelected
                 ? 'bg-foreground text-background'
                 : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -78,11 +88,11 @@ export function RegionFilter({ regions, selectedRegion, onRegionSelect, icons }:
             `}
           >
             {label}
-            <span className="ml-1.5 opacity-60">{count}</span>
+            <span className="ml-1.5 opacity-60" aria-hidden="true">{count}</span>
           </button>
         );
       })}
-    </div>
+    </nav>
   );
 }
 
