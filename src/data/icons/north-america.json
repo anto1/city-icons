@@ -456,5 +456,39 @@
     "svgFilename": "us-atlanta.svg",
     "description": "Atlanta is symbolized by the peach, representing Georgia's identity as the Peach State and the city's role as its capital. The peach has long been associated with Georgia's agricultural heritage and warm southern climate, making it an enduring symbol of Atlanta's regional identity and the state's rich agricultural traditions.",
     "region": "North America"
+  },
+  {
+    "_id": "228",
+    "name": "Golden Gate Bridge",
+    "city": "San Francisco",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "bridge",
+      "iconic",
+      "bay-area",
+      "california",
+      "engineering"
+    ],
+    "svgFilename": "us-san-francisco.svg",
+    "description": "San Francisco is home to the iconic Golden Gate Bridge, one of the most recognized landmarks in the world. This majestic suspension bridge, painted in its distinctive International Orange, spans the Golden Gate strait connecting San Francisco to Marin County. Completed in 1937, the bridge has become an enduring symbol of American engineering and the spirit of the city by the bay.",
+    "region": "North America"
+  },
+  {
+    "_id": "229",
+    "name": "LA Dodgers Letters",
+    "city": "Los Angeles",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "dodgers",
+      "baseball",
+      "sports",
+      "california",
+      "iconic"
+    ],
+    "svgFilename": "us-los-angeles.svg",
+    "description": "Los Angeles is represented by the iconic LA letters from the Dodgers logo, a symbol that embodies the city's passionate baseball culture and entertainment heritage. The Los Angeles Dodgers, one of the most storied franchises in Major League Baseball, have been a beloved part of LA since moving from Brooklyn in 1958, and their distinctive interlocking LA design has become synonymous with the City of Angels.",
+    "region": "North America"
   }
 ]
