@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { IconGridProps } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl } from '@/lib/utils';
+import { getIconUrl, formatSvg } from '@/lib/utils';
 
 // Skeleton component for loading state
 function IconSkeleton() {
@@ -122,12 +122,13 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
         <Link
           key={icon._id}
           href={getIconUrl(icon)}
-          className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center" 
+          className="icon-card-animate group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center" 
           style={{ 
             aspectRatio: '1 / 1',
             transform: `scale(${getScale(index)})`,
             zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1,
-            cursor: 'pointer'
+            cursor: 'pointer',
+            animationDelay: `${Math.min(index * 20, 600)}ms`
           }} 
           onClick={() => {
             // Track icon click with city data
@@ -141,11 +142,7 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
               aria-label={`${icon.city} icon representing ${icon.name}`}
               title={`${icon.city}, ${icon.country} - ${icon.name}`}
               dangerouslySetInnerHTML={{
-                __html: icon.svgContent
-                  .replace(/width="[^"]*"/, 'width="56"')
-                  .replace(/height="[^"]*"/, 'height="56"')
-                  .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
-                  .replace(/fill="[^"]*"/g, 'fill="currentColor"')
+                __html: formatSvg(icon.svgContent)
               }}
             />
             <div className="text-center w-full">

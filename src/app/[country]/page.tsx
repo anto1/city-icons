@@ -3,7 +3,7 @@ import ClientHome from '@/components/ClientHome';
 import { Icon } from '@/types';
 import fs from 'fs';
 import path from 'path';
-import iconData from '@/data/icons.json';
+import iconData from '@/data';
 import { slugify } from '@/lib/utils';
 import { Metadata } from 'next';
 

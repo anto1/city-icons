@@ -2,7 +2,7 @@ import ClientHome from '@/components/ClientHome';
 import { Icon } from '@/types';
 import fs from 'fs';
 import path from 'path';
-import iconData from '@/data/icons.json';
+import iconData from '@/data';
 
 // Server-side function to load SVG content
 async function loadSvgContent(filename: string): Promise<string> {

@@ -1,0 +1,454 @@
+[
+  {
+    "_id": "32",
+    "name": "Almaty Mountains",
+    "city": "Almaty",
+    "country": "Kazakhstan",
+    "category": "Landmarks",
+    "tags": [
+      "mountains",
+      "nature",
+      "scenic"
+    ],
+    "svgFilename": "kz-alma-aty.svg",
+    "description": "Almaty is the largest city in Kazakhstan, nestled at the foothills of the Trans-Ili Alatau mountains. Known for its stunning mountain views, the city combines modern urban development with natural beauty, featuring the iconic Kok-Tobe hill and the beautiful Medeu skating rink.",
+    "region": "Asia"
+  },
+  {
+    "_id": "35",
+    "name": "Denpasar Temple",
+    "city": "Denpasar",
+    "country": "Indonesia",
+    "category": "Culture",
+    "tags": [
+      "temple",
+      "balinese",
+      "traditional"
+    ],
+    "svgFilename": "id-denpasar.svg",
+    "description": "Denpasar is the capital of Bali, Indonesia, known for its rich Balinese culture, traditional temples, and vibrant arts scene. The city serves as the cultural and administrative center of the island, featuring beautiful Hindu temples and traditional Balinese architecture.",
+    "region": "Asia"
+  },
+  {
+    "_id": "39",
+    "name": "Dhaka Modern City",
+    "city": "Dhaka",
+    "country": "Bangladesh",
+    "category": "Buildings",
+    "tags": [
+      "modern",
+      "urban",
+      "architecture"
+    ],
+    "svgFilename": "bd-dhaka.svg",
+    "description": "Dhaka is the capital and largest city of Bangladesh, known for its modern urban development, historic mosques, and vibrant street life. The city combines traditional Bengali culture with contemporary architecture and serves as the economic and cultural heart of Bangladesh.",
+    "region": "Asia"
+  },
+  {
+    "_id": "60",
+    "name": "Kathmandu Stupa",
+    "city": "Kathmandu",
+    "country": "Nepal",
+    "category": "Landmarks",
+    "tags": [
+      "stupa",
+      "buddhist",
+      "historic"
+    ],
+    "svgFilename": "np-kathmandu.svg",
+    "description": "Kathmandu is the capital and largest city of Nepal, known for its iconic Buddhist stupas, ancient temples, and rich cultural heritage. The city combines traditional Nepalese culture with historic architecture, featuring the famous Swayambhunath Stupa, Boudhanath, and the historic Durbar Square.",
+    "region": "Asia"
+  },
+  {
+    "_id": "22",
+    "name": "Seoul Modern City",
+    "city": "Seoul",
+    "country": "South Korea",
+    "category": "Buildings",
+    "tags": [
+      "modern",
+      "technology",
+      "urban"
+    ],
+    "svgFilename": "kr-seoul.svg",
+    "description": "Seoul is the capital and largest city of South Korea, known for its cutting-edge technology, modern architecture, and rich cultural heritage. The city seamlessly blends ancient palaces with futuristic skyscrapers.",
+    "region": "Asia"
+  },
+  {
+    "_id": "47",
+    "name": "Uralsk Historic Center",
+    "city": "Uralsk",
+    "country": "Kazakhstan",
+    "category": "Culture",
+    "tags": [
+      "historic",
+      "riverside",
+      "traditional"
+    ],
+    "svgFilename": "kz-uralsk.svg",
+    "description": "Uralsk is a historic city in western Kazakhstan, located on the Ural River. Known for its traditional Kazakh culture, horse breeding heritage, and beautiful riverfront, the city preserves its rich nomadic traditions while embracing modern development. The horse symbolizes the region's deep connection to Central Asian nomadic culture.",
+    "region": "Asia"
+  },
+  {
+    "_id": "59",
+    "name": "Hanoi Turtle Tower",
+    "city": "Hanoi",
+    "country": "Vietnam",
+    "category": "Landmarks",
+    "tags": [
+      "turtle",
+      "tower",
+      "historic"
+    ],
+    "svgFilename": "vn-hanoi.svg",
+    "description": "Hanoi is the capital city of Vietnam, known for its iconic Turtle Tower on Hoan Kiem Lake - a historic landmark symbolizing the city's rich cultural heritage. The city combines traditional Vietnamese culture with French colonial architecture, featuring the Old Quarter, Temple of Literature, and vibrant street food scene.",
+    "region": "Asia"
+  },
+  {
+    "_id": "70",
+    "name": "Tashkent Mosque",
+    "city": "Tashkent",
+    "country": "Uzbekistan",
+    "category": "Landmarks",
+    "tags": [
+      "mosque",
+      "islamic",
+      "historic"
+    ],
+    "svgFilename": "uz-tashkent.svg",
+    "description": "Tashkent is the capital and largest city of Uzbekistan, known for its beautiful mosques, Islamic architecture, and rich cultural heritage. The city combines traditional Central Asian culture with modern development, featuring the historic Chorsu Bazaar, Tashkent Tower, and vibrant cultural scene.",
+    "region": "Asia"
+  },
+  {
+    "_id": "87",
+    "name": "Shanghai Oriental Pearl Tower",
+    "city": "Shanghai",
+    "country": "China",
+    "category": "Landmarks",
+    "tags": [
+      "tower",
+      "modern",
+      "iconic"
+    ],
+    "svgFilename": "cn-shanghai.svg",
+    "description": "Shanghai is the largest city in China, known for its iconic Oriental Pearl Tower and stunning skyline. The city combines traditional Chinese culture with modern development, featuring the Bund waterfront, historic French Concession, and vibrant cultural scene.",
+    "region": "Asia"
+  },
+  {
+    "_id": "91",
+    "name": "Agra Taj Mahal",
+    "city": "Agra",
+    "country": "India",
+    "category": "Landmarks",
+    "tags": [
+      "taj mahal",
+      "mausoleum",
+      "historic"
+    ],
+    "svgFilename": "in-agra.svg",
+    "description": "Agra is a historic city in Uttar Pradesh, India, home to the magnificent Taj Mahal - one of the Seven Wonders of the World. This stunning white marble mausoleum, built by Emperor Shah Jahan in memory of his wife, represents the pinnacle of Mughal architecture and is a symbol of eternal love.",
+    "region": "Asia"
+  },
+  {
+    "_id": "92",
+    "name": "Delhi Lotus Temple",
+    "city": "Delhi",
+    "country": "India",
+    "category": "Landmarks",
+    "tags": [
+      "temple",
+      "lotus",
+      "modern"
+    ],
+    "svgFilename": "in-delhi.svg",
+    "description": "Delhi is the capital of India, known for its iconic Lotus Temple - a Bahá'í House of Worship shaped like a lotus flower, historic monuments like the Red Fort and Qutub Minar, and rich cultural heritage. The city combines ancient history with modern Indian development and serves as the political and cultural heart of India.",
+    "region": "Asia"
+  },
+  {
+    "_id": "98",
+    "name": "Kyoto Temple",
+    "city": "Kyoto",
+    "country": "Japan",
+    "category": "Landmarks",
+    "tags": [
+      "temple",
+      "buddhist",
+      "historic"
+    ],
+    "svgFilename": "jp-kyoto.svg",
+    "description": "Kyoto is the former imperial capital of Japan, known for its beautiful temples, traditional gardens, and rich cultural heritage. The city combines ancient Japanese culture with modern development, featuring the iconic Kinkaku-ji (Golden Pavilion), Fushimi Inari Shrine, and traditional tea ceremonies.",
+    "region": "Asia"
+  },
+  {
+    "_id": "102",
+    "name": "Manila Intramuros",
+    "city": "Manila",
+    "country": "Philippines",
+    "category": "Landmarks",
+    "tags": [
+      "intramuros",
+      "colonial",
+      "historic"
+    ],
+    "svgFilename": "ph-manila.svg",
+    "description": "Manila is the capital of the Philippines, known for its historic Intramuros district and rich cultural heritage. The city combines Spanish colonial architecture with modern Filipino culture, featuring the historic walled city, Rizal Park, and vibrant street life.",
+    "region": "Asia"
+  },
+  {
+    "_id": "103",
+    "name": "Karachi Port",
+    "city": "Karachi",
+    "country": "Pakistan",
+    "category": "Landmarks",
+    "tags": [
+      "port",
+      "harbor",
+      "modern"
+    ],
+    "svgFilename": "pk-karachi.svg",
+    "description": "Karachi is the largest city and economic hub of Pakistan, known for its busy port and rich cultural heritage. The city combines traditional Pakistani culture with modern development, featuring the Arabian Sea coastline, historic architecture, and vibrant street markets.",
+    "region": "Asia"
+  },
+  {
+    "_id": "110",
+    "name": "Cebu Lapu-Lapu Monument",
+    "city": "Cebu",
+    "country": "Philippines",
+    "category": "Landmarks",
+    "tags": [
+      "monument",
+      "lapu-lapu",
+      "mactan shrine",
+      "historic"
+    ],
+    "svgFilename": "ph-cebu.svg",
+    "description": "Cebu is the oldest city in the Philippines and the first capital, known for its iconic Lapu-Lapu Monument at the Mactan Shrine - commemorating the first Filipino hero who defeated Portuguese explorer Ferdinand Magellan. The city combines rich colonial history with modern Filipino culture, featuring the historic Basilica Minore del Santo Niño, Magellan's Cross, and vibrant cultural heritage.",
+    "region": "Asia"
+  },
+  {
+    "_id": "151",
+    "name": "Islamabad Faisal Mosque",
+    "city": "Islamabad",
+    "country": "Pakistan",
+    "category": "Landmarks",
+    "tags": [
+      "faisal-mosque",
+      "islamabad",
+      "pakistani",
+      "religious",
+      "architectural"
+    ],
+    "svgFilename": "pk-islamabad.svg",
+    "description": "Islamabad is the capital city of Pakistan, known for its iconic Faisal Mosque - one of the largest mosques in the world with its distinctive tent-like design that symbolizes modern Islamic architecture. The city combines planned urban development with Pakistani culture, featuring the impressive Faisal Mosque, the beautiful Margalla Hills, the historic Pakistan Monument, and the mosque that represents Islamabad's role as the modern capital of Pakistan and a center of Islamic culture and architecture.",
+    "region": "Asia"
+  },
+  {
+    "_id": "168",
+    "name": "Yakutsk Ostrog",
+    "city": "Yakutsk",
+    "country": "Russia",
+    "category": "Landmarks",
+    "tags": [
+      "ostrog",
+      "wooden-fort",
+      "1632",
+      "siberian",
+      "russian",
+      "historical",
+      "fortress"
+    ],
+    "svgFilename": "ru-yakutsk.svg",
+    "description": "Yakutsk is the capital of the Sakha Republic in Siberia, founded around a wooden fort (ostrog) built in 1632. This historic ostrog represents the Russian expansion into Siberia and serves as a symbol of the city's origins as a frontier settlement, marking the beginning of Russian presence in the vast Siberian wilderness.",
+    "region": "Asia"
+  },
+  {
+    "_id": "173",
+    "name": "Luang Prabang Lotus",
+    "city": "Luang Prabang",
+    "country": "Laos",
+    "category": "Religion",
+    "tags": [
+      "lotus",
+      "flower",
+      "buddhist",
+      "spiritual",
+      "laotian",
+      "sacred"
+    ],
+    "svgFilename": "la-luang-prabang.svg",
+    "description": "Luang Prabang, a UNESCO World Heritage city, is represented by the lotus flower, a sacred symbol in Buddhism. The lotus represents spiritual purity and enlightenment, reflecting the city's deep Buddhist heritage, numerous temples, and its role as a center of Lao Buddhist culture and learning.",
+    "region": "Asia"
+  },
+  {
+    "_id": "175",
+    "name": "Bishkek Manas Statue",
+    "city": "Bishkek",
+    "country": "Kyrgyzstan",
+    "category": "Culture",
+    "tags": [
+      "manas",
+      "statue",
+      "epic",
+      "kyrgyz",
+      "hero",
+      "heritage"
+    ],
+    "svgFilename": "kg-bishkek.svg",
+    "description": "Bishkek is represented by the statue of Manas, the legendary hero of the Kyrgyz people from the famous Epic of Manas. This statue symbolizes Kyrgyz national identity, cultural heritage, and the oral tradition that has preserved the stories of this mythical warrior-king for over a thousand years.",
+    "region": "Asia"
+  },
+  {
+    "_id": "180",
+    "name": "Mount Fuji and Rising Sun",
+    "city": "Tokyo",
+    "country": "Japan",
+    "category": "Landmarks",
+    "tags": [
+      "mount-fuji",
+      "rising-sun",
+      "mountain",
+      "japanese",
+      "iconic",
+      "sacred",
+      "nature"
+    ],
+    "svgFilename": "jp-tokyo.svg",
+    "description": "Tokyo is represented by the iconic Mount Fuji with a rising sun, symbolizing Japan's spiritual heart and natural beauty. This combination reflects the harmony between tradition and modernity that defines Tokyo, with Mount Fuji serving as a sacred symbol visible from the capital on clear days.",
+    "region": "Asia"
+  },
+  {
+    "_id": "184",
+    "name": "Kostanay",
+    "city": "Kostanay",
+    "country": "Kazakhstan",
+    "category": "Culture",
+    "tags": [
+      "regional-center",
+      "horses",
+      "equestrian",
+      "agriculture",
+      "breeding",
+      "pegasus",
+      "cultural"
+    ],
+    "svgFilename": "kz-kostanay.svg",
+    "description": "Kostanay is a significant regional center in northern Kazakhstan, renowned for its rich equestrian culture and horse breeding traditions. The region has long been celebrated for its exceptional horses and agricultural heritage. The modern Pegasus statue on the river bank perfectly symbolizes this deep connection to horse culture, representing the mythical winged horse as a tribute to the area's celebrated equestrian legacy.",
+    "region": "Asia"
+  },
+  {
+    "_id": "189",
+    "name": "Bayterek Tower",
+    "city": "Astana",
+    "country": "Kazakhstan",
+    "category": "Buildings",
+    "tags": [
+      "tower",
+      "modern",
+      "observation",
+      "architecture",
+      "landmark",
+      "capital"
+    ],
+    "svgFilename": "kz-astana.svg",
+    "description": "Astana's Bayterek Tower is a striking symbol of Kazakhstan's modern capital city. This futuristic observation tower, designed to represent a mythical tree of life holding a golden egg, offers panoramic views of the city and embodies the nation's aspirations and cultural heritage in its contemporary architectural form.",
+    "region": "Asia"
+  },
+  {
+    "_id": "190",
+    "name": "Statue of Guan Yu",
+    "city": "Jingzhou",
+    "country": "China",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "monument",
+      "historic",
+      "guan yu"
+    ],
+    "svgFilename": "cn-jingzhou.svg",
+    "description": "Jingzhou is a historic city in China's Hubei province, famous for its massive Statue of Guan Yu. This 58-meter tall bronze statue honors the legendary military general from the Three Kingdoms period, making it one of the tallest statues of Guan Yu in the world and a symbol of loyalty and righteousness.",
+    "region": "Asia"
+  },
+  {
+    "_id": "192",
+    "name": "Giant Buddha",
+    "city": "Leshan",
+    "country": "China",
+    "category": "Religious",
+    "tags": [
+      "buddha",
+      "statue",
+      "unesco",
+      "giant"
+    ],
+    "svgFilename": "cn-leshan.svg",
+    "description": "Leshan is a city in Sichuan province, China, famous for the Leshan Giant Buddha - the world's largest stone Buddha statue. This UNESCO World Heritage site stands 71 meters tall and was carved out of a cliff face during the Tang Dynasty, representing an incredible feat of ancient engineering and Buddhist devotion.",
+    "region": "Asia"
+  },
+  {
+    "_id": "194",
+    "name": "Merlion",
+    "city": "Sentosa",
+    "country": "Singapore",
+    "category": "Landmarks",
+    "tags": [
+      "merlion",
+      "lion",
+      "fish",
+      "singapore"
+    ],
+    "svgFilename": "sg-sentosa.svg",
+    "description": "Sentosa is a resort island in Singapore, featuring a large Merlion statue that has become an iconic symbol of the nation. This mythical creature with a lion's head and fish's body represents Singapore's origins as a fishing village and its name 'Singapura' meaning 'lion city', standing as a beloved tourist attraction and cultural symbol.",
+    "region": "Asia"
+  },
+  {
+    "_id": "195",
+    "name": "Shirakawa-go Gassho-zukuri",
+    "city": "Shirakawa-go",
+    "country": "Japan",
+    "category": "Architecture",
+    "tags": [
+      "gassho-zukuri",
+      "traditional",
+      "farmhouse",
+      "unesco",
+      "historic",
+      "rural",
+      "japanese"
+    ],
+    "svgFilename": "jp-shirakawa-go.svg",
+    "description": "Shirakawa-go is a UNESCO World Heritage site in Japan, renowned for its traditional gassho-zukuri farmhouses with steep thatched roofs. These architectural marvels were designed to withstand heavy snowfall in the mountainous region, representing centuries of Japanese rural building techniques and the harmonious relationship between humans and nature in the Japanese Alps.",
+    "region": "Asia"
+  },
+  {
+    "_id": "201",
+    "name": "Schuchinsk Pike Fish",
+    "city": "Schuchinsk",
+    "country": "Kazakhstan",
+    "category": "Nature",
+    "tags": [
+      "pike-fish",
+      "lake",
+      "nature"
+    ],
+    "svgFilename": "kz-schuchinsk.svg",
+    "description": "Schuchinsk is a resort town in Kazakhstan's Akmola Region, famous for its pristine lakes and pike fishing. Located near Burabay National Nature Park, the city is known for its beautiful natural setting and the abundant pike fish that inhabit the crystal-clear lakes of the region.",
+    "region": "Asia"
+  },
+  {
+    "_id": "203",
+    "name": "Pattaya Sanctuary",
+    "city": "Pattaya",
+    "country": "Thailand",
+    "category": "Landmarks",
+    "tags": [
+      "sanctuary",
+      "temple",
+      "spiritual",
+      "thai"
+    ],
+    "svgFilename": "th-pattaya.svg",
+    "description": "Pattaya is a vibrant coastal resort city in Thailand, known for its famous Sanctuary of Truth - an intricate wooden temple and architectural marvel. This sacred site represents Thai craftsmanship and spiritual heritage, combining traditional Buddhist and Hindu motifs in a stunning oceanfront setting.",
+    "region": "Asia"
+  }
+]

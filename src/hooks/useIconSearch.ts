@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { Icon } from '@/types';
 
 interface UseIconSearchProps {
@@ -7,91 +7,67 @@ interface UseIconSearchProps {
 }
 
 export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
-  const [filteredIcons, setFilteredIcons] = useState<Icon[]>(() => {
-    // Initialize with country-filtered icons if countryFilter is provided
-    if (countryFilter) {
-      return icons.filter(icon => icon.country === countryFilter);
-    }
-    return icons;
-  });
+  const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
   const [lastSearchQuery, setLastSearchQuery] = useState<string>('');
 
-  // Update filtered icons when icons or countryFilter changes
-  // Only update if there's no active search query
-  useEffect(() => {
-    if (!lastSearchQuery.trim()) {
-      if (countryFilter) {
-        const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
-        setFilteredIcons(countryFilteredIcons);
-      } else {
-        setFilteredIcons(icons);
-      }
-    }
-  }, [icons, countryFilter, lastSearchQuery]);
+  // Get unique regions from icons
+  const regions = useMemo(() => {
+    const regionSet = new Set(icons.map(icon => icon.region));
+    return Array.from(regionSet).sort();
+  }, [icons]);
 
-  const handleSearch = useCallback((query: string) => {
-    const trimmedQuery = query.trim();
-    
-    // Prevent unnecessary re-renders if the query hasn't changed
-    if (trimmedQuery === lastSearchQuery) {
-      return;
-    }
-    
-    setLastSearchQuery(trimmedQuery);
-    
-    if (!trimmedQuery) {
-      // If no search query, show all icons or country-filtered icons
-      if (countryFilter) {
-        const countryFilteredIcons = icons.filter(icon => icon.country === countryFilter);
-        setFilteredIcons(countryFilteredIcons);
-      } else {
-        setFilteredIcons(icons);
-      }
-      return;
+  // Calculate filtered icons based on all filters
+  const filteredIcons = useMemo(() => {
+    let result = icons;
+
+    // Apply country filter first
+    if (countryFilter) {
+      result = result.filter(icon => icon.country === countryFilter);
     }
 
-    const searchTerm = trimmedQuery.toLowerCase();
-    
-    // Get the base icons to search in (all icons or country-filtered)
-    const baseIcons = countryFilter 
-      ? icons.filter(icon => icon.country === countryFilter)
-      : icons;
-    
-    const filtered = baseIcons.filter(icon => {
-      // Search in city, country, and region names
-      const cityMatch = icon.city.toLowerCase().includes(searchTerm);
-      
-      // For country matching, allow partial matches but be more intelligent
-      // This allows "germ" to match "Germany" but prevents "amsterdam" matching "netherlands"
-      const countryMatch = icon.country.toLowerCase().includes(searchTerm);
-      
-      // For region matching, allow partial matches
-      const regionMatch = icon.region.toLowerCase().includes(searchTerm);
-      
-      // Additional check to prevent false positives
-      // Only allow country match if the search term is at least 3 characters
-      // or if it's a common country prefix
-      const validCountryMatch = searchTerm.length >= 3 || 
-                               ['usa', 'uk', 'uae'].includes(searchTerm) ||
-                               icon.country.toLowerCase().startsWith(searchTerm);
-      
-      return cityMatch || (countryMatch && validCountryMatch) || regionMatch;
-    });
+    // Apply region filter
+    if (selectedRegion) {
+      result = result.filter(icon => icon.region === selectedRegion);
+    }
 
-    // Remove duplicates based on _id (this should not be necessary but just in case)
-    const uniqueFiltered = filtered.filter((icon, index, self) => 
+    // Apply search query
+    if (lastSearchQuery.trim()) {
+      const searchTerm = lastSearchQuery.toLowerCase();
+      result = result.filter(icon => {
+        const cityMatch = icon.city.toLowerCase().includes(searchTerm);
+        const countryMatch = icon.country.toLowerCase().includes(searchTerm);
+        const regionMatch = icon.region.toLowerCase().includes(searchTerm);
+        
+        const validCountryMatch = searchTerm.length >= 3 || 
+                                 ['usa', 'uk', 'uae'].includes(searchTerm) ||
+                                 icon.country.toLowerCase().startsWith(searchTerm);
+        
+        return cityMatch || (countryMatch && validCountryMatch) || regionMatch;
+      });
+    }
+
+    // Remove duplicates and sort
+    const uniqueFiltered = result.filter((icon, index, self) => 
       index === self.findIndex(i => i._id === icon._id)
     );
 
-    const sortedFiltered = uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
-    
-    // Ensure we're setting the state with the correct array
-    setFilteredIcons(sortedFiltered);
-  }, [icons, lastSearchQuery, countryFilter]);
+    return uniqueFiltered.sort((a, b) => a.city.localeCompare(b.city));
+  }, [icons, countryFilter, selectedRegion, lastSearchQuery]);
+
+  const handleSearch = useCallback((query: string) => {
+    setLastSearchQuery(query.trim());
+  }, []);
+
+  const handleRegionFilter = useCallback((region: string | null) => {
+    setSelectedRegion(region);
+  }, []);
 
   return {
     filteredIcons,
     handleSearch,
+    handleRegionFilter,
+    selectedRegion,
+    regions,
     lastSearchQuery
   };
 } 

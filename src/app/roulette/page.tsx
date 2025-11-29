@@ -2,7 +2,7 @@ import RoulettePage from '@/components/RoulettePage';
 import { Icon } from '@/types';
 import fs from 'fs';
 import path from 'path';
-import iconData from '@/data/icons.json';
+import iconData from '@/data';
 import { Metadata } from 'next';
 
 // Server-side function to load SVG content

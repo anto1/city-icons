@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Download, Copy, Share2, ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl, slugify } from '@/lib/utils';
+import { getIconUrl, slugify, formatSvg } from '@/lib/utils';
 import { IconFooter } from '@/components/IconFooter';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -203,10 +203,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
             className="w-14 h-14 text-foreground hover:text-orange-600 transition-colors"
             title={`${randomIcon.city}, ${randomIcon.country}`}
             dangerouslySetInnerHTML={{
-              __html: randomIcon.svgContent
-                .replace(/width="[^"]*"/, 'width="56"')
-                .replace(/height="[^"]*"/, 'height="56"')
-                .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
+              __html: formatSvg(randomIcon.svgContent, 56, false)
             }}
           />
         ))}
@@ -309,11 +306,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                   <div className="flex flex-col items-center justify-center flex-1">
                     <div className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4">
                       <div dangerouslySetInnerHTML={{ 
-                        __html: relatedIcon.svgContent
-                          .replace(/width="[^"]*"/, 'width="56"')
-                          .replace(/height="[^"]*"/, 'height="56"')
-                          .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
-                          .replace(/fill="[^"]*"/g, 'fill="currentColor"')
+                        __html: formatSvg(relatedIcon.svgContent)
                       }} />
                     </div>
                     <div className="text-center w-full">
@@ -342,11 +335,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                   <div className="flex flex-col items-center justify-center flex-1">
                     <div className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4">
                       <div dangerouslySetInnerHTML={{ 
-                        __html: randomIcon.svgContent
-                          .replace(/width="[^"]*"/, 'width="56"')
-                          .replace(/height="[^"]*"/, 'height="56"')
-                          .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
-                          .replace(/fill="[^"]*"/g, 'fill="currentColor"')
+                        __html: formatSvg(randomIcon.svgContent)
                       }} />
                     </div>
                     <div className="text-center w-full">

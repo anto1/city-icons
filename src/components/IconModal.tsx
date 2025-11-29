@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Download, Copy, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl, slugify } from '@/lib/utils';
+import { getIconUrl, slugify, formatSvg } from '@/lib/utils';
 import Link from 'next/link';
 
 export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
@@ -106,10 +106,7 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
               role="img"
               aria-label={`${icon?.city} icon representing ${icon?.name}`}
               dangerouslySetInnerHTML={{ 
-                __html: icon?.svgContent
-                  ?.replace(/width="[^"]*"/, 'width="96"')
-                  ?.replace(/height="[^"]*"/, 'height="96"')
-                  ?.replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"') || '' 
+                __html: icon?.svgContent ? formatSvg(icon.svgContent, 96, false) : ''
               }}
             />
           </div>

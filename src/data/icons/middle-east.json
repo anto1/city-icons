@@ -1,0 +1,366 @@
+[
+  {
+    "_id": "51",
+    "name": "Samarra Spiral Minaret",
+    "city": "Samarra",
+    "country": "Iraq",
+    "category": "Landmarks",
+    "tags": [
+      "minaret",
+      "spiral",
+      "historic"
+    ],
+    "svgFilename": "iq-samarra.svg",
+    "description": "Samarra is a historic city in Iraq, known for its iconic spiral minaret - a UNESCO World Heritage site. The city has a rich cultural heritage as an important center of Islamic architecture and features the famous Great Mosque of Samarra with its distinctive spiral minaret.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "52",
+    "name": "Baku Flame Towers",
+    "city": "Baku",
+    "country": "Azerbaijan",
+    "category": "Buildings",
+    "tags": [
+      "flame",
+      "towers",
+      "modern"
+    ],
+    "svgFilename": "az-baku.svg",
+    "description": "Baku is the capital and largest city of Azerbaijan, known for its iconic Flame Towers - three skyscrapers that resemble flames. The city combines historic architecture with modern development, featuring the UNESCO-listed Old City and the futuristic Flame Towers that light up the skyline.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "24",
+    "name": "Batumi Seaside",
+    "city": "Batumi",
+    "country": "Georgia",
+    "category": "Culture",
+    "tags": [
+      "seaside",
+      "modern",
+      "architecture"
+    ],
+    "svgFilename": "ge-batumi.svg",
+    "description": "Batumi is a coastal city in Georgia, known for its beautiful Black Sea beaches, modern architecture, and the iconic Alphabet Tower. The city combines traditional Georgian culture with contemporary development.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "31",
+    "name": "Yerevan Republic Square",
+    "city": "Yerevan",
+    "country": "Armenia",
+    "category": "Landmarks",
+    "tags": [
+      "square",
+      "historic",
+      "government"
+    ],
+    "svgFilename": "am-yerevan.svg",
+    "description": "Yerevan is the capital and largest city of Armenia, known for its beautiful Republic Square, the Cascade complex, and the historic Matenadaran library. The city combines ancient Armenian heritage with modern urban development and serves as the cultural heart of Armenia.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "84",
+    "name": "Jerusalem Dome",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "category": "Landmarks",
+    "tags": [
+      "dome",
+      "religious",
+      "historic"
+    ],
+    "svgFilename": "il-jerusalem.svg",
+    "description": "Jerusalem is the capital of Israel and a city of immense religious and historical significance, known for its iconic Dome of the Rock and the Old City. The city combines ancient religious sites with modern development, featuring the Western Wall, Church of the Holy Sepulchre, and the vibrant Mahane Yehuda market.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "14",
+    "name": "Tel Aviv Modern City",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "category": "Buildings",
+    "tags": [
+      "modern",
+      "architecture",
+      "urban"
+    ],
+    "svgFilename": "il-tel-aviv.svg",
+    "description": "Tel Aviv is known for its stunning modern architecture, particularly the White City with its Bauhaus buildings. The city combines Mediterranean charm with cutting-edge design, making it a hub for innovation and culture.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "10",
+    "name": "Tbilisi Old Town",
+    "city": "Tbilisi",
+    "country": "Georgia",
+    "category": "Culture",
+    "tags": [
+      "historic",
+      "architecture",
+      "traditional"
+    ],
+    "svgFilename": "ge-tbilisi.svg",
+    "description": "Tbilisi Old Town is the historic heart of Georgia's capital, featuring narrow cobblestone streets, traditional Georgian architecture, and the iconic Narikala Fortress. This UNESCO World Heritage site showcases the city's rich cultural heritage and ancient history.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "73",
+    "name": "Istanbul Bosphorus Bridge",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "category": "Landmarks",
+    "tags": [
+      "bridge",
+      "bosphorus",
+      "iconic"
+    ],
+    "svgFilename": "tr-istanbul.svg",
+    "description": "Istanbul is the largest city in Turkey, spanning Europe and Asia across the Bosphorus Strait. Known for its iconic Bosphorus Bridge, historic Hagia Sophia, and rich cultural heritage. The city combines ancient Byzantine and Ottoman history with modern Turkish culture, featuring the Blue Mosque, Grand Bazaar, and vibrant street life.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "93",
+    "name": "Tehran Azadi Tower",
+    "city": "Tehran",
+    "country": "Iran",
+    "category": "Landmarks",
+    "tags": [
+      "tower",
+      "modern",
+      "iconic"
+    ],
+    "svgFilename": "ir-tehran.svg",
+    "description": "Tehran is the capital and largest city of Iran, known for its iconic Azadi Tower - a symbol of the city and Iranian architecture. The city combines ancient Persian heritage with modern urban development, featuring the historic Golestan Palace and the vibrant Grand Bazaar.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "97",
+    "name": "Amman Roman Columns",
+    "city": "Amman",
+    "country": "Jordan",
+    "category": "Landmarks",
+    "tags": [
+      "columns",
+      "roman",
+      "historic"
+    ],
+    "svgFilename": "jo-amman.svg",
+    "description": "Amman is the capital and largest city of Jordan, known for its ancient Roman ruins including the impressive columns of the Temple of Hercules on the Citadel. The city combines rich historical heritage with modern development, featuring the ancient Roman Theater and the historic Amman Citadel.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "99",
+    "name": "Beirut Mosque",
+    "city": "Beirut",
+    "country": "Lebanon",
+    "category": "Landmarks",
+    "tags": [
+      "mosque",
+      "religious",
+      "historic"
+    ],
+    "svgFilename": "lb-beirut.svg",
+    "description": "Beirut is the capital and largest city of Lebanon, known for its historic mosques, Mediterranean coastline, and rich cultural heritage. The city combines ancient Phoenician history with modern Arab culture, featuring beautiful religious architecture and vibrant street life.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "104",
+    "name": "Doha Dhow Boat",
+    "city": "Doha",
+    "country": "Qatar",
+    "category": "Culture",
+    "tags": [
+      "boat",
+      "dhow",
+      "traditional"
+    ],
+    "svgFilename": "qa-doha.svg",
+    "description": "Doha is the capital and largest city of Qatar, known for its traditional dhow boats, modern skyline, and rich cultural heritage. The city combines traditional pearl diving and fishing traditions with contemporary development, featuring the iconic Museum of Islamic Art and vibrant souqs.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "120",
+    "name": "Mashhad Saffron Flower",
+    "city": "Mashhad",
+    "country": "Iran",
+    "category": "Culture",
+    "tags": [
+      "saffron",
+      "flower",
+      "persian",
+      "religious",
+      "cultural"
+    ],
+    "svgFilename": "ir-mashhad.svg",
+    "description": "Mashhad is the second-largest city in Iran and the holiest city in the country, known for its beautiful saffron flowers and the magnificent Imam Reza Shrine. The city combines deep religious significance with rich Persian culture, featuring the stunning golden-domed shrine, beautiful gardens, traditional Persian architecture, and the famous saffron fields that surround the region.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "124",
+    "name": "Muscat Khanjar Dagger",
+    "city": "Muscat",
+    "country": "Oman",
+    "category": "Culture",
+    "tags": [
+      "khanjar",
+      "dagger",
+      "omani",
+      "traditional",
+      "cultural"
+    ],
+    "svgFilename": "om-muscat.svg",
+    "description": "Muscat is the capital and largest city of Oman, known for its traditional Khanjar dagger - a curved ceremonial dagger that is a symbol of Omani heritage and culture. The city combines ancient Arabian architecture with modern development, featuring the stunning Sultan Qaboos Grand Mosque, the historic Mutrah Souq, the beautiful Al Jalali and Al Mirani forts, and the traditional Khanjar that represents the country's rich cultural traditions.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "133",
+    "name": "Ankara Anıtkabir Mausoleum",
+    "city": "Ankara",
+    "country": "Turkey",
+    "category": "Landmarks",
+    "tags": [
+      "anitkabir",
+      "mausoleum",
+      "ataturk",
+      "turkish",
+      "memorial",
+      "historic"
+    ],
+    "svgFilename": "tr-ankara.svg",
+    "description": "Ankara is the capital of Turkey, known for its iconic Anıtkabir - the magnificent mausoleum of Mustafa Kemal Atatürk, the founder of modern Turkey. The city combines ancient Anatolian heritage with modern Turkish identity, featuring the impressive Anıtkabir complex, the historic Ankara Castle, the beautiful Kızılay Square, and the grand mausoleum that serves as a symbol of Turkish nationalism and Atatürk's legacy.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "147",
+    "name": "Riyadh Kingdom Tower",
+    "city": "Riyadh",
+    "country": "Saudi Arabia",
+    "category": "Landmarks",
+    "tags": [
+      "kingdom-tower",
+      "riyadh",
+      "saudi",
+      "skyscraper",
+      "modern"
+    ],
+    "svgFilename": "sa-riyadh.svg",
+    "description": "Riyadh is the capital and largest city of Saudi Arabia, known for its iconic Kingdom Tower - one of the tallest skyscrapers in the country that symbolizes the city's modern development and economic power. The city combines traditional Arabian culture with contemporary urban planning, featuring the impressive Kingdom Tower, the beautiful King Fahd Grand Mosque, the historic Masmak Fortress, and the tower that represents Riyadh's transformation into a modern metropolis and the heart of Saudi Arabia's economic and political life.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "148",
+    "name": "Abu Dhabi Falcon",
+    "city": "Abu Dhabi",
+    "country": "UAE",
+    "category": "Culture",
+    "tags": [
+      "falcon",
+      "abu-dhabi",
+      "emirati",
+      "traditional",
+      "cultural"
+    ],
+    "svgFilename": "ae-abu-dhabi.svg",
+    "description": "Abu Dhabi is the capital of the United Arab Emirates, known for its iconic falcon - a symbol of traditional Emirati culture and the national bird that represents the country's heritage and hunting traditions. The city combines modern luxury with Arabian culture, featuring the impressive Sheikh Zayed Grand Mosque, the beautiful Corniche waterfront, the historic Qasr Al Hosn fortress, and the falcon that symbolizes Abu Dhabi's deep connection to traditional Emirati culture and the desert heritage of the UAE.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "149",
+    "name": "Manama Bahrain Trading Center",
+    "city": "Manama",
+    "country": "Bahrain",
+    "category": "Landmarks",
+    "tags": [
+      "bahrain-trading-center",
+      "manama",
+      "bahraini",
+      "financial",
+      "modern"
+    ],
+    "svgFilename": "bh-manama.svg",
+    "description": "Manama is the capital and largest city of Bahrain, known for its iconic Bahrain Trading Center - a distinctive twin-tower complex that symbolizes the city's role as a major financial hub in the Persian Gulf. The city combines traditional Bahraini culture with modern financial services, featuring the impressive Bahrain Trading Center towers, the beautiful Al Fateh Grand Mosque, the historic Bahrain Fort, and the trading center that represents Manama's position as a key financial and commercial center in the Middle East.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "150",
+    "name": "Kuwait Towers",
+    "city": "Kuwait City",
+    "country": "Kuwait",
+    "category": "Landmarks",
+    "tags": [
+      "kuwait-towers",
+      "kuwait-city",
+      "kuwaiti",
+      "water-towers",
+      "iconic"
+    ],
+    "svgFilename": "kw-kuwait.svg",
+    "description": "Kuwait City is the capital of Kuwait, known for its iconic Kuwait Towers - distinctive water towers with distinctive blue-green spheres that have become the symbol of the city and the country. The city combines modern architecture with Arabian Gulf culture, featuring the impressive Kuwait Towers, the beautiful Grand Mosque, the historic Kuwait National Museum, and the towers that represent Kuwait City's modern development and the country's prosperity and engineering achievements.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "191",
+    "name": "Jameh Mosque",
+    "city": "Isfahan",
+    "country": "Iran",
+    "category": "Religious",
+    "tags": [
+      "mosque",
+      "islamic",
+      "architecture",
+      "unesco"
+    ],
+    "svgFilename": "ir-ishafan.svg",
+    "description": "Isfahan is a historic city in central Iran, renowned for its stunning Islamic architecture and the magnificent Jameh Mosque. This UNESCO World Heritage site represents the evolution of mosque architecture over twelve centuries, featuring beautiful tile work, intricate geometric patterns, and impressive iwans that showcase Persian Islamic art.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "198",
+    "name": "Izmir Clock Tower",
+    "city": "Izmir",
+    "country": "Turkey",
+    "category": "Landmarks",
+    "tags": [
+      "clock-tower",
+      "historic",
+      "ottoman"
+    ],
+    "svgFilename": "tk-izmir.svg",
+    "description": "Izmir is Turkey's third-largest city and a major port on the Aegean Sea, famous for its historic clock tower in Konak Square. This Ottoman-era landmark serves as the symbol of the city, representing Izmir's rich history as a cultural crossroads between Europe and Asia.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "199",
+    "name": "Dubai Burj Khalifa",
+    "city": "Dubai",
+    "country": "UAE",
+    "category": "Buildings",
+    "tags": [
+      "burj-khalifa",
+      "skyscraper",
+      "modern",
+      "tallest"
+    ],
+    "svgFilename": "ue-dubai.svg",
+    "description": "Dubai is a global city and business hub in the United Arab Emirates, famous for the Burj Khalifa - the world's tallest building. This architectural marvel represents Dubai's rapid transformation into a modern metropolis, combining luxury, innovation, and ambitious urban development.",
+    "region": "Middle East"
+  },
+  {
+    "_id": "213",
+    "name": "Haifa Baha'i Gardens Terrace",
+    "city": "Haifa",
+    "country": "Israel",
+    "category": "Landmarks",
+    "tags": [
+      "bahai",
+      "gardens",
+      "terrace",
+      "landmark",
+      "religious"
+    ],
+    "svgFilename": "il-haifa.svg",
+    "description": "Haifa is represented by the terraces of the Baha'i Gardens, whose tiered levels cascade down Mount Carmel and welcome pilgrims from around the world. The icon celebrates the peaceful tiers, planted with palms and cypresses, symbolizing Haifa's role as a spiritual crossroads and a city that nurtures both nature and devotion.",
+    "region": "Middle East"
+  }
+]

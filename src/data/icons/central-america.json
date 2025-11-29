@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "69",
+    "name": "Havana Capitol",
+    "city": "Havana",
+    "country": "Cuba",
+    "category": "Landmarks",
+    "tags": [
+      "capitol",
+      "neoclassical",
+      "historic"
+    ],
+    "svgFilename": "cu-havana.svg",
+    "description": "Havana is the capital and largest city of Cuba, known for its iconic Capitol building, Spanish colonial architecture, and rich cultural heritage. The city combines traditional Cuban culture with historic charm, featuring the historic Old Havana, Malecón waterfront, and vibrant music scene.",
+    "region": "Central America"
+  },
+  {
+    "_id": "152",
+    "name": "Tegucigalpa Cathedral Basilica",
+    "city": "Tegucigalpa",
+    "country": "Honduras",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "basilica",
+      "religious",
+      "architectural",
+      "honduran"
+    ],
+    "svgFilename": "hn-tegucigalpa.svg",
+    "description": "Tegucigalpa is the capital city of Honduras, known for its beautiful Cathedral Basilica - a magnificent colonial-era cathedral that serves as the spiritual heart of the city. The cathedral represents the rich religious heritage and colonial architecture of Honduras, standing as an iconic landmark in the historic center of Tegucigalpa.",
+    "region": "Central America"
+  }
+]

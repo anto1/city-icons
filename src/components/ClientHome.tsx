@@ -5,7 +5,7 @@ import IconGrid from '@/components/IconGrid';
 import { IconHeader } from '@/components/IconHeader';
 import { IconFooter } from '@/components/IconFooter';
 import { RandomIconHeader } from '@/components/RandomIconHeader';
-import { SearchResultsCount } from '@/components/SearchResultsCount';
+import { RegionFilter } from '@/components/RegionFilter';
 import { useIconSearch } from '@/hooks/useIconSearch';
 import { Icon } from '@/types';
 import Link from 'next/link';
@@ -17,7 +17,13 @@ interface ClientHomeProps {
 }
 
 export default function ClientHome({ initialIcons, countryFilter, hideSearch }: ClientHomeProps) {
-  const { filteredIcons, handleSearch } = useIconSearch({ 
+  const { 
+    filteredIcons, 
+    handleSearch, 
+    handleRegionFilter, 
+    selectedRegion, 
+    regions 
+  } = useIconSearch({ 
     icons: initialIcons, 
     countryFilter 
   });
@@ -49,7 +55,14 @@ export default function ClientHome({ initialIcons, countryFilter, hideSearch }: 
         {!hideSearch && (
           <>
             <SearchBar onSearch={handleSearch} allIcons={initialIcons} />
-            <SearchResultsCount filteredIcons={filteredIcons} totalIcons={initialIcons.length} />
+            
+            {/* Region filters */}
+            <RegionFilter
+              regions={regions}
+              selectedRegion={selectedRegion}
+              onRegionSelect={handleRegionFilter}
+              icons={initialIcons}
+            />
           </>
         )}
         

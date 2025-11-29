@@ -30,3 +30,17 @@ export function findIconBySlugs(countrySlug: string, citySlug: string, icons: Ic
 export function getIconUrl(icon: Icon): string {
   return `/${slugify(icon.country)}/${slugify(icon.city)}`;
 }
+
+// Format SVG for consistent display
+export function formatSvg(svg: string, size: number = 56, useCurrentColor: boolean = true): string {
+  let formatted = svg
+    .replace(/width="[^"]*"/, `width="${size}"`)
+    .replace(/height="[^"]*"/, `height="${size}"`)
+    .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"');
+  
+  if (useCurrentColor) {
+    formatted = formatted.replace(/fill="[^"]*"/g, 'fill="currentColor"');
+  }
+  
+  return formatted;
+}

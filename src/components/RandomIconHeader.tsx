@@ -1,6 +1,6 @@
 import { Icon } from '@/types';
 import { useRouter } from 'next/navigation';
-import { getIconUrl } from '@/lib/utils';
+import { getIconUrl, formatSvg } from '@/lib/utils';
 
 interface RandomIconHeaderProps {
   icons: Icon[];
@@ -26,10 +26,7 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
           title={`${icon.city}, ${icon.country}`}
           onClick={() => handleIconClick(icon)}
           dangerouslySetInnerHTML={{
-            __html: icon.svgContent
-              .replace(/width="[^"]*"/, 'width="56"')
-              .replace(/height="[^"]*"/, 'height="56"')
-              .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
+            __html: formatSvg(icon.svgContent, 56, false)
           }}
         />
       ))}

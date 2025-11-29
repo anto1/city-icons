@@ -3,7 +3,7 @@ import CityPage from '@/components/CityPage';
 import { Icon } from '@/types';
 import fs from 'fs';
 import path from 'path';
-import iconData from '@/data/icons.json';
+import iconData from '@/data';
 import { findIconBySlugs } from '@/lib/utils';
 
 // Server-side function to load SVG content

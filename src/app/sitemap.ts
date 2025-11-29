@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import iconData from '@/data/icons.json'
+import iconData from '@/data'
 import { slugify } from '@/lib/utils'
 
 export default function sitemap(): MetadataRoute.Sitemap {

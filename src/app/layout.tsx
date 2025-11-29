@@ -68,6 +68,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-instrument-sans">
       <head>
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://partdirector.ch" />
+        <link rel="dns-prefetch" href="https://cdn.usefathom.com" />
+        
+        {/* Preconnect to analytics (used by Fathom) */}
+        <link rel="preconnect" href="https://cdn.usefathom.com" crossOrigin="anonymous" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

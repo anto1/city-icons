@@ -1,0 +1,143 @@
+[
+  {
+    "_id": "38",
+    "name": "Cairo Pyramids",
+    "city": "Cairo",
+    "country": "Egypt",
+    "category": "Landmarks",
+    "tags": [
+      "pyramids",
+      "ancient",
+      "historic"
+    ],
+    "svgFilename": "eg-cairo.svg",
+    "description": "Cairo is the capital and largest city of Egypt, known for its ancient pyramids, the Great Sphinx, and rich Islamic heritage. The city combines ancient wonders with modern urban development, featuring the iconic Giza pyramids and historic Islamic architecture.",
+    "region": "Africa"
+  },
+  {
+    "_id": "83",
+    "name": "Antananarivo Palace",
+    "city": "Antananarivo",
+    "country": "Madagascar",
+    "category": "Landmarks",
+    "tags": [
+      "palace",
+      "royal",
+      "historic"
+    ],
+    "svgFilename": "mg-antananarivo.svg",
+    "description": "Antananarivo is the capital and largest city of Madagascar, known for its historic royal palace complex and rich cultural heritage. The city combines traditional Malagasy culture with colonial architecture, featuring the iconic Rova palace complex and the vibrant Analakely market district.",
+    "region": "Africa"
+  },
+  {
+    "_id": "85",
+    "name": "Casablanca Hassan II Minaret",
+    "city": "Casablanca",
+    "country": "Morocco",
+    "category": "Landmarks",
+    "tags": [
+      "minaret",
+      "mosque",
+      "modern"
+    ],
+    "svgFilename": "ma-casablanca.svg",
+    "description": "Casablanca is the largest city in Morocco, known for its iconic Hassan II Mosque with its distinctive minaret. The city combines traditional Moroccan culture with modern development, featuring the historic medina, the modern Corniche waterfront, and the impressive Hassan II Mosque complex.",
+    "region": "Africa"
+  },
+  {
+    "_id": "71",
+    "name": "Lagos Bridge",
+    "city": "Lagos",
+    "country": "Nigeria",
+    "category": "Landmarks",
+    "tags": [
+      "bridge",
+      "modern",
+      "infrastructure"
+    ],
+    "svgFilename": "ng-lagos.svg",
+    "description": "Lagos is the largest city and economic hub of Nigeria, known for its modern infrastructure including iconic bridges, bustling port, and vibrant culture. The city combines traditional Nigerian culture with contemporary development, featuring the Third Mainland Bridge, Victoria Island, and dynamic street life.",
+    "region": "Africa"
+  },
+  {
+    "_id": "100",
+    "name": "Marrakesh Koutoubia Mosque",
+    "city": "Marrakesh",
+    "country": "Morocco",
+    "category": "Landmarks",
+    "tags": [
+      "mosque",
+      "minaret",
+      "historic"
+    ],
+    "svgFilename": "ma-marrakesh.svg",
+    "description": "Marrakesh is a historic city in Morocco, known for its iconic Koutoubia Mosque and vibrant medina. The city combines traditional Moroccan culture with historic architecture, featuring the famous Jemaa el-Fnaa square, historic palaces, and the Atlas Mountains backdrop.",
+    "region": "Africa"
+  },
+  {
+    "_id": "105",
+    "name": "Cape Town Table Mountain",
+    "city": "Cape Town",
+    "country": "South Africa",
+    "category": "Landmarks",
+    "tags": [
+      "mountain",
+      "table mountain",
+      "natural"
+    ],
+    "svgFilename": "za-cape-town.svg",
+    "description": "Cape Town is the legislative capital of South Africa, known for its iconic Table Mountain and stunning natural beauty. The city combines African culture with modern development, featuring the Cape of Good Hope, Robben Island, and vibrant multicultural scene.",
+    "region": "Africa"
+  },
+  {
+    "_id": "115",
+    "name": "Benghazi Lighthouse",
+    "city": "Benghazi",
+    "country": "Libya",
+    "category": "Landmarks",
+    "tags": [
+      "lighthouse",
+      "fanar",
+      "coastal",
+      "historic"
+    ],
+    "svgFilename": "ly-benghazi.svg",
+    "description": "Benghazi is the second-largest city in Libya, known for its iconic Benghazi Lighthouse (Fanar Benghazi) - a historic coastal landmark. The city combines Mediterranean charm with rich cultural heritage, featuring the beautiful Mediterranean coastline, historic architecture, the famous Benghazi University, and vibrant local markets.",
+    "region": "Africa"
+  },
+  {
+    "_id": "116",
+    "name": "Fez Moroccan Hat",
+    "city": "Fez",
+    "country": "Morocco",
+    "category": "Culture",
+    "tags": [
+      "fez",
+      "hat",
+      "moroccan",
+      "traditional",
+      "cultural"
+    ],
+    "svgFilename": "ma-fez.svg",
+    "description": "Fez is one of Morocco's oldest and most important cities, known for its traditional Moroccan fez hat and rich cultural heritage. The city combines medieval architecture with vibrant culture, featuring the famous Fes el-Bali medina (a UNESCO World Heritage site), the beautiful Al-Qarawiyyin University (the world's oldest university), and the iconic tanneries.",
+    "region": "Africa"
+  },
+  {
+    "_id": "172",
+    "name": "Lalibela Cross Church",
+    "city": "Lalibela",
+    "country": "Ethiopia",
+    "category": "Religion",
+    "tags": [
+      "church",
+      "cross",
+      "orthodox",
+      "ethiopian",
+      "pilgrimage",
+      "heritage"
+    ],
+    "svgFilename": "et-lalibela.svg",
+    "description": "Lalibela is home to the famous rock-hewn churches, including the iconic Church of Saint George carved in the shape of a cross. These UNESCO World Heritage churches represent one of Ethiopia's most sacred pilgrimage sites and showcase the remarkable architectural achievements of medieval Ethiopian Orthodox Christianity.",
+    "region": "Africa"
+  }
+]

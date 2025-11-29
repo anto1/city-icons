@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, ArrowLeft } from 'lucide-react';
-import iconData from '@/data/icons.json';
+import iconData from '@/data';
 
 export default function NotFound() {
   // Get a random icon
