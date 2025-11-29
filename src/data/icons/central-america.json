@@ -30,5 +30,56 @@
     "svgFilename": "hn-tegucigalpa.svg",
     "description": "Tegucigalpa is the capital city of Honduras, known for its beautiful Cathedral Basilica - a magnificent colonial-era cathedral that serves as the spiritual heart of the city. The cathedral represents the rich religious heritage and colonial architecture of Honduras, standing as an iconic landmark in the historic center of Tegucigalpa.",
     "region": "Central America"
+  },
+  {
+    "_id": "230",
+    "name": "Divino Salvador del Mundo",
+    "city": "San Salvador",
+    "country": "El Salvador",
+    "category": "Landmarks",
+    "tags": [
+      "monument",
+      "religious",
+      "salvador",
+      "iconic",
+      "national-symbol"
+    ],
+    "svgFilename": "sv-san-salvador.svg",
+    "description": "San Salvador is the capital and largest city of El Salvador, home to the iconic Divino Salvador del Mundo monument - a towering statue of Jesus Christ standing atop the world. This beloved monument, depicting Christ as the Divine Savior of the World, is the national symbol of El Salvador and represents the deep Catholic faith and national identity of the Salvadoran people.",
+    "region": "Central America"
+  },
+  {
+    "_id": "231",
+    "name": "Cahal Pech Maya Ruins",
+    "city": "San Ignacio",
+    "country": "Belize",
+    "category": "Landmarks",
+    "tags": [
+      "maya",
+      "ruins",
+      "archaeological",
+      "ancient",
+      "historic"
+    ],
+    "svgFilename": "bz-san-ignacio.svg",
+    "description": "San Ignacio is a vibrant town in western Belize, gateway to the ancient Cahal Pech Maya ruins. Perched on a hilltop overlooking the town, Cahal Pech was once a royal acropolis-palace of an elite Maya family during the Classic Period. The archaeological site features plazas, temples, and residential structures that offer a glimpse into the sophisticated Maya civilization that flourished in this region over a thousand years ago.",
+    "region": "Central America"
+  },
+  {
+    "_id": "232",
+    "name": "Santa Catalina Arch",
+    "city": "Antigua",
+    "country": "Guatemala",
+    "category": "Landmarks",
+    "tags": [
+      "arch",
+      "colonial",
+      "historic",
+      "spanish",
+      "iconic"
+    ],
+    "svgFilename": "gt-antigua.svg",
+    "description": "Antigua Guatemala is a UNESCO World Heritage site and former capital of Guatemala, famous for its stunning colonial architecture including the iconic Santa Catalina Arch. This distinctive yellow arch, built in the 17th century, once allowed cloistered nuns to pass between convent buildings without entering the street. Today, it stands as one of the most photographed landmarks in Central America, perfectly framing views of the Agua Volcano beyond.",
+    "region": "Central America"
   }
 ]
