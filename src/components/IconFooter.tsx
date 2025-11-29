@@ -11,30 +11,42 @@ interface IconFooterProps {
 export function IconFooter({ icons }: IconFooterProps) {
   const router = useRouter();
 
+  // Get unique countries sorted alphabetically
+  const countries = [...new Set(icons.map(icon => icon.country))].sort();
+
+  // Get count of icons per country
+  const getCountryCount = (country: string) => {
+    return icons.filter(icon => icon.country === country).length;
+  };
+
   return (
     <footer className="py-6 mt-16">
       <div className="container mx-auto px-4 text-center">
-        {/* Countries List */}
+        {/* Countries Chips */}
         <div className="mb-6">
-          <div className="relative inline-block text-left">
-            <select 
-              className="text-sm text-muted-foreground bg-transparent border border-muted-foreground/20 rounded px-3 py-1 focus:outline-none focus:border-orange-600 transition-colors cursor-pointer"
-              onChange={(e) => {
-                if (e.target.value) {
-                  router.push(`/${e.target.value}`);
-                }
-              }}
-              value=""
-            >
-              <option value="">Country: choose</option>
-              {[...new Set(icons.map(icon => icon.country))]
-                .sort()
-                .map((country) => (
-                  <option key={country} value={slugify(country)}>
-                    {country}
-                  </option>
-                ))}
-            </select>
+          <h3 className="text-sm font-medium text-muted-foreground mb-3">
+            {countries.length} Countries
+          </h3>
+          <div className="flex flex-wrap justify-center gap-2 max-w-5xl mx-auto">
+            {countries.map((country) => {
+              const count = getCountryCount(country);
+              return (
+                <button
+                  key={country}
+                  onClick={() => {
+                    router.push(`/${slugify(country)}`);
+                    trackEvent(`COUNTRY_${slugify(country).toUpperCase()}_CLICKED`);
+                  }}
+                  className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200
+                    bg-muted/50 text-muted-foreground hover:bg-foreground hover:text-background
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+                  aria-label={`View ${count} icons from ${country}`}
+                >
+                  {country}
+                  <span className="ml-1.5 opacity-60" aria-hidden="true">{count}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
         
