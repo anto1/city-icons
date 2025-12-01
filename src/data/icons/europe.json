@@ -1758,5 +1758,22 @@
     "svgFilename": "nl-de-meije.svg",
     "description": "De Meije is home to a distinctive water tower affectionately known as 'Pietje Potlood' (Little Pete Pencil) or 'Het Zoutvat' (The Salt Shaker) due to its unique shape. This charming water tower has become a beloved local landmark, representing the quirky character of Dutch architecture and the creative names Dutch communities give to their everyday structures, turning functional infrastructure into sources of local pride and identity.",
     "region": "Europe"
+  },
+  {
+    "_id": "240",
+    "name": "Monument to Duc de Richelieu",
+    "city": "Odessa",
+    "country": "Ukraine",
+    "category": "Landmarks",
+    "tags": [
+      "monument",
+      "statue",
+      "historic",
+      "richelieu",
+      "french"
+    ],
+    "svgFilename": "ua-odessa.svg",
+    "description": "Odessa is Ukraine's major seaport on the Black Sea, represented by the Monument to Duc de Richelieu - one of the city's most iconic landmarks. This bronze statue honors Armand Emmanuel du Plessis, Duc de Richelieu, who served as the city's governor from 1803 to 1814 and is considered the founding father of Odessa. Standing at the top of the famous Potemkin Stairs, the monument symbolizes Odessa's cosmopolitan heritage and its golden age as the 'Pearl of the Black Sea.'",
+    "region": "Europe"
   }
 ]
