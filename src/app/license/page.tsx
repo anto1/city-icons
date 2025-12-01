@@ -32,101 +32,62 @@ export default function LicensePage() {
         </div>
 
         {/* Main Content */}
-        <div className="max-w-4xl mx-auto space-y-12">
-          {/* Free Personal Use */}
-          <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">
-              Free Personal Use
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              You&apos;re welcome to use these city icons for personal projects, presentations, and non-commercial purposes with attribution.
-            </p>
-            
-            <div className="mb-6">
-              <h3 className="text-lg font-medium text-foreground mb-2">
-                Required Attribution:
-              </h3>
-              <p className="text-muted-foreground">
-                &quot;City icons by Studio Partdirector&quot; (
-                <a 
-                  href="https://cities.partdirector.ch" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline inline-flex items-center"
-                >
-                  cities.partdirector.ch
-                  <ExternalLink className="w-3 h-3 ml-1" />
-                </a>
-                )
-              </p>
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-muted/30 rounded-lg p-8 md:p-12">
+            <div className="space-y-8">
+              {/* Free Use */}
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">
+                  Free for Personal & Educational Use
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  These icons are free to use for personal projects, educational purposes, presentations, and non-commercial work. Enjoy!
+                </p>
+              </section>
+
+              {/* Commercial Restriction */}
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">
+                  Commercial Use
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  Commercial use is currently restricted while the project grows. If you&apos;d like to use these icons for commercial purposes, feel free to contact me and we can discuss your needs.
+                </p>
+                
+                <div className="bg-background/50 rounded-lg p-6 border border-muted-foreground/20">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    For commercial inquiries, reach out at:
+                  </p>
+                  <a 
+                    href="mailto:icons@partdirector.ch?subject=Commercial Use Inquiry"
+                    className="text-lg font-medium text-foreground hover:text-orange-600 transition-colors inline-flex items-center"
+                    onClick={() => trackEvent('COMMERCIAL_INQUIRY_CLICKED')}
+                  >
+                    icons@partdirector.ch
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </section>
+
+              {/* Attribution */}
+              <section>
+                <h2 className="text-2xl font-semibold text-foreground mb-4">
+                  Attribution
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  While not required, attribution is always appreciated. You can credit: &quot;City icons by Studio Partdirector&quot; with a link to{' '}
+                  <a 
+                    href="https://cities.partdirector.ch" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-orange-600 transition-colors underline"
+                  >
+                    cities.partdirector.ch
+                  </a>
+                </p>
+              </section>
             </div>
-          </section>
-
-          {/* Commercial Use */}
-          <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">
-              Commercial Use
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Planning to use these icons in a commercial project, client work, or product? We&apos;d love to hear about it! Commercial licensing ensures you get:
-            </p>
-            
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Full usage rights without attribution requirements</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Priority support for custom requests</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Peace of mind for your business</span>
-              </li>
-            </ul>
-
-            <div className="mb-6">
-              <h3 className="text-lg font-medium text-foreground mb-2">
-                Contact for Commercial Licensing:
-              </h3>
-              <a 
-                href="mailto:cities@partdirector.ch"
-                className="text-primary hover:underline"
-              >
-                cities@partdirector.ch
-              </a>
-            </div>
-          </section>
-
-          {/* What We Consider Commercial */}
-          <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">
-              What We Consider Commercial:
-            </h2>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Client projects and freelance work</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Products or services you sell</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Marketing materials for businesses</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Applications or websites that generate revenue</span>
-              </li>
-              <li className="flex items-start">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <span className="text-muted-foreground">Resale or redistribution of icons</span>
-              </li>
-            </ul>
-          </section>
+          </div>
         </div>
 
         {/* Footer */}
