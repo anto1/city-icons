@@ -1690,5 +1690,73 @@
     "svgFilename": "es-granada.svg",
     "description": "Granada is represented by the Alhambra, a magnificent palace and fortress complex that stands as one of the finest examples of Islamic architecture in Europe. This UNESCO World Heritage site, with its intricate stucco work, beautiful courtyards, and the famous Court of the Lions, represents the pinnacle of Nasrid art and the last great flowering of Moorish culture in Spain.",
     "region": "Europe"
+  },
+  {
+    "_id": "236",
+    "name": "Woerden Windmill",
+    "city": "Woerden",
+    "country": "Netherlands",
+    "category": "Landmarks",
+    "tags": [
+      "windmill",
+      "dutch",
+      "traditional",
+      "historic",
+      "heritage"
+    ],
+    "svgFilename": "nl-woerden.svg",
+    "description": "Woerden is a historic fortified city in the province of Utrecht, symbolized by the traditional Dutch windmill. Windmills are iconic to the Netherlands, representing centuries of Dutch ingenuity in water management and agricultural innovation. These majestic structures have shaped the Dutch landscape and remain a powerful symbol of Dutch heritage and engineering prowess.",
+    "region": "Europe"
+  },
+  {
+    "_id": "237",
+    "name": "Maastricht Coat of Arms",
+    "city": "Maastricht",
+    "country": "Netherlands",
+    "category": "Culture",
+    "tags": [
+      "coat-of-arms",
+      "angel",
+      "star",
+      "heraldry",
+      "historic"
+    ],
+    "svgFilename": "nl-maastricht.svg",
+    "description": "Maastricht, one of the oldest cities in the Netherlands, is represented by its distinctive coat of arms featuring an angel and a star. This ancient city on the Meuse River boasts over 2,000 years of history, with the coat of arms symbolizing the city's rich religious heritage and its role as a guardian of Dutch culture. Maastricht is famous for the Maastricht Treaty that established the European Union.",
+    "region": "Europe"
+  },
+  {
+    "_id": "238",
+    "name": "Rotterdam Markthal",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "category": "Architecture",
+    "tags": [
+      "markthal",
+      "market",
+      "modern",
+      "architecture",
+      "innovative"
+    ],
+    "svgFilename": "nl-rotterdam.svg",
+    "description": "Rotterdam is represented by the Markthal, a stunning horseshoe-shaped market hall and residential complex that showcases the city's bold modern architecture. Opened in 2014, this architectural marvel features a massive colorful artwork on its ceiling called the 'Horn of Plenty' and symbolizes Rotterdam's innovative spirit and transformation from war-torn city to a hub of contemporary design and urban renewal.",
+    "region": "Europe"
+  },
+  {
+    "_id": "239",
+    "name": "Pietje Potlood Water Tower",
+    "city": "De Meije",
+    "country": "Netherlands",
+    "category": "Landmarks",
+    "tags": [
+      "water-tower",
+      "pietje-potlood",
+      "zoutvat",
+      "quirky",
+      "landmark"
+    ],
+    "svgFilename": "nl-de-meije.svg",
+    "description": "De Meije is home to a distinctive water tower affectionately known as 'Pietje Potlood' (Little Pete Pencil) or 'Het Zoutvat' (The Salt Shaker) due to its unique shape. This charming water tower has become a beloved local landmark, representing the quirky character of Dutch architecture and the creative names Dutch communities give to their everyday structures, turning functional infrastructure into sources of local pride and identity.",
+    "region": "Europe"
   }
 ]
