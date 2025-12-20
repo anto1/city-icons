@@ -1,113 +1,124 @@
 # City Icons
 
-A growing collection of minimalist black-and-white city icons — drawn in a consistent line-art style and based on iconic landmarks, symbols, or shapes unique to each city.
+A collection of minimalist line-art SVG icons representing cities around the world. Each icon depicts an iconic landmark, symbol, or shape unique to a city.
 
-Originally started as a quick design task for a community meetup site, the project quickly turned into something bigger. One icon led to another… and now it's 100 (and counting).
+**Live site:** [cities.partdirector.ch](https://cities.partdirector.ch)
 
-Each icon is:
-- Hand-drawn in a square, stroke-based style
-- Saved in clean, scalable SVG format
-- Free for personal and non-commercial use
-- Searchable and browsable at: [cities.partdirector.ch](https://cities.partdirector.ch)
+## What You Can Do
 
-### Examples
-Agra → Taj Mahal  
-Copenhagen → The Little Mermaid  
-Istanbul → Bosphorus Bridge  
-Santiago → Chilean Hat  
-Forte dei Marmi → Road Bicycle
+- **Browse** 200+ city icons organized by country and region
+- **Search** by city name, country, or region
+- **Download** icons as clean, scalable SVG files
+- **Copy** SVG code directly to clipboard
+- **Share** direct links to individual city pages
+- **Discover** random destinations with the City Roulette
 
 ---
 
-## ✨ Browse the Collection  
-Website: [cities.partdirector.ch](https://cities.partdirector.ch)
+## Architecture
 
-## 📁 Structure
-- `/icons` – All SVG files, named by city
-- `/preview` – Thumbnails used on the site
-- `/data.json` – City metadata used for filtering
+### Stack
 
-## 📋 Icon Naming Convention
+- **Next.js 15** with App Router
+- **Static generation (SSG)** — all pages pre-rendered at build time
+- **TypeScript** throughout
+- **Tailwind CSS** for styling
 
-All icons follow a consistent naming pattern: `countryprefix-cityname.svg`
+### Key Design Decisions
 
-**Format:** `{country-code}-{city-name}.svg`
+| Aspect | Approach |
+|--------|----------|
+| **Icons** | Static SVG files in `/public/icons/`, served with 1-year cache headers. No inline SVG embedding in HTML. |
+| **Icon data** | JSON files in `/src/data/icons/` organized by region. No SVG content in page payloads. |
+| **Routing** | Dynamic routes: `/[country]` for country pages, `/[country]/[city]` for individual icons. |
+| **SEO** | Server-rendered metadata and JSON-LD structured data. Crawlable internal links throughout. |
+| **Performance** | Small HTML, lazy-loaded images, explicit dimensions to prevent layout shift. |
 
-**Countries in the Collection (64 countries):**
-Argentina, Armenia, Australia, Austria, Azerbaijan, Bangladesh, Belarus, Belgium, Bosnia and Herzegovina, Brazil, Canada, Chile, China, Cuba, Cyprus, Czech Republic, Denmark, Egypt, Finland, France, Georgia, Germany, Greece, Iceland, India, Indonesia, Iran, Iraq, Israel, Italy, Japan, Jordan, Kazakhstan, Latvia, Lebanon, Madagascar, Mexico, Moldova, Morocco, Nepal, Netherlands, New Zealand, Nigeria, North Macedonia, Norway, Pakistan, Peru, Philippines, Poland, Portugal, Qatar, Russia, Serbia, Slovenia, South Africa, South Korea, Spain, Sweden, Turkey, UK, USA, Ukraine, Uzbekistan, Vietnam
+---
 
-**Examples:**
-- `us-new-york.svg` - New York, USA
-- `de-berlin.svg` - Berlin, Germany
-- `fr-paris.svg` - Paris, France
-- `gb-london.svg` - London, UK
-- `jp-kyoto.svg` - Kyoto, Japan
+## SEO, Accessibility & Performance
 
-**Note:** All city names are lowercase and use hyphens instead of spaces. Country codes follow ISO 3166-1 alpha-2 standard.
+### Semantic HTML
+- Icon grids use `<ul>/<li>` list elements
+- Proper landmarks: `<header>`, `<main>`, `<nav>`, `<footer>`, `<article>`, `<section>`
+- Breadcrumb navigation with `aria-label` and `aria-current`
+- One `<h1>` per page with correct heading hierarchy
 
-## 🚧 License
-Icons are free for **personal and educational use**.  
-Commercial use is currently restricted while the project grows.  
-A more permissive license may be introduced soon.  
-(If you have a use case in mind — feel free to open an issue or message me.)
+### SEO
+- Unique `<title>` and `<meta description>` per page
+- Absolute canonical URLs
+- OpenGraph and Twitter Card metadata
+- JSON-LD structured data (CollectionPage, CreativeWork, BreadcrumbList)
+- XML sitemap with all routes
 
-## 💬 Contribute or Suggest a City
-Have a favorite city that's missing?  
-Open an issue or drop a suggestion here: [github.com/anto1/city-icons/issues](https://github.com/anto1/city-icons/issues)
+### Performance
+- All pages statically generated
+- SVG icons cached for 1 year (`Cache-Control: immutable`)
+- No SVG content embedded in HTML — icons loaded as `<img>` assets
+- Lazy loading for below-fold images
 
-## 🛠️ Development
+---
 
-### Getting Started
-
-```bash
-# Clone the repository
-git clone https://github.com/anto1/city-icons.git
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-```
-
-### Project Structure
+## Project Structure
 
 ```
 src/
-├── app/                 # Next.js App Router
-│   ├── layout.tsx      # Root layout
-│   ├── page.tsx        # Home page
-│   ├── license/        # License page
-│   └── fathom.tsx      # Analytics component
-├── components/         # React components
-│   ├── ClientHome.tsx  # Main client component
-│   ├── IconGrid.tsx    # Icon grid display
-│   ├── IconModal.tsx   # Icon details modal
-│   └── SearchBar.tsx   # Search functionality
-├── data/              # Static data
-│   └── icons.json     # Icon metadata
-├── types/             # TypeScript types
-│   └── index.ts       # Type definitions
-└── lib/               # Utilities
+├── app/                      # Next.js App Router pages
+│   ├── page.tsx              # Homepage
+│   ├── [country]/            # Country listing pages
+│   │   └── [city]/           # Individual city icon pages
+│   ├── license/              # License information
+│   ├── roulette/             # City Roulette feature
+│   ├── layout.tsx            # Root layout with global metadata
+│   └── sitemap.ts            # Dynamic sitemap generation
+├── components/               # React components
+│   ├── IconGrid.tsx          # Main icon grid (ul/li structure)
+│   ├── CityPage.tsx          # Individual city page layout
+│   ├── IconFooter.tsx        # Footer with country links
+│   └── ...
+├── data/
+│   └── icons/                # Icon metadata by region (JSON)
+│       ├── europe.json
+│       ├── asia.json
+│       └── ...
+├── lib/                      # Utilities (slugify, URL helpers)
+└── types/                    # TypeScript type definitions
+
+public/
+└── icons/                    # Static SVG files (228 icons)
+    ├── de-berlin.svg
+    ├── us-new-york.svg
+    └── ...
 ```
-
-## 📊 Analytics
-
-This project uses [Fathom Analytics](https://usefathom.com/) for privacy-focused analytics:
-
-- **No cookies** or tracking scripts
-- **GDPR compliant**
-- **Minimal performance impact**
-- **City-specific event tracking**
-
-## 🌟 Support
-
-- **Missing your city?** [Request it here](mailto:icons@partdirector.ch)
-- **Commercial licensing?** [Contact us](mailto:cities@partdirector.ch)
-- **Found a bug?** [Open an issue](https://github.com/anto2s/city-icons/issues)
 
 ---
 
-Thanks for checking it out.
+## Contributing
 
-Made with ❤️ by [Studio Partdirector](https://partdirector.ch)
+### Adding Icons
+
+1. Add the SVG file to `/public/icons/` using the naming convention: `{country-code}-{city-name}.svg`
+2. Add metadata to the appropriate region file in `/src/data/icons/`
+3. Ensure the icon follows the existing line-art style
+
+### Code Changes
+
+When modifying pages or components:
+
+- **Preserve semantic HTML** — use proper elements (`nav`, `ul/li`, `article`, etc.)
+- **Keep structured data valid** — test with [Google Rich Results](https://search.google.com/test/rich-results)
+- **Maintain crawlable links** — use `<Link>` components, not JS-only navigation
+- **Keep JSON-LD small** — avoid embedding large lists in structured data
+
+---
+
+## License
+
+Icons are **free for personal and educational use**.  
+Commercial use requires permission — contact [icons@partdirector.ch](mailto:icons@partdirector.ch).
+
+---
+
+Made by [Studio Partdirector](https://partdirector.ch)
+
+*Last updated: December 2024*
