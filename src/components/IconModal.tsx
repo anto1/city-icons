@@ -1,5 +1,7 @@
 'use client';
 
+import { useState, useCallback } from 'react';
+import Image from 'next/image';
 import { IconModalProps } from '@/types';
 import {
   Dialog,
@@ -7,20 +9,42 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Download, Copy, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl, slugify, formatSvg } from '@/lib/utils';
+import { getIconUrl, getIconSvgUrl, slugify } from '@/lib/utils';
 import Link from 'next/link';
 
 export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
-  const downloadSVG = () => {
+  const [svgContent, setSvgContent] = useState<string | null>(null);
+
+  // Fetch SVG content on-demand for download/copy functionality
+  const fetchSvgContent = useCallback(async () => {
+    if (!icon) return null;
+    if (svgContent) return svgContent;
+    try {
+      const response = await fetch(getIconSvgUrl(icon));
+      const content = await response.text();
+      setSvgContent(content);
+      return content;
+    } catch (error) {
+      console.error('Failed to fetch SVG:', error);
+      return null;
+    }
+  }, [icon, svgContent]);
+
+  const downloadSVG = async () => {
     if (!icon) return;
     
-    const blob = new Blob([icon.svgContent], { type: 'image/svg+xml' });
+    const content = await fetchSvgContent();
+    if (!content) {
+      toast.error('Failed to download SVG');
+      return;
+    }
+    
+    const blob = new Blob([content], { type: 'image/svg+xml' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -40,7 +64,12 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
     if (!icon) return;
     
     try {
-      await navigator.clipboard.writeText(icon.svgContent);
+      const content = await fetchSvgContent();
+      if (!content) {
+        throw new Error('Failed to fetch SVG content');
+      }
+      
+      await navigator.clipboard.writeText(content);
       
       // Track copy event with city data
       trackEvent(`ICON_COPY_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
@@ -101,14 +130,15 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
         
         <div className="space-y-6 py-4">
           <div className="flex justify-center p-8 bg-muted rounded-lg">
-            <div
-              className="w-24 h-24 text-primary flex items-center justify-center"
-              role="img"
-              aria-label={`${icon?.city} icon representing ${icon?.name}`}
-              dangerouslySetInnerHTML={{ 
-                __html: icon?.svgContent ? formatSvg(icon.svgContent, 96, false) : ''
-              }}
-            />
+            {icon && (
+              <Image
+                src={getIconSvgUrl(icon)}
+                alt={`${icon.city} icon representing ${icon.name}`}
+                width={96}
+                height={96}
+                className="w-24 h-24"
+              />
+            )}
           </div>
         </div>
         

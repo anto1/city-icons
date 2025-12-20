@@ -1,39 +1,24 @@
 import { notFound } from 'next/navigation';
 import ClientHome from '@/components/ClientHome';
-import { Icon } from '@/types';
-import fs from 'fs';
-import path from 'path';
 import iconData from '@/data';
 import { slugify } from '@/lib/utils';
-import { Metadata } from 'next';
 
-// Server-side function to load SVG content
-async function loadSvgContent(filename: string): Promise<string> {
-  try {
-    const svgPath = path.join(process.cwd(), 'public', 'icons', filename);
-    const svgContent = fs.readFileSync(svgPath, 'utf8');
-    return svgContent;
-  } catch (error) {
-    console.error('Error loading SVG:', error);
-    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>';
-  }
+// Static icon data - no SVG content loading
+function getIconsData() {
+  return [...iconData].sort((a, b) => a.city.localeCompare(b.city));
 }
 
-// Server-side data preparation
-async function getIconsData(): Promise<Icon[]> {
-  const iconsWithSvg = await Promise.all(
-    iconData.map(async (icon) => {
-      const svgContent = await loadSvgContent(icon.svgFilename);
-      return {
-        ...icon,
-        svgContent
-      };
-    })
-  );
-
-  // Sort alphabetically by city name
-  return iconsWithSvg.sort((a, b) => a.city.localeCompare(b.city));
+// Generate all possible country pages at build time (SSG)
+export async function generateStaticParams() {
+  const countries = [...new Set(iconData.map(icon => icon.country))];
+  return countries.map((country) => ({
+    country: slugify(country),
+  }));
 }
+
+// Force static generation
+export const dynamic = 'force-static';
+export const revalidate = false;
 
 interface PageProps {
   params: Promise<{
@@ -43,43 +28,27 @@ interface PageProps {
 
 export default async function CountryPage({ params }: PageProps) {
   const { country } = await params;
-  const allIcons = await getIconsData();
+  const allIcons = getIconsData();
   
-  // Debug: Log the requested country and available countries
-  console.log('🔍 Requested country slug:', country);
-  const availableCountries = [...new Set(allIcons.map(icon => icon.country))];
-  console.log('🔍 Available countries:', availableCountries);
-  console.log('🔍 Available country slugs:', availableCountries.map(c => slugify(c)));
-  
-  // Filter icons for this country - make it case-insensitive
-  const countryIcons = allIcons.filter(icon => {
-    const iconCountrySlug = slugify(icon.country);
-    const match = iconCountrySlug === country;
-    console.log(`🔍 Comparing: "${iconCountrySlug}" === "${country}" = ${match}`);
-    return match;
-  });
-  
-  console.log('🔍 Found country icons:', countryIcons.length);
+  // Filter icons for this country
+  const countryIcons = allIcons.filter(icon => slugify(icon.country) === country);
   
   if (countryIcons.length === 0) {
-    console.log('❌ No icons found for country:', country);
     notFound();
   }
 
-  // Get the country name from the first icon (they should all have the same country)
+  // Get the country name from the first icon
   const countryName = countryIcons[0].country;
-  console.log('✅ Country name:', countryName);
 
   return <ClientHome initialIcons={allIcons} countryFilter={countryName} hideSearch={true} />;
 }
 
-// Generate metadata for SEO
+// Generate metadata for SEO - uses static icon data (no file I/O)
 export async function generateMetadata({ params }: PageProps) {
   const { country } = await params;
-  const allIcons = await getIconsData();
   
   // Filter icons for this country
-  const countryIcons = allIcons.filter(icon => 
+  const countryIcons = iconData.filter(icon => 
     slugify(icon.country) === country
   );
   

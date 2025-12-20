@@ -26,12 +26,17 @@ export function findIconBySlugs(countrySlug: string, citySlug: string, icons: Ic
   ) || null;
 }
 
-// Generate URL for an icon
+// Generate URL for an icon page
 export function getIconUrl(icon: Icon): string {
   return `/${slugify(icon.country)}/${slugify(icon.city)}`;
 }
 
-// Format SVG for consistent display
+// Generate URL for the SVG file (static asset)
+export function getIconSvgUrl(icon: Icon): string {
+  return `/icons/${icon.svgFilename}`;
+}
+
+// Format SVG for consistent display (used only for on-demand SVG loading)
 export function formatSvg(svg: string, size: number = 56, useCurrentColor: boolean = true): string {
   let formatted = svg
     .replace(/width="[^"]*"/, `width="${size}"`)

@@ -1,38 +1,24 @@
 import { notFound } from 'next/navigation';
 import CityPage from '@/components/CityPage';
-import { Icon } from '@/types';
-import fs from 'fs';
-import path from 'path';
 import iconData from '@/data';
-import { findIconBySlugs } from '@/lib/utils';
+import { findIconBySlugs, slugify } from '@/lib/utils';
 
-// Server-side function to load SVG content
-async function loadSvgContent(filename: string): Promise<string> {
-  try {
-    const svgPath = path.join(process.cwd(), 'public', 'icons', filename);
-    const svgContent = fs.readFileSync(svgPath, 'utf8');
-    return svgContent;
-  } catch (error) {
-    console.error('Error loading SVG:', error);
-    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/></svg>';
-  }
+// Static icon data - no SVG content loading
+function getIconsData() {
+  return [...iconData].sort((a, b) => a.city.localeCompare(b.city));
 }
 
-// Server-side data preparation
-async function getIconsData(): Promise<Icon[]> {
-  const iconsWithSvg = await Promise.all(
-    iconData.map(async (icon) => {
-      const svgContent = await loadSvgContent(icon.svgFilename);
-      return {
-        ...icon,
-        svgContent
-      };
-    })
-  );
-
-  // Sort alphabetically by city name
-  return iconsWithSvg.sort((a, b) => a.city.localeCompare(b.city));
+// Generate all possible city pages at build time (SSG)
+export async function generateStaticParams() {
+  return iconData.map((icon) => ({
+    country: slugify(icon.country),
+    city: slugify(icon.city),
+  }));
 }
+
+// Force static generation
+export const dynamic = 'force-static';
+export const revalidate = false;
 
 interface PageProps {
   params: Promise<{
@@ -43,7 +29,7 @@ interface PageProps {
 
 export default async function IconPage({ params }: PageProps) {
   const { country, city } = await params;
-  const icons = await getIconsData();
+  const icons = getIconsData();
   
   // Check if the icon exists
   const icon = findIconBySlugs(country, city, icons);
@@ -55,11 +41,10 @@ export default async function IconPage({ params }: PageProps) {
   return <CityPage icon={icon} allIcons={icons} />;
 }
 
-// Generate metadata for SEO
+// Generate metadata for SEO - uses static icon data (no file I/O)
 export async function generateMetadata({ params }: PageProps) {
   const { country, city } = await params;
-  const icons = await getIconsData();
-  const icon = findIconBySlugs(country, city, icons);
+  const icon = findIconBySlugs(country, city, iconData);
   
   if (!icon) {
     return {

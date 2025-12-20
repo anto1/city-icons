@@ -1,34 +1,40 @@
+'use client';
+
+import { useMemo } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Icon } from '@/types';
-import { useRouter } from 'next/navigation';
-import { getIconUrl, formatSvg } from '@/lib/utils';
+import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
 
 interface RandomIconHeaderProps {
   icons: Icon[];
 }
 
 export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
-  const router = useRouter();
-
-  const handleIconClick = (icon: Icon) => {
-    const url = getIconUrl(icon);
-    router.push(url);
-  };
+  // Memoize random selection to avoid re-shuffling on every render
+  const randomIcons = useMemo(() => {
+    return [...icons]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+  }, [icons]);
 
   return (
     <div className="flex justify-center items-center gap-8 py-16">
-      {[...icons]
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3)
-        .map((icon) => (
-        <div
+      {randomIcons.map((icon) => (
+        <Link
           key={icon._id}
-          className="w-14 h-14 text-foreground cursor-pointer hover:text-orange-600 transition-colors"
+          href={getIconUrl(icon)}
+          className="w-14 h-14 cursor-pointer hover:opacity-70 transition-opacity"
           title={`${icon.city}, ${icon.country}`}
-          onClick={() => handleIconClick(icon)}
-          dangerouslySetInnerHTML={{
-            __html: formatSvg(icon.svgContent, 56, false)
-          }}
-        />
+        >
+          <Image
+            src={getIconSvgUrl(icon)}
+            alt={`${icon.city} icon`}
+            width={56}
+            height={56}
+            className="w-14 h-14"
+          />
+        </Link>
       ))}
     </div>
   );

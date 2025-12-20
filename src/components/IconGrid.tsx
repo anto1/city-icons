@@ -2,9 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IconGridProps } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl, formatSvg } from '@/lib/utils';
+import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
 import { ANIMATION, GRID, HOVER, BREAKPOINTS } from '@/lib/constants';
 
 // Skeleton component for loading state
@@ -141,15 +142,17 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
           }}
         >
           <div className="flex flex-col items-center justify-center flex-1">
-            <div
-              className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4"
-              role="img"
-              aria-label={`${icon.city} icon representing ${icon.name}`}
-              title={`${icon.city}, ${icon.country} - ${icon.name}`}
-              dangerouslySetInnerHTML={{
-                __html: formatSvg(icon.svgContent)
-              }}
-            />
+            <div className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4">
+              <Image
+                src={getIconSvgUrl(icon)}
+                alt={`${icon.city} icon representing ${icon.name}`}
+                title={`${icon.city}, ${icon.country} - ${icon.name}`}
+                width={56}
+                height={56}
+                className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                loading="lazy"
+              />
+            </div>
             <div className="text-center w-full">
               <h3 className="text-base font-medium text-foreground truncate w-full mb-1">{icon.city}</h3>
               <p className="text-sm text-muted-foreground truncate w-full">{icon.country}</p>

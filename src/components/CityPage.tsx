@@ -1,15 +1,15 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
+import Image from 'next/image';
 import { Icon } from '@/types';
 import { Button } from '@/components/ui/button';
-import { Download, Copy, Share2, ArrowLeft } from 'lucide-react';
+import { Download, Copy, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl, slugify, formatSvg } from '@/lib/utils';
+import { getIconUrl, getIconSvgUrl, slugify } from '@/lib/utils';
 import { IconFooter } from '@/components/IconFooter';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 interface CityPageProps {
   icon: Icon;
@@ -17,7 +17,21 @@ interface CityPageProps {
 }
 
 export default function CityPage({ icon, allIcons }: CityPageProps) {
-  const router = useRouter();
+  const [svgContent, setSvgContent] = useState<string | null>(null);
+  
+  // Fetch SVG content on-demand for download/copy functionality
+  const fetchSvgContent = useCallback(async () => {
+    if (svgContent) return svgContent;
+    try {
+      const response = await fetch(getIconSvgUrl(icon));
+      const content = await response.text();
+      setSvgContent(content);
+      return content;
+    } catch (error) {
+      console.error('Failed to fetch SVG:', error);
+      return null;
+    }
+  }, [icon, svgContent]);
 
   // Add structured data for SEO
   useEffect(() => {
@@ -110,12 +124,18 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
         scriptToRemove.remove();
       }
     };
-  }, [icon._id]);
+  }, [icon]);
 
-  const downloadSVG = () => {
+  const downloadSVG = async () => {
     if (!icon) return;
     
-    const blob = new Blob([icon.svgContent], { type: 'image/svg+xml' });
+    const content = await fetchSvgContent();
+    if (!content) {
+      toast.error('Failed to download SVG');
+      return;
+    }
+    
+    const blob = new Blob([content], { type: 'image/svg+xml' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -135,7 +155,12 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
     if (!icon) return;
     
     try {
-      await navigator.clipboard.writeText(icon.svgContent);
+      const content = await fetchSvgContent();
+      if (!content) {
+        throw new Error('Failed to fetch SVG content');
+      }
+      
+      await navigator.clipboard.writeText(content);
       
       // Track copy event with city data
       trackEvent(`ICON_COPY_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
@@ -200,12 +225,17 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
           <Link
             key={randomIcon._id}
             href={getIconUrl(randomIcon)}
-            className="w-14 h-14 text-foreground hover:text-orange-600 transition-colors"
+            className="w-14 h-14 hover:opacity-70 transition-opacity"
             title={`${randomIcon.city}, ${randomIcon.country}`}
-            dangerouslySetInnerHTML={{
-              __html: formatSvg(randomIcon.svgContent, 56, false)
-            }}
-          />
+          >
+            <Image
+              src={getIconSvgUrl(randomIcon)}
+              alt={`${randomIcon.city} icon`}
+              width={56}
+              height={56}
+              className="w-14 h-14"
+            />
+          </Link>
         ))}
       </div>
 
@@ -239,9 +269,13 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
         {/* Large icon display - centered */}
         <div className="flex flex-col items-center mb-8">
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-3xl p-16 mb-8 w-full max-w-md aspect-square flex items-center justify-center">
-            <div 
-              className="w-32 h-32 text-foreground"
-              dangerouslySetInnerHTML={{ __html: icon.svgContent }}
+            <Image
+              src={getIconSvgUrl(icon)}
+              alt={`${icon.name} - ${icon.city}, ${icon.country}`}
+              width={128}
+              height={128}
+              className="w-32 h-32"
+              priority
             />
           </div>
           
@@ -304,10 +338,15 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                   style={{ aspectRatio: '1 / 1' }}
                 >
                   <div className="flex flex-col items-center justify-center flex-1">
-                    <div className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4">
-                      <div dangerouslySetInnerHTML={{ 
-                        __html: formatSvg(relatedIcon.svgContent)
-                      }} />
+                    <div className="w-14 h-14 flex items-center justify-center mb-4">
+                      <Image
+                        src={getIconSvgUrl(relatedIcon)}
+                        alt={`${relatedIcon.city} icon`}
+                        width={56}
+                        height={56}
+                        className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                        loading="lazy"
+                      />
                     </div>
                     <div className="text-center w-full">
                       <h3 className="text-base font-medium text-foreground truncate w-full mb-1">{relatedIcon.city}</h3>
@@ -333,10 +372,15 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                   style={{ aspectRatio: '1 / 1' }}
                 >
                   <div className="flex flex-col items-center justify-center flex-1">
-                    <div className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4">
-                      <div dangerouslySetInnerHTML={{ 
-                        __html: formatSvg(randomIcon.svgContent)
-                      }} />
+                    <div className="w-14 h-14 flex items-center justify-center mb-4">
+                      <Image
+                        src={getIconSvgUrl(randomIcon)}
+                        alt={`${randomIcon.city} icon`}
+                        width={56}
+                        height={56}
+                        className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                        loading="lazy"
+                      />
                     </div>
                     <div className="text-center w-full">
                       <h3 className="text-base font-medium text-foreground truncate w-full mb-1">{randomIcon.city}</h3>

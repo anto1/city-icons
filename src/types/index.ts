@@ -1,4 +1,4 @@
-// Raw icon data from JSON files (without svgContent)
+// Icon data from JSON files - used for grid views (no SVG content embedded)
 export interface IconData {
   _id: string;
   name: string;
@@ -11,10 +11,9 @@ export interface IconData {
   region: string;
 }
 
-// Full icon with SVG content (after server-side loading)
-export interface Icon extends IconData {
-  svgContent: string;
-}
+// Icon type alias - we no longer embed SVG content in pages
+// SVG content is loaded on-demand only when needed (download/copy)
+export type Icon = IconData;
 
 export interface IconModalProps {
   icon: Icon | null;

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
+import { getIconSvgUrl } from '@/lib/utils';
 
 interface RoulettePageProps {
   icons: Icon[];
@@ -169,15 +170,17 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
               <div className="flex flex-col items-center justify-center h-full">
                 {displayIcons[index] ? (
                   <>
-                    <div className="w-14 h-14 text-foreground mb-4 flex items-center justify-center">
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: displayIcons[index].svgContent
-                            .replace(/width="[^"]*"/, 'width="100%"')
-                            .replace(/height="[^"]*"/, 'height="100%"')
-                            .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"')
-                            .replace(/fill="[^"]*"/g, `fill="${!isSpinning && duplicateCities.includes(displayIcons[index].city) ? '#e2725b' : 'currentColor'}"`)
-                        }}
+                    <div className={`w-14 h-14 mb-4 flex items-center justify-center transition-all duration-300 ${
+                      !isSpinning && duplicateCities.includes(displayIcons[index].city)
+                        ? 'brightness-75 sepia saturate-200 hue-rotate-[340deg]'
+                        : ''
+                    }`}>
+                      <Image
+                        src={getIconSvgUrl(displayIcons[index])}
+                        alt={`${displayIcons[index].city} icon`}
+                        width={56}
+                        height={56}
+                        className="w-14 h-14"
                       />
                     </div>
                     <h3 className={`text-base font-medium mb-1 ${
@@ -193,7 +196,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                   </>
                 ) : (
                   <div className="text-center flex flex-col items-center justify-center h-full">
-                    <div className="w-14 h-14 text-foreground mb-4 flex items-center justify-center">
+                    <div className="w-14 h-14 mb-4 flex items-center justify-center">
                       <Image 
                         src="/cherry.svg" 
                         alt="Cherry" 
