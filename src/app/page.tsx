@@ -1,6 +1,5 @@
 import ClientHome from '@/components/ClientHome';
 import iconData from '@/data';
-import { slugify } from '@/lib/utils';
 
 const baseUrl = 'https://cities.partdirector.ch';
 
@@ -15,7 +14,7 @@ function getIconsData() {
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-// Generate structured data for the homepage
+// Generate structured data for the homepage (kept small - no full ItemList)
 function generateStructuredData(icons: typeof iconData) {
   // Get unique countries
   const countries = [...new Set(icons.map(icon => icon.country))].sort();
@@ -24,25 +23,9 @@ function generateStructuredData(icons: typeof iconData) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'City Icons Collection',
-    description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43+ cities with search, download, and copy functionality.',
+    description: `Discover ${icons.length} beautiful line art icons representing cities from ${countries.length} countries around the world by Studio Partdirector.`,
     url: baseUrl,
-    mainEntity: {
-      '@type': 'ItemList',
-      name: 'City Icon Collection',
-      description: `A collection of ${icons.length} beautiful line art icons representing cities from ${countries.length} countries`,
-      numberOfItems: icons.length,
-      itemListElement: icons.map((icon, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'CreativeWork',
-          name: icon.name,
-          description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
-          url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
-          image: `${baseUrl}/icons/${icon.svgFilename}`,
-        },
-      })),
-    },
+    numberOfItems: icons.length,
     author: {
       '@type': 'Organization',
       name: 'Studio Partdirector',

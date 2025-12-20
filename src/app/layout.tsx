@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://cities.partdirector.ch'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://cities.partdirector.ch/',
   },
 
   openGraph: {
@@ -54,9 +54,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 };
 

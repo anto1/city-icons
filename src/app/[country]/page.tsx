@@ -28,9 +28,12 @@ interface PageProps {
   }>;
 }
 
-// Generate structured data for country page
+// Generate structured data for country page (limited ItemList for size)
 function generateStructuredData(countryName: string, countrySlug: string, countryIcons: typeof iconData) {
   const pageUrl = `${baseUrl}/${countrySlug}`;
+  
+  // Limit to first 15 items to keep JSON-LD size reasonable
+  const limitedIcons = countryIcons.slice(0, 15);
   
   return [
     // CollectionPage schema
@@ -38,22 +41,20 @@ function generateStructuredData(countryName: string, countrySlug: string, countr
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       name: `${countryName} City Icons`,
-      description: `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} city icons from ${countryName} with download and copy functionality.`,
+      description: `Discover ${countryIcons.length} beautiful line art icons representing cities in ${countryName}.`,
       url: pageUrl,
+      numberOfItems: countryIcons.length,
       mainEntity: {
         '@type': 'ItemList',
         name: `City Icons from ${countryName}`,
-        description: `A collection of ${countryIcons.length} beautiful line art icons representing cities in ${countryName}`,
         numberOfItems: countryIcons.length,
-        itemListElement: countryIcons.map((icon, index) => ({
+        itemListElement: limitedIcons.map((icon, index) => ({
           '@type': 'ListItem',
           position: index + 1,
           item: {
             '@type': 'CreativeWork',
             name: icon.name,
-            description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
             url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
-            image: `${baseUrl}/icons/${icon.svgFilename}`,
           },
         })),
       },
