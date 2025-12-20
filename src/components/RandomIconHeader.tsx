@@ -19,23 +19,24 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
   }, [icons]);
 
   return (
-    <div className="flex justify-center items-center gap-8 py-16">
+    <nav aria-label="Featured cities" className="flex justify-center items-center gap-8 py-16">
       {randomIcons.map((icon) => (
         <Link
           key={icon._id}
           href={getIconUrl(icon)}
           className="w-14 h-14 cursor-pointer hover:opacity-70 transition-opacity"
           title={`${icon.city}, ${icon.country}`}
+          aria-label={`View ${icon.city}, ${icon.country} icon`}
         >
           <Image
             src={getIconSvgUrl(icon)}
-            alt={`${icon.city} icon`}
+            alt=""
             width={56}
             height={56}
             className="w-14 h-14"
           />
         </Link>
       ))}
-    </div>
+    </nav>
   );
 } 

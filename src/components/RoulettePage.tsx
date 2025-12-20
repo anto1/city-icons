@@ -133,89 +133,91 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Cherry Icon Header */}
-      <div className="flex justify-center items-center gap-8 py-16">
-        <Link href="/" className="w-14 h-14 text-foreground hover:opacity-80 transition-opacity">
+      <nav aria-label="Home navigation" className="flex justify-center items-center gap-8 py-16">
+        <Link href="/" className="w-14 h-14 text-foreground hover:opacity-80 transition-opacity" aria-label="Go to home page">
           <Image 
             src="/cherry.svg" 
-            alt="Cherry" 
+            alt="" 
             width={56}
             height={56}
           />
         </Link>
-      </div>
+      </nav>
 
-      <div className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-8">
+        <header className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4 tracking-tight">
             Where Should You Go This Year?
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
             Click the button to spin the globe and get your travel picks for the year.
           </p>
-        </div>
+        </header>
 
         {/* Roulette Cards */}
-        <div className="grid grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
-          {[0, 1, 2].map((index) => (
-            <div
-              key={index}
-              className={`relative p-4 rounded-lg border-2 transition-all duration-300 w-full ${
-                isSpinning 
-                  ? 'border-orange-400 bg-orange-50 animate-pulse' 
-                  : 'border-border bg-card'
-              }`}
-              style={{ aspectRatio: '1 / 1' }}
-            >
-              <div className="flex flex-col items-center justify-center h-full">
-                {displayIcons[index] ? (
-                  <>
-                    <div className={`w-14 h-14 mb-4 flex items-center justify-center transition-all duration-300 ${
-                      !isSpinning && duplicateCities.includes(displayIcons[index].city)
-                        ? 'brightness-75 sepia saturate-200 hue-rotate-[340deg]'
-                        : ''
-                    }`}>
-                      <Image
-                        src={getIconSvgUrl(displayIcons[index])}
-                        alt={`${displayIcons[index].city} icon`}
-                        width={56}
-                        height={56}
-                        className="w-14 h-14"
-                      />
+        <section aria-label="Travel destination picks" aria-live="polite" aria-busy={isSpinning}>
+          <ul className="grid grid-cols-3 gap-4 max-w-4xl mx-auto mb-8 list-none" role="list">
+            {[0, 1, 2].map((index) => (
+              <li
+                key={index}
+                className={`relative p-4 rounded-lg border-2 transition-all duration-300 w-full ${
+                  isSpinning 
+                    ? 'border-orange-400 bg-orange-50 animate-pulse' 
+                    : 'border-border bg-card'
+                }`}
+                style={{ aspectRatio: '1 / 1' }}
+              >
+                <article className="flex flex-col items-center justify-center h-full">
+                  {displayIcons[index] ? (
+                    <>
+                      <div className={`w-14 h-14 mb-4 flex items-center justify-center transition-all duration-300 ${
+                        !isSpinning && duplicateCities.includes(displayIcons[index].city)
+                          ? 'brightness-75 sepia saturate-200 hue-rotate-[340deg]'
+                          : ''
+                      }`}>
+                        <Image
+                          src={getIconSvgUrl(displayIcons[index])}
+                          alt=""
+                          width={56}
+                          height={56}
+                          className="w-14 h-14"
+                        />
+                      </div>
+                      <h2 className={`text-base font-medium mb-1 ${
+                        !isSpinning && duplicateCities.includes(displayIcons[index].city)
+                          ? 'text-orange-600'
+                          : 'text-foreground'
+                      }`}>
+                        {displayIcons[index].city}
+                      </h2>
+                      <p className="text-sm text-muted-foreground">
+                        {displayIcons[index].country}
+                      </p>
+                    </>
+                  ) : (
+                    <div className="text-center flex flex-col items-center justify-center h-full">
+                      <div className="w-14 h-14 mb-4 flex items-center justify-center">
+                        <Image 
+                          src="/cherry.svg" 
+                          alt="" 
+                          width={56}
+                          height={56}
+                        />
+                      </div>
+                      <p className="text-base font-medium text-foreground mb-1">
+                        Cherry
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Fruit
+                      </p>
                     </div>
-                    <h3 className={`text-base font-medium mb-1 ${
-                      !isSpinning && duplicateCities.includes(displayIcons[index].city)
-                        ? 'text-orange-600'
-                        : 'text-foreground'
-                    }`}>
-                      {displayIcons[index].city}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {displayIcons[index].country}
-                    </p>
-                  </>
-                ) : (
-                  <div className="text-center flex flex-col items-center justify-center h-full">
-                    <div className="w-14 h-14 mb-4 flex items-center justify-center">
-                      <Image 
-                        src="/cherry.svg" 
-                        alt="Cherry" 
-                        width={56}
-                        height={56}
-                      />
-                    </div>
-                    <h3 className="text-base font-medium text-foreground mb-1">
-                      Cherry
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Fruit
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+                  )}
+                </article>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* Spin Button - Now below cards */}
         <div className="text-center mb-8">
@@ -230,16 +232,16 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
         {/* Result Message */}
         {resultMessage && (
-          <div className="text-center mt-8">
+          <section className="text-center mt-8" aria-live="assertive">
             <p className="text-base md:text-xl font-medium text-foreground bg-orange-50 border border-orange-200 rounded-lg px-4 md:px-6 py-3 md:py-4 max-w-2xl mx-auto">
               {resultMessage}
             </p>
-          </div>
+          </section>
         )}
-      </div>
+      </main>
 
       {/* Back to Cities Link */}
-      <div className="text-center py-4">
+      <nav className="text-center py-4" aria-label="Page navigation">
         <Link
           href="/"
           className="text-sm md:text-base text-muted-foreground hover:text-orange-600 transition-colors underline"
@@ -247,10 +249,10 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
         >
           ← Back to cities
         </Link>
-      </div>
+      </nav>
 
       {/* Footer */}
-      <footer className="py-6 mt-16">
+      <footer className="py-6 mt-16" role="contentinfo">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-foreground mb-2">
             {icons.length} icons ©{' '}
@@ -265,7 +267,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             </a>
             , 2025
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <nav aria-label="Footer links" className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
               className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
@@ -273,7 +275,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             >
               Missing your city?
             </a>
-            <span className="hidden sm:inline text-sm text-muted-foreground">•</span>
+            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
             <Link
               href="/license"
               className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
@@ -281,7 +283,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             >
               Usage & Licensing
             </Link>
-            <span className="hidden sm:inline text-sm text-muted-foreground">•</span>
+            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
             <a
               href="https://github.com/anto1/city-icons"
               target="_blank"
@@ -291,7 +293,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             >
               GitHub
             </a>
-          </div>
+          </nav>
         </div>
       </footer>
     </div>

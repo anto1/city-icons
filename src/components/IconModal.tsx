@@ -9,6 +9,7 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Download, Copy, Share2 } from 'lucide-react';
@@ -112,7 +113,7 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md p-8 z-[9999]">
+      <DialogContent className="sm:max-w-md p-8 z-[9999]" aria-describedby="icon-modal-description">
         <DialogHeader className="space-y-4">
           <Link
             href={`/${slugify(icon?.country || '')}`}
@@ -120,39 +121,53 @@ export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
           >
             {icon?.country}
           </Link>
-          <h2 className="text-xl font-semibold">
+          <DialogTitle className="text-xl font-semibold">
             {icon?.name}
-          </h2>
-          <DialogDescription className="text-base leading-relaxed">
+          </DialogTitle>
+          <DialogDescription id="icon-modal-description" className="text-base leading-relaxed">
             {icon?.description || `Icon representing ${icon?.city}, ${icon?.country}`}
           </DialogDescription>
         </DialogHeader>
         
         <div className="space-y-6 py-4">
-          <div className="flex justify-center p-8 bg-muted rounded-lg">
+          <figure className="flex justify-center p-8 bg-muted rounded-lg">
             {icon && (
               <Image
                 src={getIconSvgUrl(icon)}
-                alt={`${icon.city} icon representing ${icon.name}`}
+                alt={`${icon.name} - SVG icon representing ${icon.city}, ${icon.country}`}
                 width={96}
                 height={96}
                 className="w-24 h-24"
               />
             )}
-          </div>
+          </figure>
         </div>
         
         <DialogFooter className="flex gap-2 pt-4">
-          <Button onClick={downloadSVG} className="flex-1 py-3">
-            <Download className="w-4 h-4 mr-2" />
+          <Button 
+            onClick={downloadSVG} 
+            className="flex-1 py-3"
+            aria-label={`Download ${icon?.city} icon as SVG`}
+          >
+            <Download className="w-4 h-4 mr-2" aria-hidden="true" />
             Download
           </Button>
-          <Button onClick={copySVG} variant="outline" className="flex-1 py-3">
-            <Copy className="w-4 h-4 mr-2" />
+          <Button 
+            onClick={copySVG} 
+            variant="outline" 
+            className="flex-1 py-3"
+            aria-label={`Copy ${icon?.city} SVG code to clipboard`}
+          >
+            <Copy className="w-4 h-4 mr-2" aria-hidden="true" />
             Copy SVG
           </Button>
-          <Button onClick={shareLink} variant="outline" className="flex-1 py-3">
-            <Share2 className="w-4 h-4 mr-2" />
+          <Button 
+            onClick={shareLink} 
+            variant="outline" 
+            className="flex-1 py-3"
+            aria-label={`Share link to ${icon?.city} icon`}
+          >
+            <Share2 className="w-4 h-4 mr-2" aria-hidden="true" />
             Share Link
           </Button>
         </DialogFooter>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import { Icon } from '@/types';
 import { Button } from '@/components/ui/button';
@@ -32,99 +32,6 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
       return null;
     }
   }, [icon, svgContent]);
-
-  // Add structured data for SEO
-  useEffect(() => {
-    const baseUrl = 'https://cities.partdirector.ch';
-    const pageUrl = getIconUrl(icon);
-
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'CreativeWork',
-      name: icon.name,
-      description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
-      url: `${baseUrl}${pageUrl}`,
-      image: {
-        '@type': 'ImageObject',
-        url: `${baseUrl}/icons/${icon.svgFilename}`,
-        contentUrl: `${baseUrl}/icons/${icon.svgFilename}`,
-        encodingFormat: 'image/svg+xml',
-        name: `${icon.name} icon`,
-        description: `SVG icon of ${icon.name} representing ${icon.city}, ${icon.country}`,
-      },
-      author: {
-        '@type': 'Organization',
-        name: 'Studio Partdirector',
-        url: 'https://partdirector.ch',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Studio Partdirector',
-        url: 'https://partdirector.ch',
-      },
-      about: {
-        '@type': 'Place',
-        name: icon.city,
-        containedInPlace: {
-          '@type': 'Country',
-          name: icon.country,
-        },
-        description: icon.description,
-      },
-      breadcrumb: {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: baseUrl,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: icon.country,
-            item: `${baseUrl}/${slugify(icon.country)}`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: icon.city,
-            item: `${baseUrl}${pageUrl}`,
-          },
-        ],
-      },
-      keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, ${icon.tags?.join(', ') || ''}`,
-      inLanguage: 'en-US',
-      isAccessibleForFree: true,
-      license: `${baseUrl}/license`,
-      category: icon.category,
-      genre: 'Line Art',
-      datePublished: new Date().toISOString(),
-      downloadUrl: `${baseUrl}/icons/${icon.svgFilename}`,
-    };
-
-    // Remove any existing structured data script
-    const existingScript = document.querySelector('script[data-structured-data]');
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    // Create and inject the structured data script in the head
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.setAttribute('data-structured-data', 'true');
-    script.textContent = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-
-    // Cleanup function to remove the script when component unmounts
-    return () => {
-      const scriptToRemove = document.querySelector('script[data-structured-data]');
-      if (scriptToRemove) {
-        scriptToRemove.remove();
-      }
-    };
-  }, [icon]);
 
   const downloadSVG = async () => {
     if (!icon) return;
@@ -217,7 +124,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Random icon header - same as main page */}
-      <div className="flex justify-center items-center gap-8 py-16">
+      <nav aria-label="Featured cities" className="flex justify-center items-center gap-8 py-16">
         {[...allIcons]
           .sort(() => Math.random() - 0.5)
           .slice(0, 3)
@@ -227,44 +134,51 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
             href={getIconUrl(randomIcon)}
             className="w-14 h-14 hover:opacity-70 transition-opacity"
             title={`${randomIcon.city}, ${randomIcon.country}`}
+            aria-label={`View ${randomIcon.city}, ${randomIcon.country} icon`}
           >
             <Image
               src={getIconSvgUrl(randomIcon)}
-              alt={`${randomIcon.city} icon`}
+              alt=""
               width={56}
               height={56}
               className="w-14 h-14"
             />
           </Link>
         ))}
-      </div>
+      </nav>
 
       {/* Main content container - same structure as main page */}
-      <div className="container mx-auto px-4 py-8">
+      <article className="container mx-auto px-4 py-8">
         {/* Breadcrumb navigation */}
-        <div className="text-center mb-8">
-          <div className="text-sm text-muted-foreground mb-4">
-            <Link href="/" className="hover:text-foreground transition-colors">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <Link 
-              href={`/${slugify(icon.country)}`}
-              className="hover:text-foreground transition-colors"
-            >
-              {icon.country}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground font-medium">{icon.city}</span>
-          </div>
-        </div>
+        <nav aria-label="Breadcrumb" className="text-center mb-8">
+          <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
+            <li className="flex items-center">
+              <Link href="/" className="hover:text-foreground transition-colors">
+                Home
+              </Link>
+              <span className="mx-2" aria-hidden="true">/</span>
+            </li>
+            <li className="flex items-center">
+              <Link 
+                href={`/${slugify(icon.country)}`}
+                className="hover:text-foreground transition-colors"
+              >
+                {icon.country}
+              </Link>
+              <span className="mx-2" aria-hidden="true">/</span>
+            </li>
+            <li aria-current="page">
+              <span className="text-foreground font-medium">{icon.city}</span>
+            </li>
+          </ol>
+        </nav>
 
         {/* City icon header - similar to IconHeader */}
-        <div className="text-center mb-8">
+        <header className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4 tracking-tight">
             {icon.name}
           </h1>
-        </div>
+        </header>
 
         {/* Large icon display - centered */}
         <div className="flex flex-col items-center mb-8">
@@ -327,81 +241,85 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
 
         {/* Related icons section */}
         {relatedIcons.length > 0 && (
-          <div className="mt-20">
-            <h2 className="text-2xl font-bold text-center mb-8">{relatedIcons.length} more from {icon.country}</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative">
+          <section className="mt-20" aria-labelledby="related-icons-heading">
+            <h2 id="related-icons-heading" className="text-2xl font-bold text-center mb-8">{relatedIcons.length} more from {icon.country}</h2>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none" aria-label={`More icons from ${icon.country}`}>
                 {relatedIcons.map((relatedIcon) => (
-                <Link
-                  key={relatedIcon._id}
-                  href={getIconUrl(relatedIcon)}
-                  className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center"
-                  style={{ aspectRatio: '1 / 1' }}
-                >
-                  <div className="flex flex-col items-center justify-center flex-1">
-                    <div className="w-14 h-14 flex items-center justify-center mb-4">
-                      <Image
-                        src={getIconSvgUrl(relatedIcon)}
-                        alt={`${relatedIcon.city} icon`}
-                        width={56}
-                        height={56}
-                        className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
-                        loading="lazy"
-                      />
+                <li key={relatedIcon._id}>
+                  <Link
+                    href={getIconUrl(relatedIcon)}
+                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
+                    style={{ aspectRatio: '1 / 1' }}
+                    aria-label={`${relatedIcon.city}, ${relatedIcon.country} icon`}
+                  >
+                    <div className="flex flex-col items-center justify-center flex-1">
+                      <div className="w-14 h-14 flex items-center justify-center mb-4">
+                        <Image
+                          src={getIconSvgUrl(relatedIcon)}
+                          alt=""
+                          width={56}
+                          height={56}
+                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="text-center w-full">
+                        <span className="text-base font-medium text-foreground truncate block w-full mb-1">{relatedIcon.city}</span>
+                        <span className="text-sm text-muted-foreground truncate block w-full">{relatedIcon.country}</span>
+                      </div>
                     </div>
-                    <div className="text-center w-full">
-                      <h3 className="text-base font-medium text-foreground truncate w-full mb-1">{relatedIcon.city}</h3>
-                      <p className="text-sm text-muted-foreground truncate w-full">{relatedIcon.country}</p>
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </li>
                 ))}
-            </div>
-          </div>
+            </ul>
+          </section>
         )}
 
         {/* Explore more section */}
         {randomIcons.length > 0 && (
-          <div className="mt-20">
-            <h2 className="text-2xl font-bold text-center mb-8">Explore More Cities</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative">
+          <section className="mt-20" aria-labelledby="explore-more-heading">
+            <h2 id="explore-more-heading" className="text-2xl font-bold text-center mb-8">Explore More Cities</h2>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none" aria-label="Explore more cities">
                 {randomIcons.slice(0, 4).map((randomIcon) => (
-                <Link
-                  key={randomIcon._id}
-                  href={getIconUrl(randomIcon)}
-                  className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center"
-                  style={{ aspectRatio: '1 / 1' }}
-                >
-                  <div className="flex flex-col items-center justify-center flex-1">
-                    <div className="w-14 h-14 flex items-center justify-center mb-4">
-                      <Image
-                        src={getIconSvgUrl(randomIcon)}
-                        alt={`${randomIcon.city} icon`}
-                        width={56}
-                        height={56}
-                        className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
-                        loading="lazy"
-                      />
+                <li key={randomIcon._id}>
+                  <Link
+                    href={getIconUrl(randomIcon)}
+                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
+                    style={{ aspectRatio: '1 / 1' }}
+                    aria-label={`${randomIcon.city}, ${randomIcon.country} icon`}
+                  >
+                    <div className="flex flex-col items-center justify-center flex-1">
+                      <div className="w-14 h-14 flex items-center justify-center mb-4">
+                        <Image
+                          src={getIconSvgUrl(randomIcon)}
+                          alt=""
+                          width={56}
+                          height={56}
+                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="text-center w-full">
+                        <span className="text-base font-medium text-foreground truncate block w-full mb-1">{randomIcon.city}</span>
+                        <span className="text-sm text-muted-foreground truncate block w-full">{randomIcon.country}</span>
+                      </div>
                     </div>
-                    <div className="text-center w-full">
-                      <h3 className="text-base font-medium text-foreground truncate w-full mb-1">{randomIcon.city}</h3>
-                      <p className="text-sm text-muted-foreground truncate w-full">{randomIcon.country}</p>
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </li>
                 ))}
-            </div>
-          </div>
+            </ul>
+          </section>
         )}
 
         {/* Back to all icons */}
-        <div className="mt-20 text-center">
+        <nav className="mt-20 text-center" aria-label="Navigation">
           <Link href="/">
             <Button variant="outline" size="lg">
               View All City Icons
             </Button>
           </Link>
-        </div>
-      </div>
+        </nav>
+      </article>
 
       <IconFooter icons={allIcons} />
     </div>

@@ -33,28 +33,34 @@ export default function ClientHome({ initialIcons, countryFilter, hideSearch }: 
     <div className="min-h-screen bg-background">
       <RandomIconHeader icons={initialIcons} />
       
-      <div className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8">
         {/* Breadcrumb navigation for country pages */}
         {countryFilter && (
-          <div className="text-center mb-8">
-            <div className="text-sm text-muted-foreground mb-4">
-              <Link href="/" className="hover:text-foreground transition-colors">
-                Home
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="text-foreground font-medium">{countryFilter}</span>
-            </div>
-          </div>
+          <nav aria-label="Breadcrumb" className="text-center mb-8">
+            <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
+              <li className="flex items-center">
+                <Link href="/" className="hover:text-foreground transition-colors">
+                  Home
+                </Link>
+                <span className="mx-2" aria-hidden="true">/</span>
+              </li>
+              <li aria-current="page">
+                <span className="text-foreground font-medium">{countryFilter}</span>
+              </li>
+            </ol>
+          </nav>
         )}
         
-        <IconHeader 
-          countryFilter={countryFilter}
-          filteredIcons={filteredIcons}
-          totalIcons={initialIcons.length}
-        />
+        <header>
+          <IconHeader 
+            countryFilter={countryFilter}
+            filteredIcons={filteredIcons}
+            totalIcons={initialIcons.length}
+          />
+        </header>
         
         {!hideSearch && (
-          <>
+          <section aria-label="Search and filter">
             <SearchBar onSearch={handleSearch} allIcons={initialIcons} />
             
             {/* Region filters */}
@@ -64,18 +70,18 @@ export default function ClientHome({ initialIcons, countryFilter, hideSearch }: 
               onRegionSelect={handleRegionFilter}
               icons={initialIcons}
             />
-          </>
+          </section>
         )}
         
-        <div className="mt-12">
+        <section className="mt-12" aria-label="City icons collection">
           <ErrorBoundary fallback={<IconGridError />}>
             <IconGrid 
               icons={filteredIcons} 
               loading={false} 
             />
           </ErrorBoundary>
-        </div>
-      </div>
+        </section>
+      </main>
 
       <IconFooter icons={initialIcons} />
     </div>

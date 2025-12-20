@@ -62,34 +62,46 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   };
 
   return (
-    <div className="relative max-w-2xl mx-auto">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-muted-foreground" />
+    <search className="relative max-w-2xl mx-auto" role="search">
+      <label htmlFor="icon-search" className="sr-only">Search city icons</label>
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-muted-foreground" aria-hidden="true" />
       <Input
         ref={inputRef}
-        type="text"
-        placeholder="Search"
+        id="icon-search"
+        type="search"
+        placeholder="Search cities or countries..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         className="pl-12 text-lg font-medium h-14 md:!text-2xl md:font-bold md:h-16"
+        aria-describedby={showSuggestions && suggestions.length > 0 ? "search-suggestions" : undefined}
+        aria-autocomplete="list"
+        aria-expanded={showSuggestions && suggestions.length > 0}
       />
       
       {/* Search Suggestions */}
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 bg-background border border-border rounded-lg shadow-lg mt-1 z-50 max-h-60 overflow-y-auto md:max-h-80">
+        <ul 
+          id="search-suggestions"
+          className="absolute top-full left-0 right-0 bg-background border border-border rounded-lg shadow-lg mt-1 z-50 max-h-60 overflow-y-auto md:max-h-80 list-none"
+          role="listbox"
+          aria-label="Search suggestions"
+        >
           {suggestions.map((suggestion, index) => (
-            <button
-              key={index}
-              className="w-full px-4 py-3 text-left hover:bg-muted transition-colors flex flex-col md:py-4"
-              onClick={() => handleSuggestionClick(suggestion)}
-            >
-              <div className="font-medium text-foreground md:text-lg">{suggestion.city}</div>
-              <div className="text-sm text-muted-foreground md:text-base">{suggestion.country}</div>
-            </button>
+            <li key={index} role="option" aria-selected={false}>
+              <button
+                className="w-full px-4 py-3 text-left hover:bg-muted transition-colors flex flex-col md:py-4"
+                onClick={() => handleSuggestionClick(suggestion)}
+                type="button"
+              >
+                <span className="font-medium text-foreground md:text-lg">{suggestion.city}</span>
+                <span className="text-sm text-muted-foreground md:text-base">{suggestion.country}</span>
+              </button>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
-    </div>
+    </search>
   );
 } 

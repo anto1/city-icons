@@ -3,6 +3,8 @@ import CityPage from '@/components/CityPage';
 import iconData from '@/data';
 import { findIconBySlugs, slugify } from '@/lib/utils';
 
+const baseUrl = 'https://cities.partdirector.ch';
+
 // Static icon data - no SVG content loading
 function getIconsData() {
   return [...iconData].sort((a, b) => a.city.localeCompare(b.city));
@@ -27,6 +29,79 @@ interface PageProps {
   }>;
 }
 
+// Generate structured data for the city icon page
+function generateStructuredData(icon: typeof iconData[0], countrySlug: string, citySlug: string) {
+  const pageUrl = `${baseUrl}/${countrySlug}/${citySlug}`;
+  
+  return [
+    // CreativeWork schema for the icon
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: icon.name,
+      description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
+      url: pageUrl,
+      image: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/icons/${icon.svgFilename}`,
+        contentUrl: `${baseUrl}/icons/${icon.svgFilename}`,
+        encodingFormat: 'image/svg+xml',
+        name: `${icon.name} icon`,
+        description: `SVG icon of ${icon.name} representing ${icon.city}, ${icon.country}`,
+      },
+      author: {
+        '@type': 'Organization',
+        name: 'Studio Partdirector',
+        url: 'https://partdirector.ch',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Studio Partdirector',
+        url: 'https://partdirector.ch',
+      },
+      about: {
+        '@type': 'Place',
+        name: icon.city,
+        containedInPlace: {
+          '@type': 'Country',
+          name: icon.country,
+        },
+      },
+      keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, ${icon.tags?.join(', ') || ''}`,
+      inLanguage: 'en-US',
+      isAccessibleForFree: true,
+      license: `${baseUrl}/license`,
+      category: icon.category,
+      genre: 'Line Art',
+    },
+    // BreadcrumbList schema
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: baseUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: icon.country,
+          item: `${baseUrl}/${countrySlug}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: icon.city,
+          item: pageUrl,
+        },
+      ],
+    },
+  ];
+}
+
 export default async function IconPage({ params }: PageProps) {
   const { country, city } = await params;
   const icons = getIconsData();
@@ -38,7 +113,20 @@ export default async function IconPage({ params }: PageProps) {
     notFound();
   }
 
-  return <CityPage icon={icon} allIcons={icons} />;
+  const structuredData = generateStructuredData(icon, country, city);
+
+  return (
+    <>
+      {structuredData.map((data, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
+      <CityPage icon={icon} allIcons={icons} />
+    </>
+  );
 }
 
 // Generate metadata for SEO - uses static icon data (no file I/O)
@@ -53,34 +141,8 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
-  const baseUrl = 'https://cities.partdirector.ch';
   const pageUrl = `${baseUrl}/${country}/${city}`;
   const description = icon.description || `Download the ${icon.name} icon representing ${icon.city}, ${icon.country}. High-quality SVG line art icon for your projects.`;
-
-  const breadcrumbStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: baseUrl,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: icon.country,
-        item: `${baseUrl}/${country}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: icon.city,
-        item: pageUrl,
-      },
-    ],
-  };
 
   return {
     title: `${icon.name} - ${icon.city}, ${icon.country} | City Icons`,
@@ -102,7 +164,7 @@ export async function generateMetadata({ params }: PageProps) {
       title: `${icon.name} - ${icon.city}, ${icon.country}`,
       description,
       url: pageUrl,
-      siteName: 'City Icons',
+      siteName: 'City Icons Collection',
       locale: 'en_US',
       type: 'website',
       images: [
@@ -131,9 +193,6 @@ export async function generateMetadata({ params }: PageProps) {
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
-    },
-    other: {
-      'application/ld+json': JSON.stringify(breadcrumbStructuredData),
     },
   };
 } 
