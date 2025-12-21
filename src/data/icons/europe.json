@@ -1792,5 +1792,22 @@
     "svgFilename": "pt-nazare.svg",
     "description": "Nazaré is a coastal town in central Portugal, world-famous for having some of the biggest waves on the planet. The Praia do Norte beach attracts big wave surfers from around the globe to ride massive swells that can reach over 100 feet (30 meters) high. The town's unique underwater canyon creates these legendary waves, making Nazaré the ultimate destination for extreme surfing and a symbol of the raw power of the Atlantic Ocean.",
     "region": "Europe"
+  },
+  {
+    "_id": "242",
+    "name": "Taranto Dolphin",
+    "city": "Taranto",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": [
+      "dolphin",
+      "marine",
+      "mythology",
+      "coastal",
+      "symbol"
+    ],
+    "svgFilename": "it-taranto.svg",
+    "description": "Taranto is a historic coastal city in southern Italy, known for its iconic dolphin symbol that dates back to ancient Greek mythology. According to legend, the city was founded by Taras, son of Poseidon, who was carried ashore by a dolphin. The dolphin remains the emblem of Taranto to this day, representing the city's deep connection to the sea, its ancient Greek heritage, and its position as a major naval port on the Ionian Sea.",
+    "region": "Europe"
   }
 ]

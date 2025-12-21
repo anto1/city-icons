@@ -450,5 +450,73 @@
     "svgFilename": "th-pattaya.svg",
     "description": "Pattaya is a vibrant coastal resort city in Thailand, known for its famous Sanctuary of Truth - an intricate wooden temple and architectural marvel. This sacred site represents Thai craftsmanship and spiritual heritage, combining traditional Buddhist and Hindu motifs in a stunning oceanfront setting.",
     "region": "Asia"
+  },
+  {
+    "_id": "246",
+    "name": "Beijing Forbidden City",
+    "city": "Beijing",
+    "country": "China",
+    "category": "Landmarks",
+    "tags": [
+      "forbidden-city",
+      "imperial",
+      "palace",
+      "historic",
+      "gate"
+    ],
+    "svgFilename": "cn-beijing.svg",
+    "description": "Beijing is the capital of China, known for its iconic Forbidden City - the world's largest palace complex and a UNESCO World Heritage site. The main gate, Tiananmen (Gate of Heavenly Peace), represents over 500 years of imperial Chinese history and remains one of the most recognizable symbols of China, serving as the ceremonial entrance to the vast imperial palace that housed 24 emperors across two dynasties.",
+    "region": "Asia"
+  },
+  {
+    "_id": "247",
+    "name": "Bagan Ancient Temple",
+    "city": "Bagan",
+    "country": "Myanmar",
+    "category": "Landmarks",
+    "tags": [
+      "temple",
+      "buddhist",
+      "ancient",
+      "pagoda",
+      "historic"
+    ],
+    "svgFilename": "mm-bagan.svg",
+    "description": "Bagan is an ancient city in Myanmar, known for its breathtaking landscape of over 2,000 Buddhist temples, pagodas, and monasteries. This UNESCO World Heritage site represents one of the richest archaeological areas in Asia, where ancient temples rise majestically above the plains of the Irrawaddy River, creating one of the most spectacular sacred landscapes in the world.",
+    "region": "Asia"
+  },
+  {
+    "_id": "248",
+    "name": "Ulaanbaatar Ger Yurt",
+    "city": "Ulaanbaatar",
+    "country": "Mongolia",
+    "category": "Culture",
+    "tags": [
+      "ger",
+      "yurt",
+      "nomadic",
+      "traditional",
+      "dwelling"
+    ],
+    "svgFilename": "mn-ulaanbaatar.svg",
+    "description": "Ulaanbaatar is the capital of Mongolia, known for its unique blend of nomadic traditions and modern urban life. The ger (yurt) - the traditional portable dwelling of Mongolian nomads - remains an iconic symbol of Mongolian culture, representing thousands of years of nomadic heritage. Even in the capital, many residents still live in ger districts, maintaining their ancestral way of life while adapting to modern times.",
+    "region": "Asia"
+  },
+  {
+    "_id": "249",
+    "name": "Chengdu Giant Panda",
+    "city": "Chengdu",
+    "country": "China",
+    "category": "Culture",
+    "tags": [
+      "panda",
+      "giant-panda",
+      "wildlife",
+      "conservation",
+      "symbol"
+    ],
+    "svgFilename": "cn-chengdu.svg",
+    "description": "Chengdu is the capital of Sichuan province in China, known worldwide as the home of the giant panda. The city hosts the famous Chengdu Research Base of Giant Panda Breeding, making it the best place on Earth to see these beloved endangered animals. The giant panda has become not only a symbol of Chengdu but also a global icon of wildlife conservation and China's national treasure.",
+    "region": "Asia"
   }
 ]

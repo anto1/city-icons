@@ -142,5 +142,73 @@
     "svgFilename": "ar-cordoba.svg",
     "description": "Córdoba is represented by its distinctive city arch, a triumphal monument that features two Spanish medieval-style towers with strong reminiscences of Romanesque art. The design draws the shield of the City of Córdoba twice and joins them with a bow, creating an eclectic and characteristic arch. Each tower stands 18.6 meters high with a 6-meter diameter, connected by a bridge that forms this unique architectural symbol of the city.",
     "region": "South America"
+  },
+  {
+    "_id": "243",
+    "name": "Bogotá Cathedral",
+    "city": "Bogotá",
+    "country": "Colombia",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "religious",
+      "colonial",
+      "historic",
+      "architecture"
+    ],
+    "svgFilename": "co-bogota.svg",
+    "description": "Bogotá is the capital and largest city of Colombia, known for its stunning Primatial Cathedral located on the historic Plaza Bolívar. This impressive neoclassical cathedral, one of the largest in South America, represents the spiritual heart of the nation and reflects Colombia's rich colonial heritage. The city combines historic charm with modern development, featuring the colorful La Candelaria district and vibrant cultural scene.",
+    "region": "South America"
+  },
+  {
+    "_id": "244",
+    "name": "Medellín Cable Car",
+    "city": "Medellín",
+    "country": "Colombia",
+    "category": "Landmarks",
+    "tags": [
+      "cable-car",
+      "metrocable",
+      "transportation",
+      "urban",
+      "innovation"
+    ],
+    "svgFilename": "co-medellin.svg",
+    "description": "Medellín is Colombia's second-largest city, famous for its innovative Metrocable system - an aerial cable car network that connects hillside neighborhoods to the city center. This pioneering urban transportation solution has become a symbol of Medellín's remarkable transformation from a troubled past to a model of urban innovation and social inclusion, earning the city international recognition for its creative approach to public transit.",
+    "region": "South America"
+  },
+  {
+    "_id": "245",
+    "name": "Cartagena Pedro de Heredia Statue",
+    "city": "Cartagena",
+    "country": "Colombia",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "pedro-de-heredia",
+      "founder",
+      "colonial",
+      "historic"
+    ],
+    "svgFilename": "co-cartagena.svg",
+    "description": "Cartagena is a stunning Caribbean coastal city in Colombia, known for its beautifully preserved colonial architecture and the statue of Pedro de Heredia, the Spanish conquistador who founded the city in 1533. The monument stands as a testament to Cartagena's colonial origins, while the city itself enchants visitors with its colorful walled Old Town, a UNESCO World Heritage site, romantic plazas, and vibrant Caribbean culture.",
+    "region": "South America"
+  },
+  {
+    "_id": "250",
+    "name": "Ushuaia Penguin",
+    "city": "Ushuaia",
+    "country": "Argentina",
+    "category": "Culture",
+    "tags": [
+      "penguin",
+      "wildlife",
+      "patagonia",
+      "end-of-the-world",
+      "nature"
+    ],
+    "svgFilename": "ar-ushuaia.svg",
+    "description": "Ushuaia is the southernmost city in the world, located in Argentine Patagonia at the tip of South America. Known as the 'End of the World,' this remote city is famous for its colonies of Magellanic and gentoo penguins that inhabit the nearby islands and coastlines. The penguin has become a beloved symbol of Ushuaia, representing the city's unique position as a gateway to Antarctica and its extraordinary subpolar wildlife.",
+    "region": "South America"
   }
 ]
