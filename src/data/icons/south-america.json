@@ -210,5 +210,22 @@
     "svgFilename": "ar-ushuaia.svg",
     "description": "Ushuaia is the southernmost city in the world, located in Argentine Patagonia at the tip of South America. Known as the 'End of the World,' this remote city is famous for its colonies of Magellanic and gentoo penguins that inhabit the nearby islands and coastlines. The penguin has become a beloved symbol of Ushuaia, representing the city's unique position as a gateway to Antarctica and its extraordinary subpolar wildlife.",
     "region": "South America"
+  },
+  {
+    "_id": "254",
+    "name": "Georgetown St. George's Cathedral",
+    "city": "Georgetown",
+    "country": "Guyana",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "wooden",
+      "spire",
+      "gothic",
+      "tallest-wooden"
+    ],
+    "svgFilename": "gy-georgetown.svg",
+    "description": "Georgetown is the capital of Guyana, home to the magnificent St. George's Cathedral - one of the tallest wooden churches in the world. This stunning Gothic Revival cathedral, with its soaring wooden spire reaching 43 meters, was designed by Sir Arthur Blomfield and completed in 1892. Built entirely from tropical hardwood, the cathedral stands as a remarkable feat of 19th-century engineering and a beloved symbol of Georgetown's colonial heritage.",
+    "region": "South America"
   }
 ]

@@ -98,5 +98,56 @@
     "svgFilename": "cr-alajuela.svg",
     "description": "Alajuela is Costa Rica's second-largest city, home to the statue of Juan Santamaría - the national hero of Costa Rica. This monument honors the young drummer boy who sacrificed his life in 1856 during the Battle of Rivas against William Walker's filibusters. Santamaría has become a symbol of Costa Rican courage and national identity, and the city celebrates him annually on April 11th, a national holiday.",
     "region": "Central America"
+  },
+  {
+    "_id": "251",
+    "name": "Nassau Queen's Staircase",
+    "city": "Nassau",
+    "country": "Bahamas",
+    "category": "Landmarks",
+    "tags": [
+      "queens-staircase",
+      "staircase",
+      "historic",
+      "limestone",
+      "colonial"
+    ],
+    "svgFilename": "bs-nassau.svg",
+    "description": "Nassau is the capital of the Bahamas, known for its iconic Queen's Staircase - a stunning 66-step stairway carved out of solid limestone by enslaved people in the late 18th century. Named in honor of Queen Victoria, this remarkable monument connects Fort Fincastle to the city below and stands as both a testament to the skill of its builders and a poignant reminder of the islands' colonial history.",
+    "region": "Central America"
+  },
+  {
+    "_id": "252",
+    "name": "Port-au-Prince Iron Market",
+    "city": "Port-au-Prince",
+    "country": "Haiti",
+    "category": "Landmarks",
+    "tags": [
+      "iron-market",
+      "marche-en-fer",
+      "pavilion",
+      "historic",
+      "market"
+    ],
+    "svgFilename": "ht-port-au-prince.svg",
+    "description": "Port-au-Prince is the capital and largest city of Haiti, home to the iconic Iron Market (Marché en Fer) - a striking 19th-century iron structure with distinctive red pavilion roofs. Originally prefabricated in France and shipped to Haiti, this beloved market has been the heart of Haitian commerce and culture for over a century, selling everything from local crafts to fresh produce beneath its ornate iron framework.",
+    "region": "Central America"
+  },
+  {
+    "_id": "253",
+    "name": "Saint John's Cathedral",
+    "city": "Saint John's",
+    "country": "Antigua and Barbuda",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "twin-towers",
+      "baroque",
+      "religious",
+      "colonial"
+    ],
+    "svgFilename": "ag-saint-john.svg",
+    "description": "Saint John's is the capital of Antigua and Barbuda, dominated by the magnificent St. John's Cathedral with its iconic twin-tower baroque façade. Originally built in 1681 and reconstructed after earthquakes, the cathedral's striking white towers rise majestically against the Caribbean sky, serving as the most recognizable landmark of the island nation and a symbol of its Anglican heritage and colonial past.",
+    "region": "Central America"
   }
 ]
