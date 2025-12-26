@@ -1809,5 +1809,22 @@
     "svgFilename": "it-taranto.svg",
     "description": "Taranto is a historic coastal city in southern Italy, known for its iconic dolphin symbol that dates back to ancient Greek mythology. According to legend, the city was founded by Taras, son of Poseidon, who was carried ashore by a dolphin. The dolphin remains the emblem of Taranto to this day, representing the city's deep connection to the sea, its ancient Greek heritage, and its position as a major naval port on the Ionian Sea.",
     "region": "Europe"
+  },
+  {
+    "_id": "259",
+    "name": "Barcelos Rooster",
+    "city": "Barcelos",
+    "country": "Portugal",
+    "category": "Culture",
+    "tags": [
+      "rooster",
+      "galo",
+      "folklore",
+      "ceramic",
+      "national-symbol"
+    ],
+    "svgFilename": "pt-barcelos.svg",
+    "description": "Barcelos is a historic town in northern Portugal, famous for the legendary Galo de Barcelos (Rooster of Barcelos) - one of the most recognizable symbols of Portugal. According to folklore, a roasted rooster miraculously rose from a judge's dinner plate to prove an innocent pilgrim's innocence. This colorful ceramic rooster, traditionally decorated with hearts and vibrant patterns, has become an emblem of Portuguese culture, faith, and good luck, found in homes and souvenir shops worldwide.",
+    "region": "Europe"
   }
 ]

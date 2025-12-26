@@ -518,5 +518,73 @@
     "svgFilename": "cn-chengdu.svg",
     "description": "Chengdu is the capital of Sichuan province in China, known worldwide as the home of the giant panda. The city hosts the famous Chengdu Research Base of Giant Panda Breeding, making it the best place on Earth to see these beloved endangered animals. The giant panda has become not only a symbol of Chengdu but also a global icon of wildlife conservation and China's national treasure.",
     "region": "Asia"
+  },
+  {
+    "_id": "255",
+    "name": "Ashgabat Neutrality Monument",
+    "city": "Ashgabat",
+    "country": "Turkmenistan",
+    "category": "Landmarks",
+    "tags": [
+      "neutrality-monument",
+      "tripod",
+      "modern",
+      "monument",
+      "iconic"
+    ],
+    "svgFilename": "tk-ashgabat.svg",
+    "description": "Ashgabat is the capital of Turkmenistan, known for its striking Neutrality Monument - a 95-meter tripod tower crowned with a golden statue of former president Saparmurat Niyazov. This iconic structure, also called the Arch of Neutrality, symbolizes Turkmenistan's policy of permanent neutrality. The monument's unique three-legged design dominates the city's white marble skyline, making Ashgabat one of the most architecturally distinctive capitals in Central Asia.",
+    "region": "Asia"
+  },
+  {
+    "_id": "256",
+    "name": "Pyongyang Juche Tower",
+    "city": "Pyongyang",
+    "country": "North Korea",
+    "category": "Landmarks",
+    "tags": [
+      "juche-tower",
+      "obelisk",
+      "torch",
+      "monument",
+      "ideology"
+    ],
+    "svgFilename": "nk-phenyang.svg",
+    "description": "Pyongyang is the capital of North Korea, dominated by the iconic Juche Tower - a 170-meter granite obelisk topped with a 20-meter torch that glows red at night. Built in 1982 to commemorate the 70th birthday of Kim Il-sung, the tower represents the Juche ideology of national self-reliance. Standing on the banks of the Taedong River, the tower is one of the tallest monuments in the world and a defining symbol of Pyongyang's monumental socialist architecture.",
+    "region": "Asia"
+  },
+  {
+    "_id": "257",
+    "name": "Nukus Karakalpak Hat",
+    "city": "Nukus",
+    "country": "Uzbekistan",
+    "category": "Culture",
+    "tags": [
+      "karakalpak",
+      "hat",
+      "traditional",
+      "headwear",
+      "ethnic"
+    ],
+    "svgFilename": "uz-nukus.svg",
+    "description": "Nukus is the capital of the Republic of Karakalpakstan in Uzbekistan, known for its unique Karakalpak cultural heritage. The traditional Karakalpak hat is an iconic symbol of the region's distinct ethnic identity, representing centuries of nomadic traditions in the harsh desert landscapes near the Aral Sea. The city is also famous for the Savitsky Museum, which houses one of the world's largest collections of Russian avant-garde art.",
+    "region": "Asia"
+  },
+  {
+    "_id": "258",
+    "name": "Dushanbe Ismoil Somoni Monument",
+    "city": "Dushanbe",
+    "country": "Tajikistan",
+    "category": "Landmarks",
+    "tags": [
+      "ismoil-somoni",
+      "monument",
+      "crown",
+      "arch",
+      "national-hero"
+    ],
+    "svgFilename": "tj-dushanbe.svg",
+    "description": "Dushanbe is the capital of Tajikistan, dominated by the magnificent Ismoil Somoni Monument - a grand crown-and-arch composition honoring the founder of the first Tajik state. This ornate golden monument, standing in the heart of the city, features an elaborate crowned arch design that symbolizes Tajik national identity and the legacy of the 9th-century Samanid dynasty. The monument has become the most iconic landmark of Dushanbe and a powerful symbol of Tajik statehood.",
+    "region": "Asia"
   }
 ]
