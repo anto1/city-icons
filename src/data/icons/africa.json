@@ -173,5 +173,22 @@
     "svgFilename": "ke-nairobi.svg",
     "description": "Nairobi is the capital and largest city of Kenya, featuring the iconic Kenyatta International Convention Centre (KICC) tower. This distinctive 28-story cylindrical tower with its unique architectural design has defined Nairobi's skyline since 1973, serving as a symbol of Kenya's post-independence development and its role as East Africa's premier business and conference hub.",
     "region": "Africa"
+  },
+  {
+    "_id": "265",
+    "name": "Maseru Basotho Hat Monument",
+    "city": "Maseru",
+    "country": "Lesotho",
+    "category": "Culture",
+    "tags": [
+      "mokorotlo",
+      "basotho-hat",
+      "traditional",
+      "monument",
+      "national-symbol"
+    ],
+    "svgFilename": "ls-maseru.svg",
+    "description": "Maseru is the capital of Lesotho, home to the iconic Basotho Hat (Mokorotlo) monument - a distinctive conical straw hat that has become the national symbol of the Mountain Kingdom. This traditional headwear, inspired by the shape of Mount Qiloane, represents Basotho cultural identity and pride. The monument celebrates Lesotho's unique heritage as Africa's only country entirely above 1,000 meters, where the Mokorotlo remains an everyday symbol of national identity.",
+    "region": "Africa"
   }
 ]

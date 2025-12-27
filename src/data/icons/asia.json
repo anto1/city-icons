@@ -586,5 +586,90 @@
     "svgFilename": "tj-dushanbe.svg",
     "description": "Dushanbe is the capital of Tajikistan, dominated by the magnificent Ismoil Somoni Monument - a grand crown-and-arch composition honoring the founder of the first Tajik state. This ornate golden monument, standing in the heart of the city, features an elaborate crowned arch design that symbolizes Tajik national identity and the legacy of the 9th-century Samanid dynasty. The monument has become the most iconic landmark of Dushanbe and a powerful symbol of Tajik statehood.",
     "region": "Asia"
+  },
+  {
+    "_id": "260",
+    "name": "Kuala Lumpur Petronas Towers",
+    "city": "Kuala Lumpur",
+    "country": "Malaysia",
+    "category": "Landmarks",
+    "tags": [
+      "petronas-towers",
+      "twin-towers",
+      "skyscraper",
+      "modern",
+      "iconic"
+    ],
+    "svgFilename": "my-kuala-lumpur.svg",
+    "description": "Kuala Lumpur is the capital of Malaysia, famous for the iconic Petronas Twin Towers - once the tallest buildings in the world and still the tallest twin towers on Earth. These 88-story postmodern skyscrapers, connected by a sky bridge, have become the defining symbol of Malaysia's rapid development and ambition. Their distinctive Islamic-inspired design reflects Malaysia's cultural heritage while representing the nation's modern aspirations.",
+    "region": "Asia"
+  },
+  {
+    "_id": "261",
+    "name": "Dili Cristo Rei",
+    "city": "Dili",
+    "country": "Timor-Leste",
+    "category": "Landmarks",
+    "tags": [
+      "cristo-rei",
+      "statue",
+      "christ",
+      "religious",
+      "hilltop"
+    ],
+    "svgFilename": "tl-dili.svg",
+    "description": "Dili is the capital of Timor-Leste (East Timor), home to the striking Cristo Rei of Dili - a 27-meter statue of Jesus Christ standing atop a globe on Cape Fatucama. A gift from Indonesia in 1996, this majestic statue overlooks the Ombai Strait and has become an enduring symbol of the young nation's Catholic faith and resilience. Visitors climb 500 steps lined with Stations of the Cross to reach this beloved landmark.",
+    "region": "Asia"
+  },
+  {
+    "_id": "262",
+    "name": "Kuching Cat Statue",
+    "city": "Kuching",
+    "country": "Malaysia",
+    "category": "Culture",
+    "tags": [
+      "cat",
+      "statue",
+      "feline",
+      "quirky",
+      "mascot"
+    ],
+    "svgFilename": "my-kuching.svg",
+    "description": "Kuching is the capital of Sarawak on Malaysian Borneo, famous for its playful cat statues scattered throughout the city. The name 'Kuching' means 'cat' in Malay, and the city has embraced this feline identity with numerous cat monuments, including the iconic Great Cat of Kuching. The city also hosts a Cat Museum, making it a unique destination for cat lovers and a celebration of this beloved animal in Malaysian culture.",
+    "region": "Asia"
+  },
+  {
+    "_id": "263",
+    "name": "Seria Billionth Barrel Monument",
+    "city": "Seria",
+    "country": "Brunei",
+    "category": "Landmarks",
+    "tags": [
+      "billionth-barrel",
+      "oil",
+      "monument",
+      "petroleum",
+      "industry"
+    ],
+    "svgFilename": "bn-seria.svg",
+    "description": "Seria is the oil town of Brunei, home to the iconic Billionth Barrel Monument - a striking oil-drop shaped structure commemorating the extraction of Brunei's billionth barrel of oil in 1991. This gleaming monument celebrates the petroleum industry that transformed Brunei into one of the world's wealthiest nations. Standing near the country's first oil well, it symbolizes the black gold that has shaped Seria's identity and Brunei's prosperity.",
+    "region": "Asia"
+  },
+  {
+    "_id": "264",
+    "name": "Sihanoukville Golden Lions",
+    "city": "Sihanoukville",
+    "country": "Cambodia",
+    "category": "Landmarks",
+    "tags": [
+      "golden-lions",
+      "monument",
+      "roundabout",
+      "iconic",
+      "coastal"
+    ],
+    "svgFilename": "kh-sihanoukville.svg",
+    "description": "Sihanoukville is Cambodia's premier beach resort city, famous for the iconic Golden Lions Monument at Independence Square. This striking sculpture features two majestic golden lions - symbols of strength and protection in Khmer culture - standing guard at the city's main roundabout. The monument has become the defining landmark of Sihanoukville, welcoming visitors to Cambodia's coastal paradise on the Gulf of Thailand.",
+    "region": "Asia"
   }
 ]
