@@ -23,6 +23,9 @@ export function IconFooter({ icons }: IconFooterProps) {
         <nav aria-label="Browse by country" className="mb-6">
           <h2 className="text-sm font-medium text-muted-foreground mb-3">
             {countries.length} Countries
+            <span className="ml-2 text-xs opacity-60">
+              ({195 - countries.length} left to add)
+            </span>
           </h2>
           <ul className="flex flex-wrap justify-center gap-2 max-w-5xl mx-auto list-none">
             {countries.map((country) => {
