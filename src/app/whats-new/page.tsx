@@ -4,6 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { changelog, getRecentCityCount } from '@/data/changelog';
 import { WhatsNewContent } from './WhatsNewContent';
 import iconData from '@/data';
+import { PageHeader } from '@/components/PageHeader';
+import { IconFooter } from '@/components/IconFooter';
 
 // Force static generation
 export const dynamic = 'force-static';
@@ -97,8 +99,9 @@ export default function WhatsNewPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="min-h-screen bg-background">
+        <PageHeader />
         <div className="container mx-auto px-4 py-8">
-          <nav aria-label="Breadcrumb" className="text-center mb-8">
+          <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
               <li>
                 <Link
@@ -124,24 +127,8 @@ export default function WhatsNewPage() {
           <main>
             <WhatsNewContent changelog={changelog} allIcons={allIcons} />
           </main>
-
-          <footer className="py-6 mt-16" role="contentinfo">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Want a specific city?{' '}
-                <a
-                  href="mailto:icons@partdirector.ch?subject=City Request"
-                  className="text-foreground hover:text-orange-600 transition-colors underline"
-                >
-                  Request it here
-                </a>
-              </p>
-              <p className="text-sm text-foreground">
-                © Studio Partdirector, 2025
-              </p>
-            </div>
-          </footer>
         </div>
+        <IconFooter icons={allIcons} />
       </div>
     </>
   );

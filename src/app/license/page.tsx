@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { LicenseContent } from './LicenseContent';
+import { PageHeader } from '@/components/PageHeader';
+import { IconFooter } from '@/components/IconFooter';
+import iconData from '@/data';
 
 // Force static generation
 export const dynamic = 'force-static';
@@ -105,9 +108,10 @@ export default function LicensePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="min-h-screen bg-background">
+        <PageHeader />
         <div className="container mx-auto px-4 py-8">
           {/* Breadcrumb Navigation */}
-          <nav aria-label="Breadcrumb" className="text-center mb-8">
+          <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
               <li>
                 <Link 
@@ -135,16 +139,8 @@ export default function LicensePage() {
           <main>
             <LicenseContent />
           </main>
-
-          {/* Footer */}
-          <footer className="py-6 mt-16" role="contentinfo">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-sm text-foreground">
-                © Studio Partdirector, 2025
-              </p>
-            </div>
-          </footer>
         </div>
+        <IconFooter icons={iconData} />
       </div>
     </>
   );

@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { Icon } from '@/types';
 import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
 import { ThemeToggle } from './ThemeToggle';
+import { Github } from 'lucide-react';
+import { trackEvent } from 'fathom-client';
 
 interface RandomIconHeaderProps {
   icons: Icon[];
@@ -21,7 +23,17 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
 
   return (
     <nav aria-label="Featured cities" className="relative flex justify-center items-center gap-8 py-16">
-      <div className="absolute right-4 top-4">
+      <div className="absolute right-4 top-4 flex items-center gap-2">
+        <a
+          href="https://github.com/anto1/city-icons"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+          onClick={() => trackEvent('GITHUB_CLICKED')}
+          aria-label="View on GitHub"
+        >
+          <Github className="w-5 h-5" />
+        </a>
         <ThemeToggle />
       </div>
       {randomIcons.map((icon) => (

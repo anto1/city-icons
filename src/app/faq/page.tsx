@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { FAQContent } from './FAQContent';
+import { PageHeader } from '@/components/PageHeader';
+import { IconFooter } from '@/components/IconFooter';
+import iconData from '@/data';
 
 // Force static generation
 export const dynamic = 'force-static';
@@ -124,8 +127,9 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="min-h-screen bg-background">
+        <PageHeader />
         <div className="container mx-auto px-4 py-8">
-          <nav aria-label="Breadcrumb" className="text-center mb-8">
+          <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
               <li>
                 <Link
@@ -152,23 +156,8 @@ export default function FAQPage() {
             <FAQContent faqs={faqs} />
           </main>
 
-          <footer className="py-6 mt-16" role="contentinfo">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Still have questions?{' '}
-                <a
-                  href="mailto:icons@partdirector.ch"
-                  className="text-foreground hover:text-orange-600 transition-colors underline"
-                >
-                  Contact us
-                </a>
-              </p>
-              <p className="text-sm text-foreground">
-                © Studio Partdirector, 2025
-              </p>
-            </div>
-          </footer>
         </div>
+        <IconFooter icons={iconData} />
       </div>
     </>
   );

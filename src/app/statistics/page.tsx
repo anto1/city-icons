@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import iconData from '@/data';
 import { StatisticsContent } from './StatisticsContent';
+import { PageHeader } from '@/components/PageHeader';
+import { IconFooter } from '@/components/IconFooter';
 
 // Force static generation
 export const dynamic = 'force-static';
@@ -150,8 +152,9 @@ export default function StatisticsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <div className="min-h-screen bg-background">
+        <PageHeader />
         <div className="container mx-auto px-4 py-8">
-          <nav aria-label="Breadcrumb" className="text-center mb-8">
+          <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
               <li>
                 <Link
@@ -177,15 +180,8 @@ export default function StatisticsPage() {
           <main>
             <StatisticsContent stats={stats} />
           </main>
-
-          <footer className="py-6 mt-16" role="contentinfo">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-sm text-foreground">
-                © Studio Partdirector, 2025
-              </p>
-            </div>
-          </footer>
         </div>
+        <IconFooter icons={iconData} />
       </div>
     </>
   );

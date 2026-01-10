@@ -10,6 +10,7 @@ import { trackEvent } from 'fathom-client';
 import { getIconUrl, getIconSvgUrl, slugify } from '@/lib/utils';
 import { IconFooter } from '@/components/IconFooter';
 import { ThemeToggle } from './ThemeToggle';
+import { Github } from 'lucide-react';
 import Link from 'next/link';
 
 interface CityPageProps {
@@ -126,7 +127,17 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
     <div className="min-h-screen bg-background">
       {/* Random icon header - same as main page */}
       <nav aria-label="Featured cities" className="relative flex justify-center items-center gap-8 py-16">
-        <div className="absolute right-4 top-4">
+        <div className="absolute right-4 top-4 flex items-center gap-2">
+          <a
+            href="https://github.com/anto1/city-icons"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            onClick={() => trackEvent('GITHUB_CLICKED')}
+            aria-label="View on GitHub"
+          >
+            <Github className="w-5 h-5" />
+          </a>
           <ThemeToggle />
         </div>
         {[...allIcons]

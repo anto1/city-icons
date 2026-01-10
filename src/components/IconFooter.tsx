@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
