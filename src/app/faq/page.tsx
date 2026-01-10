@@ -66,6 +66,10 @@ const faqs = [
     answer: 'All City Icons are designed by Anton Prokopev, founder and art director of Studio Partdirector. Anton lives in Matosinhos, Portugal — which explains the extensive collection of Portuguese cities! Connect with him on LinkedIn at linkedin.com/in/prokopev or visit partdirector.ch to see more work.',
   },
   {
+    question: 'Can you create a custom icon for me?',
+    answer: 'Sure! Just drop us a line at icons@partdirector.ch with your request and we\'ll get back to you.',
+  },
+  {
     question: 'Where can I discuss the icons or give feedback?',
     answer: 'We love hearing from the community! Check out our Reddit thread at r/Cities where we first shared the collection and got amazing feedback. Feel free to join the discussion, roast our landmark choices, or suggest new cities.',
   },
