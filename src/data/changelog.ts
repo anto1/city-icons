@@ -24,7 +24,7 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2024-W52',
     date: 'December 23-31, 2024',
-    cities: ['Taranto', 'Bogota', 'Medellin', 'Cartagena', 'Beijing', 'Bagan', 'Ulaanbaatar', 'Chengdu', 'Ushuaia'],
+    cities: ['Taranto', 'Bogotá', 'Medellín', 'Cartagena', 'Beijing', 'Bagan', 'Ulaanbaatar', 'Chengdu', 'Ushuaia'],
     description: 'South America and Asia expansion',
   },
   {
