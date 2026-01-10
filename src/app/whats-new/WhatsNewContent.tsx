@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar } from 'lucide-react';
 import { ChangelogEntry } from '@/data/changelog';
 import { Icon } from '@/types';
 import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
@@ -29,7 +28,6 @@ export function WhatsNewContent({ changelog, allIcons }: WhatsNewContentProps) {
             className={`${index !== 0 ? 'border-t border-border pt-12' : ''}`}
           >
             <header className="flex items-center gap-3 mb-6">
-              <Calendar className="w-5 h-5 text-orange-600" aria-hidden="true" />
               <div>
                 <h2 className="text-xl font-semibold text-foreground">
                   {entry.date}

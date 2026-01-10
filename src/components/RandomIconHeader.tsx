@@ -1,12 +1,12 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@/types';
 import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
 import { ThemeToggle } from './ThemeToggle';
-import { Github } from 'lucide-react';
+import { Github, ArrowUp } from 'lucide-react';
 import { trackEvent } from 'fathom-client';
 
 interface RandomIconHeaderProps {
@@ -14,6 +14,22 @@ interface RandomIconHeaderProps {
 }
 
 export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > window.innerHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    trackEvent('SCROLL_TO_TOP_CLICKED');
+  };
+
   // Memoize random selection to avoid re-shuffling on every render
   const randomIcons = useMemo(() => {
     return [...icons]
@@ -23,7 +39,17 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
 
   return (
     <nav aria-label="Featured cities" className="relative flex justify-center items-center gap-8 py-16">
-      <div className="absolute right-4 top-4 flex items-center gap-2">
+      <div className="absolute md:fixed right-4 top-4 md:z-50 flex items-center gap-2">
+        <button
+          onClick={scrollToTop}
+          className={`p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 ${
+            showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+          }`}
+          aria-label="Scroll to top"
+          aria-hidden={!showScrollTop}
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
         <a
           href="https://github.com/anto1/city-icons"
           target="_blank"
