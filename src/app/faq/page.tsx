@@ -19,7 +19,15 @@ const faqs = [
   },
   {
     question: 'Are the icons free to use?',
-    answer: 'Yes! City Icons are free for personal and educational use. For commercial projects, please contact us at icons@partdirector.ch to discuss licensing options.',
+    answer: 'Yes! City Icons are free for personal and educational use. For commercial projects, please contact us at icons@partdirector.ch to discuss licensing and pricing.',
+  },
+  {
+    question: 'What are the best use cases for City Icons?',
+    answer: 'City Icons are perfect for travel websites, booking apps, tourism guides, travel blogs, location-based services, and any project that needs to represent cities visually. They work great as markers on maps, section headers, or decorative elements.',
+  },
+  {
+    question: 'Can I resell the icons or include them in icon packs?',
+    answer: 'No, reselling the icons or redistributing them as part of other icon collections is not permitted. The icons are meant for use in your own projects, not for resale.',
   },
   {
     question: 'What format are the icons in?',
@@ -46,12 +54,20 @@ const faqs = [
     answer: 'Yes! When requesting a new city, feel free to suggest which landmark you\'d like to see represented. We\'ll do our best to incorporate iconic and recognizable features.',
   },
   {
+    question: 'Is the project open source? Can I contribute?',
+    answer: 'Yes! City Icons is open source on GitHub at github.com/anto1/city-icons. You can star the repo, report issues, suggest improvements, or contribute to the codebase. We welcome community involvement!',
+  },
+  {
     question: 'What is the City Roulette feature?',
     answer: 'City Roulette is a fun feature that randomly selects cities for you. Spin the wheel to discover new destinations - perfect for travel inspiration or when you can\'t decide where to go next!',
   },
   {
     question: 'Who creates these icons?',
-    answer: 'All City Icons are designed by Studio Partdirector, a design studio focused on creating beautiful, minimalist graphics. Visit partdirector.ch to learn more about our work.',
+    answer: 'All City Icons are designed by Anton Prokopev, founder and art director of Studio Partdirector. Anton lives in Matosinhos, Portugal — which explains the extensive collection of Portuguese cities! Connect with him on LinkedIn at linkedin.com/in/prokopev or visit partdirector.ch to see more work.',
+  },
+  {
+    question: 'Where can I discuss the icons or give feedback?',
+    answer: 'We love hearing from the community! Check out our Reddit thread at r/Cities where we first shared the collection and got amazing feedback. Feel free to join the discussion, roast our landmark choices, or suggest new cities.',
   },
 ];
 
