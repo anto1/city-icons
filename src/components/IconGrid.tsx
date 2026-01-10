@@ -149,7 +149,7 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
               <div className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4">
                 <Image
                   src={getIconSvgUrl(icon)}
-                  alt=""
+                  alt={`${icon.name} - line art icon of ${icon.city}, ${icon.country}`}
                   title={`${icon.city}, ${icon.country} - ${icon.name}`}
                   width={56}
                   height={56}

@@ -180,7 +180,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                       }`}>
                         <Image
                           src={getIconSvgUrl(displayIcons[index])}
-                          alt=""
+                          alt={`${displayIcons[index].name} - ${displayIcons[index].city}`}
                           width={56}
                           height={56}
                           className="w-14 h-14 dark:invert"

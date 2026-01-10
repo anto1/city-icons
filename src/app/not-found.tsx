@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Search, ArrowLeft } from 'lucide-react';
 import iconData from '@/data';
+import { PageHeader } from '@/components/PageHeader';
+import { IconFooter } from '@/components/IconFooter';
 
 export default function NotFound() {
   // Get a random icon
@@ -11,11 +13,12 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageHeader />
       <main className="container mx-auto px-4 py-8">
-        <article className="text-center max-w-md mx-auto">
+        <article className="text-center max-w-md mx-auto pt-8">
           {/* Navigation */}
           <nav aria-label="Breadcrumb" className="mb-8">
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
             >
@@ -23,20 +26,20 @@ export default function NotFound() {
               Back to Icons
             </Link>
           </nav>
-          
+
           {/* Random Icon */}
           <div className="flex justify-center mb-12">
             <div className="w-16 h-16 text-muted-foreground">
-              <Image 
+              <Image
                 src={`/icons/${randomIcon.svgFilename}`}
-                alt=""
+                alt={`${randomIcon.name} - ${randomIcon.city}, ${randomIcon.country}`}
                 width={64}
                 height={64}
-                className="w-full h-full"
+                className="w-full h-full dark:invert"
               />
             </div>
           </div>
-          
+
           <header>
             <h1 className="text-4xl font-bold text-foreground mb-4">
               404 - Page Not Found
@@ -48,7 +51,7 @@ export default function NotFound() {
 
           {/* Navigation Action */}
           <nav aria-label="Page actions" className="flex justify-center mb-8">
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center justify-center px-6 py-3 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors"
             >
@@ -59,14 +62,7 @@ export default function NotFound() {
         </article>
       </main>
 
-      {/* Footer */}
-      <footer className="py-6 mt-16" role="contentinfo">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-foreground">
-            © Studio Partdirector, 2025
-          </p>
-        </div>
-      </footer>
+      <IconFooter icons={iconData} />
     </div>
   );
 } 

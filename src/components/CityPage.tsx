@@ -153,7 +153,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
           >
             <Image
               src={getIconSvgUrl(randomIcon)}
-              alt=""
+              alt={`${randomIcon.name} - ${randomIcon.city}, ${randomIcon.country}`}
               width={56}
               height={56}
               className="w-14 h-14 dark:invert"
@@ -271,10 +271,10 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                       <div className="w-14 h-14 flex items-center justify-center mb-4">
                         <Image
                           src={getIconSvgUrl(relatedIcon)}
-                          alt=""
                           width={56}
                           height={56}
                           className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
+                          alt="City landmark icon"
                           loading="lazy"
                         />
                       </div>
@@ -307,10 +307,10 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                       <div className="w-14 h-14 flex items-center justify-center mb-4">
                         <Image
                           src={getIconSvgUrl(randomIcon)}
-                          alt=""
                           width={56}
                           height={56}
                           className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
+                          alt="City landmark icon"
                           loading="lazy"
                         />
                       </div>

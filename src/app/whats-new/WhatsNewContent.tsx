@@ -77,7 +77,7 @@ export function WhatsNewContent({ changelog, allIcons }: WhatsNewContentProps) {
                       <div className="w-12 h-12 mb-3 flex items-center justify-center">
                         <Image
                           src={getIconSvgUrl(icon)}
-                          alt=""
+                          alt={`${icon.name} - ${icon.city}, ${icon.country}`}
                           width={48}
                           height={48}
                           className="w-12 h-12 opacity-70 group-hover:opacity-100 transition-opacity dark:invert"

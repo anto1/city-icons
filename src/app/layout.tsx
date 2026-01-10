@@ -84,9 +84,21 @@ export default function RootLayout({
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://partdirector.ch" />
         <link rel="dns-prefetch" href="https://cdn.usefathom.com" />
-        
+        <link rel="dns-prefetch" href="https://github.com" />
+
         {/* Preconnect to analytics (used by Fathom) */}
         <link rel="preconnect" href="https://cdn.usefathom.com" crossOrigin="anonymous" />
+
+        {/* Preload critical assets */}
+        <link rel="preload" href="/og-image.png" as="image" type="image/png" />
+
+        {/* Preload first visible icons (alphabetically sorted: Amsterdam, Ashgabat, Athens, Auckland, Bagan, Bangkok) */}
+        <link rel="preload" href="/icons/nl-amsterdam.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/tm-ashgabat.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/gr-athens.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/nz-auckland.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/mm-bagan.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/th-bangkok.svg" as="image" type="image/svg+xml" />
         
         <script
           type="application/ld+json"

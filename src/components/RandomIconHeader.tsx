@@ -46,7 +46,7 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
         >
           <Image
             src={getIconSvgUrl(icon)}
-            alt=""
+            alt={`${icon.name} - ${icon.city}, ${icon.country}`}
             width={56}
             height={56}
             className="w-14 h-14 dark:invert"
