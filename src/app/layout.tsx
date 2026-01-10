@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from 'sonner';
 import '@fontsource/instrument-sans';
 import { FathomAnalytics } from './fathom';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'City Icons Collection',
@@ -63,8 +64,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="font-instrument-sans">
+    <html lang="en" className="font-instrument-sans" suppressHydrationWarning>
       <head>
+        {/* Prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://partdirector.ch" />
         <link rel="dns-prefetch" href="https://cdn.usefathom.com" />
@@ -101,18 +117,20 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased text-base">
-        {/* Skip to main content link for accessibility */}
-        <a 
-          href="#main-content" 
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:rounded-lg focus:outline-none"
-        >
-          Skip to main content
-        </a>
-        <FathomAnalytics />
-        <main id="main-content">
-          {children}
-        </main>
-        <Toaster />
+        <ThemeProvider>
+          {/* Skip to main content link for accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:rounded-lg focus:outline-none"
+          >
+            Skip to main content
+          </a>
+          <FathomAnalytics />
+          <main id="main-content">
+            {children}
+          </main>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

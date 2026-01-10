@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
 import { getIconSvgUrl } from '@/lib/utils';
+import { ThemeToggle } from './ThemeToggle';
 
 interface RoulettePageProps {
   icons: Icon[];
@@ -119,13 +120,17 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Cherry Icon Header */}
-      <nav aria-label="Home navigation" className="flex justify-center items-center gap-8 py-16">
+      <nav aria-label="Home navigation" className="relative flex justify-center items-center gap-8 py-16">
+        <div className="absolute right-4 top-4">
+          <ThemeToggle />
+        </div>
         <Link href="/" className="w-14 h-14 text-foreground hover:opacity-80 transition-opacity" aria-label="Go to home page">
-          <Image 
-            src="/cherry.svg" 
-            alt="" 
+          <Image
+            src="/cherry.svg"
+            alt=""
             width={56}
             height={56}
+            className="dark:invert"
           />
         </Link>
       </nav>
@@ -148,8 +153,8 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
               <li
                 key={index}
                 className={`relative p-4 rounded-lg border-2 transition-all duration-300 w-full ${
-                  isSpinning 
-                    ? 'border-orange-400 bg-orange-50 animate-pulse' 
+                  isSpinning
+                    ? 'border-orange-400 bg-orange-50 dark:bg-orange-950 animate-pulse'
                     : 'border-border bg-card'
                 }`}
                 style={{ aspectRatio: '1 / 1' }}
@@ -167,7 +172,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                           alt=""
                           width={56}
                           height={56}
-                          className="w-14 h-14"
+                          className="w-14 h-14 dark:invert"
                         />
                       </div>
                       <h2 className={`text-base font-medium mb-1 ${
@@ -184,11 +189,12 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                   ) : (
                     <div className="text-center flex flex-col items-center justify-center h-full">
                       <div className="w-14 h-14 mb-4 flex items-center justify-center">
-                        <Image 
-                          src="/cherry.svg" 
-                          alt="" 
+                        <Image
+                          src="/cherry.svg"
+                          alt=""
                           width={56}
                           height={56}
+                          className="dark:invert"
                         />
                       </div>
                       <p className="text-base font-medium text-foreground mb-1">
@@ -219,7 +225,7 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
         {/* Result Message */}
         {resultMessage && (
           <section className="text-center mt-8" aria-live="assertive">
-            <p className="text-base md:text-xl font-medium text-foreground bg-orange-50 border border-orange-200 rounded-lg px-4 md:px-6 py-3 md:py-4 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl font-medium text-foreground bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 rounded-lg px-4 md:px-6 py-3 md:py-4 max-w-2xl mx-auto">
               {resultMessage}
             </p>
           </section>
@@ -253,21 +259,37 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
             </a>
             , 2025
           </p>
-          <nav aria-label="Footer links" className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+          <nav aria-label="Footer links" className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-center">
+            <Link
+              href="/whats-new"
               className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('MISSING_CITY_CLICKED')}
+              onClick={() => trackEvent('WHATS_NEW_CLICKED')}
             >
-              Missing your city?
-            </a>
+              What&apos;s New
+            </Link>
+            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+            <Link
+              href="/statistics"
+              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+              onClick={() => trackEvent('STATISTICS_CLICKED')}
+            >
+              Statistics
+            </Link>
+            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+            <Link
+              href="/faq"
+              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+              onClick={() => trackEvent('FAQ_CLICKED')}
+            >
+              FAQ
+            </Link>
             <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
             <Link
               href="/license"
               className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
               onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
             >
-              Usage & Licensing
+              License
             </Link>
             <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
             <a

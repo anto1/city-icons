@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icon } from '@/types';
 import { trackEvent } from 'fathom-client';
+import { Github } from 'lucide-react';
 
 interface IconHeaderProps {
   countryFilter?: string;
@@ -50,7 +51,17 @@ export function IconHeader({ countryFilter, filteredIcons, totalIcons }: IconHea
           onClick={() => trackEvent('STUDIO_PARTDIRECTOR_CLICKED')}
         >
           Studio Partdirector
-        </a>.
+        </a>.{' '}
+        <a
+          href="https://github.com/anto1/city-icons"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-foreground hover:text-orange-600 transition-colors"
+          onClick={() => trackEvent('GITHUB_CLICKED')}
+          aria-label="View on GitHub"
+        >
+          <Github className="w-5 h-5" />
+        </a>
       </p>
       <p className="text-lg text-muted-foreground mt-2">
         Feeling lucky?{' '}

@@ -153,7 +153,7 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
                   title={`${icon.city}, ${icon.country} - ${icon.name}`}
                   width={56}
                   height={56}
-                  className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                  className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
                   loading="lazy"
                 />
               </div>

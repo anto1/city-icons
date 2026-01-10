@@ -1,0 +1,140 @@
+# City Icons
+
+Minimalist SVG icon collection showcasing 252 cities worldwide. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
+
+**Live site:** https://cities.partdirector.ch
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router, Static Site Generation)
+- **Frontend:** React 19.1, TypeScript 5
+- **Styling:** Tailwind CSS 4, PostCSS
+- **UI:** Radix UI (Dialog), Lucide React icons, Sonner (toasts)
+- **Analytics:** Fathom Client
+- **Fonts:** Instrument Sans (Fontsource)
+- **Deploy:** Vercel
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Homepage (all icons)
+│   ├── layout.tsx         # Root layout, metadata, JSON-LD, ThemeProvider
+│   ├── [country]/         # Dynamic country pages
+│   │   └── [city]/        # Individual city pages
+│   ├── roulette/          # City Roulette feature
+│   ├── faq/               # FAQ page with structured data
+│   ├── statistics/        # Collection statistics page
+│   ├── whats-new/         # Weekly changelog of new icons
+│   ├── license/           # License page
+│   └── sitemap.ts         # XML sitemap generation
+├── components/            # React components
+│   ├── IconGrid.tsx       # Main grid with hover effects
+│   ├── SearchBar.tsx      # Search with autocomplete
+│   ├── IconModal.tsx      # Download/copy/share modal
+│   ├── CityPage.tsx       # City page layout
+│   ├── ThemeProvider.tsx  # Dark mode context provider
+│   ├── ThemeToggle.tsx    # Light/dark mode toggle button
+│   └── ui/                # Shadcn/Radix UI components
+├── data/
+│   ├── icons/             # Region JSON files (europe.json, asia.json, etc.)
+│   └── changelog.ts       # Weekly icon additions changelog
+├── hooks/                 # Custom hooks (useIconSearch, useKeyboardShortcuts)
+├── lib/
+│   ├── utils.ts           # Slug generation, URL helpers
+│   └── constants.ts       # Animation, grid, breakpoint constants
+└── types/                 # TypeScript interfaces
+
+public/
+└── icons/                 # 252 SVG files (naming: {country-code}-{city}.svg)
+```
+
+## Commands
+
+```bash
+npm run dev      # Start dev server (Turbopack)
+npm run build    # Production build (SSG)
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+## Key Architecture
+
+- **SSG:** All pages pre-rendered at build time via `generateStaticParams()`
+- **Server Components:** Default for pages; client components marked with `'use client'`
+- **SVG Loading:** Icons served as static files with 1-year cache headers
+- **Dynamic Routes:** `/[country]` and `/[country]/[city]` for country/city pages
+
+## Icon Data Structure
+
+Icons defined in `src/data/icons/*.json`:
+
+```typescript
+interface IconData {
+  _id: string;
+  name: string;           // Display name (e.g., "Barcelona Sagrada Familia")
+  city: string;           // City name
+  country: string;        // Country name
+  category: string;       // Category (e.g., "Landmarks")
+  tags: string[];         // Search tags
+  svgFilename: string;    // File reference (e.g., "es-barcelona.svg")
+  description?: string;   // Optional description
+  region: string;         // Geographic region
+}
+```
+
+## Adding New Icons
+
+1. Add SVG to `public/icons/` (naming: `{country-code}-{city}.svg`)
+2. Add entry to appropriate region file in `src/data/icons/`
+3. Update `src/data/changelog.ts` with the new cities for the current week
+4. Rebuild to generate static pages
+
+## Updating Changelog
+
+Edit `src/data/changelog.ts` and add a new entry at the top:
+
+```typescript
+{
+  week: '2025-W03',
+  date: 'January 13-17, 2025',
+  cities: ['New City 1', 'New City 2'],
+  description: 'Optional description of the batch',
+}
+```
+
+## Code Conventions
+
+- **TypeScript:** Strict mode, interfaces for all props
+- **Components:** Server by default, `'use client'` for interactivity
+- **Styling:** Tailwind utility classes, responsive via SM/MD/LG/XL breakpoints
+- **HTML:** Semantic elements, ARIA attributes, one `<h1>` per page
+- **State:** React hooks only (useState, useCallback, useMemo)
+
+## Important Files
+
+| File | Purpose |
+|------|---------|
+| `src/data/index.ts` | Aggregates all region JSON into single array |
+| `src/lib/constants.ts` | Grid columns, animation timings, breakpoints |
+| `next.config.ts` | Cache headers, SSG config |
+| `src/app/layout.tsx` | Global metadata, JSON-LD structured data |
+
+## Environment Variables
+
+```
+NEXT_PUBLIC_FATHOM_SITE_ID=xxxxx  # Fathom analytics
+```
+
+## Dark Mode
+
+- Toggle in top-right corner of all pages
+- Persisted in localStorage
+- Respects system preference on first visit
+- SVG icons use `dark:invert` for visibility
+- No flash of wrong theme (inline script in `<head>`)
+
+## Analytics Events
+
+Tracked via Fathom: `ICON_CLICK`, `ICON_DOWNLOAD`, `ICON_COPY`, `ICON_SHARE`, `SEARCH_PERFORMED`, `ROULETTE_SPIN_STARTED`, `THEME_CHANGED_LIGHT`, `THEME_CHANGED_DARK`

@@ -62,22 +62,46 @@ export function IconFooter({ icons }: IconFooterProps) {
           </a>
           , 2025
         </p>
-        <nav aria-label="Footer links" className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+        <nav aria-label="Footer links" className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-center">
+          <Link
+            href="/whats-new"
             className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('MISSING_CITY_CLICKED')}
+            onClick={() => trackEvent('WHATS_NEW_CLICKED')}
           >
-            Missing your city?
-          </a>
+            What&apos;s New
+          </Link>
+          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+          <Link
+            href="/statistics"
+            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+            onClick={() => trackEvent('STATISTICS_CLICKED')}
+          >
+            Statistics
+          </Link>
+          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+          <Link
+            href="/faq"
+            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+            onClick={() => trackEvent('FAQ_CLICKED')}
+          >
+            FAQ
+          </Link>
           <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
           <Link
             href="/license"
             className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
             onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
           >
-            Usage & Licensing
+            License
           </Link>
+          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+          <a
+            href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+            onClick={() => trackEvent('MISSING_CITY_CLICKED')}
+          >
+            Request City
+          </a>
           <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
           <a
             href="https://github.com/anto1/city-icons"

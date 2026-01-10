@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
 import { getIconUrl, getIconSvgUrl, slugify } from '@/lib/utils';
 import { IconFooter } from '@/components/IconFooter';
+import { ThemeToggle } from './ThemeToggle';
 import Link from 'next/link';
 
 interface CityPageProps {
@@ -124,7 +125,10 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Random icon header - same as main page */}
-      <nav aria-label="Featured cities" className="flex justify-center items-center gap-8 py-16">
+      <nav aria-label="Featured cities" className="relative flex justify-center items-center gap-8 py-16">
+        <div className="absolute right-4 top-4">
+          <ThemeToggle />
+        </div>
         {[...allIcons]
           .sort(() => Math.random() - 0.5)
           .slice(0, 3)
@@ -141,7 +145,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
               alt=""
               width={56}
               height={56}
-              className="w-14 h-14"
+              className="w-14 h-14 dark:invert"
             />
           </Link>
         ))}
@@ -188,7 +192,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
               alt={`${icon.name} - ${icon.city}, ${icon.country}`}
               width={128}
               height={128}
-              className="w-32 h-32"
+              className="w-32 h-32 dark:invert"
               priority
             />
           </div>
@@ -259,7 +263,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                           alt=""
                           width={56}
                           height={56}
-                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
                           loading="lazy"
                         />
                       </div>
@@ -295,7 +299,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                           alt=""
                           width={56}
                           height={56}
-                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
                           loading="lazy"
                         />
                       </div>

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@/types';
 import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
+import { ThemeToggle } from './ThemeToggle';
 
 interface RandomIconHeaderProps {
   icons: Icon[];
@@ -19,7 +20,10 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
   }, [icons]);
 
   return (
-    <nav aria-label="Featured cities" className="flex justify-center items-center gap-8 py-16">
+    <nav aria-label="Featured cities" className="relative flex justify-center items-center gap-8 py-16">
+      <div className="absolute right-4 top-4">
+        <ThemeToggle />
+      </div>
       {randomIcons.map((icon) => (
         <Link
           key={icon._id}
@@ -33,7 +37,7 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
             alt=""
             width={56}
             height={56}
-            className="w-14 h-14"
+            className="w-14 h-14 dark:invert"
           />
         </Link>
       ))}
