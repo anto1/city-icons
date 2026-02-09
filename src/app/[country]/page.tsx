@@ -44,7 +44,11 @@ function generateStructuredData(countryName: string, countrySlug: string, countr
       name: `${countryName} City Icons`,
       description: `Discover ${countryIcons.length} beautiful line art icons representing cities in ${countryName}.`,
       url: pageUrl,
-      numberOfItems: countryIcons.length,
+      author: {
+        '@type': 'Organization',
+        name: 'Studio Partdirector',
+        url: 'https://partdirector.ch',
+      },
       mainEntity: {
         '@type': 'ItemList',
         name: `City Icons from ${countryName}`,
@@ -58,11 +62,6 @@ function generateStructuredData(countryName: string, countrySlug: string, countr
             url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
           },
         })),
-      },
-      author: {
-        '@type': 'Organization',
-        name: 'Studio Partdirector',
-        url: 'https://partdirector.ch',
       },
     },
     // BreadcrumbList schema

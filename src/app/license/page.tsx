@@ -68,6 +68,11 @@ function generateStructuredData() {
     name: 'Icon Usage & Licensing',
     description: 'Clear guidelines for using City Icons in your projects.',
     url: `${baseUrl}/license`,
+    author: {
+      '@type': 'Organization',
+      name: 'Studio Partdirector',
+      url: 'https://partdirector.ch',
+    },
     mainEntity: {
       '@type': 'CreativeWork',
       name: 'City Icons License',

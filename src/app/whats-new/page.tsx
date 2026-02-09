@@ -67,6 +67,11 @@ function generateStructuredData() {
     name: "What's New - City Icons",
     description: 'Latest city icons added to the collection',
     url: `${baseUrl}/whats-new`,
+    author: {
+      '@type': 'Organization',
+      name: 'Studio Partdirector',
+      url: 'https://partdirector.ch',
+    },
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [

@@ -25,7 +25,10 @@ function generateStructuredData(icons: typeof iconData) {
     name: 'City Icons Collection',
     description: `Discover ${icons.length} beautiful line art icons representing cities from ${countries.length} countries around the world by Studio Partdirector.`,
     url: baseUrl,
-    numberOfItems: icons.length,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: icons.length,
+    },
     author: {
       '@type': 'Organization',
       name: 'Studio Partdirector',

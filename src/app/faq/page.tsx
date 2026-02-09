@@ -144,18 +144,46 @@ export const metadata: Metadata = {
 };
 
 function generateStructuredData() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.plainAnswer,
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      name: 'FAQ | City Icons Collection',
+      description: 'Frequently asked questions about City Icons - learn about usage, licensing, downloads, and how to request new city icons.',
+      url: `${baseUrl}/faq`,
+      author: {
+        '@type': 'Organization',
+        name: 'Studio Partdirector',
+        url: 'https://partdirector.ch',
       },
-    })),
-  };
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.plainAnswer,
+        },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: baseUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'FAQ',
+          item: `${baseUrl}/faq`,
+        },
+      ],
+    },
+  ];
 }
 
 export default function FAQPage() {
@@ -163,10 +191,13 @@ export default function FAQPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      {structuredData.map((data, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
       <div className="min-h-screen bg-background">
         <PageHeader />
         <div className="container mx-auto px-4 py-8">

@@ -121,6 +121,11 @@ function generateStructuredData(stats: ReturnType<typeof calculateStats>) {
     name: 'City Icons Statistics',
     description: `Collection of ${stats.totalIcons} city icons from ${stats.totalCountries} countries`,
     url: `${baseUrl}/statistics`,
+    author: {
+      '@type': 'Organization',
+      name: 'Studio Partdirector',
+      url: 'https://partdirector.ch',
+    },
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [

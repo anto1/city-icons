@@ -68,11 +68,10 @@ function generateStructuredData(icon: typeof iconData[0], countrySlug: string, c
           name: icon.country,
         },
       },
-      keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, ${icon.tags?.join(', ') || ''}`,
+      keywords: [icon.city, icon.country, 'city icon', 'SVG icon', 'line art', icon.name, ...(icon.tags || [])].filter(Boolean).join(', '),
       inLanguage: 'en-US',
       isAccessibleForFree: true,
       license: `${baseUrl}/license`,
-      category: icon.category,
       genre: 'Line Art',
     },
     // BreadcrumbList schema

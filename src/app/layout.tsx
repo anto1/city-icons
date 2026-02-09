@@ -125,9 +125,13 @@ export default function RootLayout({
                 name: 'Studio Partdirector',
                 url: 'https://partdirector.ch',
               },
+              inLanguage: 'en-US',
               potentialAction: {
                 '@type': 'SearchAction',
-                target: 'https://cities.partdirector.ch?search={search_term_string}',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://cities.partdirector.ch?search={search_term_string}',
+                },
                 'query-input': 'required name=search_term_string',
               },
             }),
