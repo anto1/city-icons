@@ -81,6 +81,9 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Sitemap discovery */}
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://partdirector.ch" />
         <link rel="dns-prefetch" href="https://cdn.usefathom.com" />

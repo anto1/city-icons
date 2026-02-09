@@ -18,8 +18,9 @@ export async function generateStaticParams() {
   }));
 }
 
-// Force static generation
+// Force static generation — dynamicParams=false returns 404 for unknown slugs
 export const dynamic = 'force-static';
+export const dynamicParams = false;
 export const revalidate = false;
 
 interface PageProps {

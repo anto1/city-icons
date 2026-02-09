@@ -18,8 +18,9 @@ export async function generateStaticParams() {
   }));
 }
 
-// Force static generation
+// Force static generation — dynamicParams=false returns 404 for unknown slugs
 export const dynamic = 'force-static';
+export const dynamicParams = false;
 export const revalidate = false;
 
 interface PageProps {
@@ -166,21 +167,12 @@ export async function generateMetadata({ params }: PageProps) {
       url: pageUrl,
       siteName: 'City Icons Collection',
       locale: 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: `${baseUrl}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: `${icon.city} city icon`,
-        },
-      ],
+      type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: `${icon.name} - ${icon.city}, ${icon.country}`,
       description,
-      images: [`${baseUrl}/og-image.png`],
       creator: '@partdirector',
     },
     robots: {
