@@ -294,7 +294,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                 <li key={relatedIcon._id}>
                   <Link
                     href={getIconUrl(relatedIcon)}
-                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
+                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-border p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
                     style={{ aspectRatio: '1 / 1' }}
                     aria-label={`${relatedIcon.city}, ${relatedIcon.country} icon`}
                   >
@@ -305,7 +305,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                           width={56}
                           height={56}
                           className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
-                          alt="City landmark icon"
+                          alt={`${relatedIcon.city}, ${relatedIcon.country} icon`}
                           loading="lazy"
                         />
                       </div>
@@ -330,7 +330,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                 <li key={randomIcon._id}>
                   <Link
                     href={getIconUrl(randomIcon)}
-                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
+                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-border p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
                     style={{ aspectRatio: '1 / 1' }}
                     aria-label={`${randomIcon.city}, ${randomIcon.country} icon`}
                   >
@@ -341,7 +341,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
                           width={56}
                           height={56}
                           className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
-                          alt="City landmark icon"
+                          alt={`${randomIcon.city}, ${randomIcon.country} icon`}
                           loading="lazy"
                         />
                       </div>

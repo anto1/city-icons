@@ -100,7 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/license`,
       lastModified: staticDate,
       changeFrequency: 'yearly',
-      priority: 0.8,
+      priority: 0.4,
     },
     {
       url: `${baseUrl}/roulette`,

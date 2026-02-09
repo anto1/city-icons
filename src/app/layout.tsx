@@ -4,10 +4,13 @@ import { Toaster } from 'sonner';
 import '@fontsource/instrument-sans';
 import { FathomAnalytics } from './fathom';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import iconData from '@/data';
+
+const cityCount = iconData.length;
 
 export const metadata: Metadata = {
   title: 'City Icons Collection',
-  description: 'Discover beautiful line art icons representing 265+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons for designers and developers.',
+  description: `Discover beautiful line art icons representing ${cityCount}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons for designers and developers.`,
   keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector', 'free icons', 'urban design'],
   authors: [{ name: 'Studio Partdirector' }],
   creator: 'Studio Partdirector',
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: 'City Icons Collection',
-    description: 'Discover beautiful line art icons representing 265+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.',
+    description: `Discover beautiful line art icons representing ${cityCount}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.`,
     url: 'https://cities.partdirector.ch',
     siteName: 'City Icons Collection',
     images: [
@@ -100,7 +103,7 @@ export default function RootLayout({
         <link rel="preload" href="/icons/ae-abu-dhabi.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/icons/nl-amsterdam.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/icons/ad-andorra.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/as-apia.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/ws-apia.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/icons/tm-ashgabat.svg" as="image" type="image/svg+xml" />
         
         <script
@@ -141,9 +144,9 @@ export default function RootLayout({
             Skip to main content
           </a>
           <FathomAnalytics />
-          <main id="main-content">
+          <div id="main-content">
             {children}
-          </main>
+          </div>
           <Toaster />
         </ThemeProvider>
       </body>
