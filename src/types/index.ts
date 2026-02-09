@@ -15,12 +15,6 @@ export interface IconData {
 // SVG content is loaded on-demand only when needed (download/copy)
 export type Icon = IconData;
 
-export interface IconModalProps {
-  icon: Icon | null;
-  isOpen: boolean;
-  onClose: () => void;
-}
-
 export interface SearchBarProps {
   onSearch: (query: string) => void;
   placeholder?: string;
@@ -29,7 +23,6 @@ export interface SearchBarProps {
 
 export interface IconGridProps {
   icons: Icon[];
-  onIconClick?: (icon: Icon) => void;
   loading?: boolean;
 }
 

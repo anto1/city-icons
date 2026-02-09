@@ -10,6 +10,9 @@ export function cn(...inputs: ClassValue[]) {
 export function slugify(text: string): string {
   return text
     .toLowerCase()
+    .replace(/ł/g, 'l')
+    .replace(/đ/g, 'd')
+    .replace(/ø/g, 'o')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '') // Remove accents
     .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
@@ -36,16 +39,3 @@ export function getIconSvgUrl(icon: Icon): string {
   return `/icons/${icon.svgFilename}`;
 }
 
-// Format SVG for consistent display (used only for on-demand SVG loading)
-export function formatSvg(svg: string, size: number = 56, useCurrentColor: boolean = true): string {
-  let formatted = svg
-    .replace(/width="[^"]*"/, `width="${size}"`)
-    .replace(/height="[^"]*"/, `height="${size}"`)
-    .replace(/viewBox="[^"]*"/, 'viewBox="0 0 120 120"');
-  
-  if (useCurrentColor) {
-    formatted = formatted.replace(/fill="[^"]*"/g, 'fill="currentColor"');
-  }
-  
-  return formatted;
-}

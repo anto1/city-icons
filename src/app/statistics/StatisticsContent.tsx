@@ -74,7 +74,7 @@ export function StatisticsContent({ stats }: StatisticsContentProps) {
             />
           </div>
           <p className="text-sm text-muted-foreground mt-3">
-            Goal: Cover all 195 UN member countries with at least one city icon
+            Goal: Cover all 193 UN member countries with at least one city icon
           </p>
         </div>
       </section>

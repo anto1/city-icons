@@ -30,11 +30,11 @@ export function RandomIconHeader({ icons }: RandomIconHeaderProps) {
     trackEvent('SCROLL_TO_TOP_CLICKED');
   };
 
-  // Memoize random selection to avoid re-shuffling on every render
+  // Deterministic selection to avoid hydration mismatch (no Math.random)
   const randomIcons = useMemo(() => {
-    return [...icons]
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
+    if (icons.length === 0) return [];
+    const step = Math.max(1, Math.floor(icons.length / 3));
+    return [icons[0], icons[step], icons[step * 2]].filter(Boolean);
   }, [icons]);
 
   return (

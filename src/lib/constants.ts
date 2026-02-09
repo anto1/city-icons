@@ -26,44 +26,12 @@ export const GRID = {
   SKELETON_COUNT: 12,
 } as const;
 
-// Icon size constants
-export const ICON_SIZE = {
-  /** Small icon size (grid items) */
-  SM: 56,
-  /** Medium icon size (modal preview) */
-  MD: 96,
-  /** Large icon size (city page) */
-  LG: 128,
-  /** Header random icons */
-  HEADER: 56,
-} as const;
-
-// SVG viewBox constant
-export const SVG_VIEWBOX = '0 0 120 120';
-
 // Hover effect constants
 export const HOVER = {
   /** Maximum scale increase on hover (8% = 0.08) */
   MAX_SCALE_INCREASE: 0.08,
   /** Distance factor for proximity effect */
   PROXIMITY_FACTOR: 0.8,
-} as const;
-
-// Search constants
-export const SEARCH = {
-  /** Maximum number of search suggestions to show */
-  MAX_SUGGESTIONS: 5,
-  /** Minimum characters for country match */
-  MIN_COUNTRY_MATCH_LENGTH: 3,
-  /** Common country abbreviations that bypass min length */
-  COUNTRY_ABBREVIATIONS: ['usa', 'uk', 'uae'],
-} as const;
-
-// External URLs
-export const URLS = {
-  STUDIO: 'https://partdirector.ch',
-  GITHUB: 'https://github.com/anto1/city-icons',
-  BASE: 'https://svgcities.com',
 } as const;
 
 // Breakpoints (in pixels) - matches Tailwind defaults

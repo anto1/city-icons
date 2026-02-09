@@ -49,7 +49,7 @@ function calculateStats() {
     .map(([category, count]) => ({ category, count }));
 
   // Total countries in the world (UN members)
-  const totalWorldCountries = 195;
+  const totalWorldCountries = 193;
   const coveredCountries = Object.keys(countryCounts).length;
   const coveragePercentage = Math.round((coveredCountries / totalWorldCountries) * 100);
 

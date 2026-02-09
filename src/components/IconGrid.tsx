@@ -142,7 +142,7 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
         <li key={icon._id} className="list-none">
           <Link
             href={getIconUrl(icon)}
-            className="icon-card-animate group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-[#fafafa] p-4 rounded-[48px] flex flex-col items-center justify-center h-full" 
+            className="icon-card-animate group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-border p-4 rounded-[48px] flex flex-col items-center justify-center h-full" 
             style={{ 
               aspectRatio: '1 / 1',
               transform: `scale(${getScale(index)})`,

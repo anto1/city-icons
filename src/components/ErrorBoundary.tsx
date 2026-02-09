@@ -78,16 +78,4 @@ export function IconGridError() {
   );
 }
 
-// Specialized error boundary for search
-export function SearchError() {
-  return (
-    <div className="text-center py-4">
-      <p className="text-sm text-muted-foreground">
-        Search is temporarily unavailable. Please try again later.
-      </p>
-    </div>
-  );
-}
-
-
 

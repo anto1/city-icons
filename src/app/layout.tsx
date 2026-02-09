@@ -98,12 +98,12 @@ export default function RootLayout({
         <link rel="preload" href="/og-image.png" as="image" type="image/png" />
 
         {/* Preload first visible icons (alphabetically sorted) */}
-        <link rel="preload" href="/icons/gh-accra.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/icons/ae-abu-dhabi.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/nl-amsterdam.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/ad-andorra.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/ws-apia.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/tm-ashgabat.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/gh-accra.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/in-agra.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/is-akureyri.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/cr-alajuela.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/kz-alma-aty.svg" as="image" type="image/svg+xml" />
         
         <script
           type="application/ld+json"
