@@ -33,7 +33,6 @@ src/
 ├── components/            # React components
 │   ├── IconGrid.tsx       # Main grid with hover effects
 │   ├── SearchBar.tsx      # Search with autocomplete
-│   ├── IconModal.tsx      # Download/copy/share modal
 │   ├── CityPage.tsx       # City page layout
 │   ├── ThemeProvider.tsx  # Dark mode context provider
 │   ├── ThemeToggle.tsx    # Light/dark mode toggle button
@@ -41,10 +40,10 @@ src/
 ├── data/
 │   ├── icons/             # Region JSON files (europe.json, asia.json, etc.)
 │   └── changelog.ts       # Weekly icon additions changelog
-├── hooks/                 # Custom hooks (useIconSearch, useKeyboardShortcuts)
+├── hooks/                 # Custom hooks (useIconSearch)
 ├── lib/
-│   ├── utils.ts           # Slug generation, URL helpers
-│   └── constants.ts       # Animation, grid, breakpoint constants
+│   ├── utils.ts           # Slug generation (handles ł/đ/ø), URL helpers
+│   └── constants.ts       # Animation, grid, hover, breakpoint constants
 └── types/                 # TypeScript interfaces
 
 public/
@@ -113,16 +112,17 @@ Edit `src/data/changelog.ts` and add a new entry at the top:
 
 - **TypeScript:** Strict mode, interfaces for all props
 - **Components:** Server by default, `'use client'` for interactivity
-- **Styling:** Tailwind utility classes, responsive via SM/MD/LG/XL breakpoints
+- **Styling:** Tailwind utility classes, theme-aware colors (no hardcoded hex), responsive via SM/MD/LG/XL breakpoints
 - **HTML:** Semantic elements, ARIA attributes, one `<h1>` per page, `<main>` in each page (not layout)
 - **State:** React hooks only (useState, useCallback, useMemo)
+- **Hydration:** No `Math.random()` in render/useMemo — use deterministic logic for SSG
 
 ## Important Files
 
 | File | Purpose |
 |------|---------|
 | `src/data/index.ts` | Aggregates all region JSON into single array |
-| `src/lib/constants.ts` | Grid columns, animation timings, breakpoints |
+| `src/lib/constants.ts` | Animation, grid, hover, breakpoint constants |
 | `next.config.ts` | Cache headers, SSG config |
 | `src/app/layout.tsx` | Global metadata, JSON-LD structured data |
 | `src/app/[country]/[city]/opengraph-image.tsx` | Dynamic OG image generation per city |
@@ -161,7 +161,7 @@ Each page type has specific schema.org structured data:
 | Homepage | `CollectionPage` |
 | Country pages | `CollectionPage` + `ItemList` + `BreadcrumbList` |
 | City pages | `CreativeWork` + `ImageObject` + `Place` + `BreadcrumbList` |
-| FAQ | `FAQPage` |
+| FAQ | `FAQPage` + `BreadcrumbList` |
 | Statistics | `WebPage` + `BreadcrumbList` |
 | What's New | `WebPage` + `BreadcrumbList` |
 | License | `WebPage` + `CreativeWork` + `BreadcrumbList` |
