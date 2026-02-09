@@ -63,7 +63,7 @@ export const SEARCH = {
 export const URLS = {
   STUDIO: 'https://partdirector.ch',
   GITHUB: 'https://github.com/anto1/city-icons',
-  BASE: 'https://cities.partdirector.ch',
+  BASE: 'https://svgcities.com',
 } as const;
 
 // Breakpoints (in pixels) - matches Tailwind defaults

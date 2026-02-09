@@ -2,7 +2,7 @@
 
 A collection of minimalist line-art SVG icons representing cities around the world. Each icon depicts an iconic landmark, symbol, or shape unique to a city.
 
-**Live site:** [cities.partdirector.ch](https://cities.partdirector.ch)
+**Live site:** [svgcities.com](https://svgcities.com)
 
 ## What You Can Do
 

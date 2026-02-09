@@ -10,7 +10,7 @@ import { IconFooter } from '@/components/IconFooter';
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://cities.partdirector.ch';
+const baseUrl = 'https://svgcities.com';
 
 // Calculate statistics
 function calculateStats() {
@@ -99,7 +99,6 @@ export const metadata: Metadata = {
     title: 'Statistics | City Icons Collection',
     description: 'Explore statistics about our city icons collection.',
     images: [`${baseUrl}/og-image.png`],
-    creator: '@partdirector',
   },
   robots: {
     index: true,

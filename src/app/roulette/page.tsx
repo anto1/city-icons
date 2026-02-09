@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://cities.partdirector.ch';
+const baseUrl = 'https://svgcities.com';
 
 // SEO metadata
 export const metadata: Metadata = {
@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     title: 'City Roulette - Where Should You Go This Year?',
     description: 'Spin the roulette and discover your next travel destination!',
     images: [`${baseUrl}/og-image.png`],
-    creator: '@partdirector',
   },
   robots: {
     index: true,

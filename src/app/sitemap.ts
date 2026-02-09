@@ -35,7 +35,7 @@ function buildCityDateMap(): Map<string, Date> {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cities.partdirector.ch'
+  const baseUrl = 'https://svgcities.com'
   const cityDateMap = buildCityDateMap()
 
   // Most recent changelog date for homepage and dynamic pages

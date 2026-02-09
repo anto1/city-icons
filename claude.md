@@ -2,7 +2,7 @@
 
 Minimalist SVG icon collection showcasing 265 cities worldwide. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
 
-**Live site:** https://cities.partdirector.ch
+**Live site:** https://svgcities.com
 
 ## Tech Stack
 

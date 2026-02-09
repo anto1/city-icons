@@ -11,7 +11,7 @@ import iconData from '@/data';
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://cities.partdirector.ch';
+const baseUrl = 'https://svgcities.com';
 
 // Helper component for external links
 const ExtLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -128,7 +128,6 @@ export const metadata: Metadata = {
     title: 'FAQ | City Icons Collection',
     description: 'Frequently asked questions about City Icons.',
     images: [`${baseUrl}/og-image.png`],
-    creator: '@partdirector',
   },
   robots: {
     index: true,

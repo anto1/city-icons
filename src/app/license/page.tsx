@@ -10,7 +10,7 @@ import iconData from '@/data';
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://cities.partdirector.ch';
+const baseUrl = 'https://svgcities.com';
 
 // SEO metadata for license page
 export const metadata: Metadata = {
@@ -45,7 +45,6 @@ export const metadata: Metadata = {
     title: 'Icon Usage & Licensing | City Icons',
     description: 'Clear guidelines for using City Icons in your projects. Free for personal and educational use.',
     images: [`${baseUrl}/og-image.png`],
-    creator: '@partdirector',
   },
   robots: {
     index: true,

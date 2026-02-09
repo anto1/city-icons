@@ -3,7 +3,7 @@ import ClientHome from '@/components/ClientHome';
 import iconData from '@/data';
 import { slugify } from '@/lib/utils';
 
-const baseUrl = 'https://cities.partdirector.ch';
+const baseUrl = 'https://svgcities.com';
 
 // Static icon data - no SVG content loading
 function getIconsData() {
@@ -172,7 +172,6 @@ export async function generateMetadata({ params }: PageProps) {
       title: `${countryName} City Icons`,
       description,
       images: [`${baseUrl}/og-image.png`],
-      creator: '@partdirector',
     },
     robots: {
       index: true,

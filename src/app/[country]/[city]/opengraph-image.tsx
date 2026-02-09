@@ -121,7 +121,7 @@ export default async function OgImage({
             color: '#999999',
           }}
         >
-          cities.partdirector.ch
+          svgcities.com
         </div>
       </div>
     ),

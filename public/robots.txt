@@ -1,11 +1,11 @@
 # City Icons - robots.txt
-# https://cities.partdirector.ch
+# https://svgcities.com
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://cities.partdirector.ch/sitemap.xml
+Sitemap: https://svgcities.com/sitemap.xml
 
 # Crawl-delay for polite crawling (optional)
 Crawl-delay: 1

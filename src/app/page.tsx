@@ -1,7 +1,7 @@
 import ClientHome from '@/components/ClientHome';
 import iconData from '@/data';
 
-const baseUrl = 'https://cities.partdirector.ch';
+const baseUrl = 'https://svgcities.com';
 
 // Static icon data - no SVG content loading, just metadata
 // Icons are displayed via <img> tags pointing to /icons/*.svg (CDN-cached static files)

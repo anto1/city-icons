@@ -55,13 +55,13 @@ export function LicenseContent() {
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               While not required, attribution is always appreciated. You can credit: &quot;City icons by Studio Partdirector&quot; with a link to{' '}
-              <a 
-                href="https://cities.partdirector.ch" 
-                target="_blank" 
+              <a
+                href="https://svgcities.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-orange-600 transition-colors underline"
               >
-                cities.partdirector.ch
+                svgcities.com
               </a>
             </p>
           </section>

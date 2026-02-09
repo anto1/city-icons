@@ -11,7 +11,7 @@ import { IconFooter } from '@/components/IconFooter';
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://cities.partdirector.ch';
+const baseUrl = 'https://svgcities.com';
 
 export const metadata: Metadata = {
   title: "What's New | City Icons Collection",
@@ -45,7 +45,6 @@ export const metadata: Metadata = {
     title: "What's New | City Icons Collection",
     description: 'See the latest city icons added to our collection.',
     images: [`${baseUrl}/og-image.png`],
-    creator: '@partdirector',
   },
   robots: {
     index: true,

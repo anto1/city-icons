@@ -20,15 +20,15 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://cities.partdirector.ch'),
+  metadataBase: new URL('https://svgcities.com'),
   alternates: {
-    canonical: 'https://cities.partdirector.ch/',
+    canonical: 'https://svgcities.com/',
   },
 
   openGraph: {
     title: 'City Icons Collection',
     description: `Discover beautiful line art icons representing ${cityCount}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.`,
-    url: 'https://cities.partdirector.ch',
+    url: 'https://svgcities.com',
     siteName: 'City Icons Collection',
     images: [
       {
@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     title: 'City Icons Collection',
     description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector.',
     images: ['/og-image.png'],
-    creator: '@partdirector',
   },
   robots: {
     index: true,
@@ -114,7 +113,7 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: 'City Icons Collection',
               description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector.',
-              url: 'https://cities.partdirector.ch',
+              url: 'https://svgcities.com',
               author: {
                 '@type': 'Organization',
                 name: 'Studio Partdirector',
@@ -130,7 +129,7 @@ export default function RootLayout({
                 '@type': 'SearchAction',
                 target: {
                   '@type': 'EntryPoint',
-                  urlTemplate: 'https://cities.partdirector.ch?search={search_term_string}',
+                  urlTemplate: 'https://svgcities.com?search={search_term_string}',
                 },
                 'query-input': 'required name=search_term_string',
               },
