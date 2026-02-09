@@ -12,8 +12,8 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2026-W06',
     date: 'February 2-8, 2026',
-    cities: ['Accra', 'Taipei', 'Nara', 'Gdańsk', 'Bologna'],
-    description: 'Africa, Asia, and Europe additions',
+    cities: ['Accra', 'Taipei', 'Nara', 'Gdańsk', 'Bologna', 'La Paz', 'Caracas', 'Valparaíso', 'Zanzibar'],
+    description: 'Africa, Asia, Europe, and South America additions',
   },
   {
     week: '2025-W02',

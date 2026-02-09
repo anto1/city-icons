@@ -227,5 +227,56 @@
     "svgFilename": "gy-georgetown.svg",
     "description": "Georgetown is the capital of Guyana, home to the magnificent St. George's Cathedral - one of the tallest wooden churches in the world. This stunning Gothic Revival cathedral, with its soaring wooden spire reaching 43 meters, was designed by Sir Arthur Blomfield and completed in 1892. Built entirely from tropical hardwood, the cathedral stands as a remarkable feat of 19th-century engineering and a beloved symbol of Georgetown's colonial heritage.",
     "region": "South America"
+  },
+  {
+    "_id": "271",
+    "name": "La Paz Witches' Market",
+    "city": "La Paz",
+    "country": "Bolivia",
+    "category": "Culture",
+    "tags": [
+      "witches-market",
+      "mercado-de-las-brujas",
+      "llama",
+      "talisman",
+      "aymara"
+    ],
+    "svgFilename": "bo-la-paz.svg",
+    "description": "La Paz is Bolivia's highest-altitude capital, home to the legendary Mercado de las Brujas (Witches' Market) nestled in the steep streets near Cerro Cumbre. Here Aymara herbalists and yatiris sell dried llama fetuses, talismans, and amulets used in traditional offerings to Pachamama — Mother Earth. The dried llama, the market's most iconic symbol, is buried beneath new buildings to bring prosperity and protection. This centuries-old tradition blends indigenous Andean spirituality with daily life in one of the world's most extraordinary marketplaces.",
+    "region": "South America"
+  },
+  {
+    "_id": "272",
+    "name": "Caracas Teresa Carreño Cultural Complex",
+    "city": "Caracas",
+    "country": "Venezuela",
+    "category": "Landmarks",
+    "tags": [
+      "teresa-carreno",
+      "cultural-complex",
+      "theater",
+      "brutalist",
+      "performing-arts"
+    ],
+    "svgFilename": "venezuela-caracas.svg",
+    "description": "Caracas is the dynamic capital of Venezuela, home to the monumental Teresa Carreño Cultural Complex — one of the largest performing arts centers in South America. Named after the legendary 19th-century Venezuelan pianist, this striking brutalist landmark was inaugurated in 1983 and houses two grand concert halls with a combined capacity of over 3,000 seats. Its bold concrete forms rising against the backdrop of Mount Ávila have made it an enduring symbol of Caracas's cultural ambition and artistic heritage.",
+    "region": "South America"
+  },
+  {
+    "_id": "273",
+    "name": "Valparaíso Completo",
+    "city": "Valparaíso",
+    "country": "Chile",
+    "category": "Culture",
+    "tags": [
+      "completo",
+      "hot-dog",
+      "street-food",
+      "chilean-cuisine",
+      "avocado"
+    ],
+    "svgFilename": "ch-valpara-so.svg",
+    "description": "Valparaíso is Chile's colorful port city, celebrated for its hillside funiculars, vibrant street art, and the beloved completo — the Chilean hot dog that has become a national icon. Piled high with mashed avocado, diced tomatoes, sauerkraut, and a generous drizzle of mayonnaise, the completo is a uniquely Chilean reinvention of the humble hot dog. Found at every street corner and fuente de soda across the country, it embodies Chile's playful spirit of turning simple ingredients into something unmistakably its own.",
+    "region": "South America"
   }
 ]

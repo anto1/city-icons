@@ -207,5 +207,22 @@
     "svgFilename": "gh-accra.svg",
     "description": "Accra is the vibrant capital of Ghana, home to the iconic Independence Arch at Black Star Square. Built in 1961 to commemorate Ghana's independence as the first sub-Saharan African nation to gain freedom from colonial rule, the arch draws inspiration from the Arc de Triomphe. Crowned with a black star — Ghana's national symbol of African emancipation — the monument stands at the heart of Independence Square, the country's largest public gathering space and a powerful symbol of pan-African pride.",
     "region": "Africa"
+  },
+  {
+    "_id": "274",
+    "name": "Zanzibar Cloves",
+    "city": "Zanzibar",
+    "country": "Tanzania",
+    "category": "Culture",
+    "tags": [
+      "cloves",
+      "spice",
+      "spice-island",
+      "agriculture",
+      "trade"
+    ],
+    "svgFilename": "tz-zanzibar.svg",
+    "description": "Zanzibar is Tanzania's legendary Spice Island, once the world's largest producer of cloves and the heart of the Indian Ocean spice trade. Introduced by Omani sultans in the early 19th century, clove trees transformed the archipelago's economy and identity. A bundle of dried cloves — aromatic, dark, and nail-shaped — remains Zanzibar's most recognizable symbol, evoking centuries of trade winds, spice plantations, and the intoxicating fragrance that still drifts through Stone Town's narrow alleyways.",
+    "region": "Africa"
   }
 ]
