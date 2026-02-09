@@ -10,6 +10,12 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    week: '2026-W06',
+    date: 'February 2-8, 2026',
+    cities: ['Accra', 'Taipei', 'Nara', 'Gdańsk', 'Bologna'],
+    description: 'Africa, Asia, and Europe additions',
+  },
+  {
     week: '2025-W02',
     date: 'January 6-10, 2025',
     cities: ['Kuala Lumpur', 'Dili', 'Kuching', 'Seria', 'Sihanoukville', 'Maseru'],

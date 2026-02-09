@@ -190,5 +190,22 @@
     "svgFilename": "ls-maseru.svg",
     "description": "Maseru is the capital of Lesotho, home to the iconic Basotho Hat (Mokorotlo) monument - a distinctive conical straw hat that has become the national symbol of the Mountain Kingdom. This traditional headwear, inspired by the shape of Mount Qiloane, represents Basotho cultural identity and pride. The monument celebrates Lesotho's unique heritage as Africa's only country entirely above 1,000 meters, where the Mokorotlo remains an everyday symbol of national identity.",
     "region": "Africa"
+  },
+  {
+    "_id": "266",
+    "name": "Accra Independence Arch",
+    "city": "Accra",
+    "country": "Ghana",
+    "category": "Landmarks",
+    "tags": [
+      "independence-arch",
+      "black-star-square",
+      "freedom",
+      "monument",
+      "independence"
+    ],
+    "svgFilename": "gh-accra.svg",
+    "description": "Accra is the vibrant capital of Ghana, home to the iconic Independence Arch at Black Star Square. Built in 1961 to commemorate Ghana's independence as the first sub-Saharan African nation to gain freedom from colonial rule, the arch draws inspiration from the Arc de Triomphe. Crowned with a black star — Ghana's national symbol of African emancipation — the monument stands at the heart of Independence Square, the country's largest public gathering space and a powerful symbol of pan-African pride.",
+    "region": "Africa"
   }
 ]

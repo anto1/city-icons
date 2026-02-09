@@ -1826,5 +1826,39 @@
     "svgFilename": "pt-barcelos.svg",
     "description": "Barcelos is a historic town in northern Portugal, famous for the legendary Galo de Barcelos (Rooster of Barcelos) - one of the most recognizable symbols of Portugal. According to folklore, a roasted rooster miraculously rose from a judge's dinner plate to prove an innocent pilgrim's innocence. This colorful ceramic rooster, traditionally decorated with hearts and vibrant patterns, has become an emblem of Portuguese culture, faith, and good luck, found in homes and souvenir shops worldwide.",
     "region": "Europe"
+  },
+  {
+    "_id": "269",
+    "name": "Gdańsk Neptune Fountain",
+    "city": "Gdańsk",
+    "country": "Poland",
+    "category": "Landmarks",
+    "tags": [
+      "neptune",
+      "fountain",
+      "long-market",
+      "baroque",
+      "hanseatic"
+    ],
+    "svgFilename": "pl-gdansk.svg",
+    "description": "Gdańsk is a historic port city on Poland's Baltic coast, crowned by the iconic Fontanna Neptuna (Neptune Fountain) in the heart of Long Market Square. Erected in 1633, the bronze statue of the Roman sea god wielding his trident has stood as the symbol of Gdańsk for nearly four centuries. Legend holds that Neptune once struck his trident to shatter gold coins tossed into the fountain by wealthy merchants — creating the city's famous Goldwasser liqueur flecked with gold leaf.",
+    "region": "Europe"
+  },
+  {
+    "_id": "270",
+    "name": "Bologna Two Towers",
+    "city": "Bologna",
+    "country": "Italy",
+    "category": "Landmarks",
+    "tags": [
+      "two-towers",
+      "asinelli",
+      "garisenda",
+      "medieval",
+      "leaning-tower"
+    ],
+    "svgFilename": "it-bologna.svg",
+    "description": "Bologna is a medieval university city in northern Italy, instantly recognized by its iconic Due Torri — the Two Towers of Asinelli and Garisenda. Built in the 12th century by rival noble families competing for prestige, the taller Torre degli Asinelli rises 97 meters while the shorter Torre Garisenda leans at a dramatic four-degree angle. Once part of a skyline bristling with over 100 towers, these two survivors have become Bologna's most beloved symbol and an enduring testament to medieval ambition.",
+    "region": "Europe"
   }
 ]

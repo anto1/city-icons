@@ -671,5 +671,39 @@
     "svgFilename": "kh-sihanoukville.svg",
     "description": "Sihanoukville is Cambodia's premier beach resort city, famous for the iconic Golden Lions Monument at Independence Square. This striking sculpture features two majestic golden lions - symbols of strength and protection in Khmer culture - standing guard at the city's main roundabout. The monument has become the defining landmark of Sihanoukville, welcoming visitors to Cambodia's coastal paradise on the Gulf of Thailand.",
     "region": "Asia"
+  },
+  {
+    "_id": "267",
+    "name": "Taipei 101",
+    "city": "Taipei",
+    "country": "Taiwan",
+    "category": "Landmarks",
+    "tags": [
+      "taipei-101",
+      "skyscraper",
+      "bamboo",
+      "tower",
+      "modern-architecture"
+    ],
+    "svgFilename": "tw-taipei.svg",
+    "description": "Taipei is the bustling capital of Taiwan, defined by the soaring silhouette of Taipei 101. Once the world's tallest building at 508 meters, its distinctive design resembles a giant bamboo stalk — a symbol of strength and resilience in Chinese culture. The tower's eight segments represent abundance and prosperity, while its massive tuned mass damper keeps the structure stable through typhoons and earthquakes. A beacon of Taiwanese innovation, Taipei 101 remains the island's most recognizable landmark.",
+    "region": "Asia"
+  },
+  {
+    "_id": "268",
+    "name": "Nara Shika Deer",
+    "city": "Nara",
+    "country": "Japan",
+    "category": "Culture",
+    "tags": [
+      "shika-deer",
+      "sacred",
+      "nature",
+      "temple",
+      "national-treasure"
+    ],
+    "svgFilename": "jp-nara.svg",
+    "description": "Nara is an ancient capital of Japan, famous for the over 1,000 sacred shika deer that roam freely through its parks and temple grounds. Regarded as divine messengers of the Shinto gods since the 8th century, the deer of Nara Park are designated as national natural treasures. Visitors from around the world come to bow to these gentle creatures, who politely bow back, creating one of Japan's most beloved and enchanting cultural encounters.",
+    "region": "Asia"
   }
 ]
