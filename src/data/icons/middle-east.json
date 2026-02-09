@@ -311,7 +311,7 @@
       "architecture",
       "unesco"
     ],
-    "svgFilename": "ir-ishafan.svg",
+    "svgFilename": "ir-isfahan.svg",
     "description": "Isfahan is a historic city in central Iran, renowned for its stunning Islamic architecture and the magnificent Jameh Mosque. This UNESCO World Heritage site represents the evolution of mosque architecture over twelve centuries, featuring beautiful tile work, intricate geometric patterns, and impressive iwans that showcase Persian Islamic art.",
     "region": "Middle East"
   },
@@ -326,7 +326,7 @@
       "historic",
       "ottoman"
     ],
-    "svgFilename": "tk-izmir.svg",
+    "svgFilename": "tr-izmir.svg",
     "description": "Izmir is Turkey's third-largest city and a major port on the Aegean Sea, famous for its historic clock tower in Konak Square. This Ottoman-era landmark serves as the symbol of the city, representing Izmir's rich history as a cultural crossroads between Europe and Asia.",
     "region": "Middle East"
   },
@@ -342,7 +342,7 @@
       "modern",
       "tallest"
     ],
-    "svgFilename": "ue-dubai.svg",
+    "svgFilename": "ae-dubai.svg",
     "description": "Dubai is a global city and business hub in the United Arab Emirates, famous for the Burj Khalifa - the world's tallest building. This architectural marvel represents Dubai's rapid transformation into a modern metropolis, combining luxury, innovation, and ambitious urban development.",
     "region": "Middle East"
   },

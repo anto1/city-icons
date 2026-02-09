@@ -87,7 +87,7 @@
       "gothic",
       "religious"
     ],
-    "svgFilename": "br-sao-paolo.svg",
+    "svgFilename": "br-sao-paulo.svg",
     "description": "São Paulo is the largest city in Brazil and the Americas, known for its iconic Sé Metropolitan Cathedral - a stunning neo-Gothic cathedral in the heart of the city. The city combines modern skyscrapers with historic architecture, featuring the famous Paulista Avenue, the beautiful Ibirapuera Park, the historic downtown area, and vibrant multicultural scene.",
     "region": "South America"
   },
@@ -104,7 +104,7 @@
       "independence",
       "patriotic"
     ],
-    "svgFilename": "ur-montevideo.svg",
+    "svgFilename": "uy-montevideo.svg",
     "description": "Montevideo is the capital and largest city of Uruguay, known for its iconic Sun of May symbol that appears on both the Uruguayan and Argentine flags. This golden sun represents independence and freedom, commemorating the May Revolution and serving as a powerful symbol of South American liberation and national identity.",
     "region": "South America"
   },
@@ -258,7 +258,7 @@
       "brutalist",
       "performing-arts"
     ],
-    "svgFilename": "venezuela-caracas.svg",
+    "svgFilename": "ve-caracas.svg",
     "description": "Caracas is the dynamic capital of Venezuela, home to the monumental Teresa Carreño Cultural Complex — one of the largest performing arts centers in South America. Named after the legendary 19th-century Venezuelan pianist, this striking brutalist landmark was inaugurated in 1983 and houses two grand concert halls with a combined capacity of over 3,000 seats. Its bold concrete forms rising against the backdrop of Mount Ávila have made it an enduring symbol of Caracas's cultural ambition and artistic heritage.",
     "region": "South America"
   },
@@ -275,7 +275,7 @@
       "chilean-cuisine",
       "avocado"
     ],
-    "svgFilename": "ch-valpara-so.svg",
+    "svgFilename": "cl-valparaiso.svg",
     "description": "Valparaíso is Chile's colorful port city, celebrated for its hillside funiculars, vibrant street art, and the beloved completo — the Chilean hot dog that has become a national icon. Piled high with mashed avocado, diced tomatoes, sauerkraut, and a generous drizzle of mayonnaise, the completo is a uniquely Chilean reinvention of the humble hot dog. Found at every street corner and fuente de soda across the country, it embodies Chile's playful spirit of turning simple ingredients into something unmistakably its own.",
     "region": "South America"
   }

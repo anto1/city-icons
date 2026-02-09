@@ -734,7 +734,7 @@
       "education",
       "yorkshire"
     ],
-    "svgFilename": "uk-leeds.svg",
+    "svgFilename": "gb-leeds.svg",
     "description": "Leeds is a major city in West Yorkshire, England, known for its prestigious universities and vibrant cultural scene. The city combines historic industrial heritage with modern development, featuring the University of Leeds with its iconic owl symbol, the beautiful Kirkstall Abbey, the vibrant Leeds Art Gallery, and the famous Leeds Grand Theatre.",
     "region": "Europe"
   },
@@ -835,7 +835,7 @@
       "historic",
       "cultural"
     ],
-    "svgFilename": "ba-saraevo.svg",
+    "svgFilename": "ba-sarajevo.svg",
     "description": "Sarajevo is the capital and largest city of Bosnia and Herzegovina, known for its iconic Sebilj Fountain - a wooden fountain in the heart of Baščaršija that symbolizes the city's Ottoman heritage. The city combines Eastern and Western influences, featuring the historic Old Town, the beautiful Latin Bridge, the famous Gazi Husrev-beg Mosque, and the Sebilj Fountain that continues to be a gathering place and symbol of Sarajevo's multicultural history.",
     "region": "Europe"
   },
@@ -1447,7 +1447,7 @@
       "statue",
       "tradition"
     ],
-    "svgFilename": "pl-wroclav.svg",
+    "svgFilename": "pl-wroclaw.svg",
     "description": "Wrocław is famous for its hundreds of small bronze dwarf statues scattered throughout the city. These charming figures represent the city's playful spirit and rich cultural heritage, originally symbolizing the Orange Alternative resistance movement and now serving as beloved symbols of Wrocław's unique character.",
     "region": "Europe"
   },
@@ -1484,7 +1484,7 @@
       "architecture",
       "coastal"
     ],
-    "svgFilename": "mn-budva.svg",
+    "svgFilename": "me-budva.svg",
     "description": "Budva's St John Church stands as a testament to the city's rich religious and architectural heritage. This historic Orthodox church, with its traditional Balkan ecclesiastical design, represents the spiritual heart of this ancient coastal city on the Adriatic Sea.",
     "region": "Europe"
   },
@@ -1568,7 +1568,7 @@
       "justus-von-liebig",
       "symbol"
     ],
-    "svgFilename": "de-gissen.svg",
+    "svgFilename": "de-giessen.svg",
     "description": "Giessen is marked by a chemical flask symbol that pays tribute to Justus von Liebig, the pioneering chemist whose research transformed modern laboratory science. The icon emphasizes the city's scientific heritage and the iconic glassware that once made it a center of innovation in 19th-century chemistry.",
     "region": "Europe"
   },
@@ -1585,7 +1585,7 @@
       "symbol",
       "adriatic"
     ],
-    "svgFilename": "mg-herzog-novi.svg",
+    "svgFilename": "me-herceg-novi.svg",
     "description": "Herceg Novi's orange blossom motif highlights the Adriatic city's mild climate, fragrant citrus orchards, and layered botanical identity. The bloom stands for renewal and hospitality along the Montenegrin coast, capturing the town's blend of Ottoman, Venetian, and Austro-Hungarian flavors.",
     "region": "Europe"
   },

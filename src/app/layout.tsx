@@ -101,7 +101,7 @@ export default function RootLayout({
         <link rel="preload" href="/icons/nl-amsterdam.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/icons/ad-andorra.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/icons/as-apia.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/tk-ashgabat.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/tm-ashgabat.svg" as="image" type="image/svg+xml" />
         
         <script
           type="application/ld+json"
