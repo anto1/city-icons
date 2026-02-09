@@ -29,17 +29,27 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
   const gridRef = useRef<HTMLUListElement>(null);
   
   useEffect(() => {
+    let rafId: number | null = null;
+
     const handleMouseMove = (e: MouseEvent) => {
-      if (gridRef.current) {
-        const rect = gridRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        });
-      }
+      if (rafId) return; // Skip if a frame is already pending
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        if (gridRef.current) {
+          const rect = gridRef.current.getBoundingClientRect();
+          setMousePosition({
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+          });
+        }
+      });
     };
 
     const handleMouseLeave = () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
       setMousePosition(null);
     };
 
@@ -50,6 +60,7 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
     }
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId);
       if (grid) {
         grid.removeEventListener('mousemove', handleMouseMove);
         grid.removeEventListener('mouseleave', handleMouseLeave);

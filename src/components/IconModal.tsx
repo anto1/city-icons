@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { IconModalProps } from '@/types';
 import {
@@ -20,6 +20,15 @@ import Link from 'next/link';
 
 export default function IconModal({ icon, isOpen, onClose }: IconModalProps) {
   const [svgContent, setSvgContent] = useState<string | null>(null);
+  const prevIconId = useRef<string | null>(null);
+
+  // Reset cached SVG when icon changes
+  useEffect(() => {
+    if (icon?._id !== prevIconId.current) {
+      setSvgContent(null);
+      prevIconId.current = icon?._id ?? null;
+    }
+  }, [icon]);
 
   // Fetch SVG content on-demand for download/copy functionality
   const fetchSvgContent = useCallback(async () => {

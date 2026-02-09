@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'City Icons Collection',
-  description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43+ cities with search, download, and copy functionality. Free SVG icons for designers and developers.',
+  description: 'Discover beautiful line art icons representing 260+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons for designers and developers.',
   keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector', 'free icons', 'urban design'],
   authors: [{ name: 'Studio Partdirector' }],
   creator: 'Studio Partdirector',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: 'City Icons Collection',
-    description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector. Browse 43+ cities with search, download, and copy functionality.',
+    description: 'Discover beautiful line art icons representing 260+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.',
     url: 'https://cities.partdirector.ch',
     siteName: 'City Icons Collection',
     images: [
@@ -95,13 +95,13 @@ export default function RootLayout({
         {/* Preload critical assets */}
         <link rel="preload" href="/og-image.png" as="image" type="image/png" />
 
-        {/* Preload first visible icons (alphabetically sorted: Amsterdam, Ashgabat, Athens, Auckland, Bagan, Bangkok) */}
+        {/* Preload first visible icons (alphabetically sorted) */}
+        <link rel="preload" href="/icons/gh-accra.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/ae-abu-dhabi.svg" as="image" type="image/svg+xml" />
         <link rel="preload" href="/icons/nl-amsterdam.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/tm-ashgabat.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/gr-athens.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/nz-auckland.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/mm-bagan.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/th-bangkok.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/ad-andorra.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/as-apia.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/icons/tk-ashgabat.svg" as="image" type="image/svg+xml" />
         
         <script
           type="application/ld+json"

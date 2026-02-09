@@ -8,8 +8,8 @@ import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
 
 export default function NotFound() {
-  // Get a random icon
-  const randomIcon = iconData[Math.floor(Math.random() * iconData.length)];
+  // Use a fixed icon to avoid hydration mismatch (Math.random() differs server vs client)
+  const randomIcon = iconData[0];
 
   return (
     <div className="min-h-screen bg-background">

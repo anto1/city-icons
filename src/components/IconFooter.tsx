@@ -62,7 +62,7 @@ export function IconFooter({ icons }: IconFooterProps) {
           >
             Studio Partdirector
           </a>
-          , 2025
+          , {new Date().getFullYear()}
         </p>
         <nav aria-label="Footer links" className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-center">
           <Link

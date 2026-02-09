@@ -1,6 +1,6 @@
 # City Icons
 
-Minimalist SVG icon collection showcasing 252 cities worldwide. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
+Minimalist SVG icon collection showcasing 261 cities worldwide. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
 
 **Live site:** https://cities.partdirector.ch
 
@@ -21,8 +21,9 @@ src/
 ├── app/                    # Next.js App Router pages
 │   ├── page.tsx           # Homepage (all icons)
 │   ├── layout.tsx         # Root layout, metadata, JSON-LD, ThemeProvider
-│   ├── [country]/         # Dynamic country pages
-│   │   └── [city]/        # Individual city pages
+│   ├── [country]/         # Dynamic country pages (dynamicParams=false)
+│   │   └── [city]/        # Individual city pages (dynamicParams=false)
+│   │       └── opengraph-image.tsx  # Dynamic OG image per city
 │   ├── roulette/          # City Roulette feature
 │   ├── faq/               # FAQ page with structured data
 │   ├── statistics/        # Collection statistics page
@@ -47,7 +48,7 @@ src/
 └── types/                 # TypeScript interfaces
 
 public/
-└── icons/                 # 252 SVG files (naming: {country-code}-{city}.svg)
+└── icons/                 # 261 SVG files (naming: {country-code}-{city}.svg)
 ```
 
 ## Commands
@@ -62,9 +63,12 @@ npm run lint     # Run ESLint
 ## Key Architecture
 
 - **SSG:** All pages pre-rendered at build time via `generateStaticParams()`
+- **dynamicParams=false:** Unknown slugs return proper 404 (not soft 404 with 200)
 - **Server Components:** Default for pages; client components marked with `'use client'`
 - **SVG Loading:** Icons served as static files with 1-year cache headers
 - **Dynamic Routes:** `/[country]` and `/[country]/[city]` for country/city pages
+- **OG Images:** Dynamic per-city OG images via `opengraph-image.tsx` using `ImageResponse`
+- **Sitemap:** Dates derived from `changelog.ts` (not identical build-time dates)
 
 ## Icon Data Structure
 
@@ -87,9 +91,10 @@ interface IconData {
 ## Adding New Icons
 
 1. Add SVG to `public/icons/` (naming: `{country-code}-{city}.svg`)
-2. Add entry to appropriate region file in `src/data/icons/`
+2. Add entry to appropriate region file in `src/data/icons/` (increment `_id` from the highest across all files)
 3. Update `src/data/changelog.ts` with the new cities for the current week
 4. Rebuild to generate static pages
+5. Update city count in this file
 
 ## Updating Changelog
 
@@ -120,6 +125,8 @@ Edit `src/data/changelog.ts` and add a new entry at the top:
 | `src/lib/constants.ts` | Grid columns, animation timings, breakpoints |
 | `next.config.ts` | Cache headers, SSG config |
 | `src/app/layout.tsx` | Global metadata, JSON-LD structured data |
+| `src/app/[country]/[city]/opengraph-image.tsx` | Dynamic OG image generation per city |
+| `src/app/sitemap.ts` | XML sitemap with changelog-based dates |
 
 ## Environment Variables
 
@@ -134,6 +141,14 @@ NEXT_PUBLIC_FATHOM_SITE_ID=xxxxx  # Fathom analytics
 - Respects system preference on first visit
 - SVG icons use `dark:invert` for visibility
 - No flash of wrong theme (inline script in `<head>`)
+
+## SEO
+
+- `<link rel="sitemap">` in root layout `<head>`
+- `og:type` is `website` on homepage, `article` on city pages
+- Each city page gets a unique OG image (PNG generated at build time via `ImageResponse`)
+- Sitemap `<lastmod>` dates vary per page based on changelog entries
+- `dynamicParams=false` ensures unknown routes return HTTP 404 (not soft 404)
 
 ## Analytics Events
 

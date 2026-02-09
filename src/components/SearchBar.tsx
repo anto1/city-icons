@@ -11,13 +11,20 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState<Array<{city: string, country: string}>>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+  const searchTrackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     onSearch(query);
-    // Track search if query is not empty
+    // Debounce analytics tracking (fire once after 800ms of no typing)
     if (query.trim()) {
-      trackEvent('SEARCH_PERFORMED');
+      if (searchTrackTimeout.current) clearTimeout(searchTrackTimeout.current);
+      searchTrackTimeout.current = setTimeout(() => {
+        trackEvent('SEARCH_PERFORMED');
+      }, 800);
     }
+    return () => {
+      if (searchTrackTimeout.current) clearTimeout(searchTrackTimeout.current);
+    };
   }, [query, onSearch]);
 
   useEffect(() => {

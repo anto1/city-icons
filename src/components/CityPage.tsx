@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { Icon } from '@/types';
 import { Button } from '@/components/ui/button';
@@ -131,11 +131,18 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
       relatedIcon._id !== icon._id
   );
 
-  // Get random icons from different countries
-  const randomIcons = allIcons
-    .filter((randomIcon) => randomIcon.country !== icon.country)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 4);
+  // Get deterministic "random" icons from different countries (seeded by icon id to avoid hydration mismatch)
+  const randomIcons = useMemo(() => {
+    const seed = parseInt(icon._id) || 0;
+    return allIcons
+      .filter((randomIcon) => randomIcon.country !== icon.country)
+      .sort((a, b) => {
+        const hashA = (parseInt(a._id) * 2654435761 + seed) >>> 0;
+        const hashB = (parseInt(b._id) * 2654435761 + seed) >>> 0;
+        return hashA - hashB;
+      })
+      .slice(0, 4);
+  }, [allIcons, icon]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -164,8 +171,8 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
           </a>
           <ThemeToggle />
         </div>
-        {[...allIcons]
-          .sort(() => Math.random() - 0.5)
+        {allIcons
+          .filter((i) => i._id !== icon._id)
           .slice(0, 3)
           .map((randomIcon) => (
           <Link

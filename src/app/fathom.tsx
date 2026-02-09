@@ -9,23 +9,20 @@ function TrackPageView() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const fathomId = process.env.NEXT_PUBLIC_FATHOM_ID;
-    console.log('Fathom ID:', fathomId); // Debug log
+    const fathomId = process.env.NEXT_PUBLIC_FATHOM_SITE_ID;
     if (fathomId) {
       load(fathomId, {
         auto: false
       });
-      console.log('Fathom loaded with ID:', fathomId); // Debug log
-    } else {
-      console.error('Fathom ID not found in environment variables');
     }
   }, []);
 
   useEffect(() => {
     if (!pathname) return;
 
+    const search = searchParams?.toString();
     trackPageview({
-      url: pathname + searchParams?.toString(),
+      url: pathname + (search ? `?${search}` : ''),
       referrer: document.referrer
     });
   }, [pathname, searchParams]);
@@ -39,4 +36,4 @@ export function FathomAnalytics() {
       <TrackPageView />
     </Suspense>
   );
-} 
+}
