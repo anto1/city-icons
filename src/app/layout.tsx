@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'City Icons Collection',
-  description: 'Discover beautiful line art icons representing 260+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons for designers and developers.',
+  description: 'Discover beautiful line art icons representing 265+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons for designers and developers.',
   keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector', 'free icons', 'urban design'],
   authors: [{ name: 'Studio Partdirector' }],
   creator: 'Studio Partdirector',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: 'City Icons Collection',
-    description: 'Discover beautiful line art icons representing 260+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.',
+    description: 'Discover beautiful line art icons representing 265+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.',
     url: 'https://cities.partdirector.ch',
     siteName: 'City Icons Collection',
     images: [

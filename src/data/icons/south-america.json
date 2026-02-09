@@ -278,5 +278,22 @@
     "svgFilename": "cl-valparaiso.svg",
     "description": "Valparaíso is Chile's colorful port city, celebrated for its hillside funiculars, vibrant street art, and the beloved completo — the Chilean hot dog that has become a national icon. Piled high with mashed avocado, diced tomatoes, sauerkraut, and a generous drizzle of mayonnaise, the completo is a uniquely Chilean reinvention of the humble hot dog. Found at every street corner and fuente de soda across the country, it embodies Chile's playful spirit of turning simple ingredients into something unmistakably its own.",
     "region": "South America"
+  },
+  {
+    "_id": "275",
+    "name": "Monumento a la Mitad del Mundo",
+    "city": "Quito",
+    "country": "Ecuador",
+    "category": "Landmarks",
+    "tags": [
+      "mitad-del-mundo",
+      "equator",
+      "monument",
+      "geodesic",
+      "latitude-zero"
+    ],
+    "svgFilename": "ec-quito.svg",
+    "description": "Quito is Ecuador's capital, perched at 2,850 meters in the Andes and home to the Monumento a la Mitad del Mundo — the iconic equator monument marking latitude 0°0′0″. Built in 1982 at the site where the 18th-century French Geodesic Mission first measured the equatorial line, the 30-meter trapezoidal tower is crowned by a globe and has become one of South America's most visited landmarks. Standing at the literal center of the Earth, it symbolizes Ecuador's unique geographic identity and the scientific heritage that gave the country its name.",
+    "region": "South America"
   }
 ]

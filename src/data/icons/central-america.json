@@ -149,5 +149,22 @@
     "svgFilename": "ag-saint-john.svg",
     "description": "Saint John's is the capital of Antigua and Barbuda, dominated by the magnificent St. John's Cathedral with its iconic twin-tower baroque façade. Originally built in 1681 and reconstructed after earthquakes, the cathedral's striking white towers rise majestically against the Caribbean sky, serving as the most recognizable landmark of the island nation and a symbol of its Anglican heritage and colonial past.",
     "region": "Central America"
+  },
+  {
+    "_id": "276",
+    "name": "San Juan Garita",
+    "city": "San Juan",
+    "country": "Puerto Rico",
+    "category": "Landmarks",
+    "tags": [
+      "garita",
+      "sentry-box",
+      "fortification",
+      "colonial",
+      "spanish"
+    ],
+    "svgFilename": "pr-san-juan.svg",
+    "description": "San Juan is the capital of Puerto Rico, famous for the iconic garitas — the candy-striped sentry boxes that dot the massive walls of Old San Juan's colonial fortifications. These small, domed lookout turrets, perched above the crashing Atlantic surf at Castillo San Felipe del Morro and Castillo San Cristóbal, were built by the Spanish in the 16th–18th centuries to guard against invaders. Today the garita has become Puerto Rico's most recognizable symbol, representing centuries of Caribbean history, resilience, and the island's unique blend of Spanish colonial heritage.",
+    "region": "Central America"
   }
 ]

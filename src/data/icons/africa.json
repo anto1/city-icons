@@ -224,5 +224,39 @@
     "svgFilename": "tz-zanzibar.svg",
     "description": "Zanzibar is Tanzania's legendary Spice Island, once the world's largest producer of cloves and the heart of the Indian Ocean spice trade. Introduced by Omani sultans in the early 19th century, clove trees transformed the archipelago's economy and identity. A bundle of dried cloves — aromatic, dark, and nail-shaped — remains Zanzibar's most recognizable symbol, evoking centuries of trade winds, spice plantations, and the intoxicating fragrance that still drifts through Stone Town's narrow alleyways.",
     "region": "Africa"
+  },
+  {
+    "_id": "277",
+    "name": "Kigali Convention Centre",
+    "city": "Kigali",
+    "country": "Rwanda",
+    "category": "Buildings",
+    "tags": [
+      "convention-centre",
+      "dome",
+      "modern",
+      "architecture",
+      "development"
+    ],
+    "svgFilename": "rw-kigali.svg",
+    "description": "Kigali is the clean, green capital of Rwanda, crowned by the striking Kigali Convention Centre and its luminous dome that has become the city's defining silhouette. Completed in 2016, the complex rises on a hilltop overlooking the city of a thousand hills, its sweeping dome inspired by the traditional Rwandan king's palace. Illuminated at night in shifting colors, the KCC symbolizes Rwanda's extraordinary transformation and forward-looking ambition, serving as East Africa's premier conference destination and a beacon of the nation's renaissance.",
+    "region": "Africa"
+  },
+  {
+    "_id": "278",
+    "name": "Port Louis Dodo",
+    "city": "Port Louis",
+    "country": "Mauritius",
+    "category": "Culture",
+    "tags": [
+      "dodo",
+      "extinct",
+      "bird",
+      "national-symbol",
+      "wildlife"
+    ],
+    "svgFilename": "mu-port-louis.svg",
+    "description": "Port Louis is the capital of Mauritius, an island nation forever linked to the dodo — the flightless bird that became history's most famous symbol of extinction. Endemic to Mauritius and last sighted around 1681, the plump, fearless dodo has transcended its tragic fate to become the proud national emblem, appearing on the Mauritian coat of arms, currency, and countless souvenirs. Its silhouette evokes both a cautionary tale of human impact on nature and a celebration of Mauritius's unique natural heritage.",
+    "region": "Africa"
   }
 ]
