@@ -166,5 +166,58 @@
     "svgFilename": "pr-san-juan.svg",
     "description": "San Juan is the capital of Puerto Rico, famous for the iconic garitas — the candy-striped sentry boxes that dot the massive walls of Old San Juan's colonial fortifications. These small, domed lookout turrets, perched above the crashing Atlantic surf at Castillo San Felipe del Morro and Castillo San Cristóbal, were built by the Spanish in the 16th–18th centuries to guard against invaders. Today the garita has become Puerto Rico's most recognizable symbol, representing centuries of Caribbean history, resilience, and the island's unique blend of Spanish colonial heritage.",
     "region": "Central America"
+  },
+  {
+    "_id": "281",
+    "name": "Blue Curaçao Liqueur",
+    "city": "Willemstad",
+    "country": "Curaçao",
+    "category": "Culture",
+    "tags": [
+      "blue-curacao",
+      "liqueur",
+      "drink",
+      "caribbean",
+      "iconic"
+    ],
+    "svgFilename": "cw-willemstadt.svg",
+    "description": "Willemstad is the colorful capital of Curaçao, birthplace of the legendary Blue Curaçao liqueur. Made from the dried peels of the laraha citrus fruit — a bitter orange unique to the island — this vivid azure spirit was first distilled at the historic Landhuis Chobolobo in the 19th century. The liqueur's electric blue hue has become synonymous with Caribbean cocktail culture worldwide, while Willemstad itself dazzles with its UNESCO-listed pastel Dutch colonial waterfront along the iconic Handelskade.",
+    "region": "Central America"
+  },
+  {
+    "_id": "285",
+    "name": "Soufrière Cocoa Pod",
+    "city": "Soufrière",
+    "country": "Saint Lucia",
+    "category": "Culture",
+    "tags": [
+      "cocoa",
+      "cacao",
+      "chocolate",
+      "agriculture",
+      "caribbean",
+      "tropical"
+    ],
+    "svgFilename": "lc-soufriere.svg",
+    "description": "Soufrière is the oldest town in Saint Lucia, nestled beneath the dramatic Piton peaks and surrounded by lush cocoa estates that have flourished since the 18th century. The cocoa pod — with its ridged, jewel-toned shell cradling precious cacao beans — symbolizes the town's deep roots in Caribbean chocolate heritage. Saint Lucian cocoa, prized for its fine-flavour designation, is cultivated on small family plantations where traditional fermentation methods produce some of the Caribbean's most sought-after beans, connecting Soufrière's colonial past to a thriving artisanal chocolate revival.",
+    "region": "Central America"
+  },
+  {
+    "_id": "286",
+    "name": "Fort George",
+    "city": "St. George's",
+    "country": "Grenada",
+    "category": "Landmarks",
+    "tags": [
+      "fort",
+      "fortification",
+      "cannon",
+      "hilltop",
+      "colonial",
+      "historic"
+    ],
+    "svgFilename": "gd-st-george.svg",
+    "description": "St. George's is the capital of Grenada, crowned by the imposing Fort George — a hilltop fortification built by the French in 1705 and later expanded by the British. Perched above the picturesque horseshoe harbour, the fort's thick stone walls and rows of historic cannons command panoramic views of the Caribbean Sea, the terracotta-roofed town below, and the lush volcanic hills beyond. Fort George remains the most iconic landmark of the Spice Isle, a sentinel of Grenada's turbulent colonial history and enduring Caribbean charm.",
+    "region": "Central America"
   }
 ]

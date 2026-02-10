@@ -258,5 +258,75 @@
     "svgFilename": "mu-port-louis.svg",
     "description": "Port Louis is the capital of Mauritius, an island nation forever linked to the dodo — the flightless bird that became history's most famous symbol of extinction. Endemic to Mauritius and last sighted around 1681, the plump, fearless dodo has transcended its tragic fate to become the proud national emblem, appearing on the Mauritian coat of arms, currency, and countless souvenirs. Its silhouette evokes both a cautionary tale of human impact on nature and a celebration of Mauritius's unique natural heritage.",
     "region": "Africa"
+  },
+  {
+    "_id": "280",
+    "name": "Bab el Bhar",
+    "city": "Tunis",
+    "country": "Tunisia",
+    "category": "Landmarks",
+    "tags": [
+      "gate",
+      "porte-de-france",
+      "historic",
+      "medina",
+      "colonial"
+    ],
+    "svgFilename": "tn-tunis.svg",
+    "description": "Tunis is the capital of Tunisia, home to the iconic Bab el Bhar (Porte de France) — the historic gateway that once marked the boundary between the ancient medina and the modern French colonial city. Built during the Ottoman era and later renamed by the French, this grand archway stands as a symbol of Tunis's layered history, where Carthaginian, Arab, Ottoman, and French influences merge into one of North Africa's most captivating capitals.",
+    "region": "Africa"
+  },
+  {
+    "_id": "282",
+    "name": "Independence Memorial Museum",
+    "city": "Windhoek",
+    "country": "Namibia",
+    "category": "Landmarks",
+    "tags": [
+      "independence",
+      "memorial",
+      "museum",
+      "monument",
+      "freedom"
+    ],
+    "svgFilename": "na-windhoek.svg",
+    "description": "Windhoek is the capital of Namibia, crowned by the striking Independence Memorial Museum — a modernist glass-and-steel structure that towers over the city from a hilltop in the historic center. Inaugurated in 2014, the museum commemorates Namibia's long struggle for freedom from colonial rule and apartheid, housing exhibits that trace the nation's journey to independence in 1990. Its bold silhouette, flanked by a bronze statue of founding president Sam Nujoma, has become Windhoek's most recognizable landmark and a powerful symbol of Namibian sovereignty.",
+    "region": "Africa"
+  },
+  {
+    "_id": "283",
+    "name": "Maputo Piri-Piri Prawns",
+    "city": "Maputo",
+    "country": "Mozambique",
+    "category": "Culture",
+    "tags": [
+      "piri-piri",
+      "peri-peri",
+      "prawns",
+      "shrimp",
+      "cuisine",
+      "seafood"
+    ],
+    "svgFilename": "mz-maputo.svg",
+    "description": "Maputo is the capital of Mozambique, a coastal city inseparable from its legendary piri-piri prawns. Grilled over charcoal and drenched in a fiery marinade of bird's-eye chillies, garlic, and citrus, these giant prawns are Mozambique's most celebrated dish — a tradition born where the Indian Ocean's rich fishing grounds meet centuries of Portuguese and East African culinary influence. Savored at open-air seafood markets and beachside restaurants, Maputo's peri-peri prawns have become an icon of Mozambican identity and one of Africa's great gastronomic experiences.",
+    "region": "Africa"
+  },
+  {
+    "_id": "284",
+    "name": "Ouagadougou SIAO Mask",
+    "city": "Ouagadougou",
+    "country": "Burkina Faso",
+    "category": "Culture",
+    "tags": [
+      "siao",
+      "mask",
+      "african-art",
+      "craft",
+      "festival",
+      "traditional"
+    ],
+    "svgFilename": "bf-ouagadougou.svg",
+    "description": "Ouagadougou is the capital of Burkina Faso, host of the legendary SIAO (Salon International de l'Artisanat de Ouagadougou) — Africa's largest arts and crafts fair. The event's iconic mask symbol draws on the region's rich tradition of ceremonial masks used by the Mossi, Bobo, and Bwa peoples in rituals, harvest celebrations, and spiritual ceremonies. These intricately carved and painted masks represent the soul of West African artistic expression, making Ouagadougou a global hub for African craft and cultural exchange.",
+    "region": "Africa"
   }
 ]

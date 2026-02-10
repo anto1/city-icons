@@ -705,5 +705,22 @@
     "svgFilename": "jp-nara.svg",
     "description": "Nara is an ancient capital of Japan, famous for the over 1,000 sacred shika deer that roam freely through its parks and temple grounds. Regarded as divine messengers of the Shinto gods since the 8th century, the deer of Nara Park are designated as national natural treasures. Visitors from around the world come to bow to these gentle creatures, who politely bow back, creating one of Japan's most beloved and enchanting cultural encounters.",
     "region": "Asia"
+  },
+  {
+    "_id": "279",
+    "name": "Thimphu Prayer Wheels",
+    "city": "Thimphu",
+    "country": "Bhutan",
+    "category": "Religion",
+    "tags": [
+      "prayer-wheels",
+      "mani-wheels",
+      "buddhist",
+      "spiritual",
+      "traditional"
+    ],
+    "svgFilename": "bt-thimphu.svg",
+    "description": "Thimphu is the capital of Bhutan, where prayer wheels (mani wheels) are an inseparable part of daily life and sacred landscape. These cylindrical devices, inscribed with the mantra Om Mani Padme Hum, are spun clockwise by devotees to accumulate merit and spread spiritual blessings. Found along temple walls, riverside paths, and mountain passes, the prayer wheels of Thimphu embody the deep Buddhist faith that permeates every aspect of Bhutanese culture in the world's last great Himalayan kingdom.",
+    "region": "Asia"
   }
 ]
