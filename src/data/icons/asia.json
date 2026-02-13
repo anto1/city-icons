@@ -722,5 +722,22 @@
     "svgFilename": "bt-thimphu.svg",
     "description": "Thimphu is the capital of Bhutan, where prayer wheels (mani wheels) are an inseparable part of daily life and sacred landscape. These cylindrical devices, inscribed with the mantra Om Mani Padme Hum, are spun clockwise by devotees to accumulate merit and spread spiritual blessings. Found along temple walls, riverside paths, and mountain passes, the prayer wheels of Thimphu embody the deep Buddhist faith that permeates every aspect of Bhutanese culture in the world's last great Himalayan kingdom.",
     "region": "Asia"
+  },
+  {
+    "_id": "291",
+    "name": "Vung Tau Christ Statue",
+    "city": "Vung Tau",
+    "country": "Vietnam",
+    "category": "Landmarks",
+    "tags": [
+      "christ",
+      "statue",
+      "coastal",
+      "religious",
+      "hilltop"
+    ],
+    "svgFilename": "vn-vung-tau.svg",
+    "description": "Vung Tau is a coastal city in southern Vietnam, crowned by the towering Christ of Vung Tau statue atop Mount Nho. Standing 32 meters tall with arms stretching 18 meters wide, it is one of the tallest Christ statues in the world. Built between 1974 and 1993, the statue gazes over the South China Sea from Small Mountain, offering panoramic views of the city's beaches and fishing harbors below.",
+    "region": "Asia"
   }
 ]

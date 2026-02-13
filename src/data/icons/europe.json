@@ -1860,5 +1860,124 @@
     "svgFilename": "it-bologna.svg",
     "description": "Bologna is a medieval university city in northern Italy, instantly recognized by its iconic Due Torri — the Two Towers of Asinelli and Garisenda. Built in the 12th century by rival noble families competing for prestige, the taller Torre degli Asinelli rises 97 meters while the shorter Torre Garisenda leans at a dramatic four-degree angle. Once part of a skyline bristling with over 100 towers, these two survivors have become Bologna's most beloved symbol and an enduring testament to medieval ambition.",
     "region": "Europe"
+  },
+  {
+    "_id": "287",
+    "name": "Cologne Cathedral",
+    "city": "Cologne",
+    "country": "Germany",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "gothic",
+      "church",
+      "medieval",
+      "twin-spires"
+    ],
+    "svgFilename": "de-cologne.svg",
+    "description": "Cologne Cathedral (Kölner Dom) is a masterpiece of High Gothic architecture and Germany's most visited landmark. Construction began in 1248 and took over 600 years to complete, resulting in twin spires that rise 157 meters above the Rhine. A UNESCO World Heritage Site, the cathedral houses the Shrine of the Three Kings and remains the tallest twin-spired church in the world.",
+    "region": "Europe"
+  },
+  {
+    "_id": "288",
+    "name": "Liverpool Liver Bird",
+    "city": "Liverpool",
+    "country": "UK",
+    "category": "Landmarks",
+    "tags": [
+      "liver-bird",
+      "mythical",
+      "waterfront",
+      "maritime",
+      "iconic"
+    ],
+    "svgFilename": "uk-liverpool.svg",
+    "description": "Liverpool is a vibrant port city on the River Mersey, symbolized by the legendary Liver Bird perched atop the Royal Liver Building. These mythical cormorant-like creatures have watched over the city since 1911, one gazing out to sea to protect sailors and the other looking inland to guard the city. The Liver Birds have become Liverpool's most iconic emblem, representing a city renowned for its maritime heritage, music, and football.",
+    "region": "Europe"
+  },
+  {
+    "_id": "289",
+    "name": "Rennes Portes Mordelaises",
+    "city": "Rennes",
+    "country": "France",
+    "category": "Landmarks",
+    "tags": [
+      "gate",
+      "medieval",
+      "fortification",
+      "historic",
+      "breton"
+    ],
+    "svgFilename": "fr-rennes.svg",
+    "description": "Rennes is the capital of Brittany in northwestern France, home to the Portes Mordelaises — the last surviving gate of the medieval city walls. Built in the 15th century with two imposing towers flanking a fortified entrance, the gate once served as the ceremonial entry point where the Dukes of Brittany were crowned. Today the Portes Mordelaises stand as a proud reminder of Rennes' Breton heritage and medieval past.",
+    "region": "Europe"
+  },
+  {
+    "_id": "290",
+    "name": "Aachen Cathedral",
+    "city": "Aachen",
+    "country": "Germany",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "charlemagne",
+      "romanesque",
+      "medieval",
+      "church"
+    ],
+    "svgFilename": "de-aachen.svg",
+    "description": "Aachen Cathedral (Aachener Dom) was the first German UNESCO World Heritage Site, originally built by Emperor Charlemagne around 800 AD as his imperial chapel. The cathedral's distinctive octagonal Palatine Chapel blends Carolingian, Byzantine, and Gothic styles, and served as the coronation church for over 30 German kings across six centuries. It remains a symbol of European unity and the legacy of the Carolingian Empire.",
+    "region": "Europe"
+  },
+  {
+    "_id": "292",
+    "name": "Subotica Synagogue",
+    "city": "Subotica",
+    "country": "Serbia",
+    "category": "Landmarks",
+    "tags": [
+      "synagogue",
+      "art-nouveau",
+      "hungarian",
+      "secession",
+      "ornamental"
+    ],
+    "svgFilename": "rs-subotica.svg",
+    "description": "Subotica is a multicultural city in northern Serbia, home to one of Europe's most stunning Art Nouveau synagogues. Built in 1902 by architects Marcell Komor and Dezső Jakab in the Hungarian Secession style, the synagogue features vibrant floral motifs, Zsolnay ceramic tiles, and a soaring dome that blends Eastern and Western decorative traditions. After decades of neglect and a meticulous restoration completed in 2018, it stands again as a jewel of early 20th-century architecture.",
+    "region": "Europe"
+  },
+  {
+    "_id": "293",
+    "name": "Karlsruhe Pyramid",
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "category": "Landmarks",
+    "tags": [
+      "pyramid",
+      "monument",
+      "sandstone",
+      "city-center",
+      "tomb"
+    ],
+    "svgFilename": "de-karlsruhe.svg",
+    "description": "Karlsruhe is a planned city in southwestern Germany, famously centered around a sandstone pyramid in the Marktplatz. Built in 1825 over the tomb of the city's founder, Margrave Karl Wilhelm of Baden-Durlach, the Karlsruhe Pyramid has become the city's most recognizable symbol. Standing nearly seven meters tall in the heart of the fan-shaped city grid, it is one of the few pyramid monuments in Europe and a unique testament to the city's Enlightenment-era origins.",
+    "region": "Europe"
+  },
+  {
+    "_id": "295",
+    "name": "Stuttgart Mercedes-Benz Museum",
+    "city": "Stuttgart",
+    "country": "Germany",
+    "category": "Landmarks",
+    "tags": [
+      "museum",
+      "mercedes-benz",
+      "automotive",
+      "modern-architecture",
+      "futuristic"
+    ],
+    "svgFilename": "de-stuttgart.svg",
+    "description": "Stuttgart is the automotive capital of Germany, home to the Mercedes-Benz Museum — a futuristic architectural landmark designed by UNStudio. Opened in 2006, the museum's striking double-helix structure spirals upward nine floors, guiding visitors through over 130 years of automotive history from the invention of the automobile to the present day. The building itself has become an icon of modern Stuttgart, reflecting the city's deep roots in engineering and innovation.",
+    "region": "Europe"
   }
 ]

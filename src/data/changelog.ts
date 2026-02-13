@@ -12,8 +12,8 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2026-W07',
     date: 'February 9-13, 2026',
-    cities: ['Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s'],
-    description: 'New additions across Asia, Africa, and Caribbean',
+    cities: ['Subotica', 'Karlsruhe', 'São Paulo', 'Stuttgart', 'Cologne', 'Liverpool', 'Rennes', 'Vung Tau', 'Aachen', 'Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s'],
+    description: 'New additions across Europe, Asia, Africa, South America, and Caribbean',
   },
   {
     week: '2026-W06',

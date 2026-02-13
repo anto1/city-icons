@@ -295,5 +295,22 @@
     "svgFilename": "ec-quito.svg",
     "description": "Quito is Ecuador's capital, perched at 2,850 meters in the Andes and home to the Monumento a la Mitad del Mundo — the iconic equator monument marking latitude 0°0′0″. Built in 1982 at the site where the 18th-century French Geodesic Mission first measured the equatorial line, the 30-meter trapezoidal tower is crowned by a globe and has become one of South America's most visited landmarks. Standing at the literal center of the Earth, it symbolizes Ecuador's unique geographic identity and the scientific heritage that gave the country its name.",
     "region": "South America"
+  },
+  {
+    "_id": "294",
+    "name": "São Paulo MASP",
+    "city": "São Paulo",
+    "country": "Brazil",
+    "category": "Landmarks",
+    "tags": [
+      "masp",
+      "museum",
+      "brutalist",
+      "modern-architecture",
+      "art"
+    ],
+    "svgFilename": "br-sao-paolo.svg",
+    "description": "São Paulo is Brazil's sprawling cultural and financial capital, home to the Museu de Arte de São Paulo (MASP) — one of Latin America's most important art museums. Designed by Lina Bo Bardi and completed in 1968, the brutalist landmark is suspended above an open plaza by bold red concrete beams, creating a dramatic 74-meter free span that has become an icon of modern Brazilian architecture. The museum houses a world-class collection spanning European masters to contemporary Brazilian art.",
+    "region": "South America"
   }
 ]
