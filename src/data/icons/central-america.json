@@ -219,5 +219,22 @@
     "svgFilename": "gd-st-george.svg",
     "description": "St. George's is the capital of Grenada, crowned by the imposing Fort George — a hilltop fortification built by the French in 1705 and later expanded by the British. Perched above the picturesque horseshoe harbour, the fort's thick stone walls and rows of historic cannons command panoramic views of the Caribbean Sea, the terracotta-roofed town below, and the lush volcanic hills beyond. Fort George remains the most iconic landmark of the Spice Isle, a sentinel of Grenada's turbulent colonial history and enduring Caribbean charm.",
     "region": "Central America"
+  },
+  {
+    "_id": "297",
+    "name": "Granada Cathedral",
+    "city": "Granada",
+    "country": "Nicaragua",
+    "category": "Landmarks",
+    "tags": [
+      "cathedral",
+      "colonial",
+      "neoclassical",
+      "church",
+      "historic"
+    ],
+    "svgFilename": "ni-granada.svg",
+    "description": "Granada is Nicaragua's oldest colonial city, dominated by the striking Cathedral of Granada on the central plaza. Originally built in 1583 and rebuilt multiple times after wars and fires, the current neoclassical cathedral with its iconic yellow facade and red-roofed towers has watched over the city since 1915. Standing at the heart of one of Central America's best-preserved colonial towns, it embodies Granada's resilient spirit and rich Spanish heritage on the shores of Lake Nicaragua.",
+    "region": "Central America"
   }
 ]

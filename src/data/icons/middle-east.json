@@ -362,5 +362,23 @@
     "svgFilename": "il-haifa.svg",
     "description": "Haifa is represented by the terraces of the Baha'i Gardens, whose tiered levels cascade down Mount Carmel and welcome pilgrims from around the world. The icon celebrates the peaceful tiers, planted with palms and cypresses, symbolizing Haifa's role as a spiritual crossroads and a city that nurtures both nature and devotion.",
     "region": "Middle East"
+  },
+  {
+    "_id": "296",
+    "name": "Jerusalem Dome of the Rock",
+    "city": "Jerusalem",
+    "country": "Palestine",
+    "category": "Landmarks",
+    "tags": [
+      "dome",
+      "mosque",
+      "islamic",
+      "golden",
+      "holy",
+      "temple-mount"
+    ],
+    "svgFilename": "ps-jerusalem.svg",
+    "description": "The Dome of the Rock is one of the oldest and most iconic Islamic monuments in the world, crowning the Temple Mount in Jerusalem's Old City. Completed in 691 AD by Caliph Abd al-Malik, its gleaming golden dome and intricate Byzantine mosaics mark the spot where the Prophet Muhammad is believed to have ascended to heaven. Sacred to Muslims, Jews, and Christians alike, the shrine stands as a timeless symbol of Jerusalem's profound spiritual significance.",
+    "region": "Middle East"
   }
 ]
