@@ -178,5 +178,55 @@
     "svgFilename": "au-hobart.svg",
     "description": "Hobart is the capital of Tasmania, Australia's island state known for its pristine wilderness and rich colonial history. The Cascade Brewery, founded in 1824, is Australia's oldest continuously operating brewery, nestled at the foot of Mount Wellington. Its distinctive Gothic-style sandstone buildings and heritage gardens make it an iconic symbol of Tasmania's European settlement and brewing tradition.",
     "region": "Oceania"
+  },
+  {
+    "_id": "298",
+    "name": "Honiara Parliament House",
+    "city": "Honiara",
+    "country": "Solomon Islands",
+    "category": "Landmarks",
+    "tags": [
+      "parliament",
+      "government",
+      "pacific",
+      "melanesia"
+    ],
+    "svgFilename": "sb-honiara.svg",
+    "description": "Honiara is the capital of the Solomon Islands, a Melanesian archipelago in the South Pacific. The National Parliament House is the seat of government and a symbol of the nation's independence. Located on the island of Guadalcanal, Honiara grew from a World War II military base into a vibrant capital, blending modern governance with the rich cultural traditions of the Solomon Islands' diverse indigenous communities.",
+    "region": "Oceania"
+  },
+  {
+    "_id": "299",
+    "name": "Nukuʻalofa Haʻamonga ʻa Maui",
+    "city": "Nukuʻalofa",
+    "country": "Tonga",
+    "category": "Landmarks",
+    "tags": [
+      "trilithon",
+      "stone",
+      "ancient",
+      "polynesia",
+      "megalith"
+    ],
+    "svgFilename": "to-nukualofa.svg",
+    "description": "Nukuʻalofa is the capital of Tonga, the only remaining monarchy in the Pacific. The Haʻamonga ʻa Maui (Burden of Maui) is a massive stone trilithon built around 1200 AD from coral limestone slabs, each weighing approximately 40 tonnes. Often called the 'Stonehenge of the Pacific,' this ancient megalithic gateway is believed to have served as a seasonal calendar and stands as a testament to the engineering prowess of early Polynesian civilization.",
+    "region": "Oceania"
+  },
+  {
+    "_id": "300",
+    "name": "Funafuti Lagoon",
+    "city": "Funafuti",
+    "country": "Tuvalu",
+    "category": "Nature",
+    "tags": [
+      "atoll",
+      "lagoon",
+      "pacific",
+      "polynesia",
+      "coral"
+    ],
+    "svgFilename": "tv-funafuti.svg",
+    "description": "Funafuti is the capital atoll of Tuvalu, one of the world's smallest and most remote nations. The Funafuti Lagoon, enclosed by a narrow ring of coral islets, spans approximately 275 square kilometers and is the heart of this tiny Pacific nation. The atoll's distinctive ring shape, formed over millennia by coral growth, shelters a vast turquoise lagoon that sustains local communities and hosts the Funafuti Conservation Area, a marine protected zone of extraordinary biodiversity.",
+    "region": "Oceania"
   }
 ]

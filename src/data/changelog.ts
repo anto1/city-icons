@@ -11,9 +11,9 @@ export interface ChangelogEntry {
 export const changelog: ChangelogEntry[] = [
   {
     week: '2026-W07',
-    date: 'February 9-13, 2026',
-    cities: ['Jerusalem', 'Granada', 'Subotica', 'Karlsruhe', 'São Paulo', 'Stuttgart', 'Cologne', 'Liverpool', 'Rennes', 'Vung Tau', 'Aachen', 'Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s'],
-    description: 'New additions across Europe, Middle East, Asia, Africa, Central and South America, and Caribbean',
+    date: 'February 9-15, 2026',
+    cities: ['Jerusalem', 'Granada', 'Subotica', 'Karlsruhe', 'São Paulo', 'Stuttgart', 'Cologne', 'Liverpool', 'Rennes', 'Vung Tau', 'Aachen', 'Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s', 'Honiara', 'Nukuʻalofa', 'Funafuti'],
+    description: 'New additions across Europe, Middle East, Asia, Africa, Central and South America, Caribbean, and Oceania',
   },
   {
     week: '2026-W06',
