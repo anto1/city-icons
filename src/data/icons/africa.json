@@ -379,5 +379,39 @@
     "svgFilename": "sd-meroe.svg",
     "description": "Meroë is an ancient city on the east bank of the Nile in Sudan, once the royal seat of the Kingdom of Kush. Its Nubian pyramids — smaller, steeper, and more numerous than those of Egypt — rise from the desert in three royal cemeteries where Kushite kings and queens were entombed between roughly 300 BCE and 350 CE. A UNESCO World Heritage site, the pyramids of Meroë are a striking reminder that Africa's pyramid-building civilization stretched far up the Nile, rivaling its northern neighbor in both power and craftsmanship.",
     "region": "Africa"
+  },
+  {
+    "_id": "307",
+    "name": "Yamoussoukro Presidential Crocodiles",
+    "city": "Yamoussoukro",
+    "country": "Côte d'Ivoire",
+    "category": "Landmarks",
+    "tags": [
+      "crocodiles",
+      "presidential",
+      "lake",
+      "sacred",
+      "capital"
+    ],
+    "svgFilename": "ci-yamoussoukro.svg",
+    "description": "Yamoussoukro is the political capital of Côte d'Ivoire, the birthplace of founding president Félix Houphouët-Boigny. Around the artificial lake surrounding the Presidential Palace lives a famous colony of sacred crocodiles, introduced by the president and long fed by a dedicated keeper in a ritual that drew visitors from around the world. Seen as guardians of the palace and tied to local spiritual traditions, the Yamoussoukro crocodiles have become one of the city's most recognizable symbols, a living emblem beside the palace and the monumental Basilica of Our Lady of Peace.",
+    "region": "Africa"
+  },
+  {
+    "_id": "308",
+    "name": "São Tomé Pico Cão Grande",
+    "city": "São Tomé",
+    "country": "São Tomé and Príncipe",
+    "category": "Landmarks",
+    "tags": [
+      "volcanic",
+      "peak",
+      "jungle",
+      "nature",
+      "island"
+    ],
+    "svgFilename": "st-sao-tome.svg",
+    "description": "São Tomé is the capital of the island nation of São Tomé and Príncipe, set in the Gulf of Guinea. Inland, rising sharply from the dense Atlantic rainforest of Obô Natural Park, stands Pico Cão Grande — a slender volcanic neck that shoots up more than 300 meters from the jungle floor, its sheer basalt walls forming one of the most dramatic silhouettes in Africa. A remnant of the island's volcanic past, the peak has become the defining landmark of the archipelago, symbolizing São Tomé's wild tropical interior and equatorial beauty.",
+    "region": "Africa"
   }
 ]
