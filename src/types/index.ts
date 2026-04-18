@@ -1,5 +1,4 @@
-// Icon data from JSON files - used for grid views (no SVG content embedded)
-export interface IconData {
+export interface Icon {
   _id: string;
   name: string;
   city: string;
@@ -11,10 +10,6 @@ export interface IconData {
   region: string;
 }
 
-// Icon type alias - we no longer embed SVG content in pages
-// SVG content is loaded on-demand only when needed (download/copy)
-export type Icon = IconData;
-
 export interface SearchBarProps {
   onSearch: (query: string) => void;
   placeholder?: string;
@@ -25,5 +20,3 @@ export interface IconGridProps {
   icons: Icon[];
   loading?: boolean;
 }
-
- 

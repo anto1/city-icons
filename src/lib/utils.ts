@@ -39,3 +39,23 @@ export function getIconSvgUrl(icon: Icon): string {
   return `/icons/${icon.svgFilename}`;
 }
 
+const SHORT_COUNTRY_ALIASES = new Set(['usa', 'uk', 'uae']);
+
+// Whether an icon matches a free-text query. Short country terms require a
+// prefix match or known alias so typing "in" doesn't surface every country
+// containing "in".
+export function iconMatchesQuery(icon: Icon, query: string): boolean {
+  const term = query.toLowerCase().trim();
+  if (!term) return true;
+
+  const city = icon.city.toLowerCase();
+  if (city.includes(term)) return true;
+
+  const country = icon.country.toLowerCase();
+  const validCountryMatch =
+    term.length >= 3 || SHORT_COUNTRY_ALIASES.has(term) || country.startsWith(term);
+  if (country.includes(term) && validCountryMatch) return true;
+
+  return icon.region.toLowerCase().includes(term);
+}
+

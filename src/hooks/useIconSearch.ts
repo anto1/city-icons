@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from 'react';
 import { Icon } from '@/types';
+import { iconMatchesQuery } from '@/lib/utils';
 
 interface UseIconSearchProps {
   icons: Icon[];
@@ -32,18 +33,7 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
 
     // Apply search query
     if (lastSearchQuery.trim()) {
-      const searchTerm = lastSearchQuery.toLowerCase();
-      result = result.filter(icon => {
-        const cityMatch = icon.city.toLowerCase().includes(searchTerm);
-        const countryMatch = icon.country.toLowerCase().includes(searchTerm);
-        const regionMatch = icon.region.toLowerCase().includes(searchTerm);
-        
-        const validCountryMatch = searchTerm.length >= 3 || 
-                                 ['usa', 'uk', 'uae'].includes(searchTerm) ||
-                                 icon.country.toLowerCase().startsWith(searchTerm);
-        
-        return cityMatch || (countryMatch && validCountryMatch) || regionMatch;
-      });
+      result = result.filter(icon => iconMatchesQuery(icon, lastSearchQuery));
     }
 
     // Remove duplicates and sort

@@ -12,8 +12,8 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2026-W16',
     date: 'April 13-19, 2026',
-    cities: ['Ho Chi Minh City', 'Da Nang', 'Karaganda'],
-    description: 'Vietnam and Kazakhstan additions',
+    cities: ['Ho Chi Minh City', 'Da Nang', 'Karaganda', 'Asmara', 'Timbuktu', 'Meroë'],
+    description: 'Vietnam, Kazakhstan, and African heritage additions',
   },
   {
     week: '2026-W07',

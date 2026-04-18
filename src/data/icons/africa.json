@@ -328,5 +328,56 @@
     "svgFilename": "bf-ouagadougou.svg",
     "description": "Ouagadougou is the capital of Burkina Faso, host of the legendary SIAO (Salon International de l'Artisanat de Ouagadougou) — Africa's largest arts and crafts fair. The event's iconic mask symbol draws on the region's rich tradition of ceremonial masks used by the Mossi, Bobo, and Bwa peoples in rituals, harvest celebrations, and spiritual ceremonies. These intricately carved and painted masks represent the soul of West African artistic expression, making Ouagadougou a global hub for African craft and cultural exchange.",
     "region": "Africa"
+  },
+  {
+    "_id": "304",
+    "name": "Asmara Fiat Tagliero Building",
+    "city": "Asmara",
+    "country": "Eritrea",
+    "category": "Buildings",
+    "tags": [
+      "modernist",
+      "futurist",
+      "architecture",
+      "italian",
+      "heritage"
+    ],
+    "svgFilename": "er-asmara.svg",
+    "description": "Asmara is the capital of Eritrea, a UNESCO World Heritage city celebrated as Africa's modernist capital. The Fiat Tagliero Building, designed by Italian engineer Giuseppe Pettazzi and completed in 1938, is its most iconic landmark — a futurist service station shaped like a soaring airplane, with two cantilevered concrete wings stretching 15 meters on each side with no supporting columns. A masterpiece of Italian Rationalist architecture, the building stands as a symbol of Asmara's unique blend of modernist heritage and highland African identity.",
+    "region": "Africa"
+  },
+  {
+    "_id": "305",
+    "name": "Timbuktu Camel Caravan",
+    "city": "Timbuktu",
+    "country": "Mali",
+    "category": "Culture",
+    "tags": [
+      "camel",
+      "caravan",
+      "sahara",
+      "trade",
+      "historic"
+    ],
+    "svgFilename": "ml-timbuktu.svg",
+    "description": "Timbuktu is a legendary city on the southern edge of the Sahara in Mali, for centuries the crossroads of Trans-Saharan trade and Islamic scholarship. Camel caravans laden with salt from Taoudenni, gold from the Sahel, and manuscripts bound for the city's fabled libraries converged here from across North and West Africa, making Timbuktu a byword for the ends of the earth. The silhouette of the caravan still symbolizes this golden age — when the city was a vital hub of commerce, learning, and cultural exchange across the desert.",
+    "region": "Africa"
+  },
+  {
+    "_id": "306",
+    "name": "Meroë Nubian Pyramids",
+    "city": "Meroë",
+    "country": "Sudan",
+    "category": "Landmarks",
+    "tags": [
+      "pyramids",
+      "nubian",
+      "ancient",
+      "unesco",
+      "kingdom"
+    ],
+    "svgFilename": "sd-meroe.svg",
+    "description": "Meroë is an ancient city on the east bank of the Nile in Sudan, once the royal seat of the Kingdom of Kush. Its Nubian pyramids — smaller, steeper, and more numerous than those of Egypt — rise from the desert in three royal cemeteries where Kushite kings and queens were entombed between roughly 300 BCE and 350 CE. A UNESCO World Heritage site, the pyramids of Meroë are a striking reminder that Africa's pyramid-building civilization stretched far up the Nile, rivaling its northern neighbor in both power and craftsmanship.",
+    "region": "Africa"
   }
 ]

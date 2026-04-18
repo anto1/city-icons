@@ -45,7 +45,8 @@ export default async function OgImage({
     );
   }
 
-  // Read the SVG file and extract path data
+  // Build-time only: dynamicParams=false + generateStaticParams ensures this
+  // only runs at build. Switch to async fs if ISR/on-demand OG is ever enabled.
   const svgPath = join(process.cwd(), 'public', 'icons', icon.svgFilename);
   let pathData = '';
   try {

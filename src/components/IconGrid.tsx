@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IconGridProps } from '@/types';
@@ -68,9 +68,28 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
     };
   }, []);
 
+  // Per-mousemove layout constants — computed once per mouse update,
+  // not per-card. Keeps the proximity scale O(n) trivial math.
+  const scaleLayout = useMemo(() => {
+    if (!mousePosition || !gridRef.current) return null;
+    const rect = gridRef.current.getBoundingClientRect();
+    const width = window.innerWidth;
+    const cols =
+      width >= BREAKPOINTS.XL ? GRID.COLUMNS.XL
+      : width >= BREAKPOINTS.LG ? GRID.COLUMNS.LG
+      : width >= BREAKPOINTS.MD ? GRID.COLUMNS.MD
+      : width >= BREAKPOINTS.SM ? GRID.COLUMNS.SM
+      : GRID.COLUMNS.DEFAULT;
+    const rows = Math.ceil(icons.length / cols);
+    const cardWidth = rect.width / cols;
+    const cardHeight = rect.height / rows;
+    const maxDistance = Math.min(cardWidth, cardHeight) * HOVER.PROXIMITY_FACTOR;
+    return { cols, cardWidth, cardHeight, maxDistance };
+  }, [mousePosition, icons.length]);
+
   if (loading) {
     return (
-      <ul 
+      <ul
         ref={gridRef}
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none"
         aria-label="Loading city icons"
@@ -93,43 +112,18 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
   }
 
   const getScale = (index: number) => {
-    if (!mousePosition || !gridRef.current) return 1;
-    
-    const rect = gridRef.current.getBoundingClientRect();
-    const cols = window.innerWidth >= BREAKPOINTS.XL ? GRID.COLUMNS.XL 
-      : window.innerWidth >= BREAKPOINTS.LG ? GRID.COLUMNS.LG 
-      : window.innerWidth >= BREAKPOINTS.MD ? GRID.COLUMNS.MD 
-      : window.innerWidth >= BREAKPOINTS.SM ? GRID.COLUMNS.SM 
-      : GRID.COLUMNS.DEFAULT;
-    const rows = Math.ceil(icons.length / cols);
-    
-    // Calculate card dimensions
-    const cardWidth = rect.width / cols;
-    const cardHeight = rect.height / rows;
-    
-    // Calculate card center position
+    if (!mousePosition || !scaleLayout) return 1;
+    const { cols, cardWidth, cardHeight, maxDistance } = scaleLayout;
+
     const row = Math.floor(index / cols);
     const col = index % cols;
-    const cardCenterX = col * cardWidth + cardWidth / 2;
-    const cardCenterY = row * cardHeight + cardHeight / 2;
-    
-    // Calculate distance from mouse to card center
-    const distance = Math.sqrt(
-      Math.pow(mousePosition.x - cardCenterX, 2) + 
-      Math.pow(mousePosition.y - cardCenterY, 2)
-    );
-    
-    // Maximum distance for effect (adjust for desired range)
-    const maxDistance = Math.min(cardWidth, cardHeight) * HOVER.PROXIMITY_FACTOR;
-    
-    // Calculate scale based on proximity (closer = larger scale)
-    if (distance <= maxDistance) {
-      const proximity = 1 - (distance / maxDistance);
-      const baseScale = 1 + (proximity * HOVER.MAX_SCALE_INCREASE);
-      return Math.max(1, baseScale);
-    }
-    
-    return 1;
+    const dx = mousePosition.x - (col * cardWidth + cardWidth / 2);
+    const dy = mousePosition.y - (row * cardHeight + cardHeight / 2);
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance > maxDistance) return 1;
+    const proximity = 1 - distance / maxDistance;
+    return Math.max(1, 1 + proximity * HOVER.MAX_SCALE_INCREASE);
   };
 
   return (

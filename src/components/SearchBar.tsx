@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { SearchBarProps } from '@/types';
 import { trackEvent } from 'fathom-client';
+import { iconMatchesQuery } from '@/lib/utils';
 
 export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
   const [query, setQuery] = useState('');
@@ -29,22 +30,19 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
 
   useEffect(() => {
     if (query.trim() && allIcons) {
-      const searchTerm = query.toLowerCase().trim();
-      
-      const filtered = allIcons.filter(icon => {
-        const cityMatch = icon.city.toLowerCase().includes(searchTerm);
-        const countryMatch = icon.country.toLowerCase().includes(searchTerm);
-        return cityMatch || countryMatch;
-      }).slice(0, 5);
-      
-      // Remove duplicates based on city and country combination
-      const uniqueSuggestions = filtered.filter((icon, index, self) => 
-        index === self.findIndex(i => 
-          i.city === icon.city && i.country === icon.country
-        )
-      );
-      
-      setSuggestions(uniqueSuggestions.map(icon => ({ city: icon.city, country: icon.country })));
+      const matched = allIcons.filter(icon => iconMatchesQuery(icon, query));
+
+      const seen = new Set<string>();
+      const uniqueSuggestions: Array<{ city: string; country: string }> = [];
+      for (const icon of matched) {
+        const key = `${icon.city}|${icon.country}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        uniqueSuggestions.push({ city: icon.city, country: icon.country });
+        if (uniqueSuggestions.length === 5) break;
+      }
+
+      setSuggestions(uniqueSuggestions);
       setShowSuggestions(true);
     } else {
       setShowSuggestions(false);
