@@ -739,5 +739,56 @@
     "svgFilename": "vn-vung-tau.svg",
     "description": "Vung Tau is a coastal city in southern Vietnam, crowned by the towering Christ of Vung Tau statue atop Mount Nho. Standing 32 meters tall with arms stretching 18 meters wide, it is one of the tallest Christ statues in the world. Built between 1974 and 1993, the statue gazes over the South China Sea from Small Mountain, offering panoramic views of the city's beaches and fishing harbors below.",
     "region": "Asia"
+  },
+  {
+    "_id": "301",
+    "name": "Ho Chi Minh Bến Thành Market",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "category": "Culture",
+    "tags": [
+      "market",
+      "bazaar",
+      "historic",
+      "clock-tower",
+      "street-food"
+    ],
+    "svgFilename": "vn-ho-chi-minh.svg",
+    "description": "Ho Chi Minh City, formerly known as Saigon, is the largest city in Vietnam and its bustling economic heart. At its core stands Bến Thành Market, a sprawling indoor bazaar crowned by an iconic clock tower that has marked the rhythms of Saigon since the 1910s. Beneath its wide tiled roof, thousands of stalls trade in fabrics, spices, lacquerware, and legendary street food, making the market both a working commercial hub and a living symbol of the city's vibrant everyday culture.",
+    "region": "Asia"
+  },
+  {
+    "_id": "302",
+    "name": "Da Nang Lady Buddha",
+    "city": "Da Nang",
+    "country": "Vietnam",
+    "category": "Landmarks",
+    "tags": [
+      "statue",
+      "buddha",
+      "religious",
+      "coastal",
+      "hilltop"
+    ],
+    "svgFilename": "vn-da-nang.svg",
+    "description": "Da Nang is a dynamic coastal city in central Vietnam, watched over by the serene figure of Lady Buddha (Quan Âm) at the Linh Ứng Pagoda on the Sơn Trà Peninsula. Rising 67 meters above a lotus pedestal, she is the tallest statue of the Bodhisattva of Mercy in Vietnam, facing the East Sea to bring protection to fishermen and calm to the storms that sweep the coast. From her hilltop sanctuary, Lady Buddha has become the spiritual emblem of Da Nang's shoreline.",
+    "region": "Asia"
+  },
+  {
+    "_id": "303",
+    "name": "Karaganda Miners' Tools",
+    "city": "Karaganda",
+    "country": "Kazakhstan",
+    "category": "Culture",
+    "tags": [
+      "mining",
+      "tools",
+      "pickaxe",
+      "industrial",
+      "heritage"
+    ],
+    "svgFilename": "kz-karaganda.svg",
+    "description": "Karaganda is a major city in central Kazakhstan, founded on one of the largest coal basins in the world. The crossed pickaxe and hammer of the miner have long been the city's unofficial crest, a reminder that Karaganda was built from the work of the shaft and the seam. Generations of miners descended into the Karaganda Basin to pull coal that powered half of the Soviet Union, and their tools remain a proud emblem of a city whose identity is inseparable from the earth beneath it.",
+    "region": "Asia"
   }
 ]
