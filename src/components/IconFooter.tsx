@@ -108,6 +108,15 @@ export function IconFooter({ countries, totalIcons }: IconFooterProps) {
             FAQ
           </Link>
           <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+          <a
+            href="/city-icons.zip"
+            download
+            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+            onClick={() => trackEvent('DOWNLOAD_ALL_ZIP')}
+          >
+            Download All
+          </a>
+          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
           <Link
             href="/license"
             className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"

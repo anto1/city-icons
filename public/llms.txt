@@ -1,13 +1,14 @@
 # City Icons Collection
 
-> Minimalist SVG line-art icons of 295 cities worldwide, each depicting the city's
-> most recognizable landmark. By Studio Partdirector (https://partdirector.ch).
+> 301 minimalist SVG line-art icons of 299 cities in 150 countries, each depicting
+> the city's most recognizable landmark. By Studio Partdirector (https://partdirector.ch).
 
 ## Structure
 
 - Homepage with the full searchable collection: https://svgcities.com
 - Country pages: https://svgcities.com/{country-slug} (e.g. /spain)
 - City pages: https://svgcities.com/{country-slug}/{city-slug} (e.g. /spain/barcelona)
+- World map of every city: https://svgcities.com/map
 - SVG files: https://svgcities.com/icons/{country-code}-{city}.svg (e.g. /icons/es-barcelona.svg)
 
 ## Machine-readable index

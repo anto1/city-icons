@@ -12,6 +12,7 @@
 
 <p align="center">
   <a href="https://svgcities.com">Live Site</a> ·
+  <a href="https://svgcities.com/map">World Map</a> ·
   <a href="https://svgcities.com/whats-new">What's New</a> ·
   <a href="https://svgcities.com/statistics">Statistics</a> ·
   <a href="https://svgcities.com/faq">FAQ</a> ·
@@ -41,10 +42,10 @@ Browse, search, download, and copy — all for free.
 
 | Region | Icons | Example Cities |
 |--------|------:|----------------|
-| Europe | 121 | Paris, Barcelona, Berlin, Rome, London, Prague, Amsterdam |
-| Asia | 48 | Tokyo, Seoul, Shanghai, Delhi, Kyoto, Taipei, Thimphu |
+| Europe | 125 | Paris, Barcelona, Berlin, Rome, London, Prague, Amsterdam |
+| Asia | 49 | Tokyo, Seoul, Shanghai, Delhi, Kyoto, Taipei, Thimphu |
 | North America | 30 | New York, San Francisco, Toronto, Chicago, Vancouver |
-| Middle East | 24 | Istanbul, Jerusalem, Dubai, Tehran, Baku |
+| Middle East | 25 | Istanbul, Jerusalem, Dubai, Tehran, Baku |
 | South America | 19 | Buenos Aires, Rio de Janeiro, São Paulo, Lima, Bogotá |
 | Africa | 25 | Cairo, Cape Town, Marrakesh, Nairobi, Accra, Tunis, Windhoek |
 | Oceania | 14 | Sydney, Melbourne, Wellington, Perth |
@@ -56,7 +57,8 @@ Icon and country totals are checked against the dataset at build time by `script
 
 - **Browse** 301 city icons organized by country and region
 - **Search** by city name, country, tag, or region
-- **Download** icons as clean, scalable SVG files
+- **Explore** every city on the [World Map](https://svgcities.com/map)
+- **Download** icons as SVG or PNG, or grab [the whole collection as a ZIP](https://svgcities.com/city-icons.zip)
 - **Copy** SVG code directly to your clipboard
 - **Share** direct links to individual city pages
 - **Discover** random destinations with [City Roulette](https://svgcities.com/roulette)
@@ -81,6 +83,12 @@ ls public/icons/
 ```
 https://svgcities.com/icons/fr-paris.svg
 https://svgcities.com/icons/jp-tokyo.svg
+```
+
+**Everything at once**
+```
+https://svgcities.com/city-icons.zip   # all SVGs + attribution file
+https://svgcities.com/icons.json       # machine-readable index of the full collection
 ```
 
 **In HTML**
@@ -119,16 +127,20 @@ src/
 ├── app/                      # Next.js App Router
 │   ├── page.tsx              # Homepage (all icons)
 │   ├── [country]/[city]/     # Individual city pages
+│   ├── map/                  # World map of every city
 │   ├── faq/                  # FAQ with structured data
 │   ├── statistics/           # Collection statistics
 │   ├── whats-new/            # Weekly changelog
 │   ├── roulette/             # City Roulette
 │   └── sitemap.ts            # Dynamic XML sitemap
-├── components/               # React components
+├── components/               # React components (incl. the hand-rolled SVG world map)
 ├── data/icons/               # Icon metadata by region (JSON)
+├── data/coordinates.json     # City coordinates for the map (generated from GeoNames)
 ├── lib/                      # Utilities (slugify, constants)
 └── types/                    # TypeScript interfaces
 
+scripts/                      # Build/maintenance scripts (validation, SVG normalization,
+                              # zip/JSON index, coordinates, basemap)
 public/icons/                 # 301 SVG files
 ```
 
@@ -136,9 +148,11 @@ public/icons/                 # 301 SVG files
 
 ```bash
 npm install
-npm run dev       # Start dev server (Turbopack)
-npm run build     # Production build (SSG)
-npm run lint      # ESLint
+npm run dev             # Start dev server (Turbopack)
+npm run build           # Production build (validates data, builds downloads, then SSG)
+npm run lint            # ESLint
+npm run validate:data   # Dataset checks (duplicate ids/URLs, missing files, badge counts)
+npm run normalize:svgs  # Normalize + optimize icon SVGs
 ```
 
 ## Contributing
@@ -149,10 +163,12 @@ Missing your city? [Send us an email](mailto:icons@partdirector.ch?subject=City%
 
 ### Add an Icon
 
-1. Add your SVG to `public/icons/` using the naming convention: `{country-code}-{city}.svg`
-2. Add metadata to the appropriate region file in `src/data/icons/`
-3. Update `src/data/changelog.ts`
-4. Run `npm run build` to verify
+1. Add your SVG to `public/icons/` using the naming convention: `{country-code}-{city}.svg` (match the prefix of that country's existing files)
+2. Run `npm run normalize:svgs`
+3. Add metadata to the appropriate region file in `src/data/icons/`
+4. Update `src/data/changelog.ts`
+5. Regenerate map coordinates: `node scripts/build-city-coordinates.mjs`
+6. Run `npm run build` to verify — the build validates the dataset and fails on inconsistencies
 
 ### Code Changes
 

@@ -4,7 +4,7 @@
 //
 // Generates (both gitignored — build artifacts, not source):
 // - public/city-icons.zip  All SVG icons plus a short ATTRIBUTION.txt.
-//                          Linked from the homepage header ("Download all").
+//                          Linked from the site footer ("Download All").
 // - public/icons.json      Machine-readable index of the full collection for
 //                          external consumers, served at /icons.json. Each
 //                          entry: id, name, city, country, region, category,
