@@ -225,7 +225,7 @@
     "name": "Irvine Hot Air Balloon",
     "city": "Irvine",
     "country": "USA",
-    "category": "Recreation",
+    "category": "Culture",
     "tags": [
       "balloon",
       "hot-air",
@@ -261,7 +261,7 @@
     "name": "Peoria Steamboat",
     "city": "Peoria",
     "country": "USA",
-    "category": "Transportation",
+    "category": "Culture",
     "tags": [
       "steamboat",
       "river",

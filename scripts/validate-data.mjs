@@ -74,7 +74,10 @@ for (const { entry, source } of icons) {
 // Duplicate country/city slug pairs (would collide on the same URL)
 const seenSlugs = new Map();
 for (const { entry, source } of icons) {
-  const slug = `${slugify(entry.country ?? '')}/${slugify(entry.city ?? '')}`;
+  // Mirrors getCitySlug() in src/lib/utils.ts: an explicit `slug` overrides the
+  // slugified city name so cities with multiple icons still get unique URLs.
+  const citySlug = entry.slug ?? slugify(entry.city ?? '');
+  const slug = `${slugify(entry.country ?? '')}/${citySlug}`;
   const prev = seenSlugs.get(slug);
   if (prev) {
     errors.push(`duplicate slug "/${slug}": ${prev} and ${source}`);

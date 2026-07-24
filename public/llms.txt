@@ -1,0 +1,24 @@
+# City Icons Collection
+
+> Minimalist SVG line-art icons of 295 cities worldwide, each depicting the city's
+> most recognizable landmark. By Studio Partdirector (https://partdirector.ch).
+
+## Structure
+
+- Homepage with the full searchable collection: https://svgcities.com
+- Country pages: https://svgcities.com/{country-slug} (e.g. /spain)
+- City pages: https://svgcities.com/{country-slug}/{city-slug} (e.g. /spain/barcelona)
+- SVG files: https://svgcities.com/icons/{country-code}-{city}.svg (e.g. /icons/es-barcelona.svg)
+
+## Machine-readable index
+
+- https://svgcities.com/icons.json — the full collection as static JSON. Each entry
+  has id, name (landmark), city, country, region, category, tags, svgFilename, and
+  absolute svgUrl and pageUrl.
+- https://svgcities.com/city-icons.zip — all SVG icons in one archive.
+
+## License
+
+- Icons: Creative Commons Attribution 4.0 (CC BY 4.0) — free to use with
+  attribution to Studio Partdirector. Details: https://svgcities.com/license
+- Website source code: MIT — https://github.com/anto1/city-icons

@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import iconData from '@/data'
-import { slugify } from '@/lib/utils'
+import { slugify, getCitySlug } from '@/lib/utils'
 import { changelog, weekToDate } from '@/data/changelog'
 import type { Icon } from '@/types'
 
@@ -62,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Generate URLs for all icons with their changelog date
   const iconUrls = iconData.map(icon => ({
-    url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
+    url: `${baseUrl}/${slugify(icon.country)}/${getCitySlug(icon)}`,
     lastModified: getIconDate(cityDateMap, icon) || staticDate,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -86,6 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: latestDate,
       changeFrequency: 'monthly',
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/map`,
+      lastModified: latestDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/whats-new`,

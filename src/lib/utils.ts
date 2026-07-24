@@ -21,17 +21,25 @@ export function slugify(text: string): string {
     .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
 }
 
+// URL segment for an icon's city page. Defaults to the slugified city name,
+// but an icon may override it with an explicit `slug` when a city has more
+// than one icon (e.g. Hanoi's Turtle Tower vs its Temple of Literature) —
+// this keeps the displayed city name clean while the URLs stay unique.
+export function getCitySlug(icon: Icon): string {
+  return icon.slug ?? slugify(icon.city);
+}
+
 // Find icon by country and city slugs
 export function findIconBySlugs(countrySlug: string, citySlug: string, icons: Icon[]): Icon | null {
-  return icons.find(icon => 
-    slugify(icon.country) === countrySlug && 
-    slugify(icon.city) === citySlug
+  return icons.find(icon =>
+    slugify(icon.country) === countrySlug &&
+    getCitySlug(icon) === citySlug
   ) || null;
 }
 
 // Generate URL for an icon page
 export function getIconUrl(icon: Icon): string {
-  return `/${slugify(icon.country)}/${slugify(icon.city)}`;
+  return `/${slugify(icon.country)}/${getCitySlug(icon)}`;
 }
 
 // Generate URL for the SVG file (static asset)

@@ -1,10 +1,13 @@
 // Changelog tracking weekly icon additions
 // Add new entries at the top of the array
 
-// A city added in a batch. Use the object form for city names that exist in
-// more than one country (e.g. Granada, Jerusalem, Córdoba) so lookups resolve
-// to the right icon; plain strings are fine for unambiguous names.
-export type ChangelogCity = string | { city: string; country: string };
+// A city added in a batch.
+// A bare string is enough for unambiguous cities. Cities that repeat across
+// countries (Córdoba, Granada, Jerusalem) need `country`; cities with more than
+// one icon (Hanoi, São Paulo) need `slug` to pick out the right one.
+export type ChangelogCity =
+  | string
+  | { city: string; country: string; slug?: string };
 
 export interface ChangelogEntry {
   week: string; // ISO week format: YYYY-WXX or date range
@@ -22,10 +25,14 @@ export function getChangelogCityName(city: ChangelogCity): string {
 // match by city name alone; object entries also require the country to match.
 export function changelogCityMatchesIcon(
   city: ChangelogCity,
-  icon: { city: string; country: string }
+  icon: { city: string; country: string; slug?: string }
 ): boolean {
   if (icon.city.toLowerCase() !== getChangelogCityName(city).toLowerCase()) return false;
-  return typeof city === 'string' || icon.country.toLowerCase() === city.country.toLowerCase();
+  if (typeof city === 'string') return true;
+  if (icon.country.toLowerCase() !== city.country.toLowerCase()) return false;
+  // When the entry names a slug, only that specific icon matches — otherwise
+  // the entry refers to the city's default (unslugged) icon.
+  return city.slug ? icon.slug === city.slug : !icon.slug;
 }
 
 // Parse ISO week string (e.g. "2025-W02") to a Date
@@ -46,6 +53,12 @@ export function weekToDate(week: string): Date {
 
 export const changelog: ChangelogEntry[] = [
   {
+    week: '2026-W30',
+    date: 'July 20-26, 2026',
+    cities: ['Burgas', 'Bordeaux', 'Toulouse', 'Kraków', 'Antalya', { city: 'Hanoi', country: 'Vietnam', slug: 'hanoi-temple-of-literature' }],
+    description: 'New icons across Europe and Turkey, plus a second Hanoi landmark',
+  },
+  {
     week: '2026-W16',
     date: 'April 13-19, 2026',
     cities: ['Ho Chi Minh City', 'Da Nang', 'Karaganda', 'Asmara', 'Timbuktu', 'Meroë', 'Yamoussoukro', 'São Tomé'],
@@ -54,7 +67,7 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2026-W07',
     date: 'February 9-15, 2026',
-    cities: [{ city: 'Jerusalem', country: 'Palestine' }, { city: 'Granada', country: 'Nicaragua' }, 'Subotica', 'Karlsruhe', { city: 'São Paulo (MASP)', country: 'Brazil' }, 'Stuttgart', 'Cologne', 'Liverpool', 'Rennes', 'Vung Tau', 'Aachen', 'Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s', 'Honiara', 'Nukuʻalofa', 'Funafuti'],
+    cities: [{ city: 'Jerusalem', country: 'Palestine' }, { city: 'Granada', country: 'Nicaragua' }, 'Subotica', 'Karlsruhe', { city: 'São Paulo', country: 'Brazil', slug: 'sao-paulo-masp' }, 'Stuttgart', 'Cologne', 'Liverpool', 'Rennes', 'Vung Tau', 'Aachen', 'Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s', 'Honiara', 'Nukuʻalofa', 'Funafuti'],
     description: 'New additions across Europe, Middle East, Asia, Africa, Central and South America, Caribbean, and Oceania',
   },
   {

@@ -31,8 +31,8 @@ const faqs = [
   },
   {
     question: 'Is the project open source?',
-    answer: <>Yes! City Icons is open source on GitHub at <ExtLink href="https://github.com/anto1/city-icons">github.com/anto1/city-icons</ExtLink>. You can star the repo, report issues, suggest improvements, or contribute to the codebase. We welcome community involvement!</>,
-    plainAnswer: 'Yes! City Icons is open source on GitHub at github.com/anto1/city-icons. You can star the repo, report issues, suggest improvements, or contribute to the codebase. We welcome community involvement!',
+    answer: <>Yes! City Icons is open source on GitHub at <ExtLink href="https://github.com/anto1/city-icons">github.com/anto1/city-icons</ExtLink>. The site code is MIT-licensed and the icon artwork is CC BY 4.0. You can star the repo, report issues, suggest improvements, or contribute to the codebase. We welcome community involvement!</>,
+    plainAnswer: 'Yes! City Icons is open source on GitHub at github.com/anto1/city-icons. The site code is MIT-licensed and the icon artwork is CC BY 4.0. You can star the repo, report issues, suggest improvements, or contribute to the codebase. We welcome community involvement!',
   },
   // Using the Icons
   {
@@ -53,18 +53,18 @@ const faqs = [
   // Licensing
   {
     question: 'Are the icons free to use?',
-    answer: <>Yes! City Icons are free for personal and educational use. For commercial projects, please <a href="mailto:icons@partdirector.ch">contact us</a> to discuss licensing. See our <Link href="/license">license page</Link> for full details.</>,
-    plainAnswer: 'Yes! City Icons are free for personal and educational use. For commercial projects, please contact us at icons@partdirector.ch to discuss licensing and pricing.',
+    answer: <>Yes! City Icons are free for any use — personal, educational, and commercial. They&apos;re licensed under <ExtLink href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</ExtLink>, which only asks that you credit Studio Partdirector. See our <Link href="/license">license page</Link> for ready-to-paste attribution snippets.</>,
+    plainAnswer: 'Yes! City Icons are free for any use — personal, educational, and commercial. They\'re licensed under CC BY 4.0, which only asks that you credit Studio Partdirector. See our license page for ready-to-paste attribution snippets.',
   },
   {
     question: 'Can I modify the icons?',
-    answer: <>For personal and educational use, you can modify the icons to suit your needs. For commercial use, please <a href="mailto:icons@partdirector.ch">contact us</a> first to discuss your specific requirements.</>,
-    plainAnswer: 'For personal and educational use, you can modify the icons to suit your needs. For commercial use, please contact us first to discuss your specific requirements.',
+    answer: <>Yes, you can adapt the icons however you like — recolor them, simplify them, remix them into something new. CC BY 4.0 just asks that you keep the attribution and mention that you made changes. See the <Link href="/license">license page</Link> for details.</>,
+    plainAnswer: 'Yes, you can adapt the icons however you like — recolor them, simplify them, remix them into something new. CC BY 4.0 just asks that you keep the attribution and mention that you made changes. See the license page for details.',
   },
   {
-    question: 'Can I resell the icons or include them in icon packs?',
-    answer: 'No, reselling the icons or redistributing them as part of other icon collections is not permitted. The icons are meant for use in your own projects, not for resale.',
-    plainAnswer: 'No, reselling the icons or redistributing them as part of other icon collections is not permitted. The icons are meant for use in your own projects, not for resale.',
+    question: 'Can I redistribute the icons or include them in icon packs?',
+    answer: <>Yes — CC BY 4.0 allows redistribution, even commercially, as long as you credit Studio Partdirector, link to the license, and don&apos;t add restrictions that prevent others from using the icons freely. If you build something with them, we&apos;d love to hear about it at <a href="mailto:icons@partdirector.ch">icons@partdirector.ch</a>.</>,
+    plainAnswer: 'Yes — CC BY 4.0 allows redistribution, even commercially, as long as you credit Studio Partdirector, link to the license, and don\'t add restrictions that prevent others from using the icons freely. If you build something with them, we\'d love to hear about it at icons@partdirector.ch.',
   },
   // Requesting Icons
   {

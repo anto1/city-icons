@@ -299,7 +299,7 @@
   {
     "_id": "294",
     "name": "São Paulo MASP",
-    "city": "São Paulo (MASP)",
+    "city": "São Paulo",
     "country": "Brazil",
     "category": "Landmarks",
     "tags": [
@@ -311,6 +311,7 @@
     ],
     "svgFilename": "br-sao-paulo-masp.svg",
     "description": "São Paulo is Brazil's sprawling cultural and financial capital, home to the Museu de Arte de São Paulo (MASP) — one of Latin America's most important art museums. Designed by Lina Bo Bardi and completed in 1968, the brutalist landmark is suspended above an open plaza by bold red concrete beams, creating a dramatic 74-meter free span that has become an icon of modern Brazilian architecture. The museum houses a world-class collection spanning European masters to contemporary Brazilian art.",
-    "region": "South America"
+    "region": "South America",
+    "slug": "sao-paulo-masp"
   }
 ]

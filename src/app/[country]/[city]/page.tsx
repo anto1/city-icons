@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import CityPage from '@/components/CityPage';
 import iconData, { getCountryCounts, getSortedIcons } from '@/data';
 import { Icon, toGridIcon } from '@/types';
-import { findIconBySlugs, slugify } from '@/lib/utils';
+import { findIconBySlugs, slugify, getCitySlug } from '@/lib/utils';
 
 const baseUrl = 'https://svgcities.com';
 
@@ -10,7 +10,7 @@ const baseUrl = 'https://svgcities.com';
 export async function generateStaticParams() {
   return iconData.map((icon) => ({
     country: slugify(icon.country),
-    city: slugify(icon.city),
+    city: getCitySlug(icon),
   }));
 }
 
@@ -67,7 +67,8 @@ function generateStructuredData(icon: Icon, countrySlug: string, citySlug: strin
       keywords: [icon.city, icon.country, 'city icon', 'SVG icon', 'line art', icon.name, ...(icon.tags || [])].filter(Boolean).join(', '),
       inLanguage: 'en-US',
       isAccessibleForFree: true,
-      license: `${baseUrl}/license`,
+      license: 'https://creativecommons.org/licenses/by/4.0/',
+      usageInfo: `${baseUrl}/license`,
       genre: 'Line Art',
     },
     // BreadcrumbList schema
@@ -169,12 +170,30 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   const pageUrl = `${baseUrl}/${country}/${city}`;
-  const description = icon.description || `Download the ${icon.name} icon representing ${icon.city}, ${icon.country}. High-quality SVG line art icon for your projects.`;
+
+  // Landmark-first metadata: search demand is landmark-shaped ("Eiffel Tower
+  // icon svg", not "Paris icon"). Most names are "{City} {Landmark}", so strip
+  // a leading city prefix to isolate the landmark. Cities with more than one
+  // icon disambiguate via the `slug` field, not the city name, so the name is
+  // always clean here. The root layout appends the " | City Icons Collection"
+  // template suffix to <title>.
+  const baseCity = icon.city;
+  const name = icon.name.trim();
+  const landmark = name.toLowerCase().startsWith(`${baseCity.toLowerCase()} `)
+    ? name.slice(baseCity.length + 1).trim()
+    : name;
+  const isCityOnly = landmark.toLowerCase() === baseCity.toLowerCase();
+  const title = isCityOnly
+    ? `${baseCity} SVG Icon`
+    : `${landmark} SVG Icon – ${baseCity}`;
+  const description = isCityOnly
+    ? `Free ${baseCity} city icon — minimalist SVG line art from ${icon.country}. Download the SVG, copy the code, or export a PNG.`
+    : `Free ${landmark} SVG icon — minimalist line art from ${baseCity}, ${icon.country}. Download the SVG, copy the code, or export a PNG.`;
 
   return {
-    title: `${icon.name} - ${icon.city}, ${icon.country}`,
+    title,
     description,
-    keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, download icon, ${icon.tags?.join(', ') || ''}`,
+    keywords: `${landmark}, ${landmark} icon, ${landmark} svg, ${icon.city}, ${icon.country}, city icon, SVG icon, line art, download icon, ${icon.tags?.join(', ') || ''}`,
     authors: [{ name: 'Studio Partdirector' }],
     creator: 'Studio Partdirector',
     publisher: 'Studio Partdirector',
@@ -188,7 +207,7 @@ export async function generateMetadata({ params }: PageProps) {
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${icon.name} - ${icon.city}, ${icon.country}`,
+      title,
       description,
       url: pageUrl,
       siteName: 'City Icons Collection',
@@ -197,7 +216,7 @@ export async function generateMetadata({ params }: PageProps) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${icon.name} - ${icon.city}, ${icon.country}`,
+      title,
       description,
     },
     robots: {

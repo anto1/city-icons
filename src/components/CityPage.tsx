@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import { CountryCount, GridIcon, Icon } from '@/types';
 import { Button } from '@/components/ui/button';
-import { Download, Copy, Share2 } from 'lucide-react';
+import { Download, Copy, ImageDown, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
 import { getIconUrl, getIconSvgUrl, slugify } from '@/lib/utils';
@@ -12,6 +12,9 @@ import { IconFooter } from '@/components/IconFooter';
 import { IconCard } from '@/components/IconCard';
 import { HeaderControls } from './PageHeader';
 import Link from 'next/link';
+
+/** Raster size for the client-side PNG export (the common icon default). */
+const PNG_SIZE = 512;
 
 interface CityPageProps {
   icon: Icon;
@@ -75,6 +78,83 @@ export default function CityPage({
     trackEvent(`ICON_DOWNLOAD_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
     
     toast.success('SVG downloaded successfully!');
+  };
+
+  const downloadPNG = async () => {
+    if (!icon) return;
+
+    const content = await fetchSvgContent();
+    if (!content) {
+      toast.error('Failed to export PNG');
+      return;
+    }
+
+    try {
+      // Force black artwork (icons use `currentColor` fills — an <img>-loaded
+      // SVG resolves that to black, but be explicit) and an exact raster size
+      // so the canvas renders crisply at the target resolution.
+      const svg = content
+        .replace(/currentColor/g, '#000000')
+        .replace(
+          /<svg([^>]*)>/,
+          (_match, attrs: string) =>
+            `<svg${attrs.replace(/\s(?:width|height)="[^"]*"/g, '')} width="${PNG_SIZE}" height="${PNG_SIZE}">`
+        );
+      const svgUrl = URL.createObjectURL(
+        new Blob([svg], { type: 'image/svg+xml' })
+      );
+
+      let pngBlob: Blob;
+      try {
+        const image = new window.Image();
+        await new Promise<void>((resolve, reject) => {
+          image.onload = () => resolve();
+          image.onerror = () => reject(new Error('Failed to render SVG'));
+          image.src = svgUrl;
+        });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = PNG_SIZE;
+        canvas.height = PNG_SIZE;
+        const context = canvas.getContext('2d');
+        if (!context) throw new Error('Canvas 2D context unavailable');
+        context.drawImage(image, 0, 0, PNG_SIZE, PNG_SIZE);
+
+        pngBlob = await new Promise<Blob>((resolve, reject) => {
+          canvas.toBlob(
+            (blob) =>
+              blob ? resolve(blob) : reject(new Error('PNG encoding failed')),
+            'image/png'
+          );
+        });
+      } finally {
+        URL.revokeObjectURL(svgUrl);
+      }
+
+      const pngUrl = URL.createObjectURL(pngBlob);
+      const a = document.createElement('a');
+      a.href = pngUrl;
+      a.download = icon.svgFilename.replace(/\.svg$/, '.png');
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(pngUrl);
+
+      // Track download: aggregate event (queryable total) + per-city breakdown
+      trackEvent('ICON_DOWNLOAD_PNG');
+      trackEvent(`ICON_DOWNLOAD_PNG_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
+
+      toast.success('PNG downloaded successfully!', {
+        description: `${PNG_SIZE}×${PNG_SIZE}px, transparent background`,
+        duration: 3000,
+      });
+    } catch (err) {
+      console.error('Failed to export PNG:', err);
+      toast.error('Failed to export PNG', {
+        description: 'Please try again or download the SVG instead',
+        duration: 4000,
+      });
+    }
   };
 
   const copySVG = async () => {
@@ -201,14 +281,24 @@ export default function CityPage({
           
           {/* Action buttons */}
           <div className="flex gap-3 w-full max-w-md">
-            <Button 
+            <Button
               onClick={downloadSVG}
               className="flex-1 flex items-center gap-2"
+              aria-label="Download SVG file"
             >
               <Download className="w-4 h-4" />
-              Download
+              SVG
             </Button>
-            <Button 
+            <Button
+              onClick={downloadPNG}
+              variant="outline"
+              className="flex-1 flex items-center gap-2"
+              aria-label={`Download ${PNG_SIZE}px PNG file`}
+            >
+              <ImageDown className="w-4 h-4" />
+              PNG
+            </Button>
+            <Button
               onClick={copySVG}
               variant="outline"
               className="flex-1 flex items-center gap-2"

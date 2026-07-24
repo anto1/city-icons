@@ -1,0 +1,31 @@
+name: City request
+description: Suggest a city (and its landmark) for the City Icons collection
+title: "City request: "
+labels: ["city-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a city! Check [svgcities.com](https://svgcities.com) first — it may already be in the collection.
+  - type: input
+    id: city
+    attributes:
+      label: City and country
+      placeholder: "e.g. Porto, Portugal"
+    validations:
+      required: true
+  - type: input
+    id: landmark
+    attributes:
+      label: Landmark or symbol
+      description: What should the icon depict? The city's most recognizable landmark works best.
+      placeholder: "e.g. Dom Luís I Bridge"
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Reference links or photos, or why this city deserves an icon.
+    validations:
+      required: false

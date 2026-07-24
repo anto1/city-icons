@@ -14,8 +14,8 @@ const baseUrl = 'https://svgcities.com';
 // SEO metadata for license page
 export const metadata: Metadata = {
   title: 'Icon Usage & Licensing',
-  description: 'Clear guidelines for using City Icons in your projects. Free for personal and educational use. Contact us for commercial licensing inquiries.',
-  keywords: 'city icons license, icon usage, free icons license, commercial license, SVG icons terms',
+  description: 'City Icons are free for any use, including commercial. Icons are licensed under CC BY 4.0 (attribution required); the site code is MIT.',
+  keywords: 'city icons license, icon usage, free icons license, CC BY 4.0, MIT license, commercial use, SVG icons terms',
   authors: [{ name: 'Studio Partdirector' }],
   creator: 'Studio Partdirector',
   publisher: 'Studio Partdirector',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Icon Usage & Licensing | City Icons',
-    description: 'Clear guidelines for using City Icons in your projects. Free for personal and educational use.',
+    description: 'City Icons are free for any use, including commercial. Licensed under CC BY 4.0 — attribution required.',
     url: `${baseUrl}/license`,
     siteName: 'City Icons Collection',
     locale: 'en_US',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Icon Usage & Licensing | City Icons',
-    description: 'Clear guidelines for using City Icons in your projects. Free for personal and educational use.',
+    description: 'City Icons are free for any use, including commercial. Licensed under CC BY 4.0 — attribution required.',
     images: [`${baseUrl}/og-image.png`],
   },
 };
@@ -63,7 +63,8 @@ function generateStructuredData() {
     mainEntity: {
       '@type': 'CreativeWork',
       name: 'City Icons License',
-      description: 'Free for personal and educational use. Commercial licensing available upon request.',
+      description: 'Icons are licensed under Creative Commons Attribution 4.0 (CC BY 4.0): free for any use, including commercial, with attribution. The site source code is MIT-licensed.',
+      license: 'https://creativecommons.org/licenses/by/4.0/',
       creator: {
         '@type': 'Organization',
         name: 'Studio Partdirector',
@@ -123,7 +124,7 @@ export default function LicensePage() {
               Icon Usage & Licensing
             </h1>
             <p className="text-lg text-muted-foreground">
-              Clear guidelines for using our city icons in your projects
+              Free for any use, including commercial — just give credit
             </p>
           </header>
 

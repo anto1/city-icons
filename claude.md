@@ -1,8 +1,17 @@
 # City Icons
 
-Minimalist SVG icon collection showcasing 295 cities worldwide. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
+Minimalist SVG icon collection showcasing 301 cities worldwide. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
 
 **Live site:** https://svgcities.com
+
+## License
+
+Dual-licensed (see root `LICENSE` file):
+
+- **Icon artwork** (`public/icons/**`): CC BY 4.0 — free for any use including commercial, attribution to Studio Partdirector required, changes must be indicated. No share-alike; irrevocable.
+- **Site source code** (everything else): MIT, copyright Studio Partdirector.
+
+All user-facing licensing copy (license page, FAQ, README) must reflect these terms — do not reintroduce the old "free for personal/educational use, contact for commercial use" wording.
 
 ## Tech Stack
 
@@ -47,7 +56,7 @@ src/
 └── types/                 # TypeScript interfaces
 
 public/
-└── icons/                 # 295 SVG files (naming: {country-code}-{city}.svg)
+└── icons/                 # 301 SVG files (naming: {country-code}-{city}.svg)
 ```
 
 ## Commands
@@ -187,4 +196,4 @@ Roulette: `ROULETTE_PAGE_VIEWED`, `ROULETTE_SPIN_STARTED`, `ROULETTE_RESULT_SAME
 
 Navigation & links: `SCROLL_TO_TOP_CLICKED`, `GITHUB_CLICKED`, `GITHUB_LINK_CLICKED`, `STUDIO_PARTDIRECTOR_CLICKED`, `STUDIO_PARTDIRECTOR_FOOTER_CLICKED`, `WHATS_NEW_CLICKED`, `STATISTICS_CLICKED`, `FAQ_CLICKED`, `LICENSE_LINK_CLICKED`, `MISSING_CITY_CLICKED`
 
-License page: `LICENSE_PAGE_VISIT`, `COMMERCIAL_INQUIRY_CLICKED`
+License page: `LICENSE_PAGE_VISIT`, `ATTRIBUTION_COPIED`

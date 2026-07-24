@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import ClientHome from '@/components/ClientHome';
 import iconData, { getCountryCounts, getFeaturedIcons, getSortedIcons } from '@/data';
 import { Icon, toGridIcon } from '@/types';
-import { slugify } from '@/lib/utils';
+import { slugify, getCitySlug } from '@/lib/utils';
 
 const baseUrl = 'https://svgcities.com';
 
@@ -55,7 +55,7 @@ function generateStructuredData(countryName: string, countrySlug: string, countr
           item: {
             '@type': 'CreativeWork',
             name: icon.name,
-            url: `${baseUrl}/${slugify(icon.country)}/${slugify(icon.city)}`,
+            url: `${baseUrl}/${slugify(icon.country)}/${getCitySlug(icon)}`,
           },
         })),
       },

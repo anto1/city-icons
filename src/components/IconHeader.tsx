@@ -61,7 +61,27 @@ export function IconHeader({ countryFilter, filteredIcons, totalIcons }: IconHea
         >
           Spin the roulette
         </Link>
-        {' '}and see where you should go this year.
+        {' '}and see where you should go this year — or explore every city on
+        the{' '}
+        <Link
+          href="/map"
+          className="text-foreground hover:text-orange-600 transition-colors underline font-medium"
+          onClick={() => trackEvent('MAP_LINK_CLICKED')}
+        >
+          world map
+        </Link>.
+      </p>
+      <p className="text-lg text-muted-foreground mt-2">
+        Need the whole set?{' '}
+        <a
+          href="/city-icons.zip"
+          download
+          className="text-foreground hover:text-orange-600 transition-colors underline font-medium"
+          onClick={() => trackEvent('DOWNLOAD_ALL_ZIP')}
+        >
+          Download all {totalIcons} icons
+        </a>
+        {' '}as a ZIP.
       </p>
     </div>
   );

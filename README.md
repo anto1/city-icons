@@ -1,13 +1,13 @@
 <p align="center">
   <a href="https://svgcities.com">
-    <img src="public/og-image.png" alt="City Icons — 295 minimalist SVG icons of cities around the world" width="600" />
+    <img src="public/og-image.png" alt="City Icons — 301 minimalist SVG icons of cities around the world" width="600" />
   </a>
 </p>
 
 <h1 align="center">City Icons</h1>
 
 <p align="center">
-  <strong>295 minimalist line-art SVG icons representing cities and their landmarks from around the world.</strong>
+  <strong>301 minimalist line-art SVG icons representing cities and their landmarks from around the world.</strong>
 </p>
 
 <p align="center">
@@ -19,11 +19,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/icons-295-orange" alt="295 icons" />
+  <img src="https://img.shields.io/badge/icons-301-orange" alt="301 icons" />
   <img src="https://img.shields.io/badge/countries-150-blue" alt="150 countries" />
   <img src="https://img.shields.io/badge/regions-8-green" alt="8 regions" />
   <img src="https://img.shields.io/badge/format-SVG-purple" alt="SVG format" />
-  <img src="https://img.shields.io/badge/license-free_for_personal_use-brightgreen" alt="Free for personal use" />
+  <img src="https://img.shields.io/badge/icons-CC_BY_4.0-brightgreen" alt="Icons licensed CC BY 4.0" />
+  <img src="https://img.shields.io/badge/code-MIT-brightgreen" alt="Code licensed MIT" />
 </p>
 
 ---
@@ -53,7 +54,7 @@ Icon and country totals are checked against the dataset at build time by `script
 
 ## Features
 
-- **Browse** 295 city icons organized by country and region
+- **Browse** 301 city icons organized by country and region
 - **Search** by city name, country, tag, or region
 - **Download** icons as clean, scalable SVG files
 - **Copy** SVG code directly to your clipboard
@@ -109,7 +110,7 @@ br-rio-de-janeiro.svg → Rio de Janeiro, Brazil
 | Analytics | Fathom |
 | Deploy | Vercel |
 
-All 295 city pages are statically generated at build time. Icons are served as static files with 1-year immutable cache headers.
+All 301 city pages are statically generated at build time. Icons are served as static files with 1-year immutable cache headers.
 
 ## Project Structure
 
@@ -128,7 +129,7 @@ src/
 ├── lib/                      # Utilities (slugify, constants)
 └── types/                    # TypeScript interfaces
 
-public/icons/                 # 295 SVG files
+public/icons/                 # 301 SVG files
 ```
 
 ## Development
@@ -162,10 +163,16 @@ Missing your city? [Send us an email](mailto:icons@partdirector.ch?subject=City%
 
 ## License
 
-Icons are **free for personal and educational use**.
-Commercial use requires permission — contact [icons@partdirector.ch](mailto:icons@partdirector.ch).
+- **Icon artwork** (`public/icons/**`) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Free for any use, including commercial. Give credit to Studio Partdirector, link to the license, and indicate if you made changes.
+- **Site source code** (everything else) — [MIT](LICENSE).
 
-See the [full license](https://svgcities.com/license) for details.
+Suggested attribution:
+
+```
+City Icons by Studio Partdirector — https://svgcities.com — licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+```
+
+See [LICENSE](LICENSE) and the [license page](https://svgcities.com/license) for details.
 
 ---
 

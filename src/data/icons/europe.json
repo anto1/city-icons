@@ -1347,7 +1347,7 @@
     "name": "Siegen Mining Hammers",
     "city": "Siegen",
     "country": "Germany",
-    "category": "Industry",
+    "category": "Culture",
     "tags": [
       "mining",
       "hammers",
@@ -1493,7 +1493,7 @@
     "name": "Christ the King Monument",
     "city": "Świebodzin",
     "country": "Poland",
-    "category": "Religious",
+    "category": "Religion",
     "tags": [
       "christ",
       "monument",
@@ -1978,6 +1978,73 @@
     ],
     "svgFilename": "de-stuttgart.svg",
     "description": "Stuttgart is the automotive capital of Germany, home to the Mercedes-Benz Museum — a futuristic architectural landmark designed by UNStudio. Opened in 2006, the museum's striking double-helix structure spirals upward nine floors, guiding visitors through over 130 years of automotive history from the invention of the automobile to the present day. The building itself has become an icon of modern Stuttgart, reflecting the city's deep roots in engineering and innovation.",
+    "region": "Europe"
+  },
+  {
+    "_id": "309",
+    "name": "Burgas Sea Garden Pier",
+    "city": "Burgas",
+    "country": "Bulgaria",
+    "category": "Landmarks",
+    "tags": [
+      "pier",
+      "seaside",
+      "coastal",
+      "iconic"
+    ],
+    "svgFilename": "bg-burgas.svg",
+    "description": "Burgas is Bulgaria's fourth-largest city and its gateway to the Black Sea, best known for the pier stretching from the Sea Garden into open water. Rebuilt in the 1980s on the site of an early twentieth-century wooden bridge, the two-tiered walkway ends in an open platform where locals dive into the waves in summer and watch ships glide toward the port. Free of shops and traffic, the pier is simply a promenade over the sea — and the enduring emblem of the city.",
+    "region": "Europe"
+  },
+  {
+    "_id": "310",
+    "name": "Bordeaux Cité du Vin",
+    "city": "Bordeaux",
+    "country": "France",
+    "category": "Buildings",
+    "tags": [
+      "museum",
+      "wine",
+      "modern",
+      "architecture",
+      "french"
+    ],
+    "svgFilename": "fr-bordeaux.svg",
+    "description": "Bordeaux is the capital of the world's most famous wine region, and its modern emblem is La Cité du Vin — a museum devoted entirely to the culture of wine. Opened in 2016 on the banks of the Garonne, the building's golden, curving silhouette evokes wine swirling in a glass, its facade clad in shimmering aluminium and glass panels. Inside, visitors journey through the civilisations of wine before tasting a glass at the panoramic belvedere overlooking the city's eighteenth-century quays.",
+    "region": "Europe"
+  },
+  {
+    "_id": "311",
+    "name": "Toulouse Violet",
+    "city": "Toulouse",
+    "country": "France",
+    "category": "Culture",
+    "tags": [
+      "violet",
+      "flower",
+      "emblem",
+      "symbol",
+      "french"
+    ],
+    "svgFilename": "fr-toulouse.svg",
+    "description": "Toulouse, the 'Pink City' of southwestern France, has a second colour woven into its identity: the purple of the Toulouse violet. Introduced in the nineteenth century and cultivated by generations of local growers, the delicate winter-blooming flower became the city's emblem, sold as posies, crystallised sweets, perfumes, and liqueurs. Celebrated each February at the Fête de la Violette, the violet embodies the charm of a city equally famous for aerospace engineering and old-world romance.",
+    "region": "Europe"
+  },
+  {
+    "_id": "312",
+    "name": "Kraków Obwarzanek",
+    "city": "Kraków",
+    "country": "Poland",
+    "category": "Culture",
+    "tags": [
+      "obwarzanek",
+      "bread",
+      "street-food",
+      "polish",
+      "tradition"
+    ],
+    "svgFilename": "pl-krakow.svg",
+    "description": "Kraków is Poland's ancient royal capital, and no symbol of its street life is more beloved than the obwarzanek krakowski — a braided ring of dough, boiled and then baked to a golden crust and sprinkled with poppy seeds, sesame, or salt. Sold from blue carts on nearly every corner of the Old Town, as it has been since the Middle Ages, the ring bread is protected by the European Union as a regional specialty, with tens of thousands baked fresh each morning for locals and visitors alike.",
     "region": "Europe"
   }
 ]

@@ -12,6 +12,12 @@ export interface GridIcon {
   region: string;
   tags: string[];
   svgFilename: string;
+  /**
+   * Explicit URL segment, overriding the slugified city name. Set only when a
+   * city has more than one icon, so both get a unique page without polluting
+   * the displayed city name. See getCitySlug() in src/lib/utils.ts.
+   */
+  slug?: string;
 }
 
 /**
@@ -36,6 +42,7 @@ export function toGridIcon(icon: Icon): GridIcon {
     region: icon.region,
     tags: icon.tags,
     svgFilename: icon.svgFilename,
+    ...(icon.slug ? { slug: icon.slug } : {}),
   };
 }
 

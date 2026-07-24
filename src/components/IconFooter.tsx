@@ -85,6 +85,14 @@ export function IconFooter({ countries, totalIcons }: IconFooterProps) {
           </Link>
           <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
           <Link
+            href="/map"
+            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
+            onClick={() => trackEvent('MAP_LINK_CLICKED')}
+          >
+            World Map
+          </Link>
+          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+          <Link
             href="/statistics"
             className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
             onClick={() => trackEvent('STATISTICS_CLICKED')}
@@ -109,7 +117,9 @@ export function IconFooter({ countries, totalIcons }: IconFooterProps) {
           </Link>
           <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
           <a
-            href="mailto:icons@partdirector.ch?subject=City Request&body=Please add: [City, Country]"
+            href="https://github.com/anto1/city-icons/issues/new?template=city-request.yml"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
             onClick={() => trackEvent('MISSING_CITY_CLICKED')}
           >

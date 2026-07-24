@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import iconData from '@/data';
-import { findIconBySlugs, slugify } from '@/lib/utils';
+import { findIconBySlugs, slugify, getCitySlug } from '@/lib/utils';
 
 export const alt = 'City Icon';
 export const size = { width: 1200, height: 630 };
@@ -11,7 +11,7 @@ export const contentType = 'image/png';
 export async function generateStaticParams() {
   return iconData.map((icon) => ({
     country: slugify(icon.country),
-    city: slugify(icon.city),
+    city: getCitySlug(icon),
   }));
 }
 

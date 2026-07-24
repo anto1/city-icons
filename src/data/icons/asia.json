@@ -374,7 +374,7 @@
     "name": "Giant Buddha",
     "city": "Leshan",
     "country": "China",
-    "category": "Religious",
+    "category": "Religion",
     "tags": [
       "buddha",
       "statue",
@@ -790,5 +790,23 @@
     "svgFilename": "kz-karaganda.svg",
     "description": "Karaganda is a major city in central Kazakhstan, founded on one of the largest coal basins in the world. The crossed pickaxe and hammer of the miner have long been the city's unofficial crest, a reminder that Karaganda was built from the work of the shaft and the seam. Generations of miners descended into the Karaganda Basin to pull coal that powered half of the Soviet Union, and their tools remain a proud emblem of a city whose identity is inseparable from the earth beneath it.",
     "region": "Asia"
+  },
+  {
+    "_id": "314",
+    "name": "Hanoi Khuê Văn Các Pavilion",
+    "city": "Hanoi",
+    "country": "Vietnam",
+    "category": "Landmarks",
+    "tags": [
+      "pavilion",
+      "temple",
+      "emblem",
+      "historic",
+      "traditional"
+    ],
+    "svgFilename": "vn-hanoi-temple-of-literature.svg",
+    "description": "Hanoi's official emblem is the Khuê Văn Các, the Constellation of Literature Pavilion, standing at the gateway to the Temple of Literature — Vietnam's first national university, founded in 1070. Built in 1805, the graceful pavilion rests on four brick pillars and is pierced by round windows whose radiating spokes represent the star Khuê shining over centuries of Confucian scholarship. Printed on banknotes and beloved by generations of students, it embodies Hanoi's thousand-year devotion to learning.",
+    "region": "Asia",
+    "slug": "hanoi-temple-of-literature"
   }
 ]
