@@ -1,39 +1,41 @@
 'use client';
 
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
-import { Icon } from '@/types';
+import { CountryCount, GridIcon, Icon } from '@/types';
 import { Button } from '@/components/ui/button';
-import { Download, Copy, Share2, Github, ArrowUp } from 'lucide-react';
+import { Download, Copy, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
 import { getIconUrl, getIconSvgUrl, slugify } from '@/lib/utils';
 import { IconFooter } from '@/components/IconFooter';
-import { ThemeToggle } from './ThemeToggle';
+import { IconCard } from '@/components/IconCard';
+import { HeaderControls } from './PageHeader';
 import Link from 'next/link';
 
 interface CityPageProps {
   icon: Icon;
-  allIcons: Icon[];
+  /** First three icons of the sorted collection excluding the current one. */
+  headerIcons: GridIcon[];
+  /** All other icons from the same country. */
+  relatedIcons: GridIcon[];
+  /** Deterministic picks from other countries ("Explore More Cities"). */
+  exploreIcons: GridIcon[];
+  /** Precomputed {country, count} pairs for the footer. */
+  footerCountries: CountryCount[];
+  /** Total number of icons in the collection (footer credit line). */
+  totalIcons: number;
 }
 
-export default function CityPage({ icon, allIcons }: CityPageProps) {
+export default function CityPage({
+  icon,
+  headerIcons,
+  relatedIcons,
+  exploreIcons,
+  footerCountries,
+  totalIcons,
+}: CityPageProps) {
   const [svgContent, setSvgContent] = useState<string | null>(null);
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > window.innerHeight);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    trackEvent('SCROLL_TO_TOP_CLICKED');
-  };
 
   // Fetch SVG content on-demand for download/copy functionality
   const fetchSvgContent = useCallback(async () => {
@@ -62,13 +64,14 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${icon.name}-${icon.city}.svg`;
+    a.download = icon.svgFilename;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     
-    // Track download event with city data
+    // Track download: aggregate event (queryable total) + per-city breakdown
+    trackEvent('ICON_DOWNLOAD');
     trackEvent(`ICON_DOWNLOAD_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
     
     toast.success('SVG downloaded successfully!');
@@ -85,7 +88,8 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
       
       await navigator.clipboard.writeText(content);
       
-      // Track copy event with city data
+      // Track copy: aggregate event (queryable total) + per-city breakdown
+      trackEvent('ICON_COPY');
       trackEvent(`ICON_COPY_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
       
       toast.success('SVG copied to clipboard!', {
@@ -108,7 +112,8 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
       const shareUrl = `${window.location.origin}${getIconUrl(icon)}`;
       await navigator.clipboard.writeText(shareUrl);
       
-      // Track share event with city data
+      // Track share: aggregate event (queryable total) + per-city breakdown
+      trackEvent('ICON_SHARE');
       trackEvent(`ICON_SHARE_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
       
       toast.success('Link copied to clipboard!', {
@@ -124,57 +129,12 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
     }
   };
 
-  // Get related icons from the same country (show all available)
-  const relatedIcons = allIcons.filter(
-    (relatedIcon) => 
-      relatedIcon.country === icon.country && 
-      relatedIcon._id !== icon._id
-  );
-
-  // Get deterministic "random" icons from different countries (seeded by icon id to avoid hydration mismatch)
-  const randomIcons = useMemo(() => {
-    const seed = parseInt(icon._id) || 0;
-    return allIcons
-      .filter((randomIcon) => randomIcon.country !== icon.country)
-      .sort((a, b) => {
-        const hashA = (parseInt(a._id) * 2654435761 + seed) >>> 0;
-        const hashB = (parseInt(b._id) * 2654435761 + seed) >>> 0;
-        return hashA - hashB;
-      })
-      .slice(0, 4);
-  }, [allIcons, icon]);
-
   return (
     <div className="min-h-screen bg-background">
       {/* Random icon header - same as main page */}
       <nav aria-label="Featured cities" className="relative flex justify-center items-center gap-8 py-16">
-        <div className="absolute md:fixed right-4 top-4 md:z-50 flex items-center gap-2">
-          <button
-            onClick={scrollToTop}
-            className={`p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 ${
-              showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
-            }`}
-            aria-label="Scroll to top"
-            aria-hidden={!showScrollTop}
-          >
-            <ArrowUp className="w-5 h-5" />
-          </button>
-          <a
-            href="https://github.com/anto1/city-icons"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            onClick={() => trackEvent('GITHUB_CLICKED')}
-            aria-label="View on GitHub"
-          >
-            <Github className="w-5 h-5" />
-          </a>
-          <ThemeToggle />
-        </div>
-        {allIcons
-          .filter((i) => i._id !== icon._id)
-          .slice(0, 3)
-          .map((randomIcon) => (
+        <HeaderControls />
+        {headerIcons.map((randomIcon) => (
           <Link
             key={randomIcon._id}
             href={getIconUrl(randomIcon)}
@@ -194,7 +154,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
       </nav>
 
       {/* Main content container - same structure as main page */}
-      <article className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8">
         {/* Breadcrumb navigation */}
         <nav aria-label="Breadcrumb" className="text-center mb-8">
           <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
@@ -256,10 +216,11 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
               <Copy className="w-4 h-4" />
               Copy SVG
             </Button>
-            <Button 
+            <Button
               onClick={shareLink}
               variant="outline"
               size="icon"
+              aria-label="Copy link to this icon"
             >
               <Share2 className="w-4 h-4" />
             </Button>
@@ -292,29 +253,7 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none" aria-label={`More icons from ${icon.country}`}>
                 {relatedIcons.map((relatedIcon) => (
                 <li key={relatedIcon._id}>
-                  <Link
-                    href={getIconUrl(relatedIcon)}
-                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-border p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
-                    style={{ aspectRatio: '1 / 1' }}
-                    aria-label={`${relatedIcon.city}, ${relatedIcon.country} icon`}
-                  >
-                    <div className="flex flex-col items-center justify-center flex-1">
-                      <div className="w-14 h-14 flex items-center justify-center mb-4">
-                        <Image
-                          src={getIconSvgUrl(relatedIcon)}
-                          width={56}
-                          height={56}
-                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
-                          alt={`${relatedIcon.city}, ${relatedIcon.country} icon`}
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="text-center w-full">
-                        <span className="text-base font-medium text-foreground truncate block w-full mb-1">{relatedIcon.city}</span>
-                        <span className="text-sm text-muted-foreground truncate block w-full">{relatedIcon.country}</span>
-                      </div>
-                    </div>
-                  </Link>
+                  <IconCard icon={relatedIcon} />
                 </li>
                 ))}
             </ul>
@@ -322,35 +261,13 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
         )}
 
         {/* Explore more section */}
-        {randomIcons.length > 0 && (
+        {exploreIcons.length > 0 && (
           <section className="mt-20" aria-labelledby="explore-more-heading">
             <h2 id="explore-more-heading" className="text-2xl font-bold text-center mb-8">Explore More Cities</h2>
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none" aria-label="Explore more cities">
-                {randomIcons.slice(0, 4).map((randomIcon) => (
+                {exploreIcons.map((randomIcon) => (
                 <li key={randomIcon._id}>
-                  <Link
-                    href={getIconUrl(randomIcon)}
-                    className="group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-border p-4 rounded-[48px] flex flex-col items-center justify-center h-full"
-                    style={{ aspectRatio: '1 / 1' }}
-                    aria-label={`${randomIcon.city}, ${randomIcon.country} icon`}
-                  >
-                    <div className="flex flex-col items-center justify-center flex-1">
-                      <div className="w-14 h-14 flex items-center justify-center mb-4">
-                        <Image
-                          src={getIconSvgUrl(randomIcon)}
-                          width={56}
-                          height={56}
-                          className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
-                          alt={`${randomIcon.city}, ${randomIcon.country} icon`}
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="text-center w-full">
-                        <span className="text-base font-medium text-foreground truncate block w-full mb-1">{randomIcon.city}</span>
-                        <span className="text-sm text-muted-foreground truncate block w-full">{randomIcon.country}</span>
-                      </div>
-                    </div>
-                  </Link>
+                  <IconCard icon={randomIcon} />
                 </li>
                 ))}
             </ul>
@@ -359,15 +276,13 @@ export default function CityPage({ icon, allIcons }: CityPageProps) {
 
         {/* Back to all icons */}
         <nav className="mt-20 text-center" aria-label="Navigation">
-          <Link href="/">
-            <Button variant="outline" size="lg">
-              View All City Icons
-            </Button>
-          </Link>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/">View All City Icons</Link>
+          </Button>
         </nav>
-      </article>
+      </main>
 
-      <IconFooter icons={allIcons} />
+      <IconFooter countries={footerCountries} totalIcons={totalIcons} />
     </div>
   );
 }

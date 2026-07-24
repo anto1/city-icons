@@ -1,5 +1,6 @@
 import RoulettePage from '@/components/RoulettePage';
 import iconData from '@/data';
+import { toGridIcon } from '@/types';
 import { Metadata } from 'next';
 
 // Force static generation
@@ -10,7 +11,7 @@ const baseUrl = 'https://svgcities.com';
 
 // SEO metadata
 export const metadata: Metadata = {
-  title: 'City Roulette - Where Should You Go This Year? | City Icons',
+  title: 'City Roulette - Where Should You Go This Year?',
   description: 'Spin the roulette and discover your next travel destination! Get personalized travel suggestions from our collection of beautiful city icons. Where should you go this year?',
   keywords: 'city roulette, travel suggestions, travel destination, city icons, travel planning, random city picker',
   authors: [{ name: 'Studio Partdirector' }],
@@ -104,7 +105,7 @@ export default function Roulette() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <RoulettePage icons={iconData} />
+      <RoulettePage icons={iconData.map(toGridIcon)} />
     </>
   );
 } 

@@ -6,6 +6,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://svgcities.com/sitemap.xml
-
-# Crawl-delay for polite crawling (optional)
-Crawl-delay: 1

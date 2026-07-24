@@ -1,42 +1,53 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Icon } from '@/types';
+import { CountryCount } from '@/types';
 import { trackEvent } from 'fathom-client';
 import { slugify } from '@/lib/utils';
 
 interface IconFooterProps {
-  icons: Icon[];
+  /** Unique countries (alphabetical) with icon counts, precomputed server-side. */
+  countries: CountryCount[];
+  /** Total number of icons in the collection. */
+  totalIcons: number;
 }
 
-export function IconFooter({ icons }: IconFooterProps) {
-  // Get unique countries sorted alphabetically
-  const countries = [...new Set(icons.map(icon => icon.country))].sort();
+// Copyright year rendered after mount: the statically generated HTML bakes in
+// the build-time year, so computing it during render would hydrate-mismatch
+// for any view after Dec 31 before a rebuild. suppressHydrationWarning covers
+// the pre-effect frame; the effect then swaps in the visitor's current year.
+function CopyrightYear() {
+  const [year, setYear] = useState<number | null>(null);
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+  return <span suppressHydrationWarning>{year ?? new Date().getFullYear()}</span>;
+}
 
-  // Get count of icons per country
-  const getCountryCount = (country: string) => {
-    return icons.filter(icon => icon.country === country).length;
-  };
-
+export function IconFooter({ countries, totalIcons }: IconFooterProps) {
   return (
     <footer className="py-6 mt-16" role="contentinfo">
       <div className="container mx-auto px-4 text-center">
         {/* Countries Navigation */}
         <nav aria-label="Browse by country" className="mb-6">
           <h2 className="text-sm font-medium text-muted-foreground mb-3">
-            {countries.length} Countries
+            {countries.length} Countries &amp; Territories
             <span className="ml-2 text-xs opacity-60">
-              ({193 - countries.length} left to add)
+              (more on the way)
             </span>
           </h2>
           <ul className="flex flex-wrap justify-center gap-2 max-w-5xl mx-auto list-none">
-            {countries.map((country) => {
-              const count = getCountryCount(country);
+            {countries.map(({ country, count }) => {
               return (
                 <li key={country}>
                   <Link
                     href={`/${slugify(country)}`}
-                    onClick={() => trackEvent(`COUNTRY_${slugify(country).toUpperCase()}_CLICKED`)}
+                    onClick={() => {
+                      // Aggregate event (queryable total) + per-country breakdown
+                      trackEvent('COUNTRY_CLICKED');
+                      trackEvent(`COUNTRY_${slugify(country).toUpperCase()}_CLICKED`);
+                    }}
                     className="inline-block px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200
                       bg-muted/50 text-muted-foreground hover:bg-foreground hover:text-background
                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
@@ -52,7 +63,7 @@ export function IconFooter({ icons }: IconFooterProps) {
         </nav>
         
         <p className="text-sm text-foreground mb-2">
-          {icons.length} icons ©{' '}
+          {totalIcons} icons ©{' '}
           <a
             href="https://partdirector.ch"
             target="_blank"
@@ -62,7 +73,7 @@ export function IconFooter({ icons }: IconFooterProps) {
           >
             Studio Partdirector
           </a>
-          , {new Date().getFullYear()}
+          , <CopyrightYear />
         </p>
         <nav aria-label="Footer links" className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-center">
           <Link

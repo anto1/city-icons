@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 import { changelog, getRecentCityCount } from '@/data/changelog';
 import { WhatsNewContent } from './WhatsNewContent';
-import iconData from '@/data';
+import iconData, { getCountryCounts } from '@/data';
+import { toGridIcon } from '@/types';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
 
@@ -14,7 +14,7 @@ export const revalidate = false;
 const baseUrl = 'https://svgcities.com';
 
 export const metadata: Metadata = {
-  title: "What's New | City Icons Collection",
+  title: "What's New",
   description: 'See the latest city icons added to our collection. Weekly updates with new cities and landmarks from around the world.',
   keywords: 'new city icons, latest icons, icon updates, new svg icons, city icons changelog',
   authors: [{ name: 'Studio Partdirector' }],
@@ -45,17 +45,6 @@ export const metadata: Metadata = {
     title: "What's New | City Icons Collection",
     description: 'See the latest city icons added to our collection.',
     images: [`${baseUrl}/og-image.png`],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
@@ -94,7 +83,8 @@ function generateStructuredData() {
 export default function WhatsNewPage() {
   const structuredData = generateStructuredData();
   const recentCount = getRecentCityCount(4);
-  const allIcons = iconData;
+  const latestCount = changelog.length > 0 ? changelog[0].cities.length : 0;
+  const allIcons = iconData.map(toGridIcon);
 
   return (
     <>
@@ -105,16 +95,17 @@ export default function WhatsNewPage() {
       <div className="min-h-screen bg-background">
         <PageHeader />
         <div className="container mx-auto px-4 py-8">
+          {/* Visible trail mirrors the BreadcrumbList JSON-LD (Home / What's New) */}
           <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li>
-                <Link
-                  href="/"
-                  className="inline-flex items-center hover:text-foreground transition-colors"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Back to Icons
+              <li className="flex items-center">
+                <Link href="/" className="hover:text-foreground transition-colors">
+                  Home
                 </Link>
+                <span className="mx-2" aria-hidden="true">/</span>
+              </li>
+              <li aria-current="page">
+                <span className="text-foreground font-medium">What&apos;s New</span>
               </li>
             </ol>
           </nav>
@@ -124,7 +115,9 @@ export default function WhatsNewPage() {
               What&apos;s New
             </h1>
             <p className="text-lg text-muted-foreground">
-              {recentCount} new cities added in the last 4 weeks
+              {recentCount > 0
+                ? `${recentCount} new cities added in the last 4 weeks`
+                : `${latestCount} new cities in the latest update`}
             </p>
           </header>
 
@@ -132,7 +125,7 @@ export default function WhatsNewPage() {
             <WhatsNewContent changelog={changelog} allIcons={allIcons} />
           </main>
         </div>
-        <IconFooter icons={allIcons} />
+        <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
       </div>
     </>
   );

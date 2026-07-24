@@ -1,13 +1,13 @@
 'use client';
 
-import { Icon } from '@/types';
+import { GridIcon } from '@/types';
 import { trackEvent } from 'fathom-client';
 
 interface RegionFilterProps {
   regions: string[];
   selectedRegion: string | null;
   onRegionSelect: (region: string | null) => void;
-  icons: Icon[];
+  icons: GridIcon[];
 }
 
 // Region display names and order
@@ -36,10 +36,10 @@ export function RegionFilter({ regions, selectedRegion, onRegionSelect, icons }:
   };
 
   return (
-    <nav 
+    <div
+      role="group"
       aria-label="Filter icons by region"
       className="flex flex-wrap justify-center gap-2 mt-6"
-      role="group"
     >
       {/* All button */}
       <button
@@ -92,7 +92,7 @@ export function RegionFilter({ regions, selectedRegion, onRegionSelect, icons }:
           </button>
         );
       })}
-    </nav>
+    </div>
   );
 }
 

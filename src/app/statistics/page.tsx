@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import iconData from '@/data';
+import iconData, { getCountryCounts } from '@/data';
 import { StatisticsContent } from './StatisticsContent';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
@@ -11,6 +10,19 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 const baseUrl = 'https://svgcities.com';
+
+// Entities in the dataset that are not UN member states (observer states,
+// partially recognized states, and territories). Kept explicit so the UN
+// coverage numbers stay honest as the collection grows.
+const NON_UN_MEMBERS = new Set([
+  'Curaçao',
+  'Kosovo',
+  'New Caledonia',
+  'Palestine',
+  'Puerto Rico',
+  'Taiwan',
+  'Vatican City',
+]);
 
 // Calculate statistics
 function calculateStats() {
@@ -38,27 +50,35 @@ function calculateStats() {
     .sort((a, b) => b[1] - a[1])
     .map(([region, count]) => ({ region, count }));
 
-  // Categories
+  // Categories (every authored record has one; the type is optional only so
+  // the slim client-facing GridIcon stays assignable to Icon)
   const categoryCounts: Record<string, number> = {};
   icons.forEach((icon) => {
-    categoryCounts[icon.category] = (categoryCounts[icon.category] || 0) + 1;
+    const category = icon.category ?? 'Uncategorized';
+    categoryCounts[category] = (categoryCounts[category] || 0) + 1;
   });
 
   const sortedCategories = Object.entries(categoryCounts)
     .sort((a, b) => b[1] - a[1])
     .map(([category, count]) => ({ category, count }));
 
-  // Total countries in the world (UN members)
+  // UN coverage compares only actual UN member states against the 193 total —
+  // the dataset also includes territories and partially recognized states,
+  // which must not inflate the percentage.
   const totalWorldCountries = 193;
   const coveredCountries = Object.keys(countryCounts).length;
-  const coveragePercentage = Math.round((coveredCountries / totalWorldCountries) * 100);
+  const coveredUnMembers = Object.keys(countryCounts).filter(
+    (country) => !NON_UN_MEMBERS.has(country)
+  ).length;
+  const coveragePercentage = Math.round((coveredUnMembers / totalWorldCountries) * 100);
 
   return {
     totalIcons: icons.length,
     totalCountries: coveredCountries,
+    unMemberCountries: coveredUnMembers,
     totalRegions: Object.keys(regionCounts).length,
     coveragePercentage,
-    remainingCountries: totalWorldCountries - coveredCountries,
+    remainingCountries: totalWorldCountries - coveredUnMembers,
     countries: sortedCountries,
     regions: sortedRegions,
     categories: sortedCategories,
@@ -68,7 +88,7 @@ function calculateStats() {
 }
 
 export const metadata: Metadata = {
-  title: 'Statistics | City Icons Collection',
+  title: 'Statistics',
   description: 'Explore statistics about our city icons collection - see coverage by country, region, and discover which areas have the most icons.',
   keywords: 'city icons statistics, icon collection stats, country coverage, svg icons data',
   authors: [{ name: 'Studio Partdirector' }],
@@ -100,17 +120,6 @@ export const metadata: Metadata = {
     description: 'Explore statistics about our city icons collection.',
     images: [`${baseUrl}/og-image.png`],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 };
 
 function generateStructuredData(stats: ReturnType<typeof calculateStats>) {
@@ -118,7 +127,7 @@ function generateStructuredData(stats: ReturnType<typeof calculateStats>) {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'City Icons Statistics',
-    description: `Collection of ${stats.totalIcons} city icons from ${stats.totalCountries} countries`,
+    description: `Collection of ${stats.totalIcons} city icons from ${stats.totalCountries} countries and territories`,
     url: `${baseUrl}/statistics`,
     author: {
       '@type': 'Organization',
@@ -158,16 +167,17 @@ export default function StatisticsPage() {
       <div className="min-h-screen bg-background">
         <PageHeader />
         <div className="container mx-auto px-4 py-8">
+          {/* Visible trail mirrors the BreadcrumbList JSON-LD (Home / Statistics) */}
           <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li>
-                <Link
-                  href="/"
-                  className="inline-flex items-center hover:text-foreground transition-colors"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Back to Icons
+              <li className="flex items-center">
+                <Link href="/" className="hover:text-foreground transition-colors">
+                  Home
                 </Link>
+                <span className="mx-2" aria-hidden="true">/</span>
+              </li>
+              <li aria-current="page">
+                <span className="text-foreground font-medium">Statistics</span>
               </li>
             </ol>
           </nav>
@@ -177,7 +187,7 @@ export default function StatisticsPage() {
               Collection Statistics
             </h1>
             <p className="text-lg text-muted-foreground">
-              {stats.totalIcons} icons from {stats.totalCountries} countries across {stats.totalRegions} regions
+              {stats.totalIcons} icons from {stats.totalCountries} countries and territories across {stats.totalRegions} regions
             </p>
           </header>
 
@@ -185,7 +195,7 @@ export default function StatisticsPage() {
             <StatisticsContent stats={stats} />
           </main>
         </div>
-        <IconFooter icons={iconData} />
+        <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
       </div>
     </>
   );

@@ -41,21 +41,40 @@ export function getIconSvgUrl(icon: Icon): string {
 
 const SHORT_COUNTRY_ALIASES = new Set(['usa', 'uk', 'uae']);
 
-// Whether an icon matches a free-text query. Short country terms require a
-// prefix match or known alias so typing "in" doesn't surface every country
-// containing "in".
-export function iconMatchesQuery(icon: Icon, query: string): boolean {
+// Score how well an icon matches a free-text query. 0 means no match.
+// Higher tiers rank first: city matches beat country/region matches, which
+// beat landmark name and tag matches — so a tag hit like "tower" never
+// outranks an exact city hit. Short country terms require a prefix match or
+// known alias so typing "in" doesn't surface every country containing "in".
+// Name/tag matches require 3+ characters so short fragments don't surface
+// unrelated landmarks.
+export function getIconSearchScore(icon: Icon, query: string): number {
   const term = query.toLowerCase().trim();
-  if (!term) return true;
+  if (!term) return 0;
 
   const city = icon.city.toLowerCase();
-  if (city.includes(term)) return true;
+  if (city === term) return 100;
+  if (city.startsWith(term)) return 90;
+  if (city.includes(term)) return 80;
 
   const country = icon.country.toLowerCase();
   const validCountryMatch =
     term.length >= 3 || SHORT_COUNTRY_ALIASES.has(term) || country.startsWith(term);
-  if (country.includes(term) && validCountryMatch) return true;
+  if (country.includes(term) && validCountryMatch) return 70;
 
-  return icon.region.toLowerCase().includes(term);
+  if (icon.region.toLowerCase().includes(term)) return 60;
+
+  if (term.length >= 3) {
+    if (icon.name.toLowerCase().includes(term)) return 50;
+    if (icon.tags.some(tag => tag.toLowerCase().includes(term))) return 40;
+  }
+
+  return 0;
+}
+
+// Whether an icon matches a free-text query (empty query matches everything).
+export function iconMatchesQuery(icon: Icon, query: string): boolean {
+  if (!query.trim()) return true;
+  return getIconSearchScore(icon, query) > 0;
 }
 

@@ -47,15 +47,26 @@ export default async function OgImage({
 
   // Build-time only: dynamicParams=false + generateStaticParams ensures this
   // only runs at build. Switch to async fs if ISR/on-demand OG is ever enabled.
+  // Embed the whole SVG as a data URI so per-path fills (white knock-out
+  // holes), strokes, and non-standard viewBoxes are preserved as-is.
   const svgPath = join(process.cwd(), 'public', 'icons', icon.svgFilename);
-  let pathData = '';
+  const iconSize = 240;
+  let iconSrc = '';
+  let iconWidth = iconSize;
+  let iconHeight = iconSize;
   try {
     const svgContent = readFileSync(svgPath, 'utf-8');
-    // Extract all path d attributes
-    const pathMatches = svgContent.match(/d="([^"]+)"/g);
-    if (pathMatches) {
-      pathData = pathMatches.map(m => m.slice(3, -1)).join(' ');
+    // Size the image from the SVG's own viewBox to keep its aspect ratio
+    const viewBoxMatch = svgContent.match(/viewBox="([^"]+)"/);
+    if (viewBoxMatch) {
+      const [, , vbWidth, vbHeight] = viewBoxMatch[1].trim().split(/\s+/).map(Number);
+      if (vbWidth > 0 && vbHeight > 0) {
+        const scale = iconSize / Math.max(vbWidth, vbHeight);
+        iconWidth = Math.round(vbWidth * scale);
+        iconHeight = Math.round(vbHeight * scale);
+      }
     }
+    iconSrc = `data:image/svg+xml;base64,${Buffer.from(svgContent).toString('base64')}`;
   } catch {
     // If SVG can't be read, fall back to text-only
   }
@@ -74,17 +85,15 @@ export default async function OgImage({
           padding: '60px',
         }}
       >
-        {/* Icon */}
-        {pathData && (
-          <svg
-            width="240"
-            height="240"
-            viewBox="0 0 120 120"
-            fill="none"
+        {/* Icon (black-on-transparent SVG on the light card background) */}
+        {iconSrc && (
+          <img
+            src={iconSrc}
+            width={iconWidth}
+            height={iconHeight}
+            alt=""
             style={{ marginBottom: '40px' }}
-          >
-            <path d={pathData} fill="#000000" />
-          </svg>
+          />
         )}
 
         {/* City name */}

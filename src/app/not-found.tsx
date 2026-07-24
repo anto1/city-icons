@@ -1,14 +1,14 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, ArrowLeft } from 'lucide-react';
-import iconData from '@/data';
+import iconData, { getCountryCounts } from '@/data';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
 
+// Server component: the icon dataset stays out of the client bundle — the
+// interactive bits live inside PageHeader/IconFooter, which are client components.
 export default function NotFound() {
-  // Use a fixed icon to avoid hydration mismatch (Math.random() differs server vs client)
+  // Use a fixed icon so the page stays deterministic (no Math.random)
   const randomIcon = iconData[0];
 
   return (
@@ -62,7 +62,7 @@ export default function NotFound() {
         </article>
       </main>
 
-      <IconFooter icons={iconData} />
+      <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
     </div>
   );
 } 

@@ -7,6 +7,8 @@ import { slugify } from '@/lib/utils';
 interface Stats {
   totalIcons: number;
   totalCountries: number;
+  /** Covered countries that are UN member states (excludes territories etc.) */
+  unMemberCountries: number;
   totalRegions: number;
   coveragePercentage: number;
   remainingCountries: number;
@@ -38,7 +40,7 @@ export function StatisticsContent({ stats }: StatisticsContentProps) {
         <div className="bg-card border border-border rounded-xl p-6 text-center">
           <Globe className="w-8 h-8 text-orange-600 mx-auto mb-3" aria-hidden="true" />
           <div className="text-3xl font-bold text-foreground mb-1">{stats.totalCountries}</div>
-          <div className="text-sm text-muted-foreground">Countries</div>
+          <div className="text-sm text-muted-foreground">Countries &amp; Territories</div>
         </div>
 
         <div className="bg-card border border-border rounded-xl p-6 text-center">
@@ -50,7 +52,7 @@ export function StatisticsContent({ stats }: StatisticsContentProps) {
         <div className="bg-card border border-border rounded-xl p-6 text-center">
           <Target className="w-8 h-8 text-orange-600 mx-auto mb-3" aria-hidden="true" />
           <div className="text-3xl font-bold text-foreground mb-1">{stats.coveragePercentage}%</div>
-          <div className="text-sm text-muted-foreground">World Coverage</div>
+          <div className="text-sm text-muted-foreground">UN Member Coverage</div>
         </div>
       </section>
 
@@ -59,7 +61,7 @@ export function StatisticsContent({ stats }: StatisticsContentProps) {
         <h2 className="text-xl font-semibold text-foreground mb-4">World Coverage</h2>
         <div className="bg-card border border-border rounded-xl p-6">
           <div className="flex justify-between text-sm text-muted-foreground mb-2">
-            <span>{stats.totalCountries} countries covered</span>
+            <span>{stats.unMemberCountries} of 193 UN member countries covered</span>
             <span>{stats.remainingCountries} remaining</span>
           </div>
           <div className="w-full h-4 bg-muted rounded-full overflow-hidden">
@@ -70,7 +72,7 @@ export function StatisticsContent({ stats }: StatisticsContentProps) {
               aria-valuenow={stats.coveragePercentage}
               aria-valuemin={0}
               aria-valuemax={100}
-              aria-label="World country coverage"
+              aria-label="UN member country coverage"
             />
           </div>
           <p className="text-sm text-muted-foreground mt-3">

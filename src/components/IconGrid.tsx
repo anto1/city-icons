@@ -1,47 +1,48 @@
 'use client';
 
-import { useState, useRef, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { IconGridProps } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
 import { ANIMATION, GRID, HOVER, BREAKPOINTS } from '@/lib/constants';
+import { usePrefersReducedMotion } from './PageHeader';
+import { IconCard } from './IconCard';
 
-// Skeleton component for loading state
-function IconSkeleton() {
-  return (
-    <li className="group cursor-pointer transition-all duration-500 ease-out p-4 rounded-[48px] flex flex-col items-center justify-center animate-pulse list-none" 
-         style={{ aspectRatio: '1 / 1' }}>
-      <div className="flex flex-col items-center justify-center flex-1">
-        <div className="w-14 h-14 bg-muted rounded-lg mb-4" aria-hidden="true"></div>
-        <div className="text-center w-full">
-          <div className="h-5 bg-muted rounded mb-1" aria-hidden="true"></div>
-          <div className="h-4 bg-muted rounded w-3/4 mx-auto" aria-hidden="true"></div>
-        </div>
-      </div>
-    </li>
-  );
+interface ExtendedIconGridProps extends IconGridProps {
+  searchQuery?: string;
+  selectedRegion?: string | null;
+  onClearFilters?: () => void;
 }
 
-export default function IconGrid({ icons, loading }: IconGridProps) {
+// Mirrors SearchBar's SEARCH_PERFORMED debounce so intermediate keystrokes
+// don't each register as a failed search
+const NO_RESULTS_TRACK_DEBOUNCE_MS = 800;
+
+export default function IconGrid({ icons, searchQuery, selectedRegion, onClearFilters }: ExtendedIconGridProps) {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
-  const gridRef = useRef<HTMLUListElement>(null);
-  
+  // Callback-ref state so the mouse listeners re-attach whenever the <ul>
+  // remounts (e.g. after an empty search result unmounts the grid)
+  const [gridEl, setGridEl] = useState<HTMLUListElement | null>(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   useEffect(() => {
+    // Skip the proximity scale effect entirely under reduced motion:
+    // with transitions clamped to ~0ms it degrades to frame-to-frame jitter
+    if (!gridEl || prefersReducedMotion) {
+      setMousePosition(null);
+      return;
+    }
+
     let rafId: number | null = null;
 
     const handleMouseMove = (e: MouseEvent) => {
       if (rafId) return; // Skip if a frame is already pending
       rafId = requestAnimationFrame(() => {
         rafId = null;
-        if (gridRef.current) {
-          const rect = gridRef.current.getBoundingClientRect();
-          setMousePosition({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-          });
-        }
+        const rect = gridEl.getBoundingClientRect();
+        setMousePosition({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top
+        });
       });
     };
 
@@ -53,26 +54,21 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
       setMousePosition(null);
     };
 
-    const grid = gridRef.current;
-    if (grid) {
-      grid.addEventListener('mousemove', handleMouseMove);
-      grid.addEventListener('mouseleave', handleMouseLeave);
-    }
+    gridEl.addEventListener('mousemove', handleMouseMove);
+    gridEl.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
-      if (grid) {
-        grid.removeEventListener('mousemove', handleMouseMove);
-        grid.removeEventListener('mouseleave', handleMouseLeave);
-      }
+      gridEl.removeEventListener('mousemove', handleMouseMove);
+      gridEl.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [gridEl, prefersReducedMotion]);
 
   // Per-mousemove layout constants — computed once per mouse update,
   // not per-card. Keeps the proximity scale O(n) trivial math.
   const scaleLayout = useMemo(() => {
-    if (!mousePosition || !gridRef.current) return null;
-    const rect = gridRef.current.getBoundingClientRect();
+    if (!mousePosition || !gridEl) return null;
+    const rect = gridEl.getBoundingClientRect();
     const width = window.innerWidth;
     const cols =
       width >= BREAKPOINTS.XL ? GRID.COLUMNS.XL
@@ -85,31 +81,35 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
     const cardHeight = rect.height / rows;
     const maxDistance = Math.min(cardWidth, cardHeight) * HOVER.PROXIMITY_FACTOR;
     return { cols, cardWidth, cardHeight, maxDistance };
-  }, [mousePosition, icons.length]);
+  }, [mousePosition, icons.length, gridEl]);
 
-  if (loading) {
-    return (
-      <ul
-        ref={gridRef}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none"
-        aria-label="Loading city icons"
-        aria-busy="true"
-      >
-        {Array.from({ length: GRID.SKELETON_COUNT }).map((_, index) => (
-          <IconSkeleton key={index} />
-        ))}
-      </ul>
-    );
-  }
+  const trimmedQuery = searchQuery?.trim() ?? '';
+  const hasSearch = trimmedQuery.length > 0;
+  const hasRegion = Boolean(selectedRegion);
 
-  if (icons.length === 0) {
-    return (
-      <section className="flex flex-col justify-center items-center py-12" aria-label="No results">
-        <p className="text-lg text-muted-foreground mb-2">No icons found</p>
-        <p className="text-sm text-muted-foreground">Try adjusting your search terms</p>
-      </section>
-    );
-  }
+  // Track searches that end with no results — the honest "please add this
+  // city" signal. Debounced and deduped so each distinct settled query fires
+  // exactly once, not on every keystroke/render.
+  const lastNoResultsQuery = useRef<string | null>(null);
+  const noResults = icons.length === 0;
+  useEffect(() => {
+    if (!noResults || !trimmedQuery || lastNoResultsQuery.current === trimmedQuery) {
+      return;
+    }
+    const timeout = setTimeout(() => {
+      lastNoResultsQuery.current = trimmedQuery;
+      trackEvent('SEARCH_NO_RESULTS');
+    }, NO_RESULTS_TRACK_DEBOUNCE_MS);
+    return () => clearTimeout(timeout);
+  }, [noResults, trimmedQuery]);
+
+  const emptyStateHint = hasSearch && hasRegion
+    ? `No matches for “${searchQuery}” in ${selectedRegion}`
+    : hasRegion
+    ? `No matches in ${selectedRegion}`
+    : hasSearch
+    ? `No matches for “${searchQuery}” — try adjusting your search terms`
+    : 'Try adjusting your search terms';
 
   const getScale = (index: number) => {
     if (!mousePosition || !scaleLayout) return 1;
@@ -127,49 +127,61 @@ export default function IconGrid({ icons, loading }: IconGridProps) {
   };
 
   return (
-    <ul 
-      ref={gridRef}
-      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none"
-      aria-label={`City icons collection - ${icons.length} icons`}
-    >
-      {icons.map((icon, index) => (
-        <li key={icon._id} className="list-none">
-          <Link
-            href={getIconUrl(icon)}
-            className="icon-card-animate group cursor-pointer hover:cursor-pointer active:cursor-pointer transition-all duration-500 ease-out hover:border-2 hover:border-border p-4 rounded-[48px] flex flex-col items-center justify-center h-full" 
-            style={{ 
-              aspectRatio: '1 / 1',
-              transform: `scale(${getScale(index)})`,
-              zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1,
-              cursor: 'pointer',
-              animationDelay: `${Math.min(index * ANIMATION.STAGGER_DELAY_INCREMENT, ANIMATION.STAGGER_DELAY_MAX)}ms`
-            }} 
-            onClick={() => {
-              // Track icon click with city data
-              trackEvent(`ICON_CLICK_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
-            }}
-            aria-label={`${icon.city}, ${icon.country} - ${icon.name} icon`}
-          >
-            <article className="flex flex-col items-center justify-center flex-1">
-              <div className="w-14 h-14 text-muted-foreground group-hover:text-[#E2725B] transition-colors duration-200 flex items-center justify-center mb-4">
-                <Image
-                  src={getIconSvgUrl(icon)}
-                  alt={`${icon.name} - line art icon of ${icon.city}, ${icon.country}`}
-                  title={`${icon.city}, ${icon.country} - ${icon.name}`}
-                  width={56}
-                  height={56}
-                  className="w-14 h-14 opacity-60 group-hover:opacity-100 transition-opacity duration-200 dark:invert"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-center w-full">
-                <h3 className="text-base font-medium text-foreground truncate w-full mb-1">{icon.city}</h3>
-                <p className="text-sm text-muted-foreground truncate w-full">{icon.country}</p>
-              </div>
-            </article>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      {/* Announce result changes to screen readers */}
+      <p role="status" className="sr-only">
+        {icons.length === 0
+          ? 'No icons found'
+          : `${icons.length} ${icons.length === 1 ? 'icon' : 'icons'} found`}
+      </p>
+
+      {icons.length === 0 ? (
+        <section className="flex flex-col justify-center items-center py-12" aria-label="No results">
+          <p className="text-lg text-muted-foreground mb-2">No icons found</p>
+          <p className="text-sm text-muted-foreground">{emptyStateHint}</p>
+          {onClearFilters && (hasSearch || hasRegion) && (
+            <button
+              onClick={onClearFilters}
+              className="mt-4 px-4 py-2 rounded-full text-sm font-medium bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+            >
+              Clear search and filters
+            </button>
+          )}
+        </section>
+      ) : (
+        <ul
+          ref={setGridEl}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none"
+          aria-label={`City icons collection - ${icons.length} icons`}
+        >
+          {icons.map((icon, index) => (
+            <li key={icon._id} className="list-none">
+              <IconCard
+                icon={icon}
+                className="icon-card-animate"
+                style={{
+                  transform: `scale(${getScale(index)})`,
+                  zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1,
+                  cursor: 'pointer',
+                  animationDelay: `${Math.min(index * ANIMATION.STAGGER_DELAY_INCREMENT, ANIMATION.STAGGER_DELAY_MAX)}ms`
+                }}
+                onClick={() => {
+                  // Aggregate event (queryable total) + per-city breakdown
+                  trackEvent('ICON_CLICK');
+                  trackEvent(`ICON_CLICK_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
+                }}
+                ariaLabel={`${icon.city}, ${icon.country} - ${icon.name} icon`}
+                imageAlt={`${icon.name} - line art icon of ${icon.city}, ${icon.country}`}
+                imageTitle={`${icon.city}, ${icon.country} - ${icon.name}`}
+                // Load the first grid rows eagerly (LCP candidates),
+                // lazy-load the rest as they scroll into view
+                imageLoading={index < GRID.EAGER_LOAD_COUNT ? 'eager' : 'lazy'}
+                hoverTint
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
-} 
+}

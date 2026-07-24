@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -70,18 +70,23 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     }
   }, [theme, mounted]);
 
-  const handleSetTheme = (newTheme: Theme) => {
+  const handleSetTheme = useCallback((newTheme: Theme) => {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-  };
+  }, []);
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  // Render the provider unconditionally so the tree structure is identical
+  // before and after hydration (an early return would swap Fragment -> Provider
+  // and remount the whole app). Applying the theme to the DOM is gated on
+  // `mounted` in the effect above; the pre-mount value (theme: 'system',
+  // resolvedTheme: 'light') matches SSR output and the useTheme() fallback.
+  const value = useMemo(
+    () => ({ theme, setTheme: handleSetTheme, resolvedTheme }),
+    [theme, handleSetTheme, resolvedTheme]
+  );
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme, resolvedTheme }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   );

@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { Icon } from '@/types';
+import { GridIcon } from '@/types';
 import { trackEvent } from 'fathom-client';
 
 interface IconHeaderProps {
   countryFilter?: string;
-  filteredIcons: Icon[];
+  filteredIcons: GridIcon[];
   totalIcons: number;
 }
 

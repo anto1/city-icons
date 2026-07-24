@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 import { LicenseContent } from './LicenseContent';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
-import iconData from '@/data';
+import iconData, { getCountryCounts } from '@/data';
 
 // Force static generation
 export const dynamic = 'force-static';
@@ -14,7 +13,7 @@ const baseUrl = 'https://svgcities.com';
 
 // SEO metadata for license page
 export const metadata: Metadata = {
-  title: 'Icon Usage & Licensing | City Icons Collection',
+  title: 'Icon Usage & Licensing',
   description: 'Clear guidelines for using City Icons in your projects. Free for personal and educational use. Contact us for commercial licensing inquiries.',
   keywords: 'city icons license, icon usage, free icons license, commercial license, SVG icons terms',
   authors: [{ name: 'Studio Partdirector' }],
@@ -45,17 +44,6 @@ export const metadata: Metadata = {
     title: 'Icon Usage & Licensing | City Icons',
     description: 'Clear guidelines for using City Icons in your projects. Free for personal and educational use.',
     images: [`${baseUrl}/og-image.png`],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
@@ -114,17 +102,17 @@ export default function LicensePage() {
       <div className="min-h-screen bg-background">
         <PageHeader />
         <div className="container mx-auto px-4 py-8">
-          {/* Breadcrumb Navigation */}
+          {/* Visible trail mirrors the BreadcrumbList JSON-LD (Home / License) */}
           <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li>
-                <Link 
-                  href="/"
-                  className="inline-flex items-center hover:text-foreground transition-colors"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Back to Icons
+              <li className="flex items-center">
+                <Link href="/" className="hover:text-foreground transition-colors">
+                  Home
                 </Link>
+                <span className="mx-2" aria-hidden="true">/</span>
+              </li>
+              <li aria-current="page">
+                <span className="text-foreground font-medium">License</span>
               </li>
             </ol>
           </nav>
@@ -144,7 +132,7 @@ export default function LicensePage() {
             <LicenseContent />
           </main>
         </div>
-        <IconFooter icons={iconData} />
+        <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
       </div>
     </>
   );

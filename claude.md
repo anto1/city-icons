@@ -9,9 +9,9 @@ Minimalist SVG icon collection showcasing 295 cities worldwide. Built with Next.
 - **Framework:** Next.js 15 (App Router, Static Site Generation)
 - **Frontend:** React 19.1, TypeScript 5
 - **Styling:** Tailwind CSS 4, PostCSS
-- **UI:** Radix UI (Dialog), Lucide React icons, Sonner (toasts)
+- **UI:** Radix UI (Slot, for Button `asChild`), Lucide React icons, Sonner (toasts)
 - **Analytics:** Fathom Client
-- **Fonts:** Instrument Sans (Fontsource)
+- **Fonts:** Instrument Sans (`next/font/google`, self-hosted + preloaded, metric-matched fallback)
 - **Deploy:** Vercel
 
 ## Project Structure
@@ -169,4 +169,22 @@ Each page type has specific schema.org structured data:
 
 ## Analytics Events
 
-Tracked via Fathom: `ICON_CLICK`, `ICON_DOWNLOAD`, `ICON_COPY`, `ICON_SHARE`, `SEARCH_PERFORMED`, `ROULETTE_SPIN_STARTED`, `THEME_CHANGED_LIGHT`, `THEME_CHANGED_DARK`
+Tracked via Fathom. Icon and country interactions fire an **aggregate** event (queryable total) plus a dynamic per-city/per-country breakdown event:
+
+| Aggregate | Breakdown |
+|-----------|-----------|
+| `ICON_CLICK` | `ICON_CLICK_<CITY>` |
+| `ICON_DOWNLOAD` | `ICON_DOWNLOAD_<CITY>` |
+| `ICON_COPY` | `ICON_COPY_<CITY>` |
+| `ICON_SHARE` | `ICON_SHARE_<CITY>` |
+| `COUNTRY_CLICKED` | `COUNTRY_<COUNTRY>_CLICKED` |
+
+Search & filters: `SEARCH_PERFORMED`, `SEARCH_NO_RESULTS` (settled query with zero matches — the de facto city-request signal), `FILTER_ALL`, `FILTER_<REGION>`
+
+Theme: `THEME_CHANGED_LIGHT`, `THEME_CHANGED_DARK`
+
+Roulette: `ROULETTE_PAGE_VIEWED`, `ROULETTE_SPIN_STARTED`, `ROULETTE_RESULT_SAME_CITY`, `ROULETTE_RESULT_DUPLICATE_CITY`, `ROULETTE_RESULT_THREE_DIFFERENT`, `ROULETTE_BACK_TO_CITIES_CLICKED`, `ROULETTE_LINK_CLICKED`
+
+Navigation & links: `SCROLL_TO_TOP_CLICKED`, `GITHUB_CLICKED`, `GITHUB_LINK_CLICKED`, `STUDIO_PARTDIRECTOR_CLICKED`, `STUDIO_PARTDIRECTOR_FOOTER_CLICKED`, `WHATS_NEW_CLICKED`, `STATISTICS_CLICKED`, `FAQ_CLICKED`, `LICENSE_LINK_CLICKED`, `MISSING_CITY_CLICKED`
+
+License page: `LICENSE_PAGE_VISIT`, `COMMERCIAL_INQUIRY_CLICKED`

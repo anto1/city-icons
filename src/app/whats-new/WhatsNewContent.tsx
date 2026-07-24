@@ -2,21 +2,24 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChangelogEntry } from '@/data/changelog';
-import { Icon } from '@/types';
+import {
+  ChangelogCity,
+  ChangelogEntry,
+  changelogCityMatchesIcon,
+  getChangelogCityName,
+} from '@/data/changelog';
+import { GridIcon } from '@/types';
 import { getIconUrl, getIconSvgUrl } from '@/lib/utils';
 
 interface WhatsNewContentProps {
   changelog: ChangelogEntry[];
-  allIcons: Icon[];
+  allIcons: GridIcon[];
 }
 
 export function WhatsNewContent({ changelog, allIcons }: WhatsNewContentProps) {
-  // Helper to find icon by city name
-  const findIconByCity = (cityName: string): Icon | undefined => {
-    return allIcons.find(
-      (icon) => icon.city.toLowerCase() === cityName.toLowerCase()
-    );
+  // Helper to find icon by changelog city (matches country too when specified)
+  const findIconByCity = (city: ChangelogCity): GridIcon | undefined => {
+    return allIcons.find((icon) => changelogCityMatchesIcon(city, icon));
   };
 
   return (
@@ -44,8 +47,9 @@ export function WhatsNewContent({ changelog, allIcons }: WhatsNewContentProps) {
             </header>
 
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 list-none">
-              {entry.cities.map((cityName) => {
-                const icon = findIconByCity(cityName);
+              {entry.cities.map((city) => {
+                const cityName = getChangelogCityName(city);
+                const icon = findIconByCity(city);
 
                 if (!icon) {
                   // City not found in data - show placeholder

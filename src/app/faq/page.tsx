@@ -1,11 +1,10 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 import { FAQContent } from './FAQContent';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
-import iconData from '@/data';
+import iconData, { getCountryCounts } from '@/data';
 
 // Force static generation
 export const dynamic = 'force-static';
@@ -97,7 +96,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: 'FAQ | City Icons Collection',
+  title: 'FAQ',
   description: 'Frequently asked questions about City Icons - learn about usage, licensing, downloads, and how to request new city icons.',
   keywords: 'city icons faq, icon questions, svg icons help, city icons usage, icon licensing questions',
   authors: [{ name: 'Studio Partdirector' }],
@@ -128,17 +127,6 @@ export const metadata: Metadata = {
     title: 'FAQ | City Icons Collection',
     description: 'Frequently asked questions about City Icons.',
     images: [`${baseUrl}/og-image.png`],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
@@ -200,16 +188,17 @@ export default function FAQPage() {
       <div className="min-h-screen bg-background">
         <PageHeader />
         <div className="container mx-auto px-4 py-8">
+          {/* Visible trail mirrors the BreadcrumbList JSON-LD (Home / FAQ) */}
           <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
             <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li>
-                <Link
-                  href="/"
-                  className="inline-flex items-center hover:text-foreground transition-colors"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Back to Icons
+              <li className="flex items-center">
+                <Link href="/" className="hover:text-foreground transition-colors">
+                  Home
                 </Link>
+                <span className="mx-2" aria-hidden="true">/</span>
+              </li>
+              <li aria-current="page">
+                <span className="text-foreground font-medium">FAQ</span>
               </li>
             </ol>
           </nav>
@@ -228,7 +217,7 @@ export default function FAQPage() {
           </main>
 
         </div>
-        <IconFooter icons={iconData} />
+        <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
       </div>
     </>
   );

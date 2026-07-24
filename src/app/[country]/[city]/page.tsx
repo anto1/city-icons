@@ -1,14 +1,10 @@
 import { notFound } from 'next/navigation';
 import CityPage from '@/components/CityPage';
-import iconData from '@/data';
+import iconData, { getCountryCounts, getSortedIcons } from '@/data';
+import { Icon, toGridIcon } from '@/types';
 import { findIconBySlugs, slugify } from '@/lib/utils';
 
 const baseUrl = 'https://svgcities.com';
-
-// Static icon data - no SVG content loading
-function getIconsData() {
-  return [...iconData].sort((a, b) => a.city.localeCompare(b.city));
-}
 
 // Generate all possible city pages at build time (SSG)
 export async function generateStaticParams() {
@@ -31,7 +27,7 @@ interface PageProps {
 }
 
 // Generate structured data for the city icon page
-function generateStructuredData(icon: typeof iconData[0], countrySlug: string, citySlug: string) {
+function generateStructuredData(icon: Icon, countrySlug: string, citySlug: string) {
   const pageUrl = `${baseUrl}/${countrySlug}/${citySlug}`;
   
   return [
@@ -104,16 +100,40 @@ function generateStructuredData(icon: typeof iconData[0], countrySlug: string, c
 
 export default async function IconPage({ params }: PageProps) {
   const { country, city } = await params;
-  const icons = getIconsData();
-  
+  const icons = getSortedIcons();
+
   // Check if the icon exists
   const icon = findIconBySlugs(country, city, icons);
-  
+
   if (!icon) {
     notFound();
   }
 
   const structuredData = generateStructuredData(icon, country, city);
+
+  // Everything CityPage renders besides the current icon is precomputed here
+  // so the full dataset never crosses the server→client boundary.
+  const headerIcons = icons
+    .filter((i) => i._id !== icon._id)
+    .slice(0, 3)
+    .map(toGridIcon);
+
+  const relatedIcons = icons
+    .filter((i) => i.country === icon.country && i._id !== icon._id)
+    .map(toGridIcon);
+
+  // Deterministic "random" icons from other countries, seeded by icon id
+  // (same selection the client used to compute — stable across builds)
+  const seed = parseInt(icon._id) || 0;
+  const exploreIcons = icons
+    .filter((i) => i.country !== icon.country)
+    .sort((a, b) => {
+      const hashA = (parseInt(a._id) * 2654435761 + seed) >>> 0;
+      const hashB = (parseInt(b._id) * 2654435761 + seed) >>> 0;
+      return hashA - hashB;
+    })
+    .slice(0, 4)
+    .map(toGridIcon);
 
   return (
     <>
@@ -124,7 +144,14 @@ export default async function IconPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
         />
       ))}
-      <CityPage icon={icon} allIcons={icons} />
+      <CityPage
+        icon={icon}
+        headerIcons={headerIcons}
+        relatedIcons={relatedIcons}
+        exploreIcons={exploreIcons}
+        footerCountries={getCountryCounts()}
+        totalIcons={icons.length}
+      />
     </>
   );
 }
@@ -145,7 +172,7 @@ export async function generateMetadata({ params }: PageProps) {
   const description = icon.description || `Download the ${icon.name} icon representing ${icon.city}, ${icon.country}. High-quality SVG line art icon for your projects.`;
 
   return {
-    title: `${icon.name} - ${icon.city}, ${icon.country} | City Icons`,
+    title: `${icon.name} - ${icon.city}, ${icon.country}`,
     description,
     keywords: `${icon.city}, ${icon.country}, city icon, SVG icon, line art, ${icon.name}, download icon, ${icon.tags?.join(', ') || ''}`,
     authors: [{ name: 'Studio Partdirector' }],

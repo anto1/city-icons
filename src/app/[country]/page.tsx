@@ -1,14 +1,10 @@
 import { notFound } from 'next/navigation';
 import ClientHome from '@/components/ClientHome';
-import iconData from '@/data';
+import iconData, { getCountryCounts, getFeaturedIcons, getSortedIcons } from '@/data';
+import { Icon, toGridIcon } from '@/types';
 import { slugify } from '@/lib/utils';
 
 const baseUrl = 'https://svgcities.com';
-
-// Static icon data - no SVG content loading
-function getIconsData() {
-  return [...iconData].sort((a, b) => a.city.localeCompare(b.city));
-}
 
 // Generate all possible country pages at build time (SSG)
 export async function generateStaticParams() {
@@ -30,7 +26,7 @@ interface PageProps {
 }
 
 // Generate structured data for country page (limited ItemList for size)
-function generateStructuredData(countryName: string, countrySlug: string, countryIcons: typeof iconData) {
+function generateStructuredData(countryName: string, countrySlug: string, countryIcons: Icon[]) {
   const pageUrl = `${baseUrl}/${countrySlug}`;
   
   // Limit to first 15 items to keep JSON-LD size reasonable
@@ -88,11 +84,11 @@ function generateStructuredData(countryName: string, countrySlug: string, countr
 
 export default async function CountryPage({ params }: PageProps) {
   const { country } = await params;
-  const allIcons = getIconsData();
-  
-  // Filter icons for this country
+  const allIcons = getSortedIcons();
+
+  // Filter icons for this country — only these cross to the client
   const countryIcons = allIcons.filter(icon => slugify(icon.country) === country);
-  
+
   if (countryIcons.length === 0) {
     notFound();
   }
@@ -110,7 +106,14 @@ export default async function CountryPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
         />
       ))}
-      <ClientHome initialIcons={allIcons} countryFilter={countryName} hideSearch={true} />
+      <ClientHome
+        initialIcons={countryIcons.map(toGridIcon)}
+        headerIcons={getFeaturedIcons().map(toGridIcon)}
+        footerCountries={getCountryCounts()}
+        totalIconCount={allIcons.length}
+        countryFilter={countryName}
+        hideSearch={true}
+      />
     </>
   );
 }
@@ -136,7 +139,7 @@ export async function generateMetadata({ params }: PageProps) {
   const description = `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} city icons from ${countryName} with download and copy functionality.`;
 
   return {
-    title: `${countryName} City Icons | City Icons Collection`,
+    title: `${countryName} City Icons`,
     description,
     keywords: `${countryName}, city icons, ${countryIcons.map(icon => icon.city).join(', ')}, SVG icons, line art`,
     authors: [{ name: 'Studio Partdirector' }],

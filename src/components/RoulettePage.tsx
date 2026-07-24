@@ -1,45 +1,55 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Icon } from '@/types';
+import { CountryCount, GridIcon } from '@/types';
 import { trackEvent } from 'fathom-client';
 import { getIconSvgUrl } from '@/lib/utils';
-import { ThemeToggle } from './ThemeToggle';
-import { Github, ArrowUp } from 'lucide-react';
+import { HeaderControls, prefersReducedMotion } from './PageHeader';
+import { IconFooter } from '@/components/IconFooter';
 
 interface RoulettePageProps {
-  icons: Icon[];
+  icons: GridIcon[];
 }
 
 export default function RoulettePage({ icons }: RoulettePageProps) {
   const [isSpinning, setIsSpinning] = useState(false);
-  const [displayIcons, setDisplayIcons] = useState<Icon[]>([]);
+  const [displayIcons, setDisplayIcons] = useState<GridIcon[]>([]);
   const [resultMessage, setResultMessage] = useState<string>('');
-  const [showScrollTop, setShowScrollTop] = useState(false);
+  // Currently active spin interval — cleared on unmount so a mid-spin
+  // navigation doesn't keep firing setState on an unmounted component
+  const spinIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Track page view on mount
   useEffect(() => {
     trackEvent('ROULETTE_PAGE_VIEWED');
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > window.innerHeight);
-    };
+  // Country counts for the shared footer, derived from the icons prop so the
+  // server parent's API stays unchanged. Matches getCountryCounts() ordering
+  // (unique countries, alphabetical).
+  const footerCountries = useMemo<CountryCount[]>(
+    () =>
+      [
+        ...icons.reduce((counts, icon) => {
+          counts.set(icon.country, (counts.get(icon.country) ?? 0) + 1);
+          return counts;
+        }, new Map<string, number>()),
+      ]
+        .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+        .map(([country, count]) => ({ country, count })),
+    [icons]
+  );
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+  useEffect(() => {
+    return () => {
+      if (spinIntervalRef.current) clearInterval(spinIntervalRef.current);
+    };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    trackEvent('SCROLL_TO_TOP_CLICKED');
-  };
-
-  const getResultMessage = (cities: Icon[]) => {
+  const getResultMessage = (cities: GridIcon[]) => {
     const cityNames = cities.map(icon => icon.city);
     const uniqueCities = [...new Set(cityNames)];
     
@@ -53,9 +63,34 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
     }
   };
 
-  const getDuplicateCities = (cities: Icon[]) => {
+  const getDuplicateCities = (cities: GridIcon[]) => {
     const cityNames = cities.map(icon => icon.city);
     return cityNames.filter((city, index) => cityNames.indexOf(city) !== index);
+  };
+
+  // Pick `count` icons at distinct random indices (no full-array shuffle)
+  const pickDistinctRandomIcons = (count: number): GridIcon[] => {
+    const pickedIndices = new Set<number>();
+    while (pickedIndices.size < Math.min(count, icons.length)) {
+      pickedIndices.add(Math.floor(Math.random() * icons.length));
+    }
+    return Array.from(pickedIndices, (index) => icons[index]);
+  };
+
+  const finishSpin = (result: GridIcon[]) => {
+    setDisplayIcons(result);
+    setIsSpinning(false);
+    setResultMessage(getResultMessage(result));
+
+    // Track result type
+    const uniqueCities = new Set(result.map(icon => icon.city));
+    if (uniqueCities.size === 1) {
+      trackEvent('ROULETTE_RESULT_SAME_CITY');
+    } else if (uniqueCities.size === 2) {
+      trackEvent('ROULETTE_RESULT_DUPLICATE_CITY');
+    } else {
+      trackEvent('ROULETTE_RESULT_THREE_DIFFERENT');
+    }
   };
 
   const spinRoulette = () => {
@@ -65,66 +100,57 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
     // Generate 3 random icons with increased probability for duplicates
     const random = Math.random();
-    let randomIcons: Icon[];
-    
+    let randomIcons: GridIcon[];
+
     if (random < 0.05) {
       // 5% chance for triple (all same city)
-      const shuffled = [...icons].sort(() => Math.random() - 0.5);
-      const selectedCity = shuffled[0];
+      const [selectedCity] = pickDistinctRandomIcons(1);
       randomIcons = [selectedCity, selectedCity, selectedCity];
     } else if (random < 0.25) {
       // 20% chance for double (2 same cities)
-      const shuffled = [...icons].sort(() => Math.random() - 0.5);
-      const selectedCity = shuffled[0];
-      const otherCities = shuffled.filter(icon => icon.city !== selectedCity.city);
-      const secondCity = otherCities[0];
+      const [selectedCity] = pickDistinctRandomIcons(1);
+      const otherCities = icons.filter(icon => icon.city !== selectedCity.city);
+      const secondCity = otherCities.length > 0
+        ? otherCities[Math.floor(Math.random() * otherCities.length)]
+        : selectedCity;
       randomIcons = [selectedCity, selectedCity, secondCity];
     } else {
       // 75% chance for all different cities
-      const shuffled = [...icons].sort(() => Math.random() - 0.5);
-      randomIcons = shuffled.slice(0, 3);
+      randomIcons = pickDistinctRandomIcons(3);
     }
-    
+
+    // Reduced motion: skip the ~8s animated spin and show the result immediately
+    if (prefersReducedMotion()) {
+      finishSpin(randomIcons);
+      return;
+    }
+
     // Start the spinning animation with variable speed
     let spinCount = 0;
     const maxSpins = 40;
     const baseInterval = 150;
     const slowDownFactor = 1.5; // How much to slow down
-    
-    const spinInterval = setInterval(() => {
-      const tempIcons = [...icons].sort(() => Math.random() - 0.5).slice(0, 3);
-      setDisplayIcons(tempIcons);
+
+    spinIntervalRef.current = setInterval(() => {
+      setDisplayIcons(pickDistinctRandomIcons(3));
       spinCount++;
 
       // Slow down towards the end
       if (spinCount >= maxSpins * 0.7) {
-        clearInterval(spinInterval);
+        if (spinIntervalRef.current) clearInterval(spinIntervalRef.current);
         // Start slower spinning for the final phase
         let finalSpinCount = 0;
         const finalSpins = 10;
-        const finalInterval = setInterval(() => {
-          const tempIcons = [...icons].sort(() => Math.random() - 0.5).slice(0, 3);
-          setDisplayIcons(tempIcons);
+        spinIntervalRef.current = setInterval(() => {
+          setDisplayIcons(pickDistinctRandomIcons(3));
           finalSpinCount++;
 
           if (finalSpinCount >= finalSpins) {
-            clearInterval(finalInterval);
-            setDisplayIcons(randomIcons);
-            setIsSpinning(false);
-            const message = getResultMessage(randomIcons);
-            setResultMessage(message);
-            
-            // Track result type
-            const cityNames = randomIcons.map(icon => icon.city);
-            const uniqueCities = [...new Set(cityNames)];
-            
-            if (uniqueCities.length === 1) {
-              trackEvent('ROULETTE_RESULT_SAME_CITY');
-            } else if (uniqueCities.length === 2) {
-              trackEvent('ROULETTE_RESULT_DUPLICATE_CITY');
-            } else {
-              trackEvent('ROULETTE_RESULT_THREE_DIFFERENT');
+            if (spinIntervalRef.current) {
+              clearInterval(spinIntervalRef.current);
+              spinIntervalRef.current = null;
             }
+            finishSpin(randomIcons);
           }
         }, baseInterval * slowDownFactor);
       }
@@ -135,31 +161,9 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Cherry Icon Header */}
+      {/* Cherry GridIcon Header */}
       <nav aria-label="Home navigation" className="relative flex justify-center items-center gap-8 py-16">
-        <div className="absolute md:fixed right-4 top-4 md:z-50 flex items-center gap-2">
-          <button
-            onClick={scrollToTop}
-            className={`p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 ${
-              showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
-            }`}
-            aria-label="Scroll to top"
-            aria-hidden={!showScrollTop}
-          >
-            <ArrowUp className="w-5 h-5" />
-          </button>
-          <a
-            href="https://github.com/anto1/city-icons"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            onClick={() => trackEvent('GITHUB_CLICKED')}
-            aria-label="View on GitHub"
-          >
-            <Github className="w-5 h-5" />
-          </a>
-          <ThemeToggle />
-        </div>
+        <HeaderControls />
         <Link href="/" className="w-14 h-14 text-foreground hover:opacity-80 transition-opacity" aria-label="Go to home page">
           <Image
             src="/cherry.svg"
@@ -184,11 +188,11 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
 
         {/* Roulette Cards */}
         <section aria-label="Travel destination picks" aria-live="polite" aria-busy={isSpinning}>
-          <ul className="grid grid-cols-3 gap-4 max-w-4xl mx-auto mb-8 list-none" role="list">
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8 list-none" role="list">
             {[0, 1, 2].map((index) => (
               <li
                 key={index}
-                className={`relative p-4 rounded-lg border-2 transition-all duration-300 w-full ${
+                className={`relative p-4 rounded-lg border-2 transition-all duration-300 w-full max-w-xs mx-auto sm:max-w-none ${
                   isSpinning
                     ? 'border-orange-400 bg-orange-50 dark:bg-orange-950 animate-pulse'
                     : 'border-border bg-card'
@@ -211,13 +215,13 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
                           className="w-14 h-14 dark:invert"
                         />
                       </div>
-                      <h2 className={`text-base font-medium mb-1 ${
+                      <p className={`text-base font-medium mb-1 ${
                         !isSpinning && duplicateCities.includes(displayIcons[index].city)
                           ? 'text-orange-600'
                           : 'text-foreground'
                       }`}>
                         {displayIcons[index].city}
-                      </h2>
+                      </p>
                       <p className="text-sm text-muted-foreground">
                         {displayIcons[index].country}
                       </p>
@@ -258,14 +262,14 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
           </Button>
         </div>
 
-        {/* Result Message */}
-        {resultMessage && (
-          <section className="text-center mt-8" aria-live="assertive">
+        {/* Result Message - region stays mounted so screen readers announce updates */}
+        <section className="text-center mt-8" aria-live="polite">
+          {resultMessage && (
             <p className="text-base md:text-xl font-medium text-foreground bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 rounded-lg px-4 md:px-6 py-3 md:py-4 max-w-2xl mx-auto">
               {resultMessage}
             </p>
-          </section>
-        )}
+          )}
+        </section>
       </main>
 
       {/* Back to Cities Link */}
@@ -279,67 +283,8 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
         </Link>
       </nav>
 
-      {/* Footer */}
-      <footer className="py-6 mt-16" role="contentinfo">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-foreground mb-2">
-            {icons.length} icons ©{' '}
-            <a
-              href="https://partdirector.ch"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('STUDIO_PARTDIRECTOR_FOOTER_CLICKED')}
-            >
-              Studio Partdirector
-            </a>
-            , {new Date().getFullYear()}
-          </p>
-          <nav aria-label="Footer links" className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-center">
-            <Link
-              href="/whats-new"
-              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('WHATS_NEW_CLICKED')}
-            >
-              What&apos;s New
-            </Link>
-            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-            <Link
-              href="/statistics"
-              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('STATISTICS_CLICKED')}
-            >
-              Statistics
-            </Link>
-            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-            <Link
-              href="/faq"
-              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('FAQ_CLICKED')}
-            >
-              FAQ
-            </Link>
-            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-            <Link
-              href="/license"
-              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
-            >
-              License
-            </Link>
-            <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-            <a
-              href="https://github.com/anto1/city-icons"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-              onClick={() => trackEvent('GITHUB_LINK_CLICKED')}
-            >
-              GitHub
-            </a>
-          </nav>
-        </div>
-      </footer>
+      {/* Footer — shared component (countries nav, credit line, footer links) */}
+      <IconFooter countries={footerCountries} totalIcons={icons.length} />
     </div>
   );
 } 

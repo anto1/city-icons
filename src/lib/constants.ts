@@ -22,8 +22,10 @@ export const GRID = {
   },
   /** Gap between grid items (in Tailwind units) */
   GAP: 4,
-  /** Number of skeleton items to show while loading */
-  SKELETON_COUNT: 12,
+  /** Leading grid images loaded eagerly (above-the-fold / LCP candidates) */
+  EAGER_LOAD_COUNT: 18,
+  /** First grid icons preloaded from the homepage head */
+  PRELOAD_ICON_COUNT: 6,
 } as const;
 
 // Hover effect constants

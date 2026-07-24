@@ -1,15 +1,27 @@
 import type { Metadata } from 'next';
+import { Instrument_Sans } from 'next/font/google';
 import './globals.css';
-import { Toaster } from 'sonner';
-import '@fontsource/instrument-sans';
 import { FathomAnalytics } from './fathom';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemedToaster } from '@/components/ThemedToaster';
 import iconData from '@/data';
 
 const cityCount = iconData.length;
 
+// Self-hosted variable font (weights 400-700) with automatic preload and
+// metric-matched fallback — replaces the @fontsource import, which shipped
+// weight 400 only (faux bold) and was discovered late via CSS (FOUT/CLS).
+const instrumentSans = Instrument_Sans({
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-instrument-sans',
+});
+
 export const metadata: Metadata = {
-  title: 'City Icons Collection',
+  title: {
+    default: 'City Icons Collection',
+    template: '%s | City Icons Collection',
+  },
   description: `Discover beautiful line art icons representing ${cityCount}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons for designers and developers.`,
   keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector', 'free icons', 'urban design'],
   authors: [{ name: 'Studio Partdirector' }],
@@ -21,14 +33,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://svgcities.com'),
-  alternates: {
-    canonical: 'https://svgcities.com/',
-  },
-
+  // Note: no alternates.canonical here — a root-layout canonical would be
+  // inherited by any page that forgets its own, silently pointing it at the
+  // homepage. Each page declares its own canonical (homepage: page.tsx).
   openGraph: {
     title: 'City Icons Collection',
     description: `Discover beautiful line art icons representing ${cityCount}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.`,
-    url: 'https://svgcities.com',
     siteName: 'City Icons Collection',
     images: [
       {
@@ -47,12 +57,11 @@ export const metadata: Metadata = {
     description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector.',
     images: ['/og-image.png'],
   },
+  // Indexing is the default — an explicit "index, follow" here would conflict
+  // with Next's automatic noindex on the built 404 page. Only non-default
+  // preview directives are declared.
   robots: {
-    index: true,
-    follow: true,
     googleBot: {
-      index: true,
-      follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -66,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="font-instrument-sans" suppressHydrationWarning>
+    <html lang="en" className={instrumentSans.variable} suppressHydrationWarning>
       <head>
         {/* Prevent flash of wrong theme */}
         <script
@@ -94,17 +103,6 @@ export default function RootLayout({
         {/* Preconnect to analytics (used by Fathom) */}
         <link rel="preconnect" href="https://cdn.usefathom.com" crossOrigin="anonymous" />
 
-        {/* Preload critical assets */}
-        <link rel="preload" href="/og-image.png" as="image" type="image/png" />
-
-        {/* Preload first visible icons (alphabetically sorted) */}
-        <link rel="preload" href="/icons/ae-abu-dhabi.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/gh-accra.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/in-agra.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/is-akureyri.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/cr-alajuela.svg" as="image" type="image/svg+xml" />
-        <link rel="preload" href="/icons/kz-alma-aty.svg" as="image" type="image/svg+xml" />
-        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -150,7 +148,7 @@ export default function RootLayout({
           <div id="main-content">
             {children}
           </div>
-          <Toaster />
+          <ThemedToaster />
         </ThemeProvider>
       </body>
     </html>

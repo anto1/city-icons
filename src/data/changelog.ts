@@ -1,11 +1,47 @@
 // Changelog tracking weekly icon additions
 // Add new entries at the top of the array
 
+// A city added in a batch. Use the object form for city names that exist in
+// more than one country (e.g. Granada, Jerusalem, Córdoba) so lookups resolve
+// to the right icon; plain strings are fine for unambiguous names.
+export type ChangelogCity = string | { city: string; country: string };
+
 export interface ChangelogEntry {
   week: string; // ISO week format: YYYY-WXX or date range
   date: string; // Display date
-  cities: string[]; // City names added
+  cities: ChangelogCity[]; // City names added
   description?: string; // Optional description
+}
+
+// Display name of a changelog city entry
+export function getChangelogCityName(city: ChangelogCity): string {
+  return typeof city === 'string' ? city : city.city;
+}
+
+// Whether a changelog city entry refers to the given icon. String entries
+// match by city name alone; object entries also require the country to match.
+export function changelogCityMatchesIcon(
+  city: ChangelogCity,
+  icon: { city: string; country: string }
+): boolean {
+  if (icon.city.toLowerCase() !== getChangelogCityName(city).toLowerCase()) return false;
+  return typeof city === 'string' || icon.country.toLowerCase() === city.country.toLowerCase();
+}
+
+// Parse ISO week string (e.g. "2025-W02") to a Date
+export function weekToDate(week: string): Date {
+  const match = week.match(/^(\d{4})-W(\d{2})$/);
+  if (!match) return new Date('2024-12-16'); // fallback to initial collection date
+  const year = parseInt(match[1]);
+  const weekNum = parseInt(match[2]);
+  // Jan 4 is always in ISO week 1
+  const jan4 = new Date(year, 0, 4);
+  const dayOfWeek = jan4.getDay() || 7;
+  const isoWeek1Start = new Date(jan4);
+  isoWeek1Start.setDate(jan4.getDate() - dayOfWeek + 1);
+  const result = new Date(isoWeek1Start);
+  result.setDate(result.getDate() + (weekNum - 1) * 7);
+  return result;
 }
 
 export const changelog: ChangelogEntry[] = [
@@ -18,7 +54,7 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2026-W07',
     date: 'February 9-15, 2026',
-    cities: ['Jerusalem', 'Granada', 'Subotica', 'Karlsruhe', 'São Paulo', 'Stuttgart', 'Cologne', 'Liverpool', 'Rennes', 'Vung Tau', 'Aachen', 'Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s', 'Honiara', 'Nukuʻalofa', 'Funafuti'],
+    cities: [{ city: 'Jerusalem', country: 'Palestine' }, { city: 'Granada', country: 'Nicaragua' }, 'Subotica', 'Karlsruhe', { city: 'São Paulo (MASP)', country: 'Brazil' }, 'Stuttgart', 'Cologne', 'Liverpool', 'Rennes', 'Vung Tau', 'Aachen', 'Thimphu', 'Tunis', 'Willemstad', 'Windhoek', 'Maputo', 'Ouagadougou', 'Soufrière', 'St. George\'s', 'Honiara', 'Nukuʻalofa', 'Funafuti'],
     description: 'New additions across Europe, Middle East, Asia, Africa, Central and South America, Caribbean, and Oceania',
   },
   {
@@ -60,7 +96,7 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2024-W49',
     date: 'December 2-8, 2024',
-    cities: ['Istanbul', 'Jerusalem', 'Tehran', 'Dubai', 'Baku', 'Tbilisi', 'Yerevan', 'Tel Aviv', 'Beirut', 'Doha', 'Amman', 'Muscat', 'Ankara', 'Riyadh', 'Abu Dhabi', 'Manama', 'Kuwait City', 'Isfahan', 'Izmir', 'Mashhad', 'Batumi', 'Samarra', 'Haifa'],
+    cities: ['Istanbul', { city: 'Jerusalem', country: 'Israel' }, 'Tehran', 'Dubai', 'Baku', 'Tbilisi', 'Yerevan', 'Tel Aviv', 'Beirut', 'Doha', 'Amman', 'Muscat', 'Ankara', 'Riyadh', 'Abu Dhabi', 'Manama', 'Kuwait City', 'Isfahan', 'Izmir', 'Mashhad', 'Batumi', 'Samarra', 'Haifa'],
     description: 'Middle East and Caucasus collection',
   },
   {
@@ -96,7 +132,7 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2024-W43',
     date: 'October 21-27, 2024',
-    cities: ['Nicosia', 'Vatican City', 'Andorra la Vella', 'Vaduz', 'Pristina', 'Sofia', 'Tirana', 'Valletta', 'Luxembourg', 'Bucharest', 'Tallinn', 'Podgorica', 'Vilnius', 'Gijón', 'Málaga', 'Córdoba', 'Granada'],
+    cities: ['Nicosia', 'Vatican City', 'Andorra la Vella', 'Vaduz', 'Pristina', 'Sofia', 'Tirana', 'Valletta', 'Luxembourg', 'Bucharest', 'Tallinn', 'Podgorica', 'Vilnius', 'Gijón', 'Málaga', { city: 'Córdoba', country: 'Spain' }, { city: 'Granada', country: 'Spain' }],
     description: 'Small European states and Iberian cities',
   },
   {
@@ -138,14 +174,16 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2024-W36',
     date: 'September 2-8, 2024',
-    cities: ['Buenos Aires', 'Rio de Janeiro', 'São Paulo', 'Santiago', 'Lima', 'Cusco', 'Brasilia', 'Montevideo', 'Córdoba'],
+    cities: ['Buenos Aires', 'Rio de Janeiro', { city: 'São Paulo', country: 'Brazil' }, 'Santiago', 'Lima', 'Cusco', 'Brasilia', 'Montevideo', { city: 'Córdoba', country: 'Argentina' }],
     description: 'South American collection',
   },
 ];
 
-// Helper to get total cities added in last N weeks
+// Helper to get entries added in the last N weeks (by real ISO week date)
 export function getRecentAdditions(weeks: number = 4): ChangelogEntry[] {
-  return changelog.slice(0, weeks);
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - weeks * 7);
+  return changelog.filter(entry => weekToDate(entry.week) >= cutoff);
 }
 
 // Helper to get total count of recently added cities
