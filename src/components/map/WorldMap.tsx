@@ -11,6 +11,7 @@ import {
   type MouseEvent as ReactMouseEvent,
 } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Minus, Plus, RotateCcw } from 'lucide-react';
 import { trackEvent } from 'fathom-client';
 import { usePrefersReducedMotion } from '@/components/PageHeader';
@@ -21,6 +22,8 @@ export interface MapMarker {
   id: string;
   city: string;
   country: string;
+  region: string;
+  svgFilename: string;
   url: string;
   x: number;
   y: number;
@@ -97,15 +100,22 @@ const Markers = memo(function Markers({
   markers,
   k,
   animate,
+  activeRegion,
   onNavigate,
   onMarkerFocus,
 }: {
   markers: MapMarker[];
   k: number;
   animate: boolean;
+  /** Region preset in effect, or null/'World' for no emphasis. */
+  activeRegion: string | null;
   onNavigate: (event: ReactMouseEvent<HTMLAnchorElement>) => void;
   onMarkerFocus: (marker: MapMarker) => void;
 }) {
+  // Selecting a region emphasises its markers and fades the rest. Colour is
+  // never the only signal — the preset button carries aria-pressed and its own
+  // active styling, so this is reinforcement rather than the sole cue.
+  const emphasise = activeRegion !== null && activeRegion !== 'World';
   return (
     <>
       {markers.map((marker) => (
@@ -113,7 +123,11 @@ const Markers = memo(function Markers({
           key={marker.id}
           href={marker.url}
           prefetch={false}
-          className="group absolute block h-0 w-0 hover:z-20 focus-within:z-20"
+          className={`group absolute block h-0 w-0 hover:z-20 focus-within:z-20 ${
+            emphasise && marker.region !== activeRegion
+              ? 'opacity-25 hover:opacity-100 focus-within:opacity-100'
+              : ''
+          }`}
           style={{
             left: `${marker.x}%`,
             top: `${marker.y}%`,
@@ -134,11 +148,28 @@ const Markers = memo(function Markers({
               aria-hidden="true"
             />
           </span>
+          {/* Preview card. Fixed size so the box does not resize as the icon
+              loads, and pointer-events-none so it never blocks the markers it
+              overlaps in dense regions. The icon is fetched only on hover or
+              focus — at ~13KB each, preloading all of them would be wasteful. */}
           <span
-            className="pointer-events-none absolute -top-8 left-0 hidden -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-popover px-2 py-0.5 text-xs text-popover-foreground shadow-sm group-hover:block group-focus-visible:block"
+            className="pointer-events-none absolute -top-[4.75rem] left-0 hidden w-28 -translate-x-1/2 flex-col items-center gap-1 rounded-md border border-border bg-popover px-2 py-1.5 text-center shadow-sm group-hover:flex group-focus-visible:flex"
             aria-hidden="true"
           >
-            {marker.city}
+            <Image
+              src={`/icons/${marker.svgFilename}`}
+              alt=""
+              width={40}
+              height={40}
+              loading="lazy"
+              className="h-10 w-10 dark:invert"
+            />
+            <span className="w-full truncate text-xs font-medium text-popover-foreground">
+              {marker.city}
+            </span>
+            <span className="w-full truncate text-[0.6875rem] leading-tight text-muted-foreground">
+              {marker.country}
+            </span>
           </span>
         </Link>
       ))}
@@ -422,6 +453,7 @@ export function WorldMap({ markers, regionViews }: WorldMapProps) {
               markers={markers}
               k={view.k}
               animate={animate}
+              activeRegion={activeRegion}
               onNavigate={onMarkerNavigate}
               onMarkerFocus={onMarkerFocus}
             />

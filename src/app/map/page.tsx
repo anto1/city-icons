@@ -5,6 +5,7 @@ import { getCoordinate, getIconsMissingCoordinates } from '@/data/coordinates';
 import { getIconUrl } from '@/lib/utils';
 import { projectToPercent } from '@/components/map/projection';
 import { WorldMap, type MapMarker, type RegionView } from '@/components/map/WorldMap';
+import { VIEW_H, VIEW_W } from '@/components/map/world-land';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
 
@@ -56,6 +57,8 @@ function buildMapData(): MapData {
       id: icon._id,
       city: icon.city,
       country: icon.country,
+      region: icon.region,
+      svgFilename: icon.svgFilename,
       url: getIconUrl(icon),
       x,
       y,
@@ -68,6 +71,30 @@ function buildMapData(): MapData {
     bounds.y1 = Math.max(bounds.y1, y);
     bounds.count += 1;
     regionBounds.set(icon.region, bounds);
+  }
+
+  // Cities with more than one icon (Hanoi, São Paulo) resolve to identical
+  // coordinates, so their markers stack and only the topmost is clickable.
+  // Spread each coincident group evenly around a small circle — the offset is
+  // fixed in map space, so it is imperceptible at world zoom and separates the
+  // markers as the user zooms in. y is scaled by the basemap aspect so the
+  // arrangement stays circular on screen rather than elliptical.
+  const SPREAD_X = 0.16; // % of basemap width
+  const aspect = VIEW_W / VIEW_H;
+  const groups = new Map<string, MapMarker[]>();
+  for (const marker of markers) {
+    const key = `${marker.x.toFixed(3)}|${marker.y.toFixed(3)}`;
+    const group = groups.get(key);
+    if (group) group.push(marker);
+    else groups.set(key, [marker]);
+  }
+  for (const group of groups.values()) {
+    if (group.length < 2) continue;
+    group.forEach((marker, index) => {
+      const angle = (2 * Math.PI * index) / group.length;
+      marker.x += SPREAD_X * Math.cos(angle);
+      marker.y += SPREAD_X * aspect * Math.sin(angle);
+    });
   }
 
   const regionViews: RegionView[] = [
