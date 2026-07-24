@@ -18,6 +18,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Renamed assets keep their old URL working. Icon files are served with
+  // year-long immutable cache headers and may be hotlinked, so a rename would
+  // otherwise 404 for anyone already pointing at the old filename.
+  async redirects() {
+    return [
+      {
+        source: '/icons/uk-liverpool.svg',
+        destination: '/icons/gb-liverpool.svg',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

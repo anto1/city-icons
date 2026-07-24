@@ -29,7 +29,6 @@ const outFile = join(root, 'src', 'data', 'coordinates.json');
 
 // --- Country-code fixes (svgFilename prefix -> ISO 3166-1 alpha-2 used by GeoNames)
 const CC_ALIASES = {
-  uk: 'gb', // United Kingdom files use "uk-"
   ps: 'il', // Jerusalem is filed under IL in GeoNames
 };
 

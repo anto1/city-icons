@@ -7,6 +7,7 @@
 // - `svgFilename` values with no matching file in public/icons
 // - orphan SVGs in public/icons not referenced by the dataset
 // - missing required fields
+// - a country whose icons use more than one filename prefix
 // - README icon/country badge counts drifting from the dataset
 
 import { readdirSync, readFileSync } from 'node:fs';
@@ -101,6 +102,25 @@ for (const { entry, source } of icons) {
 for (const file of svgFiles) {
   if (!referenced.has(file)) {
     errors.push(`orphan SVG public/icons/${file} is not referenced by any dataset entry`);
+  }
+}
+
+// Every icon of a country must share one filename prefix. Catches the class of
+// bug that produced `vt-hanoi.svg` (Vietnam is `vn-`) and `uk-liverpool.svg`
+// (the UK's other icons are `gb-`), where a stray prefix silently breaks the
+// country-code lookup in scripts/build-city-coordinates.mjs.
+const prefixesByCountry = new Map();
+for (const { entry, source } of icons) {
+  if (typeof entry.svgFilename !== 'string' || !entry.country) continue;
+  const prefix = entry.svgFilename.split('-')[0];
+  if (!prefixesByCountry.has(entry.country)) prefixesByCountry.set(entry.country, new Map());
+  const seen = prefixesByCountry.get(entry.country);
+  if (!seen.has(prefix)) seen.set(prefix, source);
+}
+for (const [country, seen] of prefixesByCountry) {
+  if (seen.size > 1) {
+    const detail = [...seen].map(([prefix, source]) => `"${prefix}-" (${source})`).join(' and ');
+    errors.push(`${country} uses more than one filename prefix: ${detail} — pick the ISO 3166-1 alpha-2 code and rename the others`);
   }
 }
 

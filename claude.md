@@ -153,7 +153,7 @@ Consolidated set — do not invent new categories without consolidating:
 
 ## Adding New Icons
 
-1. Add SVG to `public/icons/` named `{country-code}-{city}.svg`. The country-code prefix must match the code already used for that country's files — check with `ls public/icons | grep '^xx-'` (e.g. Vietnam is `vn-`, not `vt-`). Known quirks: UK files are `gb-` except legacy `uk-liverpool.svg`; the coordinates script aliases `uk`→`gb` and `ps`→`il`.
+1. Add SVG to `public/icons/` named `{country-code}-{city}.svg`, using the ISO 3166-1 alpha-2 code — which must match the code already used for that country's files (e.g. Vietnam is `vn-`, not `vt-`; the UK is `gb-`). `validate:data` fails the build if a country's icons use more than one prefix. One deliberate exception: Palestine files are `ps-` and the coordinates script aliases `ps`→`il`, since GeoNames files Jerusalem under IL.
 2. Run `npm run normalize:svgs` (currentColor, 120×120 viewBox, SVGO).
 3. Add entry to the appropriate region file in `src/data/icons/` — `_id` is the highest across **all** region files + 1.
 4. If the city already has an icon, set `slug` on the new entry (see Icon Data Structure) — the build fails on URL collisions otherwise.
