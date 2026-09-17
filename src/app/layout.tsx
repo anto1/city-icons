@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Instrument_Sans } from 'next/font/google';
 import './globals.css';
 import { FathomAnalytics } from './fathom';
+import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ThemedToaster } from '@/components/ThemedToaster';
 import iconData from '@/data';
@@ -145,6 +146,7 @@ export default function RootLayout({
             Skip to main content
           </a>
           <FathomAnalytics />
+          <Analytics />
           <div id="main-content">
             {children}
           </div>

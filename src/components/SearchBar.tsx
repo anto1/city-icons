@@ -161,7 +161,7 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
           setActiveIndex(-1);
         }}
         onKeyDown={handleKeyDown}
-        className="pl-12 text-lg font-medium h-14 md:!text-2xl md:font-bold md:h-16"
+        className="pl-12 text-lg h-14 md:!text-2xl md:h-16"
         role="combobox"
         aria-controls="search-suggestions"
         aria-expanded={showSuggestions}
