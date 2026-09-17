@@ -2046,5 +2046,22 @@
     "svgFilename": "pl-krakow.svg",
     "description": "Kraków is Poland's ancient royal capital, and no symbol of its street life is more beloved than the obwarzanek krakowski — a braided ring of dough, boiled and then baked to a golden crust and sprinkled with poppy seeds, sesame, or salt. Sold from blue carts on nearly every corner of the Old Town, as it has been since the Middle Ages, the ring bread is protected by the European Union as a regional specialty, with tens of thousands baked fresh each morning for locals and visitors alike.",
     "region": "Europe"
+  },
+  {
+    "_id": "316",
+    "name": "Leverkusen Bayer Cross",
+    "city": "Leverkusen",
+    "country": "Germany",
+    "category": "Landmarks",
+    "tags": [
+      "cross",
+      "illuminated-sign",
+      "industry",
+      "rhine",
+      "skyline"
+    ],
+    "svgFilename": "de-leverkusen.svg",
+    "description": "Leverkusen is marked by the Bayer-Kreuz, the illuminated cross that has risen over the Rhine since 1933 and, after being dismantled in the Second World War, was rebuilt in 1958. Roughly 51 metres across and visible for kilometres after dark, it serves as the city's night-time orientation point and the emblem of the chemical works that Leverkusen grew around.",
+    "region": "Europe"
   }
 ]

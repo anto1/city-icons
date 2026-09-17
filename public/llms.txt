@@ -1,6 +1,6 @@
 # City Icons Collection
 
-> 301 minimalist SVG line-art icons of 299 cities in 150 countries, each depicting
+> 303 minimalist SVG line-art icons of 301 cities in 150 countries, each depicting
 > the city's most recognizable landmark. By Studio Partdirector (https://partdirector.ch).
 
 ## Structure

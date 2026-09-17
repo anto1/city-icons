@@ -396,5 +396,22 @@
     "svgFilename": "tr-antalya.svg",
     "description": "Antalya is the sun-drenched capital of the Turkish Riviera, where life slows down over endless glasses of çay. Served scalding hot in the tulip-shaped ince belli glass on a small saucer, Turkish tea is the ritual that binds the day together — offered in the bazaar, after meals, and at tea gardens perched on the cliffs above the Mediterranean. In Antalya's old quarter of Kaleiçi, sipping tea beneath the palms as boats drift out of the Roman-era harbour is the city's essential pleasure.",
     "region": "Middle East"
+  },
+  {
+    "_id": "315",
+    "name": "Kutaisi Colchis Fountain",
+    "city": "Kutaisi",
+    "country": "Georgia",
+    "category": "Landmarks",
+    "tags": [
+      "fountain",
+      "monument",
+      "sculpture",
+      "golden-horses",
+      "square"
+    ],
+    "svgFilename": "ge-kutaisi.svg",
+    "description": "The Colchis Fountain stands at the heart of Kutaisi's Central Square, crowned with enlarged gilded replicas of ancient Colchian jewellery — tamada figures, horses and deer unearthed from burial sites across western Georgia. Unveiled in 2011, its tiered basin and cluster of golden animals turned centuries-old goldsmithing from the kingdom of Colchis into the city's modern emblem.",
+    "region": "Middle East"
   }
 ]

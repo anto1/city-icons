@@ -1,13 +1,13 @@
 <p align="center">
   <a href="https://svgcities.com">
-    <img src="public/og-image.png" alt="City Icons — 301 minimalist SVG icons of cities around the world" width="600" />
+    <img src="public/og-image.png" alt="City Icons — 303 minimalist SVG icons of cities around the world" width="600" />
   </a>
 </p>
 
 <h1 align="center">City Icons</h1>
 
 <p align="center">
-  <strong>301 minimalist line-art SVG icons representing cities and their landmarks from around the world.</strong>
+  <strong>303 minimalist line-art SVG icons representing cities and their landmarks from around the world.</strong>
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/icons-301-orange" alt="301 icons" />
+  <img src="https://img.shields.io/badge/icons-303-orange" alt="303 icons" />
   <img src="https://img.shields.io/badge/countries-150-blue" alt="150 countries" />
   <img src="https://img.shields.io/badge/regions-8-green" alt="8 regions" />
   <img src="https://img.shields.io/badge/format-SVG-purple" alt="SVG format" />
@@ -42,10 +42,10 @@ Browse, search, download, and copy — all for free.
 
 | Region | Icons | Example Cities |
 |--------|------:|----------------|
-| Europe | 125 | Paris, Barcelona, Berlin, Rome, London, Prague, Amsterdam |
+| Europe | 126 | Paris, Barcelona, Berlin, Rome, London, Prague, Amsterdam |
 | Asia | 49 | Tokyo, Seoul, Shanghai, Delhi, Kyoto, Taipei, Thimphu |
 | North America | 30 | New York, San Francisco, Toronto, Chicago, Vancouver |
-| Middle East | 25 | Istanbul, Jerusalem, Dubai, Tehran, Baku |
+| Middle East | 26 | Istanbul, Jerusalem, Dubai, Tehran, Baku |
 | South America | 19 | Buenos Aires, Rio de Janeiro, São Paulo, Lima, Bogotá |
 | Africa | 25 | Cairo, Cape Town, Marrakesh, Nairobi, Accra, Tunis, Windhoek |
 | Oceania | 14 | Sydney, Melbourne, Wellington, Perth |
@@ -55,7 +55,7 @@ Icon and country totals are checked against the dataset at build time by `script
 
 ## Features
 
-- **Browse** 301 city icons organized by country and region
+- **Browse** 303 city icons organized by country and region
 - **Search** by city name, country, tag, or region
 - **Explore** every city on the [World Map](https://svgcities.com/map)
 - **Download** icons as SVG or PNG, or grab [the whole collection as a ZIP](https://svgcities.com/city-icons.zip)
@@ -118,7 +118,7 @@ br-rio-de-janeiro.svg → Rio de Janeiro, Brazil
 | Analytics | Fathom |
 | Deploy | Vercel |
 
-All 301 city pages are statically generated at build time. Icons are served as static files with 1-year immutable cache headers.
+All 303 city pages are statically generated at build time. Icons are served as static files with 1-year immutable cache headers.
 
 ## Project Structure
 
@@ -141,7 +141,7 @@ src/
 
 scripts/                      # Build/maintenance scripts (validation, SVG normalization,
                               # zip/JSON index, coordinates, basemap)
-public/icons/                 # 301 SVG files
+public/icons/                 # 303 SVG files
 ```
 
 ## Development

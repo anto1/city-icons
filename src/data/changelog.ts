@@ -53,6 +53,12 @@ export function weekToDate(week: string): Date {
 
 export const changelog: ChangelogEntry[] = [
   {
+    week: '2026-W38',
+    date: 'September 14-20, 2026',
+    cities: ['Kutaisi', 'Leverkusen'],
+    description: 'The Colchis Fountain for Kutaisi and the Bayer Cross for Leverkusen',
+  },
+  {
     week: '2026-W30',
     date: 'July 20-26, 2026',
     cities: ['Burgas', 'Bordeaux', 'Toulouse', 'Kraków', 'Antalya', { city: 'Hanoi', country: 'Vietnam', slug: 'hanoi-temple-of-literature' }],
