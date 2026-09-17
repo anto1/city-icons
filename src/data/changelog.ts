@@ -55,8 +55,8 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2026-W38',
     date: 'September 14-20, 2026',
-    cities: ['Kutaisi', 'Leverkusen'],
-    description: 'The Colchis Fountain for Kutaisi and the Bayer Cross for Leverkusen',
+    cities: ['Kutaisi', 'Leverkusen', 'Glasgow', 'Gibraltar', 'Sibiu', 'Longyearbyen'],
+    description: 'Six additions, including Gibraltar and Svalbard as new countries',
   },
   {
     week: '2026-W30',

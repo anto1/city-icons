@@ -2063,5 +2063,74 @@
     "svgFilename": "de-leverkusen.svg",
     "description": "Leverkusen is marked by the Bayer-Kreuz, the illuminated cross that has risen over the Rhine since 1933 and, after being dismantled in the Second World War, was rebuilt in 1958. Roughly 51 metres across and visible for kilometres after dark, it serves as the city's night-time orientation point and the emblem of the chemical works that Leverkusen grew around.",
     "region": "Europe"
+  },
+  {
+    "_id": "317",
+    "name": "Glasgow Duke of Wellington with Cone",
+    "city": "Glasgow",
+    "country": "UK",
+    "category": "Culture",
+    "tags": [
+      "statue",
+      "traffic-cone",
+      "humour",
+      "equestrian",
+      "folk-tradition"
+    ],
+    "svgFilename": "gb-glasgow.svg",
+    "description": "Outside Glasgow's Gallery of Modern Art, the Duke of Wellington's equestrian statue has worn a traffic cone on its head since at least the 1980s, replaced by passers-by within hours whenever it is removed. A 2013 council proposal to double the plinth's height and end the practice was withdrawn after thousands objected, and the cone is now treated as part of the city's self-image rather than vandalism.",
+    "region": "Europe"
+  },
+  {
+    "_id": "318",
+    "name": "Gibraltar Barbary Macaque",
+    "city": "Gibraltar",
+    "country": "Gibraltar",
+    "category": "Culture",
+    "tags": [
+      "macaque",
+      "monkey",
+      "rock",
+      "wildlife",
+      "legend"
+    ],
+    "svgFilename": "gi-gibraltar.svg",
+    "description": "The Barbary macaques on the Rock of Gibraltar are the only wild monkey population in Europe. Local tradition holds that British rule of the territory lasts only as long as the macaques remain, a belief taken seriously enough that Winston Churchill ordered the troop replenished in 1942 when numbers fell to a handful. Several hundred now live on the upper Rock.",
+    "region": "Europe"
+  },
+  {
+    "_id": "319",
+    "name": "Sibiu Eyes",
+    "city": "Sibiu",
+    "country": "Romania",
+    "category": "Architecture",
+    "tags": [
+      "eyes",
+      "dormer",
+      "roof",
+      "transylvanian",
+      "saxon",
+      "folklore"
+    ],
+    "svgFilename": "ro-sibiu.svg",
+    "description": "The old town of Sibiu is watched over by its 'eyes': narrow eyebrow-shaped dormer vents set low in the steep tiled roofs, built by Transylvanian Saxon householders to ventilate attics used for curing cheese and storing grain. Seen from the street the half-lidded openings appear to follow passers-by, and they have become the city's best-known visual signature.",
+    "region": "Europe"
+  },
+  {
+    "_id": "320",
+    "name": "Longyearbyen Polar Bear Warning Sign",
+    "city": "Longyearbyen",
+    "country": "Svalbard",
+    "category": "Culture",
+    "tags": [
+      "polar-bear",
+      "warning-sign",
+      "arctic",
+      "wildlife",
+      "road-sign"
+    ],
+    "svgFilename": "sj-longyearbyen.svg",
+    "description": "Triangular signs at the edge of Longyearbyen mark where the settlement ends and polar bear country begins, the Norwegian text beneath the bear noting that the warning applies across the whole of Svalbard. Anyone travelling beyond the town is expected to carry a firearm and a means of scaring bears off, which makes the sign both a practical instruction and the archipelago's most photographed emblem.",
+    "region": "Europe"
   }
 ]

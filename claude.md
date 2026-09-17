@@ -1,6 +1,6 @@
 # City Icons
 
-Minimalist SVG icon collection: 303 icons covering 301 cities in 150 countries. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
+Minimalist SVG icon collection: 307 icons covering 305 cities in 152 countries. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
 
 **Live site:** https://svgcities.com
 
@@ -70,7 +70,7 @@ src/
 
 scripts/                   # Node build/maintenance scripts (see Commands)
 public/
-├── icons/                 # 303 SVG files (naming: {country-code}-{city}.svg)
+├── icons/                 # 307 SVG files (naming: {country-code}-{city}.svg)
 ├── llms.txt               # Hand-maintained LLM-facing site summary (keep counts in sync)
 ├── icons.json             # GENERATED, gitignored (scripts/build-downloads.mjs)
 └── city-icons.zip         # GENERATED, gitignored (scripts/build-downloads.mjs)
