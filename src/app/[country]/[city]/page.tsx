@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import CityPage from '@/components/CityPage';
+import { getIconAddedDate } from '@/lib/added-date';
 import iconData, { getCountryCounts, getSortedIcons } from '@/data';
 import { Icon, toGridIcon } from '@/types';
 import { findIconBySlugs, slugify, getCitySlug } from '@/lib/utils';
@@ -38,13 +39,26 @@ function generateStructuredData(icon: Icon, countrySlug: string, citySlug: strin
       name: icon.name,
       description: icon.description || `Icon representing ${icon.city}, ${icon.country}`,
       url: pageUrl,
+      // Google Images reads the licence fields off the ImageObject itself, not
+      // off the enclosing CreativeWork — without them here there is no
+      // "Licensable" badge, which is the one rich result an icon site can earn.
       image: {
         '@type': 'ImageObject',
         url: `${baseUrl}/icons/${icon.svgFilename}`,
         contentUrl: `${baseUrl}/icons/${icon.svgFilename}`,
+        thumbnailUrl: `${pageUrl}/opengraph-image`,
         encodingFormat: 'image/svg+xml',
         name: `${icon.name} icon`,
         description: `SVG icon of ${icon.name} representing ${icon.city}, ${icon.country}`,
+        license: 'https://creativecommons.org/licenses/by/4.0/',
+        acquireLicensePage: `${baseUrl}/license`,
+        creditText: 'Studio Partdirector',
+        copyrightNotice: 'Studio Partdirector',
+        creator: {
+          '@type': 'Organization',
+          name: 'Studio Partdirector',
+          url: 'https://partdirector.ch',
+        },
       },
       author: {
         '@type': 'Organization',
@@ -152,6 +166,7 @@ export default async function IconPage({ params }: PageProps) {
         exploreIcons={exploreIcons}
         footerCountries={getCountryCounts()}
         totalIcons={icons.length}
+        addedOn={getIconAddedDate(icon)}
       />
     </>
   );
@@ -183,12 +198,16 @@ export async function generateMetadata({ params }: PageProps) {
     ? name.slice(baseCity.length + 1).trim()
     : name;
   const isCityOnly = landmark.toLowerCase() === baseCity.toLowerCase();
+  // "{City} symbol" is where the real demand sits: these pages already rank on
+  // queries like "madrid symbol" and "liver bird liverpool", while "city icons
+  // svg" has no measurable volume. Keep the landmark first, name the city as a
+  // symbol, and keep "SVG icon" for the download intent.
   const title = isCityOnly
-    ? `${baseCity} SVG Icon`
-    : `${landmark} SVG Icon – ${baseCity}`;
+    ? `${baseCity} Symbol – SVG Icon`
+    : `${landmark} – ${baseCity} Symbol SVG Icon`;
   const description = isCityOnly
-    ? `Free ${baseCity} city icon — minimalist SVG line art from ${icon.country}. Download the SVG, copy the code, or export a PNG.`
-    : `Free ${landmark} SVG icon — minimalist line art from ${baseCity}, ${icon.country}. Download the SVG, copy the code, or export a PNG.`;
+    ? `${baseCity} and the symbol that stands for it, drawn as minimalist line art from ${icon.country}. Free SVG icon — download, copy the code, or export a PNG.`
+    : `The ${landmark} is a symbol of ${baseCity}, ${icon.country}, drawn here as minimalist line art. Free SVG icon — download, copy the code, or export a PNG.`;
 
   return {
     title,

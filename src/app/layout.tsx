@@ -20,10 +20,13 @@ const instrumentSans = Instrument_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'City Icons Collection',
-    template: '%s | City Icons Collection',
+    // The suffix is deliberately short: at 24 characters the old
+    // " | City Icons Collection" pushed a third of the city titles past the
+    // ~60 characters Google renders, truncating the city name itself.
+    default: `Free SVG City Icons – ${cityCount} City Symbols in Line Art`,
+    template: '%s | svgcities',
   },
-  description: `Discover beautiful line art icons representing ${cityCount}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons for designers and developers.`,
+  description: `Line art icons for ${cityCount} cities worldwide — the landmark or symbol that stands for each one, drawn by Studio Partdirector. Search, download and copy free SVG icons.`,
   keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector', 'free icons', 'urban design'],
   authors: [{ name: 'Studio Partdirector' }],
   creator: 'Studio Partdirector',

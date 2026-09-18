@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Download, Copy, ImageDown, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from 'fathom-client';
-import { getIconUrl, getIconSvgUrl, slugify } from '@/lib/utils';
+import { getIconUrl, getIconSvgUrl, slugify, getCitySlug } from '@/lib/utils';
 import { IconFooter } from '@/components/IconFooter';
 import { IconCard } from '@/components/IconCard';
 import { HeaderControls } from './PageHeader';
@@ -28,6 +28,8 @@ interface CityPageProps {
   footerCountries: CountryCount[];
   /** Total number of icons in the collection (footer credit line). */
   totalIcons: number;
+  /** Month this icon was added, from the changelog. */
+  addedOn?: { iso: string; label: string };
 }
 
 export default function CityPage({
@@ -37,8 +39,17 @@ export default function CityPage({
   exploreIcons,
   footerCountries,
   totalIcons,
+  addedOn,
 }: CityPageProps) {
   const [svgContent, setSvgContent] = useState<string | null>(null);
+
+  // Same landmark derivation as the page title: names are usually
+  // "{City} {Landmark}", so strip a leading city prefix to isolate the landmark.
+  const trimmedName = icon.name.trim();
+  const landmark = trimmedName.toLowerCase().startsWith(`${icon.city.toLowerCase()} `)
+    ? trimmedName.slice(icon.city.length + 1).trim()
+    : trimmedName;
+  const citySlug = getCitySlug(icon);
 
   // Fetch SVG content on-demand for download/copy functionality
   const fetchSvgContent = useCallback(async () => {
@@ -318,7 +329,10 @@ export default function CityPage({
         </div>
 
         {/* Description - centered */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <section className="text-center max-w-2xl mx-auto mb-12" aria-labelledby="about-heading">
+          <h2 id="about-heading" className="text-2xl font-bold mb-4">
+            About the {landmark}
+          </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             {icon.description}
           </p>
@@ -334,7 +348,69 @@ export default function CityPage({
               ))}
             </div>
           )}
-        </div>
+        </section>
+
+        {/* Icon details — everything about the file itself, in one block that
+            also gives the page the words its title promises (SVG, download,
+            licence) alongside the landmark prose above. */}
+        <section className="max-w-2xl mx-auto mb-12" aria-labelledby="details-heading">
+          <h2 id="details-heading" className="text-2xl font-bold text-center mb-6">
+            Icon details
+          </h2>
+          <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm">
+            <dt className="text-muted-foreground">Symbol</dt>
+            <dd>{icon.name}</dd>
+
+            <dt className="text-muted-foreground">City</dt>
+            <dd>
+              <Link href={`/${slugify(icon.country)}`} className="underline underline-offset-4 hover:no-underline">
+                {icon.city}, {icon.country}
+              </Link>
+            </dd>
+
+            {icon.region && (
+              <>
+                <dt className="text-muted-foreground">Region</dt>
+                <dd>{icon.region}</dd>
+              </>
+            )}
+
+            {icon.category && (
+              <>
+                <dt className="text-muted-foreground">Category</dt>
+                <dd>{icon.category}</dd>
+              </>
+            )}
+
+            <dt className="text-muted-foreground">Format</dt>
+            <dd>SVG (scalable vector), plus PNG export at {PNG_SIZE}px</dd>
+
+            <dt className="text-muted-foreground">File</dt>
+            <dd><code className="text-xs">{icon.svgFilename}</code></dd>
+
+            <dt className="text-muted-foreground">Licence</dt>
+            <dd>
+              <Link href="/license" className="underline underline-offset-4 hover:no-underline">
+                CC BY 4.0
+              </Link>{' '}
+              — free for commercial use with attribution
+            </dd>
+
+            {addedOn && (
+              <>
+                <dt className="text-muted-foreground">Added</dt>
+                <dd><time dateTime={addedOn.iso}>{addedOn.label}</time></dd>
+              </>
+            )}
+          </dl>
+
+          <div className="mt-6 rounded-lg bg-muted p-4">
+            <p className="text-sm text-muted-foreground mb-2">Attribution — copy this when you use the icon:</p>
+            <p className="text-sm">
+              {icon.name} icon by Studio Partdirector, svgcities.com/{slugify(icon.country)}/{citySlug}, CC BY 4.0
+            </p>
+          </div>
+        </section>
 
         {/* Related icons section */}
         {relatedIcons.length > 0 && (

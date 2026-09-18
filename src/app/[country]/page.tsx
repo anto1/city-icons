@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { isIndexableCountry } from '@/lib/seo'
 import ClientHome from '@/components/ClientHome';
 import iconData, { getCountryCounts, getFeaturedIcons, getSortedIcons } from '@/data';
 import { Icon, toGridIcon } from '@/types';
@@ -136,10 +137,14 @@ export async function generateMetadata({ params }: PageProps) {
 
   const countryName = countryIcons[0].country;
   const pageUrl = `${baseUrl}/${country}`;
-  const description = `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} city icons from ${countryName} with download and copy functionality.`;
+  const indexable = isIndexableCountry(countryIcons);
+  const cityWord = countryIcons.length === 1 ? 'city icon' : 'city icons';
+  const description = `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} ${cityWord} from ${countryName} with download and copy functionality.`;
+
+  const title = `${countryName} City Icons – ${countryIcons.length} ${cityWord === 'city icon' ? 'City Symbol' : 'City Symbols'} in Line Art`;
 
   return {
-    title: `${countryName} City Icons`,
+    title,
     description,
     keywords: `${countryName}, city icons, ${countryIcons.map(icon => icon.city).join(', ')}, SVG icons, line art`,
     authors: [{ name: 'Studio Partdirector' }],
@@ -155,7 +160,7 @@ export async function generateMetadata({ params }: PageProps) {
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${countryName} City Icons`,
+      title,
       description,
       url: pageUrl,
       siteName: 'City Icons Collection',
@@ -172,15 +177,18 @@ export async function generateMetadata({ params }: PageProps) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${countryName} City Icons`,
+      title,
       description,
       images: [`${baseUrl}/og-image.png`],
     },
+    // A country with one or two icons is a thinner restatement of the city
+    // page it links to. Keep it crawlable and link-following, but out of the
+    // index, so the city page is the one result Google can pick.
     robots: {
-      index: true,
+      index: indexable,
       follow: true,
       googleBot: {
-        index: true,
+        index: indexable,
         follow: true,
         'max-video-preview': -1,
         'max-image-preview': 'large',

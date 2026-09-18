@@ -38,17 +38,16 @@ export function changelogCityMatchesIcon(
 // Parse ISO week string (e.g. "2025-W02") to a Date
 export function weekToDate(week: string): Date {
   const match = week.match(/^(\d{4})-W(\d{2})$/);
-  if (!match) return new Date('2024-12-16'); // fallback to initial collection date
+  if (!match) return new Date(Date.UTC(2024, 11, 16)); // fallback to initial collection date
   const year = parseInt(match[1]);
   const weekNum = parseInt(match[2]);
-  // Jan 4 is always in ISO week 1
-  const jan4 = new Date(year, 0, 4);
-  const dayOfWeek = jan4.getDay() || 7;
-  const isoWeek1Start = new Date(jan4);
-  isoWeek1Start.setDate(jan4.getDate() - dayOfWeek + 1);
-  const result = new Date(isoWeek1Start);
-  result.setDate(result.getDate() + (weekNum - 1) * 7);
-  return result;
+  // Jan 4 is always in ISO week 1. Computed in UTC throughout: a local-time
+  // calculation shifts the result by a day depending on the build machine's
+  // timezone, which makes sitemap lastmod values differ between builds.
+  const jan4 = new Date(Date.UTC(year, 0, 4));
+  const dayOfWeek = jan4.getUTCDay() || 7;
+  const isoWeek1Start = Date.UTC(year, 0, 4 - dayOfWeek + 1);
+  return new Date(isoWeek1Start + (weekNum - 1) * 7 * 86400000);
 }
 
 export const changelog: ChangelogEntry[] = [
