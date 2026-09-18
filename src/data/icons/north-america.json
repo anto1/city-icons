@@ -12,6 +12,7 @@
     ],
     "svgFilename": "us-chicago.svg",
     "description": "The Chicago skyline is world-famous for its innovative architecture and towering skyscrapers. Home to the Willis Tower, John Hancock Center, and other architectural marvels, Chicago's skyline represents the birthplace of modern skyscraper design.",
+    "symbolStory": "Chicago's skyline traces its identity to the years after the Great Fire of 1871, when rebuilding and rising land values encouraged taller construction. The Home Insurance Building, completed in 1885 to a design by William Le Baron Jenney, is widely cited as the first skyscraper, though the claim is disputed because other buildings used metal framing in partial forms. Later structures extended the pattern: the Tribune Tower in 1925, the Willis Tower in 1973, which held the title of world's tallest building for nearly a quarter century, and the Aon Center and John Hancock Center along the lakefront. Today the lakeshore profile appears on city tourism materials and architectural boat tours, and it functions locally as shorthand for Chicago's role in the invention of the tall building.",
     "region": "North America"
   },
   {
@@ -42,6 +43,7 @@
     ],
     "svgFilename": "us-miami.svg",
     "description": "Miami is a vibrant coastal city known for its beautiful beaches, Art Deco architecture in South Beach, and diverse cultural scene. The city combines tropical climate with modern urban development and international influences.",
+    "symbolStory": "Barrier-island sands that were mangrove swamp in 1900 became a resort after John Collins and Carl Fisher dredged and filled the land, and the town incorporated in 1915, growing through the 1920s land boom. Its low-rise hotels and apartment buildings of the 1930s and 1940s gained protection when Barbara Baer Capitman founded the Miami Design Preservation League in 1976 and the Miami Beach Architectural District entered the National Register of Historic Places in 1979. The television series Miami Vice, broadcast from 1984 to 1989, spread images of the oceanfront worldwide. Strictly speaking, Miami Beach is a separate city, yet its shoreline and Ocean Drive now stand in for greater Miami in tourism and popular culture.",
     "region": "North America"
   },
   {
@@ -57,6 +59,7 @@
     ],
     "svgFilename": "us-new-york.svg",
     "description": "New York City is the most populous city in the United States, known for its iconic Statue of Liberty - a symbol of freedom and democracy. The city is a global center for finance, culture, and innovation, featuring the Empire State Building, Times Square, and world-class museums.",
+    "symbolStory": "Conceived by the French jurist Édouard de Laboulaye and sculpted by Frédéric Auguste Bartholdi, with an iron framework engineered by Gustave Eiffel, the copper figure formally titled \"Liberty Enlightening the World\" was a gift from France to the United States, dedicated by President Grover Cleveland on October 28, 1886, on what is now Liberty Island in New York Harbor. Its position at the harbor entrance meant that arriving ships, including those carrying immigrants processed at Ellis Island from 1892 to 1954, passed it first, which tied the statue to ideas of arrival and welcome. Emma Lazarus's 1883 sonnet \"The New Colossus,\" mounted on the pedestal in 1903, reinforced that reading. It remains a standard shorthand for the city and the nation.",
     "region": "North America"
   },
   {
@@ -102,6 +105,7 @@
     ],
     "svgFilename": "us-pittsburgh.svg",
     "description": "Pittsburgh is a major city in Pennsylvania, known for its steel industry heritage, the iconic Three Rivers confluence, and modern transformation. The city combines industrial history with contemporary innovation, featuring the University of Pittsburgh, Carnegie Mellon University, and world-class museums.",
+    "symbolStory": "The nickname \"Steel City\" grew out of Pittsburgh's dominance of American steelmaking in the late nineteenth century, when Andrew Carnegie opened the Edgar Thomson Steel Works at Braddock in 1875 and U.S. Steel was incorporated in 1901 with Pittsburgh-area mills at its core. By the early twentieth century the region produced a large share of the nation's steel, and labor history there, including the 1892 Homestead strike, became nationally known. Most mills shut in the late 1970s and 1980s, with the Homestead Works closing in 1986, and the local economy shifted toward health care, universities and technology. The label survives mainly in local identity, the U.S. Steel Tower and the Pittsburgh Steelers, named in 1940.",
     "region": "North America"
   },
   {
@@ -117,6 +121,7 @@
     ],
     "svgFilename": "ca-toronto.svg",
     "description": "Toronto is the capital of Ontario and Canada's largest city, known for its iconic CN Tower - the tallest freestanding structure in the Western Hemisphere. The city combines modern urban development with natural beauty along Lake Ontario, featuring a diverse multicultural population and vibrant arts scene.",
+    "symbolStory": "Construction of the tower began on February 6, 1973, when Canadian National Railway set out to solve a practical problem: downtown Toronto's new high-rises were interfering with radio and television signals. Workers topped out the 553.3-metre structure in April 1975, and it opened to the public on June 26, 1976. It held the record as the world's tallest free-standing structure for more than three decades, until Dubai's Burj Khalifa passed it in 2007, and that distinction tied the city's name to the skyline in tourist photographs and broadcast establishing shots. It still carries broadcast antennas, draws roughly two million visitors a year, and its exterior lighting is coloured to mark local events and commemorations.",
     "region": "North America"
   },
   {
@@ -164,6 +169,7 @@
     ],
     "svgFilename": "us-austin.svg",
     "description": "Austin is the capital of Texas and known as the 'Live Music Capital of the World', famous for its iconic bat colony under the Congress Avenue Bridge. The city combines vibrant music culture with outdoor activities, featuring the famous South by Southwest festival, beautiful Lady Bird Lake, the historic Texas State Capitol, and the world's largest urban bat colony.",
+    "symbolStory": "Austin's association with bats began in 1980, when the Congress Avenue Bridge was rebuilt with narrow expansion crevices that proved well suited to roosting Mexican free-tailed bats. The colony that moved in grew to a summer population estimated near 1.5 million, and early reactions included public alarm and calls to remove the animals. Bat Conservation International, founded by Merlin Tuttle in 1982 and relocated to Austin in 1986, campaigned to reframe the bats as insect-eating neighbors. The effort worked: the nightly emergence, roughly March through late autumn before the bats return to Mexico, now draws crowds to the bridge, and the animal appears in local names such as the Austin Ice Bats hockey team and the annual Bat Fest.",
     "region": "North America"
   },
   {
@@ -181,6 +187,7 @@
     ],
     "svgFilename": "us-washington.svg",
     "description": "Washington D.C. is the capital of the United States, home to the iconic White House - the official residence and workplace of the President of the United States. This neoclassical building serves as both a symbol of American democracy and the center of executive power, representing the political heart of the nation.",
+    "symbolStory": "Construction of the presidential residence on Pennsylvania Avenue began with a cornerstone laid on October 13, 1792, following a design competition won by the Irish-born architect James Hoban. John Adams became its first occupant on November 1, 1800, the same year the federal government moved to the new capital, and British troops burned the building on August 24, 1814, after which it was rebuilt. Informal names such as \"President's House\" and \"Executive Mansion\" circulated for decades; Theodore Roosevelt made \"White House\" the official title in 1901. The claim that the whitewash applied after the 1814 fire gave the house its name is a popular story rather than established fact. Today it stands for both the presidency and the city itself.",
     "region": "North America"
   },
   {
@@ -308,6 +315,7 @@
     ],
     "svgFilename": "us-philadelphia.svg",
     "description": "Philadelphia's famous LOVE sculpture has become an enduring symbol of the City of Brotherly Love. This iconic public art installation, featuring the word LOVE in bold red letters with a tilted 'O', represents the city's spirit of affection and unity, making it one of the most recognizable landmarks in Philadelphia.",
+    "symbolStory": "Robert Indiana's aluminum LOVE sculpture arrived in Philadelphia in 1976, lent to the city for the United States Bicentennial and set in John F. Kennedy Plaza near City Hall. When the loan lapsed in April 1978 and city officials declined the asking price, Indiana's New York dealer trucked the work away; public complaints followed, and Fitz Eugene Dixon Jr., then chairman of the Philadelphia Art Commission, bought it for $35,000 and gave it to the city, which reinstalled it that May. The plaza's nickname, LOVE Park, was made official in 2016, and the sculpture was restored and returned in February 2018, repainted purple after records showed that was its original color. It now functions as a gathering and photograph spot, especially for engagements and weddings.",
     "region": "North America"
   },
   {
@@ -323,6 +331,7 @@
     ],
     "svgFilename": "us-seattle.svg",
     "description": "Seattle is a vibrant city in the Pacific Northwest, known for its iconic tower landmarks that define its distinctive skyline. The city combines natural beauty with urban innovation, featuring a thriving tech scene, coffee culture, and stunning views of Puget Sound and the Olympic Mountains.",
+    "symbolStory": "Completed in 1929 as the Northern Life Tower, the 27-story Art Deco building at Third Avenue and University Street in downtown Seattle was designed by the firm Albertson, Wilson & Richardson, with brickwork that shades from dark at the base to light near the top and setbacks meant to evoke a mountain peak. It was renamed Seattle Tower after later ownership changes, listed on the National Register of Historic Places, and designated a City of Seattle landmark. That said, it cannot be verified that this building is genuinely a symbol of the city; that role belongs to the Space Needle, built for the 1962 Century 21 Exposition. The tower is better described as a well-preserved example of the city's interwar commercial architecture.",
     "region": "North America"
   },
   {
@@ -370,6 +379,7 @@
     ],
     "svgFilename": "us-san-diego.svg",
     "description": "San Diego is a coastal city in Southern California, home to Mission San Diego de Alcalá - the first Franciscan mission in California, founded in 1769. The mission bell represents the city's Spanish colonial heritage and its role as the birthplace of California. The iconic bell tower and bells remain a cherished symbol of San Diego's historical roots.",
+    "symbolStory": "Bells hang in the 46-foot campanario of Mission San Diego de Alcalá, the Franciscan mission Junípero Serra dedicated on July 16, 1769, and moved inland to Mission Valley in 1774. The oldest, the 805-pound Ave Maria Purisima, was cast in 1802 and, during the mission's abandonment, was stored in the vestibule of St. Joseph's Church before being rehung when the campanario was rebuilt in 1931. The largest, the 1,200-pound Mater Dolorosa, was recast in San Diego in 1894 from fragments of earlier mission bells; accounts differ on whether those originals arrived in 1794 or 1796. Rung daily and in unison at the annual Festival of the Bells, they mark the city's founding site.",
     "region": "North America"
   },
   {
@@ -387,6 +397,7 @@
     ],
     "svgFilename": "us-st-louis.svg",
     "description": "St. Louis is symbolized by the Gateway Arch, a 630-foot stainless steel monument that stands as the tallest arch in the world and an iconic symbol of America's westward expansion. Designed by Eero Saarinen, this architectural marvel represents St. Louis's role as the 'Gateway to the West' and serves as a monument to the pioneers who shaped the nation.",
+    "symbolStory": "Eero Saarinen won the 1947–48 design competition for the Jefferson National Expansion Memorial, a federal project authorized in 1935 to commemorate the Louisiana Purchase and westward expansion from St. Louis. Construction of the stainless steel catenary curve began in February 1963, and the final keystone section was set on October 28, 1965, producing a structure 630 feet tall and 630 feet wide. Visitors have ridden tram capsules to the observation deck since 1967. Renamed Gateway Arch National Park in 2018, the monument anchors the riverfront skyline, appears on the Missouri state quarter issued in 2003, and serves as shorthand for the city in photographs, logos, and broadcasts.",
     "region": "North America"
   },
   {
@@ -404,6 +415,7 @@
     ],
     "svgFilename": "us-new-orleans.svg",
     "description": "New Orleans is represented by the fleur de lis, a symbol deeply woven into the city's French heritage and cultural identity. This stylized lily flower appears throughout the city's architecture, flags, and traditions, reflecting New Orleans's French colonial roots and its unique blend of European, African, and American cultures that make it one of America's most distinctive cities.",
+    "symbolStory": "French colonial rule explains the emblem's presence on the Gulf Coast: the fleur-de-lis was the heraldic device of the Bourbon monarchy, and the settlement founded in 1718 by Jean-Baptiste Le Moyne de Bienville was named for Philippe, Duke of Orléans, then regent of France. The flower appeared on colonial-era flags and later on the city flag adopted in 1918, which shows three gold fleurs-de-lis on white between red and blue bands. The New Orleans Saints have used it as their helmet mark since the franchise began play in 1967, and Louisiana made it an official state symbol in 2008. After Hurricane Katrina in 2005, residents widely displayed it as a sign of recovery.",
     "region": "North America"
   },
   {
@@ -438,6 +450,7 @@
     ],
     "svgFilename": "us-boston.svg",
     "description": "Boston is represented by the iconic Citgo sign, a massive neon landmark that has illuminated the Kenmore Square skyline since 1965. This 60-foot-tall sign, visible from Fenway Park and throughout the Back Bay, has become an enduring symbol of Boston's identity, appearing in countless films and serving as a beloved beacon for Red Sox fans and city residents alike.",
+    "symbolStory": "Perched atop 660 Beacon Street in Kenmore Square, the double-faced sign began in 1940 as advertising for Cities Service, whose regional headquarters sat below, and was rebranded with the company's red-triangle Citgo trimark in 1965. Framed in television broadcasts above Fenway Park's left-field wall and passed by Boston Marathon runners in the final mile, it became a navigation marker and shorthand for the city. It went dark in 1979 during the oil crisis and was relit on August 10, 1983, after public protest halted plans to dismantle it. LEDs replaced the neon in a restoration unveiled in March 2005. Claims that a batted ball ever struck it are legend; the sign stands roughly 1,200 feet from home plate.",
     "region": "North America"
   },
   {
@@ -455,6 +468,7 @@
     ],
     "svgFilename": "us-atlanta.svg",
     "description": "Atlanta is symbolized by the peach, representing Georgia's identity as the Peach State and the city's role as its capital. The peach has long been associated with Georgia's agricultural heritage and warm southern climate, making it an enduring symbol of Atlanta's regional identity and the state's rich agricultural traditions.",
+    "symbolStory": "Georgia's peach industry took hold after the Civil War, when growers such as Raphael Moses of Columbus shipped fruit north in the 1870s, and the state later adopted the nickname \"Peach State\" and made the peach its official fruit in 1995. Atlanta absorbed that identity through its street names: Peachtree Street and dozens of variations run through the city, although historians note the name probably came from a Creek settlement called Standing Pitch Tree, a pine, rather than from any peach orchard. The link is therefore partly accidental. Today peaches appear in city branding, the Peachtree Road Race held each Fourth of July since 1970, and the Peach Drop on New Year's Eve, begun in 1989.",
     "region": "North America"
   },
   {
@@ -472,6 +486,7 @@
     ],
     "svgFilename": "us-san-francisco.svg",
     "description": "San Francisco is home to the iconic Golden Gate Bridge, one of the most recognized landmarks in the world. This majestic suspension bridge, painted in its distinctive International Orange, spans the Golden Gate strait connecting San Francisco to Marin County. Completed in 1937, the bridge has become an enduring symbol of American engineering and the spirit of the city by the bay.",
+    "symbolStory": "Construction of the span across the Golden Gate strait began on January 5, 1933, under chief engineer Joseph Strauss, with Irving Morrow and Charles Ellis contributing the tower styling and structural calculations, and it opened to pedestrians on May 27, 1937. At completion its 4,200-foot main span was the longest suspension span in the world, a distinction it held until 1964. Morrow's choice of international orange, rather than the gray or striped schemes proposed by the Navy, made the structure immediately recognizable in photographs and film, and it became shorthand for the city in tourism material, newsreels and later movies. Today it carries U.S. 101 traffic, marks the city's northern gateway, and appears routinely in coverage of San Francisco itself.",
     "region": "North America"
   },
   {
@@ -489,6 +504,7 @@
     ],
     "svgFilename": "us-los-angeles.svg",
     "description": "Los Angeles is represented by the iconic LA letters from the Dodgers logo, a symbol that embodies the city's passionate baseball culture and entertainment heritage. The Los Angeles Dodgers, one of the most storied franchises in Major League Baseball, have been a beloved part of LA since moving from Brooklyn in 1958, and their distinctive interlocking LA design has become synonymous with the City of Angels.",
+    "symbolStory": "Since the franchise relocated from Brooklyn before the 1958 season, the Dodgers have worn an interlocking \"LA\" monogram on their caps, a mark that has changed little in more than six decades. The team played its first four seasons in the Los Angeles Memorial Coliseum, then moved to Dodger Stadium in Chavez Ravine in April 1962. Similar interlocking LA monograms had been used earlier by the Pacific Coast League's Los Angeles Angels, so the Dodgers' version continued an older local convention rather than inventing it. Today the two letters function as shorthand for the city itself, appearing on caps worn far from any ballpark and used by residents as a statement of where they are from.",
     "region": "North America"
   }
 ]

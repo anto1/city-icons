@@ -12,6 +12,7 @@
     ],
     "svgFilename": "es-barcelona.svg",
     "description": "Barcelona is the capital of Catalonia, known for its unique architecture including the iconic Sagrada Familia by Antoni Gaudí. The city combines Mediterranean charm with innovative design, making it a cultural and architectural treasure.",
+    "symbolStory": "Construction of the expiatory temple began on 19 March 1882 under architect Francisco de Paula del Villar, and Antoni Gaudí took charge in 1883, reshaping the project until his death on 10 June 1926, days after being struck by a tram. Because it was financed by donations and left unfinished, the building grew alongside the city itself across the twentieth century, surviving disruption during the Civil War, when Gaudí's workshop models were damaged. UNESCO inscribed the Nativity façade and crypt in 2005, and Pope Benedict XVI consecrated the church as a minor basilica in November 2010. Today it draws millions of visitors annually, remains under construction, and serves Barcelona as shorthand for Gaudí's work and the city's Modernista period.",
     "region": "Europe"
   },
   {
@@ -27,6 +28,7 @@
     ],
     "svgFilename": "de-berlin.svg",
     "description": "The Brandenburg Gate is an 18th-century neoclassical monument in Berlin, built on the site of a former city gate that marked the start of the road from Berlin to the town of Brandenburg an der Havel. It has become a symbol of German unity and peace.",
+    "symbolStory": "Commissioned by King Frederick William II and built between 1788 and 1791 to designs by Carl Gotthard Langhans, the gate replaced a customs barrier in Berlin's city wall and borrowed its form from the Propylaea of the Athenian Acropolis. Johann Gottfried Schadow's quadriga was added in 1793; Napoleon carried it to Paris in 1806, and it returned in 1814. Its modern meaning came from division: after the Berlin Wall went up in August 1961 the structure stood in the closed border strip, unreachable from either side, and it was the backdrop for Ronald Reagan's 1987 speech. It reopened on 22 December 1989, and now functions chiefly as a marker of German reunification.",
     "region": "Europe"
   },
   {
@@ -222,6 +224,7 @@
     ],
     "svgFilename": "gb-london.svg",
     "description": "London is the capital of England and the UK, known for its rich history, iconic landmarks like Big Ben and the Tower Bridge, and world-class museums. The city is a global center for finance and culture.",
+    "symbolStory": "Cast at the Whitechapel Bell Foundry in 1858, the great bell of the Great Clock of Westminster first sounded in July 1859, part of the Palace of Westminster rebuilt by Charles Barry and Augustus Pugin after the fire of 1834. Whether the name honours Commissioner of Works Benjamin Hall or the prizefighter Benjamin Caunt is disputed. Its association with the city grew through broadcasting: the BBC has transmitted the chimes since 31 December 1923, and they marked wartime bulletins after the Commons chamber was destroyed in May 1941 while the clock tower stood. Renamed the Elizabeth Tower in 2012, it now serves as visual shorthand for London and for Parliament in news coverage worldwide.",
     "region": "Europe"
   },
   {
@@ -237,6 +240,7 @@
     ],
     "svgFilename": "es-madrid.svg",
     "description": "Madrid, the capital of Spain, is known for its iconic symbol - the bear and the strawberry tree (madroño) - which appears on the city's coat of arms. The city combines historic grandeur with modern Spanish culture, featuring the Royal Palace, world-class museums like the Prado, and vibrant street life.",
+    "symbolStory": "Madrid's coat of arms pairs a bear reaching into a madroño (strawberry tree), a design traced to the medieval period, when a bear appeared on the town's seal; accounts commonly link the addition of the tree to a thirteenth-century settlement dividing rights over local woods and pastures between the council and the Church, though the details of that story are traditional rather than firmly documented. The heraldic device remains in official use, appearing on the city flag, municipal buildings, manhole covers and buses. Its best-known physical form is the stone and bronze statue carved by Antonio Navarro Santafé, installed in the Puerta del Sol in 1967, shifted in 1986 and returned near its original spot in 2009, now a standard meeting point.",
     "region": "Europe"
   },
   {
@@ -267,6 +271,7 @@
     ],
     "svgFilename": "gb-manchester.svg",
     "description": "Manchester is a major city in northwest England, known for its iconic bee symbol representing the city's industrious nature and worker bee heritage. The city combines its rich industrial past with contemporary culture, featuring vibrant music scene, modern urban development, and historic cotton mills.",
+    "symbolStory": "Seven bees on a beehive were incorporated into Manchester's coat of arms when the borough received its grant of arms in 1842, a period when the town's cotton mills made \"hive of industry\" a literal description of its workshops and warehouses. Bee motifs were later worked into the mosaic floors of the Town Hall, designed by Alfred Waterhouse and opened in 1877, and they recur on bollards, bins and civic ironwork across the centre. After the Manchester Arena bombing of 22 May 2017, the bee was adopted widely as an emblem of solidarity, including in tattoo campaigns that raised money for victims, and it featured in the 2018 Bee in the City sculpture trail.",
     "region": "Europe"
   },
   {
@@ -297,6 +302,7 @@
     ],
     "svgFilename": "fr-paris.svg",
     "description": "The iconic Eiffel Tower, a wrought-iron lattice tower located on the Champ de Mars in Paris. Built in 1889, it stands 324 meters tall and has become a global cultural icon of France and one of the most recognizable structures in the world.",
+    "symbolStory": "Completed in 1889 as the entrance arch to the Exposition Universelle, which marked the centenary of the French Revolution, the tower was built between 1887 and 1889 by Gustave Eiffel's company, from a concept by engineers Maurice Koechlin and Émile Nouguier with architect Stephen Sauvestre, and was inaugurated on 31 March 1889. A group of writers and artists publicly protested the project in 1887, and the structure's 20-year permit made removal possible; its usefulness as a radiotelegraphy mast in the early 1900s helped secure its survival. At 300 metres it stood as the world's tallest structure until 1930. Today it is one of the most visited paid monuments worldwide and a standard shorthand for the city in photographs and film.",
     "region": "Europe"
   },
   {
@@ -327,6 +333,7 @@
     ],
     "svgFilename": "cz-prague.svg",
     "description": "Prague, the capital of the Czech Republic, is known for its stunning medieval architecture, the iconic Prague Castle, and the historic Charles Bridge. The city's Old Town Square is a masterpiece of Gothic and Baroque architecture.",
+    "symbolStory": "Founded around 880 by Prince Bořivoj I of the Přemyslid dynasty, the castle complex above the Vltava has served as the seat of Bohemian princes and kings, Holy Roman emperors, and, since 1918, the presidents of Czechoslovakia and the Czech Republic. Its skyline is dominated by St. Vitus Cathedral, begun in 1344 under Charles IV and completed only in 1929. Major episodes of Czech history unfolded there, including the 1618 defenestration that helped trigger the Thirty Years' War and Tomáš Garrigue Masaryk's installation as first president. Continuously inhabited for more than a millennium and holding the Bohemian crown jewels, the complex functions today as both the head of state's official residence and the country's most visited monument.",
     "region": "Europe"
   },
   {
@@ -387,6 +394,7 @@
     ],
     "svgFilename": "es-valencia.svg",
     "description": "Valencia is a beautiful coastal city in Spain, known for its iconic Oceanografico - the largest aquarium in Europe, part of the stunning City of Arts and Sciences complex. The city combines historic charm with modern architecture, featuring the futuristic buildings designed by Santiago Calatrava and the beautiful Mediterranean coastline.",
+    "symbolStory": "Opened on 14 February 2003, the Oceanogràfic completed the main sequence of buildings in Valencia's City of Arts and Sciences, the complex built along the drained bed of the Turia river after the river was diverted following the 1957 flood. Its entrance pavilion, a thin concrete shell evoking a water lily, was designed by the Spanish-Mexican architect Félix Candela with engineers Alberto Domingo and Carlos Lázaro, and it is usually described as the largest aquarium in Europe. Together with Santiago Calatrava's neighbouring Hemisfèric and Museu de les Ciències, it now functions as shorthand for the modern city in tourism material, and stands as one of the region's most visited attractions.",
     "region": "Europe"
   },
   {
@@ -402,6 +410,7 @@
     ],
     "svgFilename": "it-venice.svg",
     "description": "Venice is a historic city in northeastern Italy, known for its iconic lion symbol holding a book - representing the winged lion of St. Mark, the city's patron saint. The city is famous for its beautiful canals, historic architecture, and rich cultural heritage spanning over 1,000 years.",
+    "symbolStory": "Venice's emblem is the winged lion of Saint Mark, shown resting a paw on an open Gospel book inscribed \"Pax tibi Marce, evangelista meus.\" The lion derives from the evangelist's symbol in Christian tradition, and Venice adopted it after merchants reportedly carried Mark's relics from Alexandria to the city in 828, an account whose details are legendary rather than documented. Saint Mark became the republic's patron, and by the late medieval period the lion appeared on banners, coins, government seals and stone reliefs across Venetian territories, including the column in the Piazzetta San Marco. The open book is usually read as signifying peace, while a closed book is associated with wartime. The lion remains on the flag and arms of Venice and the Veneto region today.",
     "region": "Europe"
   },
   {
@@ -417,6 +426,7 @@
     ],
     "svgFilename": "at-vienna.svg",
     "description": "St. Stephen's Cathedral is the mother church of the Roman Catholic Archdiocese of Vienna and the seat of the Archbishop of Vienna. This magnificent Gothic cathedral, with its distinctive tiled roof, has stood at the heart of Vienna for over 700 years.",
+    "symbolStory": "Vienna's skyline has been defined since the Middle Ages by the church begun after 1137, when Babenberg margrave Leopold IV agreed with the Bishop of Passau to build it; the Gothic reconstruction was launched under Duke Rudolf IV in 1359. Its south tower, finished in 1433 and rising about 136 metres, long served as a watch post over the city, and the roof's glazed tiles display the Habsburg double eagle and Vienna's coat of arms. Mozart married Constanze Weber there in 1782. After the roof and vaults burned in April 1945, Austrian provinces financed the restoration completed in 1952, making the rebuilt cathedral and its Pummerin bell, which rings in the New Year, a marker of national recovery.",
     "region": "Europe"
   },
   {
@@ -432,6 +442,7 @@
     ],
     "svgFilename": "pl-warsaw.svg",
     "description": "The Warsaw Mermaid is the official symbol of Warsaw, Poland. According to legend, a mermaid swam from the Baltic Sea to Warsaw and decided to stay, protecting the city. The statue shows her with a sword and shield, ready to defend the city.",
+    "symbolStory": "Warsaw's coat of arms has featured a mermaid-like creature since the city's oldest surviving seal, dated to 1390, where a half-human, half-animal figure appears; over the centuries the image settled into a woman with a fish tail wielding a sword and round shield. Sculptural versions reinforced the association: Konstanty Hegel's cast-metal mermaid was placed in the Old Town Market Square in 1855, and Ludwika Nitschowa's larger figure, unveiled on the Vistula embankment in 1939, was modeled on Krystyna Krahelska, a poet who was fatally wounded in the 1944 Warsaw Uprising. Stories explaining how a mermaid reached the Vistula are folklore rather than documented history. Today the armed figure functions as the municipal emblem and a reference to the city's wartime defense and rebuilding.",
     "region": "Europe"
   },
   {
@@ -537,6 +548,7 @@
     ],
     "svgFilename": "fr-lyon.svg",
     "description": "Lyon is France's third-largest city and a UNESCO World Heritage site, known for its historic architecture, the iconic lion from the city's emblem, and rich cultural heritage. The city combines Roman history with Renaissance architecture and is famous for its gastronomy and silk industry.",
+    "symbolStory": "Lyon's association with the lion rests largely on a pun rather than on history: the city's Roman name, Lugdunum, derives from a Celtic term usually read as the hill or fort of the god Lugus, with no connection to lions, though the exact meaning is debated. Medieval Lyonnais nonetheless read their city's name as \"lion,\" and the animal appears on communal seals and arms from the Middle Ages onward, later fixed as a rampant lion with fleurs-de-lis above it. That heraldic beast still identifies the city today, reproduced on municipal emblems, public sculpture and building facades, and borrowed by local sports clubs and businesses, so the figure functions as civic shorthand even though its origin is essentially a false etymology.",
     "region": "Europe"
   },
   {
@@ -567,6 +579,7 @@
     ],
     "svgFilename": "gr-athens.svg",
     "description": "Athens is the capital and largest city of Greece, known for its iconic Acropolis and rich ancient heritage. The city combines classical Greek architecture with modern development, featuring the Parthenon, Ancient Agora, and vibrant Mediterranean culture.",
+    "symbolStory": "Rising about 150 metres above the city, the limestone hill was fortified in Mycenaean times and later rebuilt as a sanctuary after the Persians sacked it in 480 BC. Under Pericles, the Parthenon was constructed between 447 and 432 BC by the architects Iktinos and Kallikrates, with sculptural work directed by Pheidias and dedicated to Athena Parthenos, the city's patron goddess; the Erechtheion and the Propylaia followed. Because the temple honoured the deity from whom Athens took its name, the site came to stand for the city itself, a link reinforced when Greece gained independence in the 1830s and began restoring it. UNESCO listed the Acropolis in 1987, and it remains the most recognisable image of Athens.",
     "region": "Europe"
   },
   {
@@ -597,6 +610,7 @@
     ],
     "svgFilename": "it-milan.svg",
     "description": "Milan is the capital of Lombardy and Italy's fashion and financial capital, known for its magnificent Gothic cathedral and rich cultural heritage. The city combines historic architecture with modern Italian culture, featuring the iconic Duomo, La Scala opera house, and vibrant fashion district.",
+    "symbolStory": "Construction of the Duomo di Milano began in 1386 under Archbishop Antonio da Saluzzo and Gian Galeazzo Visconti, and continued for nearly six centuries, with the facade completed under Napoleon's order in the early 1800s and the last gate installed in 1965. Its scale and unusually long building history tied it to the city's identity, as did the gilded copper statue of the Virgin, the Madonnina, placed on the tallest spire in 1774 and long treated as a guardian figure; an informal convention discouraged buildings from rising above her. Today the cathedral anchors Piazza del Duomo, the city's civic center, serves as the seat of the Archbishop of Milan, and receives millions of visitors each year.",
     "region": "Europe"
   },
   {
@@ -612,6 +626,7 @@
     ],
     "svgFilename": "it-rome.svg",
     "description": "Rome is the capital of Italy and the Eternal City, known for its iconic Colosseum and rich ancient heritage. The city combines classical Roman architecture with modern Italian culture, featuring the Vatican City, Roman Forum, and vibrant street life.",
+    "symbolStory": "Construction of the Flavian Amphitheatre began under Vespasian around AD 72 and was inaugurated by his son Titus in AD 80 with games lasting one hundred days, with further work under Domitian. The name \"Colosseum\" came into common use in the medieval period, likely from the nearby Colossus of Nero. Holding an estimated 50,000 or more spectators, it hosted gladiatorial combat and animal hunts until late antiquity, then served as fortress, housing and quarry. Its association with Christian martyrdom is traditional rather than documented, and the Good Friday papal procession held there reflects that tradition. Today it is Italy's most visited monument, appears on the five-cent euro coin, and stands as shorthand for the city itself.",
     "region": "Europe"
   },
   {
@@ -627,6 +642,7 @@
     ],
     "svgFilename": "nl-amsterdam.svg",
     "description": "Amsterdam is the capital and largest city of the Netherlands, known for its iconic canal houses, historic architecture, and beautiful waterways. The city's distinctive narrow houses with gabled facades along the canals represent the Golden Age of Dutch architecture and urban planning.",
+    "symbolStory": "Narrow brick façades lining the Herengracht, Keizersgracht and Prinsengracht took shape after 1613, when Amsterdam began digging its ring of canals to accommodate a population swollen by trade and immigration during the Dutch Golden Age. Plots were sold in narrow strips and taxed by frontage width, which produced the tall, deep, gable-fronted houses with hoisting beams still visible today. Merchants such as the Trip and Van Loon families built the grander examples, several now museums. UNESCO inscribed the seventeenth-century canal ring on its World Heritage list in 2010, citing the planned expansion as a model of urban engineering. The houses now function as the standard visual shorthand for the city, though the common claim that they lean forward merely to look impressive is a simplification: the tilt aids hoisting goods without striking the wall.",
     "region": "Europe"
   },
   {
@@ -720,6 +736,7 @@
     ],
     "svgFilename": "de-munich.svg",
     "description": "Munich is the capital and largest city of Bavaria, Germany, known for its rich cultural heritage and traditional Bavarian culture. The city combines historic architecture with modern development, featuring the iconic Marienplatz, the famous Hofbräuhaus, the beautiful English Garden, and the annual Oktoberfest celebration.",
+    "symbolStory": "Munich's name derives from the medieval phrase \"apud Munichen\" — \"at the monks' place\" — recorded in 1158 when Emperor Frederick Barbarossa's Augsburg arbitration confirmed Duke Henry the Lion's market on the Isar. A hooded monk holding a book appeared on the city's seal from 1239, and the oath-book figure of 1304 shows him with a raised hand. Over the fifteenth and sixteenth centuries the engraved figure grew smaller and more childlike, and by the nineteenth century it was called the Münchner Kindl, usually shown as a girl. The book is generally read as a gospel or oath book, though that interpretation is traditional rather than documented. The figure still marks the city's coat of arms, civic emblems and the Oktoberfest parade.",
     "region": "Europe"
   },
   {
@@ -803,6 +820,7 @@
     ],
     "svgFilename": "ch-bern.svg",
     "description": "Bern is the capital of Switzerland, known for its iconic Clock Tower (Zytglogge) - a medieval clock tower that has been the city's symbol for centuries. The city combines medieval architecture with modern Swiss efficiency, featuring the beautiful Old Town (a UNESCO World Heritage site), the famous Bear Park, the stunning Federal Palace, and the historic clock tower that continues to mark time in the heart of the city.",
+    "symbolStory": "Constructed around 1218–1220 as the western gate of Bern's first town expansion, the Zytglogge lost its defensive role as the city grew and was rebuilt in stone after the great fire of 1405. Between 1527 and 1530 the clockmaker Kaspar Brunner installed the astronomical clock and mechanical figure play that still run today, and the tower long served as the reference point for the city's official time; the frequently repeated claim that all distances in the canton were measured from it is traditional rather than firmly documented. Today the tower stands within Bern's Old City, listed as a UNESCO World Heritage site since 1983, and it appears routinely in depictions of the city.",
     "region": "Europe"
   },
   {
@@ -820,6 +838,7 @@
     ],
     "svgFilename": "ie-dublin.svg",
     "description": "Dublin is the capital and largest city of Ireland, known for its iconic harp - the national symbol of Ireland and a representation of the country's rich musical heritage. The city combines historic charm with vibrant culture, featuring the famous Trinity College and its Book of Kells, the historic Temple Bar district, the beautiful Phoenix Park, and the traditional Irish harp that symbolizes the nation's cultural identity.",
+    "symbolStory": "It cannot be verified that a \"Dublin Harp\" is genuinely a symbol of the city of Dublin. The harp is instead a national emblem of Ireland: it appeared on Anglo-Irish coinage from the reign of Henry VIII in the 1530s, was used on the arms of the Kingdom of Ireland, and was adopted as the state emblem of the Irish Free State in 1922, based on the medieval instrument known as the Brian Boru harp, held at Trinity College Dublin. Dublin connections exist through that instrument and through Guinness, whose St James's Gate brewery registered a harp trademark in 1876, but Dublin's own civic arms show three castles, not a harp.",
     "region": "Europe"
   },
   {
@@ -888,6 +907,7 @@
     ],
     "svgFilename": "mc-monaco.svg",
     "description": "Monaco is a sovereign city-state on the French Riviera, known for its connection to Princess Grace Kelly - the American actress who became Princess of Monaco. The city combines luxury with Mediterranean charm, featuring the famous Monte Carlo Casino, the beautiful Prince's Palace, the stunning Port Hercules, and the legacy of Princess Grace that continues to influence the principality's cultural identity.",
+    "symbolStory": "Grace Kelly, the American film actress, became attached to the principality after she met Prince Rainier III at the 1955 Cannes Film Festival and married him in Monaco in April 1956, in a civil ceremony on 18 April and a cathedral wedding on 19 April watched by a large international audience. Her presence drew attention and tourism to a small state then known mainly for its casino. She died on 14 September 1982 after a car accident on the road above Monaco, and is buried in Saint Nicholas Cathedral. Institutions named for her, including the Princess Grace Rose Garden in Fontvieille and the Princess Grace Irish Library, keep her linked to Monaco's public identity today.",
     "region": "Europe"
   },
   {
@@ -959,6 +979,7 @@
     ],
     "svgFilename": "va-vatican.svg",
     "description": "Vatican City is the world's smallest independent state and the spiritual center of the Catholic Church, known for its iconic crossed keys - the symbol of the Papal States and the authority of the Pope. The city combines religious significance with artistic treasures, featuring the magnificent St. Peter's Basilica, the stunning Sistine Chapel, the beautiful Vatican Museums, and the crossed keys that represent the spiritual authority and heritage of the Holy See.",
+    "symbolStory": "Two crossed keys, one gold and one silver, derive from the promise in Matthew 16:19, in which Christ tells Peter he will receive the keys of the kingdom of heaven; from the medieval period they served as the emblem of Peter's successors and of the papal states. Their civic role dates to the founding of Vatican City by the Lateran Treaty of 11 February 1929, after which the new state adopted a white-and-yellow flag bearing the crossed keys beneath the papal tiara. They now appear on Vatican coins, passports, stamps and official documents. Explanations that fix one key to heaven and the other to earth are traditional interpretations rather than settled doctrine.",
     "region": "Europe"
   },
   {
@@ -1082,6 +1103,7 @@
     ],
     "svgFilename": "lu-luxembourg.svg",
     "description": "Luxembourg is the capital of the Grand Duchy of Luxembourg, known for its iconic lion from the coat of arms - representing the country's strength and noble heritage. The city combines medieval fortifications with modern European institutions, featuring the impressive Luxembourg Castle, the beautiful Grund district, the historic Bock Casemates, and the lion symbol that represents Luxembourg's proud national identity and heraldic tradition.",
+    "symbolStory": "Verification is limited here: the available evidence does not confirm that a \"Luxembourg Lion\" is genuinely a symbol of the city of Luxembourg rather than of the country as a whole. The red, double-tailed lion rampant appears in the arms of the counts and later dukes of Luxembourg from the thirteenth century and survives today in the Grand Duchy's coat of arms and in the Grand Duke's standard, making it a national rather than municipal emblem. The city's own arms, by contrast, are based on a fortified tower or castle reflecting the fortress founded on the Bock promontory. Claims tying a specific lion monument or statue to the city's founding should be treated as unverified.",
     "region": "Europe"
   },
   {
@@ -1322,6 +1344,7 @@
     ],
     "svgFilename": "ru-moscow.svg",
     "description": "Moscow, the capital of Russia, is symbolized by the iconic Spasskaya Tower of the Kremlin. This historic clock tower serves as the main entrance to the Moscow Kremlin and is one of the most recognizable symbols of Russia, representing the political and cultural heart of the nation with its distinctive architecture and famous chimes.",
+    "symbolStory": "Built in 1491 by the Italian architect Pietro Antonio Solari as part of Ivan III's reconstruction of the Kremlin walls, the Spasskaya Tower acquired its present name in 1658, after an icon of the Saviour placed above its gate. Its tented top, with the clock, was added in the 1620s by the English master Christopher Galloway, and the chimes have been rebuilt several times, most notably by the Butenop brothers in the 1850s. A ruby glass star replaced the imperial eagle in 1935. Because the tower's bells mark the New Year for television audiences across Russia and its gate faces Red Square, it now functions as a shorthand image for Moscow and the Russian state alike.",
     "region": "Europe"
   },
   {
@@ -1604,6 +1627,7 @@
     ],
     "svgFilename": "de-hamburg.svg",
     "description": "Hamburg's coat of arms features a fortified gate and towers that honor the Hanseatic city's long maritime history and independent spirit. The icon speaks to Hamburg's skyline of spires and its legacy as a port city that defended its freedom behind brick walls and shining crosses.",
+    "symbolStory": "A white three-towered castle on a red shield has served Hamburg since the Middle Ages: the motif appears on the city's oldest surviving seals, usually dated to about 1241, already with a cross over the central tower and a six-pointed star above each outer tower. The central tower is commonly interpreted as the medieval Mariendom and the \"Marian stars\" as references to the city's patron saint and its archiepiscopal past, though such readings are traditional interpretations rather than documented fact. Details varied for centuries — open or closed gate, added crescent or Holstein nettle leaf — before the Senate fixed white-and-red in the eighteenth century and standardised seal and arms in 1834–35. Today the constitution and law regulate the arms, with the greater version reserved for Hamburg's government.",
     "region": "Europe"
   },
   {
@@ -1893,6 +1917,7 @@
     ],
     "svgFilename": "gb-liverpool.svg",
     "description": "Liverpool is a vibrant port city on the River Mersey, symbolized by the legendary Liver Bird perched atop the Royal Liver Building. These mythical cormorant-like creatures have watched over the city since 1911, one gazing out to sea to protect sailors and the other looking inland to guard the city. The Liver Birds have become Liverpool's most iconic emblem, representing a city renowned for its maritime heritage, music, and football.",
+    "symbolStory": "Liverpool's bird emblem traces back to the medieval borough seal, which showed a bird holding a sprig of foliage — most likely an eagle, the emblem of St John the Evangelist, alluding to King John, who granted the town's founding charter in 1207. Later readings turned the eagle into a cormorant carrying a sprig of seaweed, and that version was formalised when the College of Arms granted the borough its coat of arms in 1797. Two copper birds sculpted by Carl Bernard Bartels were placed on the Royal Liver Building, completed in 1911. The story that the city would fall if they flew away is folklore rather than history. The bird now appears on civic insignia and on Liverpool Football Club's crest.",
     "region": "Europe"
   },
   {
@@ -1978,6 +2003,7 @@
     ],
     "svgFilename": "de-stuttgart.svg",
     "description": "Stuttgart is the automotive capital of Germany, home to the Mercedes-Benz Museum — a futuristic architectural landmark designed by UNStudio. Opened in 2006, the museum's striking double-helix structure spirals upward nine floors, guiding visitors through over 130 years of automotive history from the invention of the automobile to the present day. The building itself has become an icon of modern Stuttgart, reflecting the city's deep roots in engineering and innovation.",
+    "symbolStory": "Stuttgart's claim to be a birthplace of the automobile rests on Gottlieb Daimler and Wilhelm Maybach, who built their first engines in Bad Cannstatt in the 1880s and founded Daimler-Motoren-Gesellschaft there in 1890, while Carl Benz patented his motor car in Mannheim in 1886. A company museum existed at the Untertürkheim plant from 1961, but the present building, designed by UNStudio and opened in May 2006 near the factory and the Neckar, gave that history a landmark form: a double-helix structure of roughly 16,500 square metres displaying some 160 vehicles across nine levels. Today it functions as a point of reference for the city's industrial identity, drawing several hundred thousand visitors a year alongside the nearby Porsche Museum.",
     "region": "Europe"
   },
   {
@@ -2079,6 +2105,7 @@
     ],
     "svgFilename": "gb-glasgow.svg",
     "description": "Outside Glasgow's Gallery of Modern Art, the Duke of Wellington's equestrian statue has worn a traffic cone on its head since at least the 1980s, replaced by passers-by within hours whenever it is removed. A 2013 council proposal to double the plinth's height and end the practice was withdrawn after thousands objected, and the cone is now treated as part of the city's self-image rather than vandalism.",
+    "symbolStory": "Outside the Gallery of Modern Art in Royal Exchange Square stands Carlo Marochetti's equestrian statue of the Duke of Wellington, unveiled in 1844, which has for decades rarely been seen without a traffic cone on the rider's head. The practice is generally traced to at least the 1980s, though no single originator or founding incident has ever been verified, and explanations offered for it are anecdotal. Its status became clear in 2013, when Glasgow City Council proposed spending about £65,000 to raise the plinth and deter climbers; a public petition and protest drew tens of thousands of supporters and the plan was withdrawn. Locals now cite the cone as evidence of the city's humour and resistance to official tidying.",
     "region": "Europe"
   },
   {

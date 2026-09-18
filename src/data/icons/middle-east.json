@@ -72,6 +72,7 @@
     ],
     "svgFilename": "il-jerusalem.svg",
     "description": "Jerusalem is the capital of Israel and a city of immense religious and historical significance, known for its iconic Dome of the Rock and the Old City. The city combines ancient religious sites with modern development, featuring the Western Wall, Church of the Holy Sepulchre, and the vibrant Mahane Yehuda market.",
+    "symbolStory": "Completed around 691–692 CE under the Umayyad caliph Abd al-Malik, the Dome of the Rock was raised on the Temple Mount, known in Islam as al-Haram al-Sharif, over the outcrop of rock that Muslim tradition links to Muhammad's night journey and Jewish tradition associates with Abraham's binding of Isaac, associations that rest on religious tradition rather than documented history. Its octagonal form and gilded dome, re-covered in gold leaf in 1993 with funding from Jordan's King Hussein, dominate photographs of the Old City and appear on tourist material, currency imagery and news coverage worldwide. Today it functions both as an active Muslim shrine and as the most recognized element of Jerusalem's skyline, in a site whose sovereignty remains disputed.",
     "region": "Middle East"
   },
   {
@@ -117,6 +118,7 @@
     ],
     "svgFilename": "tr-istanbul.svg",
     "description": "Istanbul is the largest city in Turkey, spanning Europe and Asia across the Bosphorus Strait. Known for its iconic Bosphorus Bridge, historic Hagia Sophia, and rich cultural heritage. The city combines ancient Byzantine and Ottoman history with modern Turkish culture, featuring the Blue Mosque, Grand Bazaar, and vibrant street life.",
+    "symbolStory": "Completed in 1973 and opened on 29–30 October of that year to coincide with the fiftieth anniversary of the Turkish Republic, the suspension bridge over the Bosphorus gave Istanbul its first permanent road link between Europe and Asia. Designed by the British firm Freeman Fox & Partners and built with German and Turkish contractors, its main span of about 1,074 metres made it one of the longest suspension bridges in the world at the time. It quickly came to stand for the city's position astride two continents, and it appeared on Turkish banknotes and stamps. After the failed coup attempt of 15 July 2016, during which crowds confronted soldiers on it, the structure was renamed the 15 July Martyrs Bridge.",
     "region": "Middle East"
   },
   {
@@ -229,6 +231,7 @@
     ],
     "svgFilename": "tr-ankara.svg",
     "description": "Ankara is the capital of Turkey, known for its iconic Anıtkabir - the magnificent mausoleum of Mustafa Kemal Atatürk, the founder of modern Turkey. The city combines ancient Anatolian heritage with modern Turkish identity, featuring the impressive Anıtkabir complex, the historic Ankara Castle, the beautiful Kızılay Square, and the grand mausoleum that serves as a symbol of Turkish nationalism and Atatürk's legacy.",
+    "symbolStory": "Anıtkabir, the mausoleum of Mustafa Kemal Atatürk, sits on Rasattepe hill in Ankara and grew directly out of the city's role as the capital of the Turkish Republic, proclaimed on 13 October 1923. After Atatürk died on 10 November 1938, a 1941–42 international competition selected the design by Turkish architects Emin Onat and Orhan Arda. Construction ran from 1944 to 1953, and Atatürk's remains were transferred from the Ethnography Museum to the tomb on 10 November 1953. The site now anchors state ceremonies, foreign leaders' official visits, and annual commemorations each 10 November at 9:05 a.m., the hour of his death, making it the place most often used to represent Ankara rather than Istanbul's older landmarks.",
     "region": "Middle East"
   },
   {
@@ -344,6 +347,7 @@
     ],
     "svgFilename": "ae-dubai.svg",
     "description": "Dubai is a global city and business hub in the United Arab Emirates, famous for the Burj Khalifa - the world's tallest building. This architectural marvel represents Dubai's rapid transformation into a modern metropolis, combining luxury, innovation, and ambitious urban development.",
+    "symbolStory": "Construction of the tower began on 6 January 2004, and it opened on 4 January 2010 as the world's tallest building at 828 metres with more than 160 floors, designed by Adrian Smith of Skidmore, Owings & Merrill for the developer Emaar Properties. It was known as Burj Dubai throughout construction and renamed Burj Khalifa at the opening ceremony in honour of Sheikh Khalifa bin Zayed Al Nahyan, the UAE president and ruler of Abu Dhabi; commentators widely linked the change to Abu Dhabi's financial support during Dubai's 2009 debt crisis, though officials did not confirm that motive. Since then the building has anchored Dubai's skyline imagery and its annual New Year's Eve fireworks and lighting displays.",
     "region": "Middle East"
   },
   {
@@ -379,6 +383,7 @@
     ],
     "svgFilename": "ps-jerusalem.svg",
     "description": "The Dome of the Rock is one of the oldest and most iconic Islamic monuments in the world, crowning the Temple Mount in Jerusalem's Old City. Completed in 691 AD by Caliph Abd al-Malik, its gleaming golden dome and intricate Byzantine mosaics mark the spot where the Prophet Muhammad is believed to have ascended to heaven. Sacred to Muslims, Jews, and Christians alike, the shrine stands as a timeless symbol of Jerusalem's profound spiritual significance.",
+    "symbolStory": "Built between 688 and 691 CE under the Umayyad caliph Abd al-Malik, the Dome of the Rock stands on the Haram al-Sharif, or Temple Mount, and is among the oldest surviving Islamic monuments. It encloses a rock that Muslim tradition links to the Prophet Muhammad's Night Journey, a connection rooted in religious tradition rather than documented history, and which Jewish tradition associates with the biblical binding of Isaac. Its gilded dome, recovered in gold-plated copper in the 1990s with funding from King Hussein of Jordan, dominates photographs and postcards of the Old City. Since 1967 it has also served as a political emblem for Palestinians, appearing on posters, banknote designs and murals as a claim to the city itself.",
     "region": "Middle East"
   },
   {
