@@ -1,40 +1,25 @@
 import { MetadataRoute } from 'next'
 import iconData from '@/data'
 import { slugify, getCitySlug, getIconSvgUrl } from '@/lib/utils'
-import { changelog, weekToDate } from '@/data/changelog'
+import { changelog, changelogCityMatchesIcon, weekToDate } from '@/data/changelog'
 import type { Icon } from '@/types'
 import { COUNTRY_INDEX_THRESHOLD } from '@/lib/seo'
 
-// Build a map of city (+ country, when the changelog disambiguates it)
-// -> last modified date from changelog
-function buildCityDateMap(): Map<string, Date> {
-  const map = new Map<string, Date>()
+// Look up an icon's changelog date. Matching goes through
+// changelogCityMatchesIcon so a city with two icons dates each separately:
+// keying by city+country alone gave the city's original icon whatever week
+// its second icon was added, and pushed that date into <lastmod> too.
+function getIconDate(icon: Icon): Date | undefined {
   for (const entry of changelog) {
-    const date = weekToDate(entry.week)
-    for (const city of entry.cities) {
-      const key = typeof city === 'string'
-        ? city.toLowerCase()
-        : `${city.city}|${city.country}`.toLowerCase()
-      // Use the most recent entry (changelog is newest-first)
-      if (!map.has(key)) {
-        map.set(key, date)
-      }
+    if (entry.cities.some(city => changelogCityMatchesIcon(city, icon))) {
+      return weekToDate(entry.week)
     }
   }
-  return map
-}
-
-// Look up an icon's changelog date, preferring the country-qualified key
-function getIconDate(map: Map<string, Date>, icon: Icon): Date | undefined {
-  return (
-    map.get(`${icon.city}|${icon.country}`.toLowerCase()) ??
-    map.get(icon.city.toLowerCase())
-  )
+  return undefined
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://svgcities.com'
-  const cityDateMap = buildCityDateMap()
 
   // Most recent changelog date for homepage and dynamic pages
   const latestDate = changelog.length > 0 ? weekToDate(changelog[0].week) : undefined
@@ -52,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // page they contain and are noindex — see [country]/page.tsx
     if (countryIcons.length < COUNTRY_INDEX_THRESHOLD) return []
     const dates = countryIcons
-      .map(icon => getIconDate(cityDateMap, icon))
+      .map(icon => getIconDate(icon))
       .filter((d): d is Date => d !== undefined)
     const latestCountryDate = dates.length > 0
       ? new Date(Math.max(...dates.map(d => d.getTime())))
@@ -68,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Generate URLs for all icons with their changelog date
   const iconUrls = iconData.map(icon => ({
     url: `${baseUrl}/${slugify(icon.country)}/${getCitySlug(icon)}`,
-    lastModified: getIconDate(cityDateMap, icon),
+    lastModified: getIconDate(icon),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
     // The icon is the page's reason to exist; declaring it emits <image:image>
