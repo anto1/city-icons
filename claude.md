@@ -4,6 +4,11 @@ Minimalist SVG icon collection: 307 icons covering 305 cities in 152 countries. 
 
 **Live site:** https://svgcities.com
 
+**SEO: состояние, находки и план** — `docs/seo-plan.md`. Читать перед любой работой над
+метаданными, sitemap, заголовками, текстами иконок или локализацией: там зафиксированы
+методические ошибки, которые уже были допущены, юридические риски по гербам и список
+того, чего делать не надо.
+
 ## License
 
 Dual-licensed (see root `LICENSE` file):
