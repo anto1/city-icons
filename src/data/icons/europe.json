@@ -318,6 +318,7 @@
     ],
     "svgFilename": "pt-porto.svg",
     "description": "Porto's Historic Center is a UNESCO World Heritage site featuring medieval architecture, colorful houses, and the iconic Dom Luís I Bridge. The city is famous for its port wine cellars and the beautiful Ribeira district along the Douro River.",
+    "symbolStory": "Built on the granite slopes above the Douro, the area known as Porto's historic centre traces back to the Roman-era settlement of Portus Cale, from which the name Portugal is commonly said to derive. Its present fabric grew inside the Fernandine walls of the 14th century and includes the Romanesque Sé cathedral, the Gothic church of São Francisco, and Nicolau Nasoni's Clérigos tower, finished in 1763. UNESCO inscribed the centre on the World Heritage List in 1996, citing its urban landscape and thousand-year history, and extended the site in 2016 to cover the Luiz I bridge and the Serra do Pilar monastery across the river. Today residents and the municipality treat the quarter, especially Ribeira, as the city's defining image.",
     "region": "Europe"
   },
   {
@@ -518,6 +519,7 @@
     ],
     "svgFilename": "ua-kyiv.svg",
     "description": "Kyiv is the capital and largest city of Ukraine, known for its iconic Independence Monument, rich Slavic heritage, and beautiful Orthodox churches. The city combines ancient history with modern European culture, featuring the golden-domed St. Sophia Cathedral, Maidan Nezalezhnosti, and vibrant cultural scene.",
+    "symbolStory": "Rising from Maidan Nezalezhnosti, the white column topped by a gilded female figure holding a viburnum branch was unveiled in August 2001 for the tenth anniversary of Ukraine's 1991 declaration of independence, with sculpture by Anatoliy Kushch. It stands on the square where a Soviet-era monument to the October Revolution had been dismantled in 1991, so the column reads as a direct replacement of one political order by another. The figure is commonly called Berehynia, a protective spirit, though that identification is an informal popular label rather than an official one and is disputed. Because the square hosted the 2004 Orange Revolution and the 2013–14 Euromaidan protests, images of the column now serve as shorthand for Kyiv and for Ukrainian statehood.",
     "region": "Europe"
   },
   {
@@ -769,6 +771,7 @@
     ],
     "svgFilename": "be-bruges.svg",
     "description": "Bruges is a picturesque medieval city in Belgium, known for its beautiful canals and iconic swans. The city combines stunning Gothic architecture with romantic waterways, featuring the famous Markt square, the beautiful Belfry tower, the historic Church of Our Lady, and the charming swans that grace the city's canals.",
+    "symbolStory": "Swans on the canals of Bruges are tied to the execution of Pieter Lanchals, a magistrate and treasurer loyal to Maximilian of Austria, who was beheaded in 1488 during the city's revolt against Habsburg rule. Lanchals means roughly \"long neck,\" and his family arms are said to have carried a swan. According to a widely repeated local legend, Maximilian punished Bruges by ordering it to keep swans on its waters in perpetuity; this account is traditional rather than documented, and historians treat the decree as unverified. Swans have nonetheless been kept and tended on the canals for centuries, are municipally cared for and marked, and function today as a recognized emblem of the city and a reminder of its Burgundian past.",
     "region": "Europe"
   },
   {
@@ -803,6 +806,7 @@
     ],
     "svgFilename": "it-palermo.svg",
     "description": "Palermo is the capital of Sicily, Italy, known for its iconic Trinacria symbol - a three-legged symbol from Sicilian mythology representing the island's triangular shape. The city combines ancient history with vibrant Mediterranean culture, featuring the stunning Norman-Arab architecture, the beautiful Palermo Cathedral, the historic markets of Ballarò and Vucciria, and the rich cultural heritage that reflects its diverse past.",
+    "symbolStory": "Better known as the triskeles, the three-legged figure with a central head appears on coins of Syracuse and other Sicilian mints from roughly the third century BC, and it takes its name from Trinacria, the ancient Greek term for the island's three capes: Pelorus, Pachynus and Lilybaeum. The Gorgon head with wheat ears at its center is a later addition, and the emblem was formally adopted on the flag of the Sicilian Region, whose modern use dates from 2000. It therefore functions as an island-wide emblem rather than a municipal one. It cannot be verified that the Trinacria is genuinely a symbol of Palermo specifically; the city's own historic emblem is the golden eagle, used on its coat of arms and civic buildings.",
     "region": "Europe"
   },
   {
@@ -961,6 +965,7 @@
     ],
     "svgFilename": "hr-zagreb.svg",
     "description": "Zagreb is the capital and largest city of Croatia, known for its iconic St. Mark's Church - a medieval church with a distinctive colorful tiled roof featuring the coats of arms of Croatia, Dalmatia, and Slavonia. The city combines medieval charm with Central European culture, featuring the historic Upper Town, the beautiful Ban Jelačić Square, the impressive Zagreb Cathedral, and the stunning St. Mark's Church that symbolizes the city's rich architectural heritage.",
+    "symbolStory": "Standing on St. Mark's Square in the Upper Town, the parish church of St. Mark dates from the 13th century and carries a 14th-century Gothic portal, but its recognition rests largely on its roof, tiled in 1880 during a restoration associated with Friedrich Schmidt and Hermann Bollé. The glazed tiles form two coats of arms: the medieval arms of Croatia, Dalmatia and Slavonia on one side, and the emblem of the city of Zagreb on the other, tying the building directly to civic and national identity. The square around it holds the Croatian Parliament and the government's Banski dvori, so the church regularly appears as a backdrop to political events and in images representing the capital.",
     "region": "Europe"
   },
   {
@@ -1291,6 +1296,7 @@
     ],
     "svgFilename": "pt-leiria.svg",
     "description": "Leiria is a historic city in central Portugal, famous for its impressive medieval castle that dominates the city's skyline. The Leiria Castle, built in the 12th century, represents the city's strategic importance in Portuguese history and serves as a symbol of medieval architecture and royal heritage.",
+    "symbolStory": "Perched on a hill above the Lis river, the fortress was raised around 1135 on the orders of Afonso Henriques, Portugal's first king, as a frontier stronghold against Muslim-held territory to the south, and the settlement that grew beneath its walls became the town of Leiria. King Dinis, who held cortes in the town in 1254 era successors' tradition, turned the site into a royal residence, and the keep and the palace loggia associated with his reign and that of later monarchs still dominate the skyline. Largely ruined by the nineteenth century, it was restored from 1915 under the architect Ernesto Korrodi. Today it functions as the city's chief monument and visitor attraction.",
     "region": "Europe"
   },
   {
@@ -1849,6 +1855,7 @@
     ],
     "svgFilename": "pt-barcelos.svg",
     "description": "Barcelos is a historic town in northern Portugal, famous for the legendary Galo de Barcelos (Rooster of Barcelos) - one of the most recognizable symbols of Portugal. According to folklore, a roasted rooster miraculously rose from a judge's dinner plate to prove an innocent pilgrim's innocence. This colorful ceramic rooster, traditionally decorated with hearts and vibrant patterns, has become an emblem of Portuguese culture, faith, and good luck, found in homes and souvenir shops worldwide.",
+    "symbolStory": "Legend, rather than documented history, explains the rooster's tie to Barcelos: a pilgrim bound for Santiago de Compostela was condemned for theft and declared that a roasted cockerel on the judge's table would crow to prove his innocence, which it reportedly did. The tale is traditionally connected to the Cruzeiro do Senhor do Galo, a late-medieval stone cross now held in the town's archaeological museum, though the carving's original meaning is debated and the story itself cannot be verified. Barcelos potters, working in the long-established ceramics tradition of the Minho region, turned the motif into painted clay figures during the twentieth century, and these spread as a souvenir representing both the town and Portugal generally.",
     "region": "Europe"
   },
   {
@@ -1883,6 +1890,7 @@
     ],
     "svgFilename": "it-bologna.svg",
     "description": "Bologna is a medieval university city in northern Italy, instantly recognized by its iconic Due Torri — the Two Towers of Asinelli and Garisenda. Built in the 12th century by rival noble families competing for prestige, the taller Torre degli Asinelli rises 97 meters while the shorter Torre Garisenda leans at a dramatic four-degree angle. Once part of a skyline bristling with over 100 towers, these two survivors have become Bologna's most beloved symbol and an enduring testament to medieval ambition.",
+    "symbolStory": "Standing side by side at the meeting of Bologna's medieval trade routes, the Asinelli and Garisenda towers survive from the early twelfth century, when the city's noble families raised scores of such structures; tradition names the Asinelli and Garisenda families as their builders, though that attribution is not firmly documented. The taller Asinelli reaches roughly 97 metres, while the Garisenda was shortened in the fourteenth century after its foundations shifted, leaving the pronounced lean Dante described in the Inferno. Together they became the remnant emblem of what was once called the city of towers, appearing on civic imagery and tourist itineraries. Concerns over the Garisenda's stability led to the area being fenced off in 2023 for monitoring and consolidation work.",
     "region": "Europe"
   },
   {
@@ -1952,6 +1960,7 @@
     ],
     "svgFilename": "de-aachen.svg",
     "description": "Aachen Cathedral (Aachener Dom) was the first German UNESCO World Heritage Site, originally built by Emperor Charlemagne around 800 AD as his imperial chapel. The cathedral's distinctive octagonal Palatine Chapel blends Carolingian, Byzantine, and Gothic styles, and served as the coronation church for over 30 German kings across six centuries. It remains a symbol of European unity and the legacy of the Carolingian Empire.",
+    "symbolStory": "Construction of the Palatine Chapel began around 796 under Charlemagne, who made Aachen the center of his court and was buried there in 814. Thirty German kings were crowned in the church between 936, starting with Otto I, and 1531, and the building was enlarged over centuries with a Gothic choir hall consecrated in 1414. In 1978 it became one of the first twelve sites inscribed on the UNESCO World Heritage List, and the first in Germany. Its octagonal core and the marble throne on the upper gallery remain the city's best-known landmark, drawing pilgrims to the Aachen shrine pilgrimage held every seven years, and the cathedral treasury holds relics whose traditional origins are not historically verifiable.",
     "region": "Europe"
   },
   {
@@ -1969,6 +1978,7 @@
     ],
     "svgFilename": "rs-subotica.svg",
     "description": "Subotica is a multicultural city in northern Serbia, home to one of Europe's most stunning Art Nouveau synagogues. Built in 1902 by architects Marcell Komor and Dezső Jakab in the Hungarian Secession style, the synagogue features vibrant floral motifs, Zsolnay ceramic tiles, and a soaring dome that blends Eastern and Western decorative traditions. After decades of neglect and a meticulous restoration completed in 2018, it stands again as a jewel of early 20th-century architecture.",
+    "symbolStory": "Completed in 1902 after roughly a year of construction, the building was designed by the Budapest architects Marcell Komor and Dezső Jakab for the city's Neolog Jewish congregation, and it stands as one of the few surviving synagogues in the Hungarian Secession, or Art Nouveau, style. The same architects later gave Subotica its town hall, finished in 1910, which tied their work to the city's appearance. The synagogue's Jewish community was nearly destroyed in the Holocaust, and the largely empty building was handed to the municipality in 1979 before decades of decay. A long restoration, completed in 2018 with Hungarian and Serbian state funding, returned it to use, and it appears on Serbia's UNESCO tentative list.",
     "region": "Europe"
   },
   {

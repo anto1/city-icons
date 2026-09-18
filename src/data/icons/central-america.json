@@ -98,6 +98,7 @@
     ],
     "svgFilename": "cr-alajuela.svg",
     "description": "Alajuela is Costa Rica's second-largest city, home to the statue of Juan Santamaría - the national hero of Costa Rica. This monument honors the young drummer boy who sacrificed his life in 1856 during the Battle of Rivas against William Walker's filibusters. Santamaría has become a symbol of Costa Rican courage and national identity, and the city celebrates him annually on April 11th, a national holiday.",
+    "symbolStory": "Alajuela honors its native son Juan Santamaría, a drummer born there around 1831 who died on April 11, 1856, at the Battle of Rivas during Costa Rica's campaign against William Walker's filibusters. The bronze monument showing him advancing with a torch was made by the French sculptor Aristide Onésime Croisy and unveiled on September 15, 1891, in the park that carries his name in the city center. The story that he volunteered to set fire to the filibusters' shelter and was shot doing so rests on later accounts and is treated by historians as partly legendary. Today the statue anchors Alajuela's April 11 commemorations, a national holiday, and the nearby Juan Santamaría museum.",
     "region": "Central America"
   },
   {
@@ -115,6 +116,7 @@
     ],
     "svgFilename": "bs-nassau.svg",
     "description": "Nassau is the capital of the Bahamas, known for its iconic Queen's Staircase - a stunning 66-step stairway carved out of solid limestone by enslaved people in the late 18th century. Named in honor of Queen Victoria, this remarkable monument connects Fort Fincastle to the city below and stands as both a testament to the skill of its builders and a poignant reminder of the islands' colonial history.",
+    "symbolStory": "Carved through solid limestone on Bennet's Hill between 1793 and 1794, the passage was cut by enslaved labourers with hand tools to link the town below with Fort Fincastle, built in 1793 under Governor Lord Dunmore as part of a defensive network that also included Fort Charlotte and Fort Montagu. It was renamed in the 19th century for Queen Victoria, who reigned from 1837 to 1901; the widespread claim that its steps match the years of her reign does not hold, since she ruled just under 64 years. Known locally as the 66 Steps, though only 65 are visible after the lowest was paved over, it remains a free public route, a heritage site renovated in 2024, and a reminder of the enslaved people who made it.",
     "region": "Central America"
   },
   {
@@ -132,6 +134,7 @@
     ],
     "svgFilename": "ht-port-au-prince.svg",
     "description": "Port-au-Prince is the capital and largest city of Haiti, home to the iconic Iron Market (Marché en Fer) - a striking 19th-century iron structure with distinctive red pavilion roofs. Originally prefabricated in France and shipped to Haiti, this beloved market has been the heart of Haitian commerce and culture for over a century, selling everything from local crafts to fresh produce beneath its ornate iron framework.",
+    "symbolStory": "Erected in 1891 during the presidency of Florvil Hyppolite, whose name the building still carries (Marché Hyppolite), the Iron Market's prefabricated metal halls, red minaret-like towers and clock became a fixed landmark of downtown Port-au-Prince and the center of its commerce in produce, crafts and vodou goods. A widely repeated story holds that the structure was first built in Europe for a railway station in Cairo before being redirected to Haiti; this account is legendary and has not been reliably documented. Fire gutted the market in 2008, and the January 12, 2010 earthquake wrecked what remained. A reconstruction financed by the telecommunications company Digicel reopened it on January 12, 2011, making its survival a marker of the city's recovery.",
     "region": "Central America"
   },
   {
@@ -183,6 +186,7 @@
     ],
     "svgFilename": "cw-willemstadt.svg",
     "description": "Willemstad is the colorful capital of Curaçao, birthplace of the legendary Blue Curaçao liqueur. Made from the dried peels of the laraha citrus fruit — a bitter orange unique to the island — this vivid azure spirit was first distilled at the historic Landhuis Chobolobo in the 19th century. The liqueur's electric blue hue has become synonymous with Caribbean cocktail culture worldwide, while Willemstad itself dazzles with its UNESCO-listed pastel Dutch colonial waterfront along the iconic Handelskade.",
+    "symbolStory": "Curaçao liqueur traces to the laraha, a bitter orange descended from citrus the Spanish brought to the island in 1527, whose dried peels proved aromatic even though the fruit itself is barely edible. Edgar Senior and Haim Mendes Chumaceiro founded Senior & Co. in 1896, first selling the liqueur in small quantities from their Willemstad pharmacy, Botika Excelsior; in 1947 they bought the country manor Chobolobo, still the distillery's home. The blue version is later and secondary: the original is clear, and the colors, including blue, were introduced around the 1960s, with the dye commonly said to echo the surrounding sea, an explanation that is traditional rather than documented. Today the Chobolobo distillery is a much-visited stop in the city.",
     "region": "Central America"
   },
   {
@@ -237,6 +241,7 @@
     ],
     "svgFilename": "ni-granada.svg",
     "description": "Granada is Nicaragua's oldest colonial city, dominated by the striking Cathedral of Granada on the central plaza. Originally built in 1583 and rebuilt multiple times after wars and fires, the current neoclassical cathedral with its iconic yellow facade and red-roofed towers has watched over the city since 1915. Standing at the heart of one of Central America's best-preserved colonial towns, it embodies Granada's resilient spirit and rich Spanish heritage on the shores of Lake Nicaragua.",
+    "symbolStory": "Worship on the site east of Parque Colón dates to a thatched parish church of about 1525, shortly after the city's Spanish founding, rebuilt in stone in 1583. That colonial building was wrecked on 22 November 1856, when filibusters under William Walker dynamited and burned it along with other churches during their retreat from Granada. Work on a new three-nave temple began in 1880 and the first stone of the present neoclassical church was laid on 8 December 1888; funding lapses stalled construction, the facade was largely finished around 1915, and later stages continued into the 20th century. Today the yellow-and-white towers and domed silhouette, seat of the Diocese of Granada created in 1913, mark the city center and appear in most images of it.",
     "region": "Central America"
   }
 ]
