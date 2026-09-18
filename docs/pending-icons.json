@@ -1,0 +1,298 @@
+[
+  {
+    "_id": "321",
+    "name": "Athens Owl of Athena",
+    "city": "Athens",
+    "country": "Greece",
+    "category": "Culture",
+    "tags": [
+      "owl",
+      "athena",
+      "ancient",
+      "coin",
+      "emblem"
+    ],
+    "svgFilename": "gr-athens-owl.svg",
+    "description": "The Owl of Athena is a depiction of a small owl, usually identified with the little owl (Athene noctua), used as an emblem of Athens and of its patron goddess Athena. It appears on ancient Athenian silver coins and pottery held in the city's National Archaeological Museum, the Numismatic Museum on Panepistimiou Street, and the Acropolis Museum below the Acropolis, where Athena's temples stand.",
+    "symbolStory": "The pairing of owl and goddess is attested in Athens from the Archaic period. From roughly the late sixth century BC the city struck silver tetradrachms showing Athena's helmeted head on one side and a standing owl with an olive sprig on the other; the coins circulated widely and were nicknamed \"owls\". Their production was funded by silver from the mines at Laurion, expanded in the 480s BC under Themistocles. Ancient explanations of why the bird belonged to Athena are literary rather than documented, and the link is best described as traditional. A version of the coin's owl was placed on the Greek one-euro coin issued from 2002.",
+    "region": "Europe",
+    "slug": "athens-owl"
+  },
+  {
+    "_id": "322",
+    "name": "Rome Capitoline Wolf",
+    "city": "Rome",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": [
+      "wolf",
+      "romulus",
+      "remus",
+      "ancient",
+      "emblem"
+    ],
+    "svgFilename": "it-rome-capitoline-wolf.svg",
+    "description": "The Capitoline Wolf is a bronze sculpture of a she-wolf suckling two infant boys, identified as Romulus and Remus. It is housed in the Capitoline Museums on the Capitoline Hill in Rome, in a room of the Palazzo dei Conservatori named after it. Copies stand elsewhere in the city and abroad, including on a column near the hill.",
+    "symbolStory": "The group illustrates Rome's foundation legend, in which the twins Romulus and Remus, abandoned as infants, were suckled by a she-wolf, with Romulus traditionally founding the city in 753 BC. The bronze wolf was long considered Etruscan work of the fifth century BC, and the twins are generally agreed to be a Renaissance addition, often attributed to Antonio del Pollaiolo around the late fifteenth century. That early dating is disputed: radiocarbon and metallurgical studies published in the 2000s by Anna Maria Carruba and others argued for a medieval casting. The wolf appears on municipal insignia and on emblems of Roman sports clubs.",
+    "region": "Europe",
+    "slug": "rome-capitoline-wolf"
+  },
+  {
+    "_id": "323",
+    "name": "Chicago Municipal Device",
+    "city": "Chicago",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "municipal device",
+      "river",
+      "emblem",
+      "civic"
+    ],
+    "svgFilename": "us-chicago-municipal-device.svg",
+    "description": "The Chicago Municipal Device is an official symbol of Chicago, Illinois. Defined by city code as a Y shape inscribed inside a circle, it represents the north, south, and main branches of the Chicago River and their confluence at Wolf Point. It appears on structures and buildings across the city, including bridges and the marquee of the Chicago Theatre.",
+    "symbolStory": "The mark's earliest known appearance was in 1892, in a contest run by the Chicago Tribune, as the city prepared for the World's Columbian Exposition; the Citizens' World's Fair Committee offered a $100 prize for a \"municipal color\" scheme to be used at the grounds' dedication ceremony. The winning entry came from Danish immigrant A.J. Roewad (Råvad), whose emblem used an inverted Y; he wrote that its three parts indicated Chicago's North, West and South divisions, united by a band representing the river. On April 5, 1917, the City Council passed, without dissent, an ordinance creating various civic symbols, adopting the device alongside the flag and seal. Use declined after mid-century; the reasons are not documented, though confusion with the peace sign has been suggested. Explanations citing the river's three branches and its reversal are both commonly repeated.",
+    "region": "North America",
+    "slug": "chicago-municipal-device"
+  },
+  {
+    "_id": "324",
+    "name": "Atlanta Phoenix",
+    "city": "Atlanta",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "phoenix",
+      "resurgens",
+      "seal",
+      "emblem"
+    ],
+    "svgFilename": "us-atlanta-phoenix.svg",
+    "description": "The phoenix is the mythical bird that appears on Atlanta's official seal and city flag, and in bronze form as the sculpture Atlanta from the Ashes, popularly called The Phoenix. The monument stands in Woodruff Park in Downtown Atlanta, at the park's southwest corner on a granite base. The flag is blue with the seal centered, lettered \"Resurgens,\" \"Atlanta GA,\" 1847 and 1865.",
+    "symbolStory": "Atlanta adopted the seal bearing the phoenix in 1887, some two decades after Union forces under General William T. Sherman captured and burned the city during the Civil War. The Latin word \"Resurgens,\" meaning \"rising again,\" sits above the bird, while the flanking dates mark the city's 1847 incorporation and its 1865 reconstruction. Sources differ on the burning's date, giving 1864 or 1865. The sculpture was commissioned in 1969 by the Rich Foundation for the centenary of Rich's downtown department store, from drawings by James Siegler, a Rich's employee; it was sculpted by Gamba Quirino and fabricated by Feruccia Vezzoni. It was refurbished in 1995 and rededicated in Woodruff Park ahead of the 1996 Olympics, and functions as an unofficial city emblem.",
+    "region": "North America",
+    "slug": "atlanta-phoenix"
+  },
+  {
+    "_id": "325",
+    "name": "Philadelphia Liberty Bell",
+    "city": "Philadelphia",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "bell",
+      "liberty",
+      "independence",
+      "historic"
+    ],
+    "svgFilename": "us-philadelphia-liberty-bell.svg",
+    "description": "The Liberty Bell is a bronze bell, cast in 1752 by the Whitechapel Bell Foundry in London, that hung in the tower of the Pennsylvania State House, now Independence Hall. It is best known for the large crack across its face and is displayed in the Liberty Bell Center on Independence Mall, across Chestnut Street from Independence Hall in central Philadelphia.",
+    "symbolStory": "The bell was commissioned by the Pennsylvania Assembly and bears a verse from Leviticus about proclaiming liberty, along with the name of the province and the city. Its later fame came from abolitionists, who from the 1830s adopted it and gave it the name \"Liberty Bell.\" The often-repeated story that it rang to announce the reading of the Declaration of Independence on July 8, 1776, is legendary and unsupported by contemporary evidence; the popular account of a bellringer and a boy comes from an 1847 story by George Lippard. The date and cause of the final crack are also uncertain, though it is usually placed in the early nineteenth century. It is now a National Park Service exhibit drawing millions of visitors.",
+    "region": "North America",
+    "slug": "philadelphia-liberty-bell"
+  },
+  {
+    "_id": "326",
+    "name": "Florence Giglio",
+    "city": "Florence",
+    "country": "Italy",
+    "category": "Culture",
+    "tags": [
+      "lily",
+      "giglio",
+      "heraldry",
+      "emblem"
+    ],
+    "svgFilename": "it-florence.svg",
+    "description": "The giglio is the heraldic lily that serves as Florence's civic emblem, shown as a red flower with stamens and side buds on a white field. It appears on the city's flag and gonfalone, on the Palazzo Vecchio in Piazza della Signoria, on the facades and courtyards of communal buildings, and on street furniture and drain covers throughout the historic centre.",
+    "symbolStory": "Florence used a lily badge from at least the twelfth century, in the earlier form of a white flower on red. Chroniclers, chiefly Giovanni Villani in the fourteenth-century Nuova Cronica, report that the colours were reversed to red on white around 1251, when the Guelph party took control of the commune and the exiled Ghibellines retained the older version; the account is traditional and not independently documented. The flower also stamped the gold florin first struck in 1252, which spread the mark through European trade. Botanists and historians dispute whether it depicts a lily or a local iris. It remains the official arms of the comune and the province.",
+    "region": "Europe"
+  },
+  {
+    "_id": "327",
+    "name": "Quebec City Coat of Arms",
+    "city": "Quebec City",
+    "country": "Canada",
+    "category": "Culture",
+    "tags": [
+      "coat of arms",
+      "fleur-de-lis",
+      "lion",
+      "maple"
+    ],
+    "svgFilename": "ca-quebec-city.svg",
+    "description": "The coat of arms of Quebec City is the municipal heraldic emblem of Quebec's provincial capital, used alongside the city's flag and logotype. Its shield is blue with a wavy silver-and-blue base and a gold ship under full sail, above a red chief bearing two crossed gold keys and a green maple leaf, topped by a mural crown, with the motto \"Don de Dieu Feray Valoir.\" It appears on city documents and at ceremonies, notably at City Hall in Old Quebec.",
+    "symbolStory": "Quebec City was incorporated in 1833, and among the council's first decisions was adopting an official seal, designed by councillor and painter Joseph Légaré, formally adopted on 23 May 1834. Strictly speaking, the city had no true arms before 1949, though an unofficial crowned leopard holding a key circulated and is nearly identical to the 1793 arms of the Anglican diocese of Quebec. In 1945 Mayor Lucien Borne asked heraldist Maurice Brodeur to create new arms; council adopted them in 1949, and on 20 September 1988 they became the first arms registered by the Canadian Heraldic Authority. The ship recalls the 1608 founding by Samuel de Champlain, and the keys Quebec's successive roles as capital.",
+    "region": "North America"
+  },
+  {
+    "_id": "328",
+    "name": "Detroit Spirit of Detroit",
+    "city": "Detroit",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "sculpture",
+      "statue",
+      "civic",
+      "bronze"
+    ],
+    "svgFilename": "us-detroit.svg",
+    "description": "The Spirit of Detroit is a large bronze seated figure by sculptor Marshall Fredericks, located outside the Coleman A. Young Municipal Center at 2 Woodward Avenue in downtown Detroit. The figure holds a gilded sphere emitting rays in its left hand and a family group in its right, and sits before a curved marble wall bearing an inscription.",
+    "symbolStory": "Fredericks was commissioned in the mid-1950s for the then-new City-County Building, and the sculpture was cast in Norway and unveiled in 1958. The wall behind it carries a passage from 2 Corinthians and the city seal. Fredericks intended the sphere to represent God and the family group to represent human relationships; the title reportedly came from public and press usage rather than the artist's original label, so accounts of its naming differ. The statue now functions as a civic gathering point and is periodically dressed in oversized Detroit sports jerseys during playoff runs, a practice the city has permitted for decades.",
+    "region": "North America"
+  },
+  {
+    "_id": "329",
+    "name": "Houston City Seal",
+    "city": "Houston",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "seal",
+      "locomotive",
+      "plough",
+      "star"
+    ],
+    "svgFilename": "us-houston.svg",
+    "description": "The Houston City Seal is the official emblem of the city of Houston, Texas. It carries a central lone star, a steam locomotive and a plow, with lettering naming the city and state around the rim. It is used on the city flag, official correspondence and the insignia of city agencies and institutions, appearing on documents and municipal buildings, including City Hall at 901 Bagby Street downtown.",
+    "symbolStory": "On Monday, February 17, 1840, the Houston City Council passed a resolution authorizing Mayor Charles Bigelow \"to procure a seal to be styled, the seal for the City of Houston, Texas.\" At the next meeting, on February 24, the council received the seal obtained by Dr. Francis Moore, Jr., a state senator and former mayor, who had it designed; Moore was paid $50, and the mayor had the word \"Texas\" cut into it, the lower half having originally been blank. The locomotive preceded the first railroad in Houston and Texas by about a decade; accounts that the Allen brothers devised it as a recruiting pitch to railroad builders are speculative. The original was reportedly lost until assistant city secretary Margaret Westerman found it in December 1939.",
+    "region": "North America"
+  },
+  {
+    "_id": "330",
+    "name": "Las Vegas Welcome Sign",
+    "city": "Las Vegas",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "sign",
+      "neon",
+      "star",
+      "welcome"
+    ],
+    "svgFilename": "us-las-vegas.svg",
+    "description": "The \"Welcome to Fabulous Las Vegas\" sign is a neon and incandescent sign standing in the median of Las Vegas Boulevard South, near Russell Road. It sits about four miles south of downtown and below the main resort corridor, technically outside the Las Vegas city limits in unincorporated Clark County. Its reverse side reads \"Drive Carefully / Come Back Soon.\"",
+    "symbolStory": "The sign dates to 1959, when the salesman Ted Rogich commissioned it from Western Neon for Clark County; Betty Willis is generally credited with the lettering and diamond-shaped layout, working with Western Neon's Ted Rogich on the commission, though accounts of the exact division of work vary. Willis never copyrighted it, which is one reason the image circulated freely on merchandise and film. The sign was listed on the National Register of Historic Places on May 1, 2009, and a dedicated parking area was added in 2008 after years of visitors stopping on the roadway. It now functions as the standard arrival photograph for tourists.",
+    "region": "North America"
+  },
+  {
+    "_id": "331",
+    "name": "Oxford University Arms",
+    "city": "Oxford",
+    "country": "UK",
+    "category": "Culture",
+    "tags": [
+      "book",
+      "crowns",
+      "heraldry",
+      "university"
+    ],
+    "svgFilename": "gb-oxford.svg",
+    "description": "The Oxford University Arms is the heraldic device of the University of Oxford: a blue shield bearing an open book inscribed with the Latin motto \"Dominus Illuminatio Mea\" (\"The Lord is my light\"), taken from Psalm 27. It appears throughout the central city on university buildings, including the Bodleian Library and the Sheldonian Theatre area of Broad Street, and on gates, stonework and formal documents.",
+    "symbolStory": "Heraldic use of the open-book shield by the university is recorded from the sixteenth century, and the arms were noted at the heralds' visitation of Oxfordshire in 1574; the university does not hold a formal grant of arms from the College of Arms, and claims of a much older or royal origin are traditional rather than documented. The motto derives from the opening of Psalm 27 in the Latin Vulgate. The arms should not be confused with the separate civic arms of Oxford City Council, which show an ox and a ford. Today the university shield functions as the institution's official emblem and, for many visitors, as visual shorthand for Oxford itself.",
+    "region": "Europe"
+  },
+  {
+    "_id": "332",
+    "name": "Dallas Pegasus",
+    "city": "Dallas",
+    "country": "USA",
+    "category": "Landmarks",
+    "tags": [
+      "pegasus",
+      "horse",
+      "neon",
+      "sign"
+    ],
+    "svgFilename": "us-dallas.svg",
+    "description": "The Dallas Pegasus is a red flying-horse sign associated with the Magnolia Petroleum Company. The original 1934 neon structure, a double-sided rotating sign, stood atop the Magnolia Building at 1401 Commerce Street downtown; after restoration it was placed at ground level beside the Omni Dallas Hotel convention center. A replica now turns on the Magnolia Building's roof.",
+    "symbolStory": "Magnolia Petroleum had used a flying red horse as its trademark since the 1930s, and in 1934 the company mounted a rotating neon version on the roof of its downtown headquarters, then the tallest building in the city and the South. Visible for miles, it functioned as a landmark for travellers and became shorthand for Dallas. The sign went dark for decades before a replica was lit for the millennium in 1999, while the original was restored and unveiled in 2015. Claims that the sign was erected specifically for a 1934 American Petroleum Institute convention are often repeated but not firmly documented. It appears today in civic emblems, public art and commercial names across the city.",
+    "region": "North America"
+  },
+  {
+    "_id": "333",
+    "name": "Charleston City Seal",
+    "city": "Charleston",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "seal",
+      "ship",
+      "harbour",
+      "civic"
+    ],
+    "svgFilename": "us-charleston.svg",
+    "description": "The Charleston City Seal is the official emblem of Charleston, South Carolina, used by the mayor's office and City Council on documents, buildings and municipal property. It shows a seated female figure holding a scepter, a ship under full sail, and a harbor view of the city with church steeples, ringed by the Latin inscriptions \"Aedes mores juraque curat\" and \"Civitatis Regimine Donata A.D. 1783.\" A white version of it also appears on the city's navy blue flag.",
+    "symbolStory": "The seal was first authorized on 13 August 1783, the year Charleston was chartered as a city, having been founded in 1670. An early depiction appears in The Charleston Directory and Revenue System of 1790, and the earliest known impression dates from 1804. Under Mayor William Ashmead Courtenay a redesigned seal was commissioned in 1880 or 1881, condensing the harbor view to allow further inscriptions; a laurel crown was added to the woman's outstretched hand in 1907, after which it has changed only stylistically. The figure's identity is traditional rather than documented: historian David C. R. Heisser recorded that \"tradition identifies the woman as the personification of the city itself\", linked to seafaring livelihood and self-defense. The motto, rendered as guarding buildings, customs and laws, is still cited locally in preservation arguments.",
+    "region": "North America"
+  },
+  {
+    "_id": "334",
+    "name": "Montreal Flag",
+    "city": "Montreal",
+    "country": "Canada",
+    "category": "Culture",
+    "tags": [
+      "flag",
+      "cross",
+      "pine",
+      "emblems"
+    ],
+    "svgFilename": "ca-montreal.svg",
+    "description": "The flag of Montreal is the official municipal flag of Montreal, Quebec. It bears a red cross on a white field, dividing the flag into four quarters, each holding a floral emblem, with a white pine at the centre. The flag flies over Montreal City Hall in the Ville-Marie borough and at other municipal buildings across the city's boroughs.",
+    "symbolStory": "Montreal's council adopted the flag in 1939, under Mayor Camillien Houde, drawing on an earlier armorial design introduced in 1833 during the mayoralty of Jacques Viger, the city's first mayor. The red cross refers to the city's Christian founding in 1642 as Ville-Marie. The four quarter emblems represent population groups of nineteenth-century Montreal: the fleur-de-lis for the French, the Lancastrian rose for the English, the thistle for the Scots, and the shamrock for the Irish, which replaced an earlier beaver. In September 2017 the city added a white pine at the centre to acknowledge Indigenous peoples, the tree being associated with peace in Iroquoian tradition.",
+    "region": "North America"
+  },
+  {
+    "_id": "335",
+    "name": "Kansas City Fountain",
+    "city": "Kansas City",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "fountain",
+      "flag",
+      "heart",
+      "civic"
+    ],
+    "svgFilename": "us-kansas-city.svg",
+    "description": "The fountain best known as Kansas City's emblematic water feature stands in Mill Creek Park, at the eastern entrance to the Country Club Plaza shopping district in Kansas City, Missouri. Its cast bronze group includes four mounted horsemen, said to represent the Mississippi, Volga, Seine and Rhine, ringed by four smaller figures of children playing on fish. It is the most photographed of the city's fountains.",
+    "symbolStory": "The figures were made in 1910 in France by sculptor Henri-Léon Gréber for New York financier Clarence H. Mackay, and were sold as salvage in 1951 after a 1938 fire and later vandalism damaged the estate and its sculptures. Miller Nichols, son of Country Club Plaza developer J. C. Nichols, brought them to Kansas City that year; purchase and installation were paid for by the Nichols family, the city and private donors, including a collection taken up by area schoolchildren. Herman Frederick Simon refurbished the work, and the fountain was dedicated on May 15, 1960 as the J. C. Nichols Memorial Fountain. On June 30, 2020, the parks board voted to remove the Nichols name from the fountain and adjacent parkway. The river attributions of the horsemen are traditional rather than documented. It now serves as a gathering point in a city that added \"City of Fountains\" to its official seal in 1992.",
+    "region": "North America"
+  },
+  {
+    "_id": "336",
+    "name": "Milwaukee People's Flag",
+    "city": "Milwaukee",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "flag",
+      "sun",
+      "lake",
+      "rivers"
+    ],
+    "svgFilename": "us-milwaukee.svg",
+    "description": "The People's Flag of Milwaukee, titled \"Sunrise Over the Lake,\" is an unofficial civic flag flown widely in Milwaukee, Wisconsin, on porches, homes and businesses across the city's neighborhoods. It shows a white sun rising from a dark blue lake into a golden sky, with three light blue stripes across the sun's lower half. The city's official flag remains a separate, older design.",
+    "symbolStory": "Graphic designer Steve Kodis pushed for a new Milwaukee flag from at least 2013, spurred again by a 2015 TED Talk in which Roman Mars called the official flag one of the country's worst. Kodis partnered with the nonprofit Greater Together, and 1,006 entries were narrowed by five judges to 45 semifinalists and five finalists, which flew at City Hall in May 2016 before public voting. Robert Lenz's design won on June 14, 2016, announced at 88.9 RadioMilwaukee. Official adoption has repeatedly failed: the council balked at the 2016 process, and questions about the contest's inclusiveness and a perceived racial divide have dogged it. A 2024 council vote of 7-8 declined adoption. It nonetheless appears on homes, sports uniforms and beer cans.",
+    "region": "North America"
+  },
+  {
+    "_id": "337",
+    "name": "Portland Flag",
+    "city": "Portland",
+    "country": "USA",
+    "category": "Culture",
+    "tags": [
+      "flag",
+      "star",
+      "rivers",
+      "civic"
+    ],
+    "svgFilename": "us-portland.svg",
+    "description": "The flag of Portland, Oregon, is the city's official municipal banner, flown at City Hall and other civic buildings. It shows a green field bearing a white four-pointed star, a truncated hypocycloid, from which radiate blue stripes bordered by L-shaped yellow elements, with narrow white fimbriations separating the blue and yellow from the green background. City ordinance sets its dimensions at 3 by 5 feet.",
+    "symbolStory": "In April 1969 the Commercial Club of Portland proposed a city flag; Mayor Terry Schrunk referred it to the Portland Art Commission, whose chair, Libby Solomon, instead arranged to pay a professional designer $500 and invited former commission chair Douglas Lynch (1913–2009). Council adopted Lynch's design in 1969 but first altered it, making the canton dark blue and adding the city seal. After Lynch spoke to the Portland Flag Association in early 2002, he revised the design toward his original intent, and on September 4, 2002, council passed an ordinance modifying the flag. The ordinance ties green to the forests, yellow to agriculture and commerce, and blue to the rivers, Portland sitting on the Willamette near its confluence with the Columbia. Sources differ on the exact 1969–70 adoption date.",
+    "region": "North America"
+  }
+]
