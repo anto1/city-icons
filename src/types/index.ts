@@ -30,6 +30,13 @@ export interface GridIcon {
 export interface Icon extends GridIcon {
   category?: string;
   description?: string;
+  /**
+   * Why this particular thing stands for the city — the origin of the symbol,
+   * not a description of the city. Optional and authored per icon; the city
+   * page renders it under the "About the {landmark}" heading, and it is what
+   * the page has to say that a stock-icon site does not.
+   */
+  symbolStory?: string;
 }
 
 /** Map a full icon record to the slim client-facing shape. */

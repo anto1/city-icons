@@ -336,6 +336,11 @@ export default function CityPage({
           <p className="text-lg text-muted-foreground leading-relaxed">
             {icon.description}
           </p>
+          {icon.symbolStory && (
+            <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+              {icon.symbolStory}
+            </p>
+          )}
           {icon.tags && icon.tags.length > 0 && (
             <div className="flex flex-wrap justify-center gap-2 mt-6">
               {icon.tags.map((tag, index) => (

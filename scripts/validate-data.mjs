@@ -61,6 +61,24 @@ for (const { entry, source } of icons) {
   }
 }
 
+// symbolStory is optional, but when present it has to be a real paragraph:
+// too short and it says nothing, too long and it stops being a caption.
+const SYMBOL_STORY_MIN = 200;
+const SYMBOL_STORY_MAX = 900;
+for (const { entry, source } of icons) {
+  const story = entry.symbolStory;
+  if (story === undefined) continue;
+  const label = `${source} (${entry.name ?? entry._id ?? 'unknown'})`;
+  if (typeof story !== 'string' || story.trim() === '') {
+    errors.push(`${label}: "symbolStory" must be a non-empty string when present`);
+    continue;
+  }
+  const length = story.trim().length;
+  if (length < SYMBOL_STORY_MIN || length > SYMBOL_STORY_MAX) {
+    errors.push(`${label}: "symbolStory" is ${length} characters, expected ${SYMBOL_STORY_MIN}-${SYMBOL_STORY_MAX}`);
+  }
+}
+
 // Duplicate _id
 const seenIds = new Map();
 for (const { entry, source } of icons) {
