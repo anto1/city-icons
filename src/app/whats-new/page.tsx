@@ -14,7 +14,7 @@ export const revalidate = false;
 const baseUrl = 'https://svgcities.com';
 
 export const metadata: Metadata = {
-  title: "What's New",
+  title: "What's New — Latest City Icons",
   description: 'See the latest city icons added to our collection. Weekly updates with new cities and landmarks from around the world.',
   keywords: 'new city icons, latest icons, icon updates, new svg icons, city icons changelog',
   authors: [{ name: 'Studio Partdirector' }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: `${baseUrl}/whats-new`,
   },
   openGraph: {
-    title: "What's New | City Icons Collection",
+    title: "What's New — Latest City Icons",
     description: 'See the latest city icons added to our collection.',
     url: `${baseUrl}/whats-new`,
     siteName: 'City Icons Collection',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "What's New | City Icons Collection",
+    title: "What's New — Latest City Icons",
     description: 'See the latest city icons added to our collection.',
     images: [`${baseUrl}/og-image.png`],
   },

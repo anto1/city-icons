@@ -88,7 +88,7 @@ function calculateStats() {
 }
 
 export const metadata: Metadata = {
-  title: 'Statistics',
+  title: 'Collection Statistics',
   description: 'Explore statistics about our city icons collection - see coverage by country, region, and discover which areas have the most icons.',
   keywords: 'city icons statistics, icon collection stats, country coverage, svg icons data',
   authors: [{ name: 'Studio Partdirector' }],
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     canonical: `${baseUrl}/statistics`,
   },
   openGraph: {
-    title: 'Statistics | City Icons Collection',
+    title: 'Collection Statistics',
     description: 'Explore statistics about our city icons collection.',
     url: `${baseUrl}/statistics`,
     siteName: 'City Icons Collection',
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Statistics | City Icons Collection',
+    title: 'Collection Statistics',
     description: 'Explore statistics about our city icons collection.',
     images: [`${baseUrl}/og-image.png`],
   },

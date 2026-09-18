@@ -141,7 +141,16 @@ export async function generateMetadata({ params }: PageProps) {
   const cityWord = countryIcons.length === 1 ? 'city icon' : 'city icons';
   const description = `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} ${cityWord} from ${countryName} with download and copy functionality.`;
 
-  const title = `${countryName} City Icons – ${countryIcons.length} ${cityWord === 'city icon' ? 'City Symbol' : 'City Symbols'} in Line Art`;
+  // Same 60-character budget as the city pages; long country names
+  // ("Bosnia and Herzegovina") need the shorter forms.
+  const TITLE_BUDGET = 60 - ' | svgcities'.length;
+  const symbolWord = countryIcons.length === 1 ? 'City Symbol' : 'City Symbols';
+  const titleCandidates = [
+    `${countryName} City Icons – ${countryIcons.length} ${symbolWord} in Line Art`,
+    `${countryName} City Icons – ${countryIcons.length} ${symbolWord}`,
+    `${countryName} City Icons`,
+  ];
+  const title = titleCandidates.find(c => c.length <= TITLE_BUDGET) ?? titleCandidates[titleCandidates.length - 1];
 
   return {
     title,

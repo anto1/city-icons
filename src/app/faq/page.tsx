@@ -96,7 +96,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: 'FAQ',
+  title: 'Frequently Asked Questions',
   description: 'Frequently asked questions about City Icons - learn about usage, licensing, downloads, and how to request new city icons.',
   keywords: 'city icons faq, icon questions, svg icons help, city icons usage, icon licensing questions',
   authors: [{ name: 'Studio Partdirector' }],
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
     canonical: `${baseUrl}/faq`,
   },
   openGraph: {
-    title: 'FAQ | City Icons Collection',
+    title: 'Frequently Asked Questions',
     description: 'Frequently asked questions about City Icons - learn about usage, licensing, and downloads.',
     url: `${baseUrl}/faq`,
     siteName: 'City Icons Collection',
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQ | City Icons Collection',
+    title: 'Frequently Asked Questions',
     description: 'Frequently asked questions about City Icons.',
     images: [`${baseUrl}/og-image.png`],
   },

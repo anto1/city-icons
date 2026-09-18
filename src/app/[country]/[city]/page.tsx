@@ -194,17 +194,33 @@ export async function generateMetadata({ params }: PageProps) {
   // template suffix to <title>.
   const baseCity = icon.city;
   const name = icon.name.trim();
-  const landmark = name.toLowerCase().startsWith(`${baseCity.toLowerCase()} `)
-    ? name.slice(baseCity.length + 1).trim()
-    : name;
+  // Strip a leading city prefix, also when the city carries a trailing generic
+  // word the icon name leaves off ("Ho Chi Minh City" vs "Ho Chi Minh ...").
+  const cityPrefixes = [baseCity, baseCity.replace(/ (City|Town)$/i, '')];
+  const stripped = cityPrefixes
+    .map(prefix => name.toLowerCase().startsWith(`${prefix.toLowerCase()} `)
+      ? name.slice(prefix.length + 1).trim()
+      : null)
+    .find((v): v is string => v !== null);
+  const landmark = stripped ?? name;
   const isCityOnly = landmark.toLowerCase() === baseCity.toLowerCase();
   // "{City} symbol" is where the real demand sits: these pages already rank on
   // queries like "madrid symbol" and "liver bird liverpool", while "city icons
   // svg" has no measurable volume. Keep the landmark first, name the city as a
   // symbol, and keep "SVG icon" for the download intent.
-  const title = isCityOnly
-    ? `${baseCity} Symbol – SVG Icon`
-    : `${landmark} – ${baseCity} Symbol SVG Icon`;
+  // Google renders about 60 characters; the " | svgcities" template suffix eats
+  // 12 of them. Long landmark names blow past that, so fall back through
+  // progressively shorter forms rather than letting the city get truncated off.
+  const TITLE_BUDGET = 60 - ' | svgcities'.length;
+  const candidates = isCityOnly
+    ? [`${baseCity} Symbol – SVG Icon`, `${baseCity} Symbol`]
+    : [
+        `${landmark} – ${baseCity} Symbol SVG Icon`,
+        `${landmark} – ${baseCity} Symbol`,
+        `${landmark} – ${baseCity}`,
+        landmark,
+      ];
+  const title = candidates.find(c => c.length <= TITLE_BUDGET) ?? candidates[candidates.length - 1];
   const description = isCityOnly
     ? `${baseCity} and the symbol that stands for it, drawn as minimalist line art from ${icon.country}. Free SVG icon — download, copy the code, or export a PNG.`
     : `The ${landmark} is a symbol of ${baseCity}, ${icon.country}, drawn here as minimalist line art. Free SVG icon — download, copy the code, or export a PNG.`;

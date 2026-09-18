@@ -129,7 +129,7 @@ function buildMapData(): MapData {
 }
 
 export const metadata: Metadata = {
-  title: 'World Map',
+  title: 'World Map of City Icons',
   description: `Explore all ${iconData.length} city icons plotted on a minimalist world map. Zoom into any region and jump straight to a city's icon page.`,
   keywords: 'city icons map, world map, svg icons by location, cities world map',
   authors: [{ name: 'Studio Partdirector' }],
@@ -140,7 +140,7 @@ export const metadata: Metadata = {
     canonical: `${baseUrl}/map`,
   },
   openGraph: {
-    title: 'World Map | City Icons Collection',
+    title: 'World Map of City Icons',
     description: `All ${iconData.length} city icons plotted on a minimalist world map.`,
     url: `${baseUrl}/map`,
     siteName: 'City Icons Collection',
@@ -157,7 +157,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Map | City Icons Collection',
+    title: 'World Map of City Icons',
     description: `All ${iconData.length} city icons plotted on a minimalist world map.`,
     images: [`${baseUrl}/og-image.png`],
   },
