@@ -2169,5 +2169,23 @@
     "svgFilename": "sj-longyearbyen.svg",
     "description": "Triangular signs at the edge of Longyearbyen mark where the settlement ends and polar bear country begins, the Norwegian text beneath the bear noting that the warning applies across the whole of Svalbard. Anyone travelling beyond the town is expected to carry a firearm and a means of scaring bears off, which makes the sign both a practical instruction and the archipelago's most photographed emblem.",
     "region": "Europe"
+  },
+  {
+    "_id": "338",
+    "name": "Antwerp MAS Museum",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "category": "Buildings",
+    "tags": [
+      "mas",
+      "museum",
+      "tower",
+      "modern",
+      "architecture",
+      "port"
+    ],
+    "svgFilename": "be-antwerp.svg",
+    "description": "Antwerp is Belgium's main port city on the Scheldt, known for its Gothic Cathedral of Our Lady, the diamond district and the Rubens House. The Museum aan de Stroom (MAS), opened in 2011 in the old dock district of Het Eilandje, is a tower of stacked boxes, each turned a quarter turn from the one below, clad in red sandstone and wrapped in rippled glass. Its free rooftop gives one of the best views over the city, the river and the port.",
+    "region": "Europe"
   }
 ]

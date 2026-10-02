@@ -823,5 +823,23 @@
     "description": "Hanoi's official emblem is the Khuê Văn Các, the Constellation of Literature Pavilion, standing at the gateway to the Temple of Literature — Vietnam's first national university, founded in 1070. Built in 1805, the graceful pavilion rests on four brick pillars and is pierced by round windows whose radiating spokes represent the star Khuê shining over centuries of Confucian scholarship. Printed on banknotes and beloved by generations of students, it embodies Hanoi's thousand-year devotion to learning.",
     "region": "Asia",
     "slug": "hanoi-temple-of-literature"
+  },
+  {
+    "_id": "339",
+    "name": "Atyrau Sturgeon",
+    "city": "Atyrau",
+    "country": "Kazakhstan",
+    "category": "Nature",
+    "tags": [
+      "sturgeon",
+      "fish",
+      "caviar",
+      "ural-river",
+      "caspian",
+      "nature"
+    ],
+    "svgFilename": "kz-atyrau.svg",
+    "description": "Atyrau is a city in western Kazakhstan on the Ural River, a few dozen kilometres above its mouth on the Caspian Sea. Known as Guryev until 1992, it grew as a fishing town and is now the centre of the country's oil industry. The Ural is one of the main spawning rivers of Caspian sturgeon, and the fish and its black caviar long defined Atyrau's economy and reputation.",
+    "region": "Asia"
   }
 ]

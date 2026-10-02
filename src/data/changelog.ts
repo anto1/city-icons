@@ -52,6 +52,12 @@ export function weekToDate(week: string): Date {
 
 export const changelog: ChangelogEntry[] = [
   {
+    week: '2026-W40',
+    date: 'September 28 - October 4, 2026',
+    cities: ['Antwerp', 'Atyrau'],
+    description: 'The MAS museum tower in Antwerp and the Caspian sturgeon of Atyrau',
+  },
+  {
     week: '2026-W38',
     date: 'September 14-20, 2026',
     cities: ['Kutaisi', 'Leverkusen', 'Glasgow', 'Gibraltar', 'Sibiu', 'Longyearbyen'],
