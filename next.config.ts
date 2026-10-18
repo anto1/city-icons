@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  // Ensure static generation works
-  trailingSlash: false,
-  // Add long-lived cache headers for static SVG icons
+  // Long-lived cache headers for static SVG icons
   async headers() {
     return [
       {

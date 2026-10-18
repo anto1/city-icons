@@ -49,3 +49,6 @@ next-env.d.ts
 
 # Generated press assets (npm run build:press)
 /public/press/
+
+# Local-only outreach drafts and submission records (also in .vercelignore)
+/outreach/

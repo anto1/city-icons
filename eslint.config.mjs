@@ -10,6 +10,10 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    // Build output, generated files and local-only folders
+    ignores: [".next/**", "node_modules/**", "public/**", "outreach/**", "next-env.d.ts"],
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
