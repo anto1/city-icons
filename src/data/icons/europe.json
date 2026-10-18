@@ -194,7 +194,8 @@
     ],
     "svgFilename": "de-leipzig.svg",
     "description": "Leipzig is a major city in Saxony, Germany, known for its rich cultural heritage and modern development. The city combines historic architecture with contemporary design, featuring the Leipzig Opera House and numerous museums.",
-    "region": "Europe"
+    "region": "Europe",
+    "slug": "leipzig-modern-city"
   },
   {
     "_id": "9",
@@ -2188,5 +2189,40 @@
     "description": "Antwerp is Belgium's main port city on the Scheldt, known for its Gothic Cathedral of Our Lady, the diamond district and the Rubens House. The Museum aan de Stroom (MAS), opened in 2011 in the old dock district of Het Eilandje, is a tower of stacked boxes, each turned a quarter turn from the one below, clad in red sandstone and wrapped in rippled glass. Its free rooftop gives one of the best views over the city, the river and the port.",
     "symbolStory": "The Museum aan de Stroom stands at the tip of Het Eilandje, Antwerp's oldest dock district, on the site of the Hanzehuis, where merchants of the Hanseatic League lived and traded until the building burned down in 1893. Designed by the Rotterdam firm Neutelings Riedijk Architects and opened on 17 May 2011, the 60-metre tower stacks ten boxes clad in Indian red sandstone, each turned a quarter turn against the one below, so that a spiral of escalators behind rippled glass carries visitors up to a free rooftop over the Scheldt and the port. The facade is studded with more than 3,000 small aluminium hands, a nod to the legend of Brabo, who cut off the hand of the giant Druon Antigoon and threw it into the river. Folk etymology reads the city's name as hand werpen, \"hand throwing\"; most linguists instead derive Antwerpen from aanwerp, a mound of land built up by the river.",
     "region": "Europe"
+  },
+  {
+    "_id": "340",
+    "name": "Leipzig City-Hochhaus",
+    "city": "Leipzig",
+    "country": "Germany",
+    "category": "Buildings",
+    "tags": [
+      "skyscraper",
+      "tower",
+      "university",
+      "modern",
+      "architecture"
+    ],
+    "svgFilename": "de-leipzig-city-hochhaus.svg",
+    "description": "The City-Hochhaus is Leipzig's tallest building, a 142-metre tower on Augustusplatz designed by Hermann Henselmann and completed in 1972 for the city's university. Its curved, slanted crown was meant to evoke an open book, and locals still call it the Uni-Riese, the university giant.",
+    "region": "Europe"
+  },
+  {
+    "_id": "341",
+    "name": "Leipzig Monument to the Battle of the Nations",
+    "city": "Leipzig",
+    "country": "Germany",
+    "category": "Landmarks",
+    "tags": [
+      "monument",
+      "memorial",
+      "völkerschlachtdenkmal",
+      "napoleon",
+      "historic"
+    ],
+    "svgFilename": "de-leipzig-battle-of-the-nations.svg",
+    "description": "The Monument to the Battle of the Nations (Völkerschlachtdenkmal) commemorates the 1813 Battle of Leipzig, in which the allied armies defeated Napoleon. Designed by Bruno Schmitz and completed in 1913 for the battle's centenary, the 91-metre stone monument is crowned by a dome ringed with colossal warrior figures, with the Archangel Michael carved over its entrance.",
+    "region": "Europe",
+    "slug": "leipzig-battle-of-the-nations"
   }
 ]

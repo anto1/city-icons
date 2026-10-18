@@ -52,6 +52,12 @@ export function weekToDate(week: string): Date {
 
 export const changelog: ChangelogEntry[] = [
   {
+    week: '2026-W42',
+    date: 'October 12-18, 2026',
+    cities: ['Leipzig', { city: 'Leipzig', country: 'Germany', slug: 'leipzig-battle-of-the-nations' }],
+    description: 'Two new Leipzig landmarks: the City-Hochhaus, now the main Leipzig icon, and the Monument to the Battle of the Nations',
+  },
+  {
     week: '2026-W40',
     date: 'September 28 - October 4, 2026',
     cities: ['Antwerp', 'Atyrau'],
@@ -144,7 +150,7 @@ export const changelog: ChangelogEntry[] = [
   {
     week: '2024-W45',
     date: 'November 4-10, 2024',
-    cities: ['Frankfurt', 'Bremen', 'Leipzig', 'Nuremberg', 'Graz', 'Ljubljana', 'Riga', 'Manchester', 'Leeds', 'Valencia', 'Sorrento', 'Ferrara', 'Trieste', 'Bruges', 'Kuopio', 'Limassol', 'Matosinhos', 'Chisinau'],
+    cities: ['Frankfurt', 'Bremen', { city: 'Leipzig', country: 'Germany', slug: 'leipzig-modern-city' }, 'Nuremberg', 'Graz', 'Ljubljana', 'Riga', 'Manchester', 'Leeds', 'Valencia', 'Sorrento', 'Ferrara', 'Trieste', 'Bruges', 'Kuopio', 'Limassol', 'Matosinhos', 'Chisinau'],
     description: 'European cities expansion',
   },
   {
