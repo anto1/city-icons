@@ -8,34 +8,24 @@
 // - orphan SVGs in public/icons not referenced by the dataset
 // - missing required fields
 // - a country whose icons use more than one filename prefix
-// - README icon/country badge counts drifting from the dataset
+// - a `region` that does not match the region file the entry lives in
+// - a `category` outside the consolidated taxonomy
+// - changelog weeks not in YYYY-Www format
+// - README badge and public/llms.txt counts drifting from the dataset
 
 import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getCitySlug, slugify } from '../src/lib/slugs.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const iconsDataDir = join(root, 'src', 'data', 'icons');
 const iconsPublicDir = join(root, 'public', 'icons');
 
-// Keep in sync with `slugify` in src/lib/utils.ts (duplicated here because
-// that file is TypeScript with path-alias imports, which plain Node can't
-// load; if you change one, change the other).
-function slugify(text) {
-  return text
-    .toLowerCase()
-    .replace(/ł/g, 'l')
-    .replace(/đ/g, 'd')
-    .replace(/ø/g, 'o')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '') // Remove accents
-    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single
-    .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-}
+const REQUIRED_FIELDS = ['_id', 'name', 'city', 'country', 'category', 'tags', 'svgFilename', 'region', 'description'];
 
-const REQUIRED_FIELDS = ['_id', 'name', 'city', 'country', 'category', 'tags', 'svgFilename', 'region'];
+// Consolidated taxonomy (see CLAUDE.md) — consolidate before adding a category.
+const CATEGORIES = new Set(['Landmarks', 'Culture', 'Buildings', 'Nature', 'Architecture', 'Religion']);
 
 const errors = [];
 
@@ -44,7 +34,7 @@ const icons = [];
 for (const file of readdirSync(iconsDataDir).filter((f) => f.endsWith('.json'))) {
   const entries = JSON.parse(readFileSync(join(iconsDataDir, file), 'utf8'));
   for (const [index, entry] of entries.entries()) {
-    icons.push({ entry, source: `${file}[${index}]` });
+    icons.push({ entry, file, source: `${file}[${index}]` });
   }
 }
 
@@ -93,10 +83,9 @@ for (const { entry, source } of icons) {
 // Duplicate country/city slug pairs (would collide on the same URL)
 const seenSlugs = new Map();
 for (const { entry, source } of icons) {
-  // Mirrors getCitySlug() in src/lib/utils.ts: an explicit `slug` overrides the
-  // slugified city name so cities with multiple icons still get unique URLs.
-  const citySlug = entry.slug ?? slugify(entry.city ?? '');
-  const slug = `${slugify(entry.country ?? '')}/${citySlug}`;
+  // An explicit `slug` overrides the slugified city name so cities with
+  // multiple icons still get unique URLs (getCitySlug in src/lib/slugs.mjs).
+  const slug = `${slugify(entry.country ?? '')}/${getCitySlug({ city: entry.city ?? '', slug: entry.slug })}`;
   const prev = seenSlugs.get(slug);
   if (prev) {
     errors.push(`duplicate slug "/${slug}": ${prev} and ${source}`);
@@ -142,9 +131,32 @@ for (const [country, seen] of prefixesByCountry) {
   }
 }
 
-// README badge counts must match the dataset
+// The region file is the source of truth for grouping; the `region` field is
+// what the site reads. They must agree ("Middle East" lives in middle-east.json).
+for (const { entry, file, source } of icons) {
+  if (typeof entry.region === 'string' && `${slugify(entry.region)}.json` !== file) {
+    errors.push(`${source} (${entry.name}): region "${entry.region}" does not match its file ${file}`);
+  }
+}
+
+for (const { entry, source } of icons) {
+  if (typeof entry.category === 'string' && !CATEGORIES.has(entry.category)) {
+    errors.push(`${source} (${entry.name}): category "${entry.category}" is not one of ${[...CATEGORIES].join(', ')}`);
+  }
+}
+
+// weekToDate() throws on a malformed week; catch it here with a clearer message
+const changelogSource = readFileSync(join(root, 'src', 'data', 'changelog.ts'), 'utf8');
+for (const [, week] of changelogSource.matchAll(/^\s*week: '([^']*)'/gm)) {
+  if (!/^\d{4}-W\d{2}$/.test(week)) {
+    errors.push(`src/data/changelog.ts: week "${week}" is not in YYYY-Www format`);
+  }
+}
+
+// README badges and public/llms.txt quote the totals; they must match the dataset
 const iconCount = icons.length;
 const countryCount = new Set(icons.map(({ entry }) => entry.country)).size;
+const cityCount = new Set(icons.map(({ entry }) => `${entry.city}|${entry.country}`)).size;
 const readme = readFileSync(join(root, 'README.md'), 'utf8');
 const iconBadge = readme.match(/icons-(\d+)-orange/);
 const countryBadge = readme.match(/countries-(\d+)-blue/);
@@ -155,6 +167,20 @@ if (countryBadge && Number(countryBadge[1]) !== countryCount) {
   errors.push(`README.md country badge says ${countryBadge[1]}, dataset has ${countryCount} — update README.md`);
 }
 
+const llms = readFileSync(join(root, 'public', 'llms.txt'), 'utf8');
+const llmsCounts = llms.match(/(\d+) minimalist SVG line-art icons of (\d+) cities in (\d+) countries/);
+if (!llmsCounts) {
+  errors.push('public/llms.txt: summary line "N minimalist SVG line-art icons of N cities in N countries" not found');
+} else {
+  const [, llmsIcons, llmsCities, llmsCountries] = llmsCounts.map(Number);
+  if (llmsIcons !== iconCount || llmsCities !== cityCount || llmsCountries !== countryCount) {
+    errors.push(
+      `public/llms.txt says ${llmsIcons} icons / ${llmsCities} cities / ${llmsCountries} countries, ` +
+        `dataset has ${iconCount} / ${cityCount} / ${countryCount} — update public/llms.txt`
+    );
+  }
+}
+
 if (errors.length > 0) {
   console.error(`Dataset validation failed with ${errors.length} error(s):\n`);
   for (const error of errors) {
@@ -163,4 +189,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`Dataset validation passed: ${iconCount} icons, ${countryCount} countries, ${svgFiles.size} SVG files.`);
+console.log(`Dataset validation passed: ${iconCount} icons, ${cityCount} cities, ${countryCount} countries, ${svgFiles.size} SVG files.`);

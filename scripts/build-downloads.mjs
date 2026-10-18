@@ -19,33 +19,12 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { zipSync } from 'fflate';
+import { getCitySlug, slugify } from '../src/lib/slugs.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const iconsDataDir = join(root, 'src', 'data', 'icons');
 const iconsPublicDir = join(root, 'public', 'icons');
 const baseUrl = 'https://svgcities.com';
-
-// Keep in sync with `slugify` in src/lib/utils.ts (duplicated here because
-// that file is TypeScript with path-alias imports, which plain Node can't
-// load; if you change one, change the other).
-// Mirrors getCitySlug() in src/lib/utils.ts.
-function citySlug(icon) {
-  return icon.slug ?? slugify(icon.city);
-}
-
-function slugify(text) {
-  return text
-    .toLowerCase()
-    .replace(/ł/g, 'l')
-    .replace(/đ/g, 'd')
-    .replace(/ø/g, 'o')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '') // Remove accents
-    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single
-    .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-}
 
 // Load all region files, sorted by numeric id for stable output
 const icons = [];
@@ -71,7 +50,7 @@ const index = {
     tags: icon.tags,
     svgFilename: icon.svgFilename,
     svgUrl: `${baseUrl}/icons/${icon.svgFilename}`,
-    pageUrl: `${baseUrl}/${slugify(icon.country)}/${citySlug(icon)}`,
+    pageUrl: `${baseUrl}/${slugify(icon.country)}/${getCitySlug(icon)}`,
   })),
 };
 writeFileSync(join(root, 'public', 'icons.json'), JSON.stringify(index, null, 2) + '\n');
