@@ -135,10 +135,10 @@ src/
 │   ├── roulette/             # City Roulette
 │   ├── press/                # Press kit page
 │   └── sitemap.ts            # Dynamic XML sitemap
-├── components/               # React components (incl. the hand-rolled SVG world map)
+├── components/               # React components (server by default; client islands for search, map, downloads)
 ├── data/icons/               # Icon metadata by region (JSON)
 ├── data/coordinates.json     # City coordinates for the map (generated from GeoNames)
-├── lib/                      # Utilities (slugify, constants)
+├── lib/                      # Site constants, metadata/JSON-LD helpers, slugs (shared with scripts/)
 └── types/                    # TypeScript interfaces
 
 scripts/                      # Build/maintenance scripts (validation, SVG normalization,
@@ -153,7 +153,7 @@ npm install
 npm run dev             # Start dev server (Turbopack)
 npm run build           # Production build (validates data, builds downloads + press kit, then SSG)
 npm run lint            # ESLint
-npm run validate:data   # Dataset checks (duplicate ids/URLs, missing files, badge counts)
+npm run validate:data   # Dataset checks (duplicate ids/URLs, missing files, regions, categories, counts)
 npm run normalize:svgs  # Normalize + optimize icon SVGs
 npm run build:press     # Rebuild the press kit assets in public/press/
 ```

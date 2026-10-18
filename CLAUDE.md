@@ -1,6 +1,6 @@
 # City Icons
 
-Minimalist SVG icon collection: 311 icons covering 307 cities in 152 countries. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
+Minimalist SVG icon collection (~300 icons, ~150 countries — exact totals are in the README badges and `public/llms.txt`, both checked by `npm run validate:data`). Built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4.
 
 **Live site:** https://svgcities.com
 
@@ -33,55 +33,72 @@ All user-facing licensing copy (license page, FAQ, README) must reflect these te
 
 ```
 src/
-├── app/                    # Next.js App Router pages
+├── app/                    # Next.js App Router pages (server components)
 │   ├── page.tsx           # Homepage (all icons)
-│   ├── layout.tsx         # Root layout, metadata (dynamic icon count), JSON-LD, ThemeProvider
+│   ├── layout.tsx         # Root layout, metadata defaults + title template, WebSite JSON-LD, ThemeProvider
 │   ├── [country]/         # Dynamic country pages (dynamicParams=false)
 │   │   └── [city]/        # Individual city pages (dynamicParams=false)
 │   │       └── opengraph-image.tsx  # Dynamic OG image per city
 │   ├── map/               # World map of every city (see World Map section)
 │   ├── roulette/          # City Roulette feature
-│   ├── faq/               # FAQ page with structured data
-│   ├── statistics/        # Collection statistics page
-│   ├── whats-new/         # Weekly changelog of new icons
-│   ├── license/           # License page
+│   ├── faq/ statistics/ whats-new/ license/  # Content pages, all built on <ContentPage>
 │   ├── press/             # Press kit page (facts + downloadable assets, see Press Kit section)
 │   ├── manifest.ts        # Serves /manifest.webmanifest (Next wires the <link> tag)
 │   └── sitemap.ts         # XML sitemap generation
-├── components/            # React components
-│   ├── ClientHome.tsx     # Client shell shared by homepage and country pages
-│   ├── IconGrid.tsx       # Main grid with hover effects
+├── components/
+│   ├── ClientHome.tsx     # Client shell shared by homepage and country pages (search + filters)
+│   ├── IconGrid.tsx       # Main grid with proximity hover effect
 │   ├── IconCard.tsx       # Shared square icon card (homepage grid + city-page grids)
 │   ├── SearchBar.tsx      # Search with autocomplete
-│   ├── CityPage.tsx       # City page layout (download SVG/PNG, copy, share, credit line)
+│   ├── CityPage.tsx       # City page layout — server component
+│   ├── IconActions.tsx    # City page client island: SVG/PNG download, copy, share, credit box
+│   ├── ContentPage.tsx    # Shell of faq/statistics/whats-new/license/map: header, breadcrumb, title, footer
+│   ├── Breadcrumbs.tsx    # Visible breadcrumb trail (same Crumb[] as breadcrumbList() JSON-LD)
+│   ├── JsonLd.tsx         # <script type="application/ld+json">, adds @context
+│   ├── RandomIconHeader.tsx # Three featured icons + HeaderControls (home, country, city pages)
+│   ├── PageHeader.tsx     # HeaderControls (scroll-top, GitHub, theme) + spacer for content pages
+│   ├── IconFooter.tsx     # Country list + footer links
 │   ├── AttributionSnippet.tsx # Copyable CC BY credit (city page + license page)
 │   ├── PressDownload.tsx  # Tracked press-kit ZIP link
-│   ├── ThemeProvider.tsx  # Dark mode context provider
-│   ├── ThemeToggle.tsx    # Light/dark mode toggle button
-│   ├── ThemedToaster.tsx  # Sonner Toaster wired to ThemeProvider (dark-mode toasts)
-│   ├── map/               # /map internals
-│   │   ├── WorldMap.tsx   # Client pan/zoom SVG map (no map library)
+│   ├── ThemeProvider.tsx / ThemeToggle.tsx / ThemedToaster.tsx  # Dark mode
+│   ├── map/               # /map internals (no map library)
+│   │   ├── WorldMap.tsx   # Client component: region presets, zoom buttons, stage
+│   │   ├── useMapViewport.ts # Pan/zoom state + pointer, pinch, wheel, focus gestures
+│   │   ├── viewport.ts    # Pure geometry: View, clampView, measureStage
+│   │   ├── MapMarkers.tsx # Memoized marker links with hover preview
+│   │   ├── types.ts       # MapMarker, RegionView
 │   │   ├── projection.ts  # Equirectangular lat/lng → percent helpers
 │   │   └── world-land.ts  # GENERATED basemap path (scripts/build-world-basemap.mjs)
 │   └── ui/                # button.tsx, input.tsx only (shadcn-style)
 ├── data/
 │   ├── icons/             # 8 region JSON files (europe.json, asia.json, etc.)
+│   ├── pending-icons.json # Staged records for icons not drawn yet (not imported by the site)
 │   ├── coordinates.json   # GENERATED: icon _id → [lat, lng] (scripts/build-city-coordinates.mjs)
 │   ├── coordinates.ts     # Coordinate lookup + missing-coordinate detection
 │   ├── changelog.ts       # Weekly icon additions changelog
-│   └── index.ts           # Aggregates region JSON; precomputed sorts/counts
-├── hooks/                 # Custom hooks (useIconSearch)
+│   └── index.ts           # Aggregates region JSON; sorted list, country counts, featured icons
+├── hooks/                 # useIconSearch, usePrefersReducedMotion
 ├── lib/
-│   ├── utils.ts           # slugify (handles ł/đ/ø), getCitySlug, URL helpers, search scoring
+│   ├── site.ts            # SITE_URL, SITE_NAME, STUDIO_ORG, LICENSE_URL… — never hard-code the domain
+│   ├── metadata.ts        # pageMetadata(), fitTitle() (60-char title budget), indexRobots()
+│   ├── breadcrumbs.ts     # Crumb type + breadcrumbList() JSON-LD
+│   ├── slugs.mjs          # slugify + getCitySlug — plain JS, shared with scripts/ and the generator
+│   ├── utils.ts           # cn, URL helpers, getLandmark(), search scoring
+│   ├── analytics.ts       # trackIconEvent() (aggregate + per-city event), eventKey()
+│   ├── regions.ts         # REGIONS display order, compareRegions()
+│   ├── map-data.ts        # buildMapData(): markers, region presets, city list for /map
+│   ├── svg-export.ts      # fetchSvg, svgToPng, downloadBlob (browser only)
+│   ├── added-date.ts      # When an icon was added, from the changelog (sitemap + city page)
 │   ├── attribution.ts     # iconAttribution(): escaped HTML + plain-text CC BY credit
-│   └── constants.ts       # Animation, grid, hover, breakpoint constants
-└── types/                 # Icon, GridIcon, toGridIcon()
+│   ├── seo.ts             # Country-page indexing threshold
+│   └── constants.ts       # Animation, grid (ICON_GRID_CLASS), hover, breakpoint, PNG_SIZE
+└── types/                 # Icon, GridIcon, toGridIcon(), CountryCount
 
 scripts/                   # Node build/maintenance scripts (see Commands)
 └── fonts/                 # Instrument Sans TTF + OFL, used only by build-press-kit.mjs
 public/
-├── icons/                 # 311 SVG files (naming: {country-code}-{city}.svg)
-├── llms.txt               # Hand-maintained LLM-facing site summary (keep counts in sync)
+├── icons/                 # SVG files (naming: {country-code}-{city}.svg)
+├── llms.txt               # Hand-maintained LLM-facing site summary (counts checked by validate:data)
 ├── icons.json             # GENERATED, gitignored (scripts/build-downloads.mjs)
 ├── city-icons.zip         # GENERATED, gitignored (scripts/build-downloads.mjs)
 └── press/                 # GENERATED, gitignored (scripts/build-press-kit.mjs)
@@ -95,7 +112,7 @@ public/
 npm run dev              # Start dev server (Turbopack)
 npm run build            # validate-data + build-downloads + build-press-kit, then next build (SSG)
 npm run start            # Start production server
-npm run lint             # Run ESLint
+npm run lint             # ESLint CLI over the whole repo, scripts/ included
 npm run validate:data    # Dataset validation (also gates npm run build)
 npm run normalize:svgs   # Normalize/optimize public/icons — run after adding or editing SVGs
 npm run build:downloads  # Regenerate public/icons.json + city-icons.zip (build runs this too)
@@ -105,7 +122,7 @@ node scripts/build-city-coordinates.mjs  # Regenerate src/data/coordinates.json 
 node scripts/build-world-basemap.mjs     # Regenerate src/components/map/world-land.ts — only when changing the basemap/crop
 ```
 
-- `validate:data` fails on: duplicate `_id`, duplicate country/city URL slugs, `svgFilename` with no file, orphan SVGs, missing required fields, README badge counts drifting from the dataset.
+- `validate:data` fails on: duplicate `_id`, duplicate country/city URL slugs, `svgFilename` with no file, orphan SVGs, missing required fields (incl. `description`), a country using two filename prefixes, a `region` that doesn't match its file, a `category` outside the taxonomy, malformed changelog weeks, README badge or `public/llms.txt` counts drifting from the dataset.
 - `normalize:svgs` rewrites `fill/stroke="black"` to `currentColor`, normalizes viewBox to `0 0 120 120` (uniform scale + center), runs SVGO. Idempotent.
 - `build:downloads` output is deterministic (sorted entries, fixed zip mtimes) — re-running without dataset changes is byte-identical.
 
@@ -114,7 +131,8 @@ node scripts/build-world-basemap.mjs     # Regenerate src/components/map/world-l
 - **SSG:** All pages pre-rendered at build time via `generateStaticParams()`
 - **dynamicParams=false:** Unknown slugs return proper 404 (not soft 404 with 200)
 - **Server Components:** Default for pages; client components marked with `'use client'`
-- **Server→client boundary:** pages map full `Icon` records to slim `GridIcon` via `toGridIcon()` (`src/types/index.ts`) before passing lists to client components. `description` alone is ~108 KB across the dataset and must never be serialized into client props; `category` is also stripped (no client component reads it). Keep both server-side (metadata, JSON-LD, statistics, OG images).
+- **Server→client boundary:** pages map full `Icon` records to slim `GridIcon` via `toGridIcon()` (`src/types/index.ts`) before passing lists to client components. `description` alone is ~108 KB across the dataset and must never be serialized into client props; `category` is also stripped (no client component reads it). Keep both server-side (metadata, JSON-LD, statistics, OG images). Shared helpers (`getIconUrl`, `getLandmark`, search) take `GridIcon`, so they work on both shapes.
+- **Client islands only:** `CityPage`, `ContentPage` and the statistics/what's-new content are server components; interactivity lives in small client components (`IconActions`, `ClientHome`, `WorldMap`, `RoulettePage`, header/footer controls). Note the trade-off measured when CityPage moved to the server: page JS dropped ~1.8 kB, but the RSC payload carries the rendered tree, so gzipped HTML grew ~1.5 kB — don't move things server-side expecting smaller HTML.
 - **SVG Loading:** Icons served as static files with 1-year immutable cache headers
 - **Dynamic Routes:** `/[country]` and `/[country]/[city]` for country/city pages
 - **OG Images:** Dynamic per-city OG images via `opengraph-image.tsx` using `ImageResponse`
@@ -150,18 +168,14 @@ interface Icon extends GridIcon {
 
 A city page URL is `/{slugify(country)}/{getCitySlug(icon)}`, where `getCitySlug()` (`src/lib/utils.ts`) returns `icon.slug ?? slugify(icon.city)`. When a city gets a **second** icon, the new entry MUST set an explicit `slug` (e.g. Hanoi's second icon uses `hanoi-temple-of-literature`, São Paulo's uses `sao-paulo-masp`) — otherwise both icons resolve to the same URL and one silently shadows the other. This caused a real production bug; `validate:data` now fails the build on duplicate slug pairs.
 
+### Landmark names
+
+Names are usually `"{City} {Landmark}"`. `getLandmark()` (`src/lib/utils.ts`) strips the city prefix — also the city without a trailing "City"/"Town" ("Ho Chi Minh Bến Thành Market" → "Bến Thành Market") — and is the single source for the page `<title>`, the "About the …" heading and search suggestions. Don't re-derive it inline.
+
 ### Category taxonomy
 
-Consolidated set — do not invent new categories without consolidating:
-
-| Category | Icons |
-|----------|------:|
-| Landmarks | 170 |
-| Culture | 96 |
-| Buildings | 22 |
-| Nature | 9 |
-| Architecture | 8 |
-| Religion | 6 |
+Consolidated set — `validate:data` rejects anything else; consolidate before adding one:
+Landmarks, Culture, Buildings, Nature, Architecture, Religion (counts: /statistics).
 
 ## Adding New Icons
 
@@ -172,7 +186,7 @@ Consolidated set — do not invent new categories without consolidating:
 5. Update `src/data/changelog.ts` (see Updating Changelog; use the object form for ambiguous cities).
 6. Run `node scripts/build-city-coordinates.mjs` to regenerate `src/data/coordinates.json`. **If skipped, the build only prints a warning and the new city is silently missing from `/map`.**
 7. Run `npm run validate:data` (also runs as part of `npm run build`).
-8. If icon/country totals changed: update README badges and region table (`validate:data` asserts the badge numbers), `public/llms.txt`, and the counts at the top of this file.
+8. If icon/country totals changed: update the README (badges, region table, and the counts in the intro — only the badges are checked) and the summary line in `public/llms.txt` — `validate:data` fails until the badges and llms.txt match.
 
 ## Updating Changelog
 
@@ -212,6 +226,11 @@ Without `country`/`slug`, a string entry matches by city name alone and refers t
 
 ## Code Conventions
 
+- **Site constants:** absolute URLs via `absoluteUrl()`/`SITE_URL`, schema.org author/publisher via `STUDIO_ORG` (`src/lib/site.ts`).
+- **Page metadata:** `pageMetadata({ path, title, description, … })` from `src/lib/metadata.ts`. The layout supplies authors/creator/publisher/formatDetection/metadataBase; `openGraph`/`twitter` are not deep-merged by Next, so `pageMetadata` restates them. Content pages that want explicit `index, follow` pass `robots: indexRobots()`.
+- **JSON-LD:** render with `<JsonLd data={…} />` (adds `@context`); breadcrumbs with `breadcrumbList(trail)` and the visible `<Breadcrumbs trail={…} />` from the same `Crumb[]`.
+- **Analytics:** icon interactions go through `trackIconEvent('ICON_DOWNLOAD', city)`; other events call `trackEvent` with the names listed under Analytics Events.
+
 - **TypeScript:** Strict mode, interfaces for all props
 - **Components:** Server by default, `'use client'` for interactivity
 - **Styling:** Tailwind utility classes, theme-aware colors (no hardcoded hex), responsive via SM/MD/LG/XL breakpoints
@@ -225,10 +244,12 @@ Without `country`/`slug`, a string entry matches by city name alone and refers t
 |------|---------|
 | `src/data/index.ts` | Aggregates all region JSON; precomputed sorted list, country counts, featured icons |
 | `src/types/index.ts` | `Icon`/`GridIcon` split and `toGridIcon()` boundary mapper |
-| `src/lib/utils.ts` | `slugify`, `getCitySlug` (slug override), URL helpers, search scoring |
-| `src/lib/constants.ts` | Animation, grid, hover, breakpoint constants |
+| `src/lib/site.ts` / `src/lib/metadata.ts` | Site constants; `pageMetadata`, `fitTitle`, `indexRobots` |
+| `src/lib/slugs.mjs` | `slugify`/`getCitySlug` — the one copy, shared with scripts and the generator |
+| `src/lib/utils.ts` | URL helpers, `getLandmark`, search scoring (re-exports the slug helpers) |
+| `src/lib/constants.ts` | Animation, grid (`ICON_GRID_CLASS`), hover, breakpoint, `PNG_SIZE` |
 | `src/data/coordinates.ts` | Coordinate lookup for `/map` + missing-coordinate detection |
-| `next.config.ts` | Cache headers, SSG config |
+| `next.config.ts` | Icon cache headers, redirects for renamed icon files |
 | `src/app/layout.tsx` | Global metadata, JSON-LD structured data |
 | `src/app/[country]/[city]/opengraph-image.tsx` | Dynamic OG image generation per city |
 | `src/app/sitemap.ts` | XML sitemap with changelog-based dates |
