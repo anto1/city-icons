@@ -12,6 +12,8 @@ import { IconFooter } from '@/components/IconFooter';
 import { IconCard } from '@/components/IconCard';
 import { HeaderControls } from './PageHeader';
 import Link from 'next/link';
+import { AttributionSnippet } from '@/components/AttributionSnippet';
+import { iconAttribution } from '@/lib/attribution';
 
 /** Raster size for the client-side PNG export (the common icon default). */
 const PNG_SIZE = 512;
@@ -43,6 +45,9 @@ export default function CityPage({
 }: CityPageProps) {
   const [svgContent, setSvgContent] = useState<string | null>(null);
 
+  const [showAttribution, setShowAttribution] = useState(false);
+  const attribution = iconAttribution(icon.name, `https://svgcities.com${getIconUrl(icon)}`);
+
   // Same landmark derivation as the page title: names are usually
   // "{City} {Landmark}", so strip a leading city prefix to isolate the landmark.
   const trimmedName = icon.name.trim();
@@ -56,7 +61,9 @@ export default function CityPage({
     if (svgContent) return svgContent;
     try {
       const response = await fetch(getIconSvgUrl(icon));
+      if (!response.ok) throw new Error(`SVG request failed: ${response.status}`);
       const content = await response.text();
+      if (!/<svg[\s>]/i.test(content)) throw new Error('Response is not an SVG');
       setSvgContent(content);
       return content;
     } catch (error) {
@@ -88,7 +95,8 @@ export default function CityPage({
     trackEvent('ICON_DOWNLOAD');
     trackEvent(`ICON_DOWNLOAD_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
     
-    toast.success('SVG downloaded successfully!');
+    setShowAttribution(true);
+    toast.success('SVG download started');
   };
 
   const downloadPNG = async () => {
@@ -155,7 +163,8 @@ export default function CityPage({
       trackEvent('ICON_DOWNLOAD_PNG');
       trackEvent(`ICON_DOWNLOAD_PNG_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
 
-      toast.success('PNG downloaded successfully!', {
+      setShowAttribution(true);
+      toast.success('PNG download started', {
         description: `${PNG_SIZE}×${PNG_SIZE}px, transparent background`,
         duration: 3000,
       });
@@ -183,6 +192,7 @@ export default function CityPage({
       trackEvent('ICON_COPY');
       trackEvent(`ICON_COPY_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
       
+      setShowAttribution(true);
       toast.success('SVG copied to clipboard!', {
         description: `${icon.city} icon is ready to paste`,
         duration: 3000,
@@ -327,6 +337,21 @@ export default function CityPage({
             </Button>
           </div>
         </div>
+
+        {showAttribution && (
+          <section className="max-w-2xl mx-auto mb-12 p-6 rounded-lg border border-border bg-muted/30" aria-labelledby="credit-heading">
+            <h2 id="credit-heading" className="text-xl font-semibold mb-2">Credit the artwork</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Copy a credit into your project’s credits or about page. If you change the icon,
+              mention your changes. <Link href="/license" className="underline">CC BY 4.0 license details</Link>.
+            </p>
+            <AttributionSnippet label="Plain text" snippet={attribution.text} />
+            <details className="mt-4">
+              <summary className="cursor-pointer text-sm underline">HTML credit for websites</summary>
+              <div className="mt-3"><AttributionSnippet label="HTML" snippet={attribution.html} /></div>
+            </details>
+          </section>
+        )}
 
         {/* Description - centered */}
         <section className="text-center max-w-2xl mx-auto mb-12" aria-labelledby="about-heading">

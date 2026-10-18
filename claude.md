@@ -26,7 +26,7 @@ All user-facing licensing copy (license page, FAQ, README) must reflect these te
 - **UI:** Radix UI (Slot, for Button `asChild`), Lucide React icons, Sonner (toasts)
 - **Analytics:** Fathom Client
 - **Fonts:** Instrument Sans (`next/font/google`, self-hosted + preloaded, metric-matched fallback)
-- **Build tooling:** SVGO (icon optimization), fflate (zip generation) — dev deps used by `scripts/`
+- **Build tooling:** SVGO (icon optimization), fflate (zip generation), sharp + fontkit (press kit artwork) — dev deps used by `scripts/`
 - **Deploy:** Vercel
 
 ## Project Structure
@@ -45,6 +45,7 @@ src/
 │   ├── statistics/        # Collection statistics page
 │   ├── whats-new/         # Weekly changelog of new icons
 │   ├── license/           # License page
+│   ├── press/             # Press kit page (facts + downloadable assets, see Press Kit section)
 │   ├── manifest.ts        # Serves /manifest.webmanifest (Next wires the <link> tag)
 │   └── sitemap.ts         # XML sitemap generation
 ├── components/            # React components
@@ -52,7 +53,9 @@ src/
 │   ├── IconGrid.tsx       # Main grid with hover effects
 │   ├── IconCard.tsx       # Shared square icon card (homepage grid + city-page grids)
 │   ├── SearchBar.tsx      # Search with autocomplete
-│   ├── CityPage.tsx       # City page layout (download SVG/PNG, copy, share)
+│   ├── CityPage.tsx       # City page layout (download SVG/PNG, copy, share, credit line)
+│   ├── AttributionSnippet.tsx # Copyable CC BY credit (city page + license page)
+│   ├── PressDownload.tsx  # Tracked press-kit ZIP link
 │   ├── ThemeProvider.tsx  # Dark mode context provider
 │   ├── ThemeToggle.tsx    # Light/dark mode toggle button
 │   ├── ThemedToaster.tsx  # Sonner Toaster wired to ThemeProvider (dark-mode toasts)
@@ -70,15 +73,18 @@ src/
 ├── hooks/                 # Custom hooks (useIconSearch)
 ├── lib/
 │   ├── utils.ts           # slugify (handles ł/đ/ø), getCitySlug, URL helpers, search scoring
+│   ├── attribution.ts     # iconAttribution(): escaped HTML + plain-text CC BY credit
 │   └── constants.ts       # Animation, grid, hover, breakpoint constants
 └── types/                 # Icon, GridIcon, toGridIcon()
 
 scripts/                   # Node build/maintenance scripts (see Commands)
+└── fonts/                 # Instrument Sans TTF + OFL, used only by build-press-kit.mjs
 public/
 ├── icons/                 # 311 SVG files (naming: {country-code}-{city}.svg)
 ├── llms.txt               # Hand-maintained LLM-facing site summary (keep counts in sync)
 ├── icons.json             # GENERATED, gitignored (scripts/build-downloads.mjs)
-└── city-icons.zip         # GENERATED, gitignored (scripts/build-downloads.mjs)
+├── city-icons.zip         # GENERATED, gitignored (scripts/build-downloads.mjs)
+└── press/                 # GENERATED, gitignored (scripts/build-press-kit.mjs)
 
 .github/ISSUE_TEMPLATE/    # City request issue form
 ```
@@ -87,12 +93,13 @@ public/
 
 ```bash
 npm run dev              # Start dev server (Turbopack)
-npm run build            # validate-data + build-downloads, then next build (SSG)
+npm run build            # validate-data + build-downloads + build-press-kit, then next build (SSG)
 npm run start            # Start production server
 npm run lint             # Run ESLint
 npm run validate:data    # Dataset validation (also gates npm run build)
 npm run normalize:svgs   # Normalize/optimize public/icons — run after adding or editing SVGs
 npm run build:downloads  # Regenerate public/icons.json + city-icons.zip (build runs this too)
+npm run build:press      # Regenerate icons.json, then public/press/ (build runs this too)
 
 node scripts/build-city-coordinates.mjs  # Regenerate src/data/coordinates.json — REQUIRED after adding icons
 node scripts/build-world-basemap.mjs     # Regenerate src/components/map/world-land.ts — only when changing the basemap/crop
@@ -201,6 +208,7 @@ Without `country`/`slug`, a string entry matches by city name alone and refers t
 | `/city-icons.zip` | `scripts/build-downloads.mjs` | All SVGs + `ATTRIBUTION.txt`; linked from the footer ("Download all"). Deterministic output. Gitignored build output. |
 | `/llms.txt` | checked in at `public/llms.txt` | Hand-maintained summary for LLM crawlers — update counts/license manually. |
 | `/manifest.webmanifest` | `src/app/manifest.ts` | Next.js serves it and injects `<link rel="manifest">` automatically. |
+| `/press/*` | `scripts/build-press-kit.mjs` | Cover (PNG + SVG), Figma import sheet, `facts.json`, `README.txt`, `svgcities-press-kit.zip`, `svgcities-directory-kit.zip`. Reads `public/icons.json`, so it runs after `build-downloads`. Gitignored build output. |
 
 ## Code Conventions
 
@@ -291,4 +299,15 @@ Downloads: `DOWNLOAD_ALL_ZIP` (footer "Download all" zip link)
 
 Navigation & links: `SCROLL_TO_TOP_CLICKED`, `GITHUB_CLICKED`, `GITHUB_LINK_CLICKED`, `STUDIO_PARTDIRECTOR_CLICKED`, `STUDIO_PARTDIRECTOR_FOOTER_CLICKED`, `WHATS_NEW_CLICKED`, `STATISTICS_CLICKED`, `FAQ_CLICKED`, `LICENSE_LINK_CLICKED`, `MISSING_CITY_CLICKED`
 
-License page: `LICENSE_PAGE_VISIT`, `ATTRIBUTION_COPIED`
+License & attribution: `LICENSE_PAGE_VISIT`, `ATTRIBUTION_COPIED` (license page and city-page credit line)
+
+Press: `PRESS_LINK_CLICKED` (footer), `PRESS_KIT_DOWNLOAD_CLICKED`
+
+## Press Kit & Attribution
+
+- **`/press`** (`src/app/press/page.tsx`) lists project facts and links the generated assets in `public/press/`. The footer and sitemap link to it.
+- **`scripts/build-press-kit.mjs`** builds a 1600×1000 cover (PNG + SVG) from 12 fixed featured icons, a labelled sheet of every icon for Figma import, `facts.json`, `README.txt`, and two ZIPs: the press kit (cover, sheet, facts, the 12 icons) and the directory kit (1200×800 preview + all icons, the format design directories ask for). The script throws if a featured filename disappears from the dataset.
+- **Typography:** labels use the bundled `scripts/fonts/InstrumentSans.ttf` (OFL), outlined to paths with fontkit, so PNG rendering and SVG imports never fall back to system fonts. The cover and the press page header have no eyebrow label.
+- **The Figma sheet is a plain SVG**, not a Figma component library — never describe it as a published Community file.
+- **Credit line on city pages:** a successful SVG download, PNG download or SVG copy reveals a per-icon credit (`AttributionSnippet`, built by `iconAttribution()` from the canonical city URL). SVG fetches reject non-OK responses and bodies without an `<svg` root.
+- **Outreach** drafts and submission records live in `outreach/`, which is local only: untracked in git and excluded from deploys by `.vercelignore`. They are drafts, not evidence of submissions or earned links.

@@ -46,3 +46,6 @@ next-env.d.ts
 
 # Playwright MCP session output
 .playwright-mcp/
+
+# Generated press assets (npm run build:press)
+/public/press/

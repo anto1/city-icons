@@ -9,6 +9,7 @@
 - Country pages: https://svgcities.com/{country-slug} (e.g. /spain)
 - City pages: https://svgcities.com/{country-slug}/{city-slug} (e.g. /spain/barcelona)
 - World map of every city: https://svgcities.com/map
+- Press kit (facts, cover image, Figma import sheet): https://svgcities.com/press
 - SVG files: https://svgcities.com/icons/{country-code}-{city}.svg (e.g. /icons/es-barcelona.svg)
 
 ## Machine-readable index

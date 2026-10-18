@@ -76,6 +76,9 @@ export function IconFooter({ countries, totalIcons }: IconFooterProps) {
           , <CopyrightYear />
         </p>
         <nav aria-label="Footer links" className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-center">
+          <Link href="/press" className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline" onClick={() => trackEvent('PRESS_LINK_CLICKED')}>
+            Press kit
+          </Link>
           <Link
             href="/whats-new"
             className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"

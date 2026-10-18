@@ -59,10 +59,11 @@ Icon and country totals are checked against the dataset at build time by `script
 - **Search** by city name, country, tag, or region
 - **Explore** every city on the [World Map](https://svgcities.com/map)
 - **Download** icons as SVG or PNG, or grab [the whole collection as a ZIP](https://svgcities.com/city-icons.zip)
-- **Copy** SVG code directly to your clipboard
+- **Copy** SVG code directly to your clipboard, with a ready-made CC BY credit line
 - **Share** direct links to individual city pages
 - **Discover** random destinations with [City Roulette](https://svgcities.com/roulette)
 - **Dark mode** with system preference detection
+- **Press kit** with a cover image, project facts and a Figma import sheet at [svgcities.com/press](https://svgcities.com/press)
 
 ## Using the Icons
 
@@ -132,6 +133,7 @@ src/
 │   ├── statistics/           # Collection statistics
 │   ├── whats-new/            # Weekly changelog
 │   ├── roulette/             # City Roulette
+│   ├── press/                # Press kit page
 │   └── sitemap.ts            # Dynamic XML sitemap
 ├── components/               # React components (incl. the hand-rolled SVG world map)
 ├── data/icons/               # Icon metadata by region (JSON)
@@ -140,7 +142,7 @@ src/
 └── types/                    # TypeScript interfaces
 
 scripts/                      # Build/maintenance scripts (validation, SVG normalization,
-                              # zip/JSON index, coordinates, basemap)
+                              # zip/JSON index, press kit, coordinates, basemap)
 public/icons/                 # 311 SVG files
 ```
 
@@ -149,10 +151,11 @@ public/icons/                 # 311 SVG files
 ```bash
 npm install
 npm run dev             # Start dev server (Turbopack)
-npm run build           # Production build (validates data, builds downloads, then SSG)
+npm run build           # Production build (validates data, builds downloads + press kit, then SSG)
 npm run lint            # ESLint
 npm run validate:data   # Dataset checks (duplicate ids/URLs, missing files, badge counts)
 npm run normalize:svgs  # Normalize + optimize icon SVGs
+npm run build:press     # Rebuild the press kit assets in public/press/
 ```
 
 ## Contributing

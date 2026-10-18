@@ -1,0 +1,4 @@
+Instrument Sans variable font (width, weight), Google Fonts /ofl/instrumentsans.
+Source: https://github.com/google/fonts/tree/main/ofl/instrumentsans
+Downloaded 18 October 2026. Distributed under the accompanying SIL Open Font License.
+Used for deterministic press artwork; matches Instrument_Sans in src/app/layout.tsx.
