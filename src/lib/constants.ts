@@ -4,15 +4,11 @@ export const ANIMATION = {
   STAGGER_DELAY_MAX: 600,
   /** Delay increment per icon (ms) */
   STAGGER_DELAY_INCREMENT: 20,
-  /** Duration for fade transitions (ms) */
-  FADE_DURATION: 200,
-  /** Duration for scale transitions (ms) */
-  SCALE_DURATION: 500,
 } as const;
 
 // Grid layout constants
 export const GRID = {
-  /** Number of columns at different breakpoints */
+  /** Number of columns at different breakpoints — must match ICON_GRID_CLASS */
   COLUMNS: {
     DEFAULT: 2,
     SM: 3,    // 640px+
@@ -20,13 +16,18 @@ export const GRID = {
     LG: 5,    // 1024px+
     XL: 6,    // 1280px+
   },
-  /** Gap between grid items (in Tailwind units) */
-  GAP: 4,
   /** Leading grid images loaded eagerly (above-the-fold / LCP candidates) */
   EAGER_LOAD_COUNT: 18,
   /** First grid icons preloaded from the homepage head */
   PRELOAD_ICON_COUNT: 6,
 } as const;
+
+/**
+ * Classes for every icon-card grid (homepage, country and city pages). The
+ * column counts are what IconGrid's proximity hover assumes via GRID.COLUMNS.
+ */
+export const ICON_GRID_CLASS =
+  'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none';
 
 // Hover effect constants
 export const HOVER = {
@@ -44,5 +45,5 @@ export const BREAKPOINTS = {
   XL: 1280,
 } as const;
 
-
-
+/** Raster size for the client-side PNG export (the common icon default). */
+export const PNG_SIZE = 512;

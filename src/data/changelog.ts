@@ -10,7 +10,7 @@ export type ChangelogCity =
   | { city: string; country: string; slug?: string };
 
 export interface ChangelogEntry {
-  week: string; // ISO week format: YYYY-WXX or date range
+  week: string; // ISO week, YYYY-Www (validate:data enforces the format)
   date: string; // Display date
   cities: ChangelogCity[]; // City names added
   description?: string; // Optional description
@@ -38,7 +38,9 @@ export function changelogCityMatchesIcon(
 // Parse ISO week string (e.g. "2025-W02") to a Date
 export function weekToDate(week: string): Date {
   const match = week.match(/^(\d{4})-W(\d{2})$/);
-  if (!match) return new Date(Date.UTC(2024, 11, 16)); // fallback to initial collection date
+  // Fail the build rather than silently dating the entry to some fallback day
+  // (which used to leak into sitemap lastmod and What's New).
+  if (!match) throw new Error(`changelog week "${week}" is not in YYYY-Www format`);
   const year = parseInt(match[1]);
   const weekNum = parseInt(match[2]);
   // Jan 4 is always in ISO week 1. Computed in UTC throughout: a local-time
@@ -209,8 +211,8 @@ export const changelog: ChangelogEntry[] = [
   },
 ];
 
-// Helper to get entries added in the last N weeks (by real ISO week date)
-export function getRecentAdditions(weeks: number = 4): ChangelogEntry[] {
+// Entries added in the last N weeks (by real ISO week date)
+function getRecentAdditions(weeks: number = 4): ChangelogEntry[] {
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - weeks * 7);
   return changelog.filter(entry => weekToDate(entry.week) >= cutoff);

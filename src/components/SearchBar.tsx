@@ -3,27 +3,23 @@
 import { useState, useEffect, useMemo, useRef, type ChangeEvent, type KeyboardEvent } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import { SearchBarProps } from '@/types';
+import type { GridIcon } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { getIconSearchScore } from '@/lib/utils';
+import { getIconSearchScore, getLandmark, isCityOnlyName } from '@/lib/utils';
 
 const SEARCH_DEBOUNCE_MS = 150;
 const MAX_SUGGESTIONS = 5;
 
+interface SearchBarProps {
+  onSearch: (query: string) => void;
+  allIcons?: GridIcon[];
+}
+
 interface Suggestion {
   city: string;
   country: string;
-  name: string;
-}
-
-// The landmark part of an icon name (e.g. "Sagrada Familia" from
-// "Barcelona Sagrada Familia"), or null when the name adds nothing.
-function getLandmarkLabel(suggestion: Suggestion): string | null {
-  if (suggestion.name === suggestion.city) return null;
-  if (suggestion.name.startsWith(`${suggestion.city} `)) {
-    return suggestion.name.slice(suggestion.city.length + 1);
-  }
-  return suggestion.name;
+  /** Landmark shown next to the country, or null when the name is just the city. */
+  landmark: string | null;
 }
 
 export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
@@ -79,7 +75,11 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
       const key = `${icon.city}|${icon.country}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      unique.push({ city: icon.city, country: icon.country, name: icon.name });
+      unique.push({
+        city: icon.city,
+        country: icon.country,
+        landmark: isCityOnlyName(icon) ? null : getLandmark(icon),
+      });
       if (unique.length === MAX_SUGGESTIONS) break;
     }
     return unique;
@@ -182,7 +182,7 @@ export default function SearchBar({ onSearch, allIcons }: SearchBarProps) {
           aria-label="Search suggestions"
         >
           {suggestions.map((suggestion, index) => {
-            const landmark = getLandmarkLabel(suggestion);
+            const { landmark } = suggestion;
             return (
               <li key={`${suggestion.city}|${suggestion.country}`} role="presentation">
                 <button

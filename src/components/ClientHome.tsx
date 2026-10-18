@@ -10,7 +10,8 @@ import { RegionFilter } from '@/components/RegionFilter';
 import { ErrorBoundary, IconGridError } from '@/components/ErrorBoundary';
 import { useIconSearch } from '@/hooks/useIconSearch';
 import { CountryCount, GridIcon } from '@/types';
-import Link from 'next/link';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { slugify } from '@/lib/utils';
 
 interface ClientHomeProps {
   initialIcons: GridIcon[];
@@ -58,23 +59,10 @@ export default function ClientHome({
       <RandomIconHeader icons={headerIcons} />
       
       <main className="container mx-auto px-4 py-8">
-        {/* Breadcrumb navigation for country pages */}
         {countryFilter && (
-          <nav aria-label="Breadcrumb" className="text-center mb-8">
-            <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li className="flex items-center">
-                <Link href="/" className="hover:text-foreground transition-colors">
-                  Home
-                </Link>
-                <span className="mx-2" aria-hidden="true">/</span>
-              </li>
-              <li aria-current="page">
-                <span className="text-foreground font-medium">{countryFilter}</span>
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumbs trail={[{ name: countryFilter, path: `/${slugify(countryFilter)}` }]} />
         )}
-        
+
         <header>
           <IconHeader 
             countryFilter={countryFilter}

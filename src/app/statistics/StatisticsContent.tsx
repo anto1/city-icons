@@ -1,5 +1,3 @@
-'use client';
-
 import { Globe, MapPin, Layers, Target } from 'lucide-react';
 import Link from 'next/link';
 import { slugify } from '@/lib/utils';

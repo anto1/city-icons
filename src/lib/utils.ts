@@ -1,36 +1,16 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { Icon } from '@/types'
+import type { GridIcon } from '@/types'
+import { getCitySlug, slugify } from './slugs.mjs'
+
+export { getCitySlug, slugify }
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// Convert text to URL-friendly slug
-export function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/ł/g, 'l')
-    .replace(/đ/g, 'd')
-    .replace(/ø/g, 'o')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '') // Remove accents
-    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single
-    .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-}
-
-// URL segment for an icon's city page. Defaults to the slugified city name,
-// but an icon may override it with an explicit `slug` when a city has more
-// than one icon (e.g. Hanoi's Turtle Tower vs its Temple of Literature) —
-// this keeps the displayed city name clean while the URLs stay unique.
-export function getCitySlug(icon: Icon): string {
-  return icon.slug ?? slugify(icon.city);
-}
-
 // Find icon by country and city slugs
-export function findIconBySlugs(countrySlug: string, citySlug: string, icons: Icon[]): Icon | null {
+export function findIconBySlugs<T extends GridIcon>(countrySlug: string, citySlug: string, icons: T[]): T | null {
   return icons.find(icon =>
     slugify(icon.country) === countrySlug &&
     getCitySlug(icon) === citySlug
@@ -38,13 +18,33 @@ export function findIconBySlugs(countrySlug: string, citySlug: string, icons: Ic
 }
 
 // Generate URL for an icon page
-export function getIconUrl(icon: Icon): string {
+export function getIconUrl(icon: GridIcon): string {
   return `/${slugify(icon.country)}/${getCitySlug(icon)}`;
 }
 
 // Generate URL for the SVG file (static asset)
-export function getIconSvgUrl(icon: Icon): string {
+export function getIconSvgUrl(icon: Pick<GridIcon, 'svgFilename'>): string {
   return `/icons/${icon.svgFilename}`;
+}
+
+/**
+ * The landmark part of an icon name. Names are usually "{City} {Landmark}"
+ * ("Barcelona Sagrada Familia"), so a leading city prefix is stripped — also
+ * when the city carries a trailing generic word the name leaves off
+ * ("Ho Chi Minh City" vs "Ho Chi Minh Bến Thành Market"). Names without the
+ * prefix are returned whole. Shared by the page title, the "About the …"
+ * heading and search suggestions so all three name the same thing.
+ */
+export function getLandmark(icon: Pick<GridIcon, 'name' | 'city'>): string {
+  const name = icon.name.trim();
+  const prefixes = [icon.city, icon.city.replace(/ (City|Town)$/i, '')];
+  const prefix = prefixes.find((p) => name.toLowerCase().startsWith(`${p.toLowerCase()} `));
+  return prefix ? name.slice(prefix.length + 1).trim() : name;
+}
+
+/** Whether the icon's name is just its city ("Kostanay"), with no landmark part. */
+export function isCityOnlyName(icon: Pick<GridIcon, 'name' | 'city'>): boolean {
+  return getLandmark(icon).toLowerCase() === icon.city.toLowerCase();
 }
 
 const SHORT_COUNTRY_ALIASES = new Set(['usa', 'uk', 'uae']);
@@ -56,7 +56,7 @@ const SHORT_COUNTRY_ALIASES = new Set(['usa', 'uk', 'uae']);
 // known alias so typing "in" doesn't surface every country containing "in".
 // Name/tag matches require 3+ characters so short fragments don't surface
 // unrelated landmarks.
-export function getIconSearchScore(icon: Icon, query: string): number {
+export function getIconSearchScore(icon: GridIcon, query: string): number {
   const term = query.toLowerCase().trim();
   if (!term) return 0;
 
@@ -79,10 +79,3 @@ export function getIconSearchScore(icon: Icon, query: string): number {
 
   return 0;
 }
-
-// Whether an icon matches a free-text query (empty query matches everything).
-export function iconMatchesQuery(icon: Icon, query: string): boolean {
-  if (!query.trim()) return true;
-  return getIconSearchScore(icon, query) > 0;
-}
-

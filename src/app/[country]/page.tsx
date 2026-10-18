@@ -1,11 +1,13 @@
 import { notFound } from 'next/navigation';
 import { isIndexableCountry } from '@/lib/seo'
 import ClientHome from '@/components/ClientHome';
+import { JsonLd } from '@/components/JsonLd';
+import { breadcrumbList } from '@/lib/breadcrumbs';
+import { fitTitle, indexRobots, pageMetadata } from '@/lib/metadata';
+import { absoluteUrl, STUDIO_ORG } from '@/lib/site';
 import iconData, { getCountryCounts, getFeaturedIcons, getSortedIcons } from '@/data';
 import { Icon, toGridIcon } from '@/types';
-import { slugify, getCitySlug } from '@/lib/utils';
-
-const baseUrl = 'https://svgcities.com';
+import { slugify, getIconUrl } from '@/lib/utils';
 
 // Generate all possible country pages at build time (SSG)
 export async function generateStaticParams() {
@@ -28,24 +30,18 @@ interface PageProps {
 
 // Generate structured data for country page (limited ItemList for size)
 function generateStructuredData(countryName: string, countrySlug: string, countryIcons: Icon[]) {
-  const pageUrl = `${baseUrl}/${countrySlug}`;
-  
+  const pagePath = `/${countrySlug}`;
+
   // Limit to first 15 items to keep JSON-LD size reasonable
   const limitedIcons = countryIcons.slice(0, 15);
-  
+
   return [
-    // CollectionPage schema
     {
-      '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       name: `${countryName} City Icons`,
       description: `Discover ${countryIcons.length} beautiful line art icons representing cities in ${countryName}.`,
-      url: pageUrl,
-      author: {
-        '@type': 'Organization',
-        name: 'Studio Partdirector',
-        url: 'https://partdirector.ch',
-      },
+      url: absoluteUrl(pagePath),
+      author: STUDIO_ORG,
       mainEntity: {
         '@type': 'ItemList',
         name: `City Icons from ${countryName}`,
@@ -56,30 +52,12 @@ function generateStructuredData(countryName: string, countrySlug: string, countr
           item: {
             '@type': 'CreativeWork',
             name: icon.name,
-            url: `${baseUrl}/${slugify(icon.country)}/${getCitySlug(icon)}`,
+            url: absoluteUrl(getIconUrl(icon)),
           },
         })),
       },
     },
-    // BreadcrumbList schema
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: baseUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: countryName,
-          item: pageUrl,
-        },
-      ],
-    },
+    breadcrumbList([{ name: countryName, path: pagePath }]),
   ];
 }
 
@@ -96,17 +74,10 @@ export default async function CountryPage({ params }: PageProps) {
 
   // Get the country name from the first icon
   const countryName = countryIcons[0].country;
-  const structuredData = generateStructuredData(countryName, country, countryIcons);
 
   return (
     <>
-      {structuredData.map((data, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-        />
-      ))}
+      <JsonLd data={generateStructuredData(countryName, country, countryIcons)} />
       <ClientHome
         initialIcons={countryIcons.map(toGridIcon)}
         headerIcons={getFeaturedIcons().map(toGridIcon)}
@@ -122,12 +93,12 @@ export default async function CountryPage({ params }: PageProps) {
 // Generate metadata for SEO - uses static icon data (no file I/O)
 export async function generateMetadata({ params }: PageProps) {
   const { country } = await params;
-  
+
   // Filter icons for this country
-  const countryIcons = iconData.filter(icon => 
+  const countryIcons = iconData.filter(icon =>
     slugify(icon.country) === country
   );
-  
+
   if (countryIcons.length === 0) {
     return {
       title: 'Country Not Found',
@@ -136,73 +107,25 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   const countryName = countryIcons[0].country;
-  const pageUrl = `${baseUrl}/${country}`;
-  const indexable = isIndexableCountry(countryIcons);
   const cityWord = countryIcons.length === 1 ? 'city icon' : 'city icons';
-  const description = `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} ${cityWord} from ${countryName} with download and copy functionality.`;
-
+  const symbolWord = countryIcons.length === 1 ? 'City Symbol' : 'City Symbols';
   // Same 60-character budget as the city pages; long country names
   // ("Bosnia and Herzegovina") need the shorter forms.
-  const TITLE_BUDGET = 60 - ' | svgcities'.length;
-  const symbolWord = countryIcons.length === 1 ? 'City Symbol' : 'City Symbols';
-  const titleCandidates = [
+  const title = fitTitle([
     `${countryName} City Icons – ${countryIcons.length} ${symbolWord} in Line Art`,
     `${countryName} City Icons – ${countryIcons.length} ${symbolWord}`,
     `${countryName} City Icons`,
-  ];
-  const title = titleCandidates.find(c => c.length <= TITLE_BUDGET) ?? titleCandidates[titleCandidates.length - 1];
+  ]);
 
-  return {
+  return pageMetadata({
+    path: `/${country}`,
     title,
-    description,
+    description: `Discover beautiful line art icons representing cities in ${countryName}. Browse ${countryIcons.length} ${cityWord} from ${countryName} with download and copy functionality.`,
     keywords: `${countryName}, city icons, ${countryIcons.map(icon => icon.city).join(', ')}, SVG icons, line art`,
-    authors: [{ name: 'Studio Partdirector' }],
-    creator: 'Studio Partdirector',
-    publisher: 'Studio Partdirector',
-    formatDetection: {
-      email: false,
-      address: false,
-      telephone: false,
-    },
-    metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: pageUrl,
-    },
-    openGraph: {
-      title,
-      description,
-      url: pageUrl,
-      siteName: 'City Icons Collection',
-      locale: 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: `${baseUrl}/og-image.png`,
-          width: 1200,
-          height: 630,
-          alt: `${countryName} city icons`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [`${baseUrl}/og-image.png`],
-    },
+    imageAlt: `${countryName} city icons`,
     // A country with one or two icons is a thinner restatement of the city
     // page it links to. Keep it crawlable and link-following, but out of the
     // index, so the city page is the one result Google can pick.
-    robots: {
-      index: indexable,
-      follow: true,
-      googleBot: {
-        index: indexable,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  };
-} 
+    robots: indexRobots(isIndexableCountry(countryIcons)),
+  });
+}

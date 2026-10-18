@@ -4,37 +4,12 @@ import { useState, useEffect } from 'react';
 import { Github, ArrowUp } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { trackEvent } from 'fathom-client';
-
-/** Check the user's motion preference at call time (safe on the server). */
-export function prefersReducedMotion(): boolean {
-  return (
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  );
-}
-
-/** Reactive version of prefersReducedMotion — tracks live preference changes. */
-export function usePrefersReducedMotion(): boolean {
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mediaQuery.matches);
-
-    const handleChange = (event: MediaQueryListEvent) => {
-      setReducedMotion(event.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  return reducedMotion;
-}
+import { prefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import { GITHUB_URL } from '@/lib/site';
 
 /**
  * Shared top-right header controls: scroll-to-top, GitHub link, theme toggle.
- * Used by PageHeader, RandomIconHeader, CityPage, and RoulettePage.
+ * Used by PageHeader, RandomIconHeader and RoulettePage.
  */
 export function HeaderControls() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -72,7 +47,7 @@ export function HeaderControls() {
       </button>
 
       <a
-        href="https://github.com/anto1/city-icons"
+        href={GITHUB_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"

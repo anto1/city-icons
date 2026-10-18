@@ -2,15 +2,18 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { FAQContent } from './FAQContent';
-import { PageHeader } from '@/components/PageHeader';
-import { IconFooter } from '@/components/IconFooter';
-import iconData, { getCountryCounts } from '@/data';
+import { ContentPage } from '@/components/ContentPage';
+import { JsonLd } from '@/components/JsonLd';
+import { breadcrumbList } from '@/lib/breadcrumbs';
+import { pageMetadata } from '@/lib/metadata';
+import { absoluteUrl, STUDIO_ORG } from '@/lib/site';
 
 // Force static generation
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://svgcities.com';
+const path = '/faq';
+const description = 'Frequently asked questions about City Icons - learn about usage, licensing, downloads, and how to request new city icons.';
 
 // Helper component for external links
 const ExtLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -47,7 +50,7 @@ const faqs = [
   },
   {
     question: 'How do I download an icon?',
-    answer: <>Click on any city icon on the <Link href="/">homepage</Link> to open its detail modal, then use the &quot;Download&quot; button to save the SVG file, or &quot;Copy SVG&quot; to copy the code directly to your clipboard.</>,
+    answer: <>Click on any city icon on the <Link href="/">homepage</Link> to open its detail page, then use the &quot;Download&quot; button to save the SVG file, or &quot;Copy SVG&quot; to copy the code directly to your clipboard.</>,
     plainAnswer: 'Click on any city icon to open its detail page, then use the "Download" button to save the SVG file, or "Copy SVG" to copy the code directly to your clipboard.',
   },
   // Licensing
@@ -95,54 +98,24 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path,
   title: 'Frequently Asked Questions',
-  description: 'Frequently asked questions about City Icons - learn about usage, licensing, downloads, and how to request new city icons.',
+  description,
   keywords: 'city icons faq, icon questions, svg icons help, city icons usage, icon licensing questions',
-  authors: [{ name: 'Studio Partdirector' }],
-  creator: 'Studio Partdirector',
-  publisher: 'Studio Partdirector',
-  metadataBase: new URL(baseUrl),
-  alternates: {
-    canonical: `${baseUrl}/faq`,
-  },
-  openGraph: {
-    title: 'Frequently Asked Questions',
-    description: 'Frequently asked questions about City Icons - learn about usage, licensing, and downloads.',
-    url: `${baseUrl}/faq`,
-    siteName: 'City Icons Collection',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: `${baseUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'City Icons FAQ',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Frequently Asked Questions',
-    description: 'Frequently asked questions about City Icons.',
-    images: [`${baseUrl}/og-image.png`],
-  },
-};
+  og: { description: 'Frequently asked questions about City Icons - learn about usage, licensing, and downloads.' },
+  twitter: { description: 'Frequently asked questions about City Icons.' },
+  imageAlt: 'City Icons FAQ',
+});
 
 function generateStructuredData() {
   return [
     {
-      '@context': 'https://schema.org',
       '@type': 'FAQPage',
       name: 'FAQ | City Icons Collection',
-      description: 'Frequently asked questions about City Icons - learn about usage, licensing, downloads, and how to request new city icons.',
-      url: `${baseUrl}/faq`,
-      author: {
-        '@type': 'Organization',
-        name: 'Studio Partdirector',
-        url: 'https://partdirector.ch',
-      },
+      description,
+      url: absoluteUrl(path),
+      author: STUDIO_ORG,
       mainEntity: faqs.map((faq) => ({
         '@type': 'Question',
         name: faq.question,
@@ -152,73 +125,22 @@ function generateStructuredData() {
         },
       })),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: baseUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'FAQ',
-          item: `${baseUrl}/faq`,
-        },
-      ],
-    },
+    breadcrumbList([{ name: 'FAQ', path }]),
   ];
 }
 
 export default function FAQPage() {
-  const structuredData = generateStructuredData();
-
   return (
     <>
-      {structuredData.map((data, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-        />
-      ))}
-      <div className="min-h-screen bg-background">
-        <PageHeader />
-        <div className="container mx-auto px-4 py-8">
-          {/* Visible trail mirrors the BreadcrumbList JSON-LD (Home / FAQ) */}
-          <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
-            <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li className="flex items-center">
-                <Link href="/" className="hover:text-foreground transition-colors">
-                  Home
-                </Link>
-                <span className="mx-2" aria-hidden="true">/</span>
-              </li>
-              <li aria-current="page">
-                <span className="text-foreground font-medium">FAQ</span>
-              </li>
-            </ol>
-          </nav>
-
-          <header className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Everything you need to know about City Icons
-            </p>
-          </header>
-
-          <main>
-            <FAQContent faqs={faqs} />
-          </main>
-
-        </div>
-        <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
-      </div>
+      <JsonLd data={generateStructuredData()} />
+      <ContentPage
+        crumb="FAQ"
+        path={path}
+        title="Frequently Asked Questions"
+        intro="Everything you need to know about City Icons"
+      >
+        <FAQContent faqs={faqs} />
+      </ContentPage>
     </>
   );
 }

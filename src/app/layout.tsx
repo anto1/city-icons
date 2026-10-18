@@ -6,6 +6,9 @@ import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { ThemedToaster } from '@/components/ThemedToaster';
 import iconData from '@/data';
+import { JsonLd } from '@/components/JsonLd';
+import { TITLE_SUFFIX } from '@/lib/metadata';
+import { SITE_NAME, SITE_URL, STUDIO_NAME, STUDIO_ORG, STUDIO_URL } from '@/lib/site';
 
 const cityCount = iconData.length;
 
@@ -24,26 +27,26 @@ export const metadata: Metadata = {
     // " | City Icons Collection" pushed a third of the city titles past the
     // ~60 characters Google renders, truncating the city name itself.
     default: `Free SVG City Icons – ${cityCount} City Symbols in Line Art`,
-    template: '%s | svgcities',
+    template: `%s${TITLE_SUFFIX}`,
   },
   description: `Line art icons for ${cityCount} cities worldwide — the landmark or symbol that stands for each one, drawn by Studio Partdirector. Search, download and copy free SVG icons.`,
   keywords: ['city icons', 'svg icons', 'line art', 'cities', 'design', 'Studio Partdirector', 'free icons', 'urban design'],
-  authors: [{ name: 'Studio Partdirector' }],
-  creator: 'Studio Partdirector',
-  publisher: 'Studio Partdirector',
+  authors: [{ name: STUDIO_NAME }],
+  creator: STUDIO_NAME,
+  publisher: STUDIO_NAME,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://svgcities.com'),
+  metadataBase: new URL(SITE_URL),
   // Note: no alternates.canonical here — a root-layout canonical would be
   // inherited by any page that forgets its own, silently pointing it at the
   // homepage. Each page declares its own canonical (homepage: page.tsx).
   openGraph: {
-    title: 'City Icons Collection',
+    title: SITE_NAME,
     description: `Discover beautiful line art icons representing ${cityCount}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.`,
-    siteName: 'City Icons Collection',
+    siteName: SITE_NAME,
     images: [
       {
         url: '/og-image.png',
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'City Icons Collection',
+    title: SITE_NAME,
     description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector.',
     images: ['/og-image.png'],
   },
@@ -100,42 +103,30 @@ export default function RootLayout({
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
         {/* DNS prefetch for external resources */}
-        <link rel="dns-prefetch" href="https://partdirector.ch" />
+        <link rel="dns-prefetch" href={STUDIO_URL} />
         <link rel="dns-prefetch" href="https://cdn.usefathom.com" />
         <link rel="dns-prefetch" href="https://github.com" />
 
         {/* Preconnect to analytics (used by Fathom) */}
         <link rel="preconnect" href="https://cdn.usefathom.com" crossOrigin="anonymous" />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'City Icons Collection',
-              description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector.',
-              url: 'https://svgcities.com',
-              author: {
-                '@type': 'Organization',
-                name: 'Studio Partdirector',
-                url: 'https://partdirector.ch',
+        <JsonLd
+          data={{
+            '@type': 'WebSite',
+            name: SITE_NAME,
+            description: 'Discover beautiful line art icons representing cities around the world by Studio Partdirector.',
+            url: SITE_URL,
+            author: STUDIO_ORG,
+            publisher: STUDIO_ORG,
+            inLanguage: 'en-US',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: `${SITE_URL}?search={search_term_string}`,
               },
-              publisher: {
-                '@type': 'Organization',
-                name: 'Studio Partdirector',
-                url: 'https://partdirector.ch',
-              },
-              inLanguage: 'en-US',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: {
-                  '@type': 'EntryPoint',
-                  urlTemplate: 'https://svgcities.com?search={search_term_string}',
-                },
-                'query-input': 'required name=search_term_string',
-              },
-            }),
+              'query-input': 'required name=search_term_string',
+            },
           }}
         />
       </head>

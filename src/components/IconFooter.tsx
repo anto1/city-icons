@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { CountryCount } from '@/types';
 import { trackEvent } from 'fathom-client';
 import { slugify } from '@/lib/utils';
+import { GITHUB_URL, STUDIO_URL } from '@/lib/site';
 
 interface IconFooterProps {
   /** Unique countries (alphabetical) with icon counts, precomputed server-side. */
@@ -12,6 +13,21 @@ interface IconFooterProps {
   /** Total number of icons in the collection. */
   totalIcons: number;
 }
+
+const FOOTER_LINK_CLASS = 'text-sm text-muted-foreground hover:text-orange-600 transition-colors underline';
+
+/** Footer nav: internal pages, the full-collection zip, and external links. */
+const FOOTER_LINKS: { label: string; href: string; event: string; kind: 'page' | 'download' | 'external' }[] = [
+  { label: 'Press kit', href: '/press', event: 'PRESS_LINK_CLICKED', kind: 'page' },
+  { label: "What's New", href: '/whats-new', event: 'WHATS_NEW_CLICKED', kind: 'page' },
+  { label: 'World Map', href: '/map', event: 'MAP_LINK_CLICKED', kind: 'page' },
+  { label: 'Statistics', href: '/statistics', event: 'STATISTICS_CLICKED', kind: 'page' },
+  { label: 'FAQ', href: '/faq', event: 'FAQ_CLICKED', kind: 'page' },
+  { label: 'Download All', href: '/city-icons.zip', event: 'DOWNLOAD_ALL_ZIP', kind: 'download' },
+  { label: 'License', href: '/license', event: 'LICENSE_LINK_CLICKED', kind: 'page' },
+  { label: 'Request City', href: `${GITHUB_URL}/issues/new?template=city-request.yml`, event: 'MISSING_CITY_CLICKED', kind: 'external' },
+  { label: 'GitHub', href: GITHUB_URL, event: 'GITHUB_LINK_CLICKED', kind: 'external' },
+];
 
 // Copyright year rendered after mount: the statically generated HTML bakes in
 // the build-time year, so computing it during render would hydrate-mismatch
@@ -65,7 +81,7 @@ export function IconFooter({ countries, totalIcons }: IconFooterProps) {
         <p className="text-sm text-foreground mb-2">
           {totalIcons} icons ©{' '}
           <a
-            href="https://partdirector.ch"
+            href={STUDIO_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground hover:text-orange-600 transition-colors underline"
@@ -76,77 +92,29 @@ export function IconFooter({ countries, totalIcons }: IconFooterProps) {
           , <CopyrightYear />
         </p>
         <nav aria-label="Footer links" className="flex flex-wrap gap-x-4 gap-y-2 justify-center items-center">
-          <Link href="/press" className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline" onClick={() => trackEvent('PRESS_LINK_CLICKED')}>
-            Press kit
-          </Link>
-          <Link
-            href="/whats-new"
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('WHATS_NEW_CLICKED')}
-          >
-            What&apos;s New
-          </Link>
-          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-          <Link
-            href="/map"
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('MAP_LINK_CLICKED')}
-          >
-            World Map
-          </Link>
-          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-          <Link
-            href="/statistics"
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('STATISTICS_CLICKED')}
-          >
-            Statistics
-          </Link>
-          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-          <Link
-            href="/faq"
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('FAQ_CLICKED')}
-          >
-            FAQ
-          </Link>
-          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-          <a
-            href="/city-icons.zip"
-            download
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('DOWNLOAD_ALL_ZIP')}
-          >
-            Download All
-          </a>
-          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-          <Link
-            href="/license"
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('LICENSE_LINK_CLICKED')}
-          >
-            License
-          </Link>
-          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-          <a
-            href="https://github.com/anto1/city-icons/issues/new?template=city-request.yml"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('MISSING_CITY_CLICKED')}
-          >
-            Request City
-          </a>
-          <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
-          <a
-            href="https://github.com/anto1/city-icons"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-muted-foreground hover:text-orange-600 transition-colors underline"
-            onClick={() => trackEvent('GITHUB_LINK_CLICKED')}
-          >
-            GitHub
-          </a>
+          {FOOTER_LINKS.map((link, index) => (
+            <Fragment key={link.href}>
+              {index > 0 && (
+                <span className="hidden sm:inline text-sm text-muted-foreground" aria-hidden="true">•</span>
+              )}
+              {link.kind === 'page' ? (
+                <Link href={link.href} className={FOOTER_LINK_CLASS} onClick={() => trackEvent(link.event)}>
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className={FOOTER_LINK_CLASS}
+                  onClick={() => trackEvent(link.event)}
+                  {...(link.kind === 'download'
+                    ? { download: true }
+                    : { target: '_blank', rel: 'noopener noreferrer' })}
+                >
+                  {link.label}
+                </a>
+              )}
+            </Fragment>
+          ))}
         </nav>
       </div>
     </footer>

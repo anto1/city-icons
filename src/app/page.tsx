@@ -4,8 +4,8 @@ import iconData, { getCountryCounts, getFeaturedIcons, getSortedIcons } from '@/
 import { Icon, toGridIcon } from '@/types';
 import { getIconSvgUrl } from '@/lib/utils';
 import { GRID } from '@/lib/constants';
-
-const baseUrl = 'https://svgcities.com';
+import { JsonLd } from '@/components/JsonLd';
+import { SITE_NAME, SITE_URL, STUDIO_ORG } from '@/lib/site';
 
 // Force static generation at build time
 export const dynamic = 'force-static';
@@ -16,13 +16,13 @@ export const revalidate = false;
 // openGraph is not deep-merged with the layout's, so all fields are restated.
 export const metadata: Metadata = {
   alternates: {
-    canonical: `${baseUrl}/`,
+    canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: 'City Icons Collection',
+    title: SITE_NAME,
     description: `Discover beautiful line art icons representing ${iconData.length}+ cities around the world by Studio Partdirector. Browse, search, download, and copy free SVG icons.`,
-    url: baseUrl,
-    siteName: 'City Icons Collection',
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
         url: '/og-image.png',
@@ -42,25 +42,16 @@ function generateStructuredData(icons: Icon[]) {
   const countries = [...new Set(icons.map(icon => icon.country))].sort();
 
   return {
-    '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'City Icons Collection',
+    name: SITE_NAME,
     description: `Discover ${icons.length} beautiful line art icons representing cities from ${countries.length} countries around the world by Studio Partdirector.`,
-    url: baseUrl,
+    url: SITE_URL,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: icons.length,
     },
-    author: {
-      '@type': 'Organization',
-      name: 'Studio Partdirector',
-      url: 'https://partdirector.ch',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Studio Partdirector',
-      url: 'https://partdirector.ch',
-    },
+    author: STUDIO_ORG,
+    publisher: STUDIO_ORG,
   };
 }
 
@@ -83,10 +74,7 @@ export default function Home() {
           type="image/svg+xml"
         />
       ))}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <JsonLd data={structuredData} />
       <ClientHome
         initialIcons={icons.map(toGridIcon)}
         headerIcons={getFeaturedIcons().map(toGridIcon)}

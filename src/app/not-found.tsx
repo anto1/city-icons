@@ -4,6 +4,7 @@ import { Search, ArrowLeft } from 'lucide-react';
 import iconData, { getCountryCounts } from '@/data';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
+import { getIconSvgUrl } from '@/lib/utils';
 
 // Server component: the icon dataset stays out of the client bundle — the
 // interactive bits live inside PageHeader/IconFooter, which are client components.
@@ -31,7 +32,7 @@ export default function NotFound() {
           <div className="flex justify-center mb-12">
             <div className="w-16 h-16 text-muted-foreground">
               <Image
-                src={`/icons/${randomIcon.svgFilename}`}
+                src={getIconSvgUrl(randomIcon)}
                 alt={`${randomIcon.name} - ${randomIcon.city}, ${randomIcon.country}`}
                 width={64}
                 height={64}

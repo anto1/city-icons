@@ -1,140 +1,62 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { LicenseContent } from './LicenseContent';
-import { PageHeader } from '@/components/PageHeader';
-import { IconFooter } from '@/components/IconFooter';
-import iconData, { getCountryCounts } from '@/data';
+import { ContentPage } from '@/components/ContentPage';
+import { JsonLd } from '@/components/JsonLd';
+import { breadcrumbList } from '@/lib/breadcrumbs';
+import { pageMetadata } from '@/lib/metadata';
+import { absoluteUrl, LICENSE_URL, STUDIO_ORG } from '@/lib/site';
 
 // Force static generation
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://svgcities.com';
+const path = '/license';
 
 // SEO metadata for license page
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path,
   title: 'Icon Usage & Licensing',
   description: 'City Icons are free for any use, including commercial. Icons are licensed under CC BY 4.0 (attribution required); the site code is MIT.',
   keywords: 'city icons license, icon usage, free icons license, CC BY 4.0, MIT license, commercial use, SVG icons terms',
-  authors: [{ name: 'Studio Partdirector' }],
-  creator: 'Studio Partdirector',
-  publisher: 'Studio Partdirector',
-  metadataBase: new URL(baseUrl),
-  alternates: {
-    canonical: `${baseUrl}/license`,
-  },
-  openGraph: {
+  og: {
     title: 'Icon Usage & Licensing | City Icons',
     description: 'City Icons are free for any use, including commercial. Licensed under CC BY 4.0 — attribution required.',
-    url: `${baseUrl}/license`,
-    siteName: 'City Icons Collection',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: `${baseUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'City Icons License and Usage Guidelines',
-      },
-    ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Icon Usage & Licensing | City Icons',
-    description: 'City Icons are free for any use, including commercial. Licensed under CC BY 4.0 — attribution required.',
-    images: [`${baseUrl}/og-image.png`],
-  },
-};
+  imageAlt: 'City Icons License and Usage Guidelines',
+});
 
 // Generate structured data for license page
 function generateStructuredData() {
   return {
-    '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Icon Usage & Licensing',
     description: 'Clear guidelines for using City Icons in your projects.',
-    url: `${baseUrl}/license`,
-    author: {
-      '@type': 'Organization',
-      name: 'Studio Partdirector',
-      url: 'https://partdirector.ch',
-    },
+    url: absoluteUrl(path),
+    author: STUDIO_ORG,
     mainEntity: {
       '@type': 'CreativeWork',
       name: 'City Icons License',
       description: 'Icons are licensed under Creative Commons Attribution 4.0 (CC BY 4.0): free for any use, including commercial, with attribution. The site source code is MIT-licensed.',
-      license: 'https://creativecommons.org/licenses/by/4.0/',
-      creator: {
-        '@type': 'Organization',
-        name: 'Studio Partdirector',
-        url: 'https://partdirector.ch',
-      },
+      license: LICENSE_URL,
+      creator: STUDIO_ORG,
     },
-    breadcrumb: {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: baseUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'License',
-          item: `${baseUrl}/license`,
-        },
-      ],
-    },
+    breadcrumb: breadcrumbList([{ name: 'License', path }]),
   };
 }
 
 export default function LicensePage() {
-  const structuredData = generateStructuredData();
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <div className="min-h-screen bg-background">
-        <PageHeader />
-        <div className="container mx-auto px-4 py-8">
-          {/* Visible trail mirrors the BreadcrumbList JSON-LD (Home / License) */}
-          <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
-            <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li className="flex items-center">
-                <Link href="/" className="hover:text-foreground transition-colors">
-                  Home
-                </Link>
-                <span className="mx-2" aria-hidden="true">/</span>
-              </li>
-              <li aria-current="page">
-                <span className="text-foreground font-medium">License</span>
-              </li>
-            </ol>
-          </nav>
-          
-          {/* Header */}
-          <header className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Icon Usage & Licensing
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Free for any use, including commercial — just give credit
-            </p>
-          </header>
-
-          {/* Main Content */}
-          <main>
-            <LicenseContent />
-          </main>
-        </div>
-        <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
-      </div>
+      <JsonLd data={generateStructuredData()} />
+      <ContentPage
+        crumb="License"
+        path={path}
+        title="Icon Usage & Licensing"
+        intro="Free for any use, including commercial — just give credit"
+        headerClassName="mb-8"
+      >
+        <LicenseContent />
+      </ContentPage>
     </>
   );
 }

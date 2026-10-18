@@ -1,15 +1,17 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import iconData, { getCountryCounts } from '@/data';
+import iconData from '@/data';
 import { StatisticsContent } from './StatisticsContent';
-import { PageHeader } from '@/components/PageHeader';
-import { IconFooter } from '@/components/IconFooter';
+import { ContentPage } from '@/components/ContentPage';
+import { JsonLd } from '@/components/JsonLd';
+import { breadcrumbList } from '@/lib/breadcrumbs';
+import { pageMetadata } from '@/lib/metadata';
+import { absoluteUrl, STUDIO_ORG } from '@/lib/site';
 
 // Force static generation
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://svgcities.com';
+const path = '/statistics';
 
 // Entities in the dataset that are not UN member states (observer states,
 // partially recognized states, and territories). Kept explicit so the UN
@@ -87,116 +89,40 @@ function calculateStats() {
   };
 }
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path,
   title: 'Collection Statistics',
   description: 'Explore statistics about our city icons collection - see coverage by country, region, and discover which areas have the most icons.',
   keywords: 'city icons statistics, icon collection stats, country coverage, svg icons data',
-  authors: [{ name: 'Studio Partdirector' }],
-  creator: 'Studio Partdirector',
-  publisher: 'Studio Partdirector',
-  metadataBase: new URL(baseUrl),
-  alternates: {
-    canonical: `${baseUrl}/statistics`,
-  },
-  openGraph: {
-    title: 'Collection Statistics',
-    description: 'Explore statistics about our city icons collection.',
-    url: `${baseUrl}/statistics`,
-    siteName: 'City Icons Collection',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: `${baseUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'City Icons Statistics',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Collection Statistics',
-    description: 'Explore statistics about our city icons collection.',
-    images: [`${baseUrl}/og-image.png`],
-  },
-};
+  og: { description: 'Explore statistics about our city icons collection.' },
+  imageAlt: 'City Icons Statistics',
+});
 
 function generateStructuredData(stats: ReturnType<typeof calculateStats>) {
   return {
-    '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'City Icons Statistics',
     description: `Collection of ${stats.totalIcons} city icons from ${stats.totalCountries} countries and territories`,
-    url: `${baseUrl}/statistics`,
-    author: {
-      '@type': 'Organization',
-      name: 'Studio Partdirector',
-      url: 'https://partdirector.ch',
-    },
-    breadcrumb: {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: baseUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Statistics',
-          item: `${baseUrl}/statistics`,
-        },
-      ],
-    },
+    url: absoluteUrl(path),
+    author: STUDIO_ORG,
+    breadcrumb: breadcrumbList([{ name: 'Statistics', path }]),
   };
 }
 
 export default function StatisticsPage() {
   const stats = calculateStats();
-  const structuredData = generateStructuredData(stats);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <div className="min-h-screen bg-background">
-        <PageHeader />
-        <div className="container mx-auto px-4 py-8">
-          {/* Visible trail mirrors the BreadcrumbList JSON-LD (Home / Statistics) */}
-          <nav aria-label="Breadcrumb" className="text-center mb-8 pt-8">
-            <ol className="inline-flex items-center text-sm text-muted-foreground list-none">
-              <li className="flex items-center">
-                <Link href="/" className="hover:text-foreground transition-colors">
-                  Home
-                </Link>
-                <span className="mx-2" aria-hidden="true">/</span>
-              </li>
-              <li aria-current="page">
-                <span className="text-foreground font-medium">Statistics</span>
-              </li>
-            </ol>
-          </nav>
-
-          <header className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Collection Statistics
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              {stats.totalIcons} icons from {stats.totalCountries} countries and territories across {stats.totalRegions} regions
-            </p>
-          </header>
-
-          <main>
-            <StatisticsContent stats={stats} />
-          </main>
-        </div>
-        <IconFooter countries={getCountryCounts()} totalIcons={iconData.length} />
-      </div>
+      <JsonLd data={generateStructuredData(stats)} />
+      <ContentPage
+        crumb="Statistics"
+        path={path}
+        title="Collection Statistics"
+        intro={`${stats.totalIcons} icons from ${stats.totalCountries} countries and territories across ${stats.totalRegions} regions`}
+      >
+        <StatisticsContent stats={stats} />
+      </ContentPage>
     </>
   );
 }

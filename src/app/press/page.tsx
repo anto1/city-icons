@@ -5,17 +5,18 @@ import iconData, { getCountryCounts } from '@/data';
 import { PageHeader } from '@/components/PageHeader';
 import { IconFooter } from '@/components/IconFooter';
 import { PressDownload } from '@/components/PressDownload';
+import { PNG_SIZE } from '@/lib/constants';
+import { pageMetadata } from '@/lib/metadata';
+import { absoluteUrl } from '@/lib/site';
 
 export const dynamic = 'force-static';
-const title = 'SVG Cities — Press Kit';
-const description = 'Facts, preview artwork and downloadable assets for covering SVG Cities, the city icon collection by Studio Partdirector.';
-export const metadata: Metadata = {
-  title, description,
-  alternates: { canonical: 'https://svgcities.com/press' },
-  openGraph: { title, description, url: 'https://svgcities.com/press', type: 'website',
-    images: [{ url: 'https://svgcities.com/press/svgcities-cover.png', width: 1600, height: 1000, alt: 'Twelve city icons by Studio Partdirector' }] },
-  twitter: { card: 'summary_large_image', title, description, images: ['https://svgcities.com/press/svgcities-cover.png'] },
-};
+
+export const metadata: Metadata = pageMetadata({
+  path: '/press',
+  title: 'SVG Cities — Press Kit',
+  description: 'Facts, preview artwork and downloadable assets for covering SVG Cities, the city icon collection by Studio Partdirector.',
+  image: { url: absoluteUrl('/press/svgcities-cover.png'), width: 1600, height: 1000, alt: 'Twelve city icons by Studio Partdirector' },
+});
 
 export default function PressPage() {
   return (
@@ -41,7 +42,7 @@ export default function PressPage() {
             <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm">
               <dt>Collection</dt><dd>{iconData.length} icons</dd>
               <dt>Coverage</dt><dd>{getCountryCounts().length} countries and territories</dd>
-              <dt>Formats</dt><dd>SVG and 512×512 PNG export</dd>
+              <dt>Formats</dt><dd>SVG and {PNG_SIZE}×{PNG_SIZE} PNG export</dd>
               <dt>Artwork</dt><dd><Link href="/license" className="underline">CC BY 4.0 · attribution required</Link></dd>
               <dt>Creator</dt><dd><a href="https://partdirector.ch" className="underline">Studio Partdirector</a></dd>
               <dt>Contact</dt><dd><a href="mailto:icons@partdirector.ch" className="underline">icons@partdirector.ch</a></dd>

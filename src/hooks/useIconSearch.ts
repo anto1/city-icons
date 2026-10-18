@@ -1,9 +1,10 @@
 import { useState, useCallback, useMemo } from 'react';
-import { Icon } from '@/types';
+import type { GridIcon } from '@/types';
 import { getIconSearchScore } from '@/lib/utils';
 
 interface UseIconSearchProps {
-  icons: Icon[];
+  /** Already sorted by city (getSortedIcons); filters below preserve order. */
+  icons: GridIcon[];
   countryFilter?: string;
 }
 
@@ -37,15 +38,9 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
     return Array.from(regionSet).sort();
   }, [icons]);
 
-  // Sort once; filters below preserve order, so no re-sort per filter change
-  const sortedIcons = useMemo(
-    () => [...icons].sort((a, b) => a.city.localeCompare(b.city)),
-    [icons]
-  );
-
   // Calculate filtered icons based on all filters
   const filteredIcons = useMemo(() => {
-    let result = sortedIcons;
+    let result = icons;
 
     // Apply country filter first
     if (countryFilter) {
@@ -69,7 +64,7 @@ export function useIconSearch({ icons, countryFilter }: UseIconSearchProps) {
     }
 
     return result;
-  }, [sortedIcons, countryFilter, selectedRegion, lastSearchQuery]);
+  }, [icons, countryFilter, selectedRegion, lastSearchQuery]);
 
   const handleSearch = useCallback((query: string) => {
     const trimmed = query.trim();

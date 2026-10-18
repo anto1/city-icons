@@ -1,20 +1,23 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { CountryCount, GridIcon } from '@/types';
 import { trackEvent } from 'fathom-client';
 import { getIconSvgUrl } from '@/lib/utils';
-import { HeaderControls, prefersReducedMotion } from './PageHeader';
+import { HeaderControls } from './PageHeader';
+import { prefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { IconFooter } from '@/components/IconFooter';
 
 interface RoulettePageProps {
   icons: GridIcon[];
+  /** Precomputed {country, count} pairs for the footer. */
+  footerCountries: CountryCount[];
 }
 
-export default function RoulettePage({ icons }: RoulettePageProps) {
+export default function RoulettePage({ icons, footerCountries }: RoulettePageProps) {
   const [isSpinning, setIsSpinning] = useState(false);
   const [displayIcons, setDisplayIcons] = useState<GridIcon[]>([]);
   const [resultMessage, setResultMessage] = useState<string>('');
@@ -26,22 +29,6 @@ export default function RoulettePage({ icons }: RoulettePageProps) {
   useEffect(() => {
     trackEvent('ROULETTE_PAGE_VIEWED');
   }, []);
-
-  // Country counts for the shared footer, derived from the icons prop so the
-  // server parent's API stays unchanged. Matches getCountryCounts() ordering
-  // (unique countries, alphabetical).
-  const footerCountries = useMemo<CountryCount[]>(
-    () =>
-      [
-        ...icons.reduce((counts, icon) => {
-          counts.set(icon.country, (counts.get(icon.country) ?? 0) + 1);
-          return counts;
-        }, new Map<string, number>()),
-      ]
-        .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
-        .map(([country, count]) => ({ country, count })),
-    [icons]
-  );
 
   useEffect(() => {
     return () => {

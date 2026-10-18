@@ -1,13 +1,15 @@
 'use client';
 
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { IconGridProps } from '@/types';
 import { trackEvent } from 'fathom-client';
-import { ANIMATION, GRID, HOVER, BREAKPOINTS } from '@/lib/constants';
-import { usePrefersReducedMotion } from './PageHeader';
+import type { GridIcon } from '@/types';
+import { trackIconEvent } from '@/lib/analytics';
+import { ANIMATION, GRID, HOVER, BREAKPOINTS, ICON_GRID_CLASS } from '@/lib/constants';
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { IconCard } from './IconCard';
 
-interface ExtendedIconGridProps extends IconGridProps {
+interface IconGridProps {
+  icons: GridIcon[];
   searchQuery?: string;
   selectedRegion?: string | null;
   onClearFilters?: () => void;
@@ -17,7 +19,7 @@ interface ExtendedIconGridProps extends IconGridProps {
 // don't each register as a failed search
 const NO_RESULTS_TRACK_DEBOUNCE_MS = 800;
 
-export default function IconGrid({ icons, searchQuery, selectedRegion, onClearFilters }: ExtendedIconGridProps) {
+export default function IconGrid({ icons, searchQuery, selectedRegion, onClearFilters }: IconGridProps) {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null);
   // Callback-ref state so the mouse listeners re-attach whenever the <ul>
   // remounts (e.g. after an empty search result unmounts the grid)
@@ -151,35 +153,34 @@ export default function IconGrid({ icons, searchQuery, selectedRegion, onClearFi
       ) : (
         <ul
           ref={setGridEl}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4 relative list-none"
+          className={ICON_GRID_CLASS}
           aria-label={`City icons collection - ${icons.length} icons`}
         >
-          {icons.map((icon, index) => (
-            <li key={icon._id} className="list-none">
-              <IconCard
-                icon={icon}
-                className="icon-card-animate"
-                style={{
-                  transform: `scale(${getScale(index)})`,
-                  zIndex: getScale(index) > 1 ? Math.floor(getScale(index) * 10) : 1,
-                  cursor: 'pointer',
-                  animationDelay: `${Math.min(index * ANIMATION.STAGGER_DELAY_INCREMENT, ANIMATION.STAGGER_DELAY_MAX)}ms`
-                }}
-                onClick={() => {
-                  // Aggregate event (queryable total) + per-city breakdown
-                  trackEvent('ICON_CLICK');
-                  trackEvent(`ICON_CLICK_${icon.city.replace(/\s+/g, '_').toUpperCase()}`);
-                }}
-                ariaLabel={`${icon.city}, ${icon.country} - ${icon.name} icon`}
-                imageAlt={`${icon.name} - line art icon of ${icon.city}, ${icon.country}`}
-                imageTitle={`${icon.city}, ${icon.country} - ${icon.name}`}
-                // Load the first grid rows eagerly (LCP candidates),
-                // lazy-load the rest as they scroll into view
-                imageLoading={index < GRID.EAGER_LOAD_COUNT ? 'eager' : 'lazy'}
-                hoverTint
-              />
-            </li>
-          ))}
+          {icons.map((icon, index) => {
+            const scale = getScale(index);
+            return (
+              <li key={icon._id} className="list-none">
+                <IconCard
+                  icon={icon}
+                  className="icon-card-animate"
+                  style={{
+                    transform: `scale(${scale})`,
+                    zIndex: scale > 1 ? Math.floor(scale * 10) : 1,
+                    cursor: 'pointer',
+                    animationDelay: `${Math.min(index * ANIMATION.STAGGER_DELAY_INCREMENT, ANIMATION.STAGGER_DELAY_MAX)}ms`
+                  }}
+                  onClick={() => trackIconEvent('ICON_CLICK', icon.city)}
+                  ariaLabel={`${icon.city}, ${icon.country} - ${icon.name} icon`}
+                  imageAlt={`${icon.name} - line art icon of ${icon.city}, ${icon.country}`}
+                  imageTitle={`${icon.city}, ${icon.country} - ${icon.name}`}
+                  // Load the first grid rows eagerly (LCP candidates),
+                  // lazy-load the rest as they scroll into view
+                  imageLoading={index < GRID.EAGER_LOAD_COUNT ? 'eager' : 'lazy'}
+                  hoverTint
+                />
+              </li>
+            );
+          })}
         </ul>
       )}
     </>

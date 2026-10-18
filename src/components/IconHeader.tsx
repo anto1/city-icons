@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { GridIcon } from '@/types';
 import { trackEvent } from 'fathom-client';
+import { STUDIO_URL } from '@/lib/site';
 
 interface IconHeaderProps {
   countryFilter?: string;
@@ -19,7 +20,7 @@ export function IconHeader({ countryFilter, filteredIcons, totalIcons }: IconHea
         <p className="text-lg text-muted-foreground">
           Line art icons representing cities in {countryFilter} by{' '}
           <a
-            href="https://partdirector.ch"
+            href={STUDIO_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground hover:text-orange-600 transition-colors underline"
@@ -43,7 +44,7 @@ export function IconHeader({ countryFilter, filteredIcons, totalIcons }: IconHea
       <p className="text-lg text-muted-foreground">
         Line art icons representing cities around the world by{' '}
         <a
-          href="https://partdirector.ch"
+          href={STUDIO_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="text-foreground hover:text-orange-600 transition-colors underline"
@@ -73,4 +74,4 @@ export function IconHeader({ countryFilter, filteredIcons, totalIcons }: IconHea
       </p>
     </div>
   );
-} 
+}

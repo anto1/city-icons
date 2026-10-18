@@ -1,8 +1,9 @@
 /**
  * Slim icon shape that crosses the server→client boundary. Excludes
- * `description` (the bulk of the dataset — it is only rendered for the
- * current icon on its own city page) and `category`, which no client
- * component reads. `tags` stays because search matches on name and tags.
+ * `description` and `symbolStory` (the bulk of the dataset — only the city
+ * page renders them, server-side) and `category`, which no client component
+ * reads. `tags` stays because search matches on name and tags. Shared helpers
+ * (URLs, search, landmark) take this type, so both shapes can use them.
  */
 export interface GridIcon {
   _id: string;
@@ -15,7 +16,7 @@ export interface GridIcon {
   /**
    * Explicit URL segment, overriding the slugified city name. Set only when a
    * city has more than one icon, so both get a unique page without polluting
-   * the displayed city name. See getCitySlug() in src/lib/utils.ts.
+   * the displayed city name. See getCitySlug() in src/lib/slugs.mjs.
    */
   slug?: string;
 }
@@ -23,13 +24,11 @@ export interface GridIcon {
 /**
  * Full icon record as authored in src/data/icons/*.json. Keep it server-side
  * (metadata, JSON-LD, statistics, OG images) and map lists to GridIcon via
- * toGridIcon() before passing them to client components. `category` is typed
- * optional so GridIcon stays assignable to Icon-typed helpers shared with
- * client code — every authored record has it.
+ * toGridIcon() before passing them to client components.
  */
 export interface Icon extends GridIcon {
-  category?: string;
-  description?: string;
+  category: string;
+  description: string;
   /**
    * Why this particular thing stands for the city — the origin of the symbol,
    * not a description of the city. Optional and authored per icon; the city
@@ -57,14 +56,4 @@ export function toGridIcon(icon: Icon): GridIcon {
 export interface CountryCount {
   country: string;
   count: number;
-}
-
-export interface SearchBarProps {
-  onSearch: (query: string) => void;
-  placeholder?: string;
-  allIcons?: GridIcon[];
-}
-
-export interface IconGridProps {
-  icons: GridIcon[];
 }

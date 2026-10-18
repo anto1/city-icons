@@ -1,3 +1,5 @@
+import { LICENSE_URL, STUDIO_NAME, STUDIO_URL } from '@/lib/site';
+
 function escapeHtml(value: string): string {
   return value.replace(/[&<>"']/g, char => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -5,9 +7,8 @@ function escapeHtml(value: string): string {
 }
 
 export function iconAttribution(name: string, sourceUrl: string) {
-  const license = 'https://creativecommons.org/licenses/by/4.0/';
   return {
-    text: `${name} by Studio Partdirector — ${sourceUrl} — CC BY 4.0 (${license})`,
-    html: `<a href="${escapeHtml(sourceUrl)}">${escapeHtml(name)}</a> by <a href="https://partdirector.ch">Studio Partdirector</a>, licensed under <a href="${license}">CC BY 4.0</a>`,
+    text: `${name} by ${STUDIO_NAME} — ${sourceUrl} — CC BY 4.0 (${LICENSE_URL})`,
+    html: `<a href="${escapeHtml(sourceUrl)}">${escapeHtml(name)}</a> by <a href="${STUDIO_URL}">${STUDIO_NAME}</a>, licensed under <a href="${LICENSE_URL}">CC BY 4.0</a>`,
   };
 }

@@ -1,69 +1,36 @@
 import RoulettePage from '@/components/RoulettePage';
-import iconData from '@/data';
+import iconData, { getCountryCounts } from '@/data';
 import { toGridIcon } from '@/types';
 import { Metadata } from 'next';
+import { JsonLd } from '@/components/JsonLd';
+import { breadcrumbList } from '@/lib/breadcrumbs';
+import { indexRobots, pageMetadata } from '@/lib/metadata';
+import { absoluteUrl, STUDIO_ORG } from '@/lib/site';
 
 // Force static generation
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const baseUrl = 'https://svgcities.com';
+const path = '/roulette';
 
-// SEO metadata
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path,
   title: 'City Roulette - Where Should You Go This Year?',
   description: 'Spin the roulette and discover your next travel destination! Get personalized travel suggestions from our collection of beautiful city icons. Where should you go this year?',
   keywords: 'city roulette, travel suggestions, travel destination, city icons, travel planning, random city picker',
-  authors: [{ name: 'Studio Partdirector' }],
-  creator: 'Studio Partdirector',
-  publisher: 'Studio Partdirector',
-  metadataBase: new URL(baseUrl),
-  alternates: {
-    canonical: `${baseUrl}/roulette`,
-  },
-  openGraph: {
-    title: 'City Roulette - Where Should You Go This Year?',
-    description: 'Spin the roulette and discover your next travel destination! Get personalized travel suggestions from our collection of beautiful city icons.',
-    type: 'website',
-    url: `${baseUrl}/roulette`,
-    siteName: 'City Icons Collection',
-    locale: 'en_US',
-    images: [
-      {
-        url: `${baseUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'City Roulette - Discover your next travel destination',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'City Roulette - Where Should You Go This Year?',
-    description: 'Spin the roulette and discover your next travel destination!',
-    images: [`${baseUrl}/og-image.png`],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-};
+  og: { description: 'Spin the roulette and discover your next travel destination! Get personalized travel suggestions from our collection of beautiful city icons.' },
+  twitter: { description: 'Spin the roulette and discover your next travel destination!' },
+  imageAlt: 'City Roulette - Discover your next travel destination',
+  robots: indexRobots(),
+});
 
 // Structured data for the roulette page
 function generateStructuredData() {
   return {
-    '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'City Roulette',
     description: 'Spin the roulette and discover your next travel destination!',
-    url: `${baseUrl}/roulette`,
+    url: absoluteUrl(path),
     applicationCategory: 'LifestyleApplication',
     operatingSystem: 'Any',
     offers: {
@@ -71,41 +38,16 @@ function generateStructuredData() {
       price: 0,
       priceCurrency: 'USD',
     },
-    author: {
-      '@type': 'Organization',
-      name: 'Studio Partdirector',
-      url: 'https://partdirector.ch',
-    },
-    breadcrumb: {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: baseUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'City Roulette',
-          item: `${baseUrl}/roulette`,
-        },
-      ],
-    },
+    author: STUDIO_ORG,
+    breadcrumb: breadcrumbList([{ name: 'City Roulette', path }]),
   };
 }
 
 export default function Roulette() {
-  const structuredData = generateStructuredData();
-  
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <RoulettePage icons={iconData.map(toGridIcon)} />
+      <JsonLd data={generateStructuredData()} />
+      <RoulettePage icons={iconData.map(toGridIcon)} footerCountries={getCountryCounts()} />
     </>
   );
 } 
