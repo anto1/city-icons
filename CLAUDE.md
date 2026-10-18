@@ -130,7 +130,7 @@ node scripts/build-world-basemap.mjs     # Regenerate src/components/map/world-l
 
 - **SSG:** All pages pre-rendered at build time via `generateStaticParams()`
 - **dynamicParams=false:** Unknown slugs return proper 404 (not soft 404 with 200)
-- **Server Components:** Default for pages; client components marked with `'use client'`
+- **Server Components:** Default for pages and layout components; client components marked with `'use client'` only where there is state, effects or event handlers
 - **Server→client boundary:** pages map full `Icon` records to slim `GridIcon` via `toGridIcon()` (`src/types/index.ts`) before passing lists to client components. `description` alone is ~108 KB across the dataset and must never be serialized into client props; `category` is also stripped (no client component reads it). Keep both server-side (metadata, JSON-LD, statistics, OG images). Shared helpers (`getIconUrl`, `getLandmark`, search) take `GridIcon`, so they work on both shapes.
 - **Client islands only:** `CityPage`, `ContentPage` and the statistics/what's-new content are server components; interactivity lives in small client components (`IconActions`, `ClientHome`, `WorldMap`, `RoulettePage`, header/footer controls). Note the trade-off measured when CityPage moved to the server: page JS dropped ~1.8 kB, but the RSC payload carries the rendered tree, so gzipped HTML grew ~1.5 kB — don't move things server-side expecting smaller HTML.
 - **SVG Loading:** Icons served as static files with 1-year immutable cache headers
@@ -159,14 +159,15 @@ interface GridIcon {
 
 // Full record as authored in JSON; server-side only
 interface Icon extends GridIcon {
-  category?: string;      // Typed optional for GridIcon assignability; every authored record has it
-  description?: string;   // Every authored record has it; never send to client components
+  category: string;       // One of the taxonomy below (validate:data enforces it)
+  description: string;    // Required; never send to client components
+  symbolStory?: string;   // Why this symbol stands for the city; 200-900 chars when present
 }
 ```
 
 ### `slug` — URL collision prevention
 
-A city page URL is `/{slugify(country)}/{getCitySlug(icon)}`, where `getCitySlug()` (`src/lib/utils.ts`) returns `icon.slug ?? slugify(icon.city)`. When a city gets a **second** icon, the new entry MUST set an explicit `slug` (e.g. Hanoi's second icon uses `hanoi-temple-of-literature`, São Paulo's uses `sao-paulo-masp`) — otherwise both icons resolve to the same URL and one silently shadows the other. This caused a real production bug; `validate:data` now fails the build on duplicate slug pairs.
+A city page URL is `/{slugify(country)}/{getCitySlug(icon)}`, where `getCitySlug()` (`src/lib/slugs.mjs`) returns `icon.slug ?? slugify(icon.city)`. When a city gets a **second** icon, the new entry MUST set an explicit `slug` (e.g. Hanoi's second icon uses `hanoi-temple-of-literature`, São Paulo's uses `sao-paulo-masp`) — otherwise both icons resolve to the same URL and one silently shadows the other. This caused a real production bug; `validate:data` now fails the build on duplicate slug pairs.
 
 ### Landmark names
 
@@ -209,7 +210,7 @@ Without `country`/`slug`, a string entry matches by city name alone and refers t
 
 ## World Map (/map)
 
-- Static page plotting every icon as a dot on a minimalist world map, with region zoom presets and a no-JS city list. `WorldMap.tsx` implements pan/zoom over inline SVG — **no runtime map dependency**.
+- Static page plotting every icon as a dot on a minimalist world map, with region zoom presets and a no-JS city list. Pan/zoom over inline SVG — **no runtime map dependency**: `WorldMap.tsx` renders, `useMapViewport.ts` owns view state and gestures, `viewport.ts` is the pure geometry. Markers, region presets and the city list are built at build time by `buildMapData()` (`src/lib/map-data.ts`), which also spreads markers of cities with two icons so both stay clickable.
 - **Coordinates** (`src/data/coordinates.json`, generated): GeoNames cities500 dump (CC BY 4.0), matched by ISO country code (from the `svgFilename` prefix) + normalized city name, highest population on ties. Every resolved coordinate is sanity-checked against per-country bounding boxes derived from the dump. Places below the 500-population cutoff (ancient sites, hamlets, romanization mismatches) live in an `OVERRIDES` table in `scripts/build-city-coordinates.mjs` — every override must cite its GeoNames record.
 - **Basemap** (`src/components/map/world-land.ts`, generated): Natural Earth 1:110m "land" (public domain), equirectangular projection, cropped to latitudes [-56, 74] (drops Antarctica). Regenerate with `node scripts/build-world-basemap.mjs` only if changing the crop/detail.
 - Icons with no coordinates entry are dropped from the map with a loud build-time console warning naming the cities and the fix.
@@ -220,7 +221,7 @@ Without `country`/`slug`, a string entry matches by city name alone and refers t
 |------|-------------|-------|
 | `/icons.json` | `scripts/build-downloads.mjs` | Machine-readable index (id, name, city, country, region, category, tags, svgFilename, absolute svgUrl/pageUrl). Gitignored build output. |
 | `/city-icons.zip` | `scripts/build-downloads.mjs` | All SVGs + `ATTRIBUTION.txt`; linked from the footer ("Download all"). Deterministic output. Gitignored build output. |
-| `/llms.txt` | checked in at `public/llms.txt` | Hand-maintained summary for LLM crawlers — update counts/license manually. |
+| `/llms.txt` | checked in at `public/llms.txt` | Hand-maintained summary for LLM crawlers. The counts line is checked by `validate:data`; the rest (structure, license) is updated by hand. |
 | `/manifest.webmanifest` | `src/app/manifest.ts` | Next.js serves it and injects `<link rel="manifest">` automatically. |
 | `/press/*` | `scripts/build-press-kit.mjs` | Cover (PNG + SVG), Figma import sheet, `facts.json`, `README.txt`, `svgcities-press-kit.zip`, `svgcities-directory-kit.zip`. Reads `public/icons.json`, so it runs after `build-downloads`. Gitignored build output. |
 
@@ -230,7 +231,6 @@ Without `country`/`slug`, a string entry matches by city name alone and refers t
 - **Page metadata:** `pageMetadata({ path, title, description, … })` from `src/lib/metadata.ts`. The layout supplies authors/creator/publisher/formatDetection/metadataBase; `openGraph`/`twitter` are not deep-merged by Next, so `pageMetadata` restates them. Content pages that want explicit `index, follow` pass `robots: indexRobots()`.
 - **JSON-LD:** render with `<JsonLd data={…} />` (adds `@context`); breadcrumbs with `breadcrumbList(trail)` and the visible `<Breadcrumbs trail={…} />` from the same `Crumb[]`.
 - **Analytics:** icon interactions go through `trackIconEvent('ICON_DOWNLOAD', city)`; other events call `trackEvent` with the names listed under Analytics Events.
-
 - **TypeScript:** Strict mode, interfaces for all props
 - **Components:** Server by default, `'use client'` for interactivity
 - **Styling:** Tailwind utility classes, theme-aware colors (no hardcoded hex), responsive via SM/MD/LG/XL breakpoints
@@ -277,6 +277,9 @@ NEXT_PUBLIC_FATHOM_SITE_ID=xxxxx  # Fathom analytics
 - Sitemap `<lastmod>` dates vary per page based on changelog entries
 - `dynamicParams=false` ensures unknown routes return HTTP 404 (not soft 404)
 - Metadata description icon count is dynamic via `iconData.length` (no manual updates needed)
+- Titles go through `fitTitle()`: the first candidate that fits 60 characters including the ` | svgcities` suffix
+- Country pages with fewer than 3 icons are `noindex, follow` and left out of the sitemap (`COUNTRY_INDEX_THRESHOLD`, `src/lib/seo.ts`)
+- Before changing titles, descriptions or indexing, read `docs/seo-plan.md`
 
 ## JSON-LD Structured Data
 
@@ -330,5 +333,5 @@ Press: `PRESS_LINK_CLICKED` (footer), `PRESS_KIT_DOWNLOAD_CLICKED`
 - **`scripts/build-press-kit.mjs`** builds a 1600×1000 cover (PNG + SVG) from 12 fixed featured icons, a labelled sheet of every icon for Figma import, `facts.json`, `README.txt`, and two ZIPs: the press kit (cover, sheet, facts, the 12 icons) and the directory kit (1200×800 preview + all icons, the format design directories ask for). The script throws if a featured filename disappears from the dataset.
 - **Typography:** labels use the bundled `scripts/fonts/InstrumentSans.ttf` (OFL), outlined to paths with fontkit, so PNG rendering and SVG imports never fall back to system fonts. The cover and the press page header have no eyebrow label.
 - **The Figma sheet is a plain SVG**, not a Figma component library — never describe it as a published Community file.
-- **Credit line on city pages:** a successful SVG download, PNG download or SVG copy reveals a per-icon credit (`AttributionSnippet`, built by `iconAttribution()` from the canonical city URL). SVG fetches reject non-OK responses and bodies without an `<svg` root.
-- **Outreach** drafts and submission records live in `outreach/`, which is local only: untracked in git and excluded from deploys by `.vercelignore`. They are drafts, not evidence of submissions or earned links.
+- **Credit line on city pages:** a successful SVG download, PNG download or SVG copy reveals a per-icon credit box (in `IconActions`; `AttributionSnippet` with text built by `iconAttribution()` from the canonical city URL). `fetchSvg()` (`src/lib/svg-export.ts`) rejects non-OK responses and bodies without an `<svg` root.
+- **Outreach** pitches and submission records live in `outreach/`, which is local only: gitignored and excluded from deploys by `.vercelignore`. `outreach/<date>/publication-status.json` records what was actually sent or submitted and any replies. A record is not an earned link — check that the link is live (and whether it is `nofollow`) before counting it; confirmed links go into section 2 of `docs/seo-plan.md`.
